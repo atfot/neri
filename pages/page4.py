@@ -96,7 +96,7 @@ if prompt := st.chat_input():
         - Please read the form below carefully and answer the questions in the exact format below.
 
         **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**: 
-        - Use this form below. 
+        - Write down and use this form to answer.
         - **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
 
         '''
@@ -104,7 +104,10 @@ if prompt := st.chat_input():
         **Conversation content**: [{st.session_state.conversations}]
 
         **Three possible answers from a psychotherapist**: 
-        [**IMPORTANT**: If you get a very short answer from the mental patient, ask him/her a related question, but don't directly ask how he/she feel.]
+        [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?
+        **IMPORTANT**: 
+        - If you get a very short answer from the mental patient, ask him/her a related question
+        - Don't directly ask how he/she feel.]
 
         **Best response**: 
         [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. It should be **sentences** covered with quotes.]
@@ -124,11 +127,11 @@ if prompt := st.chat_input():
       "content": f"{user_prompt_1}"
     }
   ],
-  temperature=0.9,
+  temperature=0.8,
   max_tokens=1024,
-  top_p=0.9,
-  frequency_penalty=0.9,
-  presence_penalty=0.9
+  top_p=0.8,
+  frequency_penalty=0.8,
+  presence_penalty=0.8
 )
     my_bar.progress(40,text=progress_text)
     msg = response.choices[0].message.content
@@ -152,7 +155,7 @@ Please only show the sentences from the '**Best response**:' section of what I p
     }
   ],
   temperature=0.1,
-  max_tokens=2048,
+  max_tokens=512,
   top_p=1,
   frequency_penalty=0,
   presence_penalty=0
@@ -168,7 +171,7 @@ Please only show the sentences from the '**Best response**:' section of what I p
     my_bar.empty()
     st.chat_message("assistant").write(new_msg)
     st.chat_message("assistant").write(msg)
-    st.write(user_prompt_1)
+    st.chat_message("assistant").write(user_prompt_1)
     st.write(len(st.session_state.messages))
     st.write(st.session_state.messages)
     st.write(st.session_state.conversations)
