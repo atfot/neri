@@ -99,6 +99,7 @@ if prompt := st.chat_input():
         - Write down and use this form to answer.
         - **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
         - Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. It should be **sentences** covered with quotes.
+        - If you get a very short answer from the mental patient, ask him/her a related question
 
         '''
         **Summary of the conversation**: [Write down the following below. 
@@ -132,7 +133,7 @@ if prompt := st.chat_input():
     }
   ],
   temperature=0.8,
-  max_tokens=1024,
+  max_tokens=512,
   top_p=0.8,
   frequency_penalty=0.8,
   presence_penalty=0.8
