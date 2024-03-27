@@ -100,7 +100,7 @@ if prompt := st.chat_input():
         **Conversation content**: [{st.session_state.conversations}]      
       
         '''
-        **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**:[Please copy and paste the content below into the form.
+        **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**:[Please write down the content below into the form.
         - Do not use line breaks or spaces.
         - Don't directly ask how he/she feels.
         - If you get a very short answer from the mental patient, ask him/her a related question.
@@ -111,7 +111,7 @@ if prompt := st.chat_input():
         [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?]
 
         **Best response**: 
-        [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down.]
+        [Write down the best one from the "**Three possible answers from a psychotherapist**:"]
         '''
         ```
     """
