@@ -108,7 +108,7 @@ if prompt := st.chat_input():
 
         **Three possible answers from a psychotherapist**: 
         [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?
-        **IMPORTANT**: 
+        **REMEMBER**: 
         - If you get a very short answer from the mental patient, ask him/her a related question
         - Don't directly ask how he/she feels.
         - KKeep your responses between one and two sentences.]
