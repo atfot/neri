@@ -1,2 +1,1 @@
-# neri
-Worry councelor chatbot powered by OpenAI LLM and Streamlit
+https://neriuut.streamlit.app/
