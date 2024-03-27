@@ -156,7 +156,7 @@ if prompt := st.chat_input():
       "content": f"""
 Please only show the sentences from the '**Best response**:' section of what I provided below, with the quotes, or "" removed.
 -  Keep in mind that you should not seek answers from the "**What should I consider for the best answer**:" part. 
-- Submit only **sentences** as output.
+- Submit only **sentences** as output. Never show "The best response would be:" or "The best response:" or anything resembles those. Only sentences are allowed as an output.
 
 {msg}
 """
