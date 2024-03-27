@@ -105,7 +105,7 @@ if prompt := st.chat_input():
 
         - Do not use line breaks or spaces.
         - If you get a short answer from the mental patient, ask him/her a related question.
-        - Keep your responses between one and three sentences.
+        - Keep your responses between one and two sentences.
         - The best response should be sentences covered with quotes.
         - Never reuse answers that have already been used within a conversation.]
 
@@ -118,8 +118,8 @@ if prompt := st.chat_input():
         ```
 
         **REMEMBER**: 
-        - Write down "**THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**" into the form.
-        - If you get a short answer from the mental patient, ask him/her a related question.
+        - You must write down "**THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**" into the form.
+        - If you get a short answer from the mental patient, you must ask him/her a related question.
         - Never reuse answers that have already been used within a conversation.
     """
     my_bar.progress(20,text=progress_text)
