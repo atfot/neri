@@ -104,8 +104,7 @@ if prompt := st.chat_input():
         **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**:[Please write down the content below into the form.
 
         - Do not use line breaks or spaces.
-        - Don't directly ask how he/she feels.
-        - If you get a very short answer from the mental patient, ask him/her a related question.
+        - If you get a short answer from the mental patient, ask him/her a related question.
         - Keep your responses between one and two sentences.
         - The best response should be sentences covered with quotes.]
 
@@ -119,7 +118,7 @@ if prompt := st.chat_input():
 
         **REMEMBER**: 
         - Write down "**THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**" into the form.
-        - If you get a very short answer from the mental patient, ask him/her a related question.
+        - If you get a short answer from the mental patient, ask him/her a related question.
     """
     my_bar.progress(20,text=progress_text)
     response = client.chat.completions.create(
