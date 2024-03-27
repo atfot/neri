@@ -93,33 +93,25 @@ if prompt := st.chat_input():
     user_prompt_1=f"""
         ```
         # My requests
-        - Please read the form below step by step and answer the questions in the exact format below.
+        - Please read the form below step by step and answer the questions in the exact form below.
 
-        - Read this step by step before the answer
+        - Read this step by step before filling out the form.
         **Summary of the conversation**: [{st.session_state.message_summary}]
-        **Conversation content**: [{st.session_state.conversations}]
-
-        **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**: 
-        - Write down and use this form to answer.
-        - **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
-        - Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. It should be **sentences** covered with quotes.
-        - **If you get a very short answer from the mental patient, ask him/her a related question.**
+        **Conversation content**: [{st.session_state.conversations}]      
       
         '''
+        **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**:[Please copy and paste the content below into the form.
+        - Do not use line breaks or spaces.
+        - Don't directly ask how he/she feels.
+        - If you get a very short answer from the mental patient, ask him/her a related question.
+        - Keep your responses between one and two sentences.
+        - The best response should be sentences covered with quotes.]
+
         **Three possible answers from a psychotherapist**: 
-        [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?
-        **REMEMBER**: 
-        - **If you get a very short answer from the mental patient, ask him/her a related question.**
-        - **Don't directly ask how he/she feels.**
-        - **Keep your responses between one and two sentences.**]
+        [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?]
 
         **Best response**: 
-        [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. 
-        **REMEMBER**: 
-        - **If you get a very short answer from the mental patient, ask him/her a related question.**
-        - **Don't directly ask how he/she feels.**
-        - Keep your responses between one and two sentences.
-        - It should be **sentences** covered with quotes.]
+        [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down.]
         '''
         ```
     """
