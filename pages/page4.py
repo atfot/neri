@@ -117,7 +117,9 @@ if prompt := st.chat_input():
         '''
         ```
 
-        **REMEMBER**: Write down "**THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**" into the form.
+        **REMEMBER**: 
+        - Write down "**THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**" into the form.
+        - If you get a very short answer from the mental patient, ask him/her a related question.
     """
     my_bar.progress(20,text=progress_text)
     response = client.chat.completions.create(
