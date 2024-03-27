@@ -98,6 +98,7 @@ if prompt := st.chat_input():
         **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**: 
         - Write down and use this form to answer.
         - **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
+        - Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. It should be **sentences** covered with quotes.
 
         '''
         **Summary of the conversation**: [{st.session_state.message_summary}]
