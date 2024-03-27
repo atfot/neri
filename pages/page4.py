@@ -112,10 +112,15 @@ if prompt := st.chat_input():
         **REMEMBER**: 
         - If you get a very short answer from the mental patient, ask him/her a related question
         - Don't directly ask how he/she feels.
-        - KKeep your responses between one and two sentences.]
+        - Keep your responses between one and two sentences.]
 
         **Best response**: 
-        [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. It should be **sentences** covered with quotes.]
+        [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. 
+        **REMEMBER**: 
+        - If you get a very short answer from the mental patient, ask him/her a related question
+        - Don't directly ask how he/she feels.
+        - Keep your responses between one and two sentences.
+        - It should be **sentences** covered with quotes.]
         '''
         ```
     """
