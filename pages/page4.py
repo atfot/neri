@@ -107,7 +107,8 @@ if prompt := st.chat_input():
         [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?
         **IMPORTANT**: 
         - If you get a very short answer from the mental patient, ask him/her a related question
-        - Don't directly ask how he/she feels.]
+        - Don't directly ask how he/she feels.
+        - KKeep your responses between one and two sentences.]
 
         **Best response**: 
         [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. It should be **sentences** covered with quotes.]
@@ -127,11 +128,11 @@ if prompt := st.chat_input():
       "content": f"{user_prompt_1}"
     }
   ],
-  temperature=0.7,
+  temperature=0.8,
   max_tokens=1024,
-  top_p=0.7,
-  frequency_penalty=0.7,
-  presence_penalty=0.7
+  top_p=0.8,
+  frequency_penalty=0.8,
+  presence_penalty=0.8
 )
     my_bar.progress(40,text=progress_text)
     msg = response.choices[0].message.content
