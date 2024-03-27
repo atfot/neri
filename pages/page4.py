@@ -93,20 +93,19 @@ if prompt := st.chat_input():
     user_prompt_1=f"""
         ```
         # My requests
-        - Please read the form below carefully and answer the questions in the exact format below.
+        - Please read the form below step by step and answer the questions in the exact format below.
+
+        - Read this step by step before the answer
+        **Summary of the conversation**: [{st.session_state.message_summary}]
+        **Conversation content**: [{st.session_state.conversations}]
 
         **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**: 
         - Write down and use this form to answer.
         - **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
         - Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. It should be **sentences** covered with quotes.
         - **If you get a very short answer from the mental patient, ask him/her a related question.**
-
+      
         '''
-        **Summary of the conversation**: [Write down the following below. 
-        {st.session_state.message_summary}]
-        **Conversation content**: [Write down the following below.
-        {st.session_state.conversations}]
-
         **Three possible answers from a psychotherapist**: 
         [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?
         **REMEMBER**: 
