@@ -111,7 +111,7 @@ if prompt := st.chat_input():
         [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?]
 
         **Best response**: 
-        [Write down the best one from the "**Three possible answers from a psychotherapist**:"]
+        [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down.]
         '''
         ```
     """
