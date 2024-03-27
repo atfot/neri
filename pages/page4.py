@@ -132,11 +132,11 @@ if prompt := st.chat_input():
       "content": f"{user_prompt_1}"
     }
   ],
-  temperature=1,
+  temperature=0.8,
   max_tokens=512,
-  top_p=1,
-  frequency_penalty=1,
-  presence_penalty=1
+  top_p=0.8,
+  frequency_penalty=0.8,
+  presence_penalty=0.8
 )
     my_bar.progress(40,text=progress_text)
     msg = response.choices[0].message.content
