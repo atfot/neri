@@ -93,15 +93,16 @@ if prompt := st.chat_input():
     user_prompt_1=f"""
         ```
         # My requests
-        - Please read the form below step by step and answer the questions in the exact form below.
+        - Please read the form below step by step and answer the questions in the exact form below
 
-        - Read this step by step before filling out the form.
+        - Read this step by step before filling out the form
         **Summary of the conversation**: [{st.session_state.message_summary}]
         **Conversation content**: [{st.session_state.conversations}]      
-      
+
+        - This is the form      
         '''
         **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**:[Please write down the content below into the form.
-        
+
         - Do not use line breaks or spaces.
         - Don't directly ask how he/she feels.
         - If you get a very short answer from the mental patient, ask him/her a related question.
@@ -115,6 +116,8 @@ if prompt := st.chat_input():
         [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down.]
         '''
         ```
+
+        **REMEMBER**: Write down "**THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**" into the form.
     """
     my_bar.progress(20,text=progress_text)
     response = client.chat.completions.create(
