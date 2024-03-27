@@ -99,7 +99,7 @@ if prompt := st.chat_input():
         - Write down and use this form to answer.
         - **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
         - Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. It should be **sentences** covered with quotes.
-        - If you get a very short answer from the mental patient, ask him/her a related question
+        - **If you get a very short answer from the mental patient, ask him/her a related question.**
 
         '''
         **Summary of the conversation**: [Write down the following below. 
@@ -110,15 +110,15 @@ if prompt := st.chat_input():
         **Three possible answers from a psychotherapist**: 
         [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?
         **REMEMBER**: 
-        - If you get a very short answer from the mental patient, ask him/her a related question
-        - Don't directly ask how he/she feels.
-        - Keep your responses between one and two sentences.]
+        - **If you get a very short answer from the mental patient, ask him/her a related question.**
+        - **Don't directly ask how he/she feels.**
+        - **Keep your responses between one and two sentences.**]
 
         **Best response**: 
         [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. 
         **REMEMBER**: 
-        - If you get a very short answer from the mental patient, ask him/her a related question
-        - Don't directly ask how he/she feels.
+        - **If you get a very short answer from the mental patient, ask him/her a related question.**
+        - **Don't directly ask how he/she feels.**
         - Keep your responses between one and two sentences.
         - It should be **sentences** covered with quotes.]
         '''
