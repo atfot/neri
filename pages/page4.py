@@ -101,8 +101,10 @@ if prompt := st.chat_input():
         - Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. It should be **sentences** covered with quotes.
 
         '''
-        **Summary of the conversation**: [{st.session_state.message_summary}]
-        **Conversation content**: [{st.session_state.conversations}]
+        **Summary of the conversation**: [Write down the following below. 
+        {st.session_state.message_summary}]
+        **Conversation content**: [Write down the following below.
+        {st.session_state.conversations}]
 
         **Three possible answers from a psychotherapist**: 
         [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?
