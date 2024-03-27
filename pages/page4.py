@@ -101,6 +101,7 @@ if prompt := st.chat_input():
       
         '''
         **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**:[Please write down the content below into the form.
+        
         - Do not use line breaks or spaces.
         - Don't directly ask how he/she feels.
         - If you get a very short answer from the mental patient, ask him/her a related question.
