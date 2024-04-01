@@ -108,7 +108,7 @@ if prompt := st.chat_input():
         - Keep your responses between one and three sentences.
         - The best response should be sentences covered with quotes.
         - Never reuse answers that have already been used within a conversation.]
-        - End sentences with "." for the most important sentences and "..." or "..." for the rest.
+        - End sentences with "." for the most important sentences and ".." or "..." for the rest.
 
         **Three possible answers from a psychotherapist**: 
         [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?]
@@ -122,7 +122,7 @@ if prompt := st.chat_input():
         - You must write down "**THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**" into the form.
         - If you get a short answer from the mental patient, you must ask him/her a related question.
         - Never reuse answers that have already been used within a conversation.
-        - End sentences with "." for the most important sentences and "..." or "..." for the rest.
+        - End sentences with "." for the most important sentences and ".." or "..." for the rest.
     """
     my_bar.progress(20,text=progress_text)
     response = client.chat.completions.create(
