@@ -43,13 +43,13 @@ if language_selection:
             st.success("Logged in successfully!")
             sleep(0.5)
             st.switch_page("pages/page4.py")
-    if 'logged_in' not in st.session_state:
+    if st.session_state.get("logged_in", False):
         pass
     if st.session_state.get('login_error', True):
         col, col2, col3 = st.columns([2.5,5,2.5])
         with col2:
             st.error("Incorrect username or password")
-    if 'login_error' not in st.session_state:
+    if st.session_state.get("login_error", False):
         pass
     if st.session_state.get('signin', True):
         col, col2, col3 = st.columns([3,4,3])
@@ -57,7 +57,7 @@ if language_selection:
             st.success("Welcome to Neri!")
             sleep(0.5)
             st.switch_page("pages/signin.py")
-    if 'signin' not in st.session_state:
+    if st.session_state.get("signin", False):
         pass
 
 if not language_selection: 
@@ -92,7 +92,7 @@ if not language_selection:
         col, col2, col3 = st.columns([2,6,2])
         with col2:
             st.error("유저 이름 또는 패스워드가 맞지 않습니다.")
-    if 'login_error' not in st.session_state:
+    if st.session_state.get("login_error", False):
         pass
     if st.session_state.get('signin', True):
         col, col2, col3 = st.columns([3,4,3])
@@ -100,5 +100,5 @@ if not language_selection:
             st.success("네리에 오신 것을 환영합니다!")
             sleep(0.5)
             st.switch_page("pages/signin.py")
-    if 'signin' not in st.session_state:
+    if st.session_state.get("signin", False):
         pass
