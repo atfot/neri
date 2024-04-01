@@ -180,7 +180,7 @@ Please only show the sentences from the '**Best response**:' section of what I p
       "role": "user",
       "content": f"""
       # My Requests:
-      - In the paragraphs below, end the most important sentence with "." and the rest of the sentence with ".." or "...". Please use '?' for question marks.
+      - In the paragraphs below, end the most important sentence with ".". However at least one sentence should end with '..' or '...'. Please use '?' for question marks.
       - If the tone of your paragraph is too stiff, try mixing in some interjections. If not, you don't have to.
 
 {new_msg}
