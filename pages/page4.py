@@ -166,7 +166,7 @@ In the paragraphs below, end the most important sentence with "." and the rest o
   presence_penalty=0
 )
     my_bar.progress(50,text=progress_text)
-    humanize_sentence = response.choices[0].message.content
+    humanize_msg = humanize_sentence.choices[0].message.content
     sentence_selection = client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
@@ -181,7 +181,7 @@ Please only show the sentences from the '**Best response**:' section of what I p
 -  Keep in mind that you should not seek answers from the "**What should I consider for the best answer**:" part. 
 - Submit only **sentences** as output. Never show "The best response would be:" or "The best response:" or anything resembles those. Only sentences are allowed as an output.
 
-{msg}
+{humanize_msg}
 """
     }
   ],
