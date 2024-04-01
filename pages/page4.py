@@ -185,7 +185,7 @@ In the paragraphs below, end the most important sentence with "." and the rest o
 """
     }
   ],
-  temperature=0.1,
+  temperature=1,
   max_tokens=512,
   top_p=1,
   frequency_penalty=0,
