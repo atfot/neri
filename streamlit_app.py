@@ -7,6 +7,9 @@ st.set_page_config(
     layout="centered",
     menu_items=None
 )
+st.session_state.logged_in = False
+st.session_state.signin = False
+st.session_state.login_error = False
 
 col1,col2=st.columns([4,6])
 with col1:
@@ -14,10 +17,6 @@ with col1:
 st.title('')
 if language_selection: 
     st.session_state['korean_mode']=0
-    if 'login_error' in st.session_state:
-        del st.session_state.login_error
-    else:
-        pass
     col1,col2,col3=st.columns([4,2,4])
     with col2:
         st.title("Neri")
@@ -38,7 +37,6 @@ if language_selection:
                 st.session_state.logged_in = True
             else:
                 st.session_state.login_error = True
-                
     if st.session_state.get("logged_in", True):
         col, col2, col3 = st.columns([3,4,3])
         with col2:
@@ -64,10 +62,6 @@ if language_selection:
 
 if not language_selection: 
     st.session_state['korean_mode']=1
-    if 'login_error' in st.session_state:
-        del st.session_state.login_error
-    else:
-        pass
     col1,col2,col3=st.columns([4,2,4])
     with col2:
         st.title("네리")
