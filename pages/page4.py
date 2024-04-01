@@ -174,12 +174,12 @@ Please only show the sentences from the '**Best response**:' section of what I p
   messages=[
     {
       "role": "system",
-      "content": "Your job is to rephrase the sentences I give you as if they were spoken by a real person."
+      "content": "Your job is to rephrase the sentences I give you."
     },
     {
       "role": "user",
       "content": f"""
-In the paragraphs below, end the most important sentence with "." and the rest of the sentence with ".." or "...". Please use '?' or '!' for question marks or exclamation points as they are.
+In the paragraphs below, end the most important sentence with ".." or "...". Please use '?' or '!' for question marks or exclamation points as they are.
 
 {new_msg}
 """
