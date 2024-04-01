@@ -190,8 +190,8 @@ Please only show the sentences from the '**Best response**:' section of what I p
   temperature=1,
   max_tokens=512,
   top_p=1,
-  frequency_penalty=0,
-  presence_penalty=0
+  frequency_penalty=1,
+  presence_penalty=1
 )
     my_bar.progress(75,text=progress_text)
     humanize_msg = humanize_sentence.choices[0].message.content
