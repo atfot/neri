@@ -143,30 +143,6 @@ if prompt := st.chat_input():
 )
     my_bar.progress(25,text=progress_text)
     msg = response.choices[0].message.content
-    humanize_sentence = client.chat.completions.create(
-  model="gpt-3.5-turbo-16k",
-  messages=[
-    {
-      "role": "system",
-      "content": "Your job is to rephrase the sentences I give you as if they were spoken by a real person."
-    },
-    {
-      "role": "user",
-      "content": f"""
-In the paragraphs below, end the most important sentence with "." and the rest of the sentence with ".." or "...". Please use '?' or '!' for question marks or exclamation points as they are.
-
-{msg}
-"""
-    }
-  ],
-  temperature=0.1,
-  max_tokens=512,
-  top_p=1,
-  frequency_penalty=0,
-  presence_penalty=0
-)
-    my_bar.progress(50,text=progress_text)
-    humanize_msg = humanize_sentence.choices[0].message.content
     sentence_selection = client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
@@ -181,7 +157,7 @@ Please only show the sentences from the '**Best response**:' section of what I p
 -  Keep in mind that you should not seek answers from the "**What should I consider for the best answer**:" part. 
 - Submit only **sentences** as output. Never show "The best response would be:" or "The best response:" or anything resembles those. Only sentences are allowed as an output.
 
-{humanize_msg}
+{msg}
 """
     }
   ],
@@ -191,14 +167,38 @@ Please only show the sentences from the '**Best response**:' section of what I p
   frequency_penalty=0,
   presence_penalty=0
 )
-    my_bar.progress(75,text=progress_text)
+    my_bar.progress(50,text=progress_text)
     new_msg = sentence_selection.choices[0].message.content.strip('"')
-    st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
-    st.session_state.conversations.append({"role": "Psychotherapist", "content": new_msg})
+    humanize_sentence = client.chat.completions.create(
+  model="gpt-3.5-turbo-16k",
+  messages=[
+    {
+      "role": "system",
+      "content": "Your job is to rephrase the sentences I give you as if they were spoken by a real person."
+    },
+    {
+      "role": "user",
+      "content": f"""
+In the paragraphs below, end the most important sentence with "." and the rest of the sentence with ".." or "...". Please use '?' or '!' for question marks or exclamation points as they are.
+
+{new_msg}
+"""
+    }
+  ],
+  temperature=0.1,
+  max_tokens=512,
+  top_p=1,
+  frequency_penalty=0,
+  presence_penalty=0
+)
+    my_bar.progress(50,text=progress_text)
+    humanize_msg = humanize_sentence.choices[0].message.content
+    st.session_state.messages.append({"role": "Psychotherapist", "content": humanize_msg})
+    st.session_state.conversations.append({"role": "Psychotherapist", "content": humanize_msg})
     my_bar.progress(100,text=progress_text)
     time.sleep(1)
     my_bar.empty()
-    st.chat_message("assistant").write(new_msg)
+    st.chat_message("assistant").write(humanize_msg)
     #st.chat_message("assistant").write(msg)
     #st.chat_message("assistant").write(user_prompt_1)
     #st.write(len(st.session_state.messages))
