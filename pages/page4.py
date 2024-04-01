@@ -89,7 +89,7 @@ if prompt := st.chat_input():
       '''
       ```
   """
-    my_bar.progress(10,text=progress_text)
+    
     user_prompt_1=f"""
         ```
         # My requests
@@ -108,7 +108,6 @@ if prompt := st.chat_input():
         - Keep your responses between one and three sentences.
         - The best response should be sentences covered with quotes.
         - Never reuse answers that have already been used within a conversation.]
-        - End sentences with "." for the most important sentences and ".." or "..." for the rest.
 
         **Three possible answers from a psychotherapist**: 
         [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?]
@@ -122,9 +121,8 @@ if prompt := st.chat_input():
         - You must write down "**THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**" into the form.
         - If you get a short answer from the mental patient, you must ask him/her a related question.
         - Never reuse answers that have already been used within a conversation.
-        - End sentences with "." for the most important sentences and ".." or "..." for the rest.
     """
-    my_bar.progress(20,text=progress_text)
+    
     response = client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
@@ -143,9 +141,32 @@ if prompt := st.chat_input():
   frequency_penalty=1,
   presence_penalty=1
 )
-    my_bar.progress(40,text=progress_text)
+    my_bar.progress(25,text=progress_text)
     msg = response.choices[0].message.content
+    humanize_sentence = client.chat.completions.create(
+  model="gpt-3.5-turbo-16k",
+  messages=[
+    {
+      "role": "system",
+      "content": "Your job is to rephrase the sentences I give you as if they were spoken by a real person."
+    },
+    {
+      "role": "user",
+      "content": f"""
+In the paragraphs below, end the most important sentence with "." and the rest of the sentence with ".." or "...". Please use '?' or '!' for question marks or exclamation points as they are.
+
+{msg}
+"""
+    }
+  ],
+  temperature=0.1,
+  max_tokens=512,
+  top_p=1,
+  frequency_penalty=0,
+  presence_penalty=0
+)
     my_bar.progress(50,text=progress_text)
+    humanize_sentence = response.choices[0].message.content
     sentence_selection = client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
@@ -170,11 +191,9 @@ Please only show the sentences from the '**Best response**:' section of what I p
   frequency_penalty=0,
   presence_penalty=0
 )
-    my_bar.progress(70,text=progress_text)
+    my_bar.progress(75,text=progress_text)
     new_msg = sentence_selection.choices[0].message.content.strip('"')
-    my_bar.progress(80,text=progress_text)
     st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
-    my_bar.progress(90,text=progress_text)
     st.session_state.conversations.append({"role": "Psychotherapist", "content": new_msg})
     my_bar.progress(100,text=progress_text)
     time.sleep(1)
