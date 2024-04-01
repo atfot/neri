@@ -183,7 +183,10 @@ Please only show the sentences from the '**Best response**:' section of what I p
       - In the paragraphs below, end the most important sentences with '..' or '...'. However, at least one sentence must always end with '.'. Please use '?' for question marks.
       - If the tone of your paragraph is too stiff, try mixing in some interjections. If not, you don't have to.
 
-{new_msg}
+      # Rephrase this paragraph:
+      '''
+      {new_msg}
+      '''
 """
     }
   ],
