@@ -181,7 +181,7 @@ Please only show the sentences from the '**Best response**:' section of what I p
       "content": f"""
       # My Requests:
       - In the paragraphs below, end the most important sentence with "." and the rest of the sentence with ".." or "...". Please use '?' for question marks.
-      - If the tone of your paragraph is too stiff, try mixing in an exclamation point. If not, you don't have to.
+      - If the tone of your paragraph is too stiff, try mixing in some interjections. If not, you don't have to.
 
 {new_msg}
 """
