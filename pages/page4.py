@@ -135,7 +135,7 @@ if prompt := st.chat_input():
       "content": f"{user_prompt_1}"
     }
   ],
-  temperature=0.1,
+  temperature=1,
   max_tokens=512,
   top_p=1,
   frequency_penalty=1,
@@ -179,7 +179,7 @@ Please only show the sentences from the '**Best response**:' section of what I p
     {
       "role": "user",
       "content": f"""
-In the paragraphs below, end the most important sentence with ".." or "...". Please use '?' or '!' for question marks or exclamation points as they are.
+In the paragraphs below, end the most important sentence with "." and the rest of the sentence with ".." or "...". Please use '?' or '!' for question marks or exclamation points as they are.
 
 {new_msg}
 """
