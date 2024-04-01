@@ -191,7 +191,7 @@ In the paragraphs below, end the most important sentence with "." and the rest o
   frequency_penalty=0,
   presence_penalty=0
 )
-    my_bar.progress(50,text=progress_text)
+    my_bar.progress(75,text=progress_text)
     humanize_msg = humanize_sentence.choices[0].message.content
     st.session_state.messages.append({"role": "Psychotherapist", "content": humanize_msg})
     st.session_state.conversations.append({"role": "Psychotherapist", "content": humanize_msg})
