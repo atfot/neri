@@ -174,17 +174,16 @@ Please only show the sentences from the '**Best response**:' section of what I p
   messages=[
     {
       "role": "system",
-      "content": "Your job is to rephrase the sentences I give you."
+      "content": f"""Your job is to rephrase the sentences I give you.
+      
+      **REMEMBER**:
+      - If you receive a paragraph to process, end the most important sentence with '..' or '...'. However, at least one sentence must always end with '.'. Please use '?' for question marks.
+      - If the tone of your paragraph is too stiff, try mixing in some interjections. If not, you don't have to.
+      """
     },
     {
       "role": "user",
-      "content": f"""
-      # My Requests:
-      - In the paragraphs below, end the most important sentences with '..' or '...'. However, at least one sentence must always end with '.'. Please use '?' for question marks.
-      - If the tone of your paragraph is too stiff, try mixing in some interjections. If not, you don't have to.
-
-{new_msg}
-"""
+      "content": f"{new_msg}"
     }
   ],
   temperature=1,
