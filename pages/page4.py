@@ -179,7 +179,9 @@ Please only show the sentences from the '**Best response**:' section of what I p
     {
       "role": "user",
       "content": f"""
-In the paragraphs below, end the most important sentence with "." and the rest of the sentence with ".." or "...". Please use '?' or '!' for question marks or exclamation points as they are.
+      # My Requests:
+      - In the paragraphs below, end the most important sentence with "." and the rest of the sentence with ".." or "...". Please use '?' or '!' for question marks or exclamation points as they are.
+      - If the tone of your paragraph is too stiff, try mixing in an exclamation point. If not, you don't have to.
 
 {new_msg}
 """
