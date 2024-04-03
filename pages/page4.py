@@ -138,7 +138,7 @@ if prompt := st.chat_input():
   presence_penalty=1
 )
     my_bar.progress(25,text=progress_text)
-    msg = first_response.choices[0].message.content
+    msg = response.choices[0].message.content
     sentence_selection = client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
