@@ -98,22 +98,18 @@ if prompt := st.chat_input():
         - Read this step by step before filling out the form
         **Summary of the conversation**: [{st.session_state.message_summary}]
         **Conversation content**: [{st.session_state.conversations}]      
-
-        - This is the form      
-        '''
+        
         **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**:[Please write down the content below into the form.
 
         - Do not use line breaks or spaces.
         - If you get a short answer from the mental patient, ask him/her a related question.
         - Keep your responses between one and two sentences.
-        - The best response should be sentences covered with quotes.
         - Never reuse answers that have already been used within a conversation.]
 
+        - This is the form      
+        '''
         **Three possible answers from a psychotherapist**: 
         [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?]
-
-        **Best response**: 
-        [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down.]
         '''
         ```
 
@@ -142,30 +138,39 @@ if prompt := st.chat_input():
   presence_penalty=1
 )
     my_bar.progress(25,text=progress_text)
-    msg = response.choices[0].message.content
+    msg = first_response.choices[0].message.content
     sentence_selection = client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
     {
       "role": "system",
-      "content": "Your role will be to help me pull out sentences within paragraphs."
+      "content": "Your role is to read the dialogue, summary, and examples of the three answers and choose the best sentence from the three."
     },
     {
       "role": "user",
       "content": f"""
-Please only show the sentences from the '**Best response**:' section of what I provided below, with the quotes, or "" removed.
--  Keep in mind that you should not seek answers from the "**What should I consider for the best answer**:" part. 
-- Submit only **sentences** as output. Never show "The best response would be:" or "The best response:" or anything resembles those. Only sentences are allowed as an output.
+      # My request:
+      Read the summary, dialogue, and examples of the three answers and choose the best sentence from the three. Lets go step by step-
 
-{msg}
+      - Read these informations carefully before answering my question.
+        **Summary of the conversation**: [{st.session_state.message_summary}]
+        
+        **Conversation content**: [{st.session_state.conversations}]
+
+        **Three possible answers from a psychotherapist**: 
+        "[{msg}]"
+
+        - After reading the informations above, please pick the best response and write it. 
+        **REMEMBER**:
+        Submit only **sentences** as output. Never show "The best response would be:" or "The best response:" or anything resembles those. Only sentences are allowed as an output.]
 """
     }
   ],
-  temperature=0.1,
-  max_tokens=512,
+  temperature=1,
+  max_tokens=1028,
   top_p=1,
-  frequency_penalty=0,
-  presence_penalty=0
+  frequency_penalty=1,
+  presence_penalty=1
 )
     my_bar.progress(50,text=progress_text)
     new_msg = sentence_selection.choices[0].message.content.strip('"')
@@ -181,7 +186,7 @@ Please only show the sentences from the '**Best response**:' section of what I p
       "content": f"""
       # My Requests:
       Rephrase the sentences below. If the tone of your paragraph is too stiff, try mixing in some interjections. If not, you don't have to.
-      
+
       '''
       {new_msg}
       '''
