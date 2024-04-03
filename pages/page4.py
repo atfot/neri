@@ -187,7 +187,7 @@ if prompt := st.chat_input():
       "role": "user",
       "content": f"""
       # My Requests:
-      Rephrase the sentences below. If the tone of your paragraph is too stiff, try mixing in some interjections, but not in a rude way. If not, you don't have to.
+      Rephrase the sentences below. If the tone of your paragraph is too stiff, try mixing in some interjections, but not in a rude way. However if the tone of your paragraph is okay, you don't have to put any interjections on the sentences.
 
       '''
       {new_msg}
