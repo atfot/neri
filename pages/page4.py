@@ -163,7 +163,7 @@ if prompt := st.chat_input():
         - After reading the informations above, please pick the best response and write it. 
         
         **REMEMBER**:
-        - Submit only **sentences** as output. Never show "The best response would be:" or "The best response:" or anything resembles those. Only sentences are allowed as an output. That means there should be no "" marks in your answer, and no : or - marks to show the answer. And don't use any words or phrases other than the sentence you chose from the three examples.
+        - Submit only **sentences** as output. **Never show "The best response would be:" or "The best response:" or anything resembles those.** Only sentences are allowed as an output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
         - Never choose the sentence that contains 'How does it feel' or anything resembles that.]
 """
     }
