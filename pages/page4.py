@@ -103,7 +103,7 @@ if prompt := st.chat_input():
 
         - Do not use line breaks or spaces.
         - If you get a short answer from the mental patient, ask him/her a related question.
-        - Keep your responses between one and two sentences.
+        - Keep your responses between two and three sentences.
         - Never reuse answers that have already been used within a conversation.]
 
         - This is the form      
