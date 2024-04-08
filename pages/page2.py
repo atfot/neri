@@ -147,7 +147,12 @@ if prompt := st.chat_input():
   messages=[
     {
       "role": "system",
-      "content": "Your role is to read the dialogue, summary, and examples of the three answers and choose the best sentence from the three."
+      "content": """Your role is to read the dialogue, summary, and examples of the three answers and choose the best sentence from the three.
+      
+      **REMEMBER**:
+      - Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
+      - Never choose the sentence that contains 'How does it feel' or anything resembles that.
+      """
     },
     {
       "role": "user",
@@ -184,7 +189,12 @@ if prompt := st.chat_input():
   messages=[
     {
       "role": "system",
-      "content": "Your role is to rephrase the sentences I give you as if they were spoken by a real person in the middle of a conversation."
+      "content": """
+      Your role is to rephrase the sentences I give you as if they were spoken by a real person in the middle of a conversation.
+      
+      **REMEMBER**:
+      Never attach embellishments to your answers. Submit only **sentences** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the context.
+      """
     },
     {
       "role": "user",
