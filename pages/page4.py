@@ -97,7 +97,7 @@ if prompt := st.chat_input():
 
         - Read this step by step before filling out the form
         **Summary of the conversation**: [{st.session_state.message_summary}]
-        **Conversation content**: [{st.session_state.conversations}]      
+        **Latest Conversations**: [{st.session_state.conversations}]      
         
         **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**:[Please write down the content below into the form.
 
