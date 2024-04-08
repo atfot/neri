@@ -13,6 +13,10 @@ st.session_state.login_error = False
 
 col1,col2=st.columns([4,6])
 with col1:
+    st.write('''
+             어떤 언어로 사용하실지 결정해주세요.
+             Please decide which language you'd like to use.
+             ''')
     language_selection=st.toggle('한국어/English')
 st.title('')
 if language_selection: 
@@ -42,7 +46,7 @@ if language_selection:
         with col2:
             st.success("Logged in successfully!")
             sleep(0.5)
-            st.switch_page("pages/page4.py")
+            st.switch_page("pages/page2.py")
     if st.session_state.get("logged_in", False):
         pass
     if st.session_state.get('login_error', True):
@@ -87,7 +91,7 @@ if not language_selection:
         with col2:
             st.success("성공적으로 로그인 되었습니다!")
             sleep(0.5)
-            st.switch_page("pages/page4.py")
+            st.switch_page("pages/page2.py")
     if st.session_state.get('login_error', True):
         col, col2, col3 = st.columns([2,6,2])
         with col2:

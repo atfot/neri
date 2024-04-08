@@ -22,9 +22,7 @@ def make_sidebar():
 
         if st.session_state.get("logged_in", False):
             st.page_link("pages/page1.py", label="Your Progression", icon="🏋️")
-            st.page_link("pages/page2.py", label="Your Councelor", icon="💛")
-            st.page_link("pages/page3.py", label="Your Councelor_test", icon="💛")
-            st.page_link("pages/page4.py", label="Your Councelor_test_2", icon="💛")
+            st.page_link("pages/page2.py", label="Your Councelor_test_2", icon="💛")
 
             st.write("")
             st.write("")
