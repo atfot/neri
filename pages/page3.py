@@ -233,7 +233,7 @@ Translate this sentence Korean sentences. Translation should be accurate, and th
 {humanize_msg}"""
           }
         ],
-        temperature=0.9,
+        temperature=1,
         max_tokens=1024,
         top_p=1,
         frequency_penalty=1,
