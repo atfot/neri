@@ -41,11 +41,11 @@ def make_sidebar():
 
 def logout():
     st.session_state.logged_in = False
-    if "messages" in st.session_state:
+    if "message_summary" in st.session_state:
         del st.session_state["messages"]
         del st.session_state['conversations']
         del st.session_state['message_summary']
-    if "messages" not in st.session_state:
+    if "message_summary" not in st.session_state:
         pass
     st.info("Logged out successfully!")
     sleep(0.5)
