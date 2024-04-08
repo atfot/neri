@@ -11,7 +11,7 @@ st.session_state.logged_in = False
 st.session_state.signin = False
 st.session_state.login_error = False
 
-col1,col2=st.columns([4,6])
+col1,col2=st.columns([6,4])
 with col1:
     st.write('''
              어떤 언어로 사용하실지 결정해주세요.
