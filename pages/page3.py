@@ -222,12 +222,12 @@ if prompt := st.chat_input():
         messages=[
           {
             "role": "system",
-            "content": "Your role is to translate English sentences into polite Korean sentences."
+            "content": "Your role is to translate English sentences into accurate and polite Korean sentences."
           },
           {
             "role": "user",
             "content": f"""
-Translate this sentence into a polite Korean sentence.
+Translate this sentence into accurate and polite Korean sentences.
 
 {humanize_msg}"""
           }
