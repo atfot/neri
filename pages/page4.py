@@ -22,12 +22,45 @@ for msg in st.session_state.messages:
       st.chat_message('user').write(msg["content"])   
 
 if prompt := st.chat_input():
+    if st.session_state.korean_mode==1:
+      korean_translation = client.chat.completions.create(
+    model="gpt-3.5-turbo-16k",
+    messages=[
+      {
+        "role": "system",
+        "content": "Your role is to translate the message into English."
+      },
+      {
+        "role": "user",
+        "content": f"""
+        # My request:
+        Translate these sentences into English. Lets go step by step-
+
+        - Read these informations carefully before answering my question.
+          **Sentences that needs to be translated into English**: [{prompt}]
+
+          - After reading the informations above, please translate these sentences.
+          
+          **REMEMBER**:
+          - Never attach embellishments to your answers. Submit only **sentences** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the context.]
+  """
+      }
+    ],
+    temperature=1,
+    max_tokens=1028,
+    top_p=1,
+    frequency_penalty=1,
+    presence_penalty=1
+  )
+      prompt = korean_translation.choices[0].message.content.strip('"')
+    if st.session_state.korean_mode==0:
+       pass
     client = OpenAI(api_key=st.secrets['api_key'])
     st.session_state.messages.append({"role": "Mental patient", "content": prompt})
     st.session_state.conversations.append({"role": "Mental patient", "content": prompt})
     st.chat_message("user").write(prompt)
     if len(st.session_state.messages)<3:
-       st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
+      st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
     if len(st.session_state.messages)%3==0:
         summary = client.chat.completions.create(
         model="gpt-3.5-turbo-16k",
@@ -205,6 +238,39 @@ if prompt := st.chat_input():
 )
     my_bar.progress(75,text=progress_text)
     humanize_msg = humanize_sentence.choices[0].message.content
+    if st.session_state.korean_mode==1:
+      korean_translation = client.chat.completions.create(
+    model="gpt-3.5-turbo-16k",
+    messages=[
+      {
+        "role": "system",
+        "content": "Your role is to translate the message into English."
+      },
+      {
+        "role": "user",
+        "content": f"""
+        # My request:
+        Translate these sentences into English. Lets go step by step-
+
+        - Read these informations carefully before answering my question.
+          **Sentences that needs to be translated into English**: [{humanize_msg}]
+
+          - After reading the informations above, please translate these sentences.
+          
+          **REMEMBER**:
+          - Never attach embellishments to your answers. Submit only **sentences** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the context.]
+  """
+      }
+    ],
+    temperature=1,
+    max_tokens=1028,
+    top_p=1,
+    frequency_penalty=1,
+    presence_penalty=1
+  )
+      humanize_msg = korean_translation.choices[0].message.content.strip('"')
+    if st.session_state.korean_mode==0:
+       pass
     st.session_state.messages.append({"role": "Psychotherapist", "content": humanize_msg})
     st.session_state.conversations.append({"role": "Psychotherapist", "content": humanize_msg})
     my_bar.progress(100,text=progress_text)
