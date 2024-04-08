@@ -227,8 +227,8 @@ Translate this sentence into a Korean sentence with a polite tone.
         temperature=1,
         max_tokens=1024,
         top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0
+        frequency_penalty=1,
+        presence_penalty=1
         )
     humanize_msg = korean_translation.choices[0].message.content
     st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
