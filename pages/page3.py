@@ -33,7 +33,7 @@ if prompt := st.chat_input():
       st.session_state['message_summary'] = '아직까지 쓰인 내용은 없고, 여기서부터 대화내용이 시작됩니다.'
     if len(st.session_state.messages)%3==0:
         summary = st.session_state.client.chat.completions.create(
-        model="gpt-3.5-turbo-16k",
+        model="gpt-3.5-turbo-0125",
         messages=[
           {
             "role": "system",
@@ -123,7 +123,7 @@ if prompt := st.chat_input():
     """
     
     response = st.session_state.client.chat.completions.create(
-  model="gpt-3.5-turbo-16k",
+  model="gpt-3.5-turbo-0125",
   messages=[
     {
       "role": "system",
@@ -143,7 +143,7 @@ if prompt := st.chat_input():
     my_bar.progress(25,text=progress_text)
     msg = response.choices[0].message.content
     sentence_selection = st.session_state.client.chat.completions.create(
-  model="gpt-3.5-turbo-16k",
+  model="gpt-3.5-turbo-0125",
   messages=[
     {
       "role": "system",
@@ -185,7 +185,7 @@ if prompt := st.chat_input():
     my_bar.progress(50,text=progress_text)
     new_msg = sentence_selection.choices[0].message.content.strip('"')
     humanize_sentence = st.session_state.client.chat.completions.create(
-  model="gpt-3.5-turbo-16k",
+  model="gpt-3.5-turbo-0125",
   messages=[
     {
       "role": "system",
@@ -218,7 +218,7 @@ if prompt := st.chat_input():
     my_bar.progress(75,text=progress_text)
     humanize_msg = humanize_sentence.choices[0].message.content
     korean_translation = st.session_state.client.chat.completions.create(
-        model="gpt-3.5-turbo-16k",
+        model="gpt-3.5-turbo-0125",
         messages=[
           {
             "role": "system",
