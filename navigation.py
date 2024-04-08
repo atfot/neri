@@ -45,6 +45,8 @@ def logout():
         del st.session_state["messages"]
         del st.session_state['conversations']
         del st.session_state['message_summary']
+    else:
+        pass
     st.info("Logged out successfully!")
     sleep(0.5)
     st.switch_page("streamlit_app.py")
