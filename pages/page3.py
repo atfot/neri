@@ -54,25 +54,6 @@ if prompt := st.chat_input():
         st.session_state['conversations'] = st.session_state.messages[-3:]
     progress_text='thinking...'
     my_bar=st.progress(0,text=progress_text)
-    english_translation = st.session_state.client.chat.completions.create(
-        model="gpt-3.5-turbo-16k",
-        messages=[
-          {
-            "role": "system",
-            "content": "Translate these sentences into English."
-          },
-          {
-            "role": "user",
-            "content": f"{prompt}"
-          }
-        ],
-        temperature=1,
-        max_tokens=1024,
-        top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0
-        )
-    prompt = english_translation.choices[0].message.content
     system_prompt=f"""```
       # Primary Assistant Guidance
       Your goal is to help me, the playwright, write a script for a play. Let's go step-by-step:
@@ -255,9 +236,9 @@ Translate these sentences into fluent and natural Korean sentences.
     time.sleep(1)
     my_bar.empty()
     st.chat_message("assistant").write(humanize_msg)
-    #st.chat_message("assistant").write(msg)
-    #st.chat_message("assistant").write(new_msg)
-    #st.chat_message("assistant").write(user_prompt_1)
-    #st.write(len(st.session_state.messages))
-    #st.write(st.session_state.messages)
-    #st.write(st.session_state.conversations)
+    st.chat_message("assistant").write(msg)
+    st.chat_message("assistant").write(new_msg)
+    st.chat_message("assistant").write(user_prompt_1)
+    st.write(len(st.session_state.messages))
+    st.write(st.session_state.messages)
+    st.write(st.session_state.conversations)
