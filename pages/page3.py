@@ -222,7 +222,7 @@ if prompt := st.chat_input():
         messages=[
           {
             "role": "system",
-            "content": "Your role is to translate English sentences into Korean sentences."
+            "content": "Your role is to translate English sentences into polite Korean sentences."
           },
           {
             "role": "user",
