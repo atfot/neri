@@ -13,10 +13,8 @@ st.session_state.login_error = False
 
 col1,col2=st.columns([6,4])
 with col1:
-    st.write('''
-             어떤 언어로 사용하실지 결정해주세요.
-             Please decide which language you'd like to use.
-             ''')
+    st.write('어떤 언어로 사용하실지 결정해주세요.')
+    st.write("Please decide which language you'd like to use.")
     language_selection=st.toggle('한국어/English')
 st.title('')
 if language_selection: 
