@@ -227,7 +227,7 @@ if prompt := st.chat_input():
           {
             "role": "user",
             "content": f"""
-Translate this sentence Korean sentences. Translation should be accurate, and the tone of it should be polite.
+Translate this sentence Korean sentences. Translation should be as accurate as possible, and the tone of it should be polite.
 
 {humanize_msg}"""
           }

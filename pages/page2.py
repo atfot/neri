@@ -33,7 +33,7 @@ if prompt := st.chat_input():
       st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
     if len(st.session_state.messages)%3==0:
         summary = st.session_state.client.chat.completions.create(
-        model="gpt-3.5-turbo-16k",
+        model="gpt-3.5-turbo-0125",
         messages=[
           {
             "role": "system",
@@ -123,7 +123,7 @@ if prompt := st.chat_input():
         - Never reuse answers that have already been used within a conversation.
     """    
     response = st.session_state.client.chat.completions.create(
-  model="gpt-3.5-turbo-16k",
+  model="gpt-3.5-turbo-0125",
   messages=[
     {
       "role": "system",
@@ -143,7 +143,7 @@ if prompt := st.chat_input():
     my_bar.progress(25,text=progress_text)
     msg = response.choices[0].message.content
     sentence_selection = st.session_state.client.chat.completions.create(
-  model="gpt-3.5-turbo-16k",
+  model="gpt-3.5-turbo-0125",
   messages=[
     {
       "role": "system",
@@ -185,7 +185,7 @@ if prompt := st.chat_input():
     my_bar.progress(50,text=progress_text)
     new_msg = sentence_selection.choices[0].message.content.strip('"')
     humanize_sentence = st.session_state.client.chat.completions.create(
-  model="gpt-3.5-turbo-16k",
+  model="gpt-3.5-turbo-0125",
   messages=[
     {
       "role": "system",
