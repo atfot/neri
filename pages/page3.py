@@ -218,7 +218,7 @@ if prompt := st.chat_input():
           {
             "role": "user",
             "content": f"""
-Translate these sentences into fluent and natural Korean sentences.
+Translate these sentences into fluent Korean sentences.
 
 {humanize_msg}"""
           }
