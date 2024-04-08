@@ -12,14 +12,24 @@ st.set_page_config(
 
 make_sidebar()
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "Psychotherapist", "content": "What's bothering you? Tell me all about it."}]
-    st.session_state['conversations']=[{"role": "Psychotherapist", "content": "What's bothering you? Tell me all about it."}]   
+    if st.session_state.korean_mode==0:
+      st.session_state["messages"] = [{"role": "Psychotherapist", "content": "What's bothering you? Tell me all about it."}]
+      st.session_state['conversations']=[{"role": "Psychotherapist", "content": "What's bothering you? Tell me all about it."}]   
+    if st.session_state.korean_mode==1:
+       st.session_state["messages"] = [{"role": "심리상담사", "content": "어떤 고민이 있으신가요? 무엇이든 말씀해주세요."}]
+       st.session_state['conversations']=[{"role": "심리상담사", "content": "어떤 고민이 있으신가요? 무엇이든 말씀해주세요."}]
 
 for msg in st.session_state.messages:
-    if msg['role']=="Psychotherapist":
-      st.chat_message('assistant').write(msg["content"])
-    if msg['role']=="Mental patient":
-      st.chat_message('user').write(msg["content"])   
+    if st.session_state.korean_mode==0:
+      if msg['role']=="Psychotherapist":
+        st.chat_message('assistant').write(msg["content"])
+      if msg['role']=="Mental patient":
+        st.chat_message('user').write(msg["content"])   
+    if st.session_state.korean_mode==1:
+       if msg['role']=="심리상담사":
+        st.chat_message('assistant').write(msg["content"])
+       if msg['role']=="내담자":
+        st.chat_message('user').write(msg["content"])   
 
 if prompt := st.chat_input():
     if st.session_state.korean_mode==1:
@@ -56,7 +66,10 @@ if prompt := st.chat_input():
     if st.session_state.korean_mode==0:
        pass
     client = OpenAI(api_key=st.secrets['api_key'])
-    st.session_state.messages.append({"role": "Mental patient", "content": prompt})
+    if st.session_state.korean_mode==0:
+      st.session_state.messages.append({"role": "Mental patient", "content": prompt})
+    if st.session_state.korean_mode==1:
+       st.session_state.messages.append({"role": "내담자", "content": prompt})
     st.session_state.conversations.append({"role": "Mental patient", "content": prompt})
     st.chat_message("user").write(prompt)
     if len(st.session_state.messages)<3:
@@ -271,8 +284,10 @@ if prompt := st.chat_input():
       humanize_msg = korean_translation.choices[0].message.content.strip('"')
     if st.session_state.korean_mode==0:
        pass
-    st.session_state.messages.append({"role": "Psychotherapist", "content": humanize_msg})
-    st.session_state.conversations.append({"role": "Psychotherapist", "content": humanize_msg})
+    if st.session_state.korean_mode==0:
+       st.session_state.messages.append({"role": "Psychotherapist", "content": humanize_msg})
+    if st.session_state.korean_mode==1:
+       st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
     my_bar.progress(100,text=progress_text)
     time.sleep(1)
     my_bar.empty()
