@@ -150,8 +150,8 @@ if prompt := st.chat_input():
       "content": """Your role is to read the dialogue, summary, and examples of the three answers and choose the best sentence from the three.
       
       **REMEMBER**:
-      - Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
-      - Never choose the sentence that contains 'How does it feel' or anything resembles that.
+      1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
+      2. Never choose the sentence that contains 'How does it feel' or anything resembles that.
       """
     },
     {
@@ -171,8 +171,9 @@ if prompt := st.chat_input():
         - After reading the informations above, please pick the best response and write it. 
         
         **REMEMBER**:
-        - Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
-        - Never choose the sentence that contains 'How does it feel' or anything resembles that.]
+        1. After you pick the best response, then write it down exactly, without leaving out a single letter.
+        2. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
+        3. Never choose the sentence that contains 'How does it feel' or anything resembles that.]
 """
     }
   ],
