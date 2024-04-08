@@ -10,6 +10,9 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+if 'client' not in st.session_state:
+  st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
+
 make_sidebar()
 
 if "messages" not in st.session_state:
@@ -23,14 +26,13 @@ for msg in st.session_state.messages:
       st.chat_message('user').write(msg["content"])   
 
 if prompt := st.chat_input():
-    client = OpenAI(api_key=st.secrets['api_key'])
     st.session_state.messages.append({"role": "Mental patient", "content": prompt})
     st.session_state.conversations.append({"role": "Mental patient", "content": prompt})
     st.chat_message("user").write(prompt)
     if len(st.session_state.messages)<3:
       st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
     if len(st.session_state.messages)%3==0:
-        summary = client.chat.completions.create(
+        summary = st.session_state.client.chat.completions.create(
         model="gpt-3.5-turbo-16k",
         messages=[
           {
@@ -121,7 +123,7 @@ if prompt := st.chat_input():
         - Never reuse answers that have already been used within a conversation.
     """
     
-    response = client.chat.completions.create(
+    response = st.session_state.client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
     {
@@ -141,7 +143,7 @@ if prompt := st.chat_input():
 )
     my_bar.progress(25,text=progress_text)
     msg = response.choices[0].message.content
-    sentence_selection = client.chat.completions.create(
+    sentence_selection = st.session_state.client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
     {
@@ -178,7 +180,7 @@ if prompt := st.chat_input():
 )
     my_bar.progress(50,text=progress_text)
     new_msg = sentence_selection.choices[0].message.content.strip('"')
-    humanize_sentence = client.chat.completions.create(
+    humanize_sentence = st.session_state.client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
     {
