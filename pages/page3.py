@@ -10,6 +10,9 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+if 'client' not in st.session_state:
+  st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
+
 make_sidebar()
 
 if "messages" not in st.session_state:
@@ -23,14 +26,13 @@ for msg in st.session_state.messages:
       st.chat_message('user').write(msg["content"])   
 
 if prompt := st.chat_input():
-    client = OpenAI(api_key=st.secrets['api_key'])
     st.session_state.messages.append({"role": "내담자", "content": prompt})
     st.session_state.conversations.append({"role": "내담자", "content": prompt})
     st.chat_message("user").write(prompt)
     if len(st.session_state.messages)<3:
       st.session_state['message_summary'] = '아직까지 쓰인 내용은 없고, 여기서부터 대화내용이 시작됩니다.'
     if len(st.session_state.messages)%3==0:
-        summary = client.chat.completions.create(
+        summary = st.session_state.client.chat.completions.create(
         model="gpt-3.5-turbo-16k",
         messages=[
           {
@@ -52,7 +54,25 @@ if prompt := st.chat_input():
         st.session_state['conversations'] = st.session_state.messages[-3:]
     progress_text='thinking...'
     my_bar=st.progress(0,text=progress_text)
-    s
+    english_translation = st.session_state.client.chat.completions.create(
+        model="gpt-3.5-turbo-16k",
+        messages=[
+          {
+            "role": "system",
+            "content": "Translate these sentences into English."
+          },
+          {
+            "role": "user",
+            "content": f"{prompt}"
+          }
+        ],
+        temperature=1,
+        max_tokens=1024,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
+        )
+    prompt = english_translation.choices[0].message.content
     system_prompt=f"""```
       # Primary Assistant Guidance
       Your goal is to help me, the playwright, write a script for a play. Let's go step-by-step:
@@ -122,7 +142,7 @@ if prompt := st.chat_input():
         - Never reuse answers that have already been used within a conversation.
     """
     
-    response = client.chat.completions.create(
+    response = st.session_state.client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
     {
@@ -142,7 +162,7 @@ if prompt := st.chat_input():
 )
     my_bar.progress(25,text=progress_text)
     msg = response.choices[0].message.content
-    sentence_selection = client.chat.completions.create(
+    sentence_selection = st.session_state.client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
     {
@@ -179,7 +199,7 @@ if prompt := st.chat_input():
 )
     my_bar.progress(50,text=progress_text)
     new_msg = sentence_selection.choices[0].message.content.strip('"')
-    humanize_sentence = client.chat.completions.create(
+    humanize_sentence = st.session_state.client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
     {
@@ -207,6 +227,25 @@ if prompt := st.chat_input():
 )
     my_bar.progress(75,text=progress_text)
     humanize_msg = humanize_sentence.choices[0].message.content
+    korean_translation = st.session_state.client.chat.completions.create(
+        model="gpt-3.5-turbo-16k",
+        messages=[
+          {
+            "role": "system",
+            "content": "Translate these sentences into Korean language."
+          },
+          {
+            "role": "user",
+            "content": f"{humanize_msg}"
+          }
+        ],
+        temperature=1,
+        max_tokens=1024,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
+        )
+    humanize_msg = korean_translation.choices[0].message.content
     st.session_state.messages.append({"role": "Psychotherapist", "content": humanize_msg})
     st.session_state.conversations.append({"role": "Psychotherapist", "content": humanize_msg})
     my_bar.progress(100,text=progress_text)
