@@ -181,7 +181,7 @@ if prompt := st.chat_input():
   messages=[
     {
       "role": "system",
-      "content": "Your job is to rephrase the sentences I give you."
+      "content": "Your role is to rephrase the sentences I give you as if they were spoken by a real person in the middle of a conversation."
     },
     {
       "role": "user",
