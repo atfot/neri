@@ -232,11 +232,14 @@ if prompt := st.chat_input():
         messages=[
           {
             "role": "system",
-            "content": "Translate these sentences into Korean language."
+            "content": "Your role is to translate English sentences into Korean sentences."
           },
           {
             "role": "user",
-            "content": f"{humanize_msg}"
+            "content": f"""
+Translate these sentences into fluent and natural Korean sentences.
+
+{humanize_msg}"""
           }
         ],
         temperature=1,
@@ -246,8 +249,8 @@ if prompt := st.chat_input():
         presence_penalty=0
         )
     humanize_msg = korean_translation.choices[0].message.content
-    st.session_state.messages.append({"role": "Psychotherapist", "content": humanize_msg})
-    st.session_state.conversations.append({"role": "Psychotherapist", "content": humanize_msg})
+    st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
+    st.session_state.conversations.append({"role": "심리상담사", "content": humanize_msg})
     my_bar.progress(100,text=progress_text)
     time.sleep(1)
     my_bar.empty()
