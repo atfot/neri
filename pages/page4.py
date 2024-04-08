@@ -10,6 +10,8 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+client = OpenAI(api_key=st.secrets['api_key'])
+
 make_sidebar()
 if "messages" not in st.session_state:
     if st.session_state.korean_mode==0:
@@ -65,7 +67,6 @@ if prompt := st.chat_input():
       prompt = korean_translation.choices[0].message.content.strip('"')
     if st.session_state.korean_mode==0:
        pass
-    client = OpenAI(api_key=st.secrets['api_key'])
     if st.session_state.korean_mode==0:
       st.session_state.messages.append({"role": "Mental patient", "content": prompt})
     if st.session_state.korean_mode==1:
