@@ -121,8 +121,7 @@ if prompt := st.chat_input():
         - You must write down "**THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**" into the form.
         - If you get a short answer from the mental patient, you must ask him/her a related question.
         - Never reuse answers that have already been used within a conversation.
-    """
-    
+    """    
     response = st.session_state.client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
