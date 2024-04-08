@@ -103,12 +103,11 @@ if prompt := st.chat_input():
         **Summary of the conversation**: [{st.session_state.message_summary}]
         **Latest Conversations**: [{st.session_state.conversations}]      
         
-        **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**:[Please write down the content below into the form.
-
+        **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**:
         - Do not use line breaks or spaces.
         - If you get a short answer from the mental patient, ask him/her a related question.
         - Keep your responses between two and three sentences.
-        - Never reuse answers that have already been used within a conversation.]
+        - Never reuse answers that have already been used within a conversation.
 
         - This is the form      
         '''
@@ -118,9 +117,9 @@ if prompt := st.chat_input():
         ```
 
         **REMEMBER**: 
-        - You must write down "**THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**" into the form.
-        - If you get a short answer from the mental patient, you must ask him/her a related question.
         - Never reuse answers that have already been used within a conversation.
+        - If you get a short answer from the
+         mental patient, you must ask him/her a related question.
     """
     
     response = st.session_state.client.chat.completions.create(
