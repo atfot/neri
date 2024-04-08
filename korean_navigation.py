@@ -45,7 +45,7 @@ def logout():
         del st.session_state["messages"]
         del st.session_state['conversations']
         del st.session_state['message_summary']
-    else:
+    if "messages" not in st.session_state:
         pass
     st.info("Logged out successfully!")
     sleep(0.5)
