@@ -227,7 +227,7 @@ if prompt := st.chat_input():
           {
             "role": "user",
             "content": f"""
-Translate this sentence into a Korean sentence with a polite tone.
+Translate this sentence into a polite Korean sentence.
 
 {humanize_msg}"""
           }
