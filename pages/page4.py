@@ -80,7 +80,7 @@ if prompt := st.chat_input():
 
       # Things to know before writing
       '''
-      - Psychotherapist only expresses information from mentally ill person and himself indirectly
+      - Psychotherapist expresses information from mentally ill person and himself indirectly
       - Keep in mind that the psychotherapist's response is part of the conversation and will be followed by the mentally ill person's response
       - The psychotherapist's response should fit the tone and content of the conversation
       - If mental patient's reply is too short, you need to ask some questions to understand what is going on inside his/her mind
