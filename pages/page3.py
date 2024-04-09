@@ -218,6 +218,7 @@ if prompt := st.chat_input():
 )
     my_bar.progress(75,text=progress_text)
     humanize_msg = humanize_sentence.choices[0].message.content
+    '''
     korean_translation = st.session_state.client.chat.completions.create(
         model="gpt-3.5-turbo-0125",
         messages=[
@@ -246,6 +247,7 @@ Translate this sentence Korean sentences. Translation should be accurate, and th
         presence_penalty=1
         )
     humanize_msg = korean_translation.choices[0].message.content
+    '''
     st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
     st.session_state.conversations.append({"role": "심리상담사", "content": humanize_msg})
     my_bar.progress(100,text=progress_text)
