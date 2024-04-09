@@ -168,12 +168,11 @@ if prompt := st.chat_input():
         **Three possible answers from a psychotherapist**: 
         "[{msg}]"
 
-        - After reading the informations above, please pick the best response and write it. 
+        - After reading the informations above, please pick the best response and write it down exactly, without leaving out a single letter. 
         
         **REMEMBER**:
-        1. After you pick the best response, then write it down exactly, without leaving out a single letter.
-        2. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
-        3. Never choose the sentence that contains 'How does it feel' or anything resembles that.]
+        1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
+        2. Never choose the sentence that contains 'How does it feel' or anything resembles that.]
 """
     }
   ],
@@ -218,7 +217,34 @@ if prompt := st.chat_input():
 )
     my_bar.progress(75,text=progress_text)
     humanize_msg = humanize_sentence.choices[0].message.content
-    
+    korean_translation = st.session_state.client.chat.completions.create(
+        model="gpt-3.5-turbo-0125",
+        messages=[
+          {
+            "role": "system",
+            "content": """Your role is to translate English sentences into accurate and polite Korean sentences.
+            
+            **REMEMBER**: Never change the names of people described in the content.
+            """
+          },
+          {
+            "role": "user",
+            "content": f"""
+Translate this sentence Korean sentences. Translation should be accurate, and the tone of it should be polite.
+
+{humanize_msg}
+
+**REMEMBER**: Never change the names of people described in the content.
+"""
+          }
+        ],
+        temperature=1,
+        max_tokens=1024,
+        top_p=1,
+        frequency_penalty=1,
+        presence_penalty=1
+        )
+    humanize_msg = korean_translation.choices[0].message.content
     st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
     st.session_state.conversations.append({"role": "심리상담사", "content": humanize_msg})
     my_bar.progress(100,text=progress_text)
