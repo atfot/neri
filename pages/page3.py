@@ -238,11 +238,11 @@ Translate this sentence Korean sentences. Translation should be accurate, and th
 """
           }
         ],
-        temperature=0.9,
+        temperature=0.8,
         max_tokens=1024,
-        top_p=0.9,
-        frequency_penalty=0.9,
-        presence_penalty=0.9
+        top_p=0.8,
+        frequency_penalty=0.8,
+        presence_penalty=0.8
         )
     humanize_msg = korean_translation.choices[0].message.content
     st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
