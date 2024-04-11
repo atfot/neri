@@ -106,12 +106,12 @@ if prompt := st.chat_input():
         **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**:
         - Do not use line breaks or spaces.
         - If you get a short answer from the mental patient, ask him/her a related question.
-        - Keep your responses between one and four sentences.
+        - Keep your responses below three sentences.
         - Never reuse answers that have already been used within a conversation.
 
         - This is the form      
         '''
-        **Three possible answers from a psychotherapist**: 
+        **Three possible answers from a korean psychotherapist, written in Korean language**: 
         [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?]
         '''
         ```
@@ -217,34 +217,7 @@ if prompt := st.chat_input():
 )
     my_bar.progress(75,text=progress_text)
     humanize_msg = humanize_sentence.choices[0].message.content
-    korean_translation = st.session_state.client.chat.completions.create(
-        model="gpt-3.5-turbo-0125",
-        messages=[
-          {
-            "role": "system",
-            "content": """Your role is to translate English sentences into accurate and polite Korean sentences.
-            
-            **REMEMBER**: Never change the names of people described in the content.
-            """
-          },
-          {
-            "role": "user",
-            "content": f"""
-Translate this sentence Korean sentences. Translation should be accurate, and the tone of it should be polite.
-
-{humanize_msg}
-
-**REMEMBER**: Never change the names of people described in the content.
-"""
-          }
-        ],
-        temperature=1,
-        max_tokens=1024,
-        top_p=1,
-        frequency_penalty=1,
-        presence_penalty=0.8
-        )
-    humanize_msg = korean_translation.choices[0].message.content
+    
     st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
     st.session_state.conversations.append({"role": "심리상담사", "content": humanize_msg})
     my_bar.progress(100,text=progress_text)
