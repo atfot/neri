@@ -104,10 +104,10 @@ if prompt := st.chat_input():
         **Latest Conversations**: [{st.session_state.conversations}]      
         
         **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**:
-        - Do not use line breaks or spaces.
         - If you get a short answer from the mental patient, ask him/her a related question.
         - Keep your responses below 10 sentences.
         - Never reuse answers that have already been used within a conversation.
+        - Do not use line breaks or spaces.
 
         - This is the form      
         '''
