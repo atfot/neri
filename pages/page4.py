@@ -183,12 +183,43 @@ if prompt := st.chat_input():
   presence_penalty=1
 )
     my_bar.progress(50,text=progress_text)
+    selected_msg = sentence_selection.choices[0].message.content.strip('"')
+    humanize_sentence = st.session_state.client.chat.completions.create(
+  model="gpt-3.5-turbo-0125",
+  messages=[
+    {
+      "role": "system",
+      "content": """Your role is to check the korean grammar of the korean sentences and rephrase it if it has any wrong grammars.
+      
+      **REMEMBER**:
+      1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the context.
+      2. Submit the original sentences that I gave you if there is no grammar problem.
+      """
+    },
+    {
+      "role": "user",
+      "content": f"""
+      # My request:
+      Check the korean grammar of the korean sentences below and rephrase it if it has any wrong grammars.
+
+      [{selected_msg}]
+        
+        **REMEMBER**:
+        1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the context.
+        2. Submit the original sentences that I gave you if there is no grammar problem.
+"""
+    }
+  ],
+  temperature=1,
+  max_tokens=1028,
+  top_p=1,
+  frequency_penalty=1,
+  presence_penalty=1
+)
     humanize_msg = sentence_selection.choices[0].message.content.strip('"')
-    
     st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
     st.session_state.conversations.append({"role": "심리상담사", "content": humanize_msg})
     my_bar.progress(100,text=progress_text)
-    time.sleep(1)
     my_bar.empty()
     st.write('최종메세지:')
     st.chat_message("assistant").write(humanize_msg)
