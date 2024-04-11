@@ -45,9 +45,11 @@ def logout():
         del st.session_state["messages"]
         del st.session_state['conversations']
         del st.session_state['message_summary']
+        del st.session_state.client
     if "message_summary" not in st.session_state:
         del st.session_state["messages"]
         del st.session_state['conversations']
+        del st.session_state.client
     st.info("Logged out successfully!")
     sleep(0.5)
     st.switch_page("streamlit_app.py")
