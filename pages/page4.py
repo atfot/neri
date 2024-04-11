@@ -211,7 +211,7 @@ if prompt := st.chat_input():
         **REMEMBER**:
         1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the context.
         2. Submit the original sentences that I gave you if there is no grammar problem.
-        3. Never use '같이 생각해보자' or '함께 해보자' or anything resembles that.
+        3. Never use '같이 해보자' or '함께 해보자' or anything resembles that.
 """
     }
   ],
