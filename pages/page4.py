@@ -93,6 +93,7 @@ if prompt := st.chat_input():
       - Never reuse answers that have already been used within a conversation.
       - The grammar of the sentences should be perfect.
       - If you get any questions from the mental patient, give him/her an answer.
+      - Never use a tone that suggests you want to do something with the patient.
       - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
       '''   
       ```
@@ -115,6 +116,7 @@ if prompt := st.chat_input():
         '''
         
         **REMEMBER**: 
+        - Never use a tone that suggests you want to do something with the patient.
         - If you get a short answer from the mental patient, ask him/her a related question.
         - Keep your responses below 10 sentences.
         - Never reuse answers that have already been used within a conversation.
@@ -154,8 +156,6 @@ if prompt := st.chat_input():
       **REMEMBER**:
       1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
       2. Never choose the sentence that contains 'How does it feel' or anything resembles that.
-      3. Never choose the sentence that contains '같이 무언가를 해보자' or anything resembles that.
-      4. Never choose the sentence that contains '함께 무언가를 해보자' or anything resembles that.
       """
     },
     {
@@ -177,9 +177,7 @@ if prompt := st.chat_input():
         **REMEMBER**:
         1. After you pick the best response, then write it down exactly, without leaving out a single letter.
         2. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
-        3. Never choose the sentence that contains 'How does it feel' or anything resembles that.
-        4. Never choose the sentence that contains '같이 무언가를 해보자' or anything resembles that.
-        5. Never choose the sentence that contains '함께 무언가를 해보자' or anything resembles that.]
+        3. Never choose the sentence that contains 'How does it feel' or anything resembles that.]
 """
     }
   ],
