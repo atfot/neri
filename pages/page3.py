@@ -183,40 +183,7 @@ if prompt := st.chat_input():
   presence_penalty=1
 )
     my_bar.progress(50,text=progress_text)
-    new_msg = sentence_selection.choices[0].message.content.strip('"')
-    humanize_sentence = st.session_state.client.chat.completions.create(
-  model="gpt-3.5-turbo-0125",
-  messages=[
-    {
-      "role": "system",
-      "content": """Your role is to rephrase the sentences I give you as if they were spoken by a real person in the middle of a conversation.
-      
-      **REMEMBER**:
-      Never attach embellishments to your answers. Submit only **sentences** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the context.
-      """
-    },
-    {
-      "role": "user",
-      "content": f"""
-      # My Requests: Rephrase the sentences below.
-      
-      **REMEMBER**:
-      Never attach embellishments to your answers. Submit only **sentences** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the context.
-
-      '''
-      {new_msg}
-      '''
-"""
-    }
-  ],
-  temperature=0.1,
-  max_tokens=512,
-  top_p=1,
-  frequency_penalty=1,
-  presence_penalty=1
-)
-    my_bar.progress(75,text=progress_text)
-    humanize_msg = humanize_sentence.choices[0].message.content
+    humanize_msg = sentence_selection.choices[0].message.content.strip('"')
     
     st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
     st.session_state.conversations.append({"role": "심리상담사", "content": humanize_msg})
@@ -225,7 +192,7 @@ if prompt := st.chat_input():
     my_bar.empty()
     st.chat_message("assistant").write(humanize_msg)
     st.chat_message("assistant").write(msg)
-    st.chat_message("assistant").write(new_msg)
+    #st.chat_message("assistant").write(new_msg)
     st.chat_message("assistant").write(user_prompt_1)
     st.write(len(st.session_state.messages))
     st.write(st.session_state.messages)
