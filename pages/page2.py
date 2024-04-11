@@ -152,6 +152,7 @@ if prompt := st.chat_input():
       **REMEMBER**:
       1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
       2. Never choose the sentence that contains 'How does it feel' or anything resembles that.
+      3. Never choose the sentence that contains "Let's do something together" or anything resembles that.
       """
     },
     {
@@ -174,7 +175,7 @@ if prompt := st.chat_input():
         1. After you pick the best response, then write it down exactly, without leaving out a single letter.
         2. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
         3. Never choose the sentence that contains 'How does it feel' or anything resembles that.
-        4. Never use "Let's do something together" or anything resembles that.]
+        4. Never choose the sentence that contains "Let's do something together" or anything resembles that.]
 """
     }
   ],
