@@ -81,21 +81,20 @@ if prompt := st.chat_input():
       - City of residence : Seoul
       - Characteristics : Neri knows the information of {st.secrets['user_name']}, a mentally ill person, and conducts psychotherapy based on it
 
-      # Things to know before writing
+      **REMEMBER**: 
       '''
       - Psychotherapist can speak information from mentally ill person and himself
       - Keep in mind that the psychotherapist's response is part of the conversation and will be followed by the mentally ill person's response
       - The psychotherapist's response should fit the tone and content of the conversation
       - If mental patient's reply is too short, you need to ask some questions to understand what is going on inside his/her mind
       - The psychotherapist is talking to only one person with a mental illness(Check the "# Character information")
-      - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
-      '''
-      ```
-      **REMEMBER**: 
       - If you get a short answer from the mental patient, ask him/her a related question.
       - Keep your responses below 10 sentences.
       - Never reuse answers that have already been used within a conversation.
       - The grammar of the sentences should be perfect.
+      - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
+      '''   
+      ```
   """
     
     user_prompt_1=f"""
@@ -108,23 +107,19 @@ if prompt := st.chat_input():
         **Summary of the conversation**: [{st.session_state.message_summary}]
         **Latest Conversations**: [{st.session_state.conversations}]      
         
-        **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**:
-        - If you get a short answer from the mental patient, ask him/her a related question.
-        - Keep your responses below 10 sentences.
-        - Never reuse answers that have already been used within a conversation.
-
         - This is the form      
         '''
         **Three possible answers from a korean psychotherapist, written in Korean language**: 
         [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?]
         '''
-        ```
-
+        
         **REMEMBER**: 
         - If you get a short answer from the mental patient, ask him/her a related question.
         - Keep your responses below 10 sentences.
         - Never reuse answers that have already been used within a conversation.
         - The grammar of the sentences should be perfect.
+        ```
+
     """
     
     response = st.session_state.client.chat.completions.create(
