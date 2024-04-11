@@ -90,6 +90,11 @@ if prompt := st.chat_input():
       - The psychotherapist is talking to only one person with a mental illness(Check the "# Character information")
       - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
       '''
+      **REMEMBER**: 
+      - If you get a short answer from the mental patient, ask him/her a related question.
+      - Keep your responses below 10 sentences.
+      - Never reuse answers that have already been used within a conversation.
+      - The grammar of the sentences should be perfect.
       ```
   """
     
@@ -102,13 +107,6 @@ if prompt := st.chat_input():
         - Read this step by step before filling out the form
         **Summary of the conversation**: [{st.session_state.message_summary}]
         **Latest Conversations**: [{st.session_state.conversations}]      
-        
-        **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**:[Please write down the content below into the form.
-
-        - Do not use line breaks or spaces.
-        - If you get a short answer from the mental patient, ask him/her a related question.
-        - Keep your responses below 10 sentences.
-        - Never reuse answers that have already been used within a conversation.]
 
         - This is the form      
         '''
@@ -116,11 +114,11 @@ if prompt := st.chat_input():
         [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?]
         '''
         ```
-
         **REMEMBER**: 
-        - You must write down "**THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**" into the form.
-        - If you get a short answer from the mental patient, you must ask him/her a related question.
-        - Never reuse answers that have already been used within a conversation.
+      - If you get a short answer from the mental patient, ask him/her a related question.
+      - Keep your responses below 10 sentences.
+      - Never reuse answers that have already been used within a conversation.
+      - The grammar of the sentences should be perfect.
     """    
     response = st.session_state.client.chat.completions.create(
   model="gpt-3.5-turbo-0125",
