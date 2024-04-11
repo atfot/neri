@@ -20,7 +20,7 @@ try:
     
     if st.session_state.get("logged_in", False):
         if st.session_state['korean_mode']==0:
-            pass
+            del st.session_state.logged_in
 except:
     if 'logged_in' not in st.session_state:
         st.set_page_config(
