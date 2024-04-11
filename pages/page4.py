@@ -227,7 +227,7 @@ if prompt := st.chat_input():
     #st.write('최종메세지:')
     st.chat_message("assistant").write(humanize_msg)
     #st.write('1차메세지:')
-    #st.chat_message("assistant").write(msg)
+    st.chat_message("assistant").write(msg)
     #st.write('1차프롬프트:')
     #st.chat_message("assistant").write(user_prompt_1)
     #st.write('저장대화갯수:')
