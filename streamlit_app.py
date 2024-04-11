@@ -2,25 +2,12 @@ import streamlit as st
 from time import sleep
 
 try:
-    if st.session_state.get("logged_in", True):
+    if 'messages' in st.session_state:
         if st.session_state['korean_mode']==0:
             st.switch_page("pages/page2.py")
-
-    if st.session_state.get("logged_in", True):
+    if 'messages' in st.session_state:
         if st.session_state['korean_mode']==1:
             st.switch_page("pages/page4.py")
-
-    if st.session_state.get("signin", True):
-        if st.session_state['korean_mode']==0:
-            st.switch_page("pages/signin.py")
-
-    if st.session_state.get("signin", True):
-        if st.session_state['korean_mode']==1:
-            st.switch_page("pages/signin.py")
-    
-    if st.session_state['korean_mode']==0:
-        del st.session_state.logged_in
-        
 except:
     if 'logged_in' not in st.session_state:
         st.set_page_config(
