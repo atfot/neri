@@ -165,14 +165,15 @@ if prompt := st.chat_input():
         
         **Conversation content**: [{st.session_state.conversations}]
 
-        **Three possible answers from a korean psychotherapist who wants to know about his patients**: 
+        **Three possible answers from a korean psychotherapist who wants to know about his patient**: 
         "[{msg}]"
 
-        - After reading the informations above, please pick the best response and write it down exactly, without leaving out a single letter. 
+        - After reading the informations above, please pick the best response from three possible answers and write it down exactly, without leaving out a single letter. 
         
         **REMEMBER**:
-        1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
-        2. Never choose the sentence that contains 'How does it feel' or anything resembles that.]
+        1. After you pick the best response, then write it down exactly, without leaving out a single letter.
+        2. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
+        3. Never choose the sentence that contains 'How does it feel' or anything resembles that.]
 """
     }
   ],
