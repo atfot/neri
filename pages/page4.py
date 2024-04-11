@@ -233,7 +233,3 @@ if prompt := st.chat_input():
     st.write(st.session_state.messages)
     st.write('최근메세지:')
     st.write(st.session_state.conversations)
-
-if 'prompt_guide' not in st.session_state:
-   st.session_state.prompt_guide=st.write('최대한 자세히 적어주세요.')
-st.session_state.prompt_guide
