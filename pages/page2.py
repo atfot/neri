@@ -118,6 +118,7 @@ if prompt := st.chat_input():
       - Keep your responses below 10 sentences.
       - Never reuse answers that have already been used within a conversation.
       - The grammar of the sentences should be perfect.
+      - Never use "Let's do something together" or anything resembles those words.
       - If you get any questions from the mental patient, give him/her an answer.
         ```
         
