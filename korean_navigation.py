@@ -41,7 +41,11 @@ def make_sidebar():
 
 def logout():
     st.session_state.logged_in = False
-
+    if "messages" in st.session_state:
+        del st.session_state["messages"]
+        del st.session_state['conversations']
+        del st.session_state['message_summary']
+        del st.session_state.client
     st.info("Logged out successfully!")
     sleep(0.5)
     st.switch_page("streamlit_app.py")
