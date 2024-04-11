@@ -1,14 +1,13 @@
 import streamlit as st
 from time import sleep
 
-try:
-    if 'messages' in st.session_state:
-        if st.session_state['korean_mode']==0:
-            st.switch_page("pages/page2.py")
-    if 'messages' in st.session_state:
-        if st.session_state['korean_mode']==1:
-            st.switch_page("pages/page4.py")
-except:
+if 'messages' in st.session_state:
+    if st.session_state['korean_mode']==0:
+        st.switch_page("pages/page2.py")
+if 'messages' in st.session_state:
+    if st.session_state['korean_mode']==1:
+        st.switch_page("pages/page4.py")
+if 'messages' in st.session_state:
     st.set_page_config(
         page_title="Your AI Therapist, Neri",
         page_icon="🧊",
