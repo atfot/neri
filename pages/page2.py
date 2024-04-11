@@ -16,8 +16,8 @@ if 'client' not in st.session_state:
 make_sidebar()
 
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "Psychotherapist", "content": "What's bothering you? Tell me all about it."}]
-    st.session_state['conversations']=[{"role": "Psychotherapist", "content": "What's bothering you? Tell me all about it."}]   
+    st.session_state["messages"] = [{"role": "Psychotherapist", "content": "What's bothering you?"}]
+    st.session_state['conversations']=[{"role": "Psychotherapist", "content": "What's bothering you?"}]   
 
 for msg in st.session_state.messages:
     if msg['role']=="Psychotherapist":
