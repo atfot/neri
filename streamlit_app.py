@@ -7,7 +7,7 @@ if 'messages' in st.session_state:
 if 'messages' in st.session_state:
     if st.session_state['korean_mode']==1:
         st.switch_page("pages/page4.py")
-if 'messages' not in st.session_state:
+if st.session_state.logged_in == False:
     st.set_page_config(
         page_title="Your AI Therapist, Neri",
         page_icon="🧊",
