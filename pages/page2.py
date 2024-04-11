@@ -92,6 +92,7 @@ if prompt := st.chat_input():
       - Keep your responses below 10 sentences.
       - Never reuse answers that have already been used within a conversation.
       - The grammar of the sentences should be perfect.
+      - If you get any questions from the mental patient, give him/her an answer.
       - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
       '''     
       ```
@@ -117,6 +118,7 @@ if prompt := st.chat_input():
       - Keep your responses below 10 sentences.
       - Never reuse answers that have already been used within a conversation.
       - The grammar of the sentences should be perfect.
+      - If you get any questions from the mental patient, give him/her an answer.
         ```
         
     """    
