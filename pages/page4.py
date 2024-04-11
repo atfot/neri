@@ -91,6 +91,11 @@ if prompt := st.chat_input():
       - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
       '''
       ```
+      **REMEMBER**: 
+      - If you get a short answer from the mental patient, ask him/her a related question.
+      - Keep your responses below 10 sentences.
+      - Never reuse answers that have already been used within a conversation.
+      - The grammar of the sentences should be perfect.
   """
     
     user_prompt_1=f"""
@@ -107,7 +112,6 @@ if prompt := st.chat_input():
         - If you get a short answer from the mental patient, ask him/her a related question.
         - Keep your responses below 10 sentences.
         - Never reuse answers that have already been used within a conversation.
-        - Do not use line breaks or spaces.
 
         - This is the form      
         '''
@@ -117,9 +121,10 @@ if prompt := st.chat_input():
         ```
 
         **REMEMBER**: 
+        - If you get a short answer from the mental patient, ask him/her a related question.
+        - Keep your responses below 10 sentences.
         - Never reuse answers that have already been used within a conversation.
-        - If you get a short answer from the
-         mental patient, you must ask him/her a related question.
+        - The grammar of the sentences should be perfect.
     """
     
     response = st.session_state.client.chat.completions.create(
