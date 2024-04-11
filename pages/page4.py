@@ -37,7 +37,7 @@ if prompt := st.chat_input():
         messages=[
           {
             "role": "system",
-            "content": "최대한 짧고 간략하게 내용을 요약 정리해주세요."
+            "content": "전달된 내용을 요약 정리해주세요."
           },
           {
             "role": "user",

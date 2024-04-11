@@ -112,7 +112,7 @@ if prompt := st.chat_input():
 
         - This is the form      
         '''
-        **Three possible answers from a psychotherapist**: 
+        **Three possible answers from a psychotherapist who wants to know about his patients**: 
         [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?]
         '''
         ```
@@ -165,7 +165,7 @@ if prompt := st.chat_input():
         
         **Conversation content**: [{st.session_state.conversations}]
 
-        **Three possible answers from a psychotherapist**: 
+        **Three possible answers from a psychotherapist who wants to know about his patients**: 
         "[{msg}]"
 
         - After reading the informations above, please pick the best response and write it. 
