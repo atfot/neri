@@ -111,7 +111,7 @@ if prompt := st.chat_input():
         - This is the form      
         '''
         **Three possible answers from a korean psychotherapist, written in Korean language**: 
-        [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?]
+        [Given the above summary and the conversation, what are 3 possible answers a psychotherapist might give here?]
         '''
         
         **REMEMBER**: 

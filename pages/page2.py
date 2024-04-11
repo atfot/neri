@@ -111,7 +111,7 @@ if prompt := st.chat_input():
         - This is the form      
         '''
         **Three possible answers from a psychotherapist who wants to know about his patients**: 
-        [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?]
+        [Given the above summary and the conversation, what are 3 possible answers a psychotherapist might give here?]
         '''
         **REMEMBER**: 
       - If you get a short answer from the mental patient, ask him/her a related question.
