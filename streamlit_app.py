@@ -93,7 +93,7 @@ if not language_selection:
         with col2:
             st.success("성공적으로 로그인 되었습니다!")
             sleep(0.5)
-            st.switch_page("pages/page3.py")
+            st.switch_page("pages/page4.py")
     if st.session_state.get('login_error', True):
         col, col2, col3 = st.columns([2,6,2])
         with col2:
