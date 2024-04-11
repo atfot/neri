@@ -199,8 +199,6 @@ if prompt := st.chat_input():
       **REMEMBER**:
       1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the context.
       2. Submit the original sentences that I gave you if there is no grammar problem.
-      3. Never choose the sentence that contains '같이 무언가를 해보자' or anything resembles that.
-      4. Never choose the sentence that contains '함께 무언가를 해보자' or anything resembles that.
       """
     },
     {
@@ -214,8 +212,6 @@ if prompt := st.chat_input():
         **REMEMBER**:
         1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the context.
         2. Submit the original sentences that I gave you if there is no grammar problem.
-        3. Never choose the sentence that contains '같이 무언가를 해보자' or anything resembles that.
-        4. Never choose the sentence that contains '함께 무언가를 해보자' or anything resembles that.
 """
     }
   ],
