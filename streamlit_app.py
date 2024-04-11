@@ -17,6 +17,10 @@ try:
     if st.session_state.get("signin", True):
         if st.session_state['korean_mode']==1:
             st.switch_page("pages/signin.py")
+    
+    if st.session_state.get("logged_in", False):
+        if st.session_state['korean_mode']==1:
+            pass
 except:
     if 'logged_in' not in st.session_state:
         st.set_page_config(
