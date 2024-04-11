@@ -83,7 +83,7 @@ if prompt := st.chat_input():
 
       **REMEMBER**: 
       '''
-      - Psychotherapist can speak information from mentally ill person and himself
+      - Psychotherapist can only speak information from mentally ill person and himself when it's really necessary.
       - Keep in mind that the psychotherapist's response is part of the conversation and will be followed by the mentally ill person's response
       - The psychotherapist's response should fit the tone and content of the conversation
       - If mental patient's reply is too short, you need to ask some questions to understand what is going on inside his/her mind
