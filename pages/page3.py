@@ -16,8 +16,8 @@ if 'client' not in st.session_state:
 make_sidebar()
 
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "심리상담사", "content": "무엇이 고민이신가요? 전부 제게 말씀해주세요."}]
-    st.session_state['conversations']=[{"role": "심리상담사", "content": "무엇이 고민이신가요? 전부 제게 말씀해주세요."}]
+    st.session_state["messages"] = [{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
+    st.session_state['conversations']=[{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
 
 for msg in st.session_state.messages:
     if msg['role']=="심리상담사":
@@ -111,8 +111,8 @@ if prompt := st.chat_input():
 
         - This is the form      
         '''
-        **Three possible answers from a korean psychotherapist, written in Korean language**: 
-        [Given the above summary and the conversation, what are three possible answers a psychotherapist might give here?]
+        **Best possible answer from a korean psychotherapist, written in Korean language**: 
+        [Given the above summary and the conversation, what are the best possible answer a psychotherapist might give here?]
         '''
         ```
 
@@ -141,58 +141,16 @@ if prompt := st.chat_input():
   presence_penalty=1
 )
     my_bar.progress(25,text=progress_text)
-    msg = response.choices[0].message.content
-    sentence_selection = st.session_state.client.chat.completions.create(
-  model="gpt-3.5-turbo-0125",
-  messages=[
-    {
-      "role": "system",
-      "content": """Your role is to read the dialogue, summary, and examples of the three answers and choose the best sentence from the three.
-      
-      **REMEMBER**:
-      1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
-      2. Never choose the sentence that contains 'How does it feel' or anything resembles that.
-      """
-    },
-    {
-      "role": "user",
-      "content": f"""
-      # My request:
-      Read the summary, dialogue, and examples of the three answers and choose the best sentence from the three. Lets go step by step-
-
-      - Read these informations carefully before answering my question.
-        **Summary of the conversation**: [{st.session_state.message_summary}]
-        
-        **Conversation content**: [{st.session_state.conversations}]
-
-        **Three possible answers from a korean psychotherapist**: 
-        "[{msg}]"
-
-        - After reading the informations above, please pick the best response and write it down exactly, without leaving out a single letter. 
-        
-        **REMEMBER**:
-        1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
-        2. Never choose the sentence that contains 'How does it feel' or anything resembles that.]
-"""
-    }
-  ],
-  temperature=1,
-  max_tokens=1028,
-  top_p=1,
-  frequency_penalty=1,
-  presence_penalty=1
-)
-    my_bar.progress(50,text=progress_text)
-    humanize_msg = sentence_selection.choices[0].message.content.strip('"')
+    msg = response.choices[0].message.content.strip('"')
     
-    st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
-    st.session_state.conversations.append({"role": "심리상담사", "content": humanize_msg})
+    st.session_state.messages.append({"role": "심리상담사", "content": msg})
+    st.session_state.conversations.append({"role": "심리상담사", "content": msg})
     my_bar.progress(100,text=progress_text)
     time.sleep(1)
     my_bar.empty()
-    st.chat_message("assistant").write(humanize_msg)
+    
     st.chat_message("assistant").write(msg)
-    #st.chat_message("assistant").write(new_msg)
+    
     st.chat_message("assistant").write(user_prompt_1)
     st.write(len(st.session_state.messages))
     st.write(st.session_state.messages)
