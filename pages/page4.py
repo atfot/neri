@@ -65,7 +65,7 @@ if prompt := st.chat_input():
        normalized_prompt = normal_korean.choices[0].message.content.strip('"')
     st.session_state.messages.append({"role": "내담자", "content": normalized_prompt})
     st.session_state.conversations.append({"role": "내담자", "content": normalized_prompt})
-    st.chat_message("user").write(normalized_prompt)
+    st.chat_message("user").write(prompt)
     if len(st.session_state.messages)<3:
       st.session_state['message_summary'] = '아직까지 쓰인 내용은 없고, 여기서부터 대화내용이 시작됩니다.'
     if len(st.session_state.messages)%3==0:
