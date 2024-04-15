@@ -15,7 +15,7 @@ if 'messages' not in st.session_state:
     if 'user_id' not in st.session_state:
         st.session_state.user_id = False
         st.session_state.password = False
-        
+
     col1,col2=st.columns([6,4])
     with col1:
         st.write('어떤 언어로 사용하실지 결정해주세요.')
@@ -118,11 +118,11 @@ if 'messages' not in st.session_state:
         if st.session_state.get("signin", False):
             pass
 
-    if 'messages' in st.session_state:
-        if st.session_state['korean_mode']==0:
-            st.switch_page("pages/page2.py")
-    if 'messages' in st.session_state:
-        if st.session_state['korean_mode']==1:
-            st.switch_page("pages/page4.py")
+    #if 'messages' in st.session_state:
+        #if st.session_state['korean_mode']==0:
+            #st.switch_page("pages/page2.py")
+    #if 'messages' in st.session_state:
+        #if st.session_state['korean_mode']==1:
+            #st.switch_page("pages/page4.py")
 
 
