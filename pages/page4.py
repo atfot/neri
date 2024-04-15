@@ -167,7 +167,7 @@ if prompt := st.chat_input():
         
         **Conversation content**: [{st.session_state.conversations}]
 
-        **Three possible answers from a korean psychotherapist who wants to know about his patient**: 
+        **Three possible answers from a korean psychotherapist who wants to know about his patient and heal the patient's mind**: 
         "[{msg}]"
 
       - After reading the informations above, please **pick the best response from three possible answers** and write it down exactly, without leaving out a single letter. 
