@@ -95,25 +95,29 @@ if st.session_state.korean_mode==1:
         네리에 오신 당신을 환영합니다!
 
     """)
-                st.write(f"""
-아이디:{user_id}
+                col1,col2=st.columns([5,5])
+                with col1:
+                    st.write(f"""
+    아이디:{user_id}
 
-비밀번호: {password}
+    비밀번호: {password}
 
-유저 이름: {username}
+    유저 이름: {username}
 
-나이: {age}
+    나이: {age}
 
-국적: {nationality}
+    국적: {nationality}
 
-도시: {city}
+    도시: {city}
+    """)
+                with col2:
+                    st.write(f"""
+    고민: {problem}
 
-고민: {problem}
+    고민에 대한 설명: {problem_explanation}
 
-고민에 대한 설명: {problem_explanation}
-
-목표: {goal}
-""")
+    목표: {goal}
+    """)
                 time.sleep(15)
                 try:
                     progress_text = "로딩중"
@@ -209,22 +213,29 @@ if st.session_state.korean_mode==0:
         Welcome to Amigo
 
     """)
-                df = pd.DataFrame({
-                    "ID":[user_id],
-                    "Password": [password],
-                    "User Name": [username],
-                    "Age": [age],
-                    "Nationality": [nationality],
-                    "City": [city],
-                    "Problem": [problem],
-                    "Problem Explanation": [problem_explanation],
-                    "Goal": [goal]
-                }).T
-                #.to_string(header=False)
-                st.dataframe(
-                    df,
-                    use_container_width=True
-                    )
+                col1,col2=st.columns([5,5])
+                with col1:
+                    st.write(f"""
+    ID:{user_id}
+
+    PW: {password}
+
+    User Name: {username}
+
+    Age: {age}
+
+    Nationality: {nationality}
+
+    City: {city}
+    """)
+                with col2:
+                    st.write(f"""
+    Your Problem: {problem}
+
+    Detailed Explanation of Your Problem: {problem_explanation}
+
+    Your goal: {goal}
+    """)
                 time.sleep(5)
                 try:
                     progress_text = "Operation in progress. Please wait."
