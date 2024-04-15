@@ -101,7 +101,26 @@ if st.session_state.korean_mode==1:
                 df.index+=1
                 df.columns=['작성','정보']
                 st.dataframe(df)
-                time.sleep(5)
+                st.write(f"""
+아이디:{user_id}
+
+비밀번호: {password}
+
+유저 이름: {username}
+
+나이: {age}
+
+국적: {nationality}
+
+도시: {city}
+
+고민: {problem}
+
+고민에 대한 설명: {problem_explanation}
+
+목표: {goal}
+""")
+                time.sleep(15)
                 try:
                     progress_text = "로딩중"
                     my_bar = st.progress(0, text=progress_text)                    
