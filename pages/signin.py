@@ -75,8 +75,7 @@ if st.session_state.korean_mode==1:
                 time.sleep(5)
                 try:
                     progress_text = "로딩중"
-                    my_bar = st.progress(0, text=progress_text)
-                    
+                    my_bar = st.progress(0, text=progress_text)                    
                     for percent_complete in range(100):
                         time.sleep(0.01)
                         my_bar.progress(percent_complete + 1, text=progress_text)
@@ -158,8 +157,7 @@ if st.session_state.korean_mode==0:
                 time.sleep(5)
                 try:
                     progress_text = "Operation in progress. Please wait."
-                    my_bar = st.progress(0, text=progress_text)
-                    
+                    my_bar = st.progress(0, text=progress_text)                    
                     for percent_complete in range(100):
                         time.sleep(0.01)
                         my_bar.progress(percent_complete + 1, text=progress_text)
