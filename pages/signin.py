@@ -97,7 +97,10 @@ if st.session_state.korean_mode==1:
                     "고민에 대한 설명": [problem_explanation],
                     "목표": [goal]
                 }).T
-                #.to_string(header=False)
+                test_df=df.to_string(header=False)
+                st.write(f"""
+                {test_df}
+""")
                 st.dataframe(df,use_container_width=True,column_order=None,column_config=None)
                 time.sleep(5)
                 try:
