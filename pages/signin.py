@@ -103,7 +103,7 @@ if st.session_state.korean_mode==1:
                     column_order=None,
                     column_config=None
                     )
-                st.markdown(df.style.set_properties(**{'color': '#FF0000','font-weight':'bold'}.hide(axis = 0).hide(axis = 1).to_html(), unsafe_allow_html = True))
+                
                 time.sleep(5)
                 try:
                     progress_text = "로딩중"
