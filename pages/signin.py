@@ -75,7 +75,7 @@ if st.session_state.korean_mode==1:
             button=st.form_submit_button('ok')
         if button:
             if x==10:
-                col1,col2,col3=st.columns([3,6,1])
+                col1,col2,col3=st.columns([2,6,2])
                 with col2:
                     st.write(
         """
