@@ -36,6 +36,7 @@ if prompt := st.chat_input():
             **Remember**:
             1. If there is anything in the paragraph that is not a normal Korean sentence, such as "ㅋ" or "ㅠ" or similar, please remove it.  
             2. If there is a sentence in the paragraph below that contains a typo, such as "있으뮤ㅠㅠㅠ", please correct the sentence in the same way as "있음".
+            3. If the paragraph below contains "전남친" or similar portmanteau, don't rephrase it.
             """
           },
           {
