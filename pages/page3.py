@@ -150,8 +150,10 @@ if prompt := st.chat_input():
       "content": """Your role is to check the korean grammar of the korean sentences and rephrase it if it has any wrong grammars.
       
       **REMEMBER**:
-      1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the context.
-      2. Submit the original sentences that I gave you if there is no grammar problem.
+      1. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
+      2. **There should be no "" marks in your answer, and no : or - marks to show the answer.** 
+      3. Don't use any words or phrases other than the context.
+      4. Submit the original sentences that I gave you if there is no grammar problem.
       """
     },
     {
@@ -163,8 +165,10 @@ if prompt := st.chat_input():
       [{msg}]
         
         **REMEMBER**:
-        1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the context.
-        2. Submit the original sentences that I gave you if there is no grammar problem.
+        1. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
+        2. **There should be no "" marks in your answer, and no : or - marks to show the answer.** 
+        3. Don't use any words or phrases other than the context.
+        4. Submit the original sentences that I gave you if there is no grammar problem.
 """
     }
   ],
