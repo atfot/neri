@@ -20,6 +20,7 @@ try:
             language_selection=st.toggle('한국어/English')
         st.title('')
         if language_selection: 
+            st.session_state['korean_mode']=0
             st.write(st.session_state.korean_mode)
             col1,col2,col3=st.columns([4,2,4])
             with col2:
