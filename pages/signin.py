@@ -101,8 +101,7 @@ if st.session_state.korean_mode==1:
                 df.index+=1
                 df.columns=['작성','정보']
                 st.dataframe(
-                    df,
-                    use_container_width=True
+                    df
                     )
                 time.sleep(5)
                 try:

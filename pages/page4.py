@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 if 'username' not in st.session_state:
-   st.session_state.username=st.secrets.username
+   st.session_state.username=st.secrets.user_name
    st.session_state.age=st.secrets.age
    st.session_state.gender=st.secrets.user_gender
    st.session_state.gender=st.secrets.user_gender
