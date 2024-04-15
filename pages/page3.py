@@ -147,28 +147,28 @@ if prompt := st.chat_input():
   messages=[
     {
       "role": "system",
-      "content": """Your role is to check the korean grammar of the korean sentences and rephrase it if it has any wrong grammars.
+      "content": """Your role is to check the korean grammar of the korean sentences and rephrase them if it has any wrong grammars.
       
       **REMEMBER**:
-      1. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
-      2. **There should be no "" marks in your answer, and no : or - marks to show the answer.** 
-      3. Don't use any words or phrases other than the context.
-      4. Submit the original sentences that I gave you if there is no grammar problem.
+      1. Submit the original sentences that I gave you if there is no grammar problem.
+      2. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
+      3. **There should be no "" marks in your answer, and no : or - marks to show the answer.** 
+      4. Don't use any words or phrases other than the context.
       """
     },
     {
       "role": "user",
       "content": f"""
       # My request:
-      Check the korean grammar of the korean sentences below and rephrase it if it has any wrong grammars.
+      Check the korean grammar of the korean sentences below and rephrase them if it has any wrong grammars.
 
       [{msg}]
         
         **REMEMBER**:
-        1. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
-        2. **There should be no "" marks in your answer, and no : or - marks to show the answer.** 
-        3. Don't use any words or phrases other than the context.
-        4. Submit the original sentences that I gave you if there is no grammar problem.
+        1. Submit the original sentences that I gave you if there is no grammar problem.
+        2. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
+        3. **There should be no "" marks in your answer, and no : or - marks to show the answer.** 
+        4. Don't use any words or phrases other than the context.
 """
     }
   ],
