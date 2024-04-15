@@ -18,6 +18,9 @@ try:
             st.write('어떤 언어로 사용하실지 결정해주세요.')
             st.write("Please decide which language you'd like to use.")
             language_selection=st.toggle('한국어/English')
+            test_toggle=st.toggle('test')
+            if test_toggle:
+                st.switch_page('pages/page1.py')
         st.title('')
         if language_selection: 
             st.session_state['korean_mode']=0
