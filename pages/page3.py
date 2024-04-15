@@ -160,7 +160,7 @@ if prompt := st.chat_input():
       # My request:
       Check the korean grammar of the korean sentences below and rephrase it if it has any wrong grammars.
 
-      [{selected_msg}]
+      [{msg}]
         
         **REMEMBER**:
         1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the context.
