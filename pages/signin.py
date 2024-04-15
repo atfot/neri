@@ -157,11 +157,19 @@ if st.session_state.korean_mode==0:
         if username:
             x+=1
             st.session_state.username=username
-        gender=st.text_input('What is your gender?')
+        gender=st.selectbox(
+            'What is your gender?',
+            ('Male','Female'),
+            index=None,
+            placeholder='Gentleman/Lady'
+            )
         if gender:
             x+=1
             st.session_state.gender=gender
-        age = st.text_input('How old are you?')
+        age = st.slider(
+            'How old are you?',
+            7,100,30
+            )
         if age:
             x+=1
             st.session_state.age=age
@@ -173,15 +181,15 @@ if st.session_state.korean_mode==0:
         if city:
             x+=1
             st.session_state.city=city
-        problem = st.text_input("What's your biggest problem right now?🤔")
+        problem = st.text_area("What's your biggest problem right now?🤔")
         if problem:
             x+=1
             st.session_state.problem=problem
-        problem_explanation=st.text_input("Please describe your issue in more detail. The more details you can provide, the better😊")
+        problem_explanation=st.text_area("Please describe your issue in more detail. The more details you can provide, the better😊")
         if problem_explanation:
             x+=1
             st.session_state.problem_explanation=problem_explanation
-        goal=st.text_input("Tell us what your end goal is!")
+        goal=st.text_area("Tell us what your end goal is!")
         if goal:
             x+=1
             st.session_state.goal=goal
