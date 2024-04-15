@@ -68,6 +68,7 @@ try:
 
         if not language_selection: 
             st.session_state['korean_mode']=1
+            st.write(st.session_state['korean_mode'])
             col1,col2,col3=st.columns([4,2,4])
             with col2:
                 st.title("네리")
