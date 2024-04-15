@@ -109,12 +109,6 @@ try:
                     st.switch_page("pages/signin.py")
             if st.session_state.get("signin", False):
                 pass
-
-try:
-  st.write(st.session_state.username)
-except:
-   st.write('nothing went here')
-
 except:
     if 'messages' in st.session_state:
         if st.session_state['korean_mode']==0:
@@ -122,3 +116,8 @@ except:
     if 'messages' in st.session_state:
         if st.session_state['korean_mode']==1:
             st.switch_page("pages/page4.py")
+try:
+  st.write(st.session_state.username)
+except:
+   st.write('nothing went here')
+
