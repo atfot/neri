@@ -273,7 +273,7 @@ if prompt := st.chat_input():
     st.write('최종 메세지:')
     st.chat_message("assistant").write(humanize_msg)
     st.write('유저 메세지 변환: ')
-    st.chat_message("assistant").write(normalized_korean)
+    st.chat_message("assistant").write(normalized_prompt)
     st.write('1차 메세지:')
     st.chat_message("assistant").write(msg)
     #st.write('1차 프롬프트:')
