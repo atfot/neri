@@ -165,15 +165,18 @@ if prompt := st.chat_input():
         
         **Conversation content**: [{st.session_state.conversations}]
 
-        **Three possible answers from a psychotherapist who wants to know about his patient to give comfort and empathy**: 
+        **Three possible answers from a psychotherapist who wants to know about his patient and heal the patient's mind**: 
         "[{msg}]"
 
         - After reading the informations above, please pick the best response from three possible answers and write it down exactly, without leaving out a single letter. 
         
         **REMEMBER**:
         1. After you pick the best response, then write it down exactly, without leaving out a single letter.
-        2. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
-        3. Never choose the sentence that contains 'How does it feel' or anything resembles that.]
+        2. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
+        3. Submit the original sentences that I gave you if there is no grammar problem.
+        4. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
+        5. Don't use any words or phrases other than the context.
+        6. Never choose the sentence that contains 'How does it feel' or anything resembles that.]
 """
     }
   ],
@@ -194,7 +197,10 @@ if prompt := st.chat_input():
       Your role is to rephrase the sentences I give you as if they were spoken by a real person in the middle of a conversation.
       
       **REMEMBER**:
-      Never attach embellishments to your answers. Submit only **sentences** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the context.
+      1. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
+      2. Submit the original sentences that I gave you if there is no grammar problem.
+      3. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
+      4. Don't use any words or phrases other than the context.
       """
     },
     {
@@ -203,7 +209,10 @@ if prompt := st.chat_input():
       # My Requests: Rephrase the sentences below.
       
       **REMEMBER**:
-      Never attach embellishments to your answers. Submit only **sentences** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the context.
+      1. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
+      2. Submit the original sentences that I gave you if there is no grammar problem.
+      3. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
+      4. Don't use any words or phrases other than the context.
 
       '''
       {new_msg}
@@ -218,7 +227,11 @@ if prompt := st.chat_input():
   presence_penalty=1
 )
     my_bar.progress(75,text=progress_text)
-    humanize_msg = humanize_sentence.choices[0].message.content
+    try:
+      humanize_msg = sentence_selection.choices[0].message.content
+      colon_index = humanize_msg.index(':').strip('').strip('"')
+    except:
+       humanize_msg = sentence_selection.choices[0].message.content.strip('"')
     st.session_state.messages.append({"role": "Psychotherapist", "content": humanize_msg})
     st.session_state.conversations.append({"role": "Psychotherapist", "content": humanize_msg})
     my_bar.progress(100,text=progress_text)
