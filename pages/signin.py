@@ -43,11 +43,19 @@ if st.session_state.korean_mode==1:
         if username:
             x+=1
             st.session_state.username=username
-        gender=st.text_input('성별이 어떻게 되시죠?')
+        gender=st.selectbox(
+            '성별이 어떻게 되시죠?',
+            ('남자','여자'),
+            index=None,
+            placeholder='남자/여자'
+            )
         if gender:
             x+=1
             st.session_state.gender=gender
-        age = st.text_input('나이가 어떻게 되시나요?')
+        age = st.slider(
+            '나이가 어떻게 되시나요?',
+            7,100,30
+            )
         if age:
             x+=1
             st.session_state.age=age
@@ -59,15 +67,15 @@ if st.session_state.korean_mode==1:
         if city:
             x+=1
             st.session_state.city=city
-        problem = st.text_input("당신을 가장 크게 괴롭히는 것이  무엇인가요?🤔")
+        problem = st.text_area("당신을 가장 크게 괴롭히는 것이  무엇인가요?🤔")
         if problem:
             x+=1
             st.session_state.problem=problem
-        problem_explanation=st.text_input("문제점을 좀더 자세히 설명해주세요. 자세히 설명해주실수록 좋아요😊")
+        problem_explanation=st.text_area("문제점을 좀더 자세히 설명해주세요. 자세히 설명해주실수록 좋아요😊")
         if problem_explanation:
             x+=1
             st.session_state.problem_explanation=problem_explanation
-        goal=st.text_input("최종 목표가 무엇인지 말해주세요!")
+        goal=st.text_area("최종 목표가 무엇인지 말해주세요!")
         if goal:
             x+=1
             st.session_state.goal=goal
@@ -87,20 +95,6 @@ if st.session_state.korean_mode==1:
         네리에 오신 당신을 환영합니다!
 
     """)
-                df = pd.DataFrame({
-                    "아이디":[user_id],
-                    "비밀번호": [password],
-                    "유저 이름": [username],
-                    "나이": [age],
-                    "국적": [nationality],
-                    "도시": [city],
-                    "고민": [problem],
-                    "고민에 대한 설명": [problem_explanation],
-                    "목표": [goal]
-                }).T.reset_index()
-                df.index+=1
-                df.columns=['작성','정보']
-                st.dataframe(df)
                 st.write(f"""
 아이디:{user_id}
 
