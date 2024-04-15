@@ -22,6 +22,7 @@ if st.session_state.korean_mode==1:
         username = st.text_input('무슨 이름으로 불리고 싶으신가요?')
         if username:
             x+=1
+            st.session_state.username=username
         password = st.text_input("비밀번호", key="chatbot_api_key", type="password")
         if password:
             x+=1
@@ -34,14 +35,20 @@ if st.session_state.korean_mode==1:
         city = st.text_input('어느 도시에 거주중이신가요?')
         if city:
             x+=1
-        problem = st.text_input("당신을 가장 크게 괴롭히는 것이  무엇인가요?")
+        problem = st.text_input("당신을 가장 크게 괴롭히는 것이  무엇인가요?🤔")
         if problem:
+            x+=1
+        problem_explanation=st.text_input("문제점을 좀더 자세히 설명해주세요. 자세히 설명해주실수록 좋아요😊")
+        if problem_explanation:
+            x+=1
+        goal=st.text_input("최종 목표가 무엇인지 말해주세요!")
+        if goal:
             x+=1
         col1,col2=st.columns([9,1])
         with col2:
             button=st.form_submit_button('ok')
         if button:
-            if x==6:
+            if x==8:
                 col1,col2,col3=st.columns([3,6,1])
                 with col2:
                     st.write(
@@ -54,14 +61,15 @@ if st.session_state.korean_mode==1:
 
     """)
                 df = pd.DataFrame({
-                    "User Name": [username],
-                    "Password": [password],
-                    "age": [age],
-                    "nationality": [nationality],
-                    "city": [city],
-                    "problem": [problem]
+                    "유저 이름": [username],
+                    "비밀번호": [password],
+                    "나이": [age],
+                    "국적": [nationality],
+                    "도시": [city],
+                    "고민": [problem],
+                    "고민에 대한 설명": [problem_explanation],
+                    "목표": [goal]
                 })
-                df.to_csv('c:/chatbot_test_1/user_database.csv', index=None)
                 st.dataframe(df, use_container_width=True, hide_index=True)
                 time.sleep(5)
                 try:
@@ -74,7 +82,7 @@ if st.session_state.korean_mode==1:
                     time.sleep(1)
                     my_bar.empty()
                 finally:
-                    st.switch_page('pages/page1')
+                    st.switch_page('pages/page4')
             else:
                 pass
 if st.session_state.korean_mode==0:
@@ -110,14 +118,20 @@ if st.session_state.korean_mode==0:
         city = st.text_input('Tell me which city are you living in.')
         if city:
             x+=1
-        problem = st.text_input("What's your biggest problem right now?")
+        problem = st.text_input("What's your biggest problem right now?🤔")
         if problem:
+            x+=1
+        problem_explanation=st.text_input("Please describe your issue in more detail. The more details you can provide, the better😊")
+        if problem_explanation:
+            x+=1
+        goal=st.text_input("Tell us what your end goal is!")
+        if goal:
             x+=1
         col1,col2=st.columns([9,1])
         with col2:
             button=st.form_submit_button('ok')
         if button:
-            if x==6:
+            if x==8:
                 col1,col2,col3=st.columns([3,6,1])
                 with col2:
                     st.write(
@@ -135,9 +149,10 @@ if st.session_state.korean_mode==0:
                     "age": [age],
                     "nationality": [nationality],
                     "city": [city],
-                    "problem": [problem]
+                    "problem": [problem],
+                    "Problem Explanation": [problem_explanation],
+                    "Goal": [goal]
                 })
-                df.to_csv('c:/chatbot_test_1/user_database.csv', index=None)
                 st.dataframe(df, use_container_width=True, hide_index=True)
                 time.sleep(5)
                 try:
@@ -150,6 +165,6 @@ if st.session_state.korean_mode==0:
                     time.sleep(1)
                     my_bar.empty()
                 finally:
-                    st.switch_page('pages/page1')
+                    st.switch_page('pages/page2')
             else:
                 pass
