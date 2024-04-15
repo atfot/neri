@@ -26,6 +26,7 @@ make_sidebar()
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "Psychotherapist", "content": "What's bothering you?"}]
     st.session_state['conversations']=[{"role": "Psychotherapist", "content": "What's bothering you?"}]   
+    st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
 
 for msg in st.session_state.messages:
     if msg['role']=="Psychotherapist":
@@ -37,8 +38,6 @@ if prompt := st.chat_input():
     st.session_state.messages.append({"role": "Mental patient", "content": prompt})
     st.session_state.conversations.append({"role": "Mental patient", "content": prompt})
     st.chat_message("user").write(prompt)
-    if len(st.session_state.messages)<3:
-      st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
     if len(st.session_state.messages)%3==0:
         summary = st.session_state.client.chat.completions.create(
         model="gpt-3.5-turbo-0125",
