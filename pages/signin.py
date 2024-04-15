@@ -99,9 +99,7 @@ if st.session_state.korean_mode==1:
                 }).T
                 st.dataframe(
                     df,
-                    use_container_width=True,
-                    column_order=None,
-                    column_config=None
+                    use_container_width=True
                     )
                 
                 time.sleep(5)
@@ -203,7 +201,10 @@ if st.session_state.korean_mode==0:
                     "Goal": [goal]
                 }).T
                 #.to_string(header=False)
-                st.dataframe(df,use_container_width=True,column_order=None)
+                st.dataframe(
+                    df,
+                    use_container_width=True
+                    )
                 time.sleep(5)
                 try:
                     progress_text = "Operation in progress. Please wait."
