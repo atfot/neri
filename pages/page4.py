@@ -231,7 +231,7 @@ if prompt := st.chat_input():
   messages=[
     {
       "role": "system",
-      "content": """Your role is to check the korean grammar of the korean sentences and rephrase it if it has any wrong grammars.
+      "content": """Your role is to check the korean grammar of the korean sentences and rephrase it if it has any wrong grammars, or if it is too rude.
       
       **REMEMBER**:
       1. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
@@ -244,7 +244,7 @@ if prompt := st.chat_input():
       "role": "user",
       "content": f"""
       # My request:
-      Check the korean grammar of the korean sentences below and rephrase it if it has any wrong grammars.
+      Check the korean grammar of the korean sentences below and rephrase it if it has any wrong grammars, or if it is too rude.
 
       [{selected_msg}]
         
