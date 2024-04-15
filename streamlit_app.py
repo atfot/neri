@@ -53,7 +53,7 @@ if 'messages' not in st.session_state:
             with col2:
                 st.success("Logged in successfully!")
                 sleep(0.5)
-                st.switch_page("pages/page2.py")
+                st.switch_page("pages/english_chatbot.py")
         if st.session_state.get("logged_in", False):
             pass
         if st.session_state.get('login_error', True):
@@ -102,7 +102,7 @@ if 'messages' not in st.session_state:
             with col2:
                 st.success("성공적으로 로그인 되었습니다!")
                 sleep(0.5)
-                st.switch_page("pages/page4.py")
+                st.switch_page("pages/korean_chatbot.py")
         if st.session_state.get('login_error', True):
             col, col2, col3 = st.columns([2,6,2])
             with col2:
