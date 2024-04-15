@@ -26,9 +26,46 @@ for msg in st.session_state.messages:
       st.chat_message('user').write(msg["content"])   
 
 if prompt := st.chat_input():
-    st.session_state.messages.append({"role": "내담자", "content": prompt})
-    st.session_state.conversations.append({"role": "내담자", "content": prompt})
-    st.chat_message("user").write(prompt)
+    normal_korean = st.session_state.client.chat.completions.create(
+        model="gpt-3.5-turbo-0125",
+        messages=[
+          {
+            "role": "system",
+            "content": """Your role is to rephrase the Korean sentences into polite Korean sentences if there are any Korean grammar errors.
+            
+            **Remember**:
+            1. If there is anything in the paragraph that is not a normal Korean sentence, such as "ㅋ" or "ㅠ" or similar, please remove it.  
+            2. If there is a sentence in the paragraph below that contains a typo, such as "있으뮤ㅠㅠㅠ", please correct the sentence in the same way as "있음".
+            """
+          },
+          {
+            "role": "user",
+            "content": f"""
+            # My Request:
+            Please rephrase the paragraph below into polite Korean sentences.
+
+            {prompt}
+
+            **Remember**:
+            1. If there is anything in the paragraph that is not a normal Korean sentence, such as "ㅋ" or "ㅠ" or similar, please remove it.  
+            2. If there is a sentence in the paragraph below that contains a typo, such as "있으뮤ㅠㅠㅠ", please correct the sentence in the same way as "있음".
+"""
+          }
+        ],
+        temperature=1,
+        max_tokens=1024,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
+        )
+    try:
+      normalized_korean = normal_korean.choices[0].message.content
+      normalized_prompt = normalized_korean.index(':').strip('').strip('"')
+    except:
+       normalized_prompt = normalized_korean.choices[0].message.content.strip('"')
+    st.session_state.messages.append({"role": "내담자", "content": normalized_prompt})
+    st.session_state.conversations.append({"role": "내담자", "content": normalized_prompt})
+    st.chat_message("user").write(normalized_prompt)
     if len(st.session_state.messages)<3:
       st.session_state['message_summary'] = '아직까지 쓰인 내용은 없고, 여기서부터 대화내용이 시작됩니다.'
     if len(st.session_state.messages)%3==0:
@@ -54,6 +91,7 @@ if prompt := st.chat_input():
         st.session_state['conversations'] = st.session_state.messages[-3:]
     progress_text='thinking...'
     my_bar=st.progress(0,text=progress_text)
+    
     system_prompt=f"""```
       # Primary Assistant Guidance
       Your goal is to help me, the playwright, write a script for a play. Let's go step-by-step:
@@ -225,22 +263,24 @@ if prompt := st.chat_input():
 )
     try:
       humanize_msg = sentence_selection.choices[0].message.content
-      colon_index = humanize_msg.index(':').strip('').strip('"')
+      humanize_msg = humanize_msg.index(':').strip('').strip('"')
     except:
        humanize_msg = sentence_selection.choices[0].message.content.strip('"')
     st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
     st.session_state.conversations.append({"role": "심리상담사", "content": humanize_msg})
     my_bar.progress(100,text=progress_text)
     my_bar.empty()
-    #st.write('최종메세지:')
+    st.write('최종 메세지:')
     st.chat_message("assistant").write(humanize_msg)
-    #st.write('1차메세지:')
-    #st.chat_message("assistant").write(msg)
-    #st.write('1차프롬프트:')
+    st.write('유저 메세지 변환: ')
+    st.chat_message("assistant").write(normalized_korean)
+    st.write('1차 메세지:')
+    st.chat_message("assistant").write(msg)
+    #st.write('1차 프롬프트:')
     #st.chat_message("assistant").write(user_prompt_1)
-    #st.write('저장대화갯수:')
+    #st.write('저장 대화 갯수:')
     #st.write(len(st.session_state.messages))
-    #st.write('저장메세지:')
+    #st.write('저장 메세지:')
     #st.write(st.session_state.messages)
-    #st.write('최근메세지:')
+    #st.write('최근 메세지:')
     #st.write(st.session_state.conversations)
