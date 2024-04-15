@@ -85,7 +85,7 @@ if st.session_state.korean_mode==1:
                     time.sleep(1)
                     my_bar.empty()
                 finally:
-                    st.switch_page('pages/page4')
+                    st.switch_page('pages/page4.py')
             else:
                 pass
 if st.session_state.korean_mode==0:
@@ -168,6 +168,6 @@ if st.session_state.korean_mode==0:
                     time.sleep(1)
                     my_bar.empty()
                 finally:
-                    st.switch_page('pages/page2')
+                    st.switch_page("pages/page2.py")
             else:
                 pass
