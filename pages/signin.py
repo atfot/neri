@@ -100,7 +100,10 @@ if st.session_state.korean_mode==1:
                 }).T.reset_index()
                 df.index+=1
                 df.columns=['작성','정보']
-                st.dataframe(df)                    
+                st.dataframe(
+                    df,
+                    use_container_width=True
+                    )
                 time.sleep(5)
                 try:
                     progress_text = "로딩중"
