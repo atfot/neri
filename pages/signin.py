@@ -5,7 +5,7 @@ import time
 st.set_page_config(
         page_title="Your AI Therapist, Neri",
         page_icon="🧊",
-        layout="Wide",
+        layout="wide",
         menu_items=None
     )
 
