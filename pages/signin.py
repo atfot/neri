@@ -100,9 +100,11 @@ if st.session_state.korean_mode==1:
                 }).T
                 st.dataframe(
                     df,
-                    use_container_width=True
+                    use_container_width=True,
+                    column_config={
+                        '0'='Your info'
+                    }
                     )
-                components.html(df.to_html(header=False))
                 time.sleep(5)
                 try:
                     progress_text = "로딩중"
