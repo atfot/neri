@@ -102,7 +102,7 @@ if st.session_state.korean_mode==1:
                     df,
                     use_container_width=True,
                     column_config={
-                        '0'='Your info'
+                        '0':'Your info'
                     }
                     )
                 time.sleep(5)
