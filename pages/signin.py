@@ -98,7 +98,7 @@ if st.session_state.korean_mode==1:
                     "목표": [goal]
                 }).T
                 test_df=df.to_string(header=False)
-                st.write(f"""
+                st.markdown(f"""
                 {test_df}
 """)
                 st.dataframe(df,use_container_width=True,column_order=None,column_config=None)
