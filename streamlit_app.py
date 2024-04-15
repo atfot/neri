@@ -38,9 +38,10 @@ if 'messages' not in st.session_state:
                 st.session_state.signin = True
         with col2:
             if st.button("Log in", type="primary"):
-                if username == st.session_state.user_id and password == st.session_state.password:
-                    st.session_state.logged_in = True
-                else:
+                try:
+                    if username == st.session_state.user_id and password == st.session_state.password:
+                        st.session_state.logged_in = True
+                except:
                     st.session_state.login_error = True
         if st.session_state.get("logged_in", True):
             col, col2, col3 = st.columns([3,4,3])
