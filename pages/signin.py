@@ -98,7 +98,7 @@ if st.session_state.korean_mode==1:
                     "목표": [goal]
                 }).T
                 #.to_string(header=False)
-                st.dataframe(df,use_container_width=True,column_order=None)
+                st.dataframe(df,use_container_width=True,column_order=None,column_config=None)
                 time.sleep(5)
                 try:
                     progress_text = "로딩중"
