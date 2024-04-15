@@ -1,11 +1,5 @@
 import streamlit as st
 from time import sleep
-
-try:
-  st.write(st.session_state.username)
-except:
-   st.write('nothing went here')
-
 try:
     if 'messages' not in st.session_state:
         st.set_page_config(
@@ -115,6 +109,12 @@ try:
                     st.switch_page("pages/signin.py")
             if st.session_state.get("signin", False):
                 pass
+
+try:
+  st.write(st.session_state.username)
+except:
+   st.write('nothing went here')
+
 except:
     if 'messages' in st.session_state:
         if st.session_state['korean_mode']==0:
