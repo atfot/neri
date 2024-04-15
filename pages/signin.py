@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 
+if 'korean_mode' not in st.session_state:
+    pass
 if st.session_state.korean_mode==1:
     button=st.button("메인 화면으로")
     if button:
@@ -168,5 +170,3 @@ if st.session_state.korean_mode==0:
                     st.switch_page('pages/page2')
             else:
                 pass
-if 'korean_mode' not in st.session_state:
-    pass
