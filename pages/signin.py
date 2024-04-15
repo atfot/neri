@@ -97,13 +97,12 @@ if st.session_state.korean_mode==1:
                     "고민": [problem],
                     "고민에 대한 설명": [problem_explanation],
                     "목표": [goal]
-                }).T
+                }).T.reset_index()
+                df.index+=1
+                df.columns=['작성','정보']
                 st.dataframe(
                     df,
-                    use_container_width=True,
-                    column_config={
-                        '0':'Your info'
-                    }
+                    use_container_width=True
                     )
                 time.sleep(5)
                 try:
