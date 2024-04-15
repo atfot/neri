@@ -27,6 +27,7 @@ make_sidebar()
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
     st.session_state['conversations']=[{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
+    st.session_state['message_summary'] = '아직까지 쓰인 내용은 없고, 여기서부터 대화내용이 시작됩니다.'
 
 for msg in st.session_state.messages:
     if msg['role']=="심리상담사":
@@ -77,8 +78,6 @@ if prompt := st.chat_input():
     st.session_state.messages.append({"role": "내담자", "content": prompt})
     st.session_state.conversations.append({"role": "내담자", "content": normalized_prompt})
     st.chat_message("user").write(prompt)
-    if len(st.session_state.messages)<3:
-      st.session_state['message_summary'] = '아직까지 쓰인 내용은 없고, 여기서부터 대화내용이 시작됩니다.'
     if len(st.session_state.messages)%3==0:
         summary = st.session_state.client.chat.completions.create(
         model="gpt-3.5-turbo-0125",
