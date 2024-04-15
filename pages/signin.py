@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import time
 
 if 'korean_mode' not in st.session_state:
     st.switch_page("streamlit_app.py")
