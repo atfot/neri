@@ -62,7 +62,7 @@ if prompt := st.chat_input():
       normalized_korean = normal_korean.choices[0].message.content
       normalized_prompt = normalized_korean.index(':').strip('').strip('"')
     except:
-       normalized_prompt = normalized_korean.choices[0].message.content.strip('"')
+       normalized_prompt = normal_korean.choices[0].message.content.strip('"')
     st.session_state.messages.append({"role": "내담자", "content": normalized_prompt})
     st.session_state.conversations.append({"role": "내담자", "content": normalized_prompt})
     st.chat_message("user").write(normalized_prompt)
