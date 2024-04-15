@@ -9,6 +9,11 @@ try:
             layout="centered",
             menu_items=None
         )
+        try:
+            st.write(st.session_state.username)
+        except:
+            st.write('nothing went here')
+
         st.session_state.logged_in = False
         st.session_state.signin = False
         st.session_state.login_error = False
@@ -117,8 +122,5 @@ except:
     if 'messages' in st.session_state:
         if st.session_state['korean_mode']==1:
             st.switch_page("pages/page4.py")
-try:
-  st.write(st.session_state.username)
-except:
-   st.write('nothing went here')
+
 
