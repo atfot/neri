@@ -11,9 +11,11 @@ if 'messages' not in st.session_state:
     st.session_state.logged_in = False
     st.session_state.signin = False
     st.session_state.login_error = False
-    st.session_state.user_id = False
-    st.session_state.password = False
 
+    if 'user_id' not in st.session_state:
+        st.session_state.user_id = False
+        st.session_state.password = False
+        
     col1,col2=st.columns([6,4])
     with col1:
         st.write('어떤 언어로 사용하실지 결정해주세요.')
