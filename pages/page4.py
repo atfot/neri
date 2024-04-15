@@ -89,7 +89,7 @@ if prompt := st.chat_input():
       - If mental patient's reply is too short, you need to ask some questions to understand what is going on inside his/her mind
       - The psychotherapist is talking to only one person with a mental illness(Check the "# Character information")
       - If you get a short answer from the mental patient, ask him/her a related question.
-      - Never reuse answers that have already been used within a conversation.
+      - Never reuse any sentences that has a same context which have already been used within a conversation.
       - The grammar of the sentences should be perfect.
       - If you get any questions from the mental patient, give him/her an answer.
       - Never use a tone that suggests you want to do something with the patient.
@@ -106,7 +106,7 @@ if prompt := st.chat_input():
 
         - Read this step by step before filling out the form
         **Summary of the conversation**: [{st.session_state.message_summary}]
-        **Latest Conversations**: [{st.session_state.conversations}]      
+        **Latest Conversations**: [{st.session_state.conversations}]     
         
         - This is the form      
         '''
@@ -117,7 +117,7 @@ if prompt := st.chat_input():
         **REMEMBER**: 
         - Never use a tone that suggests you want to do something with the patient.
         - If you get a short answer from the mental patient, ask him/her a related question.
-        - Never reuse answers that have already been used within a conversation.
+        - Never reuse any sentences that has a same context which have already been used within a conversation.
         - The grammar of the sentences should be perfect.
         - If you get any questions from the mental patient, give him/her an answer.
         ```
