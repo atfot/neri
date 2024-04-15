@@ -81,8 +81,8 @@ if st.session_state.korean_mode==1:
                     st.write(
         """
 
-        좋아요! 전부 저장했어요.
-        이 내용대로 저장할게요.
+        "좋아요! 전부 저장했어요."
+        해당 내용대로 저장했습니다.
         
         네리에 오신 당신을 환영합니다!
 
@@ -100,9 +100,7 @@ if st.session_state.korean_mode==1:
                 }).T.reset_index()
                 df.index+=1
                 df.columns=['작성','정보']
-                st.dataframe(
-                    df
-                    )
+                st.dataframe(df)
                 time.sleep(5)
                 try:
                     progress_text = "로딩중"
