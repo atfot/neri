@@ -223,7 +223,11 @@ if prompt := st.chat_input():
   frequency_penalty=1,
   presence_penalty=1
 )
-    humanize_msg = sentence_selection.choices[0].message.content.strip('"')
+    try:
+      humanize_msg = sentence_selection.choices[0].message.content
+      colon_index = humanize_msg.index(':').strip('').strip('"')
+    except:
+       humanize_msg = sentence_selection.choices[0].message.content.strip('"')
     st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
     st.session_state.conversations.append({"role": "심리상담사", "content": humanize_msg})
     my_bar.progress(100,text=progress_text)
