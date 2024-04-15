@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import time
 
-
 if st.session_state.korean_mode==1:
     button=st.button("메인 화면으로")
     if button:
