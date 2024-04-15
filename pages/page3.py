@@ -117,7 +117,7 @@ if prompt := st.chat_input():
         ```
 
         **REMEMBER**: 
-        - Never reuse answers that have already been used within a conversation.
+        - Don't say anything similar to what you've already said before by looking at the latest conversations.
         - If you get a short answer from the
          mental patient, you must ask him/her a related question.
     """
