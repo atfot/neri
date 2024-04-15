@@ -33,13 +33,15 @@ if st.session_state.korean_mode==1:
         user_id=st.text_input('사용하실 아이디를 적어주세요.')
         if user_id:
             x+=1
+            st.session_state.user_id=user_id
+        password = st.text_input("비밀번호", key="chatbot_api_key", type="password")
+        if password:
+            x+=1
+            st.session_state.password=password
         username = st.text_input('무슨 이름으로 불리고 싶으신가요?')
         if username:
             x+=1
             st.session_state.username=username
-        password = st.text_input("비밀번호", key="chatbot_api_key", type="password")
-        if password:
-            x+=1
         gender=st.text_input('성별이 어떻게 되시죠?')
         if gender:
             x+=1
@@ -85,16 +87,17 @@ if st.session_state.korean_mode==1:
 
     """)
                 df = pd.DataFrame({
-                    "유저 이름": [username],
+                    "아이디":[user_id],
                     "비밀번호": [password],
+                    "유저 이름": [username],
                     "나이": [age],
                     "국적": [nationality],
                     "도시": [city],
                     "고민": [problem],
                     "고민에 대한 설명": [problem_explanation],
                     "목표": [goal]
-                })
-                st.dataframe(df, use_container_width=True, hide_index=True)
+                }).T.to_string(header=False)
+                st.write(df)
                 time.sleep(5)
                 try:
                     progress_text = "로딩중"
@@ -105,7 +108,7 @@ if st.session_state.korean_mode==1:
                     time.sleep(1)
                     my_bar.empty()
                 finally:
-                    st.switch_page("pages/page4.py")
+                    st.switch_page("streamlit_app.py")
             else:
                 pass
 if st.session_state.korean_mode==0:
@@ -129,12 +132,15 @@ if st.session_state.korean_mode==0:
         user_id=st.text_input('Your ID')
         if user_id:
             x+=1
-        username = st.text_input('Tell me the name you want to be called in here.')
-        if username:
-            x+=1
+            st.session_state.user_id=user_id
         password = st.text_input("Your Password", key="chatbot_api_key", type="password")
         if password:
             x+=1
+            st.session_state.password=password
+        username = st.text_input('Tell me the name you want to be called in here.')
+        if username:
+            x+=1
+            st.session_state.username=username
         gender=st.text_input('What is your gender?')
         if gender:
             x+=1
@@ -142,21 +148,27 @@ if st.session_state.korean_mode==0:
         age = st.text_input('How old are you?')
         if age:
             x+=1
+            st.session_state.age=age
         nationality = st.text_input('Where are you from?')
         if nationality:
             x+=1
+            st.session_state.nationality=nationality
         city = st.text_input('Tell me which city are you living in.')
         if city:
             x+=1
+            st.session_state.city=city
         problem = st.text_input("What's your biggest problem right now?🤔")
         if problem:
             x+=1
+            st.session_state.problem=problem
         problem_explanation=st.text_input("Please describe your issue in more detail. The more details you can provide, the better😊")
         if problem_explanation:
             x+=1
+            st.session_state.problem_explanation=problem_explanation
         goal=st.text_input("Tell us what your end goal is!")
         if goal:
             x+=1
+            st.session_state.goal=goal
         col1,col2=st.columns([9,1])
         with col2:
             button=st.form_submit_button('ok')
@@ -174,16 +186,17 @@ if st.session_state.korean_mode==0:
 
     """)
                 df = pd.DataFrame({
-                    "User Name": [username],
+                    "ID":[user_id],
                     "Password": [password],
-                    "age": [age],
-                    "nationality": [nationality],
-                    "city": [city],
-                    "problem": [problem],
+                    "User Name": [username],
+                    "Age": [age],
+                    "Nationality": [nationality],
+                    "City": [city],
+                    "Problem": [problem],
                     "Problem Explanation": [problem_explanation],
                     "Goal": [goal]
-                })
-                st.dataframe(df, use_container_width=True, hide_index=True)
+                }).T.to_string(header=False)
+                st.write(df)
                 time.sleep(5)
                 try:
                     progress_text = "Operation in progress. Please wait."
@@ -194,6 +207,6 @@ if st.session_state.korean_mode==0:
                     time.sleep(1)
                     my_bar.empty()
                 finally:
-                    st.switch_page("pages/page2.py")
+                    st.switch_page("streamlit_app.py")
             else:
                 pass

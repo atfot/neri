@@ -12,11 +12,6 @@ if 'messages' not in st.session_state:
     st.session_state.signin = False
     st.session_state.login_error = False
 
-    try:
-        st.write(st.session_state.username)
-    except:
-        st.write('nothing came here')
-
     col1,col2=st.columns([6,4])
     with col1:
         st.write('어떤 언어로 사용하실지 결정해주세요.')
@@ -43,7 +38,7 @@ if 'messages' not in st.session_state:
                 st.session_state.signin = True
         with col2:
             if st.button("Log in", type="primary"):
-                if username == "test" and password == "test":
+                if username == st.session_state.user_id and password == st.session_state.password:
                     st.session_state.logged_in = True
                 else:
                     st.session_state.login_error = True
@@ -90,7 +85,7 @@ if 'messages' not in st.session_state:
                 st.session_state.signin = True
         with col2:
             if st.button("로그인", type="primary"):
-                if username == "test" and password == "test":
+                if username == st.session_state.user_id and password == st.session_state.password:
                     st.session_state.logged_in = True
                 else:
                     st.session_state.login_error = True
