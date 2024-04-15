@@ -2,6 +2,13 @@ import streamlit as st
 import pandas as pd
 import time
 
+st.set_page_config(
+        page_title="Your AI Therapist, Neri",
+        page_icon="🧊",
+        layout="Wide",
+        menu_items=None
+    )
+
 if st.session_state.korean_mode==1:
     button=st.button("메인 화면으로")
     if button:
@@ -20,6 +27,9 @@ if st.session_state.korean_mode==1:
     with st.chat_message("assistant").form("Sign up Form"):
         st.write('빈칸을 전부 채워 넣어주세요.')
         st.write('"ok" 버튼을 누르시면 저희가 당신의 양식을 저장해드릴게요.')
+        user_id=st.text_input('사용하실 아이디를 적어주세요.')
+        if user_id:
+            x+=1
         username = st.text_input('무슨 이름으로 불리고 싶으신가요?')
         if username:
             x+=1
@@ -27,35 +37,45 @@ if st.session_state.korean_mode==1:
         password = st.text_input("비밀번호", key="chatbot_api_key", type="password")
         if password:
             x+=1
+        gender=st.text_input('성별이 어떻게 되시죠?')
+        if gender:
+            x+=1
+            st.session_state.gender=gender
         age = st.text_input('나이가 어떻게 되시나요?')
         if age:
             x+=1
+            st.session_state.age=age
         nationality = st.text_input('어느 나라 분이신가요?')
         if nationality:
             x+=1
+            st.session_state.nationality=nationality
         city = st.text_input('어느 도시에 거주중이신가요?')
         if city:
             x+=1
+            st.session_state.city=city
         problem = st.text_input("당신을 가장 크게 괴롭히는 것이  무엇인가요?🤔")
         if problem:
             x+=1
+            st.session_state.problem=problem
         problem_explanation=st.text_input("문제점을 좀더 자세히 설명해주세요. 자세히 설명해주실수록 좋아요😊")
         if problem_explanation:
             x+=1
+            st.session_state.problem_explanation=problem_explanation
         goal=st.text_input("최종 목표가 무엇인지 말해주세요!")
         if goal:
             x+=1
+            st.session_state.goal=goal
         col1,col2=st.columns([9,1])
         with col2:
             button=st.form_submit_button('ok')
         if button:
-            if x==8:
+            if x==10:
                 col1,col2,col3=st.columns([3,6,1])
                 with col2:
                     st.write(
         """
 
-        "좋아요! 전부 저장했어요."
+        좋아요! 전부 저장했어요.
         이 내용대로 저장할게요.
         
         네리에 오신 당신을 환영합니다!
@@ -103,12 +123,19 @@ if st.session_state.korean_mode==0:
     with st.chat_message("assistant").form("Sign up Form"):
         st.write('Please fill all the blanks.')
         st.write('If you press "ok" button, we will save your sign up form on your desktop.')
+        user_id=st.text_input('Your ID')
+        if user_id:
+            x+=1
         username = st.text_input('Tell me the name you want to be called in here.')
         if username:
             x+=1
         password = st.text_input("Your Password", key="chatbot_api_key", type="password")
         if password:
             x+=1
+        gender=st.text_input('What is your gender?')
+        if gender:
+            x+=1
+            st.session_state.gender=gender
         age = st.text_input('How old are you?')
         if age:
             x+=1
@@ -131,7 +158,7 @@ if st.session_state.korean_mode==0:
         with col2:
             button=st.form_submit_button('ok')
         if button:
-            if x==8:
+            if x==10:
                 col1,col2,col3=st.columns([3,6,1])
                 with col2:
                     st.write(
