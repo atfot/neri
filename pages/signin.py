@@ -96,8 +96,9 @@ if st.session_state.korean_mode==1:
                     "고민": [problem],
                     "고민에 대한 설명": [problem_explanation],
                     "목표": [goal]
-                }).T.to_string(header=False)
-                st.write(df)
+                }).T
+                #.to_string(header=False)
+                st.dataframe(df,use_container_width=True,column_order=None)
                 time.sleep(5)
                 try:
                     progress_text = "로딩중"
@@ -195,8 +196,9 @@ if st.session_state.korean_mode==0:
                     "Problem": [problem],
                     "Problem Explanation": [problem_explanation],
                     "Goal": [goal]
-                }).T.to_string(header=False)
-                st.write(df)
+                }).T
+                #.to_string(header=False)
+                st.dataframe(df,use_container_width=True,column_order=None)
                 time.sleep(5)
                 try:
                     progress_text = "Operation in progress. Please wait."
