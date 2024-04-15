@@ -168,3 +168,5 @@ if st.session_state.korean_mode==0:
                     st.switch_page('pages/page2')
             else:
                 pass
+if 'korean_mode' not in st.session_state:
+    pass
