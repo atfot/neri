@@ -90,7 +90,9 @@ if st.session_state.korean_mode==1:
         """
 
         "좋아요! 전부 저장했어요."
+
         해당 내용대로 저장했습니다.
+        
         
         네리에 오신 당신을 환영합니다!
 
@@ -208,7 +210,9 @@ if st.session_state.korean_mode==0:
         """
 
         "Okay! We saved your form."
+
         This is your signup information.
+
         
         Welcome to Amigo
 
