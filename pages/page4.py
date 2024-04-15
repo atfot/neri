@@ -108,11 +108,11 @@ if prompt := st.chat_input():
 
       # Character information
       1. mentally ill person
-      - Name: {st.secrets['user_name']}
-      - Age: {st.secrets['age']}
-      - Gender: {st.secrets['user_gender']}
-      - Place of Origin : {st.secrets['nationality']}
-      - City of residence: {st.secrets['city']}
+      - Name: {st.session_state.username}
+      - Age: {st.session_state.age}
+      - Gender: {st.session_state.gender}
+      - Problem : {st.session_state.problem}
+      - Problem Explanation: {st.session_state.problem_explanation}
 
       2. psychological counselor
       - Name : Neri
@@ -120,7 +120,7 @@ if prompt := st.chat_input():
       - Gender: Male
       - Country of Origin : South Korea
       - City of residence : Seoul
-      - Characteristics : Neri knows the information of {st.secrets['user_name']}, a mentally ill person, and conducts psychotherapy based on it
+      - Characteristics : Neri knows the information of {st.session_state.username}, a mentally ill person, and conducts psychotherapy based on it
 
       **REMEMBER**: 
       '''
