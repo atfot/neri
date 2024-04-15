@@ -14,7 +14,11 @@ if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
 
 make_sidebar()
-st.write(st.session_state.username)
+try:
+  st.write(st.session_state.username)
+except:
+   st.write('nothing went here')
+
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
     st.session_state['conversations']=[{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
