@@ -313,4 +313,5 @@ if prompt := st.chat_input():
     with col2:
        st.write('')
        if st.button('🔄'):
+        st.write('1')
         st.session_state.reset_response=True
