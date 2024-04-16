@@ -28,7 +28,7 @@ if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
     st.session_state['conversations']=[{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
     st.session_state['message_summary'] = '아직까지 쓰인 내용은 없고, 여기서부터 대화내용이 시작됩니다.'
-    st.session_state.test=0
+    st.session_state.reset_response=False
 
 for msg in st.session_state.messages:
     if msg['role']=="심리상담사":
@@ -309,4 +309,6 @@ if prompt := st.chat_input():
     with col2:
        st.write('')
        if st.button('🔄'):
-        st.session_state.test=1
+        st.session_state.reset_response=True
+    if st.session_state.reset_response==True:
+       st.write(st.session_state.messages[-1:])
