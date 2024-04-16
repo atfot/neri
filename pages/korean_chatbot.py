@@ -311,7 +311,7 @@ if prompt := st.chat_input():
        if st.button('🔄'):
         st.write('1')
         st.session_state.reset_response=True
-
+st.write(st.session_state.messages) 
 if st.session_state.get("reset_response", True): 
        st.write(st.session_state.messages) 
 if st.session_state.get("reset_response", False): 
