@@ -282,7 +282,7 @@ if prompt := st.chat_input():
     my_bar.empty()
     col1,col2=st.columns([8,2])
     with col1:
-      st.write('최종 메세지:')
+      #st.write('최종 메세지:')
       st.chat_message("assistant").write(humanize_msg)
       st.write('유저 메세지 변환: ')
       st.chat_message("assistant").write(normalized_prompt)
