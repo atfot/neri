@@ -201,8 +201,13 @@ if prompt := st.chat_input():
       "content": """Your role is to read the dialogue, summary, and examples of the three answers and choose the best sentence from the three.
       
       **REMEMBER**:
-      1. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
-      2. Never choose the sentence that contains 'How does it feel' or anything resembles that.
+      1. After you pick the best response, then write it down exactly, without leaving out a single letter.
+      2. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
+      3. Submit the original sentences that I gave you if there is no grammar problem.
+      4. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
+      5. Don't use any words or phrases other than the context.
+      6. Never reuse any sentences that has a same context which have already been used within a conversation.
+      7. Never choose the sentence that contains 'How does it feel' or anything resembles that.
       """
     },
     {
@@ -223,8 +228,12 @@ if prompt := st.chat_input():
         
       **REMEMBER**:
       1. After you pick the best response, then write it down exactly, without leaving out a single letter.
-      2. Never attach embellishments or explanation to your answers. Submit only **context** as output. That means **there should be no "" marks in your answer, and no : or - marks to show the answer.** And don't use any words or phrases other than the sentence you chose from the three examples.
-      3. Never choose the sentence that contains 'How does it feel' or anything resembles that.]
+      2. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
+      3. Submit the original sentences that I gave you if there is no grammar problem.
+      4. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
+      5. Don't use any words or phrases other than the context.
+      6. Never reuse any sentences that has a same context which have already been used within a conversation.
+      7. Never choose the sentence that contains 'How does it feel' or anything resembles that.]
 """
     }
   ],
