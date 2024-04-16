@@ -36,7 +36,6 @@ for msg in st.session_state.messages:
       st.chat_message('user').write(msg["content"])   
 
 if prompt := st.chat_input():
-    st.session_state.prompt=prompt
     normal_korean = st.session_state.client.chat.completions.create(
         model="gpt-3.5-turbo-0125",
         messages=[
@@ -298,6 +297,6 @@ if prompt := st.chat_input():
       st.write('최근 메세지:')
       st.write(st.session_state.conversations)
     with col2:
+       st.write('')
        if st.button('다른 대답'):
           st.rerun()
-          st.write(prompt)
