@@ -36,6 +36,7 @@ for msg in st.session_state.messages:
       st.chat_message('user').write(msg["content"])   
 
 if prompt := st.chat_input():
+    st.session_state.prompt=prompt
     normal_korean = st.session_state.client.chat.completions.create(
         model="gpt-3.5-turbo-0125",
         messages=[
@@ -55,7 +56,7 @@ if prompt := st.chat_input():
             # My Request:
             Please rephrase the paragraph below into polite Korean sentences.
 
-            {prompt}
+            {st.session_state.prompt}
 
             **Remember**:
             1. If there is anything in the paragraph that is not a normal Korean sentence, such as "ㅋ" or "ㅠ" or similar, please remove it.  
@@ -75,9 +76,9 @@ if prompt := st.chat_input():
       normalized_prompt = normalized_korean.index(':').strip('').strip('"')
     except:
        normalized_prompt = normal_korean.choices[0].message.content.strip('"')
-    st.session_state.messages.append({"role": "내담자", "content": prompt})
+    st.session_state.messages.append({"role": "내담자", "content": st.session_state.prompt})
     st.session_state.conversations.append({"role": "내담자", "content": normalized_prompt})
-    st.chat_message("user").write(prompt)
+    st.chat_message("user").write(st.session_state.prompt)
     if len(st.session_state.messages)%3==0:
         summary = st.session_state.client.chat.completions.create(
         model="gpt-3.5-turbo-0125",
