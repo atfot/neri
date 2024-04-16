@@ -301,7 +301,7 @@ if prompt := st.chat_input():
        if st.button('다른 대답'):
         st.session_state.test=1
     try:
-      if st.session_state.test:
+      if st.session_state.test==1:
         st.write(st.session_state.messages[:-1])
     except:
        pass
