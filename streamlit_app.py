@@ -24,6 +24,7 @@ if 'messages' not in st.session_state:
     st.title('')
     if language_selection: 
         st.session_state['korean_mode']=0
+        st.info('This is a purely informational message', icon="ℹ️")
         col1,col2,col3=st.columns([4,2,4])
         with col2:
             st.title("Neri")
