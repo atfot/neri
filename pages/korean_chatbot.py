@@ -311,7 +311,8 @@ with col1:
 with col2:
    if len(st.session_state.messages)==1:
       pass
-   if len(st.session_state.messages)%2==1:
-      if st.button('🔄'):
-        st.write('1')
-        st.session_state.reset_response=True
+   if len(st.session_state.messages)>1:
+    if len(st.session_state.messages)%2==1:
+        if st.button('🔄'):
+          st.write('1')
+          st.session_state.reset_response=True
