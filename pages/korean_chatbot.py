@@ -288,7 +288,16 @@ if prompt := st.chat_input():
     my_bar.progress(100,text=progress_text)
     my_bar.empty()
     #st.write('최종 메세지:')
-    st.chat_message("assistant").write(humanize_msg)
+    col1,col2=st.columns([9,1])
+    with col1:
+      st.chat_message("assistant").write(humanize_msg)
+      if st.session_state.reset_response==True:
+         st.write('doable')
+      if st.session_state.reset_response==False:
+        pass
+    with col2:
+       if st.button('🔄'):
+          st.session_state.reset_response=True
     #st.write('유저 메세지 변환: ')
     #st.chat_message("assistant").write(normalized_prompt)
     #st.write('1차 메세지:')
@@ -301,4 +310,3 @@ if prompt := st.chat_input():
     #st.write(st.session_state.messages)
     #st.write('최근 메세지:')
     #st.write(st.session_state.conversations)
-    st.button('🔄')
