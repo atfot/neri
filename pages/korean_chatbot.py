@@ -293,22 +293,23 @@ if prompt := st.chat_input():
     col1,col2=st.columns([9,1])
     with col1:
       #st.write('최종 메세지:')
-      st.chat_message("assistant").write(humanize_msg)
-      st.write('유저 메세지 변환: ')
-      st.chat_message("assistant").write(normalized_prompt)
-      st.write('1차 메세지:')
-      st.chat_message("assistant").write(msg)
-      st.write('1차 프롬프트:')
-      st.chat_message("assistant").write(user_prompt_1)
-      st.write('저장 대화 갯수:')
-      st.write(len(st.session_state.messages))
-      st.write('저장 메세지:')
-      st.write(st.session_state.messages)
-      st.write('최근 메세지:')
-      st.write(st.session_state.conversations)
+      current_message=st.chat_message("assistant").write(humanize_msg)
+      #st.write('유저 메세지 변환: ')
+      #st.chat_message("assistant").write(normalized_prompt)
+      #st.write('1차 메세지:')
+      #st.chat_message("assistant").write(msg)
+      #st.write('1차 프롬프트:')
+      #st.chat_message("assistant").write(user_prompt_1)
+      #st.write('저장 대화 갯수:')
+      #st.write(len(st.session_state.messages))
+      #st.write('저장 메세지:')
+      #st.write(st.session_state.messages)
+      #st.write('최근 메세지:')
+      #st.write(st.session_state.conversations)
     with col2:
        st.write('')
        if st.button('🔄'):
         st.session_state.reset_response=True
     if st.session_state.reset_response==True:
+       del current_message
        st.write(st.session_state.messages[-1:])
