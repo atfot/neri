@@ -299,5 +299,5 @@ if prompt := st.chat_input():
       st.write(st.session_state.conversations)
     with col2:
        if st.button('다른 대답'):
-          del prompt
           st.rerun()
+          st.write(prompt)
