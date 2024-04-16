@@ -310,5 +310,7 @@ if prompt := st.chat_input():
        st.write('')
        if st.button('🔄'):
         st.session_state.reset_response=True
-  if st.session_state.reset_response==True:
-      st.write(st.session_state.messages)
+    if st.session_state.reset_response==True: 
+       col1,col2=st.columns([9,1])
+       with col1:
+        st.write(st.session_state.messages) 
