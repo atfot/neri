@@ -299,7 +299,7 @@ if prompt := st.chat_input():
     with col2:
        st.write('')
        if st.button('다른 대답'):
-        st.session_state.test=True
+        st.session_state.test=1
     try:
       if st.session_state.test:
         st.write(st.session_state.messages[:-1])
