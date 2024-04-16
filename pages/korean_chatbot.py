@@ -302,5 +302,5 @@ if prompt := st.chat_input():
         st.session_state.test=True
     if st.session_state.test:
       st.write(st.session_state.messages[:-1])
-    else:
+    if not st.session_state.test:
        pass
