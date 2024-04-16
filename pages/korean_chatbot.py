@@ -294,7 +294,7 @@ if prompt := st.chat_input():
       if st.session_state.reset_response==True:
          st.write('doable')
       if 'reset_response' not in st.session_state:
-        pass
+        st.write('doable')
     with col2:
        if st.button('🔄'):
           st.session_state.reset_response=True
