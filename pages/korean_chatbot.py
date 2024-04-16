@@ -306,12 +306,13 @@ if prompt := st.chat_input():
       #st.write(st.session_state.messages)
       #st.write('최근 메세지:')
       #st.write(st.session_state.conversations)
-      if st.session_state.get("reset_response", True): 
-       st.write(st.session_state.messages) 
-      if st.session_state.get("reset_response", False): 
-         pass
     with col2:
        st.write('')
        if st.button('🔄'):
         st.write('1')
         st.session_state.reset_response=True
+
+if st.session_state.get("reset_response", True): 
+       st.write(st.session_state.messages) 
+      if st.session_state.get("reset_response", False): 
+         pass
