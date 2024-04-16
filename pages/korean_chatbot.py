@@ -291,7 +291,7 @@ if prompt := st.chat_input():
     col1,col2=st.columns([9,1])
     with col1:
       st.chat_message("assistant").write(humanize_msg)
-      if st.session_state.reset_response==True:
+      if st.session_state.get('reset_response',True):
          st.write('doable')
       if 'reset_response' not in st.session_state:
         st.write('doable')
