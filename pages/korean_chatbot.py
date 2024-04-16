@@ -293,7 +293,7 @@ if prompt := st.chat_input():
     col1,col2=st.columns([9,1])
     with col1:
       #st.write('최종 메세지:')
-      current_message=st.chat_message("assistant").write(humanize_msg)
+      st.chat_message("assistant").write(humanize_msg)
       #st.write('유저 메세지 변환: ')
       #st.chat_message("assistant").write(normalized_prompt)
       #st.write('1차 메세지:')
@@ -311,5 +311,4 @@ if prompt := st.chat_input():
        if st.button('🔄'):
         st.session_state.reset_response=True
     if st.session_state.reset_response==True:
-       del current_message
-       st.write(st.session_state.messages[-1:])
+       st.write(st.session_state.messages)
