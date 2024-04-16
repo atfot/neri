@@ -314,5 +314,5 @@ if prompt := st.chat_input():
 
 if st.session_state.get("reset_response", True): 
        st.write(st.session_state.messages) 
-      if st.session_state.get("reset_response", False): 
-         pass
+if st.session_state.get("reset_response", False): 
+    pass
