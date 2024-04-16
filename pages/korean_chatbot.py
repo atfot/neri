@@ -55,7 +55,7 @@ if prompt := st.chat_input():
             # My Request:
             Please rephrase the paragraph below into polite Korean sentences.
 
-            {st.session_state.prompt}
+            {prompt}
 
             **Remember**:
             1. If there is anything in the paragraph that is not a normal Korean sentence, such as "ㅋ" or "ㅠ" or similar, please remove it.  
