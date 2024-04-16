@@ -290,7 +290,7 @@ if prompt := st.chat_input():
     st.session_state.conversations.append({"role": "심리상담사", "content": humanize_msg})
     my_bar.progress(100,text=progress_text)
     my_bar.empty()
-    col1,col2=st.columns([8,2])
+    col1,col2=st.columns([9,1])
     with col1:
       #st.write('최종 메세지:')
       st.chat_message("assistant").write(humanize_msg)
@@ -308,5 +308,5 @@ if prompt := st.chat_input():
       st.write(st.session_state.conversations)
     with col2:
        st.write('')
-       if st.button('다른 대답'):
+       if st.button('🔄'):
         st.session_state.test=1
