@@ -303,7 +303,7 @@ if prompt := st.chat_input():
       #st.write('저장 대화 갯수:')
       #st.write(len(st.session_state.messages))
       #st.write('저장 메세지:')
-      #st.write(st.session_state.messages)
+      st.write(st.session_state.messages)
       #st.write('최근 메세지:')
       #st.write(st.session_state.conversations)
     with col2:
