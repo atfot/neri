@@ -297,7 +297,7 @@ if prompt := st.chat_input():
         st.write('doable')
     with col2:
        if st.button('🔄'):
-          st.session_state.reset_response=True
+          st.session_state.reset_response=False
     #st.write('유저 메세지 변환: ')
     #st.chat_message("assistant").write(normalized_prompt)
     #st.write('1차 메세지:')
