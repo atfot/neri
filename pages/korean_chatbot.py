@@ -291,13 +291,13 @@ if prompt := st.chat_input():
     col1,col2=st.columns([9,1])
     with col1:
       st.chat_message("assistant").write(humanize_msg)
-      if st.session_state.get('reset_response',True):
-         st.write('doable')
       if 'reset_response' not in st.session_state:
-        st.write('doable')
+        st.write('not sure')
+      if 'reset_response' in st.session_state:
+         st.write('maybe')
     with col2:
        if st.button('🔄'):
-          st.session_state.reset_response=False
+          st.session_state.reset_response=True
     #st.write('유저 메세지 변환: ')
     #st.chat_message("assistant").write(normalized_prompt)
     #st.write('1차 메세지:')
