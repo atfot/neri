@@ -20,7 +20,7 @@ def make_sidebar():
         st.write("")
         st.write("")
 
-        if st.session_state.get("logged_in", False):
+        if st.session_state.get("logged_in", True):
             st.page_link("pages/page1.py", label="나의 노력의 결과는?", icon="🏋️")
             st.page_link("pages/korean_chatbot.py", label="당신의 카운셀러", icon="💛")
 
