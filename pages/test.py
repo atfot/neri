@@ -26,10 +26,7 @@ def main():
     client = OpenAI(api_key=st.secrets['api_key'])
 
     for message in st.session_state.messages:
-        if len(st.session_state.messages)<=2:
-            st.session_state.messages=st.session_state.messages[:-1]
-        if len(st.session_state.messages)>=2:
-            st.session_state.messages=st.session_state.messages[:-2]
+
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
