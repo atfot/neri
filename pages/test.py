@@ -19,7 +19,7 @@ def main():
     model = 'gpt-3.5-turbo'
     st.title(f"Chat with {model}")
 
-    client = OpenAI(api_key=st.secrets['api_key'])
+    client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
@@ -30,7 +30,7 @@ def main():
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
             prompt = st.session_state.messages[-2]['content']
-            del st.session_state.messages
+            st.session_state.messages=st.session_state.messages[:-2]
             st.session_state.repeat = False  # reset
 
         st.session_state.messages.append({"role": "user", "content": prompt})
