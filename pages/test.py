@@ -88,6 +88,7 @@ def main():
             response = st.write_stream(stream)
 
         st.session_state.msg.append({"role": "assistant", "content": response})
+        st.write(st.session_state.msg[:-1])
 
         st.button('Give me another answwer', on_click=reply_again_cb)
 
