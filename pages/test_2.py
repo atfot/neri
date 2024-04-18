@@ -101,9 +101,11 @@ def main():
                 normalized_prompt = normalized_korean.index(':').strip('').strip('"')
             except:
                 normalized_prompt = normal_korean.choices[0].message.content.strip('"')
-            st.session_state.messages.append({"role": "내담자", "content": prompt})
-            st.session_state.conversations.append({"role": "내담자", "content": normalized_prompt})
-
+            if st.session_state.repeat==True:
+                pass
+            else:
+                st.session_state.messages.append({"role": "내담자", "content": prompt})
+                st.session_state.conversations.append({"role": "내담자", "content": normalized_prompt})
             if len(st.session_state.messages)%3==0:
                 summary = st.session_state.client.chat.completions.create(
                 model="gpt-3.5-turbo-0125",
