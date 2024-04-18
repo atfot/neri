@@ -21,24 +21,38 @@ def main():
 
     client = OpenAI(api_key=st.secrets["api_key"])
 
+    # Print msg history.
+    last_user_message = None
     for message in st.session_state.messages:
-        if st.session_state.repeat == True:
+
+        # Print the user msg if it is not repeating successively.
+        if (last_user_message is not None and
+            message['role'] == 'user' and
+            last_user_message == message["content"]
+        ):
             pass
-        if st.session_state.repeat == False:
+        else:
+            # Print both msgs from user and assistant
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
+
+        # Backup last user msg used to identify successive same user content.
+        if message['role'] == 'user':
+            last_user_message = message["content"]
 
     if prompt := st.chat_input("enter your prompt") or st.session_state.repeat:
 
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
             prompt = st.session_state.messages[-2]['content']
-            st.session_state.messages=st.session_state.messages[:-2]
             st.session_state.repeat = False  # reset
-        if st.session_state.repeat==False:
-            st.session_state.messages.append({"role": "user", "content": prompt})
+        else:
+            # Only print the user msg if repeat is false.
             with st.chat_message("user"):
                 st.markdown(prompt)
+
+        # Always backup the conversation.
+        st.session_state.messages.append({"role": "user", "content": prompt})
 
         with st.chat_message("assistant"):
             stream = client.chat.completions.create(
