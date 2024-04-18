@@ -14,10 +14,7 @@ if 'append_prompt' not in st.session_state:
 
 # functions
 def reply_again_cb():
-    if len(st.session_state.messages)<=2:
-        st.session_state.messages=st.session_state.messages[:-1]
-    if len(st.session_state.messages)>=2:
-        st.session_state.messages=st.session_state.messages[:-2]
+    
     st.session_state.repeat = True
     st.session_state.append_prompt = False
 
@@ -29,6 +26,10 @@ def main():
     client = OpenAI(api_key=st.secrets['api_key'])
 
     for message in st.session_state.messages:
+        if len(st.session_state.messages)<=2:
+            st.session_state.messages=st.session_state.messages[:-1]
+        if len(st.session_state.messages)>=2:
+            st.session_state.messages=st.session_state.messages[:-2]
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
@@ -36,13 +37,13 @@ def main():
 
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
-            #st.session_state.append_prompt=False
-            if len(st.session_state.messages)==1:
-                prompt = st.session_state.messages[0]['content']
-                st.session_state.repeat = False  # reset
-            if len(st.session_state.messages)>1:
-                prompt = st.session_state.messages[-2]['content']
-                st.session_state.repeat = False  # reset
+            if st.session_state.append_prompt==False:
+                if len(st.session_state.messages)==1: 
+                    prompt = st.session_state.messages[0]['content']
+                    st.session_state.repeat = False  # reset
+                if len(st.session_state.messages)>1:
+                    prompt = st.session_state.messages[-2]['content']
+                    st.session_state.repeat = False  # reset
 
         if st.session_state.append_prompt==False:
             pass
