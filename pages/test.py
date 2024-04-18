@@ -34,11 +34,10 @@ def main():
         if st.session_state.repeat:
             prompt = st.session_state.messages[-2]['content']
             st.session_state.repeat = False  # reset
-
-        st.session_state.messages.append({"role": "user", "content": prompt})
-
-        with st.chat_message("user"):
-            st.markdown(prompt)
+        if st.session_state.repeat==False:
+            st.session_state.messages.append({"role": "user", "content": prompt})
+            with st.chat_message("user"):
+                st.markdown(prompt)
 
         with st.chat_message("assistant"):
             stream = client.chat.completions.create(
