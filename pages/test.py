@@ -19,7 +19,7 @@ def main():
     model = 'gpt-3.5-turbo'
     st.title(f"Chat with {model}")
 
-    client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+    client = OpenAI(api_key=st.secrets["api_key"])
 
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
