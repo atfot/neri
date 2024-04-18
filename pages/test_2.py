@@ -305,6 +305,7 @@ def main():
             frequency_penalty=1,
             presence_penalty=1
         )
+            my_bar.progress(75,text=progress_text)
             try:
                 humanize_msg = sentence_selection.choices[0].message.content
                 humanize_msg = humanize_msg.index(':').strip('').strip('"')
@@ -312,6 +313,7 @@ def main():
                 humanize_msg = sentence_selection.choices[0].message.content.strip('"')
             st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
             st.session_state.conversations.append({"role": "심리상담사", "content": humanize_msg})
+            my_bar.progress(100,text=progress_text)
 
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
