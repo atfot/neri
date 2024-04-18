@@ -24,8 +24,7 @@ def reply_again_cb():
 
 
 def main():
-    model = 'gpt-3.5-turbo'
-    st.write('???')
+    model = 'gpt-3.5-turbo'    
     st.title(f"Chat with {model}")
 
     client = OpenAI(api_key=st.secrets["api_key"])
