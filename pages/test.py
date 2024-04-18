@@ -12,7 +12,6 @@ if 'repeat' not in st.session_state:
 
 # functions
 def reply_again_cb():
-    st.session_state.messages=st.session_state.messages[:-2]
     st.session_state.repeat = True
 
 
@@ -34,6 +33,7 @@ def main():
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
             prompt = st.session_state.messages[-2]['content']
+            st.session_state.messages=st.session_state.messages[:-2]
             st.session_state.repeat = False  # reset
         if st.session_state.repeat==False:
             st.session_state.messages.append({"role": "user", "content": prompt})
