@@ -49,10 +49,10 @@ def main():
             pass
         else:
             # Print both msgs from user and assistant
-            if messages['role']=="심리상담사":
-                st.chat_message('assistant').write(messages["content"])
-            if messages['role']=="내담자":
-                st.chat_message('user').write(messages["content"])
+            if message['role']=="심리상담사":
+                st.chat_message('assistant').write(message["content"])
+            if message['role']=="내담자":
+                st.chat_message('user').write(message["content"])
 
         # Backup last user msg used to identify successive same user content.
         if message['role'] == '내담자':
