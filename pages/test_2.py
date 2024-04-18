@@ -321,6 +321,7 @@ def main():
             st.session_state.messages=st.session_state.messages[:-1]
             prompt = st.session_state.messages[-1]['content']
             text_logic()
+            st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
             st.write(st.session_state.messages[:-1])
             st.button('Give me another answwer', on_click=reply_again_cb)
             st.session_state.repeat = False  # reset
