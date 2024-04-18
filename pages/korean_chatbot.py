@@ -18,6 +18,12 @@ if 'username' not in st.session_state:
    st.session_state.problem=st.secrets.problem
    st.session_state.problem_explanation=st.secrets.problem_explanation
 
+if 'repeat' not in st.session_state:
+  st.session_state.repeat = False
+
+def reply_again_cb():
+    st.session_state.repeat = True
+
 if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
 
@@ -33,7 +39,14 @@ for msg in st.session_state.messages:
       st.chat_message('assistant').write(msg["content"])
     if msg['role']=="내담자":
       st.chat_message('user').write(msg["content"])   
-if prompt := st.chat_input():
+if prompt := st.chat_input('고민을 최대한 자세히 적어주세요') or st.session_state.repeat:
+    if st.session_state.repeat:
+        prompt = st.session_state.messages[-2]['content']
+        st.session_state.messages=st.session_state.messages[:-2]
+        st.session_state.repeat = False  # reset
+    if st.session_state.repeat==False:
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        st.chat_message('user').write(prompt)   
     normal_korean = st.session_state.client.chat.completions.create(
         model="gpt-3.5-turbo-0125",
         messages=[
@@ -296,8 +309,8 @@ if prompt := st.chat_input():
       if 'reset_response' in st.session_state:
          st.write('maybe')
     with col2:
-       if st.button('🔄'):
-          st.session_state.reset_response=True
+       st.button('🔄', on_click=reply_again_cb)
+       
     #st.write('유저 메세지 변환: ')
     #st.chat_message("assistant").write(normalized_prompt)
     #st.write('1차 메세지:')
