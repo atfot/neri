@@ -308,7 +308,7 @@ def main():
             my_bar.progress(75,text=progress_text)
             try:
                 humanize_msg = sentence_selection.choices[0].message.content
-                humanize_msg = humanize_msg[humanize_msg.index(':')+1:].strip('').strip('"')
+                humanize_msg = humanize_msg[humanize_msg.index(':'):].strip('').strip('"')
             except:
                 humanize_msg = sentence_selection.choices[0].message.content.strip('"')
             st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
