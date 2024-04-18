@@ -234,8 +234,10 @@ def main():
                 3. Submit the original sentences that I gave you if there is no grammar problem.
                 4. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
                 5. Don't use any words or phrases other than the context.
-                6. Never reuse any sentences that has a same context which have already been used within a conversation.
-                7. Never choose the sentence that contains 'How does it feel' or anything resembles that.
+                6. Never use a tone that suggests you want to do something with the patient.
+                7. Never reuse any sentences that has a same context which have already been used within a conversation.
+                8. If you get any questions from the mental patient, give him/her an answer.
+                9. Never choose the sentence that contains 'How does it feel' or anything resembles that.
                 """
             },
             {
@@ -260,8 +262,10 @@ def main():
                 3. Submit the original sentences that I gave you if there is no grammar problem.
                 4. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
                 5. Don't use any words or phrases other than the context.
-                6. Never reuse any sentences that has a same context which have already been used within a conversation.
-                7. Never choose the sentence that contains 'How does it feel' or anything resembles that.]
+                6. Never use a tone that suggests you want to do something with the patient.
+                7. Never reuse any sentences that has a same context which have already been used within a conversation.
+                8. If you get any questions from the mental patient, give him/her an answer.
+                9. Never choose the sentence that contains 'How does it feel' or anything resembles that.]
         """
             }
             ],
