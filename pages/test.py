@@ -77,7 +77,7 @@ def main():
             stream = client.chat.completions.create(
                 model=model,
                 temperature=1,
-                max_tokens=16,
+                max_tokens=1024,
                 messages=[
                     {"role": m["role"], "content": m["content"]}
                     for m in st.session_state.msg
