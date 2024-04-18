@@ -25,7 +25,7 @@ if 'messages' not in st.session_state:
         st.title('')
         col1,col2,col3=st.columns([4,2,4])
         with col2:
-            st.title("Neri")
+            st.markdown("# ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ")
         st.title('')
         col1,col2=st.columns([5,5])
         with col2:
