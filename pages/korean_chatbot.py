@@ -52,7 +52,7 @@ if prompt := st.chat_input('고민을 최대한 자세히 적어주세요') or s
     with col1:
       if st.session_state.repeat:
           prompt = st.session_state.messages[-2]['content']
-          st.session_state.messages=st.session_state.messages[:-2]
+          st.session_state.messages=st.session_state.messages[:-1]
           st.session_state.repeat = False  # reset
       else:         
         normal_korean = st.session_state.client.chat.completions.create(
