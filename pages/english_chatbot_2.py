@@ -66,7 +66,7 @@ def main():
                 pass
             else:
                 st.session_state.messages.append({"role": "Mental patient", "content": prompt})
-                st.session_state.conversations.append({"role": "Mental patient", "content": normalized_prompt})
+                st.session_state.conversations.append({"role": "Mental patient", "content": prompt})
             if len(st.session_state.messages)%3==0:
                 summary = st.session_state.client.chat.completions.create(
                 model="gpt-3.5-turbo-0125",
