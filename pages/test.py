@@ -10,6 +10,9 @@ st.set_page_config(
 )
 make_sidebar()
 
+if "messages" in st.session_state:
+    del st.session_state["messages"]
+
 if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
 
