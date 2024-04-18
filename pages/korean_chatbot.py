@@ -316,6 +316,6 @@ if prompt := st.chat_input('고민을 최대한 자세히 적어주세요') or s
     #st.write('저장 대화 갯수:')
     #st.write(len(st.session_state.messages))
     #st.write('저장 메세지:')
-    #st.write(st.session_state.messages)
+    st.write(st.session_state.messages)
     #st.write('최근 메세지:')
     #st.write(st.session_state.conversations)
