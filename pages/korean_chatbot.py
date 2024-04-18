@@ -45,8 +45,7 @@ if prompt := st.chat_input('고민을 최대한 자세히 적어주세요') or s
         st.session_state.messages=st.session_state.messages[:-2]
         st.session_state.repeat = False  # reset
     if st.session_state.repeat==False:
-        st.session_state.messages.append({"role": "user", "content": prompt})
-        st.chat_message('user').write(prompt)   
+        st.session_state.messages.append({"role": "user", "content": prompt})  
     normal_korean = st.session_state.client.chat.completions.create(
         model="gpt-3.5-turbo-0125",
         messages=[
