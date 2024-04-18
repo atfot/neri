@@ -1,6 +1,8 @@
 from openai import OpenAI
 import streamlit as st
+from korean_navigation import make_sidebar
 
+make_sidebar()
 
 # variables
 if "messages" not in st.session_state:
