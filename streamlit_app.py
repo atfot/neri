@@ -19,10 +19,10 @@ if 'messages' not in st.session_state:
     col1,col2=st.columns([6,4])
     with col1:
         language_selection=st.toggle('한국어/English')
-    st.title('')
     if language_selection: 
         st.session_state['korean_mode']=0
         st.write('English mode')
+        st.title('')
         col1,col2,col3=st.columns([4,2,4])
         with col2:
             st.title("Neri")
@@ -73,6 +73,7 @@ if 'messages' not in st.session_state:
     if not language_selection: 
         st.session_state['korean_mode']=1
         st.write('한글 모드')
+        st.title('')
         col1,col2,col3=st.columns([4,2,4])
         with col2:
             st.title("네리")
