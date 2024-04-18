@@ -315,16 +315,17 @@ def main():
 
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
-            st.session_state.msg=st.session_state.msg[:-1]
-            prompt = st.session_state.msg[-1]['content']
+            st.session_state.messages=st.session_state.messages[:-1]
+            prompt = st.session_state.messages[-1]['content']
             text_logic()
-            st.write(st.session_state.msg[:-1])
+            st.write(st.session_state.messages[:-1])
             st.button('Give me another answwer', on_click=reply_again_cb)
             st.session_state.repeat = False  # reset
         else:
             # Only print the user msg if repeat is false.
             st.chat_message('user').write(prompt)
             text_logic()
+            st.chat_message('assistant').write(humanize_msg)
             st.write(st.session_state.messages[:-1])
             st.button('Give me another answwer', on_click=reply_again_cb)
 
