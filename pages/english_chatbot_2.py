@@ -60,7 +60,7 @@ def main():
         if message['role'] == "Mental patient":
             last_user_message = message["content"]
 
-    if prompt := st.chat_input("Bring out your worries, your feelings, and the things you've never told anyone.") or st.session_state.repeat:
+    if prompt := st.chat_input("You must have a lot on your mind, right? Feel free to open up and tell me.") or st.session_state.repeat:
         def text_logic():
             if st.session_state.repeat==True:
                 pass
