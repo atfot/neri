@@ -40,7 +40,7 @@ def main():
                 st.session_state.append_prompt = False
 
         if st.session_state.append_prompt==False:
-            st.session_state.messages=st.session_state.messages[:-1]            
+            st.session_state.messages=st.session_state.messages[:-2]            
         if st.session_state.append_prompt==True:
             st.session_state.messages.append({"role": "user", "content": prompt})
             st.session_state.append_prompt=False
