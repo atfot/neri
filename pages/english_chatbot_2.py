@@ -25,7 +25,7 @@ if 'username' not in st.session_state:
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "Psychotherapist", "content": "What's bothering you?"}]
     st.session_state['conversations']=[{"role": "Psychotherapist", "content": "What's bothering you?"}]   
-    st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.''
+    st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
 
 if 'repeat' not in st.session_state:
     st.session_state.repeat = False
