@@ -24,9 +24,6 @@ if 'repeat' not in st.session_state:
 def reply_again_cb():
     st.session_state.repeat = True
 
-if 'client' not in st.session_state:
-  st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
-
 make_sidebar()
 
 if "messages" not in st.session_state:
@@ -45,7 +42,9 @@ for msg in st.session_state.messages:
       if msg['role']=="심리상담사":
         st.chat_message('assistant').write(msg["content"])
       if msg['role']=="내담자":
-        st.chat_message('user').write(msg["content"])   
+        st.chat_message('user').write(msg["content"])
+    if message['role'] == 'user':
+            last_user_message = message["content"]   
 
 if prompt := st.chat_input('고민을 최대한 자세히 적어주세요') or st.session_state.repeat:   
     if st.session_state.repeat:
