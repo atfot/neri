@@ -43,7 +43,7 @@ def main():
 
         # Print the user msg if it is not repeating successively.
         if (last_user_message is not None and
-            message['role'] == 'user' and
+            message['role'] == '내담자' and
             last_user_message == message["content"]
         ):
             pass
@@ -55,7 +55,7 @@ def main():
                 st.chat_message('user').write(messages["content"])
 
         # Backup last user msg used to identify successive same user content.
-        if message['role'] == 'user':
+        if message['role'] == '내담자':
             last_user_message = message["content"]
 
     if prompt := st.chat_input('고민을 최대한 자세히 적어주세요') or st.session_state.repeat:
