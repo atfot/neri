@@ -39,7 +39,7 @@ def main():
 
     # Print msg history.
     last_user_message = None
-    for message in st.session_state.msg:
+    for message in st.session_state.messages:
 
         # Print the user msg if it is not repeating successively.
         if (last_user_message is not None and
@@ -49,10 +49,10 @@ def main():
             pass
         else:
             # Print both msgs from user and assistant
-            if msg['role']=="심리상담사":
-                st.chat_message('assistant').write(msg["content"])
-            if msg['role']=="내담자":
-                st.chat_message('user').write(msg["content"])
+            if messages['role']=="심리상담사":
+                st.chat_message('assistant').write(messages["content"])
+            if messages['role']=="내담자":
+                st.chat_message('user').write(messages["content"])
 
         # Backup last user msg used to identify successive same user content.
         if message['role'] == 'user':
