@@ -2,10 +2,15 @@ from openai import OpenAI
 import streamlit as st
 from korean_navigation import make_sidebar
 
+st.set_page_config(
+    page_title="Your AI Therapist, Neri",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
 make_sidebar()
 
-if "messages" in st.session_state:
-    del st.session_state["messages"]
+
 
 # variables
 if "messages" not in st.session_state:
@@ -21,10 +26,10 @@ def reply_again_cb():
 
 
 def main():
-    model = 'gpt-3.5-turbo'    
+    model = 'gpt-3.5-turbo'
     st.title(f"Chat with {model}")
 
-    client = OpenAI(api_key=st.secrets["api_key"])
+    client = OpenAI(api_key=st.secrets['api_key'])
 
     # Print msg history.
     last_user_message = None
@@ -50,7 +55,6 @@ def main():
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
             prompt = st.session_state.messages[-2]['content']
-            #st.session_state.messages=st.session_state.messages[:-2]
             st.session_state.repeat = False  # reset
         else:
             # Only print the user msg if repeat is false.
