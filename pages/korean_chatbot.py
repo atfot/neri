@@ -96,6 +96,7 @@ if prompt := st.chat_input('고민을 최대한 자세히 적어주세요') or s
           normalized_prompt = normal_korean.choices[0].message.content.strip('"')
         st.session_state.messages.append({"role": "내담자", "content": prompt})
         st.session_state.conversations.append({"role": "내담자", "content": normalized_prompt})
+        st.chat_message('user').write(prompt)
 
         if len(st.session_state.messages)%3==0:
             summary = st.session_state.client.chat.completions.create(
@@ -118,6 +119,7 @@ if prompt := st.chat_input('고민을 최대한 자세히 적어주세요') or s
             )
             st.session_state['message_summary'] = summary.choices[0].message.content
             st.session_state['conversations'] = st.session_state.messages[-3:]
+        
         progress_text='thinking...'
         my_bar=st.progress(0,text=progress_text)
         
@@ -306,6 +308,7 @@ if prompt := st.chat_input('고민을 최대한 자세히 적어주세요') or s
           humanize_msg = sentence_selection.choices[0].message.content.strip('"')
         st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
         st.session_state.conversations.append({"role": "심리상담사", "content": humanize_msg})
+        st.chat_message('assistant').write(humanize_msg)
         my_bar.progress(100,text=progress_text)
         my_bar.empty()
       with col2:
