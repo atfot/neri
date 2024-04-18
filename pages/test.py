@@ -12,6 +12,10 @@ if 'repeat' not in st.session_state:
 
 # functions
 def reply_again_cb():
+    if len(st.session_state.messages)<=2:
+        st.session_state.messages=st.session_state.messages[:-1]
+    if len(st.session_state.messages)>=2:
+        st.session_state.messages=st.session_state.messages[:-2]
     st.session_state.repeat = True
 
 
