@@ -53,7 +53,7 @@ if 'messages' not in st.session_state:
             with col2:
                 st.success("Logged in successfully!")
                 sleep(0.5)
-                st.switch_page("pages/english_chatbot.py")
+                st.switch_page("pages/english_chatbot_2.py")
         if st.session_state.get("logged_in", False):
             pass
         if st.session_state.get('login_error', True):

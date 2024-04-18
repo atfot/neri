@@ -22,7 +22,7 @@ def make_sidebar():
 
         if st.session_state.get("logged_in", True):
             st.page_link("pages/page1.py", label="Your Progression", icon="🏋️")
-            st.page_link("pages/english_chatbot.py", label="Your Councelor", icon="💛")
+            st.page_link("pages/english_chatbot_2.py", label="Your Councelor", icon="💛")
 
             st.write("")
             st.write("")
