@@ -314,6 +314,7 @@ def main():
             st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
             st.session_state.conversations.append({"role": "심리상담사", "content": humanize_msg})
             my_bar.progress(100,text=progress_text)
+            my_bar.empty()
 
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
