@@ -6,7 +6,6 @@ make_sidebar()
 
 if "messages" in st.session_state:
     del st.session_state["messages"]
-    del st.session_state.client
 
 # variables
 if "messages" not in st.session_state:
