@@ -23,9 +23,9 @@ if 'username' not in st.session_state:
 
 # variables
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
-    st.session_state['conversations']=[{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
-    st.session_state['message_summary'] = '아직까지 쓰인 내용은 없고, 여기서부터 대화내용이 시작됩니다.'
+    st.session_state["messages"] = [{"role": "Psychotherapist", "content": "What's bothering you?"}]
+    st.session_state['conversations']=[{"role": "Psychotherapist", "content": "What's bothering you?"}]   
+    st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.''
 
 if 'repeat' not in st.session_state:
     st.session_state.repeat = False
