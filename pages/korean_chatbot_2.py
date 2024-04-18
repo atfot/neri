@@ -60,7 +60,7 @@ def main():
         if message['role'] == '내담자':
             last_user_message = message["content"]
 
-    if prompt := st.chat_input('많은 생각이 있으시겠죠? 편하게 마음을 열어 저에게 이야기해주세요.') or st.session_state.repeat:
+    if prompt := st.chat_input('맘 편히 당신의 모든 고민을 말해주세요.') or st.session_state.repeat:
         def text_logic():
             normal_korean = st.session_state.client.chat.completions.create(
           model="gpt-3.5-turbo-0125",
