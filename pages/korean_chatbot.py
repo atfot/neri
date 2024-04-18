@@ -35,8 +35,8 @@ if "messages" not in st.session_state:
     st.session_state['message_summary'] = '아직까지 쓰인 내용은 없고, 여기서부터 대화내용이 시작됩니다.'
 
 for msg in st.session_state.messages:
-    with st.chat_message(message["role"]):
-      st.markdown(message["content"])
+    with st.chat_message(msg["role"]):
+      st.markdown(msg["content"])
 
 if prompt := st.chat_input('고민을 최대한 자세히 적어주세요') or st.session_state.repeat:
     if st.session_state.repeat:
