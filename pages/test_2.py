@@ -335,7 +335,7 @@ def main():
                 st.write('')
                 st.button('🔄', on_click=reply_again_cb)
             st.session_state.repeat = False  # reset
-            st.write(st.session_state.messages[:-1])                
+            #st.write(st.session_state.messages[:-1])                
         else:
             # Only print the user msg if repeat is false.
             st.chat_message('user').write(prompt)
@@ -346,7 +346,7 @@ def main():
             with col2:
                 st.write('')
                 st.button('🔄', on_click=reply_again_cb)
-            st.write(st.session_state.messages[:-1])
+            #st.write(st.session_state.messages[:-1])
 
 
 if __name__ == '__main__':
