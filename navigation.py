@@ -16,7 +16,7 @@ def get_current_page_name():
 
 def make_sidebar():
     with st.sidebar:
-        st.title("💗 Amigo")
+        st.title("💗 Neri")
         st.write("")
         st.write("")
 
