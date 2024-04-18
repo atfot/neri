@@ -12,7 +12,7 @@ st.set_page_config(
 
 if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
-  
+
 if 'username' not in st.session_state:
    st.session_state.username=st.secrets.user_name
    st.session_state.age=st.secrets.age
@@ -52,7 +52,7 @@ for msg in st.session_state.messages:
 if prompt := st.chat_input('고민을 최대한 자세히 적어주세요') or st.session_state.repeat:   
     if st.session_state.repeat:
         prompt = st.session_state.messages[-2]['content']
-        st.session_state.messages=st.session_state.messages[:-2]
+        #st.session_state.messages=st.session_state.messages[:-2]
         st.session_state.repeat = False  # reset
     else:         
       normal_korean = st.session_state.client.chat.completions.create(
