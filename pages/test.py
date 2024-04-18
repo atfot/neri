@@ -9,6 +9,8 @@ if "messages" not in st.session_state:
 if 'repeat' not in st.session_state:
     st.session_state.repeat = False
 
+if 'append_prompt' not in st.session_state:
+    st.session_state.append_prompt = True
 
 # functions
 def reply_again_cb():
@@ -17,6 +19,7 @@ def reply_again_cb():
     if len(st.session_state.messages)>=2:
         st.session_state.messages=st.session_state.messages[:-2]
     st.session_state.repeat = True
+    st.session_state.append_prompt = False
 
 
 def main():
@@ -33,6 +36,7 @@ def main():
 
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
+            #st.session_state.append_prompt=False
             if len(st.session_state.messages)==1:
                 prompt = st.session_state.messages[0]['content']
                 st.session_state.repeat = False  # reset
@@ -40,7 +44,11 @@ def main():
                 prompt = st.session_state.messages[-2]['content']
                 st.session_state.repeat = False  # reset
 
-        st.session_state.messages.append({"role": "user", "content": prompt})
+        if st.session_state.append_prompt==False:
+            pass
+        if st.session_state.append_prompt==True:
+            st.session_state.messages.append({"role": "user", "content": prompt})
+            st.session_state.append_prompt=False
 
         with st.chat_message("user"):
             st.markdown(prompt)
