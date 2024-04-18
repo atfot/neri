@@ -64,8 +64,8 @@ def main():
         if st.session_state.repeat:
             prompt = st.session_state.msg[-2]['content']
             # Always backup the conversation.
-            st.session_state.msg.append({"role": "user", "content": prompt})
-
+            #st.session_state.msg.append({"role": "user", "content": prompt})
+            
             with st.chat_message("assistant"):
                 stream = client.chat.completions.create(
                     model=model,
@@ -79,7 +79,7 @@ def main():
                 )
 
                 response = st.write_stream(stream)
-
+            st.session_state.msg=st.session_state.msg[:-1]
             st.session_state.msg.append({"role": "assistant", "content": response})
             st.write(st.session_state.msg[:-1])
             st.button('Give me another answwer', on_click=reply_again_cb)
