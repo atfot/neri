@@ -226,10 +226,10 @@ def main():
             messages=[
             {
                 "role": "system",
-                "content": """Your role is to read the dialogue, summary, and examples of the three answers and choose the best sentence from the three.
+                "content": """Your role is to read the dialogue, summary, and examples of the three answers and choose the worst sentence from the three.
                 
                 **REMEMBER**:
-                1. After you pick the best response, then write it down exactly, without leaving out a single letter.
+                1. After you pick the worst response, then write it down exactly, without leaving out a single letter.
                 2. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
                 3. Submit the original sentences that I gave you if there is no grammar problem.
                 4. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
@@ -252,10 +252,10 @@ def main():
                 **Three possible answers from a korean psychotherapist who wants to learn about his patient**: 
                 "[{msg}]"
 
-                - After reading the informations above, please **pick the best response from three possible answers** and write it down exactly, without leaving out a single letter. 
+                - After reading the informations above, please **pick the worst response from three possible answers** and write it down exactly, without leaving out a single letter. 
                 
                 **REMEMBER**:
-                1. After you pick the best response, then write it down exactly, without leaving out a single letter.
+                1. After you pick the worst response, then write it down exactly, without leaving out a single letter.
                 2. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
                 3. Submit the original sentences that I gave you if there is no grammar problem.
                 4. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
