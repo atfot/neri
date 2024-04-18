@@ -80,7 +80,7 @@ def main():
                 max_tokens=16,
                 messages=[
                     {"role": m["role"], "content": m["content"]}
-                    for m in st.session_state.messages
+                    for m in st.session_state.msg
                 ],
                 stream=True,
             )
