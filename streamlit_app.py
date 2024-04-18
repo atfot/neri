@@ -74,9 +74,9 @@ if 'messages' not in st.session_state:
         st.session_state['korean_mode']=1
         st.write('한글 모드')
         st.title('')
-        col1,col2,col3=st.columns([4,2,4])
+        col1,col2,col3=st.columns([2,6,2])
         with col2:
-            st.markdown("# ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ")
+            st.markdown("# ᆞ네ᆞᆞ리ᆞ")
         st.title('')
         col1,col2=st.columns([4.7,5.3])
         with col2:
