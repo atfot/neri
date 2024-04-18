@@ -22,8 +22,11 @@ def main():
     client = OpenAI(api_key=st.secrets["api_key"])
 
     for message in st.session_state.messages:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
+        if st.session_state.repeat == True:
+            pass
+        if st.session_state.repeat == False:
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
 
     if prompt := st.chat_input("enter your prompt") or st.session_state.repeat:
 
