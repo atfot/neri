@@ -269,7 +269,7 @@ def main():
                 4. Don't use any words or phrases other than the context.
 
                 '''
-                {new_msg}
+                {selected_msg}
                 '''
         """
             }
