@@ -25,7 +25,7 @@ def main():
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
             if st.session_state.repeat==True:
-                st.session_state.messages=st.session_state.messages[:len(st.sesion_state.messages)-1]
+                st.session_state.messages=st.session_state.messages[:len(st.session_state.messages)-1]
                 with st.chat_message(message['role']):
                     st.markdown(message["content"])
 
