@@ -10,9 +10,6 @@ st.set_page_config(
 )
 make_sidebar()
 
-if "messages" in st.session_state:
-    del st.session_state["messages"]
-
 if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
 
@@ -25,8 +22,8 @@ if 'username' not in st.session_state:
    st.session_state.problem_explanation=st.secrets.problem_explanation
 
 # variables
-if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "무엇이 고민이신가요?"}]
+if "msg" not in st.session_state:
+    st.session_state["msg"] = [{"role": "assistant", "content": "무엇이 고민이신가요?"}]
 
 if 'repeat' not in st.session_state:
     st.session_state.repeat = False
@@ -44,7 +41,7 @@ def main():
 
     # Print msg history.
     last_user_message = None
-    for message in st.session_state.messages:
+    for message in st.session_state.msg:
 
         # Print the user msg if it is not repeating successively.
         if (last_user_message is not None and
@@ -65,8 +62,8 @@ def main():
 
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
-            prompt = st.session_state.messages[-2]['content']
-            st.session_state.messages=st.session_state.messages[:-2]
+            prompt = st.session_state.msg[-2]['content']
+            st.session_state.msg=st.session_state.msg[:-2]
             st.session_state.repeat = False  # reset
         else:
             # Only print the user msg if repeat is false.
@@ -74,7 +71,7 @@ def main():
                 st.markdown(prompt)
 
         # Always backup the conversation.
-        st.session_state.messages.append({"role": "user", "content": prompt})
+        st.session_state.msg.append({"role": "user", "content": prompt})
 
         with st.chat_message("assistant"):
             stream = client.chat.completions.create(
@@ -90,7 +87,7 @@ def main():
 
             response = st.write_stream(stream)
 
-        st.session_state.messages.append({"role": "assistant", "content": response})
+        st.session_state.msg.append({"role": "assistant", "content": response})
 
         st.button('Give me another answwer', on_click=reply_again_cb)
 
