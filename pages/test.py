@@ -38,9 +38,11 @@ def main():
                 if len(st.session_state.messages)==1: 
                     prompt = st.session_state.messages[0]['content']
                     st.session_state.repeat = False  # reset
+                    st.session_state.append_prompt = False
                 if len(st.session_state.messages)>1:
                     prompt = st.session_state.messages[-2]['content']
                     st.session_state.repeat = False  # reset
+                    st.session_state.append_prompt = False
 
         if st.session_state.append_prompt==False:
             pass
