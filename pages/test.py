@@ -36,7 +36,7 @@ def main():
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
             if st.session_state.append_prompt==False:
-                prompt = st.session_state.messages[-2]['content']
+                prompt = st.session_state.messages[-1]['content']
                 st.session_state.repeat = False  # reset
                 st.session_state.append_prompt = False
 
