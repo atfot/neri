@@ -325,7 +325,7 @@ def main():
             # Only print the user msg if repeat is false.
             st.chat_message('user').write(prompt)
             text_logic()
-            st.write(st.session_state.msg[:-1])
+            st.write(st.session_state.messages[:-1])
             st.button('Give me another answwer', on_click=reply_again_cb)
 
 
