@@ -10,6 +10,9 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+if 'client' not in st.session_state:
+  st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
+  
 if 'username' not in st.session_state:
    st.session_state.username=st.secrets.user_name
    st.session_state.age=st.secrets.age
