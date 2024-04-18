@@ -43,8 +43,8 @@ for msg in st.session_state.messages:
         st.chat_message('assistant').write(msg["content"])
       if msg['role']=="내담자":
         st.chat_message('user').write(msg["content"])
-    if message['role'] == 'user':
-            last_user_message = message["content"]   
+    if msg['role'] == 'user':
+      last_user_message = msg["content"]   
 
 if prompt := st.chat_input('고민을 최대한 자세히 적어주세요') or st.session_state.repeat:   
     if st.session_state.repeat:
