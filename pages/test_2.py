@@ -2,40 +2,26 @@ from openai import OpenAI
 import streamlit as st
 from korean_navigation import make_sidebar
 
-st.set_page_config(
-    page_title="Your AI Therapist, Neri",
-    page_icon="🧊",
-    layout="wide",
-    initial_sidebar_state="collapsed"
-)
-
 make_sidebar()
 
-if 'username' not in st.session_state:
-   st.session_state.username=st.secrets.user_name
-   st.session_state.age=st.secrets.age
-   st.session_state.gender=st.secrets.user_gender
-   st.session_state.gender=st.secrets.user_gender
-   st.session_state.problem=st.secrets.problem
-   st.session_state.problem_explanation=st.secrets.problem_explanation
+# variables
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
 if 'repeat' not in st.session_state:
     st.session_state.repeat = False
+
 
 # functions
 def reply_again_cb():
     st.session_state.repeat = True
 
-if 'client' not in st.session_state:
-  st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
-
-# variables
-if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
-    st.session_state['conversations']=[{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
-    st.session_state['message_summary'] = '아직까지 쓰인 내용은 없고, 여기서부터 대화내용이 시작됩니다.'
 
 def main():
+    model = 'gpt-3.5-turbo'
+    st.title(f"Chat with {model}")
+
+    client = OpenAI(api_key=st.secrets["api_key"])
 
     # Print msg history.
     last_user_message = None
@@ -49,10 +35,8 @@ def main():
             pass
         else:
             # Print both msgs from user and assistant
-            if msg['role']=="심리상담사":
-                st.chat_message('assistant').write(message["content"])
-            if msg['role']=="내담자":
-                st.chat_message('user').write(message["content"])   
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
 
         # Backup last user msg used to identify successive same user content.
         if message['role'] == 'user':
