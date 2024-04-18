@@ -77,7 +77,7 @@ def main():
             stream = client.chat.completions.create(
                 model=model,
                 temperature=1,
-                max_tokens=1024,
+                max_tokens=512,
                 messages=[
                     {"role": m["role"], "content": m["content"]}
                     for m in st.session_state.msg
@@ -89,7 +89,6 @@ def main():
 
         st.session_state.msg.append({"role": "assistant", "content": response})
         st.write(st.session_state.msg[:-1])
-
         st.button('Give me another answwer', on_click=reply_again_cb)
 
 
