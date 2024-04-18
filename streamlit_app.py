@@ -76,7 +76,7 @@ if 'messages' not in st.session_state:
         st.title('')
         col1,col2,col3=st.columns([2,6,2])
         with col2:
-            st.markdown("# ᆞ네ᆞᆞ리ᆞ")
+            st.markdown("# ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ")
         st.title('')
         col1,col2=st.columns([4.7,5.3])
         with col2:
