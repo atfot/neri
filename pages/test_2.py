@@ -321,20 +321,23 @@ def main():
             my_bar.empty()
 
         # Get the last user prompt in the msg history.
-        if st.session_state.repeat:
-            prompt = st.session_state.messages[-1]['content']
-            text_logic()
-            st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
-            st.write(st.session_state.messages[:-1])
-            st.button('Give me another answwer', on_click=reply_again_cb)
-            st.session_state.repeat = False  # reset
-        else:
-            # Only print the user msg if repeat is false.
-            st.chat_message('user').write(prompt)
-            text_logic()
-            st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
-            st.write(st.session_state.messages[:-1])
-            st.button('Give me another answwer', on_click=reply_again_cb)
+        col1,col2=st.columns([9,1])
+        with col1:
+            if st.session_state.repeat:
+                prompt = st.session_state.messages[-1]['content']
+                text_logic()
+                st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
+                st.session_state.repeat = False  # reset
+                st.write(st.session_state.messages[:-1])
+                
+            else:
+                # Only print the user msg if repeat is false.
+                st.chat_message('user').write(prompt)
+                text_logic()
+                st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
+                st.write(st.session_state.messages[:-1])
+        with col2:
+            st.button('🔄', on_click=reply_again_cb)
 
 
 if __name__ == '__main__':
