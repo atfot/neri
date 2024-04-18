@@ -24,12 +24,13 @@ def main():
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
-            
+
     if prompt := st.chat_input("enter your prompt") or st.session_state.repeat:
 
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
             prompt = st.session_state.messages[-2]['content']
+            del st.session_state.messages
             st.session_state.repeat = False  # reset
 
         st.session_state.messages.append({"role": "user", "content": prompt})
