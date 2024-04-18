@@ -304,10 +304,6 @@ if prompt := st.chat_input('고민을 최대한 자세히 적어주세요') or s
     col1,col2=st.columns([9,1])
     with col1:
       st.chat_message("assistant").write(humanize_msg)
-      if 'reset_response' not in st.session_state:
-        st.write('not sure')
-      if 'reset_response' in st.session_state:
-         st.write('maybe')
     with col2:
        st.button('🔄', on_click=reply_again_cb)
        
