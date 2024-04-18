@@ -34,6 +34,8 @@ if 'repeat' not in st.session_state:
 def reply_again_cb():
     st.session_state.repeat = True
 
+if st.session_state.repeat==True:
+    st.session_state.messages=st.session_state.messages[:-1]
 
 def main():
 
@@ -318,7 +320,6 @@ def main():
 
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
-            st.session_state.messages=st.session_state.messages[:-1]
             prompt = st.session_state.messages[-1]['content']
             text_logic()
             st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
