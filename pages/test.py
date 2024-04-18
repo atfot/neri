@@ -29,11 +29,11 @@ def main():
 
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
-            if len(st.session_state.messages)<3:
-                prompt = st.session_state.messages[-2]['content']
+            if len(st.session_state.messages)<=2:
+                prompt = st.session_state.messages[-1]['content']
                 st.session_state.messages=[]
                 st.session_state.repeat = False  # reset
-            if len(st.session_state.messages)>2:
+            if len(st.session_state.messages)>=2:
                 prompt = st.session_state.messages[-2]['content']
                 st.session_state.messages=st.session_state.messages[:-2]
                 st.session_state.repeat = False  # reset
