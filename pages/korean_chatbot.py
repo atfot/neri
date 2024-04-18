@@ -35,10 +35,9 @@ if "messages" not in st.session_state:
     st.session_state['message_summary'] = '아직까지 쓰인 내용은 없고, 여기서부터 대화내용이 시작됩니다.'
 
 for msg in st.session_state.messages:
-    if msg['role']=="심리상담사":
-      st.chat_message('assistant').write(msg["content"])
-    if msg['role']=="내담자":
-      st.chat_message('user').write(msg["content"])   
+    with st.chat_message(message["role"]):
+      st.markdown(message["content"])
+
 if prompt := st.chat_input('고민을 최대한 자세히 적어주세요') or st.session_state.repeat:
     if st.session_state.repeat:
         prompt = st.session_state.messages[-2]['content']
@@ -86,7 +85,8 @@ if prompt := st.chat_input('고민을 최대한 자세히 적어주세요') or s
         normalized_prompt = normal_korean.choices[0].message.content.strip('"')
       st.session_state.messages.append({"role": "내담자", "content": prompt})
       st.session_state.conversations.append({"role": "내담자", "content": normalized_prompt})
-      st.chat_message("user").write(prompt)
+      with st.chat_message("user"):
+        st.markdown(prompt)
       if len(st.session_state.messages)%3==0:
           summary = st.session_state.client.chat.completions.create(
           model="gpt-3.5-turbo-0125",
