@@ -23,7 +23,7 @@ if 'username' not in st.session_state:
 
 # variables
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
+    st.session_state["messages"] = [{"role": "ㅁ", "content": "무엇이 고민이신가요?"}]
 
 if 'repeat' not in st.session_state:
     st.session_state.repeat = False
