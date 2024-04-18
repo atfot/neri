@@ -40,13 +40,12 @@ def main():
                 st.session_state.append_prompt = False
 
         if st.session_state.append_prompt==False:
-            pass
+            st.session_state.messages=st.session_state.messages[:-1]            
         if st.session_state.append_prompt==True:
             st.session_state.messages.append({"role": "user", "content": prompt})
             st.session_state.append_prompt=False
-
-        with st.chat_message("user"):
-            st.markdown(prompt)
+            with st.chat_message("user"):
+                st.markdown(prompt)
 
         with st.chat_message("assistant"):
             stream = client.chat.completions.create(
