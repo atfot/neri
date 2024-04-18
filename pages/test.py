@@ -13,11 +13,9 @@ if 'append_prompt' not in st.session_state:
     st.session_state.append_prompt = True
 
 # functions
-def reply_again_cb():
-    
+def reply_again_cb():    
     st.session_state.repeat = True
     st.session_state.append_prompt = False
-
 
 def main():
     model = 'gpt-3.5-turbo'
@@ -26,8 +24,12 @@ def main():
     client = OpenAI(api_key=st.secrets['api_key'])
 
     for message in st.session_state.messages:
-        if st.session_state.append_prompt==False:
-            st.session_state.messages=st.session_state.messages[:-1]
+        if len(st.session_state.messages)==2:
+            if st.session_state.append_prompt==False:
+                st.session_state.messages=st.session_state.messages[:-1]
+        if len(st.session_state.messages)>2:
+            if st.session_state.append_prompt==False:
+                st.session_state.messages=st.session_state.messages[:-1]
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
@@ -36,9 +38,15 @@ def main():
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
             if st.session_state.append_prompt==False:
-                prompt = st.session_state.messages[0]['content']
-                st.session_state.repeat = False  # reset
-                st.session_state.append_prompt = False
+                if len(st.session_state.messages)==1:
+                    prompt = st.session_state.messages[0]['content']
+                    st.session_state.repeat = False  # reset
+                    st.session_state.append_prompt = False
+            if st.session_state.append_prompt==False:
+                if len(st.session_state.messages)>1:
+                    prompt = st.session_state.messages[-1]['content']
+                    st.session_state.repeat = False  # reset
+                    st.session_state.append_prompt = False
 
         if st.session_state.append_prompt==False:
             pass         
