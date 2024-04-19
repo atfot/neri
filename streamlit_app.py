@@ -21,8 +21,7 @@ if 'messages' not in st.session_state:
         language_selection=st.toggle('한국어/English')
     if language_selection: 
         st.session_state['korean_mode']=0
-        st.write('English mode')
-        #st.write('')
+        st.write('English mode')        
         col1,col2,col3=st.columns([1.5,7,1.5])
         with col2:
             st.markdown("# ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ")
@@ -73,7 +72,6 @@ if 'messages' not in st.session_state:
     if not language_selection: 
         st.session_state['korean_mode']=1
         st.write('한글 모드')
-        st.write('')
         col1,col2,col3=st.columns([1.5,7,1.5])
         with col2:
             st.markdown("# ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ")
@@ -86,10 +84,7 @@ if 'messages' not in st.session_state:
         username = st.text_input("유저 이름")
         password = st.text_input("비밀번호", type="password")
 
-        col1, col2 = st.columns([8.7,1.3])
-        with col1:
-            if st.button("새로 오신 분", type="secondary"):
-                st.session_state.signin = True
+        col1, col2 = st.columns([7,3])
         with col2:
             if st.button("로그인", type="primary"):
                 if username == st.session_state.user_id and password == st.session_state.password:
@@ -98,6 +93,8 @@ if 'messages' not in st.session_state:
                     st.session_state.logged_in = True
                 else:
                     st.session_state.login_error = True
+            if st.button("새로 오신 분", type="secondary"):
+                st.session_state.signin = True
         if st.session_state.get("logged_in", True):
             col, col2, col3 = st.columns([3,4,3])
             with col2:
