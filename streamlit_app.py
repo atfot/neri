@@ -74,7 +74,7 @@ if 'messages' not in st.session_state:
         with col2:
             st.markdown("# ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ")
         st.title('')
-        col1,col2=st.columns([4.7,5.3])
+        col1,col2=st.columns([30,5])
         with col2:
             st.write("로그인 해주세요")
         username = st.text_input("아이디")
