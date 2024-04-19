@@ -32,7 +32,7 @@ if 'messages' not in st.session_state:
         username = st.text_input("ID")
         password = st.text_input("Password", type="password")
 
-        col1, col2 = st.columns([11.5,1.4])
+        col1, col2 = st.columns([11.6,1.4])
         with col1:
             if st.button("New User", type="secondary"):
                 st.session_state.signin = True
