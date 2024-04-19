@@ -26,7 +26,7 @@ if 'messages' not in st.session_state:
         with col2:
             st.markdown("# ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ")
         st.title('')
-        col1,col2=st.columns([30,5])
+        col1,col2=st.columns([32,5])
         with col2:
             st.write("Please login")
         username = st.text_input("ID")
