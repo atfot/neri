@@ -84,7 +84,7 @@ if 'messages' not in st.session_state:
         username = st.text_input("유저 이름")
         password = st.text_input("비밀번호", type="password")
 
-        col1, col2 = st.columns([8.7,1.3])
+        col1, col2 = st.columns([6,4])
         with col1:
             if st.button("새로 오신 분", type="secondary"):
                 st.session_state.signin = True
