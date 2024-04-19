@@ -19,7 +19,7 @@ if 'messages' not in st.session_state:
     col1,col2=st.columns([6,4])
     with col1:
         language_selection=st.toggle('한국어/English')
-        
+
     if not language_selection: 
         st.session_state['korean_mode']=1
         st.write('한글 모드')
@@ -30,8 +30,12 @@ if 'messages' not in st.session_state:
         col1,col2=st.columns([23.5,5])
         with col2:
             st.write("로그인 해주세요")
-        username = st.text_input("아이디")
-        password = st.text_input("비밀번호", type="password")
+        col1,col2=st.columns([8,2])
+        with col1:
+            username = st.text_input("아이디")
+            password = st.text_input("비밀번호", type="password")
+        with col2:
+            st.button('새로 오신 분')
 
         col1, col2 = st.columns([9.8,1.3])
         with col1:
