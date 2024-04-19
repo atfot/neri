@@ -22,7 +22,7 @@ if 'messages' not in st.session_state:
     if language_selection: 
         st.session_state['korean_mode']=0
         st.write('English mode')
-        st.title('')
+        st.subheader('')
         col1,col2,col3=st.columns([1.5,7,1.5])
         with col2:
             st.markdown("# ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ")
@@ -73,7 +73,7 @@ if 'messages' not in st.session_state:
     if not language_selection: 
         st.session_state['korean_mode']=1
         st.write('한글 모드')
-        st.title('')
+        st.subheader('')
         col1,col2,col3=st.columns([1.5,7,1.5])
         with col2:
             st.markdown("# ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ")
