@@ -84,7 +84,7 @@ if 'messages' not in st.session_state:
         username = st.text_input("유저 이름")
         password = st.text_input("비밀번호", type="password")
 
-        col1, col2 = st.columns([7,3])
+        col1, col2 = st.columns([6,4])
         with col2:
             if st.button("로그인", type="primary"):
                 if username == st.session_state.user_id and password == st.session_state.password:
