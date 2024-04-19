@@ -30,14 +30,9 @@ if 'messages' not in st.session_state:
         col1,col2=st.columns([23.5,5])
         with col2:
             st.write("로그인 해주세요")
-        col1,col2=st.columns([8,2])
-        with col1:
-            username = st.text_input("아이디")
-            password = st.text_input("비밀번호", type="password")
-        with col2:
-            st.write('')
-            st.button('현규 오신 분')
-            st.button('고양이')
+        
+        username = st.text_input("아이디")
+        password = st.text_input("비밀번호", type="password")
 
         col1, col2 = st.columns([9.8,1.3])
         with col1:
