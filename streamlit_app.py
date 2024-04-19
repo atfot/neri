@@ -35,7 +35,7 @@ if 'messages' not in st.session_state:
             username = st.text_input("아이디")
             password = st.text_input("비밀번호", type="password")
         with col2:
-            st.subheader('')
+            st.empty()
             st.button('현규 오신 분')
             st.button('고양이')
 
