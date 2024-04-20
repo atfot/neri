@@ -55,7 +55,7 @@ if 'messages' not in st.session_state:
         if st.session_state.get('login_error', True):
             col, col2, col3 = st.columns([2,6,2])
             with col2:
-                st.error("유저 이름 또는 패스워드가 맞지 않습니다.")
+                st.error("아이디 또는 패스워드를 확인해주세요.")
         if st.session_state.get("login_error", False):
             pass
         if st.session_state.get('signin', True):
@@ -102,7 +102,7 @@ if 'messages' not in st.session_state:
         if st.session_state.get('login_error', True):
             col, col2, col3 = st.columns([2.5,5,2.5])
             with col2:
-                st.error("Incorrect username or password")
+                st.error("Incorrect ID or password")
         if st.session_state.get("login_error", False):
             pass
         if st.session_state.get('signin', True):
