@@ -41,7 +41,7 @@ if 'messages' not in st.session_state:
                 st.session_state.logged_in = True
             else:
                 st.session_state.login_error = True
-        st.write('')
+
         if st.button("새로 오신 분", type="secondary",use_container_width=True):
             st.session_state.signin = True
         
