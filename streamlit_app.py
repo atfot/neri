@@ -13,7 +13,7 @@ if 'messages' not in st.session_state:
 
     if 'screen_setting' not in st.session_state:
         x = streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH',  want_output = True)
-        sleep(0.5)           
+        sleep(1)           
         if x<662:
             st.session_state.screen_setting='mobile'
         if x>=662:
