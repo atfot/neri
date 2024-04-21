@@ -35,6 +35,7 @@ if 'messages' not in st.session_state:
     if not language_selection: 
         st.session_state['korean_mode']=1
         st.write('한글 모드')
+        st.markdown('<p><b>한글 모드</b></p>', unsafe_allow_html=True)
         st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
         st.markdown('<right><p>로그인 해주세요</p></right>', unsafe_allow_html=True)
         
