@@ -11,8 +11,7 @@ if 'messages' not in st.session_state:
         menu_items=None
     )
 
-    if st.button('width'):
-        st.write(f"Screen width is _{streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')}_")
+    st.write(f"Screen width is _{streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')}_")
   
     st.session_state.logged_in = False
     st.session_state.signin = False
