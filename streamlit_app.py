@@ -34,7 +34,7 @@ if 'messages' not in st.session_state:
         with col2:
             st.markdown("# ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ")
         
-        col1,col2=st.columns([23.5,6])
+        col1,col2=st.columns([23.5,5.5])
         with col2:
             st.write("로그인 해주세요")
         
