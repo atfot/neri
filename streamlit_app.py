@@ -14,7 +14,7 @@ if 'messages' not in st.session_state:
     if True:
         x = streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH',  want_output = True,)                
         st.write(f"Width is {x}")
-  
+ 
     st.session_state.logged_in = False
     st.session_state.signin = False
     st.session_state.login_error = False
@@ -34,7 +34,7 @@ if 'messages' not in st.session_state:
         with col2:
             st.markdown("# ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ")
         
-        col1,col2=st.columns([23.5,5])
+        col1,col2=st.columns([23.5,7])
         with col2:
             st.write("로그인 해주세요")
         
