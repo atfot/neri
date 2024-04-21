@@ -36,17 +36,17 @@ if 'messages' not in st.session_state:
         st.session_state['korean_mode']=1
         st.write('한글 모드')
         st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
-        st.markdown('<left><p>로그인 해주세요</p></left>', unsafe_allow_html=True)
+        st.markdown('<right><p>로그인 해주세요</p></right>', unsafe_allow_html=True)
         
         username = st.text_input("아이디")
         password = st.text_input("비밀번호", type="password")
 
-        col1, col2 = st.columns([9.2,1.3])
+        col1, col2, col3 = st.columns([3,4,3])
         with col1:
-            if st.button("새로 오신 분", type="secondary"):
+            if st.button("새로 오신 분", type="secondary",use_container_width=True):
                 st.session_state.signin = True
-        with col2:
-            if st.button("로그인", type="primary"):
+        with col3:
+            if st.button("로그인", type="primary",use_container_width=True):
                 if username == st.session_state.user_id and password == st.session_state.password:
                     st.session_state.logged_in = True
                 elif username == 'test' and password == 'test':
