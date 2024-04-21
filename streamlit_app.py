@@ -11,7 +11,7 @@ if 'messages' not in st.session_state:
         menu_items=None
     )
 
-    x = streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH',  want_output = True,)                
+    x = streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH',  want_output = True)                
     if x<662:
         st.write(x)
         st.write('mobile')
