@@ -67,16 +67,16 @@ if 'messages' not in st.session_state:
         st.markdown('<p><b>English mode</b></p>', unsafe_allow_html=True)
         st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
         st.markdown('<div style="text-align: right;"><p>Please login</p></div>',unsafe_allow_html=True)
-        
+
         username = st.text_input("ID")
         password = st.text_input("Password", type="password")
 
-        col1, col2 = st.columns([11.8,1.4])
+        col1, col2, col3 = st.columns([2,6,2])
         with col1:
-            if st.button("New User", type="secondary"):
+            if st.button("New User", type="secondary",use_container_width=True):
                 st.session_state.signin = True
-        with col2:
-            if st.button("Log in", type="primary"):
+        with col3:
+            if st.button("Log in", type="primary",use_container_width=True):
                 if username == st.session_state.user_id and password == st.session_state.password:
                     st.session_state.logged_in = True
                 elif username == 'test' and password == 'test':
