@@ -36,7 +36,7 @@ if 'messages' not in st.session_state:
         st.session_state['korean_mode']=1
         st.write('한글 모드')
         st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
-        st.markdown('<right><p>로그인 해주세요</p></right>', unsafe_allow_html=True)
+        st.markdown('<left><p>로그인 해주세요</p></left>', unsafe_allow_html=True)
         
         username = st.text_input("아이디")
         password = st.text_input("비밀번호", type="password")
