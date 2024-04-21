@@ -1,7 +1,5 @@
 import streamlit as st
 from time import sleep
-from streamlit_js_eval import streamlit_js_eval, get_geolocation
-import json
 
 if 'messages' not in st.session_state:
     st.set_page_config(
@@ -11,15 +9,6 @@ if 'messages' not in st.session_state:
         menu_items=None
     )
 
-    x = streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH',  want_output = True)
-    sleep(0.5)           
-    if x<662:
-        st.write(x)
-        st.write('mobile')
-    if x>=662:
-        st.write(x)
-        st.write('pc')
- 
     st.session_state.logged_in = False
     st.session_state.signin = False
     st.session_state.login_error = False
