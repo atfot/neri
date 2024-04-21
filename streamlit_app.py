@@ -3,6 +3,9 @@ from time import sleep
 from streamlit_js_eval import streamlit_js_eval, get_geolocation
 import json
 
+if st.button('width'):
+    st.write(f"Screen width is _{streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')}_")
+
 if 'messages' not in st.session_state:
     st.set_page_config(
         page_title="Your AI Therapist, Neri",
@@ -117,8 +120,7 @@ if 'messages' not in st.session_state:
         if st.session_state.get("signin", False):
             pass
 
-if st.button('width'):
-    st.write(f"Screen width is _{streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')}_")
+
     
 
     #if 'messages' in st.session_state:
