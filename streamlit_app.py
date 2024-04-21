@@ -64,14 +64,10 @@ if 'messages' not in st.session_state:
             pass
     if language_selection: 
         st.session_state['korean_mode']=0
-        st.write('English mode')        
-        col1,col2,col3=st.columns([1.5,7,1.5])
-        with col2:
-            st.markdown("# ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ")
+        st.markdown('<p><b>English mode</b></p>', unsafe_allow_html=True)
+        st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
+        st.markdown('<div style="text-align: right;"><p>Please login</p></div>',unsafe_allow_html=True)
         
-        col1,col2=st.columns([34.8,5])
-        with col2:
-            st.write("Please login")
         username = st.text_input("ID")
         password = st.text_input("Password", type="password")
 
