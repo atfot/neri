@@ -14,8 +14,10 @@ if 'messages' not in st.session_state:
     if True:
         x = streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH',  want_output = True,)                
         if x<=704:
+            st.write(x)
             st.write('mobile')
         if x>704:
+            st.write(x)
             st.write('pc')
  
     st.session_state.logged_in = False
