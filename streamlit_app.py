@@ -93,11 +93,20 @@ if 'messages' not in st.session_state:
         username = st.text_input("ID")
         password = st.text_input("Password", type="password")
 
-        col1, col2, col3 = st.columns([2,6,2])
-        with col1:
-            if st.button("New User", type="secondary",use_container_width=True):
-                st.session_state.signin = True
-        with col3:
+        if st.session_state.screen_setting=='pc':
+            col1, col2, col3 = st.columns([2,6,2])
+            with col1:
+                if st.button("New User", type="secondary",use_container_width=True):
+                    st.session_state.signin = True
+            with col3:
+                if st.button("Log in", type="primary",use_container_width=True):
+                    if username == st.session_state.user_id and password == st.session_state.password:
+                        st.session_state.logged_in = True
+                    elif username == 'test' and password == 'test':
+                        st.session_state.logged_in = True
+                    else:
+                        st.session_state.login_error = True
+        if st.session_state.screen_setting=='mobile':
             if st.button("Log in", type="primary",use_container_width=True):
                 if username == st.session_state.user_id and password == st.session_state.password:
                     st.session_state.logged_in = True
@@ -105,6 +114,9 @@ if 'messages' not in st.session_state:
                     st.session_state.logged_in = True
                 else:
                     st.session_state.login_error = True
+            if st.button("New User", type="secondary",use_container_width=True):
+                    st.session_state.signin = True
+
         if st.session_state.get("logged_in", True):
             col, col2, col3 = st.columns([3,4,3])
             with col2:
