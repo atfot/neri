@@ -16,7 +16,7 @@ def get_current_page_name():
 
 def make_sidebar():
     with st.sidebar:
-        st.title("💗 Neri")
+        st.title("💗 네리")
         st.write("")
         st.write("")
 
@@ -27,10 +27,10 @@ def make_sidebar():
             st.write("")
             st.write("")
 
-            if st.button("Log out"):
+            if st.button("로그아웃"):
                 logout()
             
-            if st.button('fix user info'):
+            if st.button('내 정보 수정'):
                  st.switch_page('pages/signin.py')
 
         elif get_current_page_name() != "streamlit_app":
