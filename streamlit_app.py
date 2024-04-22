@@ -16,7 +16,7 @@ if 'messages' not in st.session_state:
                 st.session_state.screen_setting = 'mobile'
             else:
                 st.session_state.screen_setting = 'pc'
-        except TypeError as e:
+        except Exception as e:
             pass
 
     st.session_state.logged_in = False
