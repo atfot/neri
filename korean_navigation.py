@@ -27,7 +27,7 @@ def make_sidebar():
             st.write("")
             st.write("")
 
-            col1,col2=st.columns([5,5])
+            col1,col2=st.columns([4,6])
             with col1:
                 st.empty()
             with col2:
