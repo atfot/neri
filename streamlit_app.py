@@ -1,7 +1,6 @@
 import streamlit as st
 from time import sleep
-from streamlit_js_eval import streamlit_js_eval, get_geolocation
-import json
+from streamlit_js_eval import streamlit_js_eval
 
 if 'messages' not in st.session_state:
     st.set_page_config(
