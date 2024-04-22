@@ -2,15 +2,15 @@ import streamlit as st
 from time import sleep
 from streamlit_js_eval import streamlit_js_eval
 
-st.set_page_config(
+
+if 'screen_setting' not in st.session_state:
+    st.set_page_config(
         page_title="Your AI Therapist, Neri",
         page_icon="🧊",
         layout="centered",
         menu_items=None
     )
-if 'screen_setting' not in st.session_state:
     x = streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)
-
     try:
         if x < 662:
             st.session_state.screen_setting = 'mobile'
