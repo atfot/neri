@@ -29,9 +29,10 @@ def make_sidebar():
 
             col1,col2=st.columns([5,5])
             with col1:
+                st.empty()
+            with col2:
                 if st.button("로그아웃"):
                     logout()
-            with col2:
                 if st.button('내 정보 수정'):
                     st.switch_page('pages/signin.py')
 
