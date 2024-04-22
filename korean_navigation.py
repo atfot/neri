@@ -27,11 +27,13 @@ def make_sidebar():
             st.write("")
             st.write("")
 
-            if st.button("로그아웃"):
-                logout()
-            
-            if st.button('내 정보 수정'):
-                 st.switch_page('pages/signin.py')
+            col1,col2=st.columns([5,5])
+            with col1:
+                if st.button("로그아웃"):
+                    logout()
+            with col2:
+                if st.button('내 정보 수정'):
+                    st.switch_page('pages/signin.py')
 
         elif get_current_page_name() != "streamlit_app":
             # If anyone tries to access a secret page without being logged in,
