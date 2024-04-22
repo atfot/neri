@@ -11,6 +11,7 @@ if 'screen_setting' not in st.session_state:
         menu_items=None
     )
     x = streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)
+    sleep(1)
     try:
         if x < 662:
             st.session_state.screen_setting = 'mobile'
