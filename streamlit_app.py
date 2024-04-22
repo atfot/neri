@@ -16,7 +16,7 @@ if 'messages' not in st.session_state:
             st.session_state.screen_setting = 'mobile'
         else:
             st.session_state.screen_setting = 'pc'
-            
+
     st.session_state.logged_in = False
     st.session_state.signin = False
     st.session_state.login_error = False
