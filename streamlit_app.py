@@ -10,12 +10,14 @@ if 'messages' not in st.session_state:
     menu_items=None
 )
     if 'screen_setting' not in st.session_state:
-        x = streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)
-        sleep(1)
-    if x < 662:
-        st.session_state.screen_setting = 'mobile'
-    else:
-        st.session_state.screen_setting = 'pc'
+            if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH',  want_output = True)) is not None:
+                    
+                if x<662:
+                    st.session_state.screen_setting='mobile'
+                if x>=662:
+                    st.session_state.screen_setting='pc'
+                
+                st.write(st.session_state.screen_setting)
 
     st.session_state.logged_in = False
     st.session_state.signin = False
