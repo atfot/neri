@@ -88,8 +88,6 @@ if 'messages' not in st.session_state:
                            아이디 또는 패스워드를 5번 이상 틀리셨습니다.
                            
                            아이디 또는 비밀번호 찾기를 통해 정보를 확인해주세요.""")
-                sleep(0.5)
-                st.switch_page("pages/signin.py")
         if st.session_state.get("signin", False):
             pass
     if language_selection: 
