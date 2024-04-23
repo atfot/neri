@@ -12,7 +12,6 @@ if 'messages' not in st.session_state:
     st.session_state.logged_in = False
     st.session_state.signin = False
     st.session_state.login_error = False
-    st.session_state.login_attempt=0
     st.session_state.many_login_attempt=False
 
     if 'user_id' not in st.session_state:
