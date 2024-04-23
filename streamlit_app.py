@@ -41,8 +41,9 @@ if 'messages' not in st.session_state:
                     st.session_state.logged_in = True
                 else:
                     st.session_state.login_error = True
-            else:
+            if st.session_state.login_attempt>=6:
                 st.session_state.many_login_attempt = True
+
         col1, col2, col3 = st.columns([3.3,3.3,3.4])
         with col1:
             if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
