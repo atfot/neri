@@ -12,7 +12,6 @@ if 'messages' not in st.session_state:
     st.session_state.logged_in = False
     st.session_state.signin = False
     st.session_state.login_error = False
-    st.session_state.login_attempt=0
     st.session_state.many_login_attempt=False
 
     if 'user_id' not in st.session_state:
@@ -33,6 +32,7 @@ if 'messages' not in st.session_state:
         password = st.text_input("비밀번호", type="password")
 
         if st.button("로그인", type="primary",use_container_width=True):
+            st.session_state.login_attempt=0
             st.session_state.login_attempt+=1
             if st.session_state.login_attempt<6:
                 if username == st.session_state.user_id and password == st.session_state.password:
