@@ -91,7 +91,7 @@ if 'messages' not in st.session_state:
         if st.session_state.get('login_error', True):
             col, col2, col3 = st.columns([2,6,2])
             with col2:
-                st.error(f"아이디 또는 비밀번호를 확인해주세요.({st.session_state.login_attempt}/5)")
+                st.error(f"아이디 또는 비밀번호를 확인해주세요({st.session_state.login_attempt}/5)")
         if st.session_state.get("login_error", False):
             pass
         if st.session_state.get('signin', True):
@@ -106,7 +106,7 @@ if 'messages' not in st.session_state:
                 st.error("""
                            아이디 또는 패스워드를 5번 이상 틀리셨습니다.
                            
-                           아이디 또는 비밀번호 찾기를 통해 정보를 확인해주세요.""")
+                           아이디 또는 비밀번호 찾기를 통해 정보를 수정해주세요.""")
         if st.session_state.get("signin", False):
             pass
     if language_selection: 
@@ -118,23 +118,47 @@ if 'messages' not in st.session_state:
         username = st.text_input("ID")
         password = st.text_input("Password", type="password")
 
-        if st.button("Log in", type="primary",use_container_width=True):
-            if username == st.session_state.user_id and password == st.session_state.password:
-                st.session_state.logged_in = True
-            elif username == 'test' and password == 'test':
-                st.session_state.logged_in = True
-            else:
-                st.session_state.login_error = True    
-        col1, col2, col3 = st.columns([3.3,3.3,3.4])
-        with col1:
-            if st.button("Find my PW", type="secondary",use_container_width=True):
-                st.write("I'm still making this function")
-        with col2:
-            if st.button("Find my ID", type="secondary",use_container_width=True):
-                st.write("I'm still making this function")
-        with col3:
+        if st.session_state.screen_setting=='pc':
+            if st.button("Log in", type="primary",use_container_width=True):
+                st.session_state.login_attempt+=1
+                if st.session_state.login_attempt<6:
+                    if username == st.session_state.user_id and password == st.session_state.password:
+                        st.session_state.logged_in = True
+                    elif username == 'test' and password == 'test':
+                        st.session_state.logged_in = True
+                    else:
+                        st.session_state.login_error = True
+                if st.session_state.login_attempt>=6:
+                    st.session_state.many_login_attempt = True
+
+            col1, col2, col3 = st.columns([3.3,3.3,3.4])
+            with col1:
+                if st.button("Find my ID", type="secondary",use_container_width=True):
+                    st.write("I'm currently making this function")
+            with col2:
+                if st.button("Find my PW", type="secondary",use_container_width=True):
+                    st.write("I'm currently making this function")
+            with col3:
+                if st.button("New USer", type="secondary",use_container_width=True):
+                    st.session_state.signin = True
+        else:
+            if st.button("Log in", type="primary",use_container_width=True):
+                st.session_state.login_attempt+=1
+                if st.session_state.login_attempt<6:
+                    if username == st.session_state.user_id and password == st.session_state.password:
+                        st.session_state.logged_in = True
+                    elif username == 'test' and password == 'test':
+                        st.session_state.logged_in = True
+                    else:
+                        st.session_state.login_error = True
+                if st.session_state.login_attempt>=6:
+                    st.session_state.many_login_attempt = True
             if st.button("New User", type="secondary",use_container_width=True):
-                st.session_state.signin = True
+                    st.session_state.signin = True
+            if st.button("Find my ID", type="secondary",use_container_width=True):
+                st.write("I'm currently making this function")
+            if st.button("Find my PW", type="secondary",use_container_width=True):
+                st.write("I'm currently making this function")
 
         if st.session_state.get("logged_in", True):
             col, col2, col3 = st.columns([3,4,3])
@@ -147,7 +171,7 @@ if 'messages' not in st.session_state:
         if st.session_state.get('login_error', True):
             col, col2, col3 = st.columns([2.5,5,2.5])
             with col2:
-                st.error("Incorrect ID or password")
+                st.error(f"Incorrect ID or password ({st.session_state.login_attempt}/5)")
         if st.session_state.get("login_error", False):
             pass
         if st.session_state.get('signin', True):
@@ -156,6 +180,13 @@ if 'messages' not in st.session_state:
                 st.success("Welcome to Neri!")
                 sleep(0.5)
                 st.switch_page("pages/signin.py")
+        if st.session_state.get('many_login_attempt',True):
+            col, col2, col3 = st.columns([2,6,2])
+            with col2:
+                st.error("""
+                           You've entered your ID or password incorrectly more than 5 times.
+                           
+                           Please use 'Find my ID' or 'Find my PW' to correct your information.""")
         if st.session_state.get("signin", False):
             pass
 
