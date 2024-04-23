@@ -1,6 +1,5 @@
 import streamlit as st
 from time import sleep
-from streamlit_js_eval import streamlit_js_eval
 
 if 'messages' not in st.session_state:
     st.set_page_config(
@@ -9,15 +8,7 @@ if 'messages' not in st.session_state:
     layout="centered",
     menu_items=None
 )
-    if 'screen_setting' not in st.session_state:
-        x = streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH',  want_output = True)
-        if x is None:
-            sleep(1)
-        if x<662:
-            st.session_state.screen_setting='mobile'
-        if x>=662:
-            st.session_state.screen_setting='pc'
-
+    
     st.session_state.logged_in = False
     st.session_state.signin = False
     st.session_state.login_error = False
