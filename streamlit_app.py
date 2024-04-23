@@ -51,7 +51,7 @@ if 'messages' not in st.session_state:
             if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
                 st.write('hi')
         with col2:
-            if st.button("아이디", type="secondary",use_container_width=True):
+            if st.button("아이디 찾기", type="secondary",use_container_width=True):
                 st.write('hi')
         with col3:
             if st.button("새로 오신 분", type="secondary",use_container_width=True):
