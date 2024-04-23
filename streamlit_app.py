@@ -40,10 +40,10 @@ if 'messages' not in st.session_state:
         col1, col2, col3 = st.columns([3.3,3.3,3.4])
         with col1:
             if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
-                st.write('hi')
+                st.write('아직 작업중인 기능')
         with col2:
             if st.button("아이디 찾기", type="secondary",use_container_width=True):
-                st.write('hi')
+                st.write('아직 작업중인 기능')
         with col3:
             if st.button("새로 오신 분", type="secondary",use_container_width=True):
                 st.session_state.signin = True
@@ -88,10 +88,10 @@ if 'messages' not in st.session_state:
         col1, col2, col3 = st.columns([3.3,3.3,3.4])
         with col1:
             if st.button("Find my PW", type="secondary",use_container_width=True):
-                st.write('hi')
+                st.write("I'm still making this function")
         with col2:
             if st.button("Find my ID", type="secondary",use_container_width=True):
-                st.write('hi')
+                st.write("I'm still making this function")
         with col3:
             if st.button("New User", type="secondary",use_container_width=True):
                 st.session_state.signin = True
