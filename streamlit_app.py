@@ -23,7 +23,7 @@ if 'messages' not in st.session_state:
 
     if not language_selection: 
         st.session_state['korean_mode']=1
-        st.markdown('<p><b>Korean Mode</b></p>', unsafe_allow_html=True)
+        st.markdown('<p><b>Korean Language Mode</b></p>', unsafe_allow_html=True)
         st.markdown('<center><h1>ᆞ네ᆞᆞ리ᆞ</h1></center>', unsafe_allow_html=True)
         st.markdown('<div style="text-align: right;"><p>로그인 해주세요</p></div>',unsafe_allow_html=True)
         
