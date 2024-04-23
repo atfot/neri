@@ -13,6 +13,7 @@ if 'messages' not in st.session_state:
     st.session_state.signin = False
     st.session_state.login_error = False
     st.session_state.login_attempt=0
+    st.session_state.many_login_attempt=False
 
     if 'user_id' not in st.session_state:
         st.session_state.user_id = False
@@ -39,7 +40,9 @@ if 'messages' not in st.session_state:
                 elif username == 'test' and password == 'test':
                     st.session_state.logged_in = True
                 else:
-                    st.session_state.login_error = True    
+                    st.session_state.login_error = True
+            else:
+                st.session_state.many_login_attempt = True
         col1, col2, col3 = st.columns([3.3,3.3,3.4])
         with col1:
             if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
@@ -61,13 +64,22 @@ if 'messages' not in st.session_state:
         if st.session_state.get('login_error', True):
             col, col2, col3 = st.columns([2,6,2])
             with col2:
-                st.error("아이디 또는 패스워드를 확인해주세요.")
+                st.error("아이디 또는 비밀번호를 확인해주세요.")
         if st.session_state.get("login_error", False):
             pass
         if st.session_state.get('signin', True):
             col, col2, col3 = st.columns([3,4,3])
             with col2:
                 st.success("네리에 오신 것을 환영합니다!")
+                sleep(0.5)
+                st.switch_page("pages/signin.py")
+        if st.session_state.many_login_attempt==True:
+            col, col2, col3 = st.columns([2,6,2])
+            with col2:
+                st.error("""
+                           아이디 또는 패스워드를 5번 이상 틀리셨습니다.
+                           
+                           아이디 또는 비밀번호 찾기를 통해 정보를 확인해주세요.""")
                 sleep(0.5)
                 st.switch_page("pages/signin.py")
         if st.session_state.get("signin", False):
