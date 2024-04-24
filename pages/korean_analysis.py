@@ -1,6 +1,7 @@
 import streamlit as st
 from korean_navigation import make_sidebar
 from openai import OpenAI
+import time
 
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
@@ -101,6 +102,7 @@ if st.session_state.analysis_request==True:
   problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
   what_to_do=problem_analysis.split('\n')
 
+  st.write(time.localtime().tm_year)
   st.write(client_analysis)
   st.write(score)
   st.write(score_explanation)
