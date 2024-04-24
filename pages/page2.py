@@ -45,11 +45,11 @@ if st.button('show the message'):
               # Answer form
               - You need to use the form below to answer my request using Korean language.
               '''
-              - Patient Analysis : [Analyze the information I've given you.]
+              Patient Analysis : [Analyze the information I've given you.]
 
-              - Score : [Based on the analysis you did, please score how well the patient's problem was solved.]
+              Score : [Based on the analysis you did, please score how well the patient's problem was solved.]
 
-              - Explanation : [Tell me how the score you gave me was based on your considerations.]
+              Explanation : [Tell me how the score you gave me was based on your considerations.]
               '''
               **Remember**:
               1. Use Korean Language to answer my question
