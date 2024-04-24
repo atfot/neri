@@ -1,5 +1,6 @@
 import streamlit as st
 from korean_navigation import make_sidebar
+from openai import OpenAI
 
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
@@ -11,7 +12,7 @@ make_sidebar()
 
 if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
-  
+
 if 'title' not in st.session_state:
     st.title('Hi')
 if st.button('show the message'):
