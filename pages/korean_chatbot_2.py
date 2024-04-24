@@ -25,7 +25,7 @@ if 'username' not in st.session_state:
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
     st.session_state['conversations']=[{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
-    st.session_state['message_summary'] = '아직까지 쓰인 내용은 없고, 여기서부터 대화내용이 시작됩니다.'
+    st.session_state['message_summary'] = '아래의 내용이 가장 최근 대화 내용입니다.'
 
 if 'repeat' not in st.session_state:
     st.session_state.repeat = False
