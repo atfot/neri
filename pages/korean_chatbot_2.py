@@ -177,8 +177,8 @@ def main():
                 ```
             """
             for i in st.session_state.conversations:
-                messages_for_prompt=f"{i['role']} : {i['content']}"
-            st.session_state.messages_for_prompt=messages_for_prompt
+                conversations_for_prompt=f"{i['role']} : {i['content']}"
+            st.session_state.conversations_for_prompt=conversations_for_prompt
             user_prompt_1=f"""
                 ```
                 # My requests: 
@@ -187,7 +187,7 @@ def main():
 
                 - Read this step by step before filling out the form
                 **Summary of the conversation**: [{st.session_state.message_summary}]
-                **Latest Conversations**: [{messages_for_prompt}]     
+                **Latest Conversations**: [{conversations_for_prompt}]     
                 
                 - This is the form      
                 '''
@@ -348,7 +348,7 @@ def main():
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
-                st.write(st.session_state.messages_for_prompt)
+                st.write(st.session_state.conversations_for_prompt)
                 st.write(st.session_state.conversations)
             with col2:
                 st.write('')
