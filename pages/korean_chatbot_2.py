@@ -112,11 +112,14 @@ def main():
                 messages=[
                     {
                     "role": "system",
-                    "content": "전달된 내용을 요약해주세요."
+                    "content": "Your role is to summarize the paragraph I give to you."
                     },
                     {
                     "role": "user",
-                    "content": f"{st.session_state.messages}"
+                    "content": f"""
+아래의 내용을 요약해주세요.
+
+{st.session_state.messages}"""
                     }
                 ],
                 temperature=1,
