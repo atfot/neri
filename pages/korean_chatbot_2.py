@@ -350,7 +350,7 @@ def main():
                 st.write('')
                 st.button('🔄', on_click=reply_again_cb)
             #st.write(st.session_state.messages[:-1])
-        st.write(user_prompt_1)
+            st.write(user_prompt_1)
 
 
 if __name__ == '__main__':
