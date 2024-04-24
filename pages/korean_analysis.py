@@ -74,7 +74,8 @@ if st.session_state.analysis_request==True:
                   **Remember**:
                   1. Use Korean Language to answer my question.
                   2. Your score should be much lower than you think.
-                  3. If you need to use the word '고객', replace it into the client's name.
+                  3. Don't use the word '고객' or '클라이언트'.
+                  4. If you need to use the word '고객', don't use that word and replace it into the client's name.
       """
                 }
               ],
