@@ -33,6 +33,7 @@ if 'repeat' not in st.session_state:
 # functions
 def reply_again_cb():
     st.session_state.repeat = True
+    st.session_state.click_counter=0
 
 if st.session_state.repeat==True:
     st.session_state.messages=st.session_state.messages[:-1]
@@ -333,7 +334,8 @@ def main():
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
-                #st.session_state.conversations=st.session_state.conversations[:-1]
+                st.session_state.click_counter+=1
+                st.session_state.conversations=st.session_state.conversations[:-st.session_state.click_counter]
                 st.write(st.session_state.conversations)
             with col2:
                 st.write('')
