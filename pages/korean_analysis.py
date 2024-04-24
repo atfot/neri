@@ -78,6 +78,7 @@ if st.button('show the message'):
           presence_penalty=0
           )    
     problem_analysis = problem_analysis.choices[0].message.content
+    problem_analysis=problem_analysis.strip("'''")
     st.write(problem_analysis)
     st.write(st.session_state.conversations)
     st.write(st.session_state.message_summary)
