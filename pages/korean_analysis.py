@@ -17,12 +17,9 @@ if 'client' not in st.session_state:
 st.session_state.analysis_request=False
 
 if 'title' not in st.session_state:
-    st.title('대화 분석')
-col1,col2=st.columns([8,2])
-with col2:
-  if st.button('분석 요청',use_container_width=True):
-      st.session_state.analysis_request=True
-if st.session_state.analysis_request==True:
+    st.title('내 정보')
+
+if 'my_info' not in st.session_state:
   problem_analysis = st.session_state.client.chat.completions.create(
               model="gpt-3.5-turbo-0125",
               messages=[
@@ -103,6 +100,7 @@ if st.session_state.analysis_request==True:
   problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
   what_to_do=problem_analysis.split('\n')
 
+  st.session_state.my_info=True
   st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
 
   col1,col2,col3=st.columns([4,1,5])
@@ -120,6 +118,6 @@ if st.session_state.analysis_request==True:
     st.write(score_explanation)
     for i in what_to_do:
       st.write(i)
-  st.write(st.session_state.problem_analysis)
+  #st.write(st.session_state.problem_analysis)
   #st.write(st.session_state.conversations)
   #st.write(st.session_state.message_summary)
