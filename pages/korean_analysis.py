@@ -86,6 +86,7 @@ if st.session_state.analysis_request==True:
   problem_analysis = problem_analysis.choices[0].message.content
   problem_analysis=problem_analysis.strip().strip("'''")
   st.session_state.problem_analysis=problem_analysis
+  st.session_state.problem_analysis=problem_analysis
   problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
   client_analysis=problem_analysis[:problem_analysis.find('\n')]
   problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
@@ -98,10 +99,10 @@ if st.session_state.analysis_request==True:
   problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
   what_to_do=problem_analysis.split('\n')
 
-
   st.write(client_analysis)
   st.write(score)
   st.write(score_explanation)
   st.write(what_to_do)
+  st.write(st.session_state.problem_analysis)
   #st.write(st.session_state.conversations)
   #st.write(st.session_state.message_summary)
