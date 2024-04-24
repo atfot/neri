@@ -50,18 +50,18 @@ if st.button('분석 요청'):
               # Answer form
               - You need to use the form below to answer my request using Korean language.
               '''
-              Patient Analysis : [Analyze the information I've given you.]
+              Client Analysis : [Analyze the information I've given you.]
 
-              Score : [Based on the analysis you did, please score how well the patient's problem was solved.]
+              Score : [Based on the analysis you did, please score how well the client's problem was solved.]
 
               Explanation : [Tell me how the score you gave me was based on your considerations.
               *Scoring criteria*:
-              10 : The person's psychosis has been cured, or the patient is no longer suffering from the problem.
+              10 : The person's psychosis has been cured, or the client is no longer suffering from the problem.
               9 : The person's mental illness is on the verge of being cured or the issue is on the verge of being completely resolved.
-              6 ~ 8 : The patient is directly demonstrating a willingness to work toward a positive direction.
-              3 ~ 5 : The patient is not directly demonstrating a willingness to move in a positive direction.
-              2 : The patient is directly demonstrating a willingness to work toward a negative direction.
-              1 : The person has a serious mental illness or mental health issue and needs to see a real doctor or psychologist to address it.]
+              6 ~ 8 : The client is directly demonstrating a willingness to work toward a positive direction.
+              3 ~ 5 : The client is not directly demonstrating a willingness to move in a positive direction.
+              2 : The client is directly demonstrating a willingness to work toward a negative direction.
+              1 : The client has a serious mental illness or mental health issue and needs to see a real doctor or psychologist to address it.]
 
               Best thing to do : [Tell me what you think is the best thing for the patient to do in that situation,using a bullet point summary, as a professional psychologist.]
               '''
