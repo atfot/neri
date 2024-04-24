@@ -12,5 +12,5 @@ make_sidebar()
 if 'title' not in st.session_state:
     st.title('Hi')
 if st.button('show the message'):
-    st.write(st.session_state.messages)
+    st.write(st.session_state.conversations)
     st.write(st.session_state.message_summary)
