@@ -50,7 +50,7 @@ if st.button('분석 요청'):
               # Answer form
               - You need to use the form below to answer my request using Korean language.
               '''
-              Client Analysis : [Analyze the information I've given you.]
+              Client Analysis : [Analyze the information I've given you by not using any bullet points.]
 
               Score : [Based on the analysis you did, please score how well the client's problem was solved.]
 
