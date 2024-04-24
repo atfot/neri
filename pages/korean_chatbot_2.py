@@ -199,7 +199,7 @@ def main():
                 ```
 
             """
-            
+            st.session_state.user_prompt_1=user_prompt_1
             response = st.session_state.client.chat.completions.create(
             model="gpt-3.5-turbo-0125",
             messages=[
@@ -220,7 +220,6 @@ def main():
         )
             my_bar.progress(25,text=progress_text)
             msg = response.choices[0].message.content
-            st.session_state.msg=msg
             sentence_selection = st.session_state.client.chat.completions.create(
             model="gpt-3.5-turbo-0125",
             messages=[
@@ -344,7 +343,7 @@ def main():
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
-                st.write(st.session_state.msg)
+                st.write(st.session_state.user_prompt_1)
                 st.write(st.session_state.conversations)
             with col2:
                 st.write('')
