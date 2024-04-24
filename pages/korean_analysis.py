@@ -105,17 +105,20 @@ if st.session_state.analysis_request==True:
 
   st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
 
-  st.write(f"""1. 고객님 성함: {st.session_state.username}
+  col1,col2=st.columns([5,5])
+  with col1:
+    st.write(f"""1. 고객님 성함: {st.session_state.username}
 2. 연령: {st.session_state.age}
 3. 성별: {st.session_state.gender}
 4. 고민 : {st.session_state.problem}
 5. 고민 설명: {st.session_state.problem_explanation}
 6. 목표 : {st.session_state.goal}"""
 )  
-  st.write(client_analysis)
-  st.write(score)
-  st.write(score_explanation)
-  st.write(what_to_do)
+  with col2:
+    st.write(client_analysis)
+    st.write(score)
+    st.write(score_explanation)
+    st.write(what_to_do)
   st.write(st.session_state.problem_analysis)
   #st.write(st.session_state.conversations)
   #st.write(st.session_state.message_summary)
