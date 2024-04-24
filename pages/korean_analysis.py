@@ -24,7 +24,8 @@ if st.button('show the message'):
               "content": """Your role as a Korean professional psychotherapist is to score the extent to which the patient's problem has improved given the information below and explain why.
               
               **Remember**:
-              1. Use Korean Language to answer my question
+              1. Use Korean Language to answer my question.
+              2. Your score should be a little lower than you think. Give them about 2 points less than you originally intended to give them.
               """
             },
             {
@@ -65,7 +66,8 @@ if st.button('show the message'):
               Best thing to do : [Tell me what you think is the best thing for the patient to do in that situation,using a bullet point summary, as a professional psychologist.]
               '''
               **Remember**:
-              1. Use Korean Language to answer my question
+              1. Use Korean Language to answer my question.
+              2. Your score should be a little lower than you think. Give them about 2 points less than you originally intended to give them.
   """
             }
           ],
