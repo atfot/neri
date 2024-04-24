@@ -79,8 +79,8 @@ with col2:
             frequency_penalty=0,
             presence_penalty=0
             )    
-      problem_analysis = problem_analysis.choices[0].message.content
-problem_analysis = problem_analysis.choices[0].message.content
+      st.session_state.problem_analysis = problem_analysis.choices[0].message.content
+problem_analysis = st.session_state.problem_analysis.choices[0].message.content
 problem_analysis=problem_analysis.strip().strip("'''")
 st.session_state.problem_analysis=problem_analysis
 problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
