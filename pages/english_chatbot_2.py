@@ -128,14 +128,12 @@ Please briefly summarize the conversation below.
                 - Psychotherapist cannot speak information from mentally ill person and himself unless it's really necessary.
                 - Keep in mind that the psychotherapist's response is part of the conversation and will be followed by the mentally ill person's response
                 - The psychotherapist's response should fit the tone and content of the conversation
-                - If mental patient's reply is too short, you need to ask some questions to understand what is going on inside his/her mind
+                - If you get a short answer from the mental patient, ask him/her a related question
                 - The psychotherapist is talking to only one person with a mental illness(Check the "# Character information")
-                - If you get a short answer from the mental patient, ask him/her a related question.
-                - Never use a tone that suggests you want to do something with the patient.
-                - If you get a short answer from the mental patient, ask him/her a related question.
-                - Never reuse any sentences that has a same context which have already been used within a conversation.
-                - If you get any questions from the mental patient, give him/her an answer.
-                - The grammar of the sentences should be perfect.
+                - Never reuse any sentences that has a same context which have already been used within a conversation
+                - The grammar of the sentences should be perfect
+                - If you get any questions from the mental patient, give him/her an answer
+                - Never use a tone that suggests you want to do something with the patient
                 - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
                 '''   
                 ```
@@ -158,11 +156,11 @@ Please briefly summarize the conversation below.
                 '''
                 
                 **REMEMBER**: 
+                - The grammar of the sentences should be perfect.
                 - Never use a tone that suggests you want to do something with the patient.
                 - If you get a short answer from the mental patient, ask him/her a related question.
                 - Never reuse any sentences that has a same context which have already been used within a conversation.
                 - If you get any questions from the mental patient, give him/her an answer.
-                - The grammar of the sentences should be perfect.
                 ```
 
             """
@@ -220,7 +218,7 @@ Please briefly summarize the conversation below.
                 **Three possible answers from a psychotherapist who wants to learn about his patient and heal the patient's mind**: 
                 "[{msg}]"
 
-                - After reading the informations above, please **pick the best response from three possible answers** and write it down exactly, without leaving out a single letter. 
+                - After reading the informations above, please **pick the best response from three possible answers** considering psychotherapist's intention, and write it down exactly, without leaving out a single letter. 
                 
                 **REMEMBER**:
                 1. After you pick the best response, then write it down exactly, without leaving out a single letter.
