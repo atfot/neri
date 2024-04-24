@@ -102,28 +102,27 @@ if st.session_state.korean_mode==1:
                 col1,col2=st.columns([5,5])
                 with col1:
                     st.write(f"""
-    
-                             아이디:{st.session_state.user_id}
+아이디:{st.session_state.user_id}
 
-    비밀번호: {st.session_state.password}
+비밀번호: {st.session_state.password}
 
-    유저 이름: {st.session_state.username}
+유저 이름: {st.session_state.username}
 
-    나이: {st.session_state.age}
+나이: {st.session_state.age}
 
-    국적: {st.session_state.nationality}
+국적: {st.session_state.nationality}
 
-    도시: {st.session_state.city}
-    """)
+도시: {st.session_state.city}
+""")
                 with col2:
                     st.write(f"""
-    고민: {st.session_state.problem}
+                    고민: {st.session_state.problem}
 
-    고민에 대한 설명: {st.session_state.problem_explanation}
+                    고민에 대한 설명: {st.session_state.problem_explanation}
 
-    목표: {st.session_state.goal}
-    """)
-                time.sleep(5)
+                    목표: {st.session_state.goal}
+                    """)
+                time.sleep(5) 
                 try:
                     progress_text = "로딩중"
                     my_bar = st.progress(0, text=progress_text)                    
@@ -225,26 +224,25 @@ if st.session_state.korean_mode==0:
                 col1,col2=st.columns([5,5])
                 with col1:
                     st.write(f"""
-    
-                             ID:{st.session_state.user_id}
+ID:{st.session_state.user_id}
 
-    PW: {st.session_state.password}
+PW: {st.session_state.password}
 
-    User Name: {st.session_state.username}
+User Name: {st.session_state.username}
 
-    Age: {st.session_state.age}
+Age: {st.session_state.age}
 
-    Nationality: {st.session_state.nationality}
+Nationality: {st.session_state.nationality}
 
-    City: {st.session_state.city}
-    """)
-                with col2:
-                    st.write(f"""
-    Your Problem: {st.session_state.problem}
+City: {st.session_state.city}
+""")
+            with col2:
+                st.write(f"""
+Your Problem: {st.session_state.problem}
 
-    Detailed Explanation of Your Problem: {st.session_state.problem_explanation}
+Detailed Explanation of Your Problem: {st.session_state.problem_explanation}
 
-    Your goal: {st.session_state.goal}
+Your goal: {st.session_state.goal}
     """)
                 time.sleep(5)
                 try:
