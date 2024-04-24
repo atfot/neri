@@ -29,9 +29,10 @@ def make_sidebar():
 
             col1,col2=st.columns([3,7])
             with col1:
-                if st.button("Log out",type='primary',use_container_width=True):
-                    logout()            
+                st.empty()
             with col2:
+                if st.button("Log out",type='primary',use_container_width=True):
+                    logout()   
                 if st.button('fix user info',use_container_width=True):
                     st.switch_page('pages/signin.py')
 
