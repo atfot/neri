@@ -25,7 +25,7 @@ if st.button('show the message'):
               
               **Remember**:
               1. Use Korean Language to answer my question.
-              2. Your score should be a little lower than you think.
+              2. Your score should be a lot lower than you think.
               """
             },
             {
@@ -67,7 +67,7 @@ if st.button('show the message'):
               '''
               **Remember**:
               1. Use Korean Language to answer my question.
-              2. Your score should be a little lower than you think.
+              2. Your score should be a lot lower than you think.
   """
             }
           ],
