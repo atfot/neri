@@ -27,7 +27,7 @@ if st.session_state.analysis_request==True:
               messages=[
                 {
                   "role": "system",
-                  "content": """Your role as a Korean professional psychotherapist is to score the extent to which the patient's problem has improved given the information below and explain why.
+                  "content": """Your role as a Korean professional psychotherapist is to score the extent to which the client's problem has improved given the information below and explain why.
                   
                   **Remember**:
                   1. Use Korean Language to answer my question.
@@ -38,10 +38,10 @@ if st.session_state.analysis_request==True:
                   "role": "user",
                   "content": f"""
                   # My Request:
-                  From a Korean professional psychotherapist's perspective, score the extent to which the patient's problem is improved by the information given below and explain why.
+                  From a Korean professional psychotherapist's perspective, score the extent to which the client's problem is improved by the information given below and explain why.
 
                   # Informations you need to know
-                  - Patient's Name: {st.session_state.username}
+                  - Client's Name: {st.session_state.username}
                   - Age: {st.session_state.age}
                   - Gender: {st.session_state.gender}
                   - Problem : {st.session_state.problem}
@@ -74,6 +74,7 @@ if st.session_state.analysis_request==True:
                   **Remember**:
                   1. Use Korean Language to answer my question.
                   2. Your score should be much lower than you think.
+                  3. If you need to use the word '고객', replace it into '고객님'.
       """
                 }
               ],
