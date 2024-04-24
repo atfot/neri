@@ -84,7 +84,6 @@ if st.session_state.analysis_request==True:
               presence_penalty=0
               )    
   problem_analysis = problem_analysis.choices[0].message.content
-  problem_analysis = problem_analysis.choices[0].message.content
   problem_analysis=problem_analysis.strip().strip("'''")
   st.session_state.problem_analysis=problem_analysis
   problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
