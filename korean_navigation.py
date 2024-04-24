@@ -31,9 +31,9 @@ def make_sidebar():
             with col1:
                 st.empty()
             with col2:
-                if st.button("로그아웃"):
+                if st.button("로그아웃",use_container_width=True):
                     logout()
-                if st.button('내 정보 수정'):
+                if st.button('내 정보 수정',use_container_width=True):
                     st.switch_page('pages/signin.py')
 
         elif get_current_page_name() != "streamlit_app":
