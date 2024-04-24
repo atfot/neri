@@ -25,6 +25,7 @@ if st.button('분석 요청'):
               
               **Remember**:
               1. Use Korean Language to answer my question.
+              2. Your score should be much lower than you think.
               """
             },
             {
@@ -66,6 +67,7 @@ if st.button('분석 요청'):
               '''
               **Remember**:
               1. Use Korean Language to answer my question.
+              2. Your score should be much lower than you think.
   """
             }
           ],
