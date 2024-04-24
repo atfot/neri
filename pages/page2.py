@@ -50,6 +50,8 @@ if st.button('show the message'):
               Score : [Based on the analysis you did, please score how well the patient's problem was solved.]
 
               Explanation : [Tell me how the score you gave me was based on your considerations.]
+
+              Best thing to do : [Tell me what you think is the best thing for the patient to do in that situation, as a professional psychologist.]
               '''
               **Remember**:
               1. Use Korean Language to answer my question
