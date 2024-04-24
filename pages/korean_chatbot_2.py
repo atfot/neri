@@ -112,7 +112,7 @@ def main():
                 messages=[
                     {
                     "role": "system",
-                    "content": "전달된 내용을 요약 정리해주세요."
+                    "content": "전달된 내용을 요약해주세요."
                     },
                     {
                     "role": "user",
