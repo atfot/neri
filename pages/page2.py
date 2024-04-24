@@ -10,3 +10,5 @@ st.set_page_config(
 make_sidebar()
 
 st.write('hi')
+st.write(st.session_state.messages)
+st.write(st.session_state.summary)
