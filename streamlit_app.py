@@ -61,7 +61,7 @@ if 'messages' not in st.session_state:
                 if st.button("아이디 찾기", type="secondary",use_container_width=True):
                     st.write('아직 제작중인 기능')
             with col3:
-                if st.button("새로 오신 분", type="secondary",use_container_width=True):
+                if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
                     st.session_state.signin = True
         else:
             if st.button("로그인", type="primary",use_container_width=True):
