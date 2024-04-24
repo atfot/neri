@@ -178,7 +178,7 @@ def main():
             """
             for i in st.session_state.conversations:
                 messages_for_prompt=f"{i['role']} : {i['content']}\n"
-            st.session_state.messages_for_prompt=messages_for_prompt
+            st.session_state.messages_for_prompt=st.session_state.conversations
             user_prompt_1=f"""
                 ```
                 # My requests: 
