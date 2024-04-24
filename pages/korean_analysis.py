@@ -42,11 +42,12 @@ if st.session_state.analysis_request==True:
                   From a Korean professional psychotherapist's perspective, score the extent to which the client's problem is improved by the information given below and explain why.
 
                   # Informations you need to know
-                  - Client's Name: {st.session_state.username}
-                  - Age: {st.session_state.age}
-                  - Gender: {st.session_state.gender}
+                  - Client's Name : {st.session_state.username}
+                  - Age : {st.session_state.age}
+                  - Gender : {st.session_state.gender}
                   - Problem : {st.session_state.problem}
-                  - Problem Explanation: {st.session_state.problem_explanation}
+                  - Problem Explanation : {st.session_state.problem_explanation}
+                  - Goal : {st.session_state.goal}
 
                   - Message summary : 
                   {st.session_state.message_summary}
@@ -108,7 +109,8 @@ if st.session_state.analysis_request==True:
 2. 연령: {st.session_state.age}
 3. 성별: {st.session_state.gender}
 4. 고민 : {st.session_state.problem}
-5. 고민 설명: {st.session_state.problem_explanation}"""
+5. 고민 설명: {st.session_state.problem_explanation}
+6. 목표 : {st.session_state.goal}"""
 )  
   st.write(client_analysis)
   st.write(score)
