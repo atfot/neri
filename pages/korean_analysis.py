@@ -118,7 +118,8 @@ if st.session_state.analysis_request==True:
     st.write(client_analysis)
     st.write(score)
     st.write(score_explanation)
-    st.write(what_to_do)
+    for i in what_to_do:
+      st.write(i)
   st.write(st.session_state.problem_analysis)
   #st.write(st.session_state.conversations)
   #st.write(st.session_state.message_summary)
