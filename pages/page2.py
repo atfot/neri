@@ -11,4 +11,4 @@ make_sidebar()
 
 st.write('hi')
 st.write(st.session_state.messages)
-st.write(st.session_state.summary)
+st.write(st.session_state.message_summary)
