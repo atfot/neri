@@ -73,11 +73,14 @@ def main():
                 messages=[
                     {
                     "role": "system",
-                    "content": "Please briefly summarize the conversation below."
+                    "content": "Your role is to summarize the paragraph I give to you."
                     },
                     {
                     "role": "user",
-                    "content": f"{st.session_state.messages}"
+                    "content": f"""                    
+Please briefly summarize the conversation below.
+
+{st.session_state.messages}"""
                     }
                 ],
                 temperature=1,
