@@ -107,6 +107,7 @@ if 'messages' not in st.session_state:
                            아이디 또는 패스워드를 5번 이상 틀리셨습니다.
                            
                            아이디 또는 비밀번호 찾기를 통해 정보를 수정해주세요.""")
+                st.stop()
         if st.session_state.get("signin", False):
             pass
     if language_selection: 
