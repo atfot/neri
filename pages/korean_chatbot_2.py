@@ -278,6 +278,7 @@ def main():
             frequency_penalty=1,
             presence_penalty=1
         )
+            st.session_state.user_prompt_1=user_prompt_1
             my_bar.progress(50,text=progress_text)
             selected_msg = sentence_selection.choices[0].message.content.strip('"')
             humanize_sentence = st.session_state.client.chat.completions.create(
@@ -346,11 +347,11 @@ def main():
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
+                st.write(st.session_state.user_prompt_1)
             with col2:
                 st.write('')
                 st.button('🔄', on_click=reply_again_cb)
             #st.write(st.session_state.messages[:-1])
-            st.write(user_prompt_1)
 
 
 if __name__ == '__main__':
