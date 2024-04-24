@@ -58,7 +58,7 @@ if st.session_state.analysis_request==True:
                   '''
                   Analysis : [Analyze the information I've given you by not using any bullet points.]
 
-                  Score : [Based on the analysis you did, please score how well the client's problem was solved.]
+                  Score : [Based on the analysis you did, please score how well the {st.session_state.username}'s problem was solved.]
 
                   Explanation : [Tell me how the score you gave me was based on your considerations.
                   *Scoring criteria*:
@@ -69,7 +69,7 @@ if st.session_state.analysis_request==True:
                   2 : The client is directly demonstrating a willingness to work toward a negative direction.
                   1 : The client has a serious mental illness or mental health issue and needs to see a real doctor or psychologist to address it.]
 
-                  Best thing to do : [Tell me what you think is the best thing for the patient to do in that situation,using a bullet point summary, as a professional psychologist.]
+                  Best thing to do : [Tell me what you think is the best thing for {st.session_state.username} to do in that situation,using a bullet point summary, as a professional psychologist.]
                   '''
                   **Remember**:
                   1. Use Korean Language to answer my question.
