@@ -335,7 +335,8 @@ def main():
             with col1:
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
                 st.session_state.click_counter+=1
-                st.session_state.conversations=st.session_state.conversations[:-st.session_state.click_counter]
+                click_counter=-st.session_state.click_counter-1
+                st.session_state.conversations=st.session_state.conversations[:click_counter]
                 st.write(st.session_state.conversations)
             with col2:
                 st.write('')
