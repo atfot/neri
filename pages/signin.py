@@ -236,14 +236,14 @@ Nationality: {st.session_state.nationality}
 
 City: {st.session_state.city}
 """)
-            with col2:
-                st.write(f"""
-Your Problem: {st.session_state.problem}
+                with col2:
+                    st.write(f"""
+        Your Problem: {st.session_state.problem}
 
-Detailed Explanation of Your Problem: {st.session_state.problem_explanation}
+        Detailed Explanation of Your Problem: {st.session_state.problem_explanation}
 
-Your goal: {st.session_state.goal}
-    """)
+        Your goal: {st.session_state.goal}
+        """)
                 time.sleep(5)
                 try:
                     progress_text = "Operation in progress. Please wait."
