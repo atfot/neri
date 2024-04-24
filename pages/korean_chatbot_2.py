@@ -11,21 +11,15 @@ st.set_page_config(
 make_sidebar()
 
 if 'client' not in st.session_state:
-  st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
+    st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
 
 if 'username' not in st.session_state:
-   st.session_state.username=st.secrets.user_name
-   st.session_state.age=st.secrets.age
-   st.session_state.gender=st.secrets.user_gender
-   st.session_state.gender=st.secrets.user_gender
-   st.session_state.problem=st.secrets.problem
-   st.session_state.problem_explanation=st.secrets.problem_explanation
-
-# variables
-if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
-    st.session_state['conversations']=[{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
-    st.session_state['message_summary'] = '아래의 내용이 가장 최근 대화 내용입니다.'
+    st.session_state.username=st.secrets.user_name
+    st.session_state.age=st.secrets.age
+    st.session_state.gender=st.secrets.user_gender
+    st.session_state.gender=st.secrets.user_gender
+    st.session_state.problem=st.secrets.problem
+    st.session_state.problem_explanation=st.secrets.problem_explanation
 
 if 'repeat' not in st.session_state:
     st.session_state.repeat = False
@@ -38,6 +32,12 @@ if st.session_state.repeat==True:
     st.session_state.messages=st.session_state.messages[:-1]
 
 def main():
+
+    # variables
+    if "messages" not in st.session_state:
+        st.session_state["messages"] = [{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
+        st.session_state['conversations']=[{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
+        st.session_state['message_summary'] = '아래의 내용이 가장 최근 대화 내용입니다.'
 
     # Print msg history.
     last_user_message = None
