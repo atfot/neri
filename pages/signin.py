@@ -122,7 +122,7 @@ if st.session_state.korean_mode==1:
 
     목표: {goal}
     """)
-                time.sleep(15)
+                time.sleep(5)
                 try:
                     progress_text = "로딩중"
                     my_bar = st.progress(0, text=progress_text)                    
