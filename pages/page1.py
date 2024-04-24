@@ -10,6 +10,8 @@ st.set_page_config(
 
 make_sidebar()
 
-st.write('hi')
-st.write(st.session_state.messages)
-st.write(st.session_state.message_summary)
+if 'title' not in st.session_state:
+    st.title('Hi')
+if st.button('show the message'):
+    st.write(st.session_state.messages)
+    st.write(st.session_state.message_summary)
