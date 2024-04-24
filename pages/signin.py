@@ -102,7 +102,8 @@ if st.session_state.korean_mode==1:
                 col1,col2=st.columns([5,5])
                 with col1:
                     st.write(f"""
-    아이디:{user_id}
+    
+                             아이디:{user_id}
 
     비밀번호: {password}
 
