@@ -225,8 +225,8 @@ if st.session_state.korean_mode==0:
                 col1,col2=st.columns([5,5])
                 with col1:
                     st.write(f"""
-                             
-    ID:{user_id}
+    
+                             ID:{user_id}
 
     PW: {password}
 
