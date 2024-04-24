@@ -188,6 +188,7 @@ if 'messages' not in st.session_state:
                            You've entered your ID or password incorrectly more than 5 times.
                            
                            Please use 'Find my ID' or 'Find my PW' to correct your information.""")
+                st.stop()
         if st.session_state.get("signin", False):
             pass
 
