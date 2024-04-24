@@ -330,6 +330,8 @@ def main():
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
             prompt = st.session_state.messages[-1]['content']
+            st.session_state.messages=st.session_state.messages[:-1]
+            st.session_state.conversations=st.session_state.conversations[:-1]
             text_logic()
             col1,col2=st.columns([9,1])
             with col1:
