@@ -91,10 +91,7 @@ if st.session_state.korean_mode==1:
                     st.write(
         """
 
-        "좋아요! 전부 저장했어요."
-
-        해당 내용대로 저장했습니다.
-        
+        "좋아요! 이 내용대로 전부 저장했어요."        
         
         네리에 오신 당신을 환영합니다!
 
@@ -102,6 +99,8 @@ if st.session_state.korean_mode==1:
                 col1,col2=st.columns([5,5])
                 with col1:
                     st.write(f"""
+                             
+                             
 아이디:{st.session_state.user_id}
 
 비밀번호: {st.session_state.password}
@@ -113,14 +112,17 @@ if st.session_state.korean_mode==1:
 국적: {st.session_state.nationality}
 
 도시: {st.session_state.city}
+
 """)
                 with col2:
                     st.write(f"""
+                             
                     고민: {st.session_state.problem}
 
                     고민에 대한 설명: {st.session_state.problem_explanation}
 
                     목표: {st.session_state.goal}
+
                     """)
                 time.sleep(5) 
                 try:
@@ -224,6 +226,8 @@ if st.session_state.korean_mode==0:
                 col1,col2=st.columns([5,5])
                 with col1:
                     st.write(f"""
+                             
+                             
 ID:{st.session_state.user_id}
 
 PW: {st.session_state.password}
@@ -235,14 +239,18 @@ Age: {st.session_state.age}
 Nationality: {st.session_state.nationality}
 
 City: {st.session_state.city}
+
 """)
                 with col2:
                     st.write(f"""
+                             
+                             
         Your Problem: {st.session_state.problem}
 
         Detailed Explanation of Your Problem: {st.session_state.problem_explanation}
 
         Your goal: {st.session_state.goal}
+
         """)
                 time.sleep(5)
                 try:
