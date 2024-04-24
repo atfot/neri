@@ -36,6 +36,7 @@ def reply_again_cb():
 
 if st.session_state.repeat==True:
     st.session_state.messages=st.session_state.messages[:-1]
+    st.session_state.conversations=st.session_state.conversations[:-1]
 
 def main():
 
