@@ -10,13 +10,6 @@ st.set_page_config(
 
 make_sidebar()
 
-st.write(
-    """
-# Your problem solving rate
-
-This part is also not finished.
-
-Actually I was trying my best to perfect my AI chatbot.
-
-"""
-)
+st.write('hi')
+st.write(st.session_state.messages)
+st.write(st.session_state.message_summary)
