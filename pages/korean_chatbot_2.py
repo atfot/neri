@@ -178,6 +178,7 @@ def main():
             """
             for i in st.session_state.conversations:
                 messages_for_prompt=f"{i['role']} : {i['content']}\n"
+            st.session_state.messages_for_prompt=messages_for_prompt
             user_prompt_1=f"""
                 ```
                 # My requests: 
@@ -347,7 +348,7 @@ def main():
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
-                st.write(st.session_state.user_prompt_1)
+                st.write(messages_for_prompt)
                 st.write(st.session_state.conversations)
             with col2:
                 st.write('')
