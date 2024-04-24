@@ -333,7 +333,7 @@ def main():
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
-                st.session_state.conversations=st.session_state.conversations[:-1]
+                st.session_state.conversations=st.session_state.conversations[:-2]
                 st.write(st.session_state.conversations)
             with col2:
                 st.write('')
@@ -347,6 +347,7 @@ def main():
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
+                st.session_state.conversations
             with col2:
                 st.write('')
                 st.button('🔄', on_click=reply_again_cb)
