@@ -129,7 +129,7 @@ def main():
                 presence_penalty=0
                 )
                 st.session_state['message_summary'] = summary.choices[0].message.content
-                st.session_state['conversations'] = st.session_state.messages[-3:]
+                st.session_state['conversations'] = st.session_state.conversations[-3:]
             
             progress_text='thinking...'
             my_bar=st.progress(0,text=progress_text)
