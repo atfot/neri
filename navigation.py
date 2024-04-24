@@ -27,11 +27,13 @@ def make_sidebar():
             st.write("")
             st.write("")
 
-            if st.button("Log out"):
-                logout()
-            
-            if st.button('fix user info'):
-                 st.switch_page('pages/signin.py')
+            col1,col2=st.columns([3,7])
+            with col1:
+                if st.button("Log out",type='primary',use_container_width=True):
+                    logout()            
+            with col2:
+                if st.button('fix user info',use_container_width=True):
+                    st.switch_page('pages/signin.py')
 
         elif get_current_page_name() != "streamlit_app":
             # If anyone tries to access a secret page without being logged in,
