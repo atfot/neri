@@ -253,7 +253,7 @@ def main():
                 - Read these informations carefully before answering my question.
                 **Summary of the conversation**: [{st.session_state.message_summary}]
                 
-                **Conversation content**: [{messages_for_prompt}]
+                **Conversation content**: [{conversations_for_prompt}]
 
                 **Three possible answers from a korean psychotherapist who wants to know and learn about his patient**: 
                 "[{msg}]"
