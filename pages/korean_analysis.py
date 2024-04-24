@@ -105,7 +105,7 @@ if st.session_state.analysis_request==True:
 
   st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
 
-  col1,col2,col3=st.columns([4,2,4])
+  col1,col2,col3=st.columns([4,1,5])
   with col1:
     st.write(f"""1. 고객님 성함: {st.session_state.username}
 2. 연령: {st.session_state.age}
