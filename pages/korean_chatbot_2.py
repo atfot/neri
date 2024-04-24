@@ -107,6 +107,8 @@ def main():
                 st.session_state.messages.append({"role": "내담자", "content": prompt})
                 st.session_state.conversations.append({"role": "내담자", "content": normalized_prompt})
             if len(st.session_state.messages)%3==0:
+                for i in st.session_state.messages:
+                    messages_for_prompt=f"{i['role']} : {i['content']}\n"
                 summary = st.session_state.client.chat.completions.create(
                 model="gpt-3.5-turbo-0125",
                 messages=[
@@ -116,7 +118,7 @@ def main():
                     },
                     {
                     "role": "user",
-                    "content": f"{st.session_state.messages}"
+                    "content": f"{messages_for_prompt}"
                     }
                 ],
                 temperature=1,
@@ -174,7 +176,8 @@ def main():
                 '''   
                 ```
             """
-            
+            for i in st.session_state.conversations:
+                messages_for_prompt=f"{i['role']} : {i['content']}\n"
             user_prompt_1=f"""
                 ```
                 # My requests: 
@@ -183,7 +186,7 @@ def main():
 
                 - Read this step by step before filling out the form
                 **Summary of the conversation**: [{st.session_state.message_summary}]
-                **Latest Conversations**: [{st.session_state.conversations}]     
+                **Latest Conversations**: [{messages_for_prompt}]     
                 
                 - This is the form      
                 '''
@@ -249,7 +252,7 @@ def main():
                 - Read these informations carefully before answering my question.
                 **Summary of the conversation**: [{st.session_state.message_summary}]
                 
-                **Conversation content**: [{st.session_state.conversations}]
+                **Conversation content**: [{messages_for_prompt}]
 
                 **Three possible answers from a korean psychotherapist who wants to know and learn about his patient**: 
                 "[{msg}]"
@@ -331,8 +334,7 @@ def main():
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
-                st.write(st.session_state.messages)
-                st.write(f"{st.session_state.messages['role']}:{st.session_state.messages['content']}") 
+                st.write(user_prompt_1)
             with col2:
                 st.write('')
                 st.button('🔄', on_click=reply_again_cb)
@@ -345,9 +347,7 @@ def main():
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
-                st.write(st.session_state.messages)
-                for i in st.session_state.messages:
-                    st.write(f"{i['role']} : {i['content']}\n") 
+                st.write(user_prompt_1)
             with col2:
                 st.write('')
                 st.button('🔄', on_click=reply_again_cb)
