@@ -348,6 +348,7 @@ def main():
             with col1:
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
                 st.write(st.session_state.user_prompt_1)
+                st.write(st.session_state.conversations)
             with col2:
                 st.write('')
                 st.button('🔄', on_click=reply_again_cb)
