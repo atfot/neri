@@ -79,25 +79,25 @@ with col2:
             frequency_penalty=0,
             presence_penalty=0
             )    
-      problem_analysis = problem_analysis.choices[0].message.content
-      problem_analysis=problem_analysis.strip().strip("'''")
-      st.session_state.problem_analysis=problem_analysis
-      problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
-      client_analysis=problem_analysis[:problem_analysis.find('\n')]
-      problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
-      problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
-      score=problem_analysis[:problem_analysis.find('\n')]
-      problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
-      problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
-      score_explanation=problem_analysis[:problem_analysis.find('\n')]
-      problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
-      problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
-      what_to_do=problem_analysis.split('\n')
+problem_analysis = problem_analysis.choices[0].message.content
+problem_analysis=problem_analysis.strip().strip("'''")
+st.session_state.problem_analysis=problem_analysis
+problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
+client_analysis=problem_analysis[:problem_analysis.find('\n')]
+problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
+problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
+score=problem_analysis[:problem_analysis.find('\n')]
+problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
+problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
+score_explanation=problem_analysis[:problem_analysis.find('\n')]
+problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
+problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
+what_to_do=problem_analysis.split('\n')
 
-      
-      st.write(client_analysis)
-      st.write(score)
-      st.write(score_explanation)
-      st.write(what_to_do)
-      #st.write(st.session_state.conversations)
-      #st.write(st.session_state.message_summary)
+
+st.write(client_analysis)
+st.write(score)
+st.write(score_explanation)
+st.write(what_to_do)
+#st.write(st.session_state.conversations)
+#st.write(st.session_state.message_summary)
