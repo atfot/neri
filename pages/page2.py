@@ -9,6 +9,9 @@ st.set_page_config(
 )
 make_sidebar()
 
+if 'client' not in st.session_state:
+  st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
+  
 if 'title' not in st.session_state:
     st.title('Hi')
 if st.button('show the message'):
@@ -53,8 +56,8 @@ if st.button('show the message'):
               *Scoring criteria*:
               10 : The person's psychosis has been cured, or the patient is no longer suffering from the problem.
               9 : The person's mental illness is on the verge of being cured or the issue is on the verge of being completely resolved.
-              5 ~ 8 : The patient is directly demonstrating a willingness to work toward a positive direction.
-              3 ~ 4 : The patient is not directly demonstrating a willingness to move in a positive direction.
+              6 ~ 8 : The patient is directly demonstrating a willingness to work toward a positive direction.
+              3 ~ 5 : The patient is not directly demonstrating a willingness to move in a positive direction.
               2 : The patient is directly demonstrating a willingness to work toward a negative direction.
               1 : The person has a serious mental illness or mental health issue and needs to see a real doctor or psychologist to address it.]
 
