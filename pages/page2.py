@@ -49,7 +49,14 @@ if st.button('show the message'):
 
               Score : [Based on the analysis you did, please score how well the patient's problem was solved.]
 
-              Explanation : [Tell me how the score you gave me was based on your considerations.]
+              Explanation : [Tell me how the score you gave me was based on your considerations.
+              *Scoring criteria*:
+              10 : The person's psychosis has been cured, or the patient is no longer suffering from the problem.
+              9 : The person's mental illness is on the verge of being cured or the issue is on the verge of being completely resolved.
+              5 ~ 8 : The patient is directly demonstrating a willingness to work toward a positive direction.
+              3 ~ 4 : The patient is not directly demonstrating a willingness to move in a positive direction.
+              2 : The patient is directly demonstrating a willingness to work toward a negative direction.
+              1 : The person has a serious mental illness or mental health issue and needs to see a real doctor or psychologist to address it.]
 
               Best thing to do : [Tell me what you think is the best thing for the patient to do in that situation,using a bullet point summary, as a professional psychologist.]
               '''
