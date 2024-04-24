@@ -347,7 +347,7 @@ def main():
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
                 st.write(st.session_state.messages)
                 for i in st.session_state.messages:
-                    st.write(f"{i['role']} : {i['content']}") 
+                    st.write(f"{i['role']} : {i['content']}\n") 
             with col2:
                 st.write('')
                 st.button('🔄', on_click=reply_again_cb)
