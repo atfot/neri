@@ -106,6 +106,9 @@ def main():
             else:
                 st.session_state.messages.append({"role": "내담자", "content": prompt})
                 st.session_state.conversations.append({"role": "내담자", "content": normalized_prompt})
+                for i in st.session_state.conversations:
+                    conversations_for_prompt=f"{i['role']} : {i['content']}"
+                st.session_state.conversations_for_prompt=conversations_for_prompt
             if len(st.session_state.messages)%3==0:
                 for i in st.session_state.messages:
                     messages_for_prompt=f"{i['role']} : {i['content']}\n"
@@ -176,9 +179,6 @@ def main():
                 '''   
                 ```
             """
-            for i in st.session_state.conversations:
-                conversations_for_prompt=f"{i['role']} : {i['content']}"
-            st.session_state.conversations_for_prompt=conversations_for_prompt
             user_prompt_1=f"""
                 ```
                 # My requests: 
@@ -187,7 +187,7 @@ def main():
 
                 - Read this step by step before filling out the form
                 **Summary of the conversation**: [{st.session_state.message_summary}]
-                **Latest Conversations**: [{conversations_for_prompt}]     
+                **Latest Conversations**: [{st.session_state.conversations_for_prompt}]     
                 
                 - This is the form      
                 '''
@@ -253,7 +253,7 @@ def main():
                 - Read these informations carefully before answering my question.
                 **Summary of the conversation**: [{st.session_state.message_summary}]
                 
-                **Conversation content**: [{conversations_for_prompt}]
+                **Conversation content**: [{st.session_state.conversations_for_prompt}]
 
                 **Three possible answers from a korean psychotherapist who wants to know and learn about his patient**: 
                 "[{msg}]"
