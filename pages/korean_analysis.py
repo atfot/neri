@@ -102,7 +102,7 @@ if st.session_state.analysis_request==True:
   problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
   what_to_do=problem_analysis.split('\n')
 
-  st.write(f"{time.localtime().tm_year}-{time.localtime().tm_mon}-{time.localtime().tm_mday}")
+  st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
   st.write(client_analysis)
   st.write(score)
   st.write(score_explanation)
