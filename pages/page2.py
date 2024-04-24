@@ -51,7 +51,7 @@ if st.button('show the message'):
 
               Explanation : [Tell me how the score you gave me was based on your considerations.]
 
-              Best thing to do : [Tell me what you think is the best thing for the patient to do in that situation, as a professional psychologist.]
+              Best thing to do : [Tell me what you think is the best thing for the patient to do in that situation,using a bullet point summary, as a professional psychologist.]
               '''
               **Remember**:
               1. Use Korean Language to answer my question
