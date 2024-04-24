@@ -14,8 +14,8 @@ if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
 
 if 'title' not in st.session_state:
-    st.title('Hi')
-if st.button('show the message'):
+    st.title('대화 분석')
+if st.button('분석 요청'):
     problem_analysis = st.session_state.client.chat.completions.create(
           model="gpt-3.5-turbo-0125",
           messages=[
