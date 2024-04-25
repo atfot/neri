@@ -178,8 +178,6 @@ if 'messages' not in st.session_state:
                 st.session_state.login_attempt=0
                 sleep(0.5)
                 st.switch_page("pages/english_chatbot_2.py")
-        if st.session_state.get("logged_in", False):
-            pass
         if st.session_state.get('login_error', True):
             if st.session_state.login_attempt<6:
                 col, col2, col3 = st.columns([2,6,2])
