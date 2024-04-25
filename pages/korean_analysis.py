@@ -113,7 +113,6 @@ if 'my_info' in st.session_state:
     )  
       if st.button('내 정보 수정',use_container_width=True):
         st.session_state.fix_info=True
-        st.switch_page('pages/signin.py')
       st.title('')
     with col3:
       st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
