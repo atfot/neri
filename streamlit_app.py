@@ -51,7 +51,8 @@ if 'messages' not in st.session_state:
                     else:
                         st.session_state.login_error = True
                 if st.session_state.login_attempt>=6:
-                    st.session_state.many_login_attempt = True
+                    if st.session_state.login_error==True:
+                        st.session_state.many_login_attempt = True
 
             col1, col2, col3 = st.columns([3.3,3.3,3.4])
             with col1:
@@ -85,7 +86,7 @@ if 'messages' not in st.session_state:
         if st.session_state.get("logged_in", True):
             col, col2, col3 = st.columns([3,4,3])
             with col2:
-                st.success("성공적으로 로그인 되었습니다!")
+                st.success("성공적으로 로그인 되었습니다!",  icon="✅", use_container_width=True)
                 sleep(0.5)
                 st.switch_page("pages/korean_chatbot_2.py")
         if st.session_state.get('login_error', True):
@@ -130,7 +131,8 @@ if 'messages' not in st.session_state:
                     else:
                         st.session_state.login_error = True
                 if st.session_state.login_attempt>=6:
-                    st.session_state.many_login_attempt = True
+                    if st.session_state.login_error==True:
+                        st.session_state.many_login_attempt = True
 
             col1, col2, col3 = st.columns([3.3,3.3,3.4])
             with col1:
@@ -153,7 +155,8 @@ if 'messages' not in st.session_state:
                     else:
                         st.session_state.login_error = True
                 if st.session_state.login_attempt>=6:
-                    st.session_state.many_login_attempt = True
+                    if st.session_state.login_error==True:
+                        st.session_state.many_login_attempt = True
             if st.button("**New User**", type="secondary",use_container_width=True):
                     st.session_state.signin = True
             if st.button("Find my ID", type="secondary",use_container_width=True):
