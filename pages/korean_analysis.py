@@ -86,13 +86,13 @@ if 'my_info' not in st.session_state:
     problem_analysis=problem_analysis.strip().strip("'''")
     st.session_state.problem_analysis=problem_analysis
     problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
-    st.session_state.client_analysis=problem_analysis[:problem_analysis.find('\n')]
+    st.session_state.client_analysis=problem_analysis[:problem_analysis.find('\n')].replace('. ','.\n')
     problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
     problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
     st.session_state.score=problem_analysis[:problem_analysis.find('\n')]
     problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
     problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
-    st.session_state.score_explanation=problem_analysis[:problem_analysis.find('\n')]
+    st.session_state.score_explanation=problem_analysis[:problem_analysis.find('\n')].replace('. ','.\n')
     problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
     problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
     st.session_state.what_to_do=problem_analysis.split('\n')
