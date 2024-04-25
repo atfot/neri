@@ -14,8 +14,6 @@ make_sidebar()
 if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
 
-st.session_state.analysis_request=False
-
 if 'title' not in st.session_state:
     st.title('내 정보')
 
@@ -84,11 +82,10 @@ if 'my_info' not in st.session_state:
               frequency_penalty=0,
               presence_penalty=0
               )    
-  problem_analysis = problem_analysis.choices[0].message.content
-  problem_analysis=problem_analysis.strip().strip("'''")
-  st.session_state.problem_analysis=problem_analysis
-  st.session_state.problem_analysis=problem_analysis
-  problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
+    problem_analysis = problem_analysis.choices[0].message.content
+    problem_analysis=problem_analysis.strip().strip("'''")
+    st.session_state.problem_analysis=problem_analysis
+  problem_analysis=st.session_state.problem_analysis[st.session_state.problem_analysis.find(':')+1:].strip()
   client_analysis=problem_analysis[:problem_analysis.find('\n')]
   problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
   problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
@@ -100,24 +97,21 @@ if 'my_info' not in st.session_state:
   problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
   what_to_do=problem_analysis.split('\n')
 
-  st.session_state.my_info=True
-  st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
-
-  col1,col2,col3=st.columns([4,1,5])
-  with col1:
-    st.write(f"""1. 고객님 성함: {st.session_state.username}
+  st.session_state.my_info=f"""1. 고객님 성함: {st.session_state.username}
 2. 연령: {st.session_state.age}
 3. 성별: {st.session_state.gender}
 4. 고민 : {st.session_state.problem}
 5. 고민 설명: {st.session_state.problem_explanation}
 6. 목표 : {st.session_state.goal}"""
-)  
+  
+  st.session_state.analysis=f"""분석: {client_analysis}
+점수: {score}
+채점 기준: {score_explanation}
+해볼만한 것들: {[i for i in what_to_do]}
+"""
+  st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
+  col1,col2,col3=st.columns([4,1,5])
+  with col1:
+    st.write(st.session_state.my_info)
   with col3:
-    st.write(client_analysis)
-    st.write(score)
-    st.write(score_explanation)
-    for i in what_to_do:
-      st.write(i)
-  #st.write(st.session_state.problem_analysis)
-  #st.write(st.session_state.conversations)
-  #st.write(st.session_state.message_summary)
+    st.write(st.session_state.analysis)
