@@ -14,8 +14,6 @@ make_sidebar()
 if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
 
-st.session_state.analysis_request=False
-
 if 'title' not in st.session_state:
     st.title('내 정보')
 
@@ -98,26 +96,29 @@ if 'my_info' not in st.session_state:
   problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
   problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
   st.session_state.what_to_do=problem_analysis.split('\n')
-
+  
   st.session_state.my_info=True
-st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
 
-col1,col2,col3=st.columns([4,1,5])
-with col1:
-  st.write(f"""1. 고객님 성함: {st.session_state.username}
-2. 연령: {st.session_state.age}
-3. 성별: {st.session_state.gender}
-4. 고민 : {st.session_state.problem}
-5. 고민 설명: {st.session_state.problem_explanation}
-6. 목표 : {st.session_state.goal}"""
-)  
-with col3:
-  st.write(f'문제 분석 : {st.session_state.client_analysis}')
-  st.write(f'해결 진전도 : {st.session_state.score}')
-  st.write(f'채점 기준 : {st.session_state.score_explanation}')
-  st.write('도움이 될만한 행동들 : ')
-  for i in st.session_state.what_to_do:
-    st.write(i)
-#st.write(st.session_state.problem_analysis)
-#st.write(st.session_state.conversations)
-#st.write(st.session_state.message_summary)
+if 'my_info' in st.session_state:
+  st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
+
+  col1,col2,col3=st.columns([4,1,5])
+  with col1:
+    st.write(f"""1. 고객님 성함: {st.session_state.username}
+  2. 연령: {st.session_state.age}
+  3. 성별: {st.session_state.gender}
+  4. 고민 : {st.session_state.problem}
+  5. 고민 설명: {st.session_state.problem_explanation}
+  6. 목표 : {st.session_state.goal}"""
+  )  
+  with col3:
+    st.write(f'문제 분석 : {st.session_state.client_analysis}')
+    st.write(f'해결 진전도 : {st.session_state.score}')
+    st.write(f'채점 기준 : {st.session_state.score_explanation}')
+    st.write('도움이 될만한 행동들 : ')
+    for i in st.session_state.what_to_do:
+      st.write(i)
+
+  #st.write(st.session_state.problem_analysis)
+  #st.write(st.session_state.conversations)
+  #st.write(st.session_state.message_summary)
