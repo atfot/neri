@@ -143,29 +143,30 @@ with col3:
     st.write(f'해결 진전도 : {st.session_state.score}')
     st.write(f'채점 기준 : {st.session_state.score_explanation}')
   else:
-    st.write("정보를 바꿔주세요!")
-    username = st.text_input('무슨 이름으로 불리고 싶으신가요?')
-    if username:
-        x+=1
-        st.session_state.username=username
-    problem = st.text_area("당신을 가장 크게 괴롭히는 것이  무엇인가요?🤔")
-    if problem:
-        x+=1
-        st.session_state.problem=problem
-    problem_explanation=st.text_area("문제점을 좀더 자세히 설명해주세요. 자세히 설명해주실수록 좋아요😊")
-    if problem_explanation:
-        x+=1
-        st.session_state.problem_explanation=problem_explanation
-    goal=st.text_area("최종 목표가 무엇인지 말해주세요!")
-    if goal:
-        x+=1
-        st.session_state.goal=goal
-    if st.form_submit_button('완료'):
-      if x==4:
-        st.write('저장 완료되었습니다!')
-        time.sleep(2)
-        del st.session_state.my_info
-        st.rerun()
+    with st.form('fix_user_info')
+      st.write("정보를 바꿔주세요!")
+      username = st.text_input('무슨 이름으로 불리고 싶으신가요?')
+      if username:
+          x+=1
+          st.session_state.username=username
+      problem = st.text_area("당신을 가장 크게 괴롭히는 것이  무엇인가요?🤔")
+      if problem:
+          x+=1
+          st.session_state.problem=problem
+      problem_explanation=st.text_area("문제점을 좀더 자세히 설명해주세요. 자세히 설명해주실수록 좋아요😊")
+      if problem_explanation:
+          x+=1
+          st.session_state.problem_explanation=problem_explanation
+      goal=st.text_area("최종 목표가 무엇인지 말해주세요!")
+      if goal:
+          x+=1
+          st.session_state.goal=goal
+      if st.form_submit_button('완료'):
+        if x==4:
+          st.write('저장 완료되었습니다!')
+          time.sleep(2)
+          del st.session_state.my_info
+          st.rerun()
 if st.session_state.fix_info==False:
   st.title('')
   st.write('도움이 될만한 행동들 : ')
