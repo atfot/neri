@@ -105,10 +105,15 @@ if st.session_state.my_info==True:
     col1,col2,col3=st.columns([4,1,5])
     with col1:
       st.write(f"""1. 고객님 성함: {st.session_state.username}
+               
     2. 연령: {st.session_state.age}
+
     3. 성별: {st.session_state.gender}
+
     4. 고민 : {st.session_state.problem}
+
     5. 고민 설명: {st.session_state.problem_explanation}
+    
     6. 목표 : {st.session_state.goal}"""
     )  
       if st.button('내 정보 수정',use_container_width=True):
@@ -124,6 +129,7 @@ if st.session_state.my_info==True:
     st.write('도움이 될만한 행동들 : ')
     for i in st.session_state.what_to_do:
       st.write(i)
+
 if st.session_state.my_info==False:
   if st.session_state.fix_info==True:
     st.title('내 정보 수정')
