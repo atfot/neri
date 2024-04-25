@@ -2,6 +2,10 @@ import streamlit as st
 from time import sleep
 from streamlit_js_eval import streamlit_js_eval
 
+st.session_state.logged_in = False
+st.session_state.signin = False
+st.session_state.login_error = False
+
 if 'messages' not in st.session_state:
     if 'screen_setting' not in st.session_state:
         st.session_state.screen_setting = 'pc'  # default value
@@ -14,10 +18,6 @@ if 'messages' not in st.session_state:
 )
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
         st.session_state.screen_setting = 'mobile' if x < 662 else 'pc'
-    
-    st.session_state.logged_in = False
-    st.session_state.signin = False
-    st.session_state.login_error = False
 
     if 'many_login_attempt' not in  st.session_state:
         st.session_state.many_login_attempt=False
