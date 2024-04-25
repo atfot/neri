@@ -117,7 +117,7 @@ if st.session_state.fix_info==False:
   6. 목표 : {st.session_state.goal}"""
   )  
     if st.button('내 정보 수정',use_container_width=True):
-      st.session_state.my_info=False
+      del st.session_state.my_info
       st.session_state.fix_info=True
     st.title('')
   with col3:
