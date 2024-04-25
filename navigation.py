@@ -21,8 +21,8 @@ def make_sidebar():
         st.write("")
 
         if st.session_state.get("logged_in", True):
-            st.page_link("pages/english_analysis.py", label="Your Progression", icon="🏋️")
-            st.page_link("pages/english_chatbot_2.py", label="Your Councelor", icon="💛")
+            st.page_link("pages/english_chatbot_2.py", label="My Councelor", icon="💛")
+            st.page_link("pages/english_analysis.py", label="My Info", icon="🏋️")
 
             st.write("")
             st.write("")
@@ -33,8 +33,6 @@ def make_sidebar():
             with col2:
                 if st.button("Log out",type='primary',use_container_width=True):
                     logout()   
-                if st.button('fix user info',use_container_width=True):
-                    st.switch_page('pages/signin.py')
 
         elif get_current_page_name() != "streamlit_app":
             # If anyone tries to access a secret page without being logged in,
@@ -48,6 +46,10 @@ def logout():
         del st.session_state["messages"]
         del st.session_state['conversations']
         del st.session_state['message_summary']
+        try:
+            del st.session_state.my_info
+        except:
+            pass
         del st.session_state.client
     st.info("Logged out successfully!")
     sleep(0.5)
