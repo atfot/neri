@@ -112,6 +112,7 @@ if 'my_info' not in st.session_state:
 col1,col2,col3=st.columns([4,1,5])
 with col1:
   if st.session_state.fix_info==False:
+    st.write('')
     st.subheader('Your Profile')
     st.markdown(f'''
                 <p>
