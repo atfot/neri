@@ -138,7 +138,7 @@ if st.session_state.my_info==False:
     )  
     with col3:
       x=0
-      with st.form():
+      with st.form('my_form'):
         st.write("정보를 바꿔주세요!")
         username = st.text_input('무슨 이름으로 불리고 싶으신가요?')
         if username:
