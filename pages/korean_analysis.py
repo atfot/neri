@@ -15,7 +15,6 @@ if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
 
 if 'my_info' not in st.session_state:
-  st.session_state.fix_info=False
   with st.spinner('# 로딩중...'):
     problem_analysis = st.session_state.client.chat.completions.create(
                 model="gpt-3.5-turbo-0125",
@@ -98,6 +97,7 @@ if 'my_info' not in st.session_state:
     problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
     st.session_state.what_to_do=problem_analysis.split('\n')
     st.session_state.my_info=True
+    st.session_state.fix_info=False
 
 if st.session_state.my_info==True:
   if st.session_state.fix_info==False:
@@ -161,6 +161,7 @@ if st.session_state.my_info==False:
             st.write('저장 완료되었습니다!')
             time.sleep(2)
             del st.session_state.my_info
+            st.rerun()
     #st.write(st.session_state.problem_analysis)
     #st.write(st.session_state.conversations)
     #st.write(st.session_state.message_summary)
