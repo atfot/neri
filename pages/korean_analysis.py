@@ -26,6 +26,7 @@ if 'my_info' not in st.session_state:
                     **Remember**:
                     1. Use Korean Language to answer my question.
                     2. Your score should be much lower than you think.
+                    3. You should never speak rudely.
                     """
                   },
                   {
@@ -71,6 +72,7 @@ if 'my_info' not in st.session_state:
                     2. Your score should be much lower than you think.
                     3. Don't use the word '고객' or '클라이언트'.
                     4. If you need to use the word '고객', don't use that word and replace it into the client's name with '님', such as {st.session_state.username}님.
+                    5. You should never speak rudely.
         """
                   }
                 ],
