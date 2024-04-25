@@ -113,11 +113,11 @@ if 'my_info' in st.session_state:
     month=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     month=month[time.localtime().tm_mon-1]
     st.subheader(f"Analysis results on {month} {time.localtime().tm_mday}, {time.localtime().tm_year}")
-    st.write(f'''Problem Analysis : 
-             {st.session_state.client_analysis}''')
+    st.write('Problem Analysis :')
+    st.write(f'{st.session_state.client_analysis}')
     st.write(f'Score : {st.session_state.score}')
-    st.write(f'''Score Explanation : 
-             {st.session_state.score_explanation}''')
+    st.write('Score Explanation :')
+    st.write(f'{st.session_state.score_explanation}')
     st.title('')
   st.write('Actions that might help you : ')
   for i in st.session_state.what_to_do:
