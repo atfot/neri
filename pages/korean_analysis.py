@@ -108,15 +108,15 @@ with col1:
   if st.session_state.fix_info==False:
     st.subheader('내 정보')
     st.write(f"""
-  1. 고객님 성함: {st.session_state.username}
+  1. 고객님 성함 : {st.session_state.username}
               
-  2. 연령: {st.session_state.age}
+  2. 연령 : {st.session_state.age}
 
   3. 성별: {st.session_state.gender}
 
   4. 고민 : {st.session_state.problem}
 
-  5. 고민 설명: {st.session_state.problem_explanation}
+  5. 고민 설명 : {st.session_state.problem_explanation}
 
   6. 목표 : {st.session_state.goal}"""
   )  
@@ -124,15 +124,15 @@ with col1:
   if st.session_state.fix_info==True:
     st.title('프로필 수정')
     st.write(f"""
-  1. 고객님 성함: {st.session_state.username}
+  1. 고객님 성함 : {st.session_state.username}
               
-  2. 연령: {st.session_state.age}
+  2. 연령 : {st.session_state.age}
 
-  3. 성별: {st.session_state.gender}
+  3. 성별 : {st.session_state.gender}
 
   4. 고민 : {st.session_state.problem}
 
-  5. 고민 설명: {st.session_state.problem_explanation}
+  5. 고민 설명 : {st.session_state.problem_explanation}
 
   6. 목표 : {st.session_state.goal}"""
   )  
