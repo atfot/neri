@@ -15,7 +15,7 @@ if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
 
 if 'my_info' not in st.session_state:
-  with st.spinner('로딩중'):
+  with st.spinner('# 로딩중...'):
     problem_analysis = st.session_state.client.chat.completions.create(
                 model="gpt-3.5-turbo-0125",
                 messages=[
