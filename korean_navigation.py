@@ -48,6 +48,7 @@ def logout():
         del st.session_state["messages"]
         del st.session_state['conversations']
         del st.session_state['message_summary']
+        del st.session_state.my_info
         del st.session_state.client
     st.info("Logged out successfully!")
     sleep(0.5)
