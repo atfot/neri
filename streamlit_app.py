@@ -48,8 +48,9 @@ if 'messages' not in st.session_state:
                     st.session_state.logged_in = True
                 else:
                     st.session_state.login_error = True
-                if st.session_state.login_attempt>=6:
-                    if st.session_state.login_error==True:
+                if st.session_state.login_error==True:
+                    st.session_state.login_attempt+=1
+                    if st.session_state.login_attempt>=6:
                         st.session_state.many_login_attempt = True
 
             col1, col2, col3 = st.columns([3.3,3.3,3.4])
@@ -133,8 +134,9 @@ if 'messages' not in st.session_state:
                     st.session_state.logged_in = True
                 else:
                     st.session_state.login_error = True
-                if st.session_state.login_attempt>=6:
-                    if st.session_state.login_error==True:
+                if st.session_state.login_error==True:
+                    st.session_state.login_attempt+=1
+                    if st.session_state.login_attempt>=6:
                         st.session_state.many_login_attempt = True
 
             col1, col2, col3 = st.columns([3.3,3.3,3.4])
