@@ -20,6 +20,7 @@ if 'username' not in st.session_state:
    st.session_state.gender=st.secrets.user_gender
    st.session_state.problem=st.secrets.problem
    st.session_state.problem_explanation=st.secrets.problem_explanation
+   st.session_state.goal=st.secrets.goal
 
 # variables
 if "messages" not in st.session_state:
@@ -114,6 +115,7 @@ Please briefly summarize the conversation below.
                 - Gender: {st.session_state.gender}
                 - Problem : {st.session_state.problem}
                 - Problem Explanation: {st.session_state.problem_explanation}
+                - Goal : {st.session_state.goal}
 
                 2. psychological counselor
                 - Name : Neri
