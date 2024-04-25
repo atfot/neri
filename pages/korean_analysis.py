@@ -99,7 +99,7 @@ if 'my_info' not in st.session_state:
     st.session_state.my_info=True
     st.session_state.fix_info=False
 
-if st.session_state.get('fix_info', False):
+if st.session_state.fix_info==False:
   col1,col2,col3=st.columns([4,1,5])
   with col1:
     st.subheader('내 정보')
@@ -129,7 +129,7 @@ if st.session_state.get('fix_info', False):
   for i in st.session_state.what_to_do:
     st.write(i)
 
-if st.session_state.get('fix_info', True):
+if st.session_state.fix_info==True:
   st.title('내 정보 수정')
   col1,col2,col3=st.columns([4,1,5])
   with col1:
