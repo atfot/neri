@@ -27,12 +27,8 @@ def make_sidebar():
             st.write("")
             st.write("")
 
-            col1,col2=st.columns([3,7])
-            with col1:
-                st.empty()
-            with col2:
-                if st.button("Log out",type='primary',use_container_width=True):
-                    logout()   
+        if st.button("Log out",type='primary',use_container_width=True):
+            logout()  
 
         elif get_current_page_name() != "streamlit_app":
             # If anyone tries to access a secret page without being logged in,
