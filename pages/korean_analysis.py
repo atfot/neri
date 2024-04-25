@@ -114,7 +114,7 @@ if 'my_info' not in st.session_state:
 {score_explanation}
 
 해볼만한 것들: 
-{i for i in what_to_do}
+{[st.write(i) for i in what_to_do]}
 """
 st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
 
