@@ -136,11 +136,17 @@ if st.session_state.my_info==False:
     st.title('내 정보 수정')
     col1,col2,col3=st.columns([4,1,5])
     with col1:
-      st.write(f"""1. 고객님 성함: {st.session_state.username}
+      st.write(f"""
+    1. 고객님 성함: {st.session_state.username}
+
     2. 연령: {st.session_state.age}
+
     3. 성별: {st.session_state.gender}
+
     4. 고민 : {st.session_state.problem}
+
     5. 고민 설명: {st.session_state.problem_explanation}
+    
     6. 목표 : {st.session_state.goal}"""
     )  
     with col3:
