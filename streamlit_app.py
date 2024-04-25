@@ -32,21 +32,6 @@ if 'messages' not in st.session_state:
         language_selection=st.toggle('한국어/English')
 
     if not language_selection: 
-        st.session_state.logged_in = False
-        st.session_state.signin = False
-        st.session_state.login_error = False
-
-        if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
-            st.session_state.screen_setting = 'mobile' if x < 662 else 'pc'
-
-        if 'many_login_attempt' not in  st.session_state:
-            st.session_state.many_login_attempt=False
-            st.session_state.login_attempt=0
-
-        if 'user_id' not in st.session_state:
-            st.session_state.user_id = False
-            st.session_state.password = False
-
         st.session_state['korean_mode']=1
         st.markdown('<p><b>Korean Language Mode</b></p>', unsafe_allow_html=True)
         st.markdown('<center><h1>ᆞ네ᆞᆞ리ᆞ</h1></center>', unsafe_allow_html=True)
@@ -133,21 +118,6 @@ if 'messages' not in st.session_state:
         if st.session_state.get("signin", False):
             pass
     if language_selection: 
-        st.session_state.logged_in = False
-        st.session_state.signin = False
-        st.session_state.login_error = False
-
-        if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
-            st.session_state.screen_setting = 'mobile' if x < 662 else 'pc'
-
-        if 'many_login_attempt' not in  st.session_state:
-            st.session_state.many_login_attempt=False
-            st.session_state.login_attempt=0
-
-        if 'user_id' not in st.session_state:
-            st.session_state.user_id = False
-            st.session_state.password = False
-            
         st.session_state['korean_mode']=0
         st.markdown('<p><b>영어 모드</b></p>', unsafe_allow_html=True)
         st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
