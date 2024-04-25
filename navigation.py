@@ -47,6 +47,6 @@ def logout():
         except:
             pass
         del st.session_state.client
-    st.info("Logged out successfully!")
+    st.info("See ya next time😊")
     sleep(0.5)
     st.switch_page("streamlit_app.py")
