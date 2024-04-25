@@ -198,7 +198,11 @@ if st.session_state.fix_info==False:
       z=f'{time.localtime().tm_mon}'
   y=f'{time.localtime().tm_year}/{z}/{time.localtime().tm_mday}'
   df = pd.DataFrame({y: [st.session_state.score]})
-  st.line_chart(df)
+  x=6
+  y='2025/12/03'
+  df_1=pd.DataFrame({y: [x]})
+  df_2=pd.concat([df,df_1],axis=1)
+  st.line_chart(df_2)
 else:
   pass
 
