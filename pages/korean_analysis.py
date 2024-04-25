@@ -123,7 +123,7 @@ if 'my_info' in st.session_state:
     st.write('도움이 될만한 행동들 : ')
     for i in st.session_state.what_to_do:
       st.write(i)
-  st.session_state.fix_info=True:
+  if st.session_state.fix_info==True:
     st.title('내 정보 수정')
     col1,col2,col3=st.columns([4,1,5])
     with col1:
