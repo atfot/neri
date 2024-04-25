@@ -15,14 +15,12 @@ if 'messages' not in st.session_state:
     st.session_state.logged_in = False
     st.session_state.signin = False
     st.session_state.login_error = False
+    st.session_state.many_login_attempt=False
+    st.session_state.login_attempt=0
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
         st.session_state.screen_setting = 'mobile' if x < 662 else 'pc'
-
-    if 'many_login_attempt' not in  st.session_state:
-        st.session_state.many_login_attempt=False
-        st.session_state.login_attempt=0
-
+       
     if 'user_id' not in st.session_state:
         st.session_state.user_id = False
         st.session_state.password = False
@@ -42,7 +40,6 @@ if 'messages' not in st.session_state:
 
         if st.session_state.screen_setting=='pc':
             if st.button("로그인", type="primary",use_container_width=True):
-                st.session_state.login_attempt+=1
                 if username == st.session_state.user_id and password == st.session_state.password:
                     st.session_state.logged_in = True
                 elif username == 'test' and password == 'test':
@@ -128,7 +125,6 @@ if 'messages' not in st.session_state:
 
         if st.session_state.screen_setting=='pc':
             if st.button("Log in", type="primary",use_container_width=True):
-                st.session_state.login_attempt+=1
                 if username == st.session_state.user_id and password == st.session_state.password:
                     st.session_state.logged_in = True
                 elif username == 'test' and password == 'test':
