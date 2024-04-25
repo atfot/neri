@@ -112,9 +112,10 @@ with col1:
 6. 목표 : {st.session_state.goal}"""
 )  
 with col3:
-  st.write(st.session_state.client_analysis)
-  st.write(st.session_state.score)
-  st.write(st.session_state.score_explanation)
+  st.write(f'문제 분석 : {st.session_state.client_analysis}')
+  st.write(f'해결 진전도 : {st.session_state.score}')
+  st.write(f'채점 기준 : {st.session_state.score_explanation}')
+  st.write('도움이 될만한 행동들 : ')
   for i in st.session_state.what_to_do:
     st.write(i)
 #st.write(st.session_state.problem_analysis)
