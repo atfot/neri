@@ -198,7 +198,7 @@ if st.session_state.fix_info==False:
       z=f'{time.localtime().tm_mon}'
   y=f'{time.localtime().tm_year}/{z}/{time.localtime().tm_mday}'
   df = pd.DataFrame({y: [st.session_state.score]})
-  st.line_chart(chart_data)
+  st.line_chart(df)
 else:
   pass
 
