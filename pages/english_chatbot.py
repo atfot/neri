@@ -217,7 +217,7 @@ Please briefly summarize the conversation below.
                 
                 **Conversation content**: [{st.session_state.conversations}]
 
-                **Three possible answers from a psychotherapist who wants to learn about his patient and heal the patient's mind**: 
+                **Three possible answers from a psychotherapist who wants to learn about his patient and heal his patient's mind**: 
                 "[{msg}]"
 
                 - After reading the informations above, please **pick the best response from three possible answers** considering psychotherapist's intention, and write it down exactly, without leaving out a single letter. 
@@ -305,8 +305,8 @@ Please briefly summarize the conversation below.
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
-                st.write(st.session_state.messages)
-                st.write(st.session_state.conversations)
+                #st.write(st.session_state.messages)
+                #st.write(st.session_state.conversations)
             with col2:
                 st.write('')
                 st.button('🔄', on_click=reply_again_cb)
