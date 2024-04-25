@@ -78,8 +78,10 @@ if 'messages' not in st.session_state:
             if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
                     st.session_state.signin = True
             if st.button("아이디 찾기", type="secondary",use_container_width=True):
+                st.session_state.login_attempt=0
                 st.write('아직 제작중인 기능')
             if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
+                st.session_state.login_attempt=0
                 st.write('아직 제작중인 기능')
         
         if st.session_state.get("logged_in", True):
@@ -100,6 +102,7 @@ if 'messages' not in st.session_state:
             col, col2, col3 = st.columns([3,4,3])
             with col2:
                 st.success("네리에 오신 것을 환영합니다!", icon="💛")
+                st.session_state.login_attempt=0
                 sleep(0.5)
                 st.switch_page("pages/signin.py")
         if st.session_state.get('many_login_attempt',True):
@@ -161,28 +164,33 @@ if 'messages' not in st.session_state:
             if st.button("**New User**", type="secondary",use_container_width=True):
                     st.session_state.signin = True
             if st.button("Find my ID", type="secondary",use_container_width=True):
+                st.session_state.login_attempt=0
                 st.write("I'm currently making this function")
             if st.button("Find my PW", type="secondary",use_container_width=True):
+                st.session_state.login_attempt=0
                 st.write("I'm currently making this function")
 
         if st.session_state.get("logged_in", True):
             col, col2, col3 = st.columns([3,4,3])
             with col2:
                 st.success("Logged in successfully!")
+                st.session_state.login_attempt=0
                 sleep(0.5)
                 st.switch_page("pages/english_chatbot_2.py")
         if st.session_state.get("logged_in", False):
             pass
         if st.session_state.get('login_error', True):
-            col, col2, col3 = st.columns([2.5,5,2.5])
-            with col2:
-                st.error(f"Incorrect ID or password ({st.session_state.login_attempt}/5)")
+            if st.session_state.login_attempt<6:
+                col, col2, col3 = st.columns([2,6,2])
+                with col2:
+                    st.error(f"Incorrect ID or password ({st.session_state.login_attempt}/5)", icon="🚨")
         if st.session_state.get("login_error", False):
             pass
         if st.session_state.get('signin', True):
             col, col2, col3 = st.columns([3,4,3])
             with col2:
                 st.success("Welcome to Neri!")
+                st.session_state.login_attempt=0
                 sleep(0.5)
                 st.switch_page("pages/signin.py")
         if st.session_state.get('many_login_attempt',True):
