@@ -111,7 +111,8 @@ if 'my_info' in st.session_state:
     st.title('')
   with col3:
     month=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    st.subheader(f"Analysis results on {month}[{time.localtime().tm_mon}+1] {time.localtime().tm_mday}, {time.localtime().tm_year}")
+    month=month[time.localtime().tm_mon+1]
+    st.subheader(f"Analysis results on {month} {time.localtime().tm_mday}, {time.localtime().tm_year}")
     st.write(f'Problem Analysis : {st.session_state.client_analysis}')
     st.write(f'Score : {st.session_state.score}')
     st.write(f'Score Explanation : {st.session_state.score_explanation}')
