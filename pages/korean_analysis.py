@@ -100,7 +100,7 @@ if 'my_info' not in st.session_state:
     st.session_state.fix_info=False
 
 if st.session_state.fix_info==False:
-  st.subheader('내 정보')
+  st.subheade('내 정보')
   col1,col2,col3=st.columns([4,1,5])
   with col1:
     st.write(f"""
@@ -117,7 +117,7 @@ if st.session_state.fix_info==False:
   6. 목표 : {st.session_state.goal}"""
   )  
     if st.button('내 정보 수정',use_container_width=True):
-      del st.session_state.my_info
+      st.session_state.my_info=False
       st.session_state.fix_info=True
     st.title('')
   with col3:
