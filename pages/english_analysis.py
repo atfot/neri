@@ -129,6 +129,7 @@ with col1:
     st.button('Fix my Info',use_container_width=True,on_click=fix_info)
   if st.session_state.fix_info==True:
     st.title('Fix your Profile')
+    st.markdown(f'<p><b>1. Your Name : </b>{st.session_state.username}</p>', unsafe_allow_html=True)        
     st.write(f"""
   1. Your Name : {st.session_state.username}
               
