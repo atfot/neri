@@ -96,7 +96,7 @@ if 'my_info' not in st.session_state:
   problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
   problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
   st.session_state.what_to_do=problem_analysis.split('\n')
-  
+
   st.session_state.my_info=True
 
 if 'my_info' in st.session_state:
@@ -115,9 +115,9 @@ if 'my_info' in st.session_state:
     st.write(f'문제 분석 : {st.session_state.client_analysis}')
     st.write(f'해결 진전도 : {st.session_state.score}')
     st.write(f'채점 기준 : {st.session_state.score_explanation}')
-    st.write('도움이 될만한 행동들 : ')
-    for i in st.session_state.what_to_do:
-      st.write(i)
+  st.write('도움이 될만한 행동들 : ')
+  for i in st.session_state.what_to_do:
+    st.write(i)
 
   #st.write(st.session_state.problem_analysis)
   #st.write(st.session_state.conversations)
