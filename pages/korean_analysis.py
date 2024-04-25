@@ -100,7 +100,7 @@ if 'my_info' not in st.session_state:
     st.session_state.fix_info=False
 
 if st.session_state.fix_info==False:
-  st.title('내 정보')
+  st.subheader('내 정보')
   col1,col2,col3=st.columns([4,1,5])
   with col1:
     st.write(f"""
