@@ -116,39 +116,36 @@ with col1:
     st.markdown(f'''
                 <p>
                 <b>1. Your Name : </b>{st.session_state.username}
-                
+
                 <b>2. Age : </b>{st.session_state.age}
+
+                <b>3. Gender : </b>{st.session_state.gender}
+
+                <b>4. Problem : </b>{st.session_state.problem}
+
+                <b>5. Problem Explanation: </b>{st.session_state.problem_explanation}
+
+                <b>6. Goal : </b>{st.session_state.goal}
                 </p>
-                ''', unsafe_allow_html=True)  
-    st.write(f"""
-  1. Your Name : {st.session_state.username}
-              
-  2. Age : {st.session_state.age}
-
-  3. Gender : {st.session_state.gender}
-
-  4. Problem : {st.session_state.problem}
-
-  5. Problem Explanation: {st.session_state.problem_explanation}
-
-  6. Goal : {st.session_state.goal}"""
-  )  
+                ''', unsafe_allow_html=True)   
     st.button('Fix my Info',use_container_width=True,on_click=fix_info)
   if st.session_state.fix_info==True:
     st.title('Fix your Profile')      
-    st.write(f"""
-  1. Your Name : {st.session_state.username}
-              
-  2. Age : {st.session_state.age}
+    st.markdown(f'''
+                <p>
+                <b>1. Your Name : </b>{st.session_state.username}
 
-  3. Gender : {st.session_state.gender}
+                <b>2. Age : </b>{st.session_state.age}
 
-  4. Problem : {st.session_state.problem}
+                <b>3. Gender : </b>{st.session_state.gender}
 
-  5. Problem Explanation: {st.session_state.problem_explanation}
+                <b>4. Problem : </b>{st.session_state.problem}
 
-  6. Goal : {st.session_state.goal}"""
-  )  
+                <b>5. Problem Explanation: </b>{st.session_state.problem_explanation}
+
+                <b>6. Goal : </b>{st.session_state.goal}
+                </p>
+                ''', unsafe_allow_html=True)   
 with col3:
   if st.session_state.fix_info==False:
     month=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
