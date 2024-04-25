@@ -139,12 +139,14 @@ with col1:
 with col3:
   if st.session_state.fix_info==False:
     st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
-    st.write(f'문제 분석 : {st.session_state.client_analysis}')
+    st.write('문제 분석 : ')
+    st.write(f'{st.session_state.client_analysis}')
     st.write(f'해결 진전도 : {st.session_state.score}')
+    st.write('채점 기준 : ')
     st.write(f'채점 기준 : {st.session_state.score_explanation}')
   else:
     with st.form('fix_user_info'):
-      st.write("정보를 바꿔주세요!")
+      st.write("정보를 바꿔주세요😊")
       username = st.text_input('무슨 이름으로 불리고 싶으신가요?')
       if username:
           x+=1
@@ -163,10 +165,12 @@ with col3:
           st.session_state.goal=goal
       if st.form_submit_button('완료'):
         if x==4:
-          st.write('저장 완료되었습니다!')
+          st.write('저장 완료되었습니다👍')
           time.sleep(2)
           del st.session_state.my_info
           st.rerun()
+        else:
+          st.write('빈칸을 전부 채워주세요🙃')
 if st.session_state.fix_info==False:
   st.title('')
   st.write('도움이 될만한 행동들 : ')

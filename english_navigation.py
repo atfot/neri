@@ -16,12 +16,12 @@ def get_current_page_name():
 
 def make_sidebar():
     with st.sidebar:
-        st.title("💗 Neri")
+        st.title("🧡 Neri")
         st.write("")
         st.write("")
 
         if st.session_state.get("logged_in", True):
-            st.page_link("pages/english_chatbot.py", label="My Councellor", icon="💛")
+            st.page_link("pages/english_chatbot.py", label="My Councellor", icon="🩹")
             st.page_link("pages/english_analysis.py", label="My Info", icon="ℹ️")
 
             st.write("")

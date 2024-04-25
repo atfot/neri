@@ -16,12 +16,12 @@ def get_current_page_name():
 
 def make_sidebar():
     with st.sidebar:
-        st.title("💗 네리")
+        st.title("🧡 네리")
         st.write("")
         st.write("")
 
         if st.session_state.get("logged_in", True):
-            st.page_link("pages/korean_chatbot.py", label="당신의 카운셀러", icon="💛")
+            st.page_link("pages/korean_chatbot.py", label="당신의 카운셀러", icon="🩹")
             st.page_link("pages/korean_analysis.py", label="내 정보", icon="ℹ️")
 
             st.write("")

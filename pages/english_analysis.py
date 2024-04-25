@@ -95,23 +95,43 @@ if 'my_info' not in st.session_state:
     problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
     st.session_state.what_to_do=problem_analysis.split('\n')
     st.session_state.my_info=True
+    st.session_state.fix_info=False
 
-if 'my_info' in st.session_state:
-  st.title('My Info')
+col1,col2,col3=st.columns([4,1,5])
+with col1:
+  if st.session_state.fix_info==False:
+    st.subheader('내 정보')
+    st.write(f"""
+  1. Your Name : {st.session_state.username}
+              
+  2. Age : {st.session_state.age}
 
-  col1,col2,col3=st.columns([4,1,5])
-  with col1:
-    st.write(f"""1. Your Name: {st.session_state.username}
-  2. Age: {st.session_state.age}
-  3. Gender: {st.session_state.gender}
+  3. Gender : {st.session_state.gender}
+
   4. Problem : {st.session_state.problem}
+
   5. Problem Explanation: {st.session_state.problem_explanation}
+
   6. Goal : {st.session_state.goal}"""
   )  
-    if st.button('Fix my Info',use_container_width=True):
-        st.switch_page('pages/signin.py')
-    st.title('')
-  with col3:
+    st.button('Fix my Info',use_container_width=True,on_click=fix_info)
+  if st.session_state.fix_info==True:
+    st.title('Fix your Profile')
+    st.write(f"""
+  1. Your Name : {st.session_state.username}
+              
+  2. Age : {st.session_state.age}
+
+  3. Gender : {st.session_state.gender}
+
+  4. Problem : {st.session_state.problem}
+
+  5. Problem Explanation: {st.session_state.problem_explanation}
+
+  6. Goal : {st.session_state.goal}"""
+  )  
+with col3:
+  if st.session_state.fix_info==False:
     month=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     month=month[time.localtime().tm_mon-1]
     st.subheader(f"Analysis results on {month} {time.localtime().tm_mday}, {time.localtime().tm_year}")
@@ -120,10 +140,40 @@ if 'my_info' in st.session_state:
     st.write(f'Score : {st.session_state.score}')
     st.write('Score Explanation :')
     st.write(f'{st.session_state.score_explanation}')
-    st.title('')
+  else:
+    with st.form('fix_user_info'):
+      st.write("정보를 바꿔주세요😊")
+      username = st.text_input('Tell me the name you want to be called in here.')
+      if username:
+          x+=1
+          st.session_state.username=username
+      problem = st.text_area("What's your biggest problem right now?🤔")
+      if problem:
+          x+=1
+          st.session_state.problem=problem
+      problem_explanation=st.text_area("Please describe your issue in more detail. The more details you can provide, the better😊")
+      if problem_explanation:
+          x+=1
+          st.session_state.problem_explanation=problem_explanation
+      goal=st.text_area("Tell us what your end goal is!")
+      if goal:
+          x+=1
+          st.session_state.goal=goal
+      if st.form_submit_button('Submit'):
+        if x==4:
+          st.write('Your user profile is fixed👍')
+          time.sleep(2)
+          del st.session_state.my_info
+          st.rerun()
+        else:
+          st.write('Please fill every blanks🙃')
+if st.session_state.fix_info==False:
+  st.title('')
   st.write('Actions that might help you : ')
   for i in st.session_state.what_to_do:
     st.write(i)
+else:
+  pass
   #st.write(st.session_state.problem_analysis)
   #st.write(st.session_state.conversations)
   #st.write(st.session_state.message_summary)

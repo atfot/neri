@@ -102,7 +102,7 @@ if 'messages' not in st.session_state:
         if st.session_state.get('signin', True):
             col, col2, col3 = st.columns([3,4,3])
             with col2:
-                st.success("네리에 오신 것을 환영합니다!", icon="💛")
+                st.success("네리에 오신 것을 환영합니다!", icon="🧡")
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 sleep(0.5)
@@ -188,7 +188,7 @@ if 'messages' not in st.session_state:
         if st.session_state.get('signin', True):
             col, col2, col3 = st.columns([3,4,3])
             with col2:
-                st.success("Welcome to Neri!", icon="💛")
+                st.success("Welcome to Neri!", icon="🧡")
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 sleep(0.5)
