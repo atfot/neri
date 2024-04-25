@@ -109,10 +109,10 @@ if 'my_info' not in st.session_state:
 채점 기준: {score_explanation}
 해볼만한 것들: {[i for i in what_to_do]}
 """
-  st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
+st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
 
-  col1,col2,col3=st.columns([4,1,5])
-  with col1:
-    st.write(st.session_state.my_info)
-  with col3:
-    st.write(st.session_state.analysis)
+col1,col2,col3=st.columns([4,1,5])
+with col1:
+  st.write(st.session_state.my_info)
+with col3:
+  st.write(st.session_state.analysis)
