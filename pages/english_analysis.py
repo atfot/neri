@@ -123,7 +123,7 @@ with col1:
 
                 <b>4. Problem : </b>{st.session_state.problem}
 
-                <b>5. Problem Explanation: </b>{st.session_state.problem_explanation}
+                <b>5. Problem Explanation : </b>{st.session_state.problem_explanation}
 
                 <b>6. Goal : </b>{st.session_state.goal}
                 </p>
@@ -141,7 +141,7 @@ with col1:
 
                 <b>4. Problem : </b>{st.session_state.problem}
 
-                <b>5. Problem Explanation: </b>{st.session_state.problem_explanation}
+                <b>5. Problem Explanation : </b>{st.session_state.problem_explanation}
 
                 <b>6. Goal : </b>{st.session_state.goal}
                 </p>

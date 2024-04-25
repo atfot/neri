@@ -116,42 +116,47 @@ col1,col2,col3=st.columns([4,1,5])
 with col1:
   if st.session_state.fix_info==False:
     st.subheader('내 정보')
-    st.write(f"""
-  1. 고객님 성함 : {st.session_state.username}
-              
-  2. 연령 : {st.session_state.age}
+    st.markdown(f'''
+                <p>
+                <b>1. 고객님 성함 : </b>{st.session_state.username}
 
-  3. 성별: {st.session_state.gender}
+                <b>2. 연령 : </b>{st.session_state.age}
 
-  4. 고민 : {st.session_state.problem}
+                <b>3. 성별 : </b>{st.session_state.gender}
 
-  5. 고민 설명 : {st.session_state.problem_explanation}
+                <b>4. 고민 : </b>{st.session_state.problem}
 
-  6. 목표 : {st.session_state.goal}"""
-  )  
+                <b>5. 고민 설명 : </b>{st.session_state.problem_explanation}
+
+                <b>6. 목표 : </b>{st.session_state.goal}
+                </p>
+                ''', unsafe_allow_html=True)  
     st.button('프로필 수정',use_container_width=True,on_click=fix_info)
   if st.session_state.fix_info==True:
     st.title('프로필 수정')
-    st.write(f"""
-  1. 고객님 성함 : {st.session_state.username}
-              
-  2. 연령 : {st.session_state.age}
+    st.markdown(f'''
+                <p>
+                <b>1. 고객님 성함 : </b>{st.session_state.username}
 
-  3. 성별 : {st.session_state.gender}
+                <b>2. 연령 : </b>{st.session_state.age}
 
-  4. 고민 : {st.session_state.problem}
+                <b>3. 성별 : </b>{st.session_state.gender}
 
-  5. 고민 설명 : {st.session_state.problem_explanation}
+                <b>4. 고민 : </b>{st.session_state.problem}
 
-  6. 목표 : {st.session_state.goal}"""
-  )  
+                <b>5. 고민 설명 : </b>{st.session_state.problem_explanation}
+
+                <b>6. 목표 : </b>{st.session_state.goal}
+                </p>
+                ''', unsafe_allow_html=True)  
+
 with col3:
   if st.session_state.fix_info==False:
-    st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
-    st.write('문제 분석 : ')
+    st.markdown(f"<p><h4>{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과</h4></p>",unsafe_allow_html=True)
+    st.markdown('<p><b>문제 분석 : </b></p>',unsafe_allow_html=True)
     st.write(f'{st.session_state.client_analysis}')
-    st.write(f'해결 진전도 : {st.session_state.score}')
-    st.write('채점 기준 : ')
+    st.markdown(f'<p><b>해결 진전도 : </b>{st.session_state.score}</p>',unsafe_allow_html=True)
+    st.markdown('<p><b>채점 기준 : </b></p>',unsafe_allow_html=True)
     st.write(f'{st.session_state.score_explanation}')
   else:
     with st.form('fix_user_info'):
@@ -183,7 +188,7 @@ with col3:
           st.write('빈칸을 전부 채워주세요🙃')
 if st.session_state.fix_info==False:
   st.title('')
-  st.write('도움이 될만한 행동들 : ')
+  st.markdown('<p><b>도움이 될만한 행동들 : </b></p>', unsafe_allow_html=True)
   for i in st.session_state.what_to_do:
     st.write(i)
 else:
