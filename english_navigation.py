@@ -21,14 +21,14 @@ def make_sidebar():
         st.write("")
 
         if st.session_state.get("logged_in", True):
-            st.page_link("pages/english_chatbot.py", label="My Councelor", icon="💛")
-            st.page_link("pages/english_analysis.py", label="My Info", icon="🏋️")
+            st.page_link("pages/korean_chatbot.py", label="My Councellor", icon="💛")
+            st.page_link("pages/korean_analysis.py", label="My Info", icon="ℹ️")
 
             st.write("")
             st.write("")
 
-        if st.button("Log out",type='primary',use_container_width=True):
-            logout()  
+            if st.button("Logout",type='primary',use_container_width=True):
+                logout()
 
         elif get_current_page_name() != "streamlit_app":
             # If anyone tries to access a secret page without being logged in,
