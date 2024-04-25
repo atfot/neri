@@ -177,7 +177,7 @@ if 'messages' not in st.session_state:
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 sleep(0.5)
-                st.switch_page("pages/english_chatbot.py")
+                st.switch_page("pages/original_chatbot.py")
         if st.session_state.get('login_error', True):
             if st.session_state.login_attempt<6:
                 col, col2, col3 = st.columns([2,6,2])
