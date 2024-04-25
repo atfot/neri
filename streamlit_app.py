@@ -2,11 +2,6 @@ import streamlit as st
 from time import sleep
 from streamlit_js_eval import streamlit_js_eval
 
-st.session_state.logged_in = False
-st.session_state.signin = False
-st.session_state.login_error = False
-st.session_state.many_login_attempt=False
-
 if 'messages' not in st.session_state:
     if 'screen_setting' not in st.session_state:
         st.session_state.screen_setting = 'pc'  # default value
@@ -17,6 +12,10 @@ if 'messages' not in st.session_state:
     layout="centered",
     menu_items=None
 )
+    st.session_state.logged_in = False
+    st.session_state.signin = False
+    st.session_state.login_error = False
+
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
         st.session_state.screen_setting = 'mobile' if x < 662 else 'pc'
 
@@ -89,6 +88,7 @@ if 'messages' not in st.session_state:
             col, col2, col3 = st.columns([2.5,5,2.5])
             with col2:
                 st.success("성공적으로 로그인 되었습니다!",  icon="✅")
+                st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 sleep(0.5)
                 st.switch_page("pages/korean_chatbot_2.py")
@@ -103,6 +103,7 @@ if 'messages' not in st.session_state:
             col, col2, col3 = st.columns([3,4,3])
             with col2:
                 st.success("네리에 오신 것을 환영합니다!", icon="💛")
+                st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 sleep(0.5)
                 st.switch_page("pages/signin.py")
@@ -175,6 +176,7 @@ if 'messages' not in st.session_state:
             col, col2, col3 = st.columns([3,4,3])
             with col2:
                 st.success("Logged in successfully!")
+                st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 sleep(0.5)
                 st.switch_page("pages/english_chatbot_2.py")
@@ -191,6 +193,7 @@ if 'messages' not in st.session_state:
             col, col2, col3 = st.columns([3,4,3])
             with col2:
                 st.success("Welcome to Neri!")
+                st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 sleep(0.5)
                 st.switch_page("pages/signin.py")
