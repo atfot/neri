@@ -111,10 +111,12 @@ if 'my_info' in st.session_state:
   5. 고민 설명: {st.session_state.problem_explanation}
   6. 목표 : {st.session_state.goal}"""
   )  
+    st.title('')
   with col3:
     st.write(f'문제 분석 : {st.session_state.client_analysis}')
     st.write(f'해결 진전도 : {st.session_state.score}')
     st.write(f'채점 기준 : {st.session_state.score_explanation}')
+    st.title('')
   st.write('도움이 될만한 행동들 : ')
   for i in st.session_state.what_to_do:
     st.write(i)
