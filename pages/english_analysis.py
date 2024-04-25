@@ -76,7 +76,7 @@ if 'my_info' not in st.session_state:
                     2 : The client is directly demonstrating a willingness to work toward a negative direction.
                     1 : The client has a serious mental illness or mental health issue and needs to see a real doctor or psychologist to address it.]
 
-                    Best thing to do : [Tell me what you think is the best thing for {st.session_state.username} to do in that situation,using a bullet point summary, as a professional psychologist.]
+                    Best thing to do : [Tell me what you think is the easiest thing for {st.session_state.username} to do in that situation, using a bullet point summary, as a professional psychologist.]
                     '''
                     **Remember**:
                     1. Your score should be much lower than you think.
