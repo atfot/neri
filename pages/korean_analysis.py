@@ -100,9 +100,9 @@ if 'my_info' not in st.session_state:
     st.session_state.fix_info=False
 
 if st.session_state.fix_info==False:
-  st.subheader('내 정보')
   col1,col2,col3=st.columns([4,1,5])
   with col1:
+    st.subheader('내 정보')
     st.write(f"""
   1. 고객님 성함: {st.session_state.username}
               
@@ -119,7 +119,6 @@ if st.session_state.fix_info==False:
     if st.button('내 정보 수정',use_container_width=True):
       st.session_state.my_info=False
       st.session_state.fix_info=True
-    st.title('')
   with col3:
     st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
     st.write(f'문제 분석 : {st.session_state.client_analysis}')
