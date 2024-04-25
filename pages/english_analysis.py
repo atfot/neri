@@ -147,7 +147,7 @@ with col3:
     month=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     month=month[time.localtime().tm_mon-1]
     st.subheader(f"Analysis results on {month} {time.localtime().tm_mday}, {time.localtime().tm_year}")
-    st.markdown(f'<p><h5>Analysis results on {month} {time.localtime().tm_mday}, {time.localtime().tm_year}</h5></p>', unsafe_allow_html=True)
+    st.markdown(f'<p><h4>Analysis results on {month} {time.localtime().tm_mday}, {time.localtime().tm_year}</h4></p>', unsafe_allow_html=True)
     st.write('Problem Analysis :')
     st.write(f'{st.session_state.client_analysis}')
     st.write(f'Score : {st.session_state.score}')
