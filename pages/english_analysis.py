@@ -11,6 +11,9 @@ st.set_page_config(
 )
 make_sidebar()
 
+def fix_info():
+  st.session_state.fix_info=True
+
 if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
 
