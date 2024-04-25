@@ -118,7 +118,8 @@ if 'messages' not in st.session_state:
         if st.session_state.get("signin", False):
             pass
     if language_selection:
-        st.session_state.many_login_attempt=False 
+        st.session_state.many_login_attempt=False
+        st.session_state.login_attempt=0 
         st.session_state['korean_mode']=0
         st.markdown('<p><b>영어 모드</b></p>', unsafe_allow_html=True)
         st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
