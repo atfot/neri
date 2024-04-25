@@ -287,13 +287,12 @@ Please briefly summarize the conversation below.
             my_bar.progress(75,text=progress_text)
             try:
                 humanize_msg = sentence_selection.choices[0].message.content
-                humanize_msg = humanize_msg[humanize_msg.index(':')+1:].strip(' ').strip('"')
+                junk=[':',')','}',']','>']
+                for i in junk:
+                    if humanize_msg.find(i)!=-1:
+                      humanize_msg = humanize_msg[humanize_msg.find(i)+1:].strip().strip().strip('"').strip("'")
             except:
-                humanize_msg = sentence_selection.choices[0].message.content.strip('"')
-            st.session_state.messages.append({"role": "Psychotherapist", "content": humanize_msg})
-            st.session_state.conversations.append({"role": "Psychotherapist", "content": humanize_msg})
-            my_bar.progress(100,text=progress_text)
-            my_bar.empty()
+                humanize_msg = sentence_selection.choices[0].message.content.strip().strip().strip('"').strip("'")
 
         # Get the last user prompt in the msg history.
         if st.session_state.repeat:
