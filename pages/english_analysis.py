@@ -202,7 +202,7 @@ if st.session_state.fix_info==False:
   y='2025/12/03'
   df_1=pd.DataFrame({y: [x]})
   df_2=pd.concat([df,df_1],axis=1).T
-  st.line_chart(df_2,x='0',y=list(df_2.columns))
+  st.line_chart(df_2,x=list(df_2.index)[0],y=list(df_2.columns))
 else:
   pass
 
