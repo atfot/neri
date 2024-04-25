@@ -146,12 +146,11 @@ with col3:
   if st.session_state.fix_info==False:
     month=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     month=month[time.localtime().tm_mon-1]
-    st.subheader(f"Analysis results on {month} {time.localtime().tm_mday}, {time.localtime().tm_year}")
     st.markdown(f'<p><h4>Analysis results on {month} {time.localtime().tm_mday}, {time.localtime().tm_year}</h4></p>', unsafe_allow_html=True)
-    st.write('Problem Analysis :')
+    st.markdown('<p><b>Problem Analysis :</b></p>', unsafe_allow_html=True)
     st.write(f'{st.session_state.client_analysis}')
-    st.write(f'Score : {st.session_state.score}')
-    st.write('Score Explanation :')
+    st.markdown(f'<p><b>Score : </b>{st.session_state.score}</p>', unsafe_allow_html=True)
+    st.markdown('<p><b>Score Explanation :</b></p>', unsafe_allow_html=True)
     st.write(f'{st.session_state.score_explanation}')
   else:
     with st.form('fix_user_info'):
