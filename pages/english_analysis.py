@@ -182,7 +182,7 @@ with col3:
           st.write('Please fill every blanks🙃')
 if st.session_state.fix_info==False:
   st.title('')
-  st.write('Actions that might help you : ')
+  st.markdown('<p><b>Actions that might help you :</b></p>', unsafe_allow_html=True)
   for i in st.session_state.what_to_do:
     st.write(i)
 else:
