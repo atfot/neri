@@ -1,3 +1,19 @@
+import streamlit as st
+from english_navigation import make_sidebar
+from openai import OpenAI
+import time
+
+st.set_page_config(
+    page_title="Your AI Therapist, Neri",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
+make_sidebar()
+
+if 'client' not in st.session_state:
+  st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
+
 if 'my_info' not in st.session_state:
   with st.spinner('# Now Loading...'):
     problem_analysis = st.session_state.client.chat.completions.create(
