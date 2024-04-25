@@ -108,6 +108,8 @@ if 'my_info' in st.session_state:
   5. Problem Explanation: {st.session_state.problem_explanation}
   6. Goal : {st.session_state.goal}"""
   )  
+    if st.button('Fix my Info',use_container_width=True):
+        st.switch_page('pages/signin.py')
     st.title('')
   with col3:
     month=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -122,10 +124,6 @@ if 'my_info' in st.session_state:
   st.write('Actions that might help you : ')
   for i in st.session_state.what_to_do:
     st.write(i)
-  col1,col2=st.columns([8,2])
-  with col2:
-      if st.button('Fix my Info',use_container_width=True):
-        st.switch_page('pages/signin.py')
   #st.write(st.session_state.problem_analysis)
   #st.write(st.session_state.conversations)
   #st.write(st.session_state.message_summary)
