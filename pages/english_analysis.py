@@ -17,6 +17,15 @@ def fix_info():
 if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
 
+if 'username' not in st.session_state:
+   st.session_state.username=st.secrets.user_name
+   st.session_state.age=st.secrets.age
+   st.session_state.gender=st.secrets.user_gender
+   st.session_state.gender=st.secrets.user_gender
+   st.session_state.problem=st.secrets.problem
+   st.session_state.problem_explanation=st.secrets.problem_explanation
+   st.session_state.goal=st.secrets.goal
+
 if 'my_info' not in st.session_state:
   with st.spinner('# Now Loading...'):
     problem_analysis = st.session_state.client.chat.completions.create(
