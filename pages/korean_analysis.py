@@ -143,7 +143,7 @@ with col3:
     st.write(f'{st.session_state.client_analysis}')
     st.write(f'해결 진전도 : {st.session_state.score}')
     st.write('채점 기준 : ')
-    st.write(f'채점 기준 : {st.session_state.score_explanation}')
+    st.write(f'{st.session_state.score_explanation}')
   else:
     with st.form('fix_user_info'):
       x=0
