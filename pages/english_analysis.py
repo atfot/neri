@@ -1,5 +1,5 @@
 import streamlit as st
-from navigation import make_sidebar
+from english_navigation import make_sidebar
 from openai import OpenAI
 import time
 
