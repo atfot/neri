@@ -119,7 +119,7 @@ with col1:
 )  
   if st.button('프로필 수정',use_container_width=True):
     st.session_state.fix_info=True
-  else:
+  if st.session_state.fix_info==True:
     st.title('프로필 수정')
   st.write(f"""
 1. 고객님 성함: {st.session_state.username}
