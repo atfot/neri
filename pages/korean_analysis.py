@@ -124,7 +124,7 @@ if st.session_state.fix_info==False:
     st.write(f'문제 분석 : {st.session_state.client_analysis}')
     st.write(f'해결 진전도 : {st.session_state.score}')
     st.write(f'채점 기준 : {st.session_state.score_explanation}')
-    st.title('')
+  st.title('')
   st.write('도움이 될만한 행동들 : ')
   for i in st.session_state.what_to_do:
     st.write(i)
