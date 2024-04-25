@@ -1,6 +1,7 @@
 import streamlit as st
 from english_navigation import make_sidebar
 from openai import OpenAI
+import pandas as pd
 import time
 
 st.set_page_config(
@@ -190,8 +191,17 @@ if st.session_state.fix_info==False:
   st.markdown('<p><b>Actions that might help you :</b></p>', unsafe_allow_html=True)
   for i in st.session_state.what_to_do:
     st.write(i)
+  st.title('')
+  if time.localtime().tm_mon<10:
+      z=f'0{time.localtime().tm_mon}'
+  else:
+      z=f'{time.localtime().tm_mon}'
+  y=f'{time.localtime().tm_year}/{z}/{time.localtime().tm_mday}'
+  df = pd.DataFrame({y: [st.session_state.score]})
+  st.line_chart(chart_data)
 else:
   pass
+
   #st.write(st.session_state.problem_analysis)
   #st.write(st.session_state.conversations)
   #st.write(st.session_state.message_summary)
