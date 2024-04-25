@@ -11,6 +11,9 @@ st.set_page_config(
 )
 make_sidebar()
 
+def fix_info():
+  st.session_state.fix_info=True
+
 if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
 
@@ -104,21 +107,20 @@ col1,col2,col3=st.columns([4,1,5])
 with col1:
   if st.session_state.fix_info==False:
     st.subheader('내 정보')
-  st.write(f"""
-1. 고객님 성함: {st.session_state.username}
-            
-2. 연령: {st.session_state.age}
+    st.write(f"""
+  1. 고객님 성함: {st.session_state.username}
+              
+  2. 연령: {st.session_state.age}
 
-3. 성별: {st.session_state.gender}
+  3. 성별: {st.session_state.gender}
 
-4. 고민 : {st.session_state.problem}
+  4. 고민 : {st.session_state.problem}
 
-5. 고민 설명: {st.session_state.problem_explanation}
+  5. 고민 설명: {st.session_state.problem_explanation}
 
-6. 목표 : {st.session_state.goal}"""
-)  
-  if st.button('프로필 수정',use_container_width=True):
-    st.session_state.fix_info=True
+  6. 목표 : {st.session_state.goal}"""
+  )  
+    st.button('프로필 수정',use_container_width=True,on_click=fix_info)
   if st.session_state.fix_info==True:
     st.title('프로필 수정')
   st.write(f"""
