@@ -5,6 +5,7 @@ from streamlit_js_eval import streamlit_js_eval
 st.session_state.logged_in = False
 st.session_state.signin = False
 st.session_state.login_error = False
+st.session_state.many_login_attempt=False
 
 if 'messages' not in st.session_state:
     if 'screen_setting' not in st.session_state:
