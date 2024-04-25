@@ -99,7 +99,7 @@ if 'my_info' not in st.session_state:
     st.session_state.what_to_do=problem_analysis.split('\n')
     st.session_state.my_info=True
 
-if 'my_info' in st.session_state:
+if st.session_state.my_info==True:
   if st.session_state.fix_info==False:
     st.title('내 정보')
     col1,col2,col3=st.columns([4,1,5])
@@ -112,6 +112,7 @@ if 'my_info' in st.session_state:
     6. 목표 : {st.session_state.goal}"""
     )  
       if st.button('내 정보 수정',use_container_width=True):
+        st.session_state.my_info=False
         st.session_state.fix_info=True
       st.title('')
     with col3:
@@ -123,6 +124,7 @@ if 'my_info' in st.session_state:
     st.write('도움이 될만한 행동들 : ')
     for i in st.session_state.what_to_do:
       st.write(i)
+if st.session_state.my_info==False:
   if st.session_state.fix_info==True:
     st.title('내 정보 수정')
     col1,col2,col3=st.columns([4,1,5])
@@ -159,6 +161,6 @@ if 'my_info' in st.session_state:
             st.write('저장 완료되었습니다!')
             time.sleep(2)
             del st.session_state.my_info
-  #st.write(st.session_state.problem_analysis)
-  #st.write(st.session_state.conversations)
-  #st.write(st.session_state.message_summary)
+    #st.write(st.session_state.problem_analysis)
+    #st.write(st.session_state.conversations)
+    #st.write(st.session_state.message_summary)
