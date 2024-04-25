@@ -84,7 +84,7 @@ if 'messages' not in st.session_state:
                 st.write('아직 제작중인 기능')
         
         if st.session_state.get("logged_in", True):
-            col, col2, col3 = st.columns([3,4,3])
+            col, col2, col3 = st.columns([2.5,5,2.5])
             with col2:
                 st.success("성공적으로 로그인 되었습니다!",  icon="✅")
                 sleep(0.5)
