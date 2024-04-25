@@ -129,13 +129,12 @@ if 'messages' not in st.session_state:
         if st.session_state.screen_setting=='pc':
             if st.button("Log in", type="primary",use_container_width=True):
                 st.session_state.login_attempt+=1
-                if st.session_state.login_attempt<6:
-                    if username == st.session_state.user_id and password == st.session_state.password:
-                        st.session_state.logged_in = True
-                    elif username == 'test' and password == 'test':
-                        st.session_state.logged_in = True
-                    else:
-                        st.session_state.login_error = True
+                if username == st.session_state.user_id and password == st.session_state.password:
+                    st.session_state.logged_in = True
+                elif username == 'test' and password == 'test':
+                    st.session_state.logged_in = True
+                else:
+                    st.session_state.login_error = True
                 if st.session_state.login_attempt>=6:
                     if st.session_state.login_error==True:
                         st.session_state.many_login_attempt = True
