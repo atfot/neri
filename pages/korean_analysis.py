@@ -110,7 +110,7 @@ if 'my_info' in st.session_state:
   )  
     st.title('')
   with col3:
-    st.write(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
+    st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
     st.write(f'문제 분석 : {st.session_state.client_analysis}')
     st.write(f'해결 진전도 : {st.session_state.score}')
     st.write(f'채점 기준 : {st.session_state.score_explanation}')
