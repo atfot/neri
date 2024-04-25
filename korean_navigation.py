@@ -33,8 +33,6 @@ def make_sidebar():
             with col2:
                 if st.button("로그아웃",type='primary',use_container_width=True):
                     logout()
-                if st.button('내 정보 수정',use_container_width=True):
-                    st.switch_page('pages/signin.py')
 
         elif get_current_page_name() != "streamlit_app":
             # If anyone tries to access a secret page without being logged in,

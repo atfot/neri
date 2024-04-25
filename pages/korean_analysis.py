@@ -120,7 +120,10 @@ if 'my_info' in st.session_state:
   st.write('도움이 될만한 행동들 : ')
   for i in st.session_state.what_to_do:
     st.write(i)
-
+  col1,col2=st.columns([7,3])
+  with col2:
+      if st.button('내 정보 수정',use_container_width=True):
+        st.switch_page('pages/signin.py')
   #st.write(st.session_state.problem_analysis)
   #st.write(st.session_state.conversations)
   #st.write(st.session_state.message_summary)
