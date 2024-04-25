@@ -116,6 +116,7 @@ with col1:
     st.markdown(f'''
                 <p>
                 <b>1. Your Name : </b>{st.session_state.username}
+                
                 <b>2. Age : </b>{st.session_state.age}
                 </p>
                 ''', unsafe_allow_html=True)  
