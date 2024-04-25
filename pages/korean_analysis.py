@@ -104,13 +104,17 @@ if 'my_info' not in st.session_state:
 5. 고민 설명: {st.session_state.problem_explanation}
 6. 목표 : {st.session_state.goal}"""
   
-  st.session_state.analysis=f"""분석: {client_analysis}
+  st.session_state.analysis=f"""분석: 
+  {client_analysis}
 
-점수: {score}
+점수: 
+{score}
 
-채점 기준: {score_explanation}
+채점 기준: 
+{score_explanation}
 
-해볼만한 것들: {[i for i in what_to_do]}
+해볼만한 것들: 
+{i for i in what_to_do}
 """
 st.subheader(f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과")
 
