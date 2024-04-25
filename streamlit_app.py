@@ -117,12 +117,12 @@ if 'messages' not in st.session_state:
                 st.stop()
         if st.session_state.get("signin", False):
             pass
-    if language_selection:
+    if language_selection: 
         st.session_state['korean_mode']=0
         st.markdown('<p><b>영어 모드</b></p>', unsafe_allow_html=True)
         st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
         st.markdown('<div style="text-align: right;"><p>Please login</p></div>',unsafe_allow_html=True)
-
+        
         username = st.text_input("ID")
         password = st.text_input("Password", type="password")
 
@@ -169,11 +169,11 @@ if 'messages' not in st.session_state:
             if st.button("Find my PW", type="secondary",use_container_width=True):
                 st.session_state.login_attempt=0
                 st.write("I'm currently making this function")
-
+        
         if st.session_state.get("logged_in", True):
-            col, col2, col3 = st.columns([3,4,3])
+            col, col2, col3 = st.columns([2.5,5,2.5])
             with col2:
-                st.success("Logged in successfully!")
+                st.success("Logged in successfully!",  icon="✅")
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 sleep(0.5)
@@ -182,13 +182,13 @@ if 'messages' not in st.session_state:
             if st.session_state.login_attempt<6:
                 col, col2, col3 = st.columns([2,6,2])
                 with col2:
-                    st.error(f"Incorrect ID or password ({st.session_state.login_attempt}/5)", icon="🚨")
+                    st.error(f"Incorrect ID or password({st.session_state.login_attempt}/5)", icon="🚨")
         if st.session_state.get("login_error", False):
             pass
         if st.session_state.get('signin', True):
             col, col2, col3 = st.columns([3,4,3])
             with col2:
-                st.success("Welcome to Neri!")
+                st.success("Welcome to Neri!", icon="💛")
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 sleep(0.5)
@@ -199,11 +199,10 @@ if 'messages' not in st.session_state:
                 st.error("""
                            You've entered your ID or password incorrectly more than 5 times.
                            
-                           Please use 'Find my ID' or 'Find my PW' to correct your information.""")
+                           Please use 'Find my ID' or 'Find my PW' to correct your information.""", icon="🚨")
                 st.stop()
         if st.session_state.get("signin", False):
             pass
-
 
     
 
