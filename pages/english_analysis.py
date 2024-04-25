@@ -145,7 +145,8 @@ with col3:
     st.write(f'{st.session_state.score_explanation}')
   else:
     with st.form('fix_user_info'):
-      st.write("정보를 바꿔주세요😊")
+      x=0
+      st.write("Now you can fix your info😊")
       username = st.text_input('Tell me the name you want to be called in here.')
       if username:
           x+=1
