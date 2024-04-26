@@ -56,15 +56,7 @@ if st.session_state.korean_mode==1:
         else:
             pass
 
-        st.session_state.filled_input=0
-        if nickname==st.session_state.username:
-            st.session_state.filled_input+=1
-        if password=='test':
-            st.session_state.filled_input+=1
-        if new_id:
-            st.session_state.filled_input+=1
-        if new_id_check:
-            st.session_state.filled_input+=1        
+        
     with col3:
         st.markdown('<center><h3>패스워드 수정</h3></center>', unsafe_allow_html=True)
     if st.session_state.filled_input==4 or st.session_state.filled_input==8:
