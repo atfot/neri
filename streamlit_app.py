@@ -123,10 +123,10 @@ if 'messages' not in st.session_state:
             pass
         if st.session_state.get('find_my_id', True):
             st.session_state.find_my_id = False
-            st.switch_page('pages/find_my_idpw.py')
+            st.switch_page('pages/find_my_id.py')
         if st.session_state.get('find_my_pw', True):
             st.session_state.find_my_pw = False
-            st.switch_page('pages/find_my_idpw.py')
+            st.switch_page('pages/find_my_pw.py')
     if language_selection: 
         st.session_state['korean_mode']=0
         st.markdown('<p><b>영어 모드</b></p>', unsafe_allow_html=True)
@@ -217,10 +217,10 @@ if 'messages' not in st.session_state:
             pass
         if st.session_state.get('find_my_id', True):
             st.session_state.find_my_id = False
-            st.switch_page('pages/find_my_idpw.py')
+            st.switch_page('pages/find_my_id.py')
         if st.session_state.get('find_my_pw', True):
             st.session_state.find_my_pw = False
-            st.switch_page('pages/find_my_idpw.py')
+            st.switch_page('pages/find_my_pw.py')
 
     
 
