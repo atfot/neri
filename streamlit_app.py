@@ -46,7 +46,7 @@ if 'messages' not in st.session_state:
             if st.button("로그인", type="primary",use_container_width=True):
                 if username == st.session_state.user_id and password == st.session_state.password:
                     st.session_state.logged_in = True
-                elif username == 'test' and password == 'test':
+                elif username == st.secrets.user_id and password == st.secrets.user_pw:
                     st.session_state.logged_in = True
                 else:
                     st.session_state.login_error = True
@@ -140,7 +140,7 @@ if 'messages' not in st.session_state:
             if st.button("Log in", type="primary",use_container_width=True):
                 if username == st.session_state.user_id and password == st.session_state.password:
                     st.session_state.logged_in = True
-                elif username == 'test' and password == 'test':
+                elif username == st.secrets.user_id and password == st.secrets.user_pw:
                     st.session_state.logged_in = True
                 else:
                     st.session_state.login_error = True
