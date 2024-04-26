@@ -45,7 +45,7 @@ if st.session_state.korean_mode==1:
                     st.session_state.fix_id=True
                     st.session_state.filled_input+=1
         if st.session_state.fix_id==True:
-            new_id=st.text_input('새로 사용할 ID',key='new_id',key='id_fix_new_id')
+            new_id=st.text_input('새로 사용할 ID',key='id_fix_new_id')
             if new_id:
                 if new_id==st.session_state.user_id:
                     st.error('원래 사용하시던 아이디와 동일합니다.')
