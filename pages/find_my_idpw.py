@@ -36,15 +36,29 @@ if st.session_state.korean_mode==1:
             if password=='test':
                 x+=1
             if x==2:
-                st.write('잘하셨어요!')
+                st.session_state.fix_id=True
+        if st.session_state.fix_id==True:
+            st.write('새로 사용하실 아이디를 적어주세요.')
+            new_id=st.text_input('새로 사용할 ID')
+            new_id_check=st.text_input('다시 한번 적어주세요',type=password)
+            x=0
+            if new_id:
+                x+=1
+            if password:
+                x+=1
+            if new_id==new_id_check:
+                if x==2:
+                    st.session_state.new_id=new_id
     with col2:
         st.markdown('<center><h3>패스워드 수정</h3></center>', unsafe_allow_html=True)
     col1,col2,col3=st.columns([2,6,2])
     with col2:
         if st.button('이대로 저장할까요?', type='primary',use_container_width=True):
             st.success('수정 내역이 저장되었습니다!')
-            st.write(st.session_state.user_id)
-            st.write(st.session_state.password)
+            if st.session_state.user_id:
+                st.write(st.session_state.user_id)
+            if st.session_state.password:
+                st.write(st.session_state.password)
             time.sleep(5)
             st.switch_page('streamlit_app.py')
 
