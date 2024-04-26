@@ -49,7 +49,8 @@ if st.session_state.korean_mode==1:
         if new_id_check!=new_id:
             st.error('새로운 아이디와 해당 아이디가 서로 다릅니다.')    
         else:
-            st.session_state.new_id=new_id_check
+            if 'new_id' not in st.session_state:
+                st.session_state.new_id=new_id_check
             st.session_state.filled_input+=1
 
     col1,col2,col3=st.columns([1,8,1])
