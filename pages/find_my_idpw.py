@@ -13,6 +13,7 @@ if 'user_id' not in st.session_state:
 if 'password' not in st.session_state:
    st.session_state.password='test'
 st.session_state.username=st.secrets.user_name
+st.session_state.next_step=False
 
 if 'korean_mode' not in st.session_state:
     st.switch_page('streamlit_app.py')
@@ -28,8 +29,6 @@ if st.session_state.korean_mode==1:
     col1,col2,col3=st.columns([4.5,1,4.5])
     with col1:
         st.markdown('<center><h3>아이디 수정</h3></center>', unsafe_allow_html=True)
-
-        st.session_state.next_step=False
         nickname=st.text_input('닉네임')
         if nickname==st.session_state.username:
             st.session_state.next_step=True
