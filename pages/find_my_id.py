@@ -87,7 +87,7 @@ if st.session_state.korean_mode==0:
     new_id=st.text_input('New ID',key='new_id')
     if new_id:
         if new_id==st.session_state.id:
-            st.error('This is the same username you originally used.')
+            st.error('This is the same ID you originally used.')
         else:
             st.session_state.filled_input+=1
     new_id_check=st.text_input('Write down the new ID you want to use again',type='password',key='new_id_check')
