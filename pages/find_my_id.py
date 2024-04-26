@@ -30,6 +30,7 @@ if st.session_state.korean_mode==1:
             st.error('사용하시던 닉네임이 아닙니다.')
         else:
             st.session_state.filled_input+=1
+    st.write(st.session_state.password)
     password=st.text_input('패스워드',type='password')
     if password:
         if password!=st.session_state.password:
