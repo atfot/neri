@@ -33,7 +33,7 @@ if st.session_state.korean_mode==1:
         key='password')
         new_id=st.text_input('새로 사용할 ID',key='new_id')
         new_id_check=st.text_input('다시 한번 적어주세요',type='password',key='new_id_check')
-        if nickname!=st.session_state.username:
+        if nickname==st.session_state.username:
             st.error('사용하시던 닉네임이 아닙니다.')
         if password!=st.session_state.password:
             st.error('사용하시던 패스워드가 아닙니다.')
