@@ -1,5 +1,5 @@
 import streamlit as st
-from korean_menu import make_sidebar
+from english_menu import make_sidebar
 
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
