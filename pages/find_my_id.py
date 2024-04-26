@@ -7,7 +7,8 @@ st.set_page_config(
         layout="wide",
         menu_items=None
     )
-
+if 'user_id' not in st.session_state:
+   st.session_state.user_id=st.secrets.user_id
 if 'user_pw' not in st.session_state:
    st.session_state.user_pw=st.secrets.user_pw
 if 'username' not in st.session_state:
