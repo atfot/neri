@@ -21,10 +21,14 @@ if 'korean_mode' not in st.session_state:
 
 
 if st.session_state.korean_mode==1:
-    button=st.button("메인 화면으로")
+    button=st.button("메인 화면으로", "https://neriuut.streamlit.app/")
     if button:
-        del st.session_state.filled_input
+        del st.session_state.filled_input, st.session_state.username
         st.switch_page("streamlit_app.py")
+    st.markdown('<center><h1>둘 중 어떤 것을 수정하고 싶으신가요?</h1></center>', unsafe_allow_html=True)
+    st.checkbox('아이디')
+    st.checkbox('패스워드')
+
             
 
 if st.session_state.korean_mode==0:
