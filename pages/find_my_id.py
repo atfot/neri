@@ -97,16 +97,18 @@ if st.session_state.korean_mode==0:
                 st.error('The new ID and the corresponding ID are different.')    
             else:
                 st.session_state.filled_input+=1
-        submitted=st.form_submit_button('Save')
-        if submitted:
-            if st.session_state.filled_input==4:
-                st.success('Your modifications have been saved!')
-                if st.session_state.user_id:
-                    st.write(st.session_state.user_id)
-                if st.session_state.password:
-                    st.write(st.session_state.password)
-                time.sleep(5)
-                del st.session_state.filled_input
-                st.switch_page('streamlit_app.py')
-            else:
-                st.error('Fill in all the blanks.')
+        col1,col2=st.column([8,2])
+        with col2:
+            submitted=st.form_submit_button('Save',use_container_width=True)
+            if submitted:
+                if st.session_state.filled_input==4:
+                    st.success('Your modifications have been saved!')
+                    if st.session_state.user_id:
+                        st.write(st.session_state.user_id)
+                    if st.session_state.password:
+                        st.write(st.session_state.password)
+                    time.sleep(5)
+                    del st.session_state.filled_input
+                    st.switch_page('streamlit_app.py')
+                else:
+                    st.error('Fill in all the blanks.')
