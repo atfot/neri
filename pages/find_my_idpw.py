@@ -48,13 +48,13 @@ if st.session_state.korean_mode==1:
         if st.session_state.fix_id==True:
             new_id=st.text_input('새로 사용할 ID')
             new_id_check=st.text_input('다시 한번 적어주세요',type='password')
-            id_confirm_button=st.button('확인')
+            new_confirm_button=st.button('확인')
             x=0
             if new_id:
                 x+=1
             if new_id_check:
                 x+=1
-            if id_confirm_button:
+            if new_confirm_button:
                 if new_id==new_id_check:
                     if x==2:
                         st.session_state.fix_id=False
@@ -71,6 +71,7 @@ if st.session_state.korean_mode==1:
                     st.write(st.session_state.user_id)
                 if st.session_state.password:
                     st.write(st.session_state.password)
+                del st.session_state.fix_id, st.session_state.save_button
                 time.sleep(5)
                 st.switch_page('streamlit_app.py')
     else:
