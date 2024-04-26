@@ -34,9 +34,9 @@ if st.session_state.korean_mode==1:
             st.write('새로 사용하실 아이디를 적어주세요.')
         if st.session_state.fix_id==False:
             with st.form('fix_id'):
-                nickname=st.text_input('닉네임',key='nickname')
-                password=st.text_input('패스워드',type='password',key='password')
-                id_confirm_button=st.form_submit_button('확인', key='confirm_id')
+                nickname=st.text_input('닉네임')
+                password=st.text_input('패스워드',type='password')
+                id_confirm_button=st.form_submit_button('확인')
                 x=0
                 if nickname=='test':
                     x+=1
