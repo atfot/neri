@@ -193,16 +193,15 @@ if st.session_state.fix_info==False:
     st.write(i)
   st.title('')
   if time.localtime().tm_mon<10:
-      date=f'0{time.localtime().tm_mon}'
+      z=f'0{time.localtime().tm_mon}'
   else:
-      date=f'{time.localtime().tm_mon}'
-  date=f'{date}{time.localtime().tm_mday}'
-  year_point = {time.localtime().tm_year: [st.session_state.score]}
-  df = pd.DataFrame(year_point, index=[date])
+      z=f'{time.localtime().tm_mon}'
+  y=f'{time.localtime().tm_year}/{z}/{time.localtime().tm_mday}'
+  df = pd.DataFrame({y: [st.session_state.score]})
   x=6
-  y=2024
-  df_1=pd.DataFrame({y: [x]}, index=[1206])
-  df_2=pd.concat([df,df_1],axis=0)
+  y='2025/12/03'
+  df_1=pd.DataFrame({y: [x]})
+  df_2=pd.concat([df,df_1],axis=1).T
   st.line_chart(df_2)
 else:
   pass
