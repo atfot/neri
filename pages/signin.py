@@ -35,11 +35,11 @@ if st.session_state.korean_mode==1:
         user_id=st.text_input('사용하실 아이디를 적어주세요.')
         if user_id:
             x+=1
-            st.session_state.user_id=user_id
+            st.session_state.id=user_id
         password = st.text_input("비밀번호", key="chatbot_api_key", type="password")
         if password:
             x+=1
-            st.session_state.password=password
+            st.session_state.pw=password
         username = st.text_input('무슨 이름으로 불리고 싶으신가요?')
         if username:
             x+=1
@@ -100,9 +100,9 @@ if st.session_state.korean_mode==1:
                     st.write(f"""
                              
                              
-아이디:{st.session_state.user_id}
+아이디:{st.session_state.id}
 
-비밀번호: {st.session_state.password}
+비밀번호: {st.session_state.pw}
 
 유저 이름: {st.session_state.username}
 
@@ -159,11 +159,11 @@ if st.session_state.korean_mode==0:
         user_id=st.text_input('Your ID')
         if user_id:
             x+=1
-            st.session_state.user_id=user_id
+            st.session_state.id=user_id
         password = st.text_input("Your Password", key="chatbot_api_key", type="password")
         if password:
             x+=1
-            st.session_state.password=password
+            st.session_state.pw=password
         username = st.text_input('Tell me the name you want to be called in here.')
         if username:
             x+=1
@@ -227,9 +227,9 @@ if st.session_state.korean_mode==0:
                     st.write(f"""
                              
                              
-ID:{st.session_state.user_id}
+ID:{st.session_state.id}
 
-PW: {st.session_state.password}
+PW: {st.session_state.pw}
 
 User Name: {st.session_state.username}
 
