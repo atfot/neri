@@ -36,7 +36,7 @@ if st.session_state.korean_mode==1:
                 st.session_state.fix_id=True
         with col3:
             st.checkbox('패스워드')
-    if st.session_state_fix_id==True:
+    if st.session_state.fix_id==True:
         st.write('hi')
 
             
