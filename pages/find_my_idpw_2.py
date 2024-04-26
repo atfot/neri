@@ -15,6 +15,8 @@ if 'username' not in st.session_state:
     st.session_state.username=st.secrets.user_name
 
 st.session_state.filled_input=0
+st.session_state.fix_id=False
+st.session_state.fix_pw=False
 
 if 'korean_mode' not in st.session_state:
     st.switch_page('streamlit_app.py')
@@ -25,12 +27,17 @@ if st.session_state.korean_mode==1:
     if button:
         del st.session_state.filled_input, st.session_state.username
         st.switch_page("streamlit_app.py")
-    st.markdown('<center><h1>둘 중 어떤 것을 수정하고 싶으신가요?</h1></center>', unsafe_allow_html=True)
-    col1,col2,col3,col4=st.columns([3,4,4,3])
-    with col2:
-        st.checkbox('아이디')
-    with col3:
-        st.checkbox('패스워드')
+    if st.session_state.fix_id==False:
+        st.markdown('<center><h1>둘 중 어떤 것을 수정하고 싶으신가요?</h1></center>', unsafe_allow_html=True)
+        col1,col2,col3,col4=st.columns([3,4,4,3])
+        with col2:
+            id_checkbox=st.checkbox('아이디')
+            if id_checkbox:
+                st.session_state.fix_ID=True
+        with col3:
+            st.checkbox('패스워드')
+    if st.session_state_fix==True:
+        st.write('hi')
 
             
 
