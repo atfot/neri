@@ -15,7 +15,8 @@ if 'messages' not in st.session_state:
     st.session_state.logged_in = False
     st.session_state.signin = False
     st.session_state.login_error = False
-    st.session_state.find_my_idpw = False
+    st.session_state.find_my_id = False
+    st.session_state.find_my_pw = False
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
         st.session_state.screen_setting = 'mobile' if x < 662 else 'pc'
@@ -54,12 +55,16 @@ if 'messages' not in st.session_state:
                     if st.session_state.login_attempt>=6:
                         st.session_state.many_login_attempt = True
 
-            col1, col2 = st.columns([5,5])
+            col1, col2, col3 = st.columns([3,3,4])
             with col1:
-                if st.button("아이디/비밀번호 찾기", type="secondary",use_container_width=True):
+                if st.button("아이디 찾기", type="secondary",use_container_width=True):
                     st.session_state.login_attempt=0
-                    st.session_state.find_my_idpw = True
+                    st.session_state.find_my_id = True
             with col2:
+                if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
+                    st.session_state.login_attempt=0
+                    st.session_state.find_my_pw = True
+            with col3:
                 if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
                     st.session_state.signin = True
         else:
@@ -113,8 +118,11 @@ if 'messages' not in st.session_state:
                 st.stop()
         if st.session_state.get("signin", False):
             pass
-        if st.session_state.get('find_my_idpw', True):
-            st.session_state.find_my_idpw = False
+        if st.session_state.get('find_my_id', True):
+            st.session_state.find_my_id = False
+            st.switch_page('pages/find_my_idpw.py')
+        if st.session_state.get('find_my_pw', True):
+            st.session_state.find_my_pw = False
             st.switch_page('pages/find_my_idpw.py')
     if language_selection: 
         st.session_state['korean_mode']=0
