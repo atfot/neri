@@ -23,6 +23,7 @@ if 'fix_id' not in st.session_state:
 if st.session_state.korean_mode==1:
     button=st.button("메인 화면으로")
     if button:
+        del st.session_state.fix_id, st.session_state.save_button
         st.switch_page("streamlit_app.py")
     col1,col2=st.columns([5,5])
     with col1:
