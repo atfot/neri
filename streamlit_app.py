@@ -150,16 +150,17 @@ if 'messages' not in st.session_state:
 
         if st.session_state.screen_setting=='pc':
             if st.button("Log in", type="primary",use_container_width=True):
-                if username == st.session_state.id and password == st.session_state.pw:
-                    st.session_state.logged_in = True
-                elif username == st.secrets.user_id and password == st.secrets.user_pw:
-                    st.session_state.logged_in = True
-                else:
-                    st.session_state.login_error = True
-                if st.session_state.login_error==True:
-                    st.session_state.login_attempt+=1
-                    if st.session_state.login_attempt>=6:
-                        st.session_state.many_login_attempt = True
+                if st.session_state.many_login_attempt==False:
+                    if username == st.session_state.id and password == st.session_state.pw:
+                        st.session_state.logged_in = True
+                    elif username == st.secrets.user_id and password == st.secrets.user_pw:
+                        st.session_state.logged_in = True
+                    else:
+                        st.session_state.login_error = True
+                    if st.session_state.login_error==True:
+                        st.session_state.login_attempt+=1
+                        if st.session_state.login_attempt>=6:
+                            st.session_state.many_login_attempt = True
 
             col1, col2, col3 = st.columns([3.3,3.4,3.3])
             with col1:
@@ -172,20 +173,23 @@ if 'messages' not in st.session_state:
                     st.session_state.find_my_pw = True
             with col3:
                 if st.button("**New User**", type="secondary",use_container_width=True):
+                    st.session_state.login_attempt=0
                     st.session_state.signin = True
         else:
             if st.button("Log in", type="primary",use_container_width=True):
-                if username == st.session_state.id and password == st.session_state.pw:
-                    st.session_state.logged_in = True
-                elif username == st.secrets.user_id and password == st.secrets.user_pw:
-                    st.session_state.logged_in = True
-                else:
-                    st.session_state.login_error = True
-                if st.session_state.login_error==True:
-                    st.session_state.login_attempt+=1
-                    if st.session_state.login_attempt>=6:
-                        st.session_state.many_login_attempt = True
+                if st.session_state.many_login_attempt==False:
+                    if username == st.session_state.id and password == st.session_state.pw:
+                        st.session_state.logged_in = True
+                    elif username == st.secrets.user_id and password == st.secrets.user_pw:
+                        st.session_state.logged_in = True
+                    else:
+                        st.session_state.login_error = True
+                    if st.session_state.login_error==True:
+                        st.session_state.login_attempt+=1
+                        if st.session_state.login_attempt>=6:
+                            st.session_state.many_login_attempt = True
             if st.button("**New User**", type="secondary",use_container_width=True):
+                    st.session_state.login_attempt=0
                     st.session_state.signin = True
             if st.button("Find my ID", type="secondary",use_container_width=True):
                     st.session_state.login_attempt=0
@@ -198,7 +202,6 @@ if 'messages' not in st.session_state:
             col, col2, col3 = st.columns([2.5,5,2.5])
             with col2:
                 st.success("Logged in successfully!",  icon="✅")
-                st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 sleep(0.5)
                 st.switch_page("pages/english_chatbot.py")
@@ -213,7 +216,6 @@ if 'messages' not in st.session_state:
             col, col2, col3 = st.columns([3,4,3])
             with col2:
                 st.success("Welcome to Neri!", icon="🧡")
-                st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 sleep(0.5)
                 st.switch_page("pages/signin.py")
@@ -228,9 +230,13 @@ if 'messages' not in st.session_state:
         if st.session_state.get("signin", False):
             pass
         if st.session_state.get('find_my_id', True):
+            st.session_state.many_login_attempt=False
+            st.session_state.login_attempt=0
             st.session_state.find_my_id = False
             st.switch_page('pages/find_my_id.py')
         if st.session_state.get('find_my_pw', True):
+            st.session_state.many_login_attempt=False
+            st.session_state.login_attempt=0
             st.session_state.find_my_pw = False
             st.switch_page('pages/find_my_pw.py')
 

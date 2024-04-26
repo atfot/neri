@@ -46,6 +46,10 @@ def logout():
             del st.session_state.my_info
         except:
             pass
+        try:
+            del st.session_state.many_login_attempt
+        except:
+            pass
         del st.session_state.client
     st.info("See ya next time😊")
     sleep(0.5)
