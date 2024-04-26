@@ -49,18 +49,17 @@ if st.session_state.korean_mode==1:
         if new_id_check!=new_id:
             st.error('새로운 아이디와 해당 아이디가 서로 다릅니다.')    
         else:
+            st.session_state.new_id=new_id_check
             st.session_state.filled_input+=1
-                
+
     col1,col2,col3=st.columns([1,8,1])
     with col2:
         st.title('')
         if st.button('이대로 저장할까요?', type='primary',use_container_width=True):
                 if st.session_state.filled_input==4 or st.session_state.filled_input==8:
+                    st.session_state.user_id=st.session_state.new_id
                     st.success('수정 내역이 저장되었습니다!')
-                    if st.session_state.user_id:
-                        st.write(st.session_state.user_id)
-                    if st.session_state.password:
-                        st.write(st.session_state.password)
+                    st.markdown(f'<p><b>수정한 아이디 : </b><p>{st.session_state.user_id}',unsafe_allow_html=True)
                     time.sleep(5)
                     del st.session_state.filled_input
                     st.switch_page('streamlit_app.py')
