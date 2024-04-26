@@ -1,5 +1,5 @@
 import streamlit as st
-from korean_navigation import make_sidebar
+from korean_menu import make_sidebar
 from openai import OpenAI
 import time
 
@@ -16,6 +16,7 @@ def fix_info():
 
 if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
+
   
 if 'username' not in st.session_state:
    st.session_state.username=st.secrets.user_name

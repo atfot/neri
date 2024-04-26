@@ -1,6 +1,6 @@
 from openai import OpenAI
 import streamlit as st
-from english_navigation import make_sidebar
+from english_menu import make_sidebar
 
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
