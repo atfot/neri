@@ -25,7 +25,7 @@ if st.session_state.korean_mode==1:
     if button:
         del st.session_state.fix_id, st.session_state.save_button
         st.switch_page("streamlit_app.py")
-    col1,col2,col3=st.columns([4,2,4])
+    col1,col2,col3=st.columns([4.5,1,4.5])
     with col1:
         st.markdown('<center><h3>아이디 수정</h3></center>', unsafe_allow_html=True)
         if st.session_state.fix_id==False:
