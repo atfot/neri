@@ -51,9 +51,9 @@ if st.session_state.korean_mode==1:
                 st.error('새로운 아이디와 해당 아이디가 서로 다릅니다.')    
             else:
                 st.session_state.filled_input+=1
-        col1,col2=st.columns([9,1])
+        col1,col2=st.columns([8,2])
         with col2:
-            submitted=st.form_submit_button('저장')
+            submitted=st.form_submit_button('저장',use_container_width=True)
             if submitted:
                 if st.session_state.filled_input==4:
                     st.success('수정 내역이 저장되었습니다!')
