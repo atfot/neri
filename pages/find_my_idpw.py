@@ -58,15 +58,13 @@ if st.session_state.korean_mode==1:
     with col3:
         st.markdown('<center><h3>패스워드 수정</h3></center>', unsafe_allow_html=True)
     
-    if st.session_state.save_button==False:
-        col1,col2,col3=st.columns([1,8,1])
-        with col2:
+    col1,col2,col3=st.columns([1,8,1])
+    with col2:
+        if st.session_state.save_button==False:
             if st.button('제출',type='secondary',use_container_width=True):
                 if st.session_state.filled_input==4 or st.session_state.filled_input==8:
-                    st.session_state.save_button=True   
-    if st.session_state.save_button==True:
-        col1,col2,col3=st.columns([1,8,1])
-        with col2:
+                st.session_state.save_button=True   
+        else:
             if st.button('이대로 저장할까요?', type='primary',use_container_width=True):
                 st.success('수정 내역이 저장되었습니다!')
                 if st.session_state.user_id:
