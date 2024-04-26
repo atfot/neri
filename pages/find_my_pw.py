@@ -7,39 +7,64 @@ st.set_page_config(
         layout="wide",
         menu_items=None
     )
-
 if 'user_id' not in st.session_state:
-   st.session_state.user_id='test'
-   st.session_state.password='test'
+   st.session_state.user_id=st.secrets.user_id
+if 'user_pw' not in st.session_state:
+   st.session_state.user_pw=st.secrets.user_pw
 if 'username' not in st.session_state:
     st.session_state.username=st.secrets.user_name
-
 st.session_state.filled_input=0
-st.session_state.fix_id=False
-st.session_state.fix_pw=False
 
 if 'korean_mode' not in st.session_state:
     st.switch_page('streamlit_app.py')
 
 
 if st.session_state.korean_mode==1:
-    button=st.button("메인 화면으로", "https://neriuut.streamlit.app/")
+    button=st.button("메인 화면으로")
     if button:
-        del st.session_state.filled_input, st.session_state.username
+        del st.session_state.filled_input
         st.switch_page("streamlit_app.py")
-    if st.session_state.fix_id==False:
-        st.markdown('<center><h1>둘 중 어떤 것을 수정하고 싶으신가요?</h1></center>', unsafe_allow_html=True)
-        col1,col2,col3,col4=st.columns([3,4,4,3])
-        with col2:
-            id_checkbox=st.checkbox('아이디')
-            if id_checkbox:
-                st.session_state.fix_id=True
-        with col3:
-            st.checkbox('패스워드')
-    if st.session_state.fix_id==True:
-        st.write('hi')
+    st.markdown('<center><h3>아이디 수정</h3></center>', unsafe_allow_html=True)
+    nickname=st.text_input('닉네임')
+    if nickname:
+        if nickname!=st.session_state.username:
+            st.error('사용하시던 닉네임이 아닙니다.')
+        else:
+            st.session_state.filled_input+=1
+    password=st.text_input('패스워드',type='password')
+    if password:
+        if password!=st.session_state.user_pw:
+            st.error('사용하시던 패스워드가 아닙니다.')
+        else:
+            st.session_state.filled_input+=1
+    new_id=st.text_input('새로 사용할 ID',key='new_id')
+    if new_id:
+        if new_id==st.session_state.user_id:
+            st.error('원래 사용하시던 아이디와 동일합니다.')
+        else:
+            st.session_state.filled_input+=1
+    new_id_check=st.text_input('새로 사용하실 ID를 다시 한번 적어주세요',type='password',key='new_id_check')
+    if new_id_check:
+        if new_id_check!=new_id:
+            st.error('새로운 아이디와 해당 아이디가 서로 다릅니다.')    
+        else:
+            if 'new_id' not in st.session_state:
+                st.session_state.new_id=new_id_check
+            st.session_state.filled_input+=1
 
-            
+    col1,col2,col3=st.columns([1,8,1])
+    with col2:
+        st.title('')
+        if st.button('이대로 저장할까요?', type='primary',use_container_width=True):
+                if st.session_state.filled_input==4 or st.session_state.filled_input==8:
+                    st.session_state.user_id=st.session_state.new_id
+                    st.success('수정 내역이 저장되었습니다!')
+                    st.markdown(f'<p><center><b>수정한 아이디 : </b></center><p>{st.session_state.user_id}',unsafe_allow_html=True)
+                    time.sleep(5)
+                    del st.session_state.filled_input,st.session_state.new_id
+                    st.switch_page('streamlit_app.py')
+                else:
+                    pass
 
 if st.session_state.korean_mode==0:
     button=st.button("Go to main", "https://neriuut.streamlit.app/")
