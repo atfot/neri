@@ -56,9 +56,8 @@ if st.session_state.korean_mode==1:
     with col2:
         st.title('')
         if st.button('이대로 저장할까요?', type='primary',use_container_width=True):
-                st.write(st.session_state.new_id)
                 if st.session_state.filled_input==4 or st.session_state.filled_input==8:
-                    st.session_state.id=st.session_state.new_id
+                    st.session_state.pw=st.session_state.new_pw
                     st.success('수정 내역이 저장되었습니다!')
                     st.markdown(f'<p><center><b>수정한 비밀번호 : {st.session_state.pw}</b></center><p>',unsafe_allow_html=True)
                     time.sleep(5)
@@ -105,7 +104,7 @@ if st.session_state.korean_mode==0:
         st.title('')
         if st.button('Save', type='primary',use_container_width=True):
                 if st.session_state.filled_input==4 or st.session_state.filled_input==8:
-                    st.session_state.id=st.session_state.new_id
+                    st.session_state.pw=st.session_state.new_pw
                     st.success('Your modifications have been saved!')
                     st.markdown(f'<p><center><b>Modified Password : {st.session_state.pw}</b></center><p>',unsafe_allow_html=True)
                     time.sleep(5)
