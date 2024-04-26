@@ -97,7 +97,7 @@ if st.session_state.korean_mode==0:
                 st.error('The new ID and the corresponding ID are different.')    
             else:
                 st.session_state.filled_input+=1
-        col1,col2=st.columns([8.9,1.1])
+        col1,col2=st.columns([9,1])
         with col2:
             submitted=st.form_submit_button('Save',use_container_width=True)
             if submitted:
