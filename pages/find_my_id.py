@@ -59,7 +59,7 @@ if st.session_state.korean_mode==1:
                 if st.session_state.filled_input==4:
                     st.session_state.save_success=True
                 else:
-                    st.error('빈칸을 전부 채워넣어주세요.')
+                    pass
         if st.session_state.save_success==True:
             st.success('수정 내역이 저장되었습니다!')
             if st.session_state.user_id:
