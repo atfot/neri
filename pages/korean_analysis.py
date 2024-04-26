@@ -6,7 +6,7 @@ import time
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
     page_icon="🧊",
-    layout="centered",
+    layout="wide",
     initial_sidebar_state="collapsed"
 )
 make_sidebar()
