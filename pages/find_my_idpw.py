@@ -18,6 +18,7 @@ if 'korean_mode' not in st.session_state:
 
 if 'fix_id' not in st.session_state:
     st.session_state.fix_id=False
+    st.session_state.save_button=False
 
 if st.session_state.korean_mode==1:
     button=st.button("메인 화면으로")
