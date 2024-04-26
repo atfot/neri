@@ -41,13 +41,12 @@ if st.session_state.korean_mode==1:
                 x+=1
             if password=='test':
                 x+=1
-            if x==2:
-                if id_confirm_button:
+            if id_confirm_button:
+                if x==2:
                     st.session_state.fix_id=True
-            else:
-                if id_confirm_button:
+                else:
                     st.write('빈칸을 전부 채워주세요.')
-        if st.session_state.get('fix_id',True):
+        if st.session_state.fix_id==True:
             new_id=st.text_input('새로 사용할 ID',key='new_id')
             new_id_check=st.text_input('다시 한번 적어주세요',type='password',key='new_id_check')
             new_confirm_button=st.button('확인',key='confirm_new_id')
