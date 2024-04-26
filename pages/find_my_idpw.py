@@ -44,10 +44,11 @@ if st.session_state.korean_mode==1:
             x=0
             if new_id:
                 x+=1
-            if password:
+            if new_id_check:
                 x+=1
             if new_id==new_id_check:
                 if x==2:
+                    st.session_state.fix_id=False
                     st.session_state.new_id=new_id
     with col2:
         st.markdown('<center><h3>패스워드 수정</h3></center>', unsafe_allow_html=True)
