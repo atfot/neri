@@ -123,11 +123,17 @@ with col1:
 
                 <b>3. Gender : </b>{st.session_state.gender}
 
-                <b>4. Problem : </b>{st.session_state.problem}
+                <b>4. Problem : </b>
+                
+                {st.session_state.problem}
 
-                <b>5. Problem Explanation : </b>{st.session_state.problem_explanation}
+                <b>5. Problem Explanation : </b>
+                
+                {st.session_state.problem_explanation}
 
-                <b>6. Goal : </b>{st.session_state.goal}
+                <b>6. Goal : </b>
+                
+                {st.session_state.goal}
                 </p>
                 ''', unsafe_allow_html=True)   
     st.button('Fix my Info',use_container_width=True,on_click=fix_info)
