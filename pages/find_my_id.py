@@ -34,7 +34,7 @@ if st.session_state.korean_mode==1:
     if password:
         if password!=st.session_state.password:
             st.error('사용하시던 패스워드가 아닙니다.')
-        else:
+        if password==st.session_state.password:
             st.session_state.filled_input+=1
     new_id=st.text_input('새로 사용할 ID',key='new_id')
     if new_id:
