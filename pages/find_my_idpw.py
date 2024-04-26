@@ -25,7 +25,7 @@ if st.session_state.korean_mode==1:
     if button:
         del st.session_state.fix_id, st.session_state.save_button
         st.switch_page("streamlit_app.py")
-    col1,col2=st.columns([5,5])
+    col1,col2,col3=st.columns([4,2,4])
     with col1:
         st.markdown('<center><h3>아이디 수정</h3></center>', unsafe_allow_html=True)
         if st.session_state.fix_id==False:
@@ -61,7 +61,7 @@ if st.session_state.korean_mode==1:
                         st.session_state.fix_id=False
                         st.session_state.user_id=new_id
                         st.session_state.save_button=True
-    with col2:
+    with col3:
         st.markdown('<center><h3>패스워드 수정</h3></center>', unsafe_allow_html=True)
     if st.session_state.save_button==True:
         col1,col2,col3=st.columns([2,6,2])
