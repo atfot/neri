@@ -43,6 +43,7 @@ if st.session_state.korean_mode==1:
                 x+=1
             if id_confirm_button:
                 if x==2:
+                    del nickname, password, id_confirm_button
                     st.session_state.fix_id=True
                 else:
                     st.write('빈칸을 전부 채워주세요.')
