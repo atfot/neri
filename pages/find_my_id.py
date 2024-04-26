@@ -15,6 +15,7 @@ if 'password' not in st.session_state:
 if 'username' not in st.session_state:
     st.session_state.username=st.secrets.user_name
 st.session_state.filled_input=0
+st.session_state.save_success=False
 
 if 'korean_mode' not in st.session_state:
     st.switch_page('streamlit_app.py')
@@ -56,16 +57,20 @@ if st.session_state.korean_mode==1:
             submitted=st.form_submit_button('저장',use_container_width=True)
             if submitted:
                 if st.session_state.filled_input==4:
-                    st.success('수정 내역이 저장되었습니다!')
-                    if st.session_state.user_id:
-                        st.write(st.session_state.user_id)
-                    if st.session_state.password:
-                        st.write(st.session_state.password)
-                    time.sleep(5)
-                    del st.session_state.filled_input
-                    st.switch_page('streamlit_app.py')
+                    st.session_state.save_success=True
                 else:
                     st.error('빈칸을 전부 채워넣어주세요.')
+        if st.session_state.save_success==True:
+            st.success('수정 내역이 저장되었습니다!')
+            if st.session_state.user_id:
+                st.write(st.session_state.user_id)
+            if st.session_state.password:
+                st.write(st.session_state.password)
+            time.sleep(5)
+            del st.session_state.filled_input,st.session_state.save_success
+            st.switch_page('streamlit_app.py')
+        else:
+            pass
 if st.session_state.korean_mode==0:
     button=st.button("Go to main", "https://neriuut.streamlit.app/")
     if button:
