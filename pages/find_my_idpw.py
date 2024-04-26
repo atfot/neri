@@ -26,7 +26,7 @@ if st.session_state.korean_mode==1:
         st.write('사용하시던 닉네임과 패스워드를 적어주세요')
     with col2:
         st.markdown('<center><h3>패스워드 수정</h3></center>', unsafe_allow_html=True)
-    col1,col2,col3=st.columns(2,6,2)
+    col1,col2,col3=st.columns([2,6,2])
     with col2:
         if st.button('이대로 저장할까요?',):
             st.success('수정 내역이 저장되었습니다!')
