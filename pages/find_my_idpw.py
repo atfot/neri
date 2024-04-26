@@ -29,16 +29,14 @@ if st.session_state.korean_mode==1:
     with col1:
         st.markdown('<center><h3>아이디 수정</h3></center>', unsafe_allow_html=True)
         nickname=st.text_input('닉네임',key='nickname')
-        if nickname!=st.session_state.username:
-            st.error('사용하시던 닉네임이 아닙니다.')
         password=st.text_input('패스워드',type='password',
         key='password')
+        new_id=st.text_input('새로 사용할 ID',key='new_id')
+        new_id_check=st.text_input('다시 한번 적어주세요',type='password',key='new_id_check')
+        if nickname!=st.session_state.username:
+            st.error('사용하시던 닉네임이 아닙니다.')
         if password!=st.session_state.password:
             st.error('사용하시던 패스워드가 아닙니다.')
-        new_id=st.text_input('새로 사용할 ID',key='new_id')
-        if new_id==st.session_state.user_id:
-            st.error('사용하시던 아이디와 새로운 아이디가 동일합니다.')
-        new_id_check=st.text_input('다시 한번 적어주세요',type='password',key='new_id_check')
         if new_id_check!=new_id:
             st.error('새로운 아이디와 해당 아이디가 서로 다릅니다.')
         st.session_state.filled_input=0
