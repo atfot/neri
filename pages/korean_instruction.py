@@ -1,4 +1,5 @@
 import streamlit as st
+from korean_menu import make_sidebar
 
 st.set_page_config(
     page_title="당신의 AI 심리상담사, 네리",
@@ -6,6 +7,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed"
 )
+make_sidebar()
+
 st.title('Welcome to Neri!')
 st.title('')
 st.write("""
