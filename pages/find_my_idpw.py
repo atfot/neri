@@ -35,7 +35,7 @@ if st.session_state.korean_mode==1:
             st.session_state_next_step=True
         else:
             pass
-        if st.session_state_next_step=True:
+        if st.session_state_next_step==True:
             password=st.text_input('패스워드',type='password')
             if password==st.session_state.password:
                 st.session_state_next_step_1=True
@@ -43,7 +43,7 @@ if st.session_state.korean_mode==1:
             new_id=st.text_input('새로 사용할 ID')
             if new_id:
                 st.session_state_next_step_2=True
-        if st.session_state_next_step_2==True
+        if st.session_state_next_step_2==True:
             new_id_check=st.text_input('다시 한번 적어주세요',type='password')
             if new_id_check==new_id:
                 st.session_state_next_step_3=True
