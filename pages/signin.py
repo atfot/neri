@@ -100,7 +100,7 @@ if st.session_state.korean_mode==1:
                     st.write(f"""
                              
                              
-아이디:{st.session_state.id}
+아이디: {st.session_state.id}
 
 비밀번호: {st.session_state.pw}
 
