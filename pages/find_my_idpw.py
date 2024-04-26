@@ -41,7 +41,7 @@ if st.session_state.korean_mode==1:
             st.error('새로운 아이디와 해당 아이디가 서로 다릅니다.')
 
         st.session_state.filled_input=0
-        if nickname=='test':
+        if nickname==st.session_state.username:
             st.session_state.filled_input+=1
         if password=='test':
             st.session_state.filled_input+=1
