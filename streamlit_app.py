@@ -117,7 +117,7 @@ if 'messages' not in st.session_state:
                 sleep(0.5)
                 st.switch_page("pages/signin.py")
         if st.session_state.get('many_login_attempt',True):
-            col, col2, col3 = st.columns([2,6,2])
+            col, col2, col3 = st.columns([1,8,1])
             with col2:
                 st.error("""
                            아이디 또는 패스워드를 5번 이상 틀리셨습니다.
