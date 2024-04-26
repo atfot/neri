@@ -34,29 +34,40 @@ if st.session_state.korean_mode==1:
         st.markdown('<center><h3>아이디 수정</h3></center>', unsafe_allow_html=True)
         nickname=st.text_input('닉네임')
         if nickname==st.session_state.username:
+            st.session_state.received_nickname=nickname
             st.session_state.next_step=True
         else:
             pass
         if st.session_state.next_step==True:
             password=st.text_input('패스워드',type='password')
             if password==st.session_state.password:
+                st.session_state.received_password=password
                 st.session_state.next_step_1=True
         else:
             pass
         if st.session_state.next_step_1==True:
             new_id=st.text_input('새로 사용할 ID')
             if new_id:
+                c=new_id
                 st.session_state.next_step_2=True
         else:
             pass
         if st.session_state.next_step_2==True:
             new_id_check=st.text_input('다시 한번 적어주세요',type='password')
             if new_id_check==new_id:
+                st.session_state.received_new_id_check=new_id_check
                 st.session_state.next_step_3=True
         else:
             pass
-
-        
+        st.session_state.filled_input=0
+        if st.session_state.received_nickname:
+            st.session_state.filled_input+=1
+        if st.session_state.received_password:
+            st.session_state.filled_input+=1
+        if st.session_state.received_new_id:
+            st.session_state.filled_input+=1
+        if st.session_state.received_new_id_check:
+            st.session_state.filled_input+=1        
     with col3:
         st.markdown('<center><h3>패스워드 수정</h3></center>', unsafe_allow_html=True)
     if st.session_state.filled_input==4 or st.session_state.filled_input==8:
