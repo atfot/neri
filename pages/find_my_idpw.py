@@ -46,7 +46,7 @@ if st.session_state.korean_mode==1:
                 st.error('원래 사용하시던 아이디와 동일합니다.')
             else:
                 st.session_state.filled_input+=1
-        new_id_check=st.text_input('다시 한번 적어주세요',type='password',key='new_id_check')
+        new_id_check=st.text_input('새로 사용하실 ID를 다시 한번 적어주세요',type='password',key='new_id_check')
         if new_id_check:
             if new_id_check!=new_id:
                 st.error('새로운 아이디와 해당 아이디가 서로 다릅니다.')    
