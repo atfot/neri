@@ -40,7 +40,7 @@ if st.session_state.korean_mode==1:
                 x+=1
             if x==2:
                 st.session_state.fix_id=True
-        else:
+        if st.session_state.fix_id==True:
             new_id=st.text_input('새로 사용할 ID')
             new_id_check=st.text_input('다시 한번 적어주세요',type='password')
             x=0
