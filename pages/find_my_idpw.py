@@ -32,8 +32,6 @@ if st.session_state.korean_mode==1:
         nickname=st.text_input('닉네임')
         if nickname!=st.session_state.username:
             st.error('사용하시던 닉네임이 아닙니다.')
-        else:
-            pass
         password=st.text_input('패스워드',type='password')
         if password!=st.session_state.password:
             st.error('사용하시던 패스워드가 아닙니다.')
