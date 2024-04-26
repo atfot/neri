@@ -14,6 +14,7 @@ if 'password' not in st.session_state:
    st.session_state.password='test'
 st.session_state.username=st.secrets.user_name
 st.session_state.filled_input=0
+st.session_state.save_button=False
 
 if 'korean_mode' not in st.session_state:
     st.switch_page('streamlit_app.py')
@@ -53,12 +54,18 @@ if st.session_state.korean_mode==1:
                 st.error('새로운 아이디와 해당 아이디가 서로 다릅니다.')    
             else:
                 st.session_state.filled_input+=1
+
     with col3:
         st.markdown('<center><h3>패스워드 수정</h3></center>', unsafe_allow_html=True)
-    if st.session_state.filled_input==4 or st.session_state.filled_input==8:
-        st.session_state.save_button=True   
+    
+    if st.session_state.save_button==False:
+        col1,col2,col3=st.columns([1,8,1])
+        with col2:
+            if st.button('제출',type='secondary',use_container_width=True):
+                if st.session_state.filled_input==4 or st.session_state.filled_input==8:
+                    st.session_state.save_button=True   
     if st.session_state.save_button==True:
-        col1,col2,col3=st.columns([2,6,2])
+        col1,col2,col3=st.columns([1,8,1])
         with col2:
             if st.button('이대로 저장할까요?', type='primary',use_container_width=True):
                 st.success('수정 내역이 저장되었습니다!')
