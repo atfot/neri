@@ -149,7 +149,7 @@ if 'messages' not in st.session_state:
         password = st.text_input("Password", type="password")
 
         if st.session_state.screen_setting=='pc':
-            if st.button("Log in", type="primary",use_container_width=True):
+            if st.button("**Log in**", type="primary",use_container_width=True):
                 if st.session_state.many_login_attempt==False:
                     if username == st.session_state.id and password == st.session_state.pw:
                         st.session_state.logged_in = True
@@ -176,7 +176,7 @@ if 'messages' not in st.session_state:
                     st.session_state.login_attempt=0
                     st.session_state.signin = True
         else:
-            if st.button("Log in", type="primary",use_container_width=True):
+            if st.button("**Log in**", type="primary",use_container_width=True):
                 if st.session_state.many_login_attempt==False:
                     if username == st.session_state.id and password == st.session_state.pw:
                         st.session_state.logged_in = True
