@@ -5,7 +5,7 @@ import time
 import pandas as pd
 
 st.set_page_config(
-    page_title="Your AI Therapist, Neri",
+    page_title="당신의 AI 심리상담사, 네리",
     page_icon="🧊",
     layout="wide",
     initial_sidebar_state="collapsed"
