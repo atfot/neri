@@ -9,9 +9,9 @@ st.set_page_config(
     )
 
 if 'user_id' not in st.session_state:
-   st.session_state.user_id='test'
+   st.session_state.user_id=st.secrets.user_id
 if 'password' not in st.session_state:
-   st.session_state.password='test'
+   st.session_state.password=st.secrets.user_pw
 if 'username' not in st.session_state:
     st.session_state.username=st.secrets.user_name
 st.session_state.filled_input=0
