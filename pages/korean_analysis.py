@@ -2,6 +2,7 @@ import streamlit as st
 from korean_menu import make_sidebar
 from openai import OpenAI
 import time
+import pandas as pd
 
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
