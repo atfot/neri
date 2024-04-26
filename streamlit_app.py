@@ -115,7 +115,7 @@ if 'messages' not in st.session_state:
             pass
         if st.session_state.get('find_my_idpw', True):
             st.session_state.find_my_idpw = False
-            st.switch_page('pages/find_my_idpw_2.py')
+            st.switch_page('pages/find_my_idpw.py')
     if language_selection: 
         st.session_state['korean_mode']=0
         st.markdown('<p><b>영어 모드</b></p>', unsafe_allow_html=True)
