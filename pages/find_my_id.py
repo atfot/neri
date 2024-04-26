@@ -7,9 +7,9 @@ st.set_page_config(
         layout="wide",
         menu_items=None
     )
-if 'user_id' not in st.session_state:
+if 'id' not in st.session_state:
    st.session_state.user_id=st.secrets.user_id
-if 'user_pw' not in st.session_state:
+if 'pw' not in st.session_state:
    st.session_state.user_pw=st.secrets.user_pw
 if 'username' not in st.session_state:
     st.session_state.username=st.secrets.user_name
@@ -33,14 +33,14 @@ if st.session_state.korean_mode==1:
             st.session_state.filled_input+=1
     password=st.text_input('패스워드',type='password')
     if password:
-        if password!=st.session_state.user_pw:
+        if password!=st.session_state.pw:
             st.error('사용하시던 패스워드가 아닙니다.')
         else:
             st.session_state.filled_input+=1
-    st.write(st.session_state.user_id)
+    st.write(st.session_state.id)
     new_id=st.text_input('새로 사용할 ID',key='new_id')
     if new_id:
-        if new_id==st.session_state.user_id:
+        if new_id==st.session_state.id:
             st.error('원래 사용하시던 아이디와 동일합니다.')
         else:
             st.session_state.filled_input+=1
@@ -58,11 +58,11 @@ if st.session_state.korean_mode==1:
         st.title('')
         if st.button('이대로 저장할까요?', type='primary',use_container_width=True):
                 if st.session_state.filled_input==4 or st.session_state.filled_input==8:
-                    st.session_state.user_id=st.session_state.new_id
+                    st.session_state.id=st.session_state.new_id
                     st.success('수정 내역이 저장되었습니다!')
                     st.markdown(f'<p><center><b>수정한 아이디 : </b></center><p>{st.session_state.user_id}',unsafe_allow_html=True)
                     time.sleep(5)
-                    del st.session_state.filled_input,st.session_state.new_id
+                    del st.session_state.filled_input,st.session_state.id,st.session_state.pw,st.session_state.username
                     st.switch_page('streamlit_app.py')
                 else:
                     pass
