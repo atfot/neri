@@ -37,7 +37,6 @@ if st.session_state.korean_mode==1:
             st.error('사용하시던 패스워드가 아닙니다.')
         else:
             st.session_state.filled_input+=1
-    st.write(st.session_state.id)
     new_id=st.text_input('새로 사용할 ID',key='new_id')
     if new_id:
         if new_id==st.session_state.id:
@@ -81,13 +80,13 @@ if st.session_state.korean_mode==0:
             st.session_state.filled_input+=1
     password=st.text_input('Password',type='password')
     if password:
-        if password!=st.session_state.user_pw:
+        if password!=st.session_state.pw:
             st.error("Doesn't match the password for an account with that username.")
         else:
             st.session_state.filled_input+=1
     new_id=st.text_input('New ID',key='new_id')
     if new_id:
-        if new_id==st.session_state.user_id:
+        if new_id==st.session_state.id:
             st.error('This is the same username you originally used.')
         else:
             st.session_state.filled_input+=1
@@ -105,11 +104,11 @@ if st.session_state.korean_mode==0:
         st.title('')
         if st.button('Save', type='primary',use_container_width=True):
                 if st.session_state.filled_input==4 or st.session_state.filled_input==8:
-                    st.session_state.user_id=st.session_state.new_id
+                    st.session_state.id=st.session_state.new_id
                     st.success('Your modifications have been saved!')
                     st.markdown(f'<p><center><b>Modified ID : </b></center><p>{st.session_state.user_id}',unsafe_allow_html=True)
                     time.sleep(5)
-                    del st.session_state.filled_input,st.session_state.new_id
+                    del st.session_state.filled_input,st.session_state.id,st.session_state.pw,st.session_state.username
                     st.switch_page('streamlit_app.py')
                 else:
                     pass
