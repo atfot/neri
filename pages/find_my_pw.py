@@ -56,6 +56,7 @@ if st.session_state.korean_mode==1:
     with col2:
         st.title('')
         if st.button('이대로 저장할까요?', type='primary',use_container_width=True):
+                st.write(st.session_state.new_id)
                 if st.session_state.filled_input==4 or st.session_state.filled_input==8:
                     st.session_state.id=st.session_state.new_id
                     st.success('수정 내역이 저장되었습니다!')
