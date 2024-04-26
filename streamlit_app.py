@@ -145,8 +145,8 @@ if 'messages' not in st.session_state:
         st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
         st.markdown('<div style="text-align: right;"><p>Please login</p></div>',unsafe_allow_html=True)
         
-        username = st.text_input("ID")
-        password = st.text_input("Password", type="password")
+        username = st.text_input("**ID**")
+        password = st.text_input("**Password**", type="password")
 
         if st.session_state.screen_setting=='pc':
             if st.button("**Log in**", type="primary",use_container_width=True):
