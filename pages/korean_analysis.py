@@ -127,11 +127,17 @@ with col1:
 
                 <b>3. 성별 : </b>{st.session_state.gender}
 
-                <b>4. 고민 : </b>{st.session_state.problem}
+                <b>4. 고민 : </b>
+                
+                {st.session_state.problem}
 
-                <b>5. 고민 설명 : </b>{st.session_state.problem_explanation}
+                <b>5. 고민 설명 : </b>
+                
+                {st.session_state.problem_explanation}
 
-                <b>6. 목표 : </b>{st.session_state.goal}
+                <b>6. 목표 : </b>
+                
+                {st.session_state.goal}
                 </p>
                 ''', unsafe_allow_html=True)  
     st.button('프로필 수정',use_container_width=True,on_click=fix_info)
