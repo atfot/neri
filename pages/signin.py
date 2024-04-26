@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import time
-import streamlit.components.v1 as components
 
 st.set_page_config(
         page_title="Your AI Therapist, Neri",
