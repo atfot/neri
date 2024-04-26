@@ -26,7 +26,7 @@ if st.session_state.korean_mode==1:
     col1,col2=st.columns([5,5])
     with col1:
         st.markdown('<center><h3>아이디 수정</h3></center>', unsafe_allow_html=True)
-        if st.session_state.fix_id==False
+        if st.session_state.fix_id==False:
             st.write('사용하시던 닉네임과 패스워드를 적어주세요.')
             nickname=st.text_input('닉네임')
             password=st.text_input('패스워드')
