@@ -220,7 +220,7 @@ if 'messages' not in st.session_state:
                 sleep(0.5)
                 st.switch_page("pages/signin.py")
         if st.session_state.get('many_login_attempt',True):
-            col, col2, col3 = st.columns([1,8,1])
+            col, col2, col3 = st.columns([0.5,9,0.5])
             with col2:
                 st.error("""
                            You've entered your ID or password incorrectly more than 5 times.
