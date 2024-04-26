@@ -201,7 +201,7 @@ if st.session_state.fix_info==False:
   for i in st.session_state.what_to_do:
     st.write(i)
   st.title('')
-  st.markdown('<p><center>고민 해결도 그래프</b></center></p>', unsafe_allow_html=True)
+  st.markdown('<p><b><center>고민 해결도 그래프</b></center></p>', unsafe_allow_html=True)
   if time.localtime().tm_mon<10:
       z=f'0{time.localtime().tm_mon}'
   else:
