@@ -14,7 +14,6 @@ if 'password' not in st.session_state:
    st.session_state.password='test'
 st.session_state.username=st.secrets.user_name
 st.session_state.filled_input=0
-st.session_state.fix_id=False
 
 if 'korean_mode' not in st.session_state:
     st.switch_page('streamlit_app.py')
