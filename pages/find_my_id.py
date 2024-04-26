@@ -8,8 +8,6 @@ st.set_page_config(
         menu_items=None
     )
 
-if 'user_id' not in st.session_state:
-   st.session_state.user_id=st.secrets.user_id
 if 'password' not in st.session_state:
    st.session_state.password=st.secrets.user_pw
 if 'username' not in st.session_state:
