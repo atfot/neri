@@ -25,7 +25,6 @@ if st.session_state.korean_mode==1:
     if button:
         del st.session_state.filled_input
         st.switch_page("streamlit_app.py")
-    st.write(st.secrets.user_pw)
     st.markdown('<center><h3>아이디 수정</h3></center>', unsafe_allow_html=True)
     nickname=st.text_input('닉네임')
     if nickname:
