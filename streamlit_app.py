@@ -53,14 +53,11 @@ if 'messages' not in st.session_state:
                     if st.session_state.login_attempt>=6:
                         st.session_state.many_login_attempt = True
 
-            col1, col2, col3 = st.columns([3.3,3.3,3.4])
+            col1, col2 = st.columns([5,5])
             with col1:
-                if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
+                if st.button("아이디/비밀번호 찾기", type="secondary",use_container_width=True):
                     st.write('아직 제작중인 기능')
             with col2:
-                if st.button("아이디 찾기", type="secondary",use_container_width=True):
-                    st.write('아직 제작중인 기능')
-            with col3:
                 if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
                     st.session_state.signin = True
         else:
@@ -136,14 +133,11 @@ if 'messages' not in st.session_state:
                     if st.session_state.login_attempt>=6:
                         st.session_state.many_login_attempt = True
 
-            col1, col2, col3 = st.columns([3.3,3.3,3.4])
+            col1, col2 = st.columns([5,5])
             with col1:
-                if st.button("Find my ID", type="secondary",use_container_width=True):
+                if st.button("Find my ID/PW", type="secondary",use_container_width=True):
                     st.write("I'm currently making this function")
             with col2:
-                if st.button("Find my PW", type="secondary",use_container_width=True):
-                    st.write("I'm currently making this function")
-            with col3:
                 if st.button("**New User**", type="secondary",use_container_width=True):
                     st.session_state.signin = True
         else:
