@@ -59,7 +59,7 @@ if st.session_state.korean_mode==1:
                 if st.session_state.filled_input==4 or st.session_state.filled_input==8:
                     st.session_state.id=st.session_state.new_id
                     st.success('수정 내역이 저장되었습니다!')
-                    st.markdown(f'<p><center><b>수정한 아이디 : </b>{st.session_state.user_id}</center><p>',unsafe_allow_html=True)
+                    st.markdown(f'<p><center><b>수정한 아이디 : </b>{st.session_state.id}</center><p>',unsafe_allow_html=True)
                     time.sleep(5)
                     del st.session_state.filled_input,st.session_state.id,st.session_state.pw,st.session_state.username
                     st.switch_page('streamlit_app.py')
