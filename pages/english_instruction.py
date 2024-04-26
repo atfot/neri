@@ -14,7 +14,7 @@ st.title('')
 st.write("""
 Neri is an **AI Therapist Chatbot**, using **OpenAI's ChatGPT API**.
          
-You can choose either GPT 3.5 or GPT 4.0 depending on your own needs.
+Jojo : Honestly I'm going to have to think hard about what to say shibal..
 
 
          
