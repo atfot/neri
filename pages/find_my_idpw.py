@@ -16,6 +16,9 @@ if 'user_id' not in st.session_state:
 if 'korean_mode' not in st.session_state:
     st.switch_page('streamlit_app.py')
 
+if 'fix_id' not in st.session_state:
+    st.session_state.fix_id=False
+
 if st.session_state.korean_mode==1:
     button=st.button("메인 화면으로")
     if button:
@@ -23,16 +26,17 @@ if st.session_state.korean_mode==1:
     col1,col2=st.columns([5,5])
     with col1:
         st.markdown('<center><h3>아이디 수정</h3></center>', unsafe_allow_html=True)
-        st.write('사용하시던 닉네임과 패스워드를 적어주세요.')
-        nickname=st.text_input('닉네임')
-        password=st.text_input('패스워드')
-        x=0
-        if nickname=='test':
-            x+=1
-        if password=='test':
-            x+=1
-        if x==2:
-            st.write('잘하셨어요!')
+        if st.session_state.fix_id==False
+            st.write('사용하시던 닉네임과 패스워드를 적어주세요.')
+            nickname=st.text_input('닉네임')
+            password=st.text_input('패스워드')
+            x=0
+            if nickname=='test':
+                x+=1
+            if password=='test':
+                x+=1
+            if x==2:
+                st.write('잘하셨어요!')
     with col2:
         st.markdown('<center><h3>패스워드 수정</h3></center>', unsafe_allow_html=True)
     col1,col2,col3=st.columns([2,6,2])
