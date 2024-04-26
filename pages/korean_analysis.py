@@ -161,7 +161,7 @@ with col1:
 
 with col3:
   if st.session_state.fix_info==False:
-    st.markdown(f"<p><h3>{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과</h3></p>",unsafe_allow_html=True)
+    st.markdown(f"<p><h4>{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과</h4></p>",unsafe_allow_html=True)
     st.markdown('<p><b>문제 분석 : </b></p>',unsafe_allow_html=True)
     st.write(f'{st.session_state.client_analysis}')
     st.markdown(f'<p><b>해결 진전도 : </b>{st.session_state.score}</p>',unsafe_allow_html=True)
