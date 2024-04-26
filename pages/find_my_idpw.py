@@ -13,10 +13,6 @@ if 'user_id' not in st.session_state:
 if 'password' not in st.session_state:
    st.session_state.password='test'
 st.session_state.username=st.secrets.user_name
-st.session_state.next_step=False
-st.session_state.next_step_1=False
-st.session_state.next_step_2=False
-st.session_state.next_step_3=False
 
 if 'korean_mode' not in st.session_state:
     st.switch_page('streamlit_app.py')
@@ -32,41 +28,26 @@ if st.session_state.korean_mode==1:
     col1,col2,col3=st.columns([4.5,1,4.5])
     with col1:
         st.markdown('<center><h3>아이디 수정</h3></center>', unsafe_allow_html=True)
+
         nickname=st.text_input('닉네임')
-        if nickname==st.session_state.username:
-            st.session_state.received_nickname=nickname
-            st.session_state.next_step=True
-        else:
-            pass
-        if st.session_state.next_step==True:
-            password=st.text_input('패스워드',type='password')
-            if password==st.session_state.password:
-                st.session_state.received_password=password
-                st.session_state.next_step_1=True
-        else:
-            pass
-        if st.session_state.next_step_1==True:
-            new_id=st.text_input('새로 사용할 ID')
-            if new_id:
-                c=new_id
-                st.session_state.next_step_2=True
-        else:
-            pass
-        if st.session_state.next_step_2==True:
-            new_id_check=st.text_input('다시 한번 적어주세요',type='password')
-            if new_id_check==new_id:
-                st.session_state.received_new_id_check=new_id_check
-                st.session_state.next_step_3=True
-        else:
-            pass
+        if nickname!=st.session_state.username:
+            st.error('사용하시던 닉네임이 아닙니다.')
+        password=st.text_input('패스워드',type='password')
+        if password!=st.session_state.password:
+            st.error('사용하시던 패스워드가 아닙니다.')
+        new_id=st.text_input('새로 사용할 ID',key='new_id')
+        new_id_check=st.text_input('다시 한번 적어주세요',type='password',key='new_id_check')
+        if new_id_check!=new_id:
+            st.error('새로운 아이디와 해당 아이디가 서로 다릅니다.')
+
         st.session_state.filled_input=0
-        if st.session_state.received_nickname:
+        if nickname=='test':
             st.session_state.filled_input+=1
-        if st.session_state.received_password:
+        if password=='test':
             st.session_state.filled_input+=1
-        if st.session_state.received_new_id:
+        if new_id:
             st.session_state.filled_input+=1
-        if st.session_state.received_new_id_check:
+        if new_id_check:
             st.session_state.filled_input+=1        
     with col3:
         st.markdown('<center><h3>패스워드 수정</h3></center>', unsafe_allow_html=True)
