@@ -81,9 +81,12 @@ if 'messages' not in st.session_state:
                         st.session_state.many_login_attempt = True
             if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
                     st.session_state.signin = True
-            if st.button("아이디/비밀번호 찾기", type="secondary",use_container_width=True):
+            if st.button("아이디 찾기", type="secondary",use_container_width=True):
                 st.session_state.login_attempt=0
-                st.session_state.find_my_idpw = True
+                st.session_state.find_my_id = True
+            if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
+                st.session_state.login_attempt=0
+                st.session_state.find_my_pw = True
         
         if st.session_state.get("logged_in", True):
             col, col2, col3 = st.columns([2.5,5,2.5])
@@ -146,12 +149,16 @@ if 'messages' not in st.session_state:
                     if st.session_state.login_attempt>=6:
                         st.session_state.many_login_attempt = True
 
-            col1, col2 = st.columns([5,5])
+            col1, col2, col3 = st.columns([3.3,3.4,3.3])
             with col1:
-                if st.button("Find my ID/PW", type="secondary",use_container_width=True):
+                if st.button("Find my ID", type="secondary",use_container_width=True):
                     st.session_state.login_attempt=0
-                    st.session_state.find_my_idpw = True
+                    st.session_state.find_my_id = True
             with col2:
+                if st.button("Find my PW", type="secondary",use_container_width=True):
+                    st.session_state.login_attempt=0
+                    st.session_state.find_my_pw = True
+            with col3:
                 if st.button("**New User**", type="secondary",use_container_width=True):
                     st.session_state.signin = True
         else:
@@ -205,8 +212,11 @@ if 'messages' not in st.session_state:
                 st.stop()
         if st.session_state.get("signin", False):
             pass
-        if st.session_state.get('find_my_idpw', True):
-            st.session_state.find_my_idpw = False
+        if st.session_state.get('find_my_id', True):
+            st.session_state.find_my_id = False
+            st.switch_page('pages/find_my_idpw.py')
+        if st.session_state.get('find_my_pw', True):
+            st.session_state.find_my_pw = False
             st.switch_page('pages/find_my_idpw.py')
 
     
