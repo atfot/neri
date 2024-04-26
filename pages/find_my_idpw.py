@@ -51,7 +51,7 @@ if st.session_state.korean_mode==1:
             if new_id==new_id_check:
                 if x==2:
                     st.session_state.fix_id=False
-                    st.session_state.new_id=new_id
+                    st.session_state.user_id=new_id
     with col2:
         st.markdown('<center><h3>패스워드 수정</h3></center>', unsafe_allow_html=True)
     col1,col2,col3=st.columns([2,6,2])
