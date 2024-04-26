@@ -33,8 +33,8 @@ if st.session_state.korean_mode==1:
         else:
             st.write('새로 사용하실 아이디를 적어주세요.')
         if st.session_state.fix_id==False:
-            nickname=st.text_input('닉네임')
-            password=st.text_input('패스워드',type='password')
+            nickname=st.text_input('닉네임',key='nickname')
+            password=st.text_input('패스워드',type='password',key='password')
             id_confirm_button=st.button('확인', key='confirm_id')
             x=0
             if nickname=='test':
@@ -47,8 +47,8 @@ if st.session_state.korean_mode==1:
                 else:
                     st.write('빈칸을 전부 채워주세요.')
         if st.session_state.fix_id==True:
-            new_id=st.text_input('새로 사용할 ID')
-            new_id_check=st.text_input('다시 한번 적어주세요',type='password')
+            new_id=st.text_input('새로 사용할 ID',key='new_id')
+            new_id_check=st.text_input('다시 한번 적어주세요',type='password',key='new_id_check')
             new_confirm_button=st.button('확인',key='confirm_new_id')
             x=0
             if new_id:
