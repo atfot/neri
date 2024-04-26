@@ -12,20 +12,18 @@ if 'user_id' not in st.session_state:
    st.session_state.user_id='test'
 if 'password' not in st.session_state:
    st.session_state.password='test'
-st.session_state.username=st.secrets.user_name
+if 'username' not in st.session_state:
+    st.session_state.username=st.secrets.user_name
 st.session_state.filled_input=0
-st.session_state.save_button=False
 
 if 'korean_mode' not in st.session_state:
     st.switch_page('streamlit_app.py')
 
-if 'save_button' not in st.session_state:
-    st.session_state.save_button=False
 
 if st.session_state.korean_mode==1:
     button=st.button("메인 화면으로")
     if button:
-        del st.session_state.save_button
+        del st.session_state.filled_input
         st.switch_page("streamlit_app.py")
     col1,col2,col3=st.columns([4.5,1,4.5])
     with col1:
@@ -69,7 +67,7 @@ if st.session_state.korean_mode==1:
                     if st.session_state.password:
                         st.write(st.session_state.password)
                     time.sleep(5)
-                    del st.session_state.save_button
+                    del st.session_state.filled_input
                     st.switch_page('streamlit_app.py')
                 else:
                     pass
