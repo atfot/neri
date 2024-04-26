@@ -202,7 +202,7 @@ if st.session_state.fix_info==False:
   x=6
   y=2024
   df_1=pd.DataFrame({y: [x]}, index=[1206])
-  df_2=pd.concat([df,df_1],axis=0)
+  df_2=pd.concat([df,df_1],axis=0).T
   st.line_chart(df_2)
 else:
   pass
