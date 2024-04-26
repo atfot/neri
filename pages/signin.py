@@ -82,7 +82,7 @@ if st.session_state.korean_mode==1:
             st.session_state.goal=goal
         col1,col2=st.columns([9,1])
         with col2:
-            button=st.form_submit_button('ok')
+            button=st.form_submit_button('저장')
         if button:
             if x==10:
                 col1,col2,col3=st.columns([2,6,2])
@@ -206,7 +206,7 @@ if st.session_state.korean_mode==0:
             st.session_state.goal=goal
         col1,col2=st.columns([9,1])
         with col2:
-            button=st.form_submit_button('ok')
+            button=st.form_submit_button('Save')
         if button:
             if x==10:
                 col1,col2,col3=st.columns([3,6,1])
@@ -227,7 +227,7 @@ if st.session_state.korean_mode==0:
                     st.write(f"""
                              
                              
-ID:{st.session_state.id}
+ID: {st.session_state.id}
 
 PW: {st.session_state.pw}
 
