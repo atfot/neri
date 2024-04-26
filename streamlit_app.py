@@ -175,9 +175,12 @@ if 'messages' not in st.session_state:
                         st.session_state.many_login_attempt = True
             if st.button("**New User**", type="secondary",use_container_width=True):
                     st.session_state.signin = True
-            if st.button("Find my ID/PW", type="secondary",use_container_width=True):
+            if st.button("Find my ID", type="secondary",use_container_width=True):
                     st.session_state.login_attempt=0
-                    st.session_state.find_my_idpw = True
+                    st.session_state.find_my_id = True
+            if st.button("Find my PW", type="secondary",use_container_width=True):
+                    st.session_state.login_attempt=0
+                    st.session_state.find_my_pw = True
         
         if st.session_state.get("logged_in", True):
             col, col2, col3 = st.columns([2.5,5,2.5])
