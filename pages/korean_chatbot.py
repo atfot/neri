@@ -325,9 +325,16 @@ def main():
                 junk=[':',')','}',']','>','**']
                 for i in junk:
                     if humanize_msg.find(i)!=-1:
-                      humanize_msg = humanize_msg[humanize_msg.find(i)+1:].strip().strip().strip('"').strip("'")
+                      humanize_msg = humanize_msg[humanize_msg.find(i)+1:]
+                      humanize_msg=humanize_msg.strip()
+                      humanize_msg=humanize_msg.strip()
+                      humanize_msg=humanize_msg.strip('"')
+                      humanize_msg=humanize_msg.strip("'")
             except:
-                humanize_msg = humanize_msg.strip().strip().strip('"').strip("'")
+                humanize_msg=humanize_msg.strip()
+                humanize_msg=humanize_msg.strip()
+                humanize_msg=humanize_msg.strip('"')
+                humanize_msg=humanize_msg.strip("'")
             st.session_state.messages.append({"role": "심리상담사", "content": humanize_msg})
             st.session_state.conversations.append({"role": "심리상담사", "content": humanize_msg})
             my_bar.progress(100,text=progress_text)
