@@ -46,6 +46,10 @@ def logout():
         del st.session_state['conversations']
         del st.session_state['message_summary']
         try:
+            del st.session_state.username
+        except:
+            pass
+        try:
             del st.session_state.my_info
         except:
             pass
