@@ -16,6 +16,7 @@ if 'messages' not in st.session_state:
 @font-face {
     font-family: 'Beeunhye';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
+    font-size: 100px;
     font-weight: normal;
     font-style: normal;
 }
