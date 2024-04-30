@@ -41,8 +41,9 @@ if 'messages' not in st.session_state:
             st.session_state.korean_mode=0
             st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
     with col2:
+        st.title('')
+        st.title('')
         if not language_selection: 
-            st.title('')
             st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)
             
             username = st.text_input("**아이디**")
@@ -145,7 +146,6 @@ if 'messages' not in st.session_state:
                 st.switch_page('pages/find_my_pw.py')
 
         if language_selection: 
-            st.title('')
             st.markdown('<div style="text-align: right;"><p><h6>Please login</h6></p></div>',unsafe_allow_html=True)
             
             username = st.text_input("**ID**")
