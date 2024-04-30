@@ -209,7 +209,7 @@ def main():
             model="gpt-3.5-turbo-0125",
             messages=[
             {
-                "role": "assistant",
+                "role": "system",
                 "content": f"{system_prompt}"
             },
             {

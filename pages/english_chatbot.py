@@ -285,14 +285,21 @@ Please briefly summarize the conversation below.
             presence_penalty=1
         )
             my_bar.progress(75,text=progress_text)
+            humanize_msg = sentence_selection.choices[0].message.content
             try:
-                humanize_msg = sentence_selection.choices[0].message.content
-                junk=[':',')','}',']','>']
+                junk=[':',')','}',']','>','**']
                 for i in junk:
                     if humanize_msg.find(i)!=-1:
-                      humanize_msg = humanize_msg[humanize_msg.find(i)+1:].strip().strip().strip('"').strip("'")
+                      humanize_msg = humanize_msg[humanize_msg.find(i)+1:]
+                      humanize_msg=humanize_msg.strip()
+                      humanize_msg=humanize_msg.strip()
+                      humanize_msg=humanize_msg.strip('"')
+                      humanize_msg=humanize_msg.strip("'")
             except:
-                humanize_msg = sentence_selection.choices[0].message.content.strip().strip().strip('"').strip("'")
+                humanize_msg=humanize_msg.strip()
+                humanize_msg=humanize_msg.strip()
+                humanize_msg=humanize_msg.strip('"')
+                humanize_msg=humanize_msg.strip("'")
             st.session_state.messages.append({"role": "Psychotherapist", "content": humanize_msg})
             st.session_state.conversations.append({"role": "Psychotherapist", "content": humanize_msg})
             my_bar.progress(100,text=progress_text)
