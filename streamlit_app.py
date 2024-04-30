@@ -150,7 +150,7 @@ if 'messages' not in st.session_state:
         if language_selection: 
             st.session_state.korean_mode=0
             st.title('')
-            st.markdown('<div style="text-align: right;"><p>Please login</p></div>',unsafe_allow_html=True)
+            st.markdown('<div style="text-align: right;"><p><h6>Please login</h6></p></div>',unsafe_allow_html=True)
             
             username = st.text_input("**ID**")
             password = st.text_input("**Password**", type="password")
