@@ -30,11 +30,6 @@ p {
 	font-family: 'Beeunhye';
     font-size: 30px;
 }
-                
-span {
-font-family: 'Beeunhye';
-font-size: 36px;
-}
 
 </style>
 """, unsafe_allow_html=True)
