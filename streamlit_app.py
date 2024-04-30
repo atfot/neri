@@ -37,10 +37,12 @@ h6 {
                 
 h1 {
 	font-family: 'Beeunhye';
+    font-size: '36px';
 }
                 
 h2 {
 	font-family: 'Beeunhye';
+    font-size: '34px';
 }
                 </style>
 """, unsafe_allow_html=True)
