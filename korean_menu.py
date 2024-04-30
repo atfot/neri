@@ -47,6 +47,10 @@ div.st-emotion-cache-1a8c3n0.eeusbqq3 > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
 }       
+div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+	font-size: 2em;
+}       
 </style>
 """, unsafe_allow_html=True)
         st.title('🧡 네리')
