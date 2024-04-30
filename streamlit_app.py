@@ -31,6 +31,7 @@ if 'messages' not in st.session_state:
             st.switch_page('pages/login_page.py')
 
     if st.session_state['korean_mode']==0: 
+        st.toggle('test',value=toggle_bool_value)
         st.markdown('<p><b>영어 모드</b></p>', unsafe_allow_html=True)
         if st.button('Log in'):
             st.switch_page('pages/login_page.py')
