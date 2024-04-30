@@ -25,7 +25,19 @@ div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > butt
     font-size: 1.75em;
 }             
 
-div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > button > div > p > strong {
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(6) > div > button > div > p {
+	font-family: 'Beeunhye';
+    font-size: 1.75em;
+}             
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(7) > div > button > div > p {
+	font-family: 'Beeunhye';
+    font-size: 1.75em;
+}             
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(8) > div > button > div > p {
+	font-family: 'Beeunhye';
+    font-size: 1.75em;
+}             
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(9) > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
 }             
