@@ -22,13 +22,15 @@ def make_sidebar():
 
         if st.session_state.get("logged_in", True):
             st.page_link("pages/korean_chatbot.py", label="당신의 카운셀러", icon="🩹")
+            st.divider()
             st.title('')
             st.page_link("pages/korean_analysis.py", label="내 정보", icon="ℹ️")
+            st.divider()
             st.title('')
             st.page_link("pages/korean_instruction.py", label="사용법", icon="❓")
 
-            st.write("")
-            st.write("")
+            st.divider()
+            st.title('')
 
             if st.button("로그아웃",type='primary',use_container_width=True):
                 logout()
