@@ -32,6 +32,7 @@ p {
 
 h1 {
 	font-family: 'Beeunhye';
+    font-size: 36px
 }
                     
 
