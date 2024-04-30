@@ -133,7 +133,7 @@ if st.session_state.korean_mode==1:
                     time.sleep(1)
                     my_bar.empty()
                 finally:
-                    st.switch_page("pages/login_page.py")
+                    st.switch_page("streamlit_app.py")
             else:
                 pass
 if st.session_state.korean_mode==0:
@@ -261,6 +261,6 @@ City: {st.session_state.city}
                     time.sleep(1)
                     my_bar.empty()
                 finally:
-                    st.switch_page("pages/login_page.py")
+                    st.switch_page("streamlit_app.py")
             else:
                 pass
