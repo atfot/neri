@@ -26,6 +26,7 @@ if 'messages' not in st.session_state:
 	font-family: 'Beeunhye';
 }</style>
 """, unsafe_allow_html=True)
+    st.write(st.session_state.style)
     st.session_state.logged_in = False
     st.session_state.signin = False
     st.session_state.login_error = False
