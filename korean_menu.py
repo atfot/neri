@@ -33,7 +33,7 @@ p {
 	font-family: 'Beeunhye';
 	font-size: 30px;
 }
-#text {
+<li #text> {
 	font-family: 'Beeunhye';
 	font-size: 30px;
 }                   
