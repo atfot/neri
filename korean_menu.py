@@ -40,6 +40,11 @@ h1 {
     font-size: 36px;
 }
                     
+li {
+	font-family: 'Beeunhye';
+    font-size: 36px;
+}
+                    
 
 </style>
 """, unsafe_allow_html=True)
