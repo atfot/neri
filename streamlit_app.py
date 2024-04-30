@@ -21,7 +21,6 @@ if 'messages' not in st.session_state:
         st.session_state.korean_mode = 1
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
-        st.write(x)
         st.session_state.screen_setting = 'compact' if x <= 1280 else 'full'
 
     if 'many_login_attempt' not in  st.session_state:
