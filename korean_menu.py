@@ -24,7 +24,12 @@ def make_sidebar():
     font-weight: normal;
     font-style: normal;
 }
-                
+
+* {
+	font-family: 'Beeunhye';
+    font-size: 24px;
+}
+
 p {
 	font-family: 'Beeunhye';
     font-size: 24px;
