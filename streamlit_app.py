@@ -101,30 +101,22 @@ if 'messages' not in st.session_state:
                     st.session_state.find_my_pw = True
             
             if st.session_state.get("logged_in", True):
-                col, col2, col3 = st.columns([2.5,5,2.5])
-                with col2:
-                    st.success("성공적으로 로그인 되었습니다!",  icon="✅")
-                    st.session_state.login_attempt=0
-                    sleep(0.5)
-                    st.switch_page("pages/korean_chatbot.py")
+                st.success("성공적으로 로그인 되었습니다!",  icon="✅")
+                st.session_state.login_attempt=0
+                sleep(0.5)
+                st.switch_page("pages/korean_chatbot.py")
             if st.session_state.get('login_error', True):
                 if st.session_state.login_attempt<6:
-                    col, col2, col3 = st.columns([2,6,2])
-                    with col2:
-                        st.error(f"아이디 또는 비밀번호를 확인해주세요({st.session_state.login_attempt}/5)", icon="🚨")
+                    st.error(f"아이디 또는 비밀번호를 확인해주세요({st.session_state.login_attempt}/5)", icon="🚨")
             if st.session_state.get("login_error", False):
                 pass
             if st.session_state.get('signin', True):
-                col, col2, col3 = st.columns([2.5,5,2.5])
-                with col2:
-                    st.success("네리에 오신 것을 환영합니다!", icon="🧡")
-                    st.session_state.many_login_attempt=False
-                    st.session_state.login_attempt=0
-                    sleep(0.5)
-                    st.switch_page("pages/signin.py")
+                st.success("네리에 오신 것을 환영합니다!", icon="🧡")
+                st.session_state.many_login_attempt=False
+                st.session_state.login_attempt=0
+                sleep(0.5)
+                st.switch_page("pages/signin.py")
             if st.session_state.get('many_login_attempt',True):
-                col, col2, col3 = st.columns([1,8,1])
-                with col2:
                     st.error("""
                             아이디 또는 패스워드를 5번 이상 틀리셨습니다.
                             
