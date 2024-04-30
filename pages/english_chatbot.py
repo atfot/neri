@@ -105,7 +105,7 @@ Please briefly summarize the conversation below.
                 - The two are now meeting and talking online
                 - Psychotherapist uses the most respectful tone of voice possible, and the person with mental illness prefers it
                 - Person with mental illness wants to talk with his/her psychotherapist
-                - The psychotherapist wants to have a deep and wide conversation with the mentally ill person, asking him/her a variety of questions
+                - The psychotherapist wants to have a deep and wide conversation with the mentally ill person
 
                 # Character information
                 1. mentally ill person
@@ -122,7 +122,7 @@ Please briefly summarize the conversation below.
                 - Gender: Male
                 - Country of Origin : South Korea
                 - City of residence : Seoul
-                - Characteristics : Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him/her, asking him/her a variety of questions
+                - Characteristics : Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him/her
 
                 **REMEMBER**: 
                 '''
@@ -199,7 +199,7 @@ Please briefly summarize the conversation below.
                 - The two are now meeting and talking online
                 - Psychotherapist uses the most respectful tone of voice possible, and the person with mental illness prefers it
                 - Person with mental illness wants to talk with his/her psychotherapist
-                - The psychotherapist wants to have a deep and wide conversation with the mentally ill person, asking him/her a variety of questions
+                - The psychotherapist wants to have a deep and wide conversation with the mentally ill person
 
                 # Character information
                 1. mentally ill person
@@ -216,7 +216,7 @@ Please briefly summarize the conversation below.
                 - Gender: Male
                 - Country of Origin : South Korea
                 - City of residence : Seoul
-                - Characteristics : Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him/her, asking him/her a variety of questions
+                - Characteristics : Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him/her
 
                 
                 **REMEMBER**:
