@@ -31,6 +31,22 @@ if 'messages' not in st.session_state:
         st.session_state.id = False
         st.session_state.pw = False
 
+    def apply_custom_css(css):
+        st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+
+    custom_css = """
+    @import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap');
+
+    body {
+        font-family: 'Hina Mincho', serif;
+        font-size: 16px;
+        font-weight: 300;
+    }
+    """
+
+    st.subheader("Hi,I’m trying to use the custom font for my streamlit application but it’s not working. Here is my code for custom font")
+
+    apply_custom_css(custom_css)
     language_selection=st.toggle('**한국어 버전/English Version**', value=False if st.session_state.korean_mode==1 else True)
 
     col1,col2=st.columns([7.75,2.25])
