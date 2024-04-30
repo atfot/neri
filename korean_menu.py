@@ -37,7 +37,7 @@ p {
 	font-family: 'Beeunhye';
 	font-size: 36px;
 }       
-#\35 1a57d4f > div > span {
+<span class="st-emotion-cache-10trblm e1nzilvr1">내 정보</span> {
 	font-family: 'Beeunhye';
 	font-size: 32px;
 }       
