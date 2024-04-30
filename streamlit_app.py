@@ -34,7 +34,7 @@ if 'messages' not in st.session_state:
 
     language_selection=st.toggle('**한국어/English**', value=False if st.session_state.korean_mode==1 else True)
 
-    col1,col2=st.columns([8.5,1.5])
+    col1,col2=st.columns([7,3])
     with col1:
         if not language_selection: 
             st.markdown('<p><b>Korean Language Mode</b></p>', unsafe_allow_html=True)
@@ -51,29 +51,57 @@ if 'messages' not in st.session_state:
             username = st.text_input("**아이디**")
             password = st.text_input("**비밀번호**", type="password")
 
-            
-            if st.button("**로그인**", type="primary",use_container_width=True):
-                if st.session_state.many_login_attempt==False:
-                    if username == st.session_state.id and password == st.session_state.pw:
-                        st.session_state.logged_in = True
-                    elif username == st.secrets.user_id and password == st.secrets.user_pw:
-                        st.session_state.logged_in = True
+            if st.session_state.screen_setting=='pc':
+                if st.button("**로그인**", type="primary",use_container_width=True):
+                    if st.session_state.many_login_attempt==False:
+                        if username == st.session_state.id and password == st.session_state.pw:
+                            st.session_state.logged_in = True
+                        elif username == st.secrets.user_id and password == st.secrets.user_pw:
+                            st.session_state.logged_in = True
+                        else:
+                            st.session_state.login_error = True
+                        if st.session_state.login_error==True:
+                            st.session_state.login_attempt+=1
+                            if st.session_state.login_attempt>=6:
+                                st.session_state.many_login_attempt = True
                     else:
-                        st.session_state.login_error = True
-                    if st.session_state.login_error==True:
-                        st.session_state.login_attempt+=1
-                        if st.session_state.login_attempt>=6:
-                            st.session_state.many_login_attempt = True
-                else:
-                    pass
-            if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
-                    st.session_state.signin = True
-            if st.button("아이디 찾기", type="secondary",use_container_width=True):
-                st.session_state.login_attempt=0
-                st.session_state.find_my_id = True
-            if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
-                st.session_state.login_attempt=0
-                st.session_state.find_my_pw = True
+                        pass
+
+                col1, col2, col3 = st.columns([3.3,3.4,3.3])
+                with col1:
+                    if st.button("아이디 찾기", type="secondary",use_container_width=True):
+                        st.session_state.login_attempt=0
+                        st.session_state.find_my_id = True
+                with col2:
+                    if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
+                        st.session_state.login_attempt=0
+                        st.session_state.find_my_pw = True
+                with col3:
+                    if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
+                        st.session_state.signin = True
+            else:
+                if st.button("**로그인**", type="primary",use_container_width=True):
+                    if st.session_state.many_login_attempt==False:
+                        if username == st.session_state.id and password == st.session_state.pw:
+                            st.session_state.logged_in = True
+                        elif username == st.secrets.user_id and password == st.secrets.user_pw:
+                            st.session_state.logged_in = True
+                        else:
+                            st.session_state.login_error = True
+                        if st.session_state.login_error==True:
+                            st.session_state.login_attempt+=1
+                            if st.session_state.login_attempt>=6:
+                                st.session_state.many_login_attempt = True
+                    else:
+                        pass
+                if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
+                        st.session_state.signin = True
+                if st.button("아이디 찾기", type="secondary",use_container_width=True):
+                    st.session_state.login_attempt=0
+                    st.session_state.find_my_id = True
+                if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
+                    st.session_state.login_attempt=0
+                    st.session_state.find_my_pw = True
             
             if st.session_state.get("logged_in", True):
                 col, col2, col3 = st.columns([2.5,5,2.5])
@@ -127,28 +155,55 @@ if 'messages' not in st.session_state:
             username = st.text_input("**ID**")
             password = st.text_input("**Password**", type="password")
 
+            if st.session_state.screen_setting=='pc':
+                if st.button("**Log in**", type="primary",use_container_width=True):
+                    if st.session_state.many_login_attempt==False:
+                        if username == st.session_state.id and password == st.session_state.pw:
+                            st.session_state.logged_in = True
+                        elif username == st.secrets.user_id and password == st.secrets.user_pw:
+                            st.session_state.logged_in = True
+                        else:
+                            st.session_state.login_error = True
+                        if st.session_state.login_error==True:
+                            st.session_state.login_attempt+=1
+                            if st.session_state.login_attempt>=6:
+                                st.session_state.many_login_attempt = True
 
-            if st.button("**Log in**", type="primary",use_container_width=True):
-                if st.session_state.many_login_attempt==False:
-                    if username == st.session_state.id and password == st.session_state.pw:
-                        st.session_state.logged_in = True
-                    elif username == st.secrets.user_id and password == st.secrets.user_pw:
-                        st.session_state.logged_in = True
-                    else:
-                        st.session_state.login_error = True
-                    if st.session_state.login_error==True:
-                        st.session_state.login_attempt+=1
-                        if st.session_state.login_attempt>=6:
-                            st.session_state.many_login_attempt = True
-            if st.button("**New User**", type="secondary",use_container_width=True):
-                    st.session_state.login_attempt=0
-                    st.session_state.signin = True
-            if st.button("Find my ID", type="secondary",use_container_width=True):
-                    st.session_state.login_attempt=0
-                    st.session_state.find_my_id = True
-            if st.button("Find my PW", type="secondary",use_container_width=True):
-                    st.session_state.login_attempt=0
-                    st.session_state.find_my_pw = True
+                col1, col2, col3 = st.columns([3.3,3.4,3.3])
+                with col1:
+                    if st.button("Find my ID", type="secondary",use_container_width=True):
+                        st.session_state.login_attempt=0
+                        st.session_state.find_my_id = True
+                with col2:
+                    if st.button("Find my PW", type="secondary",use_container_width=True):
+                        st.session_state.login_attempt=0
+                        st.session_state.find_my_pw = True
+                with col3:
+                    if st.button("**New User**", type="secondary",use_container_width=True):
+                        st.session_state.login_attempt=0
+                        st.session_state.signin = True
+            else:
+                if st.button("**Log in**", type="primary",use_container_width=True):
+                    if st.session_state.many_login_attempt==False:
+                        if username == st.session_state.id and password == st.session_state.pw:
+                            st.session_state.logged_in = True
+                        elif username == st.secrets.user_id and password == st.secrets.user_pw:
+                            st.session_state.logged_in = True
+                        else:
+                            st.session_state.login_error = True
+                        if st.session_state.login_error==True:
+                            st.session_state.login_attempt+=1
+                            if st.session_state.login_attempt>=6:
+                                st.session_state.many_login_attempt = True
+                if st.button("**New User**", type="secondary",use_container_width=True):
+                        st.session_state.login_attempt=0
+                        st.session_state.signin = True
+                if st.button("Find my ID", type="secondary",use_container_width=True):
+                        st.session_state.login_attempt=0
+                        st.session_state.find_my_id = True
+                if st.button("Find my PW", type="secondary",use_container_width=True):
+                        st.session_state.login_attempt=0
+                        st.session_state.find_my_pw = True
             
             if st.session_state.get("logged_in", True):
                 col, col2, col3 = st.columns([2.5,5,2.5])
