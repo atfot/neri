@@ -39,6 +39,11 @@ h2 {
 	font-family: 'Beeunhye';
     font-size: '34px';
 }
+                
+* {
+	font-family: 'Beeunhye';
+    font-size: 24px;
+}
                 </style>
 """, unsafe_allow_html=True)
     st.session_state.logged_in = False
