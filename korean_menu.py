@@ -27,14 +27,15 @@ def make_sidebar():
 
 * {
 	font-family: 'Beeunhye';
-	font-size: 40px;
+	font-size: 30px;
 }
 p {
 	font-family: 'Beeunhye';
-	font-size: 30px;
+	font-size: 40px;
 }
 h1 {
 	font-family: 'Beeunhye';
+	font-size: 40px;
 }                                       
 h3 {
 	font-family: 'Beeunhye';
