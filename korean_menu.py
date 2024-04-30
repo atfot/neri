@@ -35,7 +35,7 @@ p {
 }                 
 </style>
 """, unsafe_allow_html=True)
-        st.markdown("<p><b>🧡 네리</b><p>",unsafe_allow_html=True)
+        st.markdown("<p><h1>🧡 네리</h1><p>",unsafe_allow_html=True)
         st.write("")
         st.write("")
 
