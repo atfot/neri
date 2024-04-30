@@ -31,30 +31,13 @@ if 'messages' not in st.session_state:
         st.session_state.id = False
         st.session_state.pw = False
 
-    def apply_custom_css(css):
-        st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
-
-    custom_css = """
-    @import url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap");
-
-    body {
-        font-family: "Poor Story", system-ui;
-        font-size: 16px;
-        font-weight: 400;
-        font-style: normal;
-    }
-    """
-
-    apply_custom_css(custom_css)
-
-
+    
     language_selection=st.toggle('**한국어 버전/English Version**', value=False if st.session_state.korean_mode==1 else True)
 
     col1,col2=st.columns([7.75,2.25])
     with col1:
         if not language_selection: 
             st.markdown('<center><h1>ᆞ네ᆞᆞ리ᆞ</h1></center>', unsafe_allow_html=True)
-            st.write('안녕')
         if language_selection:
             st.session_state.korean_mode=0
             st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
