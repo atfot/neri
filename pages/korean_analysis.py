@@ -20,7 +20,7 @@ st.markdown("""
     font-style: normal;
 }
 
-.st-emotion-cache-10trblm e1nzilvr1 {
+span.st-emotion-cache-10trblm e1nzilvr1 {
 	font-family: 'Beeunhye';
 	font-size: 36px;
 }       
