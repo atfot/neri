@@ -29,7 +29,11 @@ def make_sidebar():
 	font-family: 'Beeunhye';
     font-size: 24px;
 }
-
+                
+p {
+	font-family: 'Beeunhye';
+    font-size: 28px;
+}
 
 </style>
 """, unsafe_allow_html=True)
