@@ -12,6 +12,18 @@ if 'messages' not in st.session_state:
     layout="wide",
     menu_items=None
 )
+    st.markdown("""
+@font-face {
+    font-family: 'Beeunhye';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	font-family: 'Beeunhye';
+}
+""", unsafe_allow_html=True)
     st.session_state.logged_in = False
     st.session_state.signin = False
     st.session_state.login_error = False
