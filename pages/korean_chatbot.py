@@ -219,7 +219,7 @@ def main():
             ],
             temperature=1,
             max_tokens=1028,
-            top_p=1,
+            top_p=0.9,
             frequency_penalty=1,
             presence_penalty=1
         )
