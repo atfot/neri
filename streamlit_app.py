@@ -21,14 +21,11 @@ if 'messages' not in st.session_state:
     font-style: normal;
 }
 
-* {
+body {
 	font-family: 'Beeunhye';
     font-size: 1.5em;
 }               
-p {
-	font-family: 'Beeunhye';
-    font-size: 1.5em;
-}
+
 
 </style>
 """, unsafe_allow_html=True)
