@@ -50,15 +50,15 @@ if 'messages' not in st.session_state:
             <style>
             div[class*="stTextInput"] label {
             font-size: 200px;
-            color: red;
+            color: black;
             }
             </style>
             """
 
             st.write(tabs_font_css, unsafe_allow_html=True)
             
-            username = st.text_input("아이디")
-            password = st.text_input("비밀번호", type="password")
+            username = st.text_input("**아이디**")
+            password = st.text_input("**비밀번호**", type="password")
 
             if st.session_state.screen_setting=='pc':
                 if st.button("**로그인**", type="primary",use_container_width=True):
