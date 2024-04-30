@@ -144,9 +144,9 @@ def main():
                 # Information about the play
                 - Conversation between one mentally ill person and one psychotherapist
                 - The two are now meeting and talking online
-                - Psychologist uses the most respectful tone of voice possible, and the person with mental illness prefers it
+                - Psychotherapist uses the most respectful tone of voice possible, and the person with mental illness prefers it
                 - Person with mental illness want empathy and comfort for him/herself
-                - The psychotherapist wants to heal the mentally ill person by building a strong relationship with them
+                - The psychotherapist wants to have a deep and wide conversation with the mentally ill person, asking him/her a variety of questions
 
                 # Character information
                 1. mentally ill person
@@ -163,7 +163,7 @@ def main():
                 - Gender: Male
                 - Country of Origin : South Korea
                 - City of residence : Seoul
-                - Characteristics : Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him, asking him a variety of questions
+                - Characteristics : Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him/her, asking him/her a variety of questions
 
                 **REMEMBER**: 
                 '''
@@ -237,9 +237,9 @@ def main():
                 # Information about the play
                 - Conversation between one mentally ill person and one psychotherapist
                 - The two are now meeting and talking online
-                - Psychologist uses the most respectful tone of voice possible, and the person with mental illness prefers it
+                - Psychotherapist uses the most respectful tone of voice possible, and the person with mental illness prefers it
                 - Person with mental illness want empathy and comfort for him/herself
-                - The psychotherapist wants to heal the mentally ill person by building a strong relationship with them
+                - The psychotherapist wants to have a deep and wide conversation with the mentally ill person, asking him/her a variety of questions
 
                 # Character information
                 1. mentally ill person
@@ -256,7 +256,7 @@ def main():
                 - Gender: Male
                 - Country of Origin : South Korea
                 - City of residence : Seoul
-                - Characteristics : Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him, asking him a variety of questions
+                - Characteristics : Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him/her, asking him/her a variety of questions
 
                 
                 **REMEMBER**:
