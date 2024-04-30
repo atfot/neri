@@ -20,9 +20,9 @@ st.markdown("""
     font-style: normal;
 }
 
-span.st-emotion-cache-10trblm {
+.st-emotion-cache-10trblm {
 	font-family: 'Beeunhye';
-	font-size: 2em;
+	font-size: 1.75em;
 }       
 </style>
 """, unsafe_allow_html=True)
