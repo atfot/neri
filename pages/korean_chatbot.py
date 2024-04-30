@@ -217,9 +217,9 @@ def main():
                 "content": f"{user_prompt_1}"
             }
             ],
-            temperature=0.3,
+            temperature=0.4,
             max_tokens=1028,
-            top_p=0.3,
+            top_p=0.4,
             frequency_penalty=1,
             presence_penalty=1
         )
