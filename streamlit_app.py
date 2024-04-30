@@ -37,6 +37,7 @@ if 'messages' not in st.session_state:
     col1,col2=st.columns([7.75,2.25])
     with col1:
         if not language_selection: 
+            st.session_state.korean_mode=1
             st.markdown('<center><h1>ᆞ네ᆞᆞ리ᆞ</h1></center>', unsafe_allow_html=True)
         if language_selection:
             st.session_state.korean_mode=0
