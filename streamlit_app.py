@@ -17,6 +17,8 @@ if 'messages' not in st.session_state:
     st.session_state.login_error = False
     st.session_state.find_my_id = False
     st.session_state.find_my_pw = False
+    if 'korean_mode' not in st.session_state:
+        st.session_state.korean_mode = 1
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
         st.session_state.screen_setting = 'mobile' if x < 662 else 'pc'
@@ -31,10 +33,9 @@ if 'messages' not in st.session_state:
 
     col1,col2=st.columns([6,4])
     with col1:
-        language_selection=st.toggle('한국어/English')
+        language_selection=st.toggle('**한국어/English**', value=True if st.session_state.korean_mode==1 else False)
 
-    if not language_selection: 
-        st.session_state['korean_mode']=1
+    if st.session_state['korean_mode']==1: 
         st.markdown('<p><b>Korean Language Mode</b></p>', unsafe_allow_html=True)
         st.markdown('<center><h1>ᆞ네ᆞᆞ리ᆞ</h1></center>', unsafe_allow_html=True)
         st.markdown('<div style="text-align: right;"><p>로그인 해주세요</p></div>',unsafe_allow_html=True)
@@ -139,8 +140,7 @@ if 'messages' not in st.session_state:
             st.session_state.find_my_pw = False
             st.switch_page('pages/find_my_pw.py')
 
-    if language_selection: 
-        st.session_state['korean_mode']=0
+    if st.session_state['korean_mode']==0: 
         st.markdown('<p><b>영어 모드</b></p>', unsafe_allow_html=True)
         st.markdown('<center><h2>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h2></center>', unsafe_allow_html=True)
         st.markdown('<div style="text-align: right;"><p>Please login</p></div>',unsafe_allow_html=True)
