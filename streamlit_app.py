@@ -36,8 +36,8 @@ if 'messages' not in st.session_state:
     col1,col2=st.columns([6,4])
     with col1:
         if not language_selection: 
-            st.markdown('<center><h1>ᆞ네ᆞᆞ리ᆞ</h1></center>', unsafe_allow_html=True)
             st.markdown('<p><b>Korean Language Mode</b></p>', unsafe_allow_html=True)
+            st.markdown('<center><h1>ᆞ네ᆞᆞ리ᆞ</h1></center>', unsafe_allow_html=True)
         if language_selection:
             st.markdown('<p><b>영어 모드</b></p>', unsafe_allow_html=True)
             st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
