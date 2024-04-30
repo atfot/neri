@@ -50,7 +50,7 @@ if 'messages' not in st.session_state:
             <style>
             div[class*="stTextInput"] label {
             font-size: 200px;
-            color: black;
+            color: red;
             }
             </style>
             """
