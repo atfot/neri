@@ -54,7 +54,7 @@ if 'messages' not in st.session_state:
     with col1:
         if not language_selection: 
             st.markdown('<center><h1>ᆞ네ᆞᆞ리ᆞ</h1></center>', unsafe_allow_html=True)
-            st.write('hi')
+            st.write('안녕')
         if language_selection:
             st.session_state.korean_mode=0
             st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
