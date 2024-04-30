@@ -37,7 +37,7 @@ p {
 	font-family: 'Beeunhye';
 	font-size: 36px;
 }       
-h3 {
+.st-emotion-cache-10trblm e1nzilvr1 {
 	font-family: 'Beeunhye';
 	font-size: 32px;
 }       
