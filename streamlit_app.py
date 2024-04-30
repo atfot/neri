@@ -102,7 +102,7 @@ if 'messages' not in st.session_state:
                     st.session_state.find_my_pw = True
             
             if st.session_state.get("logged_in", True):
-                st.success("성공적으로 로그인 되었습니다!",  icon="✅")
+                st.success("로그인되었습니다!",  icon="✅")
                 st.session_state.login_attempt=0
                 sleep(0.5)
                 st.switch_page("pages/korean_chatbot.py")
@@ -194,34 +194,26 @@ if 'messages' not in st.session_state:
                         st.session_state.find_my_pw = True
             
             if st.session_state.get("logged_in", True):
-                col, col2, col3 = st.columns([2.5,5,2.5])
-                with col2:
-                    st.success("Logged in successfully!",  icon="✅")
-                    st.session_state.login_attempt=0
-                    sleep(0.5)
-                    st.switch_page("pages/english_chatbot.py")
+                st.success("Logged in successfully!",  icon="✅")
+                st.session_state.login_attempt=0
+                sleep(0.5)
+                st.switch_page("pages/english_chatbot.py")
             if st.session_state.get('login_error', True):
                 if st.session_state.login_attempt<6:
-                    col, col2, col3 = st.columns([2,6,2])
-                    with col2:
-                        st.error(f"Incorrect ID or password({st.session_state.login_attempt}/5)", icon="🚨")
+                    st.error(f"Incorrect ID or password({st.session_state.login_attempt}/5)", icon="🚨")
             if st.session_state.get("login_error", False):
                 pass
             if st.session_state.get('signin', True):
-                col, col2, col3 = st.columns([3,4,3])
-                with col2:
-                    st.success("Welcome to Neri!", icon="🧡")
-                    st.session_state.login_attempt=0
-                    sleep(0.5)
-                    st.switch_page("pages/signin.py")
+                st.success("Welcome to Neri!", icon="🧡")
+                st.session_state.login_attempt=0
+                sleep(0.5)
+                st.switch_page("pages/signin.py")
             if st.session_state.get('many_login_attempt',True):
-                col, col2, col3 = st.columns([0.5,9,0.5])
-                with col2:
-                    st.error("""
-                            You've entered your ID or password incorrectly more than 5 times.
-                            
-                            Please use 'Find my ID' or 'Find my PW' to correct your information.""", icon="🚨")
-                    st.stop()
+                st.error("""
+                        You've entered your ID or password incorrectly more than 5 times.
+                        
+                        Please use 'Find my ID' or 'Find my PW' to correct your information.""", icon="🚨")
+                st.stop()
             if st.session_state.get("signin", False):
                 pass
             if st.session_state.get('find_my_id', True):
