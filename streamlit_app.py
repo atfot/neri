@@ -66,8 +66,10 @@ if 'messages' not in st.session_state:
                                 st.session_state.many_login_attempt = True
                     else:
                         pass
-
-                col1, col2, col3 = st.columns([3.3,3.4,3.3])
+                if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
+                    st.session_state.signin = True
+                    
+                col1, col2 = st.columns([5,5])
                 with col1:
                     if st.button("아이디 찾기", type="secondary",use_container_width=True):
                         st.session_state.login_attempt=0
@@ -76,9 +78,6 @@ if 'messages' not in st.session_state:
                     if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
                         st.session_state.login_attempt=0
                         st.session_state.find_my_pw = True
-                with col3:
-                    if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
-                        st.session_state.signin = True
             else:
                 if st.button("**로그인**", type="primary",use_container_width=True):
                     if st.session_state.many_login_attempt==False:
