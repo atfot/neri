@@ -29,7 +29,7 @@ def make_sidebar():
             st.divider()
             st.title('')
             st.page_link("pages/korean_instruction.py", label="사용법", icon="❓")
-
+            st.title('')
             st.divider()
             st.title('')
 
