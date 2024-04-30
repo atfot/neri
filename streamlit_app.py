@@ -22,7 +22,7 @@ if 'messages' not in st.session_state:
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
         st.write(x)
-        st.session_state.screen_setting = 'mobile' if x <= 768 else 'pc'
+        st.session_state.screen_setting = 'compact' if x <= 1280 else 'full'
 
     if 'many_login_attempt' not in  st.session_state:
         st.session_state.many_login_attempt=False
@@ -51,7 +51,7 @@ if 'messages' not in st.session_state:
             username = st.text_input("**아이디**")
             password = st.text_input("**비밀번호**", type="password")
 
-            if st.session_state.screen_setting=='pc':
+            if st.session_state.screen_setting=='full':
                 if st.button("**로그인**", type="primary",use_container_width=True):
                     if st.session_state.many_login_attempt==False:
                         if username == st.session_state.id and password == st.session_state.pw:
@@ -154,7 +154,7 @@ if 'messages' not in st.session_state:
             username = st.text_input("**ID**")
             password = st.text_input("**Password**", type="password")
 
-            if st.session_state.screen_setting=='pc':
+            if st.session_state.screen_setting=='full':
                 if st.button("**Log in**", type="primary",use_container_width=True):
                     if st.session_state.many_login_attempt==False:
                         if username == st.session_state.id and password == st.session_state.pw:
