@@ -21,7 +21,9 @@ if 'messages' not in st.session_state:
     font-style: normal;
 }
 
-                
+* {
+	font-family: 'Beeunhye';
+}               
 p {
 	font-family: 'Beeunhye';
     font-size: 1.1em;
