@@ -25,11 +25,18 @@ def make_sidebar():
     font-style: normal;
 }
 
-body {
+* {
 	font-family: 'Beeunhye';
 	font-size: 30px;
 }
-                  
+p {
+	font-family: 'Beeunhye';
+	font-size: 30px;
+}
+li {
+	font-family: 'Beeunhye';
+	font-size: 30px;
+}                   
 </style>
 """, unsafe_allow_html=True)
         st.markdown("<h1>🧡 네리</h1>",unsafe_allow_html=True)
