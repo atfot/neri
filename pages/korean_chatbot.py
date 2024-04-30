@@ -226,7 +226,7 @@ def main():
             model="gpt-3.5-turbo-0125",
             messages=[
             {
-                "role": "system",
+                "role": "assistant",
                 "content": f"{system_prompt}"
             },
             {
@@ -234,14 +234,15 @@ def main():
                 "content": f"{user_prompt_1}"
             }
             ],
-            temperature=0.9,
+            temperature=1,
             max_tokens=1028,
-            top_p=1,
+            top_p=0.9,
             frequency_penalty=1,
             presence_penalty=1
         )
             my_bar.progress(25,text=progress_text)
             msg = response.choices[0].message.content
+            st.session_state.msg=msg
             sentence_selection = st.session_state.client.chat.completions.create(
             model="gpt-3.5-turbo-0125",
             messages=[
@@ -369,6 +370,7 @@ def main():
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
+                st.write(st.session_state.msg)
                 #st.session_state.conversations
             with col2:
                 st.write('')
