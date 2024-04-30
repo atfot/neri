@@ -45,7 +45,6 @@ p {
             st.page_link("pages/korean_analysis.py", label="내 정보", icon="ℹ️")
             st.divider()
             st.page_link("pages/korean_instruction.py", label="사용법", icon="❓")
-            st.divider()
 
             if st.button("로그아웃",type='primary',use_container_width=True):
                 logout()
