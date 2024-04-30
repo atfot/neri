@@ -38,8 +38,8 @@ span.st-emotion-cache-ejysk0.e11k5jya0 > div > p {
 	font-family: 'Beeunhye';
 	font-size: 2em;
 }       
-                    
-span.st-emotion-cache-ejysk0.e11k5jya0 > div > p {
+
+div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
 	font-size: 2em;
 }       
