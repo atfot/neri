@@ -64,7 +64,7 @@ if 'messages' not in st.session_state:
 }
 .st-emotion-cache-10trblm.e1nzilvr1 {
 	font-family: 'Beeunhye';
-    font-size: 1.75em;
+    font-size: 2em;
 }
 #root > div:nth-child(1) > div.withScreencast > div > div > div > section > div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div:nth-child(3) > div > label > div.st-bl.st-bm.st-bn.st-bo.st-bp.st-bq.st-br.st-bs.st-bt.st-bu.st-bv > div > div > p > strong {
 	font-family: 'Beeunhye';
