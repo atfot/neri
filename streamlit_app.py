@@ -22,7 +22,7 @@ if 'messages' not in st.session_state:
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
         st.write(x)
-        st.session_state.screen_setting = 'mobile' if x < 1080 else 'pc'
+        st.session_state.screen_setting = 'mobile' if x < 1276 else 'pc'
 
     if 'many_login_attempt' not in  st.session_state:
         st.session_state.many_login_attempt=False
@@ -45,7 +45,7 @@ if 'messages' not in st.session_state:
     with col2:
         if not language_selection: 
             st.title('')
-            st.markdown('<div style="text-align: right;"><p>로그인 해주세요</p></div>',unsafe_allow_html=True)
+            st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)
             
             username = st.text_input("**아이디**")
             password = st.text_input("**비밀번호**", type="password")
@@ -68,7 +68,7 @@ if 'messages' not in st.session_state:
 
                 if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
                     st.session_state.signin = True
-                col1, col2 = st.columns([5,5])
+                col1, col2, col3 = st.columns([3.3,3.4,3.3])
                 with col1:
                     if st.button("아이디 찾기", type="secondary",use_container_width=True):
                         st.session_state.login_attempt=0
@@ -77,6 +77,9 @@ if 'messages' not in st.session_state:
                     if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
                         st.session_state.login_attempt=0
                         st.session_state.find_my_pw = True
+                with col3:
+                    if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
+                        st.session_state.signin = True
             else:
                 if st.button("**로그인**", type="primary",use_container_width=True):
                     if st.session_state.many_login_attempt==False:
