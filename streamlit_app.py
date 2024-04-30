@@ -25,7 +25,7 @@ if 'messages' not in st.session_state:
     st.session_state.korean_mode=0 if language_selection else 1
 
     if st.session_state['korean_mode']==1: 
-        st.markdown('<p><h6>Korean Language Mode</h6></p>', unsafe_allow_html=True)
+        st.markdown('<p><h5>Korean Language Mode</h5></p>', unsafe_allow_html=True)
 
     if st.session_state['korean_mode']==0: 
         st.markdown('<p><b>영어 모드</b></p>', unsafe_allow_html=True)
