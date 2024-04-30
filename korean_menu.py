@@ -32,10 +32,11 @@ def make_sidebar():
 p {
 	font-family: 'Beeunhye';
 	font-size: 30px;
-}                 
+}       
+    
 </style>
 """, unsafe_allow_html=True)
-        st.markdown("<p><b>🧡 네리</b><p>",unsafe_allow_html=True)
+        st.markdown("<h1>🧡 네리</h1>",unsafe_allow_html=True)
         st.write("")
         st.write("")
 
