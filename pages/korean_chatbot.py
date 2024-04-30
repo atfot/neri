@@ -349,6 +349,7 @@ def main():
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
                 st.write(st.session_state.msg)
                 st.write(st.session_state.final_msg)
+                st.write(st.session_state.user_prompt_1)
                 #st.write(st.session_state.messages)
                 #st.write(st.session_state.conversations)
             with col2:
