@@ -27,7 +27,10 @@ def make_sidebar():
 
 * {
 	font-family: 'Beeunhye';
+    font-size: 24px;
 }
+
+
 </style>
 """, unsafe_allow_html=True)
         st.title("🧡 네리")
