@@ -11,6 +11,33 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 make_sidebar()
+st.markdown("""
+<style>
+@font-face {
+    font-family: 'Beeunhye';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	font-family: 'Beeunhye';
+	font-size: 30px;
+}
+p {
+	font-family: 'Beeunhye';
+	font-size: 30px;
+}       
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section.st-emotion-cache-ugcgyn.eczjsme11 > div.st-emotion-cache-6qob1r.eczjsme3 > div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div:nth-child(2) > div > div > div > h1 {
+	font-family: 'Beeunhye';
+	font-size: 36px;
+}       
+.st-emotion-cache-10trblm e1nzilvr1 {
+	font-family: 'Beeunhye';
+	font-size: 32px;
+}       
+</style>
+""", unsafe_allow_html=True)
 
 def fix_info():
   st.session_state.fix_info=True
