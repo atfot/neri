@@ -149,7 +149,7 @@ if 'messages' not in st.session_state:
                     if st.session_state.many_login_attempt==False:
                         if username == st.session_state.id and password == st.session_state.pw:
                             st.session_state.logged_in = True
-                        elif username == st.secrets.user_id and password == st.secrets.user_pw:
+                        elif username == st.secrets.user_id_2 and password == st.secrets.user_pw_2:
                             st.session_state.logged_in = True
                         else:
                             st.session_state.login_error = True
