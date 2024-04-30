@@ -145,7 +145,7 @@ def main():
                 - Conversation between one mentally ill person and one psychotherapist
                 - The two are now meeting and talking online
                 - Psychotherapist uses the most respectful tone of voice possible, and the person with mental illness prefers it
-                - Person with mental illness want empathy and comfort for him/herself
+                - Person with mental illness wants to talk with his/her psychotherapist
                 - The psychotherapist wants to have a deep and wide conversation with the mentally ill person, asking him/her a variety of questions
 
                 # Character information
@@ -238,7 +238,7 @@ def main():
                 - Conversation between one mentally ill person and one psychotherapist
                 - The two are now meeting and talking online
                 - Psychotherapist uses the most respectful tone of voice possible, and the person with mental illness prefers it
-                - Person with mental illness want empathy and comfort for him/herself
+                - Person with mental illness wants to talk with his/her psychotherapist
                 - The psychotherapist wants to have a deep and wide conversation with the mentally ill person, asking him/her a variety of questions
 
                 # Character information
