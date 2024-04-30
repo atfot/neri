@@ -12,7 +12,7 @@ if 'messages' not in st.session_state:
     layout="wide",
     menu_items=None
 )
-    st.markdown("""
+    st.markdown("""<style>
 @font-face {
     font-family: 'Beeunhye';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
@@ -22,7 +22,7 @@ if 'messages' not in st.session_state:
 
 * {
 	font-family: 'Beeunhye';
-}
+}</style>
 """, unsafe_allow_html=True)
     st.session_state.logged_in = False
     st.session_state.signin = False
