@@ -22,7 +22,7 @@ if 'messages' not in st.session_state:
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
         st.write(x)
-        st.session_state.screen_setting = 'mobile' if x < 662 else 'pc'
+        st.session_state.screen_setting = 'mobile' if x < 1080 else 'pc'
 
     if 'many_login_attempt' not in  st.session_state:
         st.session_state.many_login_attempt=False
