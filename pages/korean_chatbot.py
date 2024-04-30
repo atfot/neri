@@ -287,13 +287,14 @@ def main():
             messages=[
             {
                 "role": "system",
-                "content": """Your role is to check the korean grammar of the korean sentences and rephrase it if it has any wrong grammars, or if it is too rude.
+                "content": f"""Your role is to check the korean grammar of the korean sentences and rephrase it if it has any wrong grammars, or if it is too rude.
                 
                 **REMEMBER**:
                 1. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
                 2. Submit the original sentences that I gave you if there is no grammar problem.
                 3. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
                 4. Don't use any words or phrases other than the context.
+                5. If there is a "너(you)" in a given sentence, please replace it with "{st.session_state.username}씨".
                 """
             },
             {
@@ -309,6 +310,7 @@ def main():
                 2. Submit the original sentences that I gave you if there is no grammar problem.
                 3. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
                 4. Don't use any words or phrases other than the context.
+                5. If there is a "너(you)" in a given sentence, please replace it with "{st.session_state.username}씨".
         """
             }
             ],
