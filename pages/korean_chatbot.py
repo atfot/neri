@@ -320,7 +320,7 @@ def main():
         )
             my_bar.progress(75,text=progress_text)
             humanize_msg = sentence_selection.choices[0].message.content
-            st.session_state.final_msg=huamnize_msg
+            st.session_state.final_msg=humanize_msg
             try:
                 junk=[':',')','}',']','>','**']
                 for i in junk:
