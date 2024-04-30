@@ -35,6 +35,12 @@ p {
     font-size: 28px;
 }
 
+h1 {
+	font-family: 'Beeunhye';
+    font-size: 36px;
+}
+                    
+
 </style>
 """, unsafe_allow_html=True)
         st.title("🧡 네리")
