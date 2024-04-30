@@ -52,7 +52,7 @@ def make_sidebar():
 }       
 </style>
 """, unsafe_allow_html=True)
-        st.markdown("<h1>🧡 네리</h1>",unsafe_allow_html=True)
+        st.title('🧡 네리')
         st.write("")
         st.write("")
 
