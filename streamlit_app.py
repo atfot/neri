@@ -27,6 +27,7 @@ p {
                 
 h6 {
 	font-family: 'Beeunhye';
+    font-size: 30px;
 }
                 
 h1 {
