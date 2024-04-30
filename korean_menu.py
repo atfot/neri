@@ -26,6 +26,7 @@ def make_sidebar():
             st.write('''
 
 
+
 ''')
             st.page_link("pages/korean_analysis.py", label="내 정보", icon="ℹ️")
             st.write('''
@@ -33,16 +34,14 @@ def make_sidebar():
 
 ''')
             st.divider()
+            st.write('''
+
+
+''')
             st.page_link("pages/korean_instruction.py", label="사용법", icon="❓")
-            st.write('''
-
-
-''')
+            st.title('')
             st.divider()
-            st.write('''
-
-
-''')
+            st.title('')
 
             if st.button("로그아웃",type='primary',use_container_width=True):
                 logout()
