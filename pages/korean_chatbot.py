@@ -259,7 +259,7 @@ def main():
                 **Three possible answers from a korean psychotherapist who wants to know about his patient**: 
                 "[{msg}]"
 
-                - After reading the informations above, please **pick the best response from three possible answers** considering psychotherapist's intention, and write it down exactly, without leaving out a single letter. 
+                - After reading the informations above, please **pick the best response from three possible answers** and write it down exactly, without leaving out a single letter. 
                 
                 **REMEMBER**:
                 1. After you pick the best response, then write it down exactly, without leaving out a single letter.
