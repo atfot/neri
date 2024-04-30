@@ -66,8 +66,6 @@ if 'messages' not in st.session_state:
                     else:
                         pass
 
-                if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
-                    st.session_state.signin = True
                 col1, col2, col3 = st.columns([3.3,3.4,3.3])
                 with col1:
                     if st.button("아이디 찾기", type="secondary",use_container_width=True):
