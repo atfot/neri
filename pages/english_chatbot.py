@@ -122,7 +122,7 @@ Please briefly summarize the conversation below.
                 - Gender: Male
                 - Country of Origin : South Korea
                 - City of residence : Seoul
-                - Characteristics : Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him/her
+                - Characteristics : Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him/her, but also asks any questions if he wants to understand more about him/her
 
                 **REMEMBER**: 
                 '''
@@ -216,7 +216,7 @@ Please briefly summarize the conversation below.
                 - Gender: Male
                 - Country of Origin : South Korea
                 - City of residence : Seoul
-                - Characteristics : Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him/her
+                - Characteristics : Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him/her, but also asks any questions if he wants to understand more about him/her
 
                 
                 **REMEMBER**:
