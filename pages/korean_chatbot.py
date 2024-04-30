@@ -324,7 +324,7 @@ def main():
             humanize_msg = sentence_selection.choices[0].message.content
             st.session_state.final_msg=humanize_msg
             try:
-                junk=[':',')','}',']','>','**','.']
+                junk=[':',')','}',']','>','**']
                 for i in junk:
                     if humanize_msg.find(i)!=-1:
                       humanize_msg = humanize_msg[humanize_msg.find(i)+1:]
