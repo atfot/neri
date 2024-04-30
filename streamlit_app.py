@@ -34,7 +34,7 @@ if 'messages' not in st.session_state:
 
     language_selection=st.toggle('**한국어/English**', value=False if st.session_state.korean_mode==1 else True)
 
-    col1,col2=st.columns([7.5,2.5])
+    col1,col2=st.columns([7.75,2.25])
     with col1:
         if not language_selection: 
             st.markdown('<p><b>Korean Language Mode</b></p>', unsafe_allow_html=True)
