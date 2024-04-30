@@ -256,7 +256,7 @@ def main():
                 
                 **Conversation content**: [{st.session_state.conversations}]
 
-                **Three possible answers from a korean psychotherapist who wants to learn about his patient**: 
+                **Three possible answers from a korean psychotherapist who wants to know more about his patient**: 
                 "[{msg}]"
 
                 - After reading the informations above, please **pick the best response from three possible answers** considering psychotherapist's intention. 
