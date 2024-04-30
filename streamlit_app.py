@@ -46,6 +46,16 @@ if 'messages' not in st.session_state:
         if not language_selection: 
             st.title('')
             st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)
+            tabs_font_css = """
+            <style>
+            div[class*="stTextInput"] label {
+            font-size: 100px;
+            color: black;
+            }
+            </style>
+            """
+
+            st.write(tabs_font_css, unsafe_allow_html=True)
             
             username = st.text_input("**아이디**")
             password = st.text_input("**비밀번호**", type="password")
