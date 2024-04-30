@@ -68,11 +68,16 @@ div.st-bl.st-bm.st-bn.st-bo.st-bp.st-bq.st-br.st-bs.st-bt.st-bu.st-bv > div > di
     font-size: 2em;
 }
 
-#root > div:nth-child(1) > div.withScreencast > div > div > div > section > div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(10) > div > div > div > div > div > div > p {
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(9) > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
 }             
                 
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(10) > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}             
+
 </style>
 """, unsafe_allow_html=True)
     st.session_state.logged_in = False
