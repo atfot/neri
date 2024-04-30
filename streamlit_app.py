@@ -38,11 +38,22 @@ div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(5) > di
 }             
                 
                 
-div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > button > div > p {
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(6) > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
 }             
-        
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(7) > div > button > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}             
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(8) > div > button > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}             
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(9) > div > button > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}             
 
 #ce27b8f > div > span > center {
 	font-family: 'Beeunhye';
