@@ -48,7 +48,7 @@ def make_sidebar():
 }       
 #root > div:nth-child(1) > div.withScreencast > div > div > div > section.main.st-emotion-cache-uf99v8.ea3mdgi8 > div.block-container.st-emotion-cache-9tg1hl.ea3mdgi5 > div > div > div > div > div.st-emotion-cache-1a8c3n0.eeusbqq3 > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
-	font-size: 2em;
+	font-size: 1.75em;
 }       
 </style>
 """, unsafe_allow_html=True)
