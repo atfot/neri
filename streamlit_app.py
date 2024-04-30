@@ -25,7 +25,7 @@ if 'messages' not in st.session_state:
     if st.session_state['korean_mode']==1: 
         st.markdown('<p><b>Korean Language Mode</b></p>', unsafe_allow_html=True)
         if st.button('login'):
-            st.switch_page('streamlit_app_2.py')
+            st.switch_page('pages/login_page.py')
 
     if st.session_state['korean_mode']==0: 
         st.markdown('<p><b>영어 모드</b></p>', unsafe_allow_html=True)
