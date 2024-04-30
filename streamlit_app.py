@@ -28,7 +28,7 @@ if 'messages' not in st.session_state:
                 
 p {
 	font-family: 'Beeunhye';
-    font-size: 30px;
+    font-size: 28px;
 }
                       
 h1 {
@@ -39,7 +39,6 @@ h6 {
 	font-family: 'Beeunhye';
     font-size: 30px;
 }
-
                 
 h2 {
 	font-family: 'Beeunhye';
