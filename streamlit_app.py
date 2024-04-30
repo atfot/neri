@@ -15,18 +15,19 @@ if 'messages' not in st.session_state:
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
         st.session_state.screen_setting = 'mobile' if x < 662 else 'pc'
-
+    
+    if 'korean_mode' not in st.session_state:
+        st.session_state.korean_mode = 1
 
     col1,col2=st.columns([6,4])
     with col1:
         language_selection=st.toggle('한국어/English')
+    st.session_state.korean_mode=0 if language_selection else 1
 
-    if not language_selection: 
-        st.session_state['korean_mode']=1
+    if st.session_state['korean_mode']==1: 
         st.markdown('<p><b>Korean Language Mode</b></p>', unsafe_allow_html=True)
 
-    if language_selection: 
-        st.session_state['korean_mode']=0
+    if st.session_state['korean_mode']==0: 
         st.markdown('<p><b>영어 모드</b></p>', unsafe_allow_html=True)
 
     
