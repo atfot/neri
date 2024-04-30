@@ -40,10 +40,7 @@ if 'messages' not in st.session_state:
     font-style: normal;
 }
     """
-    st.markdown(f'<style>{custom_css}</style>', unsafe_allow_html=True)
-    
-    st.subheader("Hi,I’m trying to use the custom font for my streamlit application but it’s not working. Here is my code for custom font")
-
+    st.markdown(f'<style>{custom_css}</style><p>hihi</p>', unsafe_allow_html=True)
     language_selection=st.toggle('**한국어 버전/English Version**', value=False if st.session_state.korean_mode==1 else True)
 
     col1,col2=st.columns([7.75,2.25])
