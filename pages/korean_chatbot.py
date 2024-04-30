@@ -139,7 +139,7 @@ def main():
             
             system_prompt=f"""```
                 # Primary Assistant Guidance
-                Your goal is to help me, the playwright, write a script for a play. Let's go step-by-step:
+                Your role is to help me, the playwright, write a script for a play. Let's go step-by-step:
 
                 # Information about the play
                 - Conversation between one mentally ill person and one psychotherapist
@@ -183,7 +183,7 @@ def main():
             user_prompt_1=f"""
                 ```
                 # My requests: 
-                Your goal is to help me, the playwright, write a script for a play. Let's go step-by-step:
+                Your role is to help me, the playwright, write a script for a play. Let's go step-by-step:
 
                 - Read this step by step before filling out the form.
                 **Summary of the conversation**: [{st.session_state.message_summary}]
