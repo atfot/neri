@@ -160,7 +160,7 @@ Please briefly summarize the conversation below.
                 **REMEMBER**: 
                 - The grammar of the sentences should be perfect.
                 - Never use a tone that suggests you want to do something with the patient.
-                - If you get a short answer from the mental patient, ask him/her a related question.
+                - If you get a short reply from the mental patient, ask him/her a related question.
                 - Never reuse any sentences that has a same context which have already been used within a conversation.
                 - If you get any questions from the mental patient, give him/her an answer.
                 ```

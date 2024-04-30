@@ -199,7 +199,7 @@ def main():
                 **REMEMBER**: 
                 - The grammar of the sentences should be perfect.
                 - Never use a tone that suggests you want to do something with the patient.
-                - If you get a short answer from the mental patient, ask him/her a related question.
+                - If you get a short reply from the mental patient, ask him/her a related question.
                 - Never reuse any sentences that has a same context which have already been used within a conversation.
                 - If you get any questions from the mental patient, give him/her an answer.
                 ```
@@ -256,7 +256,7 @@ def main():
                 
                 **Conversation content**: [{st.session_state.conversations}]
 
-                **Three possible answers from a korean psychotherapist who wants to know about his patient**: 
+                **Three possible answers from a korean psychotherapist who wants to learn about his patient**: 
                 "[{msg}]"
 
                 - After reading the informations above, please **pick the best response from three possible answers** considering psychotherapist's intention. 
