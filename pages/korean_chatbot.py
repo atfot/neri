@@ -202,7 +202,7 @@ def main():
                 - Country of Origin : South Korea
                 - City of residence : Seoul
                 - Characteristics : Neri knows the information of {st.session_state.username}, a mentally ill person, and conducts psychotherapy based on it
-                
+
                 **Summary of the conversation**: [{st.session_state.message_summary}]
                 **Latest Conversations**: [{st.session_state.conversations}]     
                 
@@ -236,7 +236,7 @@ def main():
             ],
             temperature=1,
             max_tokens=1028,
-            top_p=0.9,
+            top_p=1,
             frequency_penalty=1,
             presence_penalty=1
         )
