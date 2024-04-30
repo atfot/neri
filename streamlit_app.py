@@ -35,16 +35,17 @@ if 'messages' not in st.session_state:
 
     col1,col2=st.columns([7,3])
     with col1:
+        language_selection=st.toggle('**한국어/English**', value=False if st.session_state.korean_mode==1 else True)
         if st.session_state.korean_mode==1: 
+            st.markdown('<p><b>Korean Language Mode</b></p>', unsafe_allow_html=True)
             st.markdown('<center><h1>ᆞ네ᆞᆞ리ᆞ</h1></center>', unsafe_allow_html=True)
         if st.session_state.korean_mode==0:
+            st.markdown('<p><b>영어 모드</b></p>', unsafe_allow_html=True)
             st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
     with col2:
         st.title('')
-        language_selection=st.toggle('**한국어/English**', value=False if st.session_state.korean_mode==1 else True)
+        st.title('')
         if not language_selection:
-            st.markdown('<p><b>Korean Language Mode</b></p>', unsafe_allow_html=True)
-            st.title('')
             st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)
             
             username = st.text_input("**아이디**")
@@ -149,8 +150,6 @@ if 'messages' not in st.session_state:
 
         if language_selection: 
             st.session_state.korean_mode=0
-            st.markdown('<p><b>영어 모드</b></p>', unsafe_allow_html=True)
-            st.title('')
             st.markdown('<div style="text-align: right;"><p><h6>Please login</h6></p></div>',unsafe_allow_html=True)
             
             username = st.text_input("**ID**")
