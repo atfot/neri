@@ -198,7 +198,7 @@ if st.session_state.fix_info==False:
   st.title('')
   st.markdown('<p><b>도움이 될만한 행동들 : </b></p>', unsafe_allow_html=True)
   for i in st.session_state.what_to_do:
-    st.write(i)
+    st.markdown(f'<p>{i}</p>',unsafe_allow_html=True)
   st.title('')
   st.markdown('<p><h3><center>고민 해결도 그래프</center></h3></p>', unsafe_allow_html=True)
   if time.localtime().tm_mon<10:
