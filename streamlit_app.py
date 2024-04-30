@@ -51,7 +51,7 @@ if 'messages' not in st.session_state:
             password = st.text_input("**비밀번호**", type="password")
 
             if st.session_state.screen_setting=='pc':
-                if st.button("**로그인**", type="primary",use_container_width=True):
+                if st.button("<h6>로그인</h6>", type="primary",use_container_width=True):
                     if st.session_state.many_login_attempt==False:
                         if username == st.session_state.id and password == st.session_state.pw:
                             st.session_state.logged_in = True
