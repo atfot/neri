@@ -33,6 +33,10 @@ p {
 	font-family: 'Beeunhye';
 	font-size: 30px;
 }
+h1 {
+	font-family: 'Beeunhye';
+	font-size: 40px;
+}                                       
 h3 {
 	font-family: 'Beeunhye';
 	font-size: 40px;
