@@ -25,27 +25,6 @@ if 'messages' not in st.session_state:
 	font-family: 'Beeunhye';
     font-size: 24px;
 }
-                
-p {
-	font-family: 'Beeunhye';
-    font-size: 28px;
-}
-                      
-h1 {
-	font-family: 'Beeunhye';
-    font-size: '36px';
-}      
-
-                
-h2 {
-	font-family: 'Beeunhye';
-    font-size: '34px';
-}
-                    
-h6 {
-	font-family: 'Beeunhye';
-    font-size: 30px;
-}
 
 </style>
 """, unsafe_allow_html=True)
