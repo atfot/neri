@@ -33,9 +33,9 @@ p {
 	font-family: 'Beeunhye';
 	font-size: 30px;
 }
-li {
+h3 {
 	font-family: 'Beeunhye';
-	font-size: 30px;
+	font-size: 32px;
 }                   
 </style>
 """, unsafe_allow_html=True)
