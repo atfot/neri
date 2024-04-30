@@ -337,7 +337,7 @@ def main():
             my_bar.progress(75,text=progress_text)
             try:
                 humanize_msg = sentence_selection.choices[0].message.content
-                junk=[':',')','}',']','>']
+                junk=[':',')','}',']','>','**']
                 for i in junk:
                     if humanize_msg.find(i)!=-1:
                       humanize_msg = humanize_msg[humanize_msg.find(i)+1:].strip().strip().strip('"').strip("'")
