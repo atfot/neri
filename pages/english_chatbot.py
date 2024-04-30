@@ -14,13 +14,12 @@ if 'client' not in st.session_state:
   st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
 
 if 'username' not in st.session_state:
-   st.session_state.username=st.secrets.user_name
-   st.session_state.age=st.secrets.age
-   st.session_state.gender=st.secrets.user_gender
-   st.session_state.gender=st.secrets.user_gender
-   st.session_state.problem=st.secrets.problem
-   st.session_state.problem_explanation=st.secrets.problem_explanation
-   st.session_state.goal=st.secrets.goal
+   st.session_state.username=st.secrets.user_name_2
+   st.session_state.age=st.secrets.age_2
+   st.session_state.gender=st.secrets.user_gender_2
+   st.session_state.problem=st.secrets.problem_2
+   st.session_state.problem_explanation=st.secrets.problem_explanation_2
+   st.session_state.goal=st.secrets.goal_2
 
 # variables
 if "messages" not in st.session_state:

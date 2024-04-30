@@ -23,7 +23,6 @@ if 'username' not in st.session_state:
    st.session_state.username=st.secrets.user_name
    st.session_state.age=st.secrets.age
    st.session_state.gender=st.secrets.user_gender
-   st.session_state.gender=st.secrets.user_gender
    st.session_state.problem=st.secrets.problem
    st.session_state.problem_explanation=st.secrets.problem_explanation
    st.session_state.goal=st.secrets.goal
