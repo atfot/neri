@@ -23,7 +23,7 @@ if 'messages' not in st.session_state:
 
 * {
 	font-family: 'Beeunhye';
-    font-size: 20px;
+    font-size: 30px;
 }</style>
 """, unsafe_allow_html=True)
     st.session_state.logged_in = False
