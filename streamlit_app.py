@@ -34,16 +34,19 @@ p {
 h1 {
 	font-family: 'Beeunhye';
     font-size: '36px';
-}          
-h6 {
-	font-family: 'Beeunhye';
-    font-size: 30px;
-}
+}      
+
                 
 h2 {
 	font-family: 'Beeunhye';
     font-size: '34px';
 }
+                    
+h6 {
+	font-family: 'Beeunhye';
+    font-size: 30px;
+}
+
 </style>
 """, unsafe_allow_html=True)
     st.session_state.logged_in = False
