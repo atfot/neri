@@ -28,15 +28,16 @@ div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div:nth-child(2) > div > div > div > div
 	font-family: 'Beeunhye';
     font-size: 2em;
 }             
+                
 
 div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(4) > div > label > div > p {
 	font-family: 'Beeunhye';
-    font-size: 2em;
+    font-size: 2.25em;
 }             
                 
 div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(5) > div > label > div > p {
 	font-family: 'Beeunhye';
-    font-size: 2em;
+    font-size: 2.25em;
 }             
                 
                 
