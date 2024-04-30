@@ -26,6 +26,7 @@ def make_sidebar():
             st.write('')
             st.page_link("pages/korean_analysis.py", label="내 정보", icon="ℹ️")
             st.divider()
+            st.write('')
             st.page_link("pages/korean_instruction.py", label="사용법", icon="❓")
             st.divider()
 
