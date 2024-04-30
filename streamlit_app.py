@@ -35,7 +35,7 @@ if 'messages' not in st.session_state:
     with col1:
         language_selection=st.toggle('**한국어/English**', value=False if st.session_state.korean_mode==1 else True)
 
-    if language_selection: 
+    if not language_selection: 
         #st.session_state.korean_mode=1
         st.markdown('<p><b>Korean Language Mode</b></p>', unsafe_allow_html=True)
         st.markdown('<center><h1>ᆞ네ᆞᆞ리ᆞ</h1></center>', unsafe_allow_html=True)
@@ -141,7 +141,7 @@ if 'messages' not in st.session_state:
             st.session_state.find_my_pw = False
             st.switch_page('pages/find_my_pw.py')
 
-    if not language_selection: 
+    if language_selection: 
         st.session_state.korean_mode=0
         st.markdown('<p><b>영어 모드</b></p>', unsafe_allow_html=True)
         st.markdown('<center><h2>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h2></center>', unsafe_allow_html=True)
