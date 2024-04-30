@@ -37,7 +37,7 @@ p {
 	font-family: 'Beeunhye';
 	font-size: 36px;
 }       
-#\35 1a57d4f {
+h3 {
 	font-family: 'Beeunhye';
 	font-size: 32px;
 }       
