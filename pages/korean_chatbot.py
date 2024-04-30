@@ -184,7 +184,6 @@ def main():
                 ```
                 # My requests: 
                 Your goal is to help me, the playwright, write a script for a play. Let's go step-by-step:
-                - Please read the form below step by step and answer the questions in the exact form below
 
                 - Read this step by step before filling out the form
                 **Summary of the conversation**: [{st.session_state.message_summary}]
