@@ -20,6 +20,11 @@ if 'messages' not in st.session_state:
     font-style: normal;
 }
 
+* {
+	font-family: 'Beeunhye';
+    font-size: 24px;
+}
+                
 p {
 	font-family: 'Beeunhye';
     font-size: 30px;
@@ -37,7 +42,6 @@ h1 {
 h2 {
 	font-family: 'Beeunhye';
 }
-
                 </style>
 """, unsafe_allow_html=True)
     st.session_state.logged_in = False
