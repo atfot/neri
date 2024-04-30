@@ -47,7 +47,7 @@ if 'messages' not in st.session_state:
             st.title('')
             st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)
             
-            username = st.text_input("**아이디**")
+            username = st.text_input("# 아이디")
             password = st.text_input("**비밀번호**", type="password")
 
             if st.session_state.screen_setting=='pc':
