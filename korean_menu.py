@@ -33,6 +33,10 @@ p {
 	font-family: 'Beeunhye';
 	font-size: 30px;
 }
+ul {
+	font-family: 'Beeunhye';
+	font-size: 30px;
+}                   
 </style>
 """, unsafe_allow_html=True)
         st.markdown("<h1>🧡 네리</h1>",unsafe_allow_html=True)
