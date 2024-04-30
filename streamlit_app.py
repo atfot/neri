@@ -21,17 +21,15 @@ if 'messages' not in st.session_state:
 
     language_selection=st.toggle('**한국어/English**')
     st.session_state.korean_mode=0 if language_selection else 1
-    def toggle_bool_value():
-        True if st.session_state.korean_mode==1 else False
 
     if st.session_state['korean_mode']==1: 
-        st.toggle('test',value=toggle_bool_value)
+        st.toggle('test',value=True if st.session_state.korean_mode==1 else False)
         st.markdown('<p><b>Korean Language Mode</b></p>', unsafe_allow_html=True)
         if st.button('로그인'):
             st.switch_page('pages/login_page.py')
 
     if st.session_state['korean_mode']==0: 
-        st.toggle('test',value=toggle_bool_value)
+        st.toggle('test',value=True if st.session_state.korean_mode==1 else False)
         st.markdown('<p><b>영어 모드</b></p>', unsafe_allow_html=True)
         if st.button('Log in'):
             st.switch_page('pages/login_page.py')
