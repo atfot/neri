@@ -41,7 +41,12 @@ def make_sidebar():
 	font-family: 'Beeunhye';
 	font-size: 1.25em;
 }       
+
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section.st-emotion-cache-ugcgyn.eczjsme11 > div.st-emotion-cache-6qob1r.eczjsme3 > div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div:nth-child(9) > div > button > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.25em;
 }       
+       
 </style>
 """, unsafe_allow_html=True)
         st.markdown("<h1>🧡 네리</h1>",unsafe_allow_html=True)
