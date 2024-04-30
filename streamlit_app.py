@@ -31,9 +31,7 @@ if 'messages' not in st.session_state:
         st.session_state.id = False
         st.session_state.pw = False
 
-    def apply_custom_css(css):
-        st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
-
+    
     custom_css = """
     @font-face {
     font-family: 'Beeunhye';
@@ -42,9 +40,8 @@ if 'messages' not in st.session_state:
     font-style: normal;
 }
     """
-
-    apply_custom_css(custom_css)
-
+    st.markdown(f'<style>{custom_css}</style>', unsafe_allow_html=True)
+    
     st.subheader("Hi,I’m trying to use the custom font for my streamlit application but it’s not working. Here is my code for custom font")
 
     language_selection=st.toggle('**한국어 버전/English Version**', value=False if st.session_state.korean_mode==1 else True)
