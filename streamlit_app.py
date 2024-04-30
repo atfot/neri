@@ -70,7 +70,10 @@ if 'messages' not in st.session_state:
 	font-family: 'Beeunhye';
     font-size: 1.75em;
 }
-                
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+    font-size: 1.75em;
+}
 </style>
 """, unsafe_allow_html=True)
     st.session_state.logged_in = False
