@@ -186,23 +186,6 @@ def main():
                 Your goal is to help me, the playwright, write a script for a play. Let's go step-by-step:
 
                 - Read this step by step before filling out the form.
-                **Character information**: 
-                1. mentally ill person
-                - Name: {st.session_state.username}
-                - Age: {st.session_state.age}
-                - Gender: {st.session_state.gender}
-                - Problem : {st.session_state.problem}
-                - Problem Explanation: {st.session_state.problem_explanation}
-                - Goal : {st.session_state.goal}
-
-                2. psychological counselor
-                - Name : Neri
-                - Age : 55 years old
-                - Gender: Male
-                - Country of Origin : South Korea
-                - City of residence : Seoul
-                - Characteristics :Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him, asking him a variety of questions
-
                 **Summary of the conversation**: [{st.session_state.message_summary}]
                 **Latest Conversations**: [{st.session_state.conversations}]     
                 
