@@ -47,6 +47,9 @@ if 'messages' not in st.session_state:
     st.subheader("Hi,I’m trying to use the custom font for my streamlit application but it’s not working. Here is my code for custom font")
 
     apply_custom_css(custom_css)
+
+    st.subheader("Hi,I’m trying to use the custom font for my streamlit application but it’s not working. Here is my code for custom font")
+
     language_selection=st.toggle('**한국어 버전/English Version**', value=False if st.session_state.korean_mode==1 else True)
 
     col1,col2=st.columns([7.75,2.25])
