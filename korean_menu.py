@@ -33,8 +33,6 @@ def make_sidebar():
 
 ''')
             st.divider()
-            st.write('''
-''')
             st.page_link("pages/korean_instruction.py", label="사용법", icon="❓")
             st.write('''
 
