@@ -231,7 +231,8 @@ def main():
             messages=[
             {
                 "role": "system",
-                "content": f"""#Primary System Guidance
+                "content": f"""
+                #Primary System Guidance
                 Your role is to read the script's dialogue, summary, and examples of the three answers and choose the best sentence from the three. Let's go step-by-step:
 
                 # Information about the play
@@ -275,7 +276,7 @@ def main():
                 "role": "user",
                 "content": f"""
                 # My request:
-                Read the summary, dialogue, and examples of the three answers and choose the best sentence from the three. Lets go step by step-
+                Read the summary, dialogue, and examples of the three answers and choose the best sentence from the three. Lets go step by step:
 
                 - Read these informations carefully before answering my question.
                 **Summary of the conversation**: [{st.session_state.message_summary}]
