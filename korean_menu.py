@@ -35,7 +35,7 @@ p {
 }
 h3 {
 	font-family: 'Beeunhye';
-	font-size: 32px;
+	font-size: 40px;
 }                   
 </style>
 """, unsafe_allow_html=True)
