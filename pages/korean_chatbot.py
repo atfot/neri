@@ -138,7 +138,7 @@ def main():
             my_bar=st.progress(0,text=progress_text)
             
             system_prompt=f"""```
-                # Primary Assistant Guidance
+                # Primary System Guidance
                 Your goal is to help me, the playwright, write a script for a play. Let's go step-by-step:
 
                 # Information about the play
@@ -209,7 +209,7 @@ def main():
             model="gpt-3.5-turbo-0125",
             messages=[
             {
-                "role": "assistant",
+                "role": "system",
                 "content": f"{system_prompt}"
             },
             {
