@@ -24,15 +24,10 @@ def make_sidebar():
     font-weight: normal;
     font-style: normal;
 }
-
-* {
-	font-family: 'Beeunhye';
-    font-size: 24px;
-}
                 
 p {
 	font-family: 'Beeunhye';
-    font-size: 22px;
+    font-size: 24px;
 }
 
 h1 {
@@ -42,7 +37,7 @@ h1 {
 
 </style>
 """, unsafe_allow_html=True)
-        st.title("🧡 네리")
+        st.markdown("<h1>🧡 네리</h1>",unsafe_allow_html=True)
         st.write("")
         st.write("")
 
