@@ -31,16 +31,6 @@ if 'messages' not in st.session_state:
         st.session_state.id = False
         st.session_state.pw = False
 
-    
-    custom_css = """
-    @font-face {
-    font-family: 'Beeunhye';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-    """
-    st.markdown(f'<style>{custom_css}</style><p>hihi</p>', unsafe_allow_html=True)
     language_selection=st.toggle('**한국어 버전/English Version**', value=False if st.session_state.korean_mode==1 else True)
 
     col1,col2=st.columns([7.75,2.25])
