@@ -21,6 +21,25 @@ if 'messages' not in st.session_state:
     font-style: normal;
 }
 
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section > div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(6) > div > button > div > p > strong {
+	font-family: 'Beeunhye';
+    font-size: 1.5em;
+}             
+
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section > div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(7) > div > button > div > p > strong {
+	font-family: 'Beeunhye';
+    font-size: 1.5em;
+}        
+
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section > div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(8) > div > button > div > p > strong {
+	font-family: 'Beeunhye';
+    font-size: 1.5em;
+}     
+                
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section > div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(9) > div > button > div > p > strong {
+	font-family: 'Beeunhye';
+    font-size: 1.5em;
+}     
                 
 #ce27b8f > div > span > center {
 	font-family: 'Beeunhye';
