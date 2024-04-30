@@ -320,6 +320,7 @@ def main():
         )
             my_bar.progress(75,text=progress_text)
             humanize_msg = sentence_selection.choices[0].message.content
+            st.session_state.final_msg=huamnize_msg
             try:
                 junk=[':',')','}',']','>','**']
                 for i in junk:
@@ -340,6 +341,7 @@ def main():
             with col1:
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
                 st.write(st.session_state.msg)
+                st.write(st.session_state.final_msg)
                 #st.write(st.session_state.messages)
                 #st.write(st.session_state.conversations)
             with col2:
@@ -355,6 +357,7 @@ def main():
             with col1:
                 st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
                 st.write(st.session_state.msg)
+                st.write(st.session_state.final_msg)
                 #st.session_state.conversations
             with col2:
                 st.write('')
