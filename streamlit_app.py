@@ -71,7 +71,7 @@ h2 {
     col1,col2=st.columns([7.75,2.25])
     with col1:
         if not language_selection: 
-            st.markdown('<center><h1>ᆞ네ᆞᆞ리ᆞ</h1></center>', unsafe_allow_html=True)
+            st.markdown('<h1><center>ᆞ네ᆞᆞ리ᆞ</center></h1>', unsafe_allow_html=True)
         if language_selection:
             st.session_state.korean_mode=0
             st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
