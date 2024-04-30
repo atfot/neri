@@ -163,7 +163,7 @@ def main():
                 - Gender: Male
                 - Country of Origin : South Korea
                 - City of residence : Seoul
-                - Characteristics : Neri knows the information of {st.session_state.username}, a mentally ill person, and talks to him/her
+                - Characteristics : Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him, asking him a variety of questions
 
                 **REMEMBER**: 
                 '''
@@ -201,7 +201,7 @@ def main():
                 - Gender: Male
                 - Country of Origin : South Korea
                 - City of residence : Seoul
-                - Characteristics : Neri knows the information of {st.session_state.username}, a mentally ill person, and talks to him/her
+                - Characteristics :Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him, asking him a variety of questions
 
                 **Summary of the conversation**: [{st.session_state.message_summary}]
                 **Latest Conversations**: [{st.session_state.conversations}]     
