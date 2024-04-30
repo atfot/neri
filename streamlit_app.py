@@ -27,7 +27,7 @@ if 'messages' not in st.session_state:
 }               
 #root > div:nth-child(1) > div.withScreencast > div > div > div > section > div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(4) > div > label > div > p > strong {
 	font-family: 'Beeunhye';
-    font-size: 1.75em;
+    font-size: 1em;
 }
 #root > div:nth-child(1) > div.withScreencast > div > div > div > section > div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(5) > div > label > div > p > strong {
 	font-family: 'Beeunhye';
@@ -37,7 +37,7 @@ if 'messages' not in st.session_state:
 	font-family: 'Beeunhye';
     font-size: 1.75em;
 }
-
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section > div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div:nth-child(3) > div > label > div.st-bl.st-bm.st-bn.st-bo.st-bp.st-bq.st-br.st-bs.st-bt.st-bu.st-bv > div > div > p > strong
 </style>
 """, unsafe_allow_html=True)
     st.session_state.logged_in = False
