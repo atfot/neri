@@ -24,7 +24,7 @@ div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > butt
 	font-family: 'Beeunhye';
     font-size: 1.75em;
 }             
-                
+
 div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(4) > div > label > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
@@ -64,7 +64,7 @@ div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(9) > di
 }
 div.st-bl.st-bm.st-bn.st-bo.st-bp.st-bq.st-br.st-bs.st-bt.st-bu.st-bv > div > div > p{
 	font-family: 'Beeunhye';
-    font-size: 1.5em;
+    font-size: 1.75em;
 }
 
 </style>
