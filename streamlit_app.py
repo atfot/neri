@@ -179,7 +179,7 @@ div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(10) > d
             if st.session_state.get("logged_in", True):
                 st.success("로그인되었습니다!",  icon="✅")
                 st.session_state.login_attempt=0
-                sleep(60)
+                sleep(0.5)
                 st.switch_page("pages/korean_chatbot.py")
             if st.session_state.get('login_error', True):
                 if st.session_state.login_attempt<6:
