@@ -162,7 +162,7 @@ div.st-bl.st-bm.st-bn.st-bo.st-bp.st-bq.st-br.st-bs.st-bt.st-bu.st-bv > div > di
             if st.session_state.get("logged_in", True):
                 st.success("로그인되었습니다!",  icon="✅")
                 st.session_state.login_attempt=0
-                sleep(0.5)
+                sleep(60)
                 st.switch_page("pages/korean_chatbot.py")
             if st.session_state.get('login_error', True):
                 if st.session_state.login_attempt<6:
