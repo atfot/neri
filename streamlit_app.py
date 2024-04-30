@@ -108,9 +108,7 @@ if 'messages' not in st.session_state:
                 st.switch_page("pages/korean_chatbot.py")
             if st.session_state.get('login_error', True):
                 if st.session_state.login_attempt<6:
-                    st.error(f"""
-                             
-                             아이디 또는 비밀번호를 확인해주세요({st.session_state.login_attempt}/5)""", icon="🚨")
+                    st.error(f"아이디 또는 비밀번호를 확인해주세요({st.session_state.login_attempt}/5)", icon="🚨")
             if st.session_state.get("login_error", False):
                 pass
             if st.session_state.get('signin', True):
