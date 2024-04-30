@@ -27,17 +27,14 @@ p {
                 
 h6 {
 	font-family: 'Beeunhye';
-    font-size: 30px;
 }
                 
 h1 {
 	font-family: 'Beeunhye';
-    font-size: 30px;
 }
                 
 h2 {
 	font-family: 'Beeunhye';
-    font-size: 30px;
 }
 
                 </style>
