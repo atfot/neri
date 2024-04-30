@@ -24,6 +24,11 @@ def make_sidebar():
     font-weight: normal;
     font-style: normal;
 }
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section.st-emotion-cache-10huuw2.eczjsme11 > div.st-emotion-cache-6qob1r.eczjsme3 > div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > div > div > div > h1 {
+	font-family: 'Beeunhye';
+	font-size: 2.5em;
+}
+                    
 #root > div:nth-child(1) > div.withScreencast > div > div > div > section.st-emotion-cache-ugcgyn.eczjsme11 > div.st-emotion-cache-6qob1r.eczjsme3 > div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div:nth-child(2) > div > div > div > h1 {
 	font-family: 'Beeunhye';
 	font-size: 2.5em;
