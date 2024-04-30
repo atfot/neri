@@ -22,7 +22,7 @@ st.markdown("""
 
 span.st-emotion-cache-10trblm {
 	font-family: 'Beeunhye';
-	font-size: 36px;
+	font-size: 2em;
 }       
 </style>
 """, unsafe_allow_html=True)
