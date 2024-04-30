@@ -38,9 +38,14 @@ div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(6) > di
 	font-family: 'Beeunhye';
     font-size: 1.5em;
 }
+
 div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(7) > div > button > div > p{
 	font-family: 'Beeunhye';
     font-size: 1.5em;
+}
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(8) > div > button > div > p{
+font-family: 'Beeunhye';
+font-size: 1.5em;
 }
 .st-emotion-cache-10trblm.e1nzilvr1 {
 	font-family: 'Beeunhye';
