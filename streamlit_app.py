@@ -33,7 +33,7 @@ if 'messages' not in st.session_state:
 	font-family: 'Beeunhye';
     font-size: 1.75em;
 }
-#\33 b82adb8 > div > span {
+.st-emotion-cache-10trblm.e1nzilvr1 {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
 }
