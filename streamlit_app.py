@@ -20,9 +20,13 @@ if 'messages' not in st.session_state:
     font-weight: normal;
     font-style: normal;
 }
-div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > button > div > p {
+div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div:nth-child(1) > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
-    font-size: 1.75em;
+    font-size: 2em;
+}             
+div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div:nth-child(2) > div > div > div > div > div > button > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
 }             
 
 div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(4) > div > label > div > p {
@@ -78,6 +82,8 @@ div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(10) > d
     font-size: 2em;
 }             
 
+
+                
 </style>
 """, unsafe_allow_html=True)
     st.session_state.logged_in = False
