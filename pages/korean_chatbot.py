@@ -21,6 +21,7 @@ if 'username' not in st.session_state:
    st.session_state.problem_explanation=st.secrets.problem_explanation
    st.session_state.goal=st.secrets.goal
 
+
 # variables
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]

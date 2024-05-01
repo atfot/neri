@@ -209,6 +209,7 @@ if 'messages' not in st.session_state:
                 pass
             if st.session_state.get('signin', True):
                 st.success("Welcome to Neri!", icon="🧡")
+                st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 sleep(0.5)
                 st.switch_page("pages/signin_2.py")
