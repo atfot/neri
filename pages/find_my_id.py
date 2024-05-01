@@ -61,12 +61,21 @@ div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth
 	font-family: 'Beeunhye';
     font-size: 1.75em;
 }
-                        
+            
 div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(6) > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
 }
+            
+div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(7) > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+    font-size: 1.75em;
+}
 
+div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(8) > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+    font-size: 1.75em;
+}
             </style>
 """, unsafe_allow_html=True)
 if 'id' not in st.session_state:
