@@ -11,6 +11,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 make_sidebar()
+
 def fix_info():
   st.session_state.fix_info=True
 
@@ -112,7 +113,7 @@ col1,col2,col3=st.columns([4,1,5])
 with col1:
   if st.session_state.fix_info==False:
     st.write('')
-    st.subheader('Your Profile')
+    st.markdown('<h4>Your Profile</h4>',unsafe_allow_html=True)
     st.markdown(f'''
                 <p>
                 <b>1. Your Name : </b>{st.session_state.username}
@@ -165,34 +166,34 @@ with col3:
   else:
     with st.form('fix_user_info'):
       x=0
-      st.write("Now you can fix your info😊")
-      username = st.text_input('Tell me the name you want to be called in here.')
+      st.write("**Now you can fix your info😊**")
+      username = st.text_input('**Tell me the name you want to be called in here.**')
       if username:
           x+=1
           st.session_state.username=username
-      problem = st.text_area("What's your biggest problem right now?🤔")
+      problem = st.text_area("**What's your biggest problem right now?🤔**")
       if problem:
           x+=1
           st.session_state.problem=problem
-      problem_explanation=st.text_area("Please describe your issue in more detail. The more details you can provide, the better😊")
+      problem_explanation=st.text_area("**Please describe your issue in more detail. The more details you can provide, the better😊**")
       if problem_explanation:
           x+=1
           st.session_state.problem_explanation=problem_explanation
-      goal=st.text_area("Tell us what your end goal is!")
+      goal=st.text_area("**Tell us what your end goal is!**")
       if goal:
           x+=1
           st.session_state.goal=goal
-      if st.form_submit_button('Submit'):
+      if st.form_submit_button('**Submit**'):
         if x==4:
-          st.write('Your user profile is fixed👍')
+          st.write('**Your user profile is fixed👍**')
           time.sleep(2)
           del st.session_state.my_info
           st.rerun()
         else:
-          st.write('Please fill every blanks🙃')
+          st.write('**Please fill every blanks🙃**')
 if st.session_state.fix_info==False:
   st.title('')
-  st.markdown('<p><b>Actions that might help you :</b></p>', unsafe_allow_html=True)
+  st.markdown('<p><h4>Actions that might help you :</h4></p>', unsafe_allow_html=True)
   for i in st.session_state.what_to_do:
     st.write(i)
   st.title('')
