@@ -25,7 +25,7 @@ div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth
 }
 #change-your-id > div > span {
 	font-family: 'Beeunhye';
-    font-size: 2.5em;
+    font-size: 2.25em;
 }
 
             </style>
