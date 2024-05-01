@@ -45,13 +45,11 @@ div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > button > 
 	font-size: 1.75em;
 }     
 
-/* 도움이 될만한 행동들 */         
+/* 도움이 될만한 행동들 리스트 */      
 div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
 }     
-            
-/* 도움이 될만한 행동들 리스트 */  
 
 </style>
 """, unsafe_allow_html=True)
