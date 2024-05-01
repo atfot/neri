@@ -24,8 +24,14 @@ div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
 }             
-
-  
+   
+/* 아이디 비번 찾기 */
+div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > button > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}
+        
+              
 /* share 버튼 */
 div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > span {
 	font-family: 'Beeunhye';
@@ -38,7 +44,7 @@ div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > label > d
     font-size: 2.25em;
 }             
          
-/* 모든 버튼(PC 전용) */                
+/* 로그인_새로오신분 */                
 div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
