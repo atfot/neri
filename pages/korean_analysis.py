@@ -22,7 +22,7 @@ st.markdown("""
             /* 정보를 바꿔주세요 */
             div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div:nth-child(1) > div > div > p {
             font-family: 'Beeunhye';
-            font-size: 2em;
+            font-size: 2.25em;
             }
 
             /* 정보 수정칸 */
