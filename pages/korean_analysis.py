@@ -184,7 +184,7 @@ with col3:
   else:
     with st.form('fix_user_info'):
       x=0
-      st.write("정보를 바꿔주세요😊")
+      st.write("**정보를 바꿔주세요😊**")
       username = st.text_input('무슨 이름으로 불리고 싶으신가요?')
       if username:
           x+=1
