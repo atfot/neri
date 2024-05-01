@@ -70,7 +70,7 @@ div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(4) > di
 
 div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
-    font-size: 1.75em;
+    font-size: 2em;
 }
 
 </style>
@@ -180,25 +180,25 @@ if st.session_state.korean_mode==1:
                     col1,col2=st.columns([5,5])
                     with col1:
                         st.write(f"""
-    아이디: {st.session_state.id}
+    **아이디**: {st.session_state.id}
 
-    비밀번호: {st.session_state.pw}
+    **비밀번호**: {st.session_state.pw}
 
-    유저 이름: {st.session_state.username}
+    **유저 이름**: {st.session_state.username}
 
-    나이: {st.session_state.age}
+    **나이**: {st.session_state.age}
 
-    국적: {st.session_state.nationality}
+    **국적**: {st.session_state.nationality}
 
-    도시: {st.session_state.city}
+    **도시**: {st.session_state.city}
 """)
                     with col2:
                         st.write(f"""
-                        고민: {st.session_state.problem}
+                        **고민**: {st.session_state.problem}
 
-                        고민에 대한 설명: {st.session_state.problem_explanation}
+                        **고민에 대한 설명**: {st.session_state.problem_explanation}
 
-                        목표: {st.session_state.goal}
+                        **목표**: {st.session_state.goal}
 """)
                     time.sleep(60)
                     del st.session_state.filled_input
@@ -285,25 +285,25 @@ if st.session_state.korean_mode==0:
                     col1,col2=st.columns([5,5])
                     with col1:
                         st.write(f"""
-    ID: {st.session_state.id}
+    **ID**: {st.session_state.id}
 
-    Password: {st.session_state.pw}
+    **Password**: {st.session_state.pw}
 
-    Username: {st.session_state.username}
+    **Username**: {st.session_state.username}
 
-    Age: {st.session_state.age}
+    **Age**: {st.session_state.age}
 
-    Nationality: {st.session_state.nationality}
+    **Nationality**: {st.session_state.nationality}
 
-    City: {st.session_state.city}
+    **City**: {st.session_state.city}
 """)
                     with col2:
                         st.write(f"""
-                        Problem: {st.session_state.problem}
+                        **Problem**: {st.session_state.problem}
 
-                        Problem description: {st.session_state.problem_explanation}
+                        **Problem description**: {st.session_state.problem_explanation}
 
-                        Goal: {st.session_state.goal}
+                        **Goal**: {st.session_state.goal}
 """)
                     time.sleep(5)
                     del st.session_state.filled_input
