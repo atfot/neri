@@ -22,12 +22,13 @@ div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > button > div > p {
 div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(2) > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
-}     
+}
+#change-your-id > div > span {
+	font-family: 'Beeunhye';
+    font-size: 2.5em;
+}
 
-
-
-                
-</style>
+            </style>
 """, unsafe_allow_html=True)
 if 'id' not in st.session_state:
    st.session_state.id=st.secrets.user_id
