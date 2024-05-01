@@ -236,7 +236,7 @@ if 'messages' not in st.session_state:
             if st.session_state.get("logged_in", True):
                 st.success("로그인되었습니다!",  icon="✅")
                 st.session_state.login_attempt=0
-                sleep(0.5)
+                sleep(30)
                 st.switch_page("pages/korean_chatbot.py")
             if st.session_state.get('login_error', True):
                 if st.session_state.login_attempt<6:
