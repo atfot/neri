@@ -11,7 +11,49 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 make_sidebar()
-st.markdown(st.secrets.analysis_css, unsafe_allow_html=True)
+st.markdown("""
+<style>
+@font-face {
+    font-family: 'Beeunhye';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.st-emotion-cache-10trblm {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}       
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section.main.st-emotion-cache-uf99v8.ea3mdgi8 > div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div:nth-child(3) > div > div > p{
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}     
+            
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section.main.st-emotion-cache-uf99v8.ea3mdgi8 > div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}     
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section.main.st-emotion-cache-uf99v8.ea3mdgi8 > div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div:nth-child(4) > div > button > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}     
+            
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section.main.st-emotion-cache-uf99v8.ea3mdgi8 > div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div:nth-child(4) > div > div > p > b {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}     
+            
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section.main.st-emotion-cache-uf99v8.ea3mdgi8 > div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}     
+            
+div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > div > div > ul > li {
+	font-family: 'Beeunhye';
+	font-size: 2em;
+}
+</style>
+""", unsafe_allow_html=True)
 
 def fix_info():
   st.session_state.fix_info=True
