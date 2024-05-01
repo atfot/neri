@@ -38,21 +38,20 @@ div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div > d
     font-size: 2em;
 }
             
+            
 /* 이대로 저장할까요? */
 div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(2) > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
             
+/* share 버튼 */
 div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > span {
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
 
-div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(5) > div > div > div > div > div > div > p  {
-	font-family: 'Beeunhye';
-    font-size: 1.75em;
-}
+
             
 div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(6) > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
