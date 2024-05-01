@@ -27,6 +27,25 @@ div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth
 	font-family: 'Beeunhye';
     font-size: 2.25em;
 }
+div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(4) > div > label > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}
+            
+div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(5) > div > label > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}
+            
+div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(6) > div > label > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}
+            
+div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(7) > div > label > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}
 
             </style>
 """, unsafe_allow_html=True)
