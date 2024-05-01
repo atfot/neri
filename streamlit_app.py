@@ -42,27 +42,14 @@ div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > s
     font-size: 2em;
 }               
 
-/* ID */
+/* ID_PW */
 div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > label > div > p {
 	font-family: 'Beeunhye';
     font-size: 2.25em;
 }             
          
-                
-                
-div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(6) > div > button > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-}             
-div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(7) > div > button > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-}             
-div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(8) > div > button > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-}             
-div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(9) > div > button > div > p {
+/* 모든 버튼(PC 전용) */                
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
 }             
