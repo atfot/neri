@@ -39,11 +39,11 @@ if 'messages' not in st.session_state:
         st.session_state.pw = False
    
     language_selection=st.toggle('**한국어 버전 / English Version**', value=toggle_boolean)
-    st.title('')
-    st.title('')
 
     col1,col2,col3=st.columns([6.4,0.2,3.4])
     with col1:
+        st.title('')
+        st.title('')
         if not language_selection: 
             st.session_state.korean_mode=1
             st.image('https://www.tailorbrands.com/wp-content/uploads/2021/09/Adidas-mountain-logo-768x299.jpg',use_column_width=True) 
