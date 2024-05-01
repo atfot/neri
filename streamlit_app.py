@@ -38,11 +38,7 @@ if 'messages' not in st.session_state:
         st.session_state.id = False
         st.session_state.pw = False
    
-    col1,col2=st.columns([9,1])
-    with col1:
-        language_selection=st.toggle('**한국어 버전/English Version**', value=toggle_boolean)
-    with col2:
-        hi=st.button('hi',use_container_width=True)
+    language_selection=st.toggle('**한국어 버전/English Version**', value=toggle_boolean)
 
     col1,col2=st.columns([7.75,2.25])
     with col1:
