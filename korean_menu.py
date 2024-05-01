@@ -16,7 +16,50 @@ def get_current_page_name():
 
 def make_sidebar():
     with st.sidebar:
-        st.markdown(st.secrets.menu_css, unsafe_allow_html=True)
+        st.markdown("""
+<style>
+@font-face {
+    font-family: 'Beeunhye';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 타이틀 */
+div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > div > div > div > h1{
+	font-family: 'Beeunhye';
+	font-size: 2.5em;
+}
+
+                    
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section.st-emotion-cache-ugcgyn.eczjsme11 > div.st-emotion-cache-6qob1r.eczjsme3 > div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div:nth-child(2) > div > div > div > h1 {
+	font-family: 'Beeunhye';
+	font-size: 2.5em;
+}
+   
+span.st-emotion-cache-ejysk0.e11k5jya0 > div > p {
+	font-family: 'Beeunhye';
+	font-size: 2em;
+}       
+
+div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > button > div > p {
+	font-family: 'Beeunhye';
+	font-size: 2em;
+}       
+div.st-emotion-cache-1a8c3n0.eeusbqq3 > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}       
+div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}       
+
+div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > span {
+	font-family: 'Beeunhye';
+	font-size: 2em;
+}  
+</style>
+""", unsafe_allow_html=True)
         st.title('🧡 네리')
         st.write("")
         st.write("")
