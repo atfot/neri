@@ -250,23 +250,23 @@ if st.session_state.korean_mode==0:
     if age:
         st.session_state.age=age
         st.session_state.filled_input+=1
-    nationality = st.text_input('Where are you from?',key='nationality')
+    nationality = st.text_input('Where are you from?',key='nationality_')
     if nationality:
         st.session_state.nationality=nationality
         st.session_state.filled_input+=1
-    city = st.text_input('Tell me which city are you living in.',key='city')
+    city = st.text_input('Tell me which city are you living in.',key='city_')
     if city:
         st.session_state.city=city
         st.session_state.filled_input+=1
-    problem = st.text_area("What's your biggest problem right now?🤔", key='problem')
+    problem = st.text_area("What's your biggest problem right now?🤔", key='problem_')
     if problem:
         st.session_state.problem=problem
         st.session_state.filled_input+=1
-    problem_explanation=st.text_area("Please describe your issue in more detail. The more details you can provide, the better😊", key='problem_explanation')
+    problem_explanation=st.text_area("Please describe your issue in more detail. The more details you can provide, the better😊", key='problem_explanation_')
     if problem_explanation:
         st.session_state.problem_explanation=problem_explanation
         st.session_state.filled_input+=1
-    goal=st.text_area("Tell us what your end goal is!", key='goal')
+    goal=st.text_area("Tell us what your end goal is!", key='goal_')
     if goal:
         st.session_state.goal=goal
         st.session_state.filled_input+=1   
