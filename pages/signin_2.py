@@ -20,7 +20,7 @@ st.markdown("""
 div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(2) > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
-    font-weight: bold
+    font-weight: bold;
 }
 
 /* share 버튼 */
@@ -35,10 +35,11 @@ div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > s
     font-size: 2.25em;
 }      
 
-/* 유저 이름_패스워드_새로 사용할 ID_다시 한번 적기 */
+/* 모든 작성란 설명 */
 div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div > div > label > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
+    font-weight: bold;
 }
 
 /* 에러 메세지 */
