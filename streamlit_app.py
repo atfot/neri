@@ -242,5 +242,12 @@ if 'messages' not in st.session_state:
         #if 'messages' in st.session_state:
             #if st.session_state['korean_mode']==1:
                 #st.switch_page("pages/page4.py")
-
+    st.markdown(
+        """
+        <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #87D4E5; padding: 15px; text-align: center;">
+            Developed By <a  href="https://drive.google.com/file/d/1l7duTvc4pWDJgZzY301wswYoIrfylC1G/view?usp=sharing" target="_blank">Hyun Kyu Cho</a> | Made with Streamlit | Powered By Gemini
+        </div>
+        """,
+        unsafe_allow_html=True
+    ) 
 
