@@ -147,7 +147,7 @@ if st.session_state.korean_mode==1:
     if city:
         st.session_state.city=city
         st.session_state.filled_input+=1
-    problem = st.text_area("당신을 가장 크게 괴롭히는 것이 무엇인가요?🤔", key='problem')
+    problem = st.text_area("당신을 가장 크게 괴롭히는 것이 무엇인가요?🤔", key='problem_')
     if problem:
         st.session_state.problem=problem
         st.session_state.filled_input+=1
