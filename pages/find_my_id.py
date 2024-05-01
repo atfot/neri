@@ -16,11 +16,7 @@ st.markdown("""
     font-style: normal;
 }
             
-/* 타이틀 */
-#change-your-id > div > span {
-	font-family: 'Beeunhye';
-    font-size: 2.25em;
-}
+
 
 
 
@@ -64,6 +60,7 @@ div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth
     font-size: 2em;
 }
 
+            
 .st-emotion-cache-10trblm {
 	font-family: 'Beeunhye';
     font-size: 2.25em;
