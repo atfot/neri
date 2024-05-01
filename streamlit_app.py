@@ -45,7 +45,6 @@ if 'messages' not in st.session_state:
         st.title('')
         st.title('')
         st.title('')
-        st.title('')
         if not language_selection: 
             st.session_state.korean_mode=1
             st.image('https://www.tailorbrands.com/wp-content/uploads/2021/09/Adidas-mountain-logo-768x299.jpg',use_column_width=True) 
