@@ -222,7 +222,7 @@ if st.session_state.korean_mode==0:
                     st.session_state.id=st.session_state.new_id
                     st.success('Your modifications have been saved!')
                     st.markdown(f'<p><center><b>Modified ID : {st.session_state.id}</b></center><p>',unsafe_allow_html=True)
-                    time.sleep(120)
+                    time.sleep(5)
                     del st.session_state.filled_input
                     st.switch_page('streamlit_app.py')
                 else:
