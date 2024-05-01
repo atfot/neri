@@ -143,7 +143,7 @@ if st.session_state.korean_mode==1:
     if nationality:
         st.session_state.nationality=nationality
         st.session_state.filled_input+=1
-    city = st.text_input('어느 도시에 거주중이신가요?',key='city')
+    city = st.text_input('어느 도시에 거주중이신가요?',key='city_')
     if city:
         st.session_state.city=city
         st.session_state.filled_input+=1
