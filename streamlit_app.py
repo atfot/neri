@@ -25,11 +25,7 @@ div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > button > div > p {
     font-size: 2em;
 }             
 
-   
-div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div:nth-child(1) > div > div > div > div > div > button > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-}
+
                
 div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div:nth-child(2) > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
