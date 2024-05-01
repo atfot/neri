@@ -50,10 +50,7 @@ div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > d
 	font-size: 1.5em;
 }     
             
-#root > div:nth-child(1) > div.withScreencast > div > div > div > section.main.st-emotion-cache-uf99v8.ea3mdgi8 > div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-	font-size: 1.75em;
-}     
+     
             
 div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > div > div > ul > li {
 	font-family: 'Beeunhye';
