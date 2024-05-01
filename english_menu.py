@@ -60,13 +60,9 @@ div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > div 
 
         if st.session_state.get("logged_in", True):
             st.page_link("pages/english_chatbot.py", label="My Councellor", icon="🩹")
-            st.divider()
-            st.write('')
             st.page_link("pages/english_analysis.py", label="My Info", icon="ℹ️")
-            st.divider()
-            st.write('')
             st.page_link("pages/english_instruction.py", label="How To Use", icon="❓")
-            st.divider()
+            st.title('')
 
             if st.button("Logout",type='primary',use_container_width=True):
                 logout()
