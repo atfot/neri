@@ -35,7 +35,12 @@ span.st-emotion-cache-ejysk0.e11k5jya0 > div > p {
 	font-family: 'Beeunhye';
 	font-size: 2em;
 }       
-       
+
+/* 로그아웃 버튼 */
+div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > button > div > p {
+	font-family: 'Beeunhye';
+	font-size: 2em;
+}       
 div.st-emotion-cache-1a8c3n0.eeusbqq3 > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
