@@ -68,7 +68,7 @@ if st.session_state.korean_mode==1:
         else:
             st.session_state.username=nickname
             st.session_state.filled_input+=1
-    gender=st.selectbox('성별이 어떻게 되시죠?',('남자','여자'),placeholder='남성/여성',key='gender')
+    gender=st.selectbox('성별이 어떻게 되시죠?',('남자','여자'),placeholder='남성/여성',key='malefemale')
     if gender:
         st.session_state.gender=gender
         st.session_state.filled_input+=1
@@ -173,7 +173,7 @@ if st.session_state.korean_mode==0:
         else:
             st.session_state.username=nickname
             st.session_state.filled_input+=1
-    gender=st.selectbox('What is your gender?',('Male','Female'),placeholder='Gentleman/Lady',key='gender')
+    gender=st.selectbox('What is your gender?',('Male','Female'),placeholder='Gentleman/Lady',key='malefemale')
     if gender:
         st.session_state.gender=gender
         st.session_state.filled_input+=1
