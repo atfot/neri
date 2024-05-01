@@ -55,7 +55,7 @@ if st.session_state.korean_mode==1:
         else:
             st.session_state.pw=password
             st.session_state.filled_input+=1
-    pw_check=st.text_input('다시 한번 사용하실 비밀번호를 적어주세요.',type='pw_check')
+    pw_check=st.text_input('다시 한번 사용하실 비밀번호를 적어주세요.',key='pw_check',type='password')
     if pw_check:
         if pw_check!=st.session_state.pw:
             st.error('해당 비밀번호와 아까 작성하신 비밀번호가 서로 다릅니다.')
@@ -160,7 +160,7 @@ if st.session_state.korean_mode==0:
         else:
             st.session_state.pw=password
             st.session_state.filled_input+=1
-    pw_check=st.text_input('Retype the password you want to use.',type='pw_check')
+    pw_check=st.text_input('Retype the password you want to use.',key='pw_check',type='password')
     if pw_check:
         if pw_check!=st.session_state.pw:
             st.error('This password is different from the password you wrote earlier.')
