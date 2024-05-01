@@ -19,17 +19,19 @@ st.markdown("""
     font-weight: normal;
     font-style: normal;
 }
+/* 내 정보 */
 /* 내 정보 내용 */
 div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > div > p{
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
 }
             
-/* 분석 결과*/
+/* 내 정보_분석 결과_도움이 될만한 행동들_고민 해결도 그래프*/
 .st-emotion-cache-10trblm {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
 }
+
             
 /* 분석결과 내용 */            
 div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > p {
@@ -44,10 +46,7 @@ div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > button > 
 }     
 
 /* 도움이 될만한 행동들 */         
-div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-	font-size: 1.75em;
-}     
+
             
 /* 도움이 될만한 행동들 리스트 */  
 div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > div > div > ul > li {
