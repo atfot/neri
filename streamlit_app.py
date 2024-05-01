@@ -20,10 +20,7 @@ if 'messages' not in st.session_state:
     font-weight: normal;
     font-style: normal;
 }
-div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > button > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-}             
+           
    
 /* 아이디 비번 찾기 */
 div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > button > div > p {
