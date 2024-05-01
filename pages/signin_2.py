@@ -68,9 +68,6 @@ div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(4) > di
     font-size: 2em;
 }
 
-div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
 }
 
 </style>
@@ -200,7 +197,7 @@ if st.session_state.korean_mode==1:
 
                         **목표**: {st.session_state.goal}
 """)
-                    time.sleep(60)
+                    time.sleep(5)
                     del st.session_state.filled_input
                     st.switch_page('streamlit_app.py')
                 else: 
