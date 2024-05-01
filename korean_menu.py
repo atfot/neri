@@ -30,7 +30,11 @@ div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > div 
 	font-size: 2.5em;
 }
    
-     
+/* 메뉴 */
+span.st-emotion-cache-ejysk0.e11k5jya0 > div > p {
+	font-family: 'Beeunhye';
+	font-size: 2em;
+}       
 
 div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
