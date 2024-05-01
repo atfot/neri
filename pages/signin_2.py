@@ -20,6 +20,7 @@ st.markdown("""
 div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(2) > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
+    font-weight: bold
 }
 
 /* share 버튼 */
