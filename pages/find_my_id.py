@@ -56,6 +56,11 @@ div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > s
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
+            
+div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(6) > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}
 
             </style>
 """, unsafe_allow_html=True)
@@ -159,7 +164,7 @@ if st.session_state.korean_mode==0:
                     st.session_state.id=st.session_state.new_id
                     st.success('Your modifications have been saved!')
                     st.markdown(f'<p><center><b>Modified ID : {st.session_state.id}</b></center><p>',unsafe_allow_html=True)
-                    time.sleep(5)
+                    time.sleep(60)
                     del st.session_state.filled_input,st.session_state.id,st.session_state.pw,st.session_state.username
                     st.switch_page('streamlit_app.py')
                 else:
