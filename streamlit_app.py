@@ -45,19 +45,11 @@ if 'messages' not in st.session_state:
 
     col1,col2,col3=st.columns([6.4,0.2,3.4])
     with col1:
-        if st.session_state.screen_setting=='mobile':
-            st.title('')
-        if st.session_state.screen_setting=='compact':
-            st.title('')
-            st.title('')
-            st.title('')
-            st.title('')
-        if st.session_state.screen_setting=='full':
-            st.title('')
-            st.title('')
+        st.title('')
+        st.title('')
         if not language_selection: 
             st.session_state.korean_mode=1
-            st.image('https://www.tailorbrands.com/wp-content/uploads/2021/09/Adidas-mountain-logo-768x299.jpg',use_column_width=True) 
+            st.image('https://www.tailorbrands.com/wp-content/uploads/2021/09/Adidas-mountain-logo-768x299.jpg',width=1280) 
         if language_selection:
             st.session_state.korean_mode=0
             st.image('https://cdn.mos.cms.futurecdn.net/786NzPhpXo6G8hkutJkHTM-1200-80.jpg',use_column_width=True)
