@@ -49,8 +49,6 @@ if 'messages' not in st.session_state:
             st.session_state.korean_mode=0
             st.image('https://images.unsplash.com/photo-1714402002623-86d68590c545?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',use_column_width=True)
     with col2:
-        st.title('')
-        st.title('')
         if not language_selection: 
             st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)
             
