@@ -9,7 +9,7 @@ if 'messages' not in st.session_state:
     st.set_page_config(
     page_title="Your AI Therapist, Neri",
     page_icon="🧊",
-    layout="centered",
+    layout="wide",
     menu_items=None
 )
     st.markdown(st.secrets.home_css, unsafe_allow_html=True)
@@ -28,7 +28,8 @@ if 'messages' not in st.session_state:
             toggle_boolean=True
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
-        st.session_state.screen_setting = 'compact' if x < 704 else 'full'
+        st.write(x)
+        st.session_state.screen_setting = 'compact' if x <= 1440 else 'full'
 
     if 'many_login_attempt' not in  st.session_state:
         st.session_state.many_login_attempt=False
@@ -39,16 +40,15 @@ if 'messages' not in st.session_state:
         st.session_state.pw = False
    
     language_selection=st.toggle('**한국어 버전 / English Version**', value=toggle_boolean)
-    st.title('')
 
-    col1,col2,col3=st.columns([2,6,2])
-    with col2:
-        if not language_selection: 
+    col1,col2=st.columns([7.75,2.25])
+    with col1:
+        if not language_selection:
             st.session_state.korean_mode=1
             st.image('https://images.unsplash.com/photo-1714523479594-13c0bb72fcf3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',use_column_width=True) 
         if language_selection:
             st.session_state.korean_mode=0
-            st.image('https://images.unsplash.com/photo-1714523479594-13c0bb72fcf3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',use_column_width=True)
+            st.image('https://images.unsplash.com/photo-1714402002623-86d68590c545?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',use_column_width=True)
     if not language_selection: 
         st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)
         
