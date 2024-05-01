@@ -24,6 +24,13 @@ st.markdown("""
             font-family: 'Beeunhye';
             font-size: 2em;
             }
+
+            /* 정보 수정칸 */
+            div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > label > div > p
+            
+            /* 저장 버튼 */
+            div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > button > div > p
+
 </style>
 """,unsafe_allow_html=True)
 
@@ -185,30 +192,30 @@ with col3:
     with st.form('fix_user_info'):
       x=0
       st.write("**정보를 바꿔주세요😊**")
-      username = st.text_input('무슨 이름으로 불리고 싶으신가요?')
+      username = st.text_input('**무슨 이름으로 불리고 싶으신가요?**')
       if username:
           x+=1
           st.session_state.username=username
-      problem = st.text_area("당신을 가장 크게 괴롭히는 것이  무엇인가요?🤔")
+      problem = st.text_area("**당신을 가장 크게 괴롭히는 것이  무엇인가요?🤔**")
       if problem:
           x+=1
           st.session_state.problem=problem
-      problem_explanation=st.text_area("문제점을 좀더 자세히 설명해주세요. 자세히 설명해주실수록 좋아요😊")
+      problem_explanation=st.text_area("**문제점을 좀더 자세히 설명해주세요. 자세히 설명해주실수록 좋아요😊**")
       if problem_explanation:
           x+=1
           st.session_state.problem_explanation=problem_explanation
-      goal=st.text_area("최종 목표가 무엇인지 말해주세요!")
+      goal=st.text_area("**최종 목표가 무엇인지 말해주세요!**")
       if goal:
           x+=1
           st.session_state.goal=goal
-      if st.form_submit_button('완료'):
+      if st.form_submit_button('**완료**'):
         if x==4:
-          st.write('저장 완료되었습니다👍')
+          st.write('**저장 완료되었습니다👍**')
           time.sleep(2)
           del st.session_state.my_info
           st.rerun()
         else:
-          st.write('빈칸을 전부 채워주세요🙃')
+          st.write('**빈칸을 전부 채워주세요🙃**')
 if st.session_state.fix_info==False:
   st.title('')
   st.markdown('<p><h4>도움이 될만한 행동들 : </h4></p>', unsafe_allow_html=True)
