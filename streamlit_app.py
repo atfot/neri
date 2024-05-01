@@ -41,7 +41,7 @@ if 'messages' not in st.session_state:
    
     language_selection=st.toggle('**한국어 버전 / English Version**', value=toggle_boolean)
 
-    col1,col2,col3=st.columns([2,6,2])
+    col1,col2,col3=st.columns([2.5,5,2.5])
     with col2:
         if not language_selection: 
             st.session_state.korean_mode=1
