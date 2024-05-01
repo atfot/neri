@@ -51,6 +51,11 @@ div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(2) > di
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
+            
+div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > span {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}
 
             </style>
 """, unsafe_allow_html=True)
