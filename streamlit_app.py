@@ -40,7 +40,7 @@ if 'messages' not in st.session_state:
    
     language_selection=st.toggle('**한국어 버전 / English Version**', value=toggle_boolean)
 
-    col1,col2=st.columns([7.75,2.25])
+    col1,col2,col3=st.columns([6,1,3])
     with col1:
         if not language_selection: 
             st.session_state.korean_mode=1
@@ -48,7 +48,7 @@ if 'messages' not in st.session_state:
         if language_selection:
             st.session_state.korean_mode=0
             st.image('https://cdn.mos.cms.futurecdn.net/786NzPhpXo6G8hkutJkHTM-1200-80.jpg',use_column_width=True)
-    with col2:
+    with col3:
         if not language_selection: 
             st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)
             
