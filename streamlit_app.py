@@ -28,6 +28,7 @@ if 'messages' not in st.session_state:
             toggle_boolean=True
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
+        st.write(x)
         if x <= 1440:
             st.session_state.screen_setting = 'compact' 
         else: 
