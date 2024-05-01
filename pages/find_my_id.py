@@ -7,6 +7,27 @@ st.set_page_config(
         layout="centered",
         menu_items=None
     )
+st.markdown("""
+<style>
+@font-face {
+    font-family: 'Beeunhye';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > button > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}             
+div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(1) > div > button > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}     
+
+
+                
+</style>
+""", unsafe_allow_html=True)
 if 'id' not in st.session_state:
    st.session_state.id=st.secrets.user_id
 if 'pw' not in st.session_state:
