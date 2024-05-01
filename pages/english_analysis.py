@@ -11,7 +11,6 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 make_sidebar()
-st.markdown(st.secrets.analysis_css, unsafe_allow_html=True)
 def fix_info():
   st.session_state.fix_info=True
 
