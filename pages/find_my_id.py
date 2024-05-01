@@ -51,33 +51,13 @@ div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > s
     font-size: 2em;
 }
 
+/* 에러 메세지 */
+div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p  {
+	font-family: 'Beeunhye';
+    font-size: 1.75em;
+}
+            
 
-            
-div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(6) > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-    font-size: 1.75em;
-}
-            
-div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(7) > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-    font-size: 1.75em;
-}
-
-div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(8) > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-    font-size: 1.75em;
-}
-
-            
-div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(9) > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-    font-size: 1.75em;
-}           
-            
-div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(10) > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-    font-size: 1.75em;
-}
             
 div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(8) > div > label > div > p {
 	font-family: 'Beeunhye';
