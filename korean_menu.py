@@ -30,6 +30,7 @@ div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > s
 	font-size: 2em;
 }  
 
+/* 메뉴 화면 */
 /* 타이틀 */
 div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > div > div > div > h1{
 	font-family: 'Beeunhye';
@@ -55,7 +56,40 @@ div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > div 
 }
 
 /* 챗봇 */  
+/* 챗봇 글씨체 */
 div.st-emotion-cache-1a8c3n0.eeusbqq3 > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}     
+                    
+/* 내 정보 */
+/* 내 정보 내용 */
+div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > div > p{
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}
+            
+/* 내 정보_분석 결과_도움이 될만한 행동들_고민 해결도 그래프*/
+.st-emotion-cache-10trblm {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}
+
+            
+/* 분석결과 내용 */            
+div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}     
+
+/* 프로필 수정 버튼 */         
+div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > button > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}     
+
+/* 도움이 될만한 행동들 리스트 */      
+div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
 }     
