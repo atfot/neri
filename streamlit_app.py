@@ -28,9 +28,7 @@ if 'messages' not in st.session_state:
             toggle_boolean=True
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
-        if x < 601:
-            st.session_state.screen_setting = 'mobile' 
-        if 601<= x < 1440:
+        if x <= 1440:
             st.session_state.screen_setting = 'compact' 
         else: 
             st.session_state.screen_setting = 'full'
@@ -44,26 +42,26 @@ if 'messages' not in st.session_state:
         st.session_state.pw = False
    
     language_selection=st.toggle('**한국어 버전 / English Version**', value=toggle_boolean)
-
     col1,col2,col3=st.columns([6.4,0.2,3.4])
     with col1:
-        if st.session_state.screen_setting=='mobile':
-            st.title('')
-        if st.session_state.screen_setting=='compact':
-            st.title('')
-            st.title('')
-            st.title('')
-            st.title('')
         if st.session_state.screen_setting=='full':
             st.title('')
             st.title('')
-        if not language_selection: 
-            st.session_state.korean_mode=1
-            st.image('https://www.tailorbrands.com/wp-content/uploads/2021/09/Adidas-mountain-logo-768x299.jpg',use_column_width=True) 
-        if language_selection:
-            st.session_state.korean_mode=0
-            st.image('https://cdn.mos.cms.futurecdn.net/786NzPhpXo6G8hkutJkHTM-1200-80.jpg',use_column_width=True)
+            if not language_selection: 
+                st.session_state.korean_mode=1
+                st.image('https://www.tailorbrands.com/wp-content/uploads/2021/09/Adidas-mountain-logo-768x299.jpg',use_column_width=True) 
+            if language_selection:
+                st.session_state.korean_mode=0
+                st.image('https://cdn.mos.cms.futurecdn.net/786NzPhpXo6G8hkutJkHTM-1200-80.jpg',use_column_width=True)
     with col3:
+        if st.session_state.screen_setting=='compact':
+            st.title('')
+            if not language_selection:
+                st.session_state.korean_mode=1
+                st.image('https://www.tailorbrands.com/wp-content/uploads/2021/09/Adidas-mountain-logo-768x299.jpg',use_column_width=True) 
+            if language_selection:
+                st.session_state.korean_mode=0
+                st.image('https://cdn.mos.cms.futurecdn.net/786NzPhpXo6G8hkutJkHTM-1200-80.jpg',use_column_width=True)
         if not language_selection: 
             st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)
             
