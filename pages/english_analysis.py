@@ -48,12 +48,8 @@ st.markdown("""
 	font-size: 1.75em;
 }     
 
-div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div:nth-child(5) > div > div > ul > li {
-	font-family: 'Beeunhye';
-	font-size: 2em;
-}     
             
-div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div:nth-child(6) > div > div > ul > li {
+div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > div > div > ul > li {
 	font-family: 'Beeunhye';
 	font-size: 2em;
 }
