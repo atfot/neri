@@ -64,12 +64,6 @@ div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(4) > di
     font-size: 2em;
 }
 
-div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(3) > div > div > div > div > div > div > p
-            
-div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(8) > div > label > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-}
 </style>
 """, unsafe_allow_html=True)
 
