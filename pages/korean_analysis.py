@@ -241,7 +241,7 @@ with col3:
           st.write('빈칸을 전부 채워주세요🙃')
 if st.session_state.fix_info==False:
   st.title('')
-  st.markdown('<p><b>도움이 될만한 행동들 : </b></p>', unsafe_allow_html=True)
+  st.markdown('<p><h4>도움이 될만한 행동들 : </h4></p>', unsafe_allow_html=True)
   for i in st.session_state.what_to_do:
     st.markdown(f'<p>{i}</p>',unsafe_allow_html=True)
   st.title('')
