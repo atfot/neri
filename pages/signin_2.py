@@ -7,71 +7,7 @@ st.set_page_config(
         layout="centered",
         menu_items=None
     )
-st.markdown("""
-<style>
-@font-face {
-    font-family: 'Beeunhye';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* 메인 화면으로 */
-div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(2) > div > button > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-    font-weight: bold;
-}
-
-/* share 버튼 */
-div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > span {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-}
-
-/* 타이틀 */ 
-.st-emotion-cache-10trblm {
-	font-family: 'Beeunhye';
-    font-size: 2.25em;
-}      
-
-/* 모든 작성란 설명 */
-div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div > div > label > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-    font-weight: bold;
-}
-
-/* 에러 메세지 */
-div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p  {
-	font-family: 'Beeunhye';
-    font-size: 1.75em;
-}
-   
-/* 이대로 저장할까요? */
-div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(2) > div > button > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-    font-weight: bold;
-}
-
-/* 성공 메세지 */
-div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(3) > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-    font-weight: bold;
-}
-            
-/* 바뀐 아이디 */
-div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(4) > div > div > center > b {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-}
-
-}
-
-</style>
-""", unsafe_allow_html=True)
+st.markdown(st.secrets.signin_idpw_css, unsafe_allow_html=True)
 
 if st.session_state.korean_mode==1:
     st.session_state.id=st.secrets.user_id

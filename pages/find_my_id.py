@@ -7,7 +7,7 @@ st.set_page_config(
         layout="centered",
         menu_items=None
     )
-st.markdown(st.secrets.find_my_idpw_css, unsafe_allow_html=True)
+st.markdown(st.secrets.signin_idpw_css, unsafe_allow_html=True)
 
 if 'id' not in st.session_state:
     if st.session_state.korean_mode==1:

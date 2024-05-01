@@ -7,7 +7,7 @@ st.set_page_config(
         layout="centered",
         menu_items=None
     )
-st.markdown(st.secrets.find_my_idpw_css, unsafe_allow_html=True)
+st.markdown(st.secrets.signin_idpw_css, unsafe_allow_html=True)
 if 'id' not in st.session_state:
    st.session_state.id=st.secrets.user_id
 if 'pw' not in st.session_state:

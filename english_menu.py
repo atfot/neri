@@ -16,7 +16,7 @@ def get_current_page_name():
 
 def make_sidebar():
     with st.sidebar:
-        st.markdown(st.secrets.app_design, unsafe_allow_html=True)
+        st.markdown(st.secrets.app_design_css, unsafe_allow_html=True)
         st.title("🧡 Neri")
         st.write("")
         st.write("")
