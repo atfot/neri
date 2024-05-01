@@ -24,6 +24,12 @@ def make_sidebar():
     font-weight: normal;
     font-style: normal;
 }
+/* share 버튼 */
+div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > span {
+	font-family: 'Beeunhye';
+	font-size: 2em;
+}  
+
 /* 타이틀 */
 div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > div > div > div > h1{
 	font-family: 'Beeunhye';
@@ -42,19 +48,17 @@ div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > butt
 	font-size: 2em;
 }     
 
-/* 챗봇 */  
-div.st-emotion-cache-1a8c3n0.eeusbqq3 > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-	font-size: 1.75em;
-}       
-
 /* 로그아웃 메세지 */      
 div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
-}       
+}
 
-
+/* 챗봇 */  
+div.st-emotion-cache-1a8c3n0.eeusbqq3 > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}     
 </style>
 """, unsafe_allow_html=True)
         st.title('🧡 네리')
