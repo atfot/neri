@@ -41,12 +41,15 @@ div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > butt
 	font-family: 'Beeunhye';
 	font-size: 2em;
 }     
-                      
-    
-div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > div > div > div > div > div > p {
+
+/* 챗봇 */  
+div.st-emotion-cache-1a8c3n0.eeusbqq3 > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
 }       
+
+                                
+
 
 div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > span {
 	font-family: 'Beeunhye';
