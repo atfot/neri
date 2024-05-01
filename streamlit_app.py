@@ -115,7 +115,7 @@ if 'messages' not in st.session_state:
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 sleep(0.5)
-                st.switch_page("pages/signin.py")
+                st.switch_page("pages/signin_2.py")
             if st.session_state.get('many_login_attempt',True):
                     st.error("""
                             아이디 또는 패스워드를 5번 이상 틀리셨습니다.
@@ -205,7 +205,7 @@ if 'messages' not in st.session_state:
                 st.success("Welcome to Neri!", icon="🧡")
                 st.session_state.login_attempt=0
                 sleep(0.5)
-                st.switch_page("pages/signin.py")
+                st.switch_page("pages/signin_2.py")
             if st.session_state.get('many_login_attempt',True):
                 st.error("""
                         You've entered your ID or password incorrectly more than 5 times.
