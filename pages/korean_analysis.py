@@ -49,7 +49,8 @@ div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > d
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
 }     
-                       
+            
+/* 도움이 될만한 행동들 리스트 */  
 div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > div > div > ul > li {
 	font-family: 'Beeunhye';
 	font-size: 2em;
