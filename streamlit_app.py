@@ -45,10 +45,10 @@ if 'messages' not in st.session_state:
     with col1:
         if not language_selection: 
             st.session_state.korean_mode=1
-            st.image('https://images.unsplash.com/photo-1714523479594-13c0bb72fcf3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',use_column_width=True) 
+            st.image('https://cdn.logojoy.com/wp-content/uploads/20231013154327/Adidas-logo-1991-1-600x319.png',use_column_width=True) 
         if language_selection:
             st.session_state.korean_mode=0
-            st.image('https://images.unsplash.com/photo-1714402002623-86d68590c545?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',use_column_width=True)
+            st.image('https://cdn.mos.cms.futurecdn.net/786NzPhpXo6G8hkutJkHTM-1200-80.jpg',use_column_width=True)
     with col2:
         if not language_selection: 
             st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)
