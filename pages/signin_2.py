@@ -59,6 +59,7 @@ div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(2) > di
 div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(3) > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
+    font-weight: bold;
 }
             
 /* 바뀐 아이디 */
@@ -66,7 +67,6 @@ div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(4) > di
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
-
 </style>
 """, unsafe_allow_html=True)
 
@@ -195,7 +195,7 @@ if st.session_state.korean_mode==1:
 
                         목표: {st.session_state.goal}
 """)
-                    time.sleep(5)
+                    time.sleep(60)
                     del st.session_state.filled_input
                     st.switch_page('streamlit_app.py')
                 else: 
