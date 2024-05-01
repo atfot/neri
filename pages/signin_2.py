@@ -151,7 +151,7 @@ if st.session_state.korean_mode==1:
     if problem:
         st.session_state.problem=problem
         st.session_state.filled_input+=1
-    problem_explanation=st.text_area("문제점을 좀더 자세히 설명해주세요. 자세히 설명해주실수록 좋아요😊", key='problem_explanation')
+    problem_explanation=st.text_area("문제점을 좀더 자세히 설명해주세요. 자세히 설명해주실수록 좋아요😊", key='problem_explanation_')
     if problem_explanation:
         st.session_state.problem_explanation=problem_explanation
         st.session_state.filled_input+=1
