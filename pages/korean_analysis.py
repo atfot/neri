@@ -162,7 +162,7 @@ col1,col2,col3=st.columns([4,1,5])
 with col1:
   if st.session_state.fix_info==False:
     st.write('')
-    st.markdown('<h3>내 정보</h3>',unsafe_allow_html=True)
+    st.markdown('<h4>내 정보</h4>',unsafe_allow_html=True)
     st.markdown(f'''
                 <p>
                 <b>1. 고객님 성함 : </b>{st.session_state.username}
