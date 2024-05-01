@@ -355,7 +355,6 @@ def main():
                     if humanize_msg.find(i)!=-1:
                       humanize_msg = humanize_msg[humanize_msg.find(i)+1:]
                       humanize_msg=humanize_msg.strip()
-                      humanize_msg=humanize_msg.strip()
                       humanize_msg=humanize_msg.strip('"')
                       humanize_msg=humanize_msg.strip("'")
             except:
