@@ -19,19 +19,18 @@ st.markdown("""
     font-weight: normal;
     font-style: normal;
 }
-
-/* 분석 결과*/
-.st-emotion-cache-10trblm {
-	font-family: 'Beeunhye';
-	font-size: 1.75em;
-}       
-            
 /* 내 정보 내용 */
 div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > div > p{
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
-}     
-
+}
+            
+/* 분석 결과*/
+.st-emotion-cache-10trblm {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}
+            
 /* 분석결과 내용 */            
 div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
