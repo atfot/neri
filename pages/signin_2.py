@@ -155,7 +155,7 @@ if st.session_state.korean_mode==1:
     if problem_explanation:
         st.session_state.problem_explanation=problem_explanation
         st.session_state.filled_input+=1
-    goal=st.text_area("최종 목표가 무엇인지 말해주세요!", key='goal')
+    goal=st.text_area("최종 목표가 무엇인지 말해주세요!", key='goal_')
     if goal:
         st.session_state.goal=goal
         st.session_state.filled_input+=1      
