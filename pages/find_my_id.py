@@ -46,6 +46,11 @@ div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
+            
+div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(2) > div > button > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}
 
             </style>
 """, unsafe_allow_html=True)
