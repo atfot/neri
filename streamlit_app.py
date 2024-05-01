@@ -28,8 +28,9 @@ if 'messages' not in st.session_state:
             toggle_boolean=True
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
-        st.write(x)
-        if x <= 1440:
+        if x < 601:
+            st.session_state.screen_setting = 'mobile' 
+        if 601<= x < 1440:
             st.session_state.screen_setting = 'compact' 
         else: 
             st.session_state.screen_setting = 'full'
@@ -46,6 +47,8 @@ if 'messages' not in st.session_state:
 
     col1,col2,col3=st.columns([6.4,0.2,3.4])
     with col1:
+        if st.session_state.screen_setting=='mobile':
+            st.title('')
         if st.session_state.screen_setting=='compact':
             st.title('')
             st.title('')
