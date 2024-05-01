@@ -44,7 +44,7 @@ if 'messages' not in st.session_state:
     with col1:
         if not language_selection: 
             st.session_state.korean_mode=1
-            st.image('https://cdn.logojoy.com/wp-content/uploads/20231013154327/Adidas-logo-1991-1-600x319.png',width=720) 
+            st.image('https://cdn.logojoy.com/wp-content/uploads/20231013154327/Adidas-logo-1991-1-600x319.png',use_column_width=True) 
         if language_selection:
             st.session_state.korean_mode=0
             st.image('https://cdn.mos.cms.futurecdn.net/786NzPhpXo6G8hkutJkHTM-1200-80.jpg',use_column_width=True)
