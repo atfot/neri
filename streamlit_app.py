@@ -44,7 +44,7 @@ if 'messages' not in st.session_state:
     with col1:
         if not language_selection: 
             st.session_state.korean_mode=1
-            st.markdown('<h1><center>ᆞ네ᆞᆞ리ᆞ</center></h1>', unsafe_allow_html=True)
+            st.image('https://unsplash.com/photos/a-view-of-a-city-at-night-from-the-top-of-a-building-zyRV6OjcfpM',use_column_width=True)
         if language_selection:
             st.session_state.korean_mode=0
             st.markdown('<center><h1>ᆞNᆞᆞEᆞᆞRᆞᆞIᆞ</h1></center>', unsafe_allow_html=True)
