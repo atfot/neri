@@ -21,11 +21,12 @@ if 'messages' not in st.session_state:
     if 'korean_mode' not in st.session_state:
         st.session_state.korean_mode = 1
     toggle_boolean=''
-    if 'korean_mode' in st.session_state:
-        if st.session_state.korean_mode==1:
-            toggle_boolean=False
-        else:
-            toggle_boolean=True
+    if toggle_boolean=='':
+        if 'korean_mode' in st.session_state:
+            if st.session_state.korean_mode==1:
+                toggle_boolean=False
+            else:
+                toggle_boolean=True
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
         st.session_state.screen_setting = 'compact' if x <= 1440 else 'full'
@@ -47,6 +48,7 @@ if 'messages' not in st.session_state:
         if language_selection:
             st.session_state.korean_mode=0
             st.image(['https://images.unsplash.com/photo-1714517615056-e8d12c09b3bd?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D','https://images.unsplash.com/photo-1714402002623-86d68590c545?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],use_column_width=True)
+            toggle_boolean=''
     with col2:
         st.title('')
         st.title('')
