@@ -16,27 +16,28 @@ st.markdown("""
     font-style: normal;
 }
             
+/* 타이틀 */
 #change-your-id > div > span {
 	font-family: 'Beeunhye';
     font-size: 2.25em;
 }
-            
-div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > button > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-}           
-              
+
+
+          
+
+/* 메인 화면으로 */
 div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth-child(2) > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
             
+/* 유저 이름_패스워드_새로 사용할 ID_다시 한번 적기 */
 div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div > div > label > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
             
-            
+/* 이대로 저장할까요? */
 div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(2) > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
