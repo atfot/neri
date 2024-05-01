@@ -105,6 +105,11 @@ div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(3) > di
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
+            
+div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(4) > div > div > center > b {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}
             </style>
 """, unsafe_allow_html=True)
 
