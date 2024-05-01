@@ -4,9 +4,10 @@ import time
 st.set_page_config(
         page_title="Your AI Therapist, Neri",
         page_icon="🧊",
-        layout="wide",
+        layout="centered",
         menu_items=None
     )
+st.markdown(st.secrets.find_my_id_css, unsafe_allow_html=True)
 if 'id' not in st.session_state:
    st.session_state.id=st.secrets.user_id
 if 'pw' not in st.session_state:
