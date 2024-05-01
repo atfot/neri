@@ -34,11 +34,14 @@ st.markdown("""
             /* 저장 버튼 */
             div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > button > div > p {
             font-family: 'Beeunhye';
-            font-size: 2em;
+            font-size: 1.75em;
             }
             
             /* 저장완료 메세지 */
-            div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p
+            div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
+            font-family: 'Beeunhye';
+            font-size: 1.75em;
+            }
 
 </style>
 """,unsafe_allow_html=True)
