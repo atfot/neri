@@ -244,7 +244,7 @@ if 'messages' not in st.session_state:
                 #st.switch_page("pages/page4.py")
     st.markdown(
         """
-        <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #00CED4; color: #FFFFFF; padding: 15px; text-align: center; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+        <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #00CED4; color: #FFFFFF; padding: 15px; text-align: center; text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;">
             Developed By <a  href="https://drive.google.com/file/d/1l7duTvc4pWDJgZzY301wswYoIrfylC1G/view?usp=sharing" target="_blank">Hyun Kyu Cho</a> | Made with Streamlit | Powered By OpenAI
         </div>
         """,
