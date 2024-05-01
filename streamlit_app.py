@@ -28,7 +28,7 @@ if 'messages' not in st.session_state:
             toggle_boolean=True
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
-        st.session_state.screen_setting = 'compact' if x <= 1440 else 'full'
+        st.session_state.screen_setting = 'compact' if x <= 720 else 'full'
 
     if 'many_login_attempt' not in  st.session_state:
         st.session_state.many_login_attempt=False
