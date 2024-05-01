@@ -54,10 +54,7 @@ div.st-emotion-cache-16txtl3.eczjsme4 > div > div > div > div > div > div > div 
 	font-size: 1.75em;
 }       
 
-div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > span {
-	font-family: 'Beeunhye';
-	font-size: 2em;
-}  
+
 </style>
 """, unsafe_allow_html=True)
         st.title('🧡 네리')
