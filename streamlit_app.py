@@ -20,49 +20,45 @@ if 'messages' not in st.session_state:
     font-weight: normal;
     font-style: normal;
 }
-           
-   
-/* 아이디 비번 찾기 */
-div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > button > div > p {
+
+/* 한영 토글 */
+div.st-bl.st-bm.st-bn.st-bo.st-bp.st-bq.st-br.st-bs.st-bt.st-bu.st-bv > div > div > p{
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
-        
-              
+                
 /* share 버튼 */
 div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > span {
 	font-family: 'Beeunhye';
     font-size: 2em;
-}               
-
-/* ID_PW */
-div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > label > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2.25em;
-}             
-         
-/* 로그인_새로오신분 */                
-div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > button > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-}             
-
+}
+                  
 /* 타이틀 */
 #ce27b8f > div > span > center {
 	font-family: 'Beeunhye';
     font-size: 1.1em;
-}               
+}
 
 /* 로그인 해주세요 */
 .st-emotion-cache-10trblm.e1nzilvr1 {
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
-
-
-
-/* 한영 토글 */
-div.st-bl.st-bm.st-bn.st-bo.st-bp.st-bq.st-br.st-bs.st-bt.st-bu.st-bv > div > div > p{
+                
+/* 아이디_패스워드 */
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > label > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2.25em;
+}
+                
+/* 로그인_새로오신분 */                
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > button > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}
+                
+/* 아이디 비번 찾기 */
+div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
@@ -71,11 +67,7 @@ div.st-bl.st-bm.st-bn.st-bo.st-bp.st-bq.st-br.st-bs.st-bt.st-bu.st-bv > div > di
 div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
-}             
-           
-
-
-                
+}
 </style>
 """, unsafe_allow_html=True)
     st.session_state.logged_in = False
