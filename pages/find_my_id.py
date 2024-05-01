@@ -102,10 +102,10 @@ div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth
 """, unsafe_allow_html=True)
 
 if 'id' not in st.session_state:
-   if st.session_state.korean_mode==1:
-    st.session_state.id=st.secrets.user_id
-   else:
-       st.session_state.id=st.secrets.user_id_2
+    if st.session_state.korean_mode==1:
+        st.session_state.id=st.secrets.user_id
+    else:
+        st.session_state.id=st.secrets.user_id_2
 if 'pw' not in st.session_state:
    if st.session_state.korean_mode==1:
     st.session_state.pw=st.secrets.user_pw

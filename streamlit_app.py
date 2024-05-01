@@ -181,10 +181,8 @@ div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(10) > d
                 if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
                         st.session_state.signin = True
                 if st.button("아이디 찾기", type="secondary",use_container_width=True):
-                    st.session_state.login_attempt=0
                     st.session_state.find_my_id = True
                 if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
-                    st.session_state.login_attempt=0
                     st.session_state.find_my_pw = True
             
             if st.session_state.get("logged_in", True):
@@ -216,12 +214,14 @@ div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(10) > d
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 st.session_state.find_my_id = False
+                del st.session_state.id,st.session_state.pw
                 st.switch_page('pages/find_my_id.py')
 
             if st.session_state.get('find_my_pw', True):
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 st.session_state.find_my_pw = False
+                del st.session_state.id,st.session_state.pw
                 st.switch_page('pages/find_my_pw.py')
 
         if language_selection: 
@@ -270,13 +270,10 @@ div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(10) > d
                             if st.session_state.login_attempt>=6:
                                 st.session_state.many_login_attempt = True
                 if st.button("**New User**", type="secondary",use_container_width=True):
-                        st.session_state.login_attempt=0
                         st.session_state.signin = True
                 if st.button("Find my ID", type="secondary",use_container_width=True):
-                        st.session_state.login_attempt=0
                         st.session_state.find_my_id = True
                 if st.button("Find my PW", type="secondary",use_container_width=True):
-                        st.session_state.login_attempt=0
                         st.session_state.find_my_pw = True
             
             if st.session_state.get("logged_in", True):
@@ -306,11 +303,13 @@ div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(10) > d
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 st.session_state.find_my_id = False
+                del st.session_state.id,st.session_state.pw
                 st.switch_page('pages/find_my_id.py')
             if st.session_state.get('find_my_pw', True):
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 st.session_state.find_my_pw = False
+                del st.session_state.id,st.session_state.pw
                 st.switch_page('pages/find_my_pw.py')
 
         
