@@ -28,7 +28,10 @@ if 'messages' not in st.session_state:
             toggle_boolean=True
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
-        st.session_state.screen_setting = 'compact' if x <= 1440 else 'full'
+        if x <= 1440:
+            st.session_state.screen_setting = 'compact' 
+        else: 
+            st.session_state.screen_setting = 'full'
 
     if 'many_login_attempt' not in  st.session_state:
         st.session_state.many_login_attempt=False
@@ -42,8 +45,14 @@ if 'messages' not in st.session_state:
 
     col1,col2,col3=st.columns([6.4,0.2,3.4])
     with col1:
-        st.title('')
-        st.title('')
+        if st.session_state.screen_setting=='compact':
+            st.title('')
+            st.title('')
+            st.title('')
+            st.title('')
+        if st.session_state.screen_setting=='full':
+            st.title('')
+            st.title('')
         if not language_selection: 
             st.session_state.korean_mode=1
             st.image('https://www.tailorbrands.com/wp-content/uploads/2021/09/Adidas-mountain-logo-768x299.jpg',use_column_width=True) 
