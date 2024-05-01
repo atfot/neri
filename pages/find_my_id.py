@@ -97,7 +97,7 @@ div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div:nth
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
-#\35 6d8f18c > div > span {
+.st-emotion-cache-10trblm {
 	font-family: 'Beeunhye';
     font-size: 2.25em;
 }
