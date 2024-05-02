@@ -129,7 +129,7 @@ if 'messages' not in st.session_state:
             st.switch_page('pages/find_my_pw.py')
     if language_selection:
         st.session_state.korean_mode=0
-        st.image(['https://www.metalorgie.com/grp_logo/SlaughtertoPrevail_logo.png'],use_column_width=True)
+        st.image(['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY4b30tjS0S3qXb9wNZh9BR5E0EGnyrTj6oMFcvTXnBw&s'],use_column_width=True)
         st.markdown('<div style="text-align: right;"><p><h6>Please login</h6></p></div>',unsafe_allow_html=True)
         
         username = st.text_input("**ID**")
