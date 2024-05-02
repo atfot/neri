@@ -71,13 +71,12 @@ div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > butt
     font-size: 2em;
 }
 
-
-/* 성공실패 메세지 */      
-
+/* 실패 메세지 */
 div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
+/* 성공 메세지 */
 div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
@@ -181,7 +180,7 @@ div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > d
         if st.session_state.get("logged_in", True):
             st.success("로그인되었습니다!",  icon="✅")
             st.session_state.login_attempt=0
-            sleep(0.5)
+            sleep(60)
             st.switch_page("pages/korean_chatbot.py")
         if st.session_state.get('login_error', True):
             if st.session_state.login_attempt<6:
