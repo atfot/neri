@@ -44,7 +44,6 @@ if 'messages' not in st.session_state:
         st.image(['https://www.metalorgie.com/grp_logo/SlaughtertoPrevail_logo.png'],use_column_width=True)
 
     st.title('')
-    st.title('')
     if not language_selection: 
         st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)
         
