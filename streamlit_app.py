@@ -45,10 +45,10 @@ if 'messages' not in st.session_state:
     st.title('')
     if not language_selection: 
         st.session_state.korean_mode=1
-        st.image(['https://drive.google.com/file/d/16193lGzJ173YKyJBjJo97BO3p13Gbggg/view?usp=sharing'],use_column_width=True)
+        st.image(["https://upload.wikimedia.org/wikipedia/commons/4/48/Dream_Theater_%28Logo%29.png"],use_column_width=True)
     if language_selection:
         st.session_state.korean_mode=0
-        st.image(['https://drive.google.com/file/d/1PpcvGxHaHT4Y3ns2blu2tR7jnJ_tzbqx/view?usp=sharing'],use_column_width=True)
+        st.image(['https://www.metalorgie.com/grp_logo/SlaughtertoPrevail_logo.png'],use_column_width=True)
 
     st.title('')
     st.title('')
