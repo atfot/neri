@@ -91,7 +91,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > label {
 /* Stop */
 div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > button {
 	font-family: 'Beeunhye';
-    font-size: 1.75em;
+    font-size: 1.5em;
 }
                 
 </style>
