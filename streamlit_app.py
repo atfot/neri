@@ -37,19 +37,13 @@ if 'messages' not in st.session_state:
     if not language_selection: 
         st.session_state.korean_mode=1
         st.image(["https://upload.wikimedia.org/wikipedia/commons/4/48/Dream_Theater_%28Logo%29.png"],use_column_width=True)
-    if language_selection:
-        st.session_state.korean_mode=0
-        st.image(['https://www.metalorgie.com/grp_logo/SlaughtertoPrevail_logo.png'],use_column_width=True)
-
-    if not language_selection: 
-        st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)
-        
-        username = st.text_input("**아이디**")
+        st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)        
+        username = st.text_input("**아이디**") 
         password = st.text_input("**비밀번호**", type="password")
         if st.session_state.screen_setting=='full':
             if st.button("**로그인**", type="primary",use_container_width=True):
                 if st.session_state.many_login_attempt==False:
-                    if username == st.session_state.id and password == st.session_state.pw:
+                    if username == st.session_state.id and password == st.session_state.pw: 
                         st.session_state.logged_in = True
                     elif username == st.secrets.user_id and password == st.secrets.user_pw:
                         st.session_state.logged_in = True
@@ -134,8 +128,9 @@ if 'messages' not in st.session_state:
             st.session_state.find_my_pw = False
             del st.session_state.id,st.session_state.pw
             st.switch_page('pages/find_my_pw.py')
-
-    if language_selection: 
+    if language_selection:
+        st.session_state.korean_mode=0
+        st.image(['https://www.metalorgie.com/grp_logo/SlaughtertoPrevail_logo.png'],use_column_width=True)
         st.markdown('<div style="text-align: right;"><p><h6>Please login</h6></p></div>',unsafe_allow_html=True)
         
         username = st.text_input("**ID**")
