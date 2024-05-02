@@ -22,8 +22,8 @@ if 'messages' not in st.session_state:
     if 'korean_mode' not in st.session_state:
         st.session_state.korean_mode = 1
     
-    toggle_boolean=''
     if 'korean_mode' in st.session_state:
+        toggle_boolean=''
         if st.session_state.korean_mode==1:
             toggle_boolean=False
         if st.session_state.korean_mode==0:
