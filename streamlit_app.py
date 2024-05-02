@@ -81,6 +81,11 @@ div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > d
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
+div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > label {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+}
+                
 </style>
 """, unsafe_allow_html=True)
     st.session_state.logged_in = False
