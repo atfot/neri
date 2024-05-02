@@ -35,7 +35,6 @@ if 'messages' not in st.session_state:
    
     language_selection=st.toggle('**한국어 버전 / English Version**', value=False if st.session_state.korean_mode==1 else True)
     if not language_selection: 
-        #st.session_state.korean_mode=1
         st.image(["https://upload.wikimedia.org/wikipedia/commons/4/48/Dream_Theater_%28Logo%29.png"],use_column_width=True)
         st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)        
         username = st.text_input("**아이디**") 
