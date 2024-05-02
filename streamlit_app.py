@@ -34,7 +34,6 @@ if 'messages' not in st.session_state:
         st.session_state.pw = False
    
     language_selection=st.toggle('**한국어 버전 / English Version**', value=False if st.session_state.korean_mode==1 else True)
-    st.title('')
     if not language_selection: 
         st.session_state.korean_mode=1
         st.image(["https://upload.wikimedia.org/wikipedia/commons/4/48/Dream_Theater_%28Logo%29.png"],use_column_width=True)
@@ -42,7 +41,6 @@ if 'messages' not in st.session_state:
         st.session_state.korean_mode=0
         st.image(['https://www.metalorgie.com/grp_logo/SlaughtertoPrevail_logo.png'],use_column_width=True)
 
-    st.title('')
     if not language_selection: 
         st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)
         
