@@ -48,11 +48,7 @@ div.st-bl.st-bm.st-bn.st-bo.st-bp.st-bq.st-br.st-bs.st-bt.st-bu.st-bv > div > di
 }
                 
 /* 아이디_패스워드 */
-div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > div > label > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2.25em;
-}
-div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > label > div > p {
+div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div > div > label > div > p {
 	font-family: 'Beeunhye';
     font-size: 2.25em;
 }
