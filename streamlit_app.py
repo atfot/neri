@@ -53,15 +53,13 @@ div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div > d
     font-size: 2.25em;
 }
 
+
 /* 로그인_새로오신분 */                
-div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > div > button > div > p {
+div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
-div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > button > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-}
+
                 
 /* 아이디 비번 찾기 */
 div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > div > button > div > p {
