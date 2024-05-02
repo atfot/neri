@@ -72,8 +72,9 @@ div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > butt
 }
 
 
-/* 성공실패 메세지 */                
-div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
+/* 성공실패 메세지 */      
+
+div.block-container.st-emotion-cache-gh2jqd.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
