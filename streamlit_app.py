@@ -34,7 +34,7 @@ if 'messages' not in st.session_state:
         st.session_state.id = False
         st.session_state.pw = False
    
-    language_selection=st.toggle('**한국어 버전 / English Version**', value=False if st.session_state.korean_mode=1 else True)
+    language_selection=st.toggle('**한국어 버전 / English Version**', value=False if st.session_state.korean_mode==1 else True)
     st.title('')
     if not language_selection: 
         st.session_state.korean_mode=1
