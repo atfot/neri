@@ -41,6 +41,7 @@ if 'messages' not in st.session_state:
     language_selection=st.toggle('**한국어 버전 / English Version**', value=toggle_boolean)
     st.title('')
     if not language_selection: 
+        st.session_state.korean_mode=1
         st.image(["https://i.imgur.com/oUkIzkS.png"],use_column_width=True)
         st.markdown('<div style="text-align: right;"><p><h6>로그인 해주세요</h6></p></div>',unsafe_allow_html=True)        
         username = st.text_input("**아이디**") 
