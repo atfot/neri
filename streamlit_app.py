@@ -57,7 +57,8 @@ div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > 
 }                
                 
 /* 아이디 비번 찾기 새로 오신 분 */
-div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > button > div > p {
+
+div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
 }
