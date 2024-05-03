@@ -235,7 +235,7 @@ if 'messages' not in st.session_state:
     else:
         st.markdown(
             """
-            <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #FDF6EC; color: #000000; padding: 1px; text-align: left;">
+            <div style="position: fixed; bottom: 0; left: 0; width: 50%; background-color: #FDF6EC; color: #000000; padding: 1px; text-align: left;">
                 Developed By <a  href="https://drive.google.com/file/d/1l7duTvc4pWDJgZzY301wswYoIrfylC1G/view?usp=sharing" target="_blank">Hyun Kyu Cho</a> | Made with Streamlit | Powered By OpenAI
             </div>
             """,
