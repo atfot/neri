@@ -121,7 +121,6 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
     language_selection=st.toggle('**한국어 버전 / English Version**', value=toggle_boolean)
     if st.session_state.screen_setting=='full':
         st.title('')
-        st.write('')
     else:
         st.write('')
     if not language_selection: 
