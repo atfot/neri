@@ -40,6 +40,10 @@ div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > 
 	font-family: 'Beeunhye';
     font-size: 1.75em;
 }
+#please-login > div > span {
+	font-family: 'Beeunhye';
+    font-size: 1.75em;
+}
 
                 
 /* 아이디_비밀번호 */
