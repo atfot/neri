@@ -119,10 +119,8 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
     else:
         toggle_boolean=True
     language_selection=st.toggle('**한국어 버전 / English Version**', value=toggle_boolean)
-    if st.session_state.screen_setting=='full':
-        st.title('')
-    else:
-        pass
+
+    st.title('')
     if not language_selection: 
         st.session_state.korean_mode=1
         st.image(["https://i.imgur.com/oUkIzkS.png"],use_column_width=True)
