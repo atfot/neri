@@ -49,15 +49,11 @@ div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > 
 
 
 /* 로그인 */                
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div:nth-child(8) > div > button > div > p > strong {
+div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > button > div > p > strong {
 	font-family: 'Beeunhye';
     color: #b5651d;
-}
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div:nth-child(9) > div > button > div > p > strong {
-	font-family: 'Beeunhye';
-    color: #b5651d;
-}
-                
+    font-size: 2em;
+}                
                 
 /* 아이디 비번 찾기 새로 오신 분 */
 div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > button > div > p {
