@@ -52,7 +52,6 @@ div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > 
 div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > button > div > p > strong {
 	font-family: 'Beeunhye';
     color: #b5651d;
-    font-size: 2em;
 }                
                 
 /* 아이디 비번 찾기 새로 오신 분 */
