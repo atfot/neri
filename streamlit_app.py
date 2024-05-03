@@ -60,6 +60,7 @@ div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div:nt
 }
 div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div:nth-child(9) > div > button > div > p > strong {
 	font-family: 'Beeunhye';
+    color: #b5651d;
 }
                 
                 
