@@ -32,8 +32,13 @@ if 'messages' not in st.session_state:
     if 'id' not in st.session_state:
         st.session_state.id = False
         st.session_state.pw = False
-   
-    language_selection=st.toggle('**한국어 버전 / English Version**', value=False if st.session_state.korean_mode==1 else True)
+
+    toggle_boolean=''
+    if st.session_state.korean_mode==1:
+        toggle_boolean=False
+    else:
+        toggle_boolean=True
+    language_selection=st.toggle('**한국어 버전 / English Version**', value=toggle_boolean)
     st.title('')
     if not language_selection: 
         st.image(["https://i.imgur.com/oUkIzkS.png"],use_column_width=True)
