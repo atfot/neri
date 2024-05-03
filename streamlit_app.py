@@ -12,85 +12,7 @@ if 'messages' not in st.session_state:
     layout="centered",
     menu_items=None
 )
-    st.markdown("""
-<style>
-@font-face {
-    font-family: 'Beeunhye';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-                
-/* share 버튼 */
-div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > span {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-    font-weight: bold;
-}
-
-/* 한영 토글 */
-div.st-bl.st-bm.st-bn.st-bo.st-bp.st-bq.st-br.st-bs.st-bt.st-bu.st-bv > div > div > p > strong {
-	font-family: 'Beeunhye';
-    font-size: 1.5em;
-    font-weight: bold;
-}
-                  
-/* 로그인 해주세요 */
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > div > p > b {
-	font-family: 'Beeunhye';
-    font-size: 1.75em;
-}
-#please-login > div > span {
-	font-family: 'Beeunhye';
-    font-size: 1.75em;
-}
-
-                
-/* 아이디_비밀번호 */
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > label > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-}
-
-
-/* 버튼들 */                
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > button > div > p {
-	font-family: 'Beeunhye';
-    font-size: 1.75em;
-    color: #7F3300;
-}                
-                
-/* 아이디 비번 찾기 새로 오신 분 */
-div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > button > div > p {
-	font-family: 'Beeunhye';
-    font-size: 1.75em;
-    color: #89482C;
-}
-
-/* 실패 메세지 */
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-    font-size: 1.75em;
-}
-/* 성공 메세지 */
-div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-    font-size: 1.75em;
-}
-                
-/* Running... */
-div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > label {
-	font-family: 'Beeunhye';
-    font-size: 1.5em;
-}
-
-/* Stop */
-div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > button {
-	font-family: 'Beeunhye';
-    font-size: 1.5em;
-}                
-</style>
-""", unsafe_allow_html=True)
+    st.markdown(st.secrets.home_css, unsafe_allow_html=True)
     st.session_state.logged_in = False
     st.session_state.signin = False
     st.session_state.login_error = False
@@ -218,7 +140,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
             st.switch_page('pages/find_my_pw.py')
     if language_selection:
         st.session_state.korean_mode=0
-        st.image(['https://imgur.com/iAJYmzH.png'],use_column_width=True)
+        st.image(['https://imgur.com/j3MXz3h.png'],use_column_width=True)
         st.markdown('<div style="text-align: right;"><p><h6>Please login</h6></p></div>',unsafe_allow_html=True)
         
         username = st.text_input("**ID**")
