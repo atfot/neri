@@ -49,11 +49,6 @@ div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > 
 
 
 /* 로그인 */                
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > button > div > p > strong {
-	font-family: 'Beeunhye';
-    color: #b5651d;
-}
-
 div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div:nth-child(8) > div > button > div > p > strong {
 	font-family: 'Beeunhye';
     color: #b5651d;
