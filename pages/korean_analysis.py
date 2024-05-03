@@ -189,7 +189,7 @@ with col3:
       if st.form_submit_button('**완료**'):
         if x==4:
           st.write('**저장 완료되었습니다👍**')
-          time.sleep(60)
+          time.sleep(1)
           del st.session_state.my_info
           st.rerun()
         else:
