@@ -56,5 +56,5 @@ def logout():
             pass
         del st.session_state.client
     st.info("다음에 또 뵈어요😊")
-    sleep(30)
+    sleep(60)
     st.switch_page("streamlit_app.py")
