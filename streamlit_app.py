@@ -60,10 +60,6 @@ div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > butt
 	font-family: 'Beeunhye';
     font-size: 1.75em;
 }
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > button > div > p {
-	font-family: 'Beeunhye';
-    font-size: 1.75em;
-}
 
 /* 실패 메세지 */
 div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p {
