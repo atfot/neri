@@ -304,7 +304,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
     if st.session_state.screen_setting=='full':
         st.markdown(
             """
-            <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #FFF7EE; color: #000000; padding: 1px; text-align: center;">
+            <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #FFFAF0; color: #000000; padding: 1px; text-align: center;">
                 Developed By <a  href="https://drive.google.com/file/d/1l7duTvc4pWDJgZzY301wswYoIrfylC1G/view?usp=sharing" target="_blank">Hyun Kyu Cho</a> | Made with Streamlit | Powered By OpenAI
             </div>
             """,
@@ -313,7 +313,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
     else:
         st.markdown(
             """
-            <div style="position: fixed; bottom: 0; left: 2.5%; width: 70%; background-color: #FFF7EE; color: #000000; padding: 1px; text-align: left;">
+            <div style="position: fixed; bottom: 0; left: 2.5%; width: 70%; background-color: #FFFAF0; color: #000000; padding: 1px; text-align: left;">
                 - Developed By <a  href="https://drive.google.com/file/d/1l7duTvc4pWDJgZzY301wswYoIrfylC1G/view?usp=sharing" target="_blank">Hyun Kyu Cho</a><br>
                 - Made with Streamlit<br>
                 - Powered By OpenAI
