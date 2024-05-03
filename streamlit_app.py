@@ -39,7 +39,10 @@ if 'messages' not in st.session_state:
     else:
         toggle_boolean=True
     language_selection=st.toggle('**한국어 버전 / English Version**', value=toggle_boolean)
-    st.title('')
+    if st.session_state.screen_setting=='full':
+        st.title('')
+    else:
+        pass
     if not language_selection: 
         st.session_state.korean_mode=1
         st.image(["https://i.imgur.com/oUkIzkS.png"],use_column_width=True)
