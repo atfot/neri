@@ -2,7 +2,7 @@
 showSidebarNavigation = false
 [theme]
 #base="light"
-primaryColor ='#FFE5C2'
+primaryColor ='#00CED4'
 backgroundColor ='#FDF6EC'
 secondaryBackgroundColor ='#FFFFFF'
 textColor ='7F3300'
