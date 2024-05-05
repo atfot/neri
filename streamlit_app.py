@@ -54,10 +54,10 @@ if 'messages' not in st.session_state:
         col1,col2=st.columns([7.75,2.25])
         with col1:
             if st.session_state.screen_setting=='pc':
-                st.image(["https://i.imgur.com/oUkIzkS.png"],
+                st.image(["https://imgur.com/UhmQ6pa.png"],
         use_column_width=True)
             if st.session_state.screen_setting=='tablet':
-                st.image(["https://i.imgur.com/oUkIzkS.png"],
+                st.image(["https://imgur.com/FIIBXpJ.png"],
         use_column_width=True)
             if st.session_state.screen_setting=='mobile':
                 st.image(["https://i.imgur.com/oUkIzkS.png"],
@@ -157,7 +157,15 @@ if 'messages' not in st.session_state:
         st.session_state.korean_mode=0
         col1,col2=st.columns([7.75,2.25])
         with col1:
-            st.image(['https://imgur.com/j3MXz3h.png'],use_column_width=True)
+            if st.session_state.screen_setting=='pc':
+                st.image(["https://imgur.com/4oLK3il.png"],
+        use_column_width=True)
+            if st.session_state.screen_setting=='tablet':
+                st.image(["https://imgur.com/LrTi64k.png"],
+        use_column_width=True)
+            if st.session_state.screen_setting=='mobile':
+                st.image(["https://i.imgur.com/oUkIzkS.png"],
+        use_column_width=True)
         with col2:
             st.markdown('<div style="text-align: right;"><p><h6>Please login</h6></p></div>',unsafe_allow_html=True)
             
