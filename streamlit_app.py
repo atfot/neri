@@ -124,187 +124,193 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
         st.write('')
     if not language_selection: 
         st.session_state.korean_mode=1
-        st.image(["https://i.imgur.com/oUkIzkS.png"],use_column_width=True)
-        st.write('')
-        st.markdown('<div style="text-align: right;"><p><b>로그인 해주세요</b></p></div>',unsafe_allow_html=True)        
-        username = st.text_input("**아이디**") 
-        password = st.text_input("**비밀번호**", type="password")
-        if st.session_state.screen_setting=='full':
-            if st.button("**로그인**", type="primary",use_container_width=True):
-                if st.session_state.many_login_attempt==False:
-                    if username == st.session_state.id and password == st.session_state.pw: 
-                        st.session_state.logged_in = True
-                    elif username == st.secrets.user_id and password == st.secrets.user_pw:
-                        st.session_state.logged_in = True
+        col1,col2=st.columns([7.75,2.25])
+        with col1:
+            st.image(["https://i.imgur.com/oUkIzkS.png"],
+        use_column_width=True)
+        with col2:
+            st.write('')
+            st.markdown('<div style="text-align: right;"><p><b>로그인 해주세요</b></p></div>',unsafe_allow_html=True)        
+            username = st.text_input("**아이디**") 
+            password = st.text_input("**비밀번호**", type="password")
+            if st.session_state.screen_setting=='full':
+                if st.button("**로그인**", type="primary",use_container_width=True):
+                    if st.session_state.many_login_attempt==False:
+                        if username == st.session_state.id and password == st.session_state.pw: 
+                            st.session_state.logged_in = True
+                        elif username == st.secrets.user_id and password == st.secrets.user_pw:
+                            st.session_state.logged_in = True
+                        else:
+                            st.session_state.login_error = True
+                        if st.session_state.login_error==True:
+                            st.session_state.login_attempt+=1
+                            if st.session_state.login_attempt>=6:
+                                st.session_state.many_login_attempt = True
                     else:
-                        st.session_state.login_error = True
-                    if st.session_state.login_error==True:
-                        st.session_state.login_attempt+=1
-                        if st.session_state.login_attempt>=6:
-                            st.session_state.many_login_attempt = True
-                else:
-                    pass
-
-            col1, col2,col3 = st.columns([3.3,3.4,3.3])
-            with col1:
-                if st.button("아이디 찾기", type="secondary",use_container_width=True):
-                    st.session_state.login_attempt=0
-                    st.session_state.find_my_id = True
-            with col2:
-                if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
-                    st.session_state.login_attempt=0
-                    st.session_state.find_my_pw = True
-            with col3:
+                        pass
                 if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
                     st.session_state.signin = True
-        else:
-            if st.button("**로그인**", type="primary",use_container_width=True):
-                if st.session_state.many_login_attempt==False:
-                    if username == st.session_state.id and password == st.session_state.pw:
-                        st.session_state.logged_in = True
-                    elif username == st.secrets.user_id and password == st.secrets.user_pw:
-                        st.session_state.logged_in = True
+                col1, col2 = st.columns([5,5])
+                with col1:
+                    if st.button("아이디 찾기", type="secondary",use_container_width=True):
+                        st.session_state.login_attempt=0
+                        st.session_state.find_my_id = True
+                with col2:
+                    if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
+                        st.session_state.login_attempt=0
+                        st.session_state.find_my_pw = True
+            else:
+                if st.button("**로그인**", type="primary",use_container_width=True):
+                    if st.session_state.many_login_attempt==False:
+                        if username == st.session_state.id and password == st.session_state.pw:
+                            st.session_state.logged_in = True
+                        elif username == st.secrets.user_id and password == st.secrets.user_pw:
+                            st.session_state.logged_in = True
+                        else:
+                            st.session_state.login_error = True
+                        if st.session_state.login_error==True:
+                            st.session_state.login_attempt+=1
+                            if st.session_state.login_attempt>=6:
+                                st.session_state.many_login_attempt = True
                     else:
-                        st.session_state.login_error = True
-                    if st.session_state.login_error==True:
-                        st.session_state.login_attempt+=1
-                        if st.session_state.login_attempt>=6:
-                            st.session_state.many_login_attempt = True
-                else:
-                    pass
-            if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
-                    st.session_state.signin = True
-            if st.button("아이디 찾기", type="secondary",use_container_width=True):
-                st.session_state.find_my_id = True
-            if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
-                st.session_state.find_my_pw = True
+                        pass
+                if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
+                        st.session_state.signin = True
+                if st.button("아이디 찾기", type="secondary",use_container_width=True):
+                    st.session_state.find_my_id = True
+                if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
+                    st.session_state.find_my_pw = True
 
-        if st.session_state.get("logged_in", True):
-            st.success("로그인되었습니다!",  icon="✅")
-            st.session_state.login_attempt=0
-            sleep(0.5)
-            st.switch_page("pages/korean_chatbot.py")
-        if st.session_state.get('login_error', True):
-            if st.session_state.login_attempt<6:
-                st.error(f"아이디 또는 비밀번호를 확인해주세요({st.session_state.login_attempt}/5)", icon="🚨")
-        if st.session_state.get("login_error", False):
-            pass
-        if st.session_state.get('signin', True):
-            st.success("네리에 오신 것을 환영합니다!", icon="🧡")
-            st.session_state.many_login_attempt=False
-            st.session_state.login_attempt=0
-            sleep(0.5)
-            st.switch_page("pages/signin.py")
-        if st.session_state.get('many_login_attempt',True):
-                st.error("""
-                        아이디 또는 패스워드를 5번 이상 틀리셨습니다.
-                        
-                        아이디 또는 비밀번호 찾기를 통해 정보를 수정해주세요.""", icon="🚨")
-                st.stop()
-        if st.session_state.get("signin", False):
-            pass
-        
-        if st.session_state.get('find_my_id', True):
-            st.session_state.many_login_attempt=False
-            st.session_state.login_attempt=0
-            st.session_state.find_my_id = False
-            del st.session_state.id,st.session_state.pw
-            st.switch_page('pages/find_my_id.py')
+            if st.session_state.get("logged_in", True):
+                st.success("로그인되었습니다!",  icon="✅")
+                st.session_state.login_attempt=0
+                sleep(0.5)
+                st.switch_page("pages/korean_chatbot.py")
+            if st.session_state.get('login_error', True):
+                if st.session_state.login_attempt<6:
+                    st.error(f"아이디 또는 비밀번호를 확인해주세요({st.session_state.login_attempt}/5)", icon="🚨")
+            if st.session_state.get("login_error", False):
+                pass
+            if st.session_state.get('signin', True):
+                st.success("네리에 오신 것을 환영합니다!", icon="🧡")
+                st.session_state.many_login_attempt=False
+                st.session_state.login_attempt=0
+                sleep(0.5)
+                st.switch_page("pages/signin.py")
+            if st.session_state.get('many_login_attempt',True):
+                    st.error("""
+                            아이디 또는 패스워드를 5번 이상 틀리셨습니다.
+                            
+                            아이디 또는 비밀번호 찾기를 통해 정보를 수정해주세요.""", icon="🚨")
+                    st.stop()
+            if st.session_state.get("signin", False):
+                pass
+            
+            if st.session_state.get('find_my_id', True):
+                st.session_state.many_login_attempt=False
+                st.session_state.login_attempt=0
+                st.session_state.find_my_id = False
+                del st.session_state.id,st.session_state.pw
+                st.switch_page('pages/find_my_id.py')
 
-        if st.session_state.get('find_my_pw', True):
-            st.session_state.many_login_attempt=False
-            st.session_state.login_attempt=0
-            st.session_state.find_my_pw = False
-            del st.session_state.id,st.session_state.pw
-            st.switch_page('pages/find_my_pw.py')
+            if st.session_state.get('find_my_pw', True):
+                st.session_state.many_login_attempt=False
+                st.session_state.login_attempt=0
+                st.session_state.find_my_pw = False
+                del st.session_state.id,st.session_state.pw
+                st.switch_page('pages/find_my_pw.py')
     if language_selection:
         st.session_state.korean_mode=0
-        st.image(['https://imgur.com/j3MXz3h.png'],use_column_width=True)
-        st.markdown('<div style="text-align: right;"><p><h6>Please login</h6></p></div>',unsafe_allow_html=True)
-        
-        username = st.text_input("**ID**")
-        password = st.text_input("**Password**", type="password")
-        if st.session_state.screen_setting=='full':
-            if st.button("**Log in**", type="primary",use_container_width=True):
-                if st.session_state.many_login_attempt==False:
-                    if username == st.session_state.id and password == st.session_state.pw:
-                        st.session_state.logged_in = True
-                    elif username == st.secrets.user_id_2 and password == st.secrets.user_pw_2:
-                        st.session_state.logged_in = True
-                    else:
-                        st.session_state.login_error = True
-                    if st.session_state.login_error==True:
-                        st.session_state.login_attempt+=1
-                        if st.session_state.login_attempt>=6:
-                            st.session_state.many_login_attempt = True
-            col1, col2, col3 = st.columns([3.3,3.4,3.3])
-            with col1:
-                if st.button("Find my ID", type="secondary",use_container_width=True):
-                    st.session_state.login_attempt=0
-                    st.session_state.find_my_id = True
-            with col2:
-                if st.button("Find my PW", type="secondary",use_container_width=True):
-                    st.session_state.login_attempt=0
-                    st.session_state.find_my_pw = True
-            with col3:
+        col1,col2=st.columns([7.75,2.25])
+        with col1:
+            st.image(['https://imgur.com/j3MXz3h.png'],use_column_width=True)
+        with col2:
+            st.write('')
+            st.markdown('<div style="text-align: right;"><p><h6>Please login</h6></p></div>',unsafe_allow_html=True)
+            
+            username = st.text_input("**ID**")
+            password = st.text_input("**Password**", type="password")
+            if st.session_state.screen_setting=='full':
+                if st.button("**Log in**", type="primary",use_container_width=True):
+                    if st.session_state.many_login_attempt==False:
+                        if username == st.session_state.id and password == st.session_state.pw:
+                            st.session_state.logged_in = True
+                        elif username == st.secrets.user_id_2 and password == st.secrets.user_pw_2:
+                            st.session_state.logged_in = True
+                        else:
+                            st.session_state.login_error = True
+                        if st.session_state.login_error==True:
+                            st.session_state.login_attempt+=1
+                            if st.session_state.login_attempt>=6:
+                                st.session_state.many_login_attempt = True
+                col1, col2, col3 = st.columns([3.3,3.4,3.3])
+                with col1:
+                    if st.button("Find my ID", type="secondary",use_container_width=True):
+                        st.session_state.login_attempt=0
+                        st.session_state.find_my_id = True
+                with col2:
+                    if st.button("Find my PW", type="secondary",use_container_width=True):
+                        st.session_state.login_attempt=0
+                        st.session_state.find_my_pw = True
+                with col3:
+                    if st.button("**New User**", type="secondary",use_container_width=True):
+                        st.session_state.login_attempt=0
+                        st.session_state.signin = True
+            else:
+                if st.button("**Log in**", type="primary",use_container_width=True):
+                    if st.session_state.many_login_attempt==False:
+                        if username == st.session_state.id and password == st.session_state.pw:
+                            st.session_state.logged_in = True
+                        elif username == st.secrets.user_id_2 and password == st.secrets.user_pw_2:
+                            st.session_state.logged_in = True
+                        else:
+                            st.session_state.login_error = True
+                        if st.session_state.login_error==True:
+                            st.session_state.login_attempt+=1
+                            if st.session_state.login_attempt>=6:
+                                st.session_state.many_login_attempt = True
                 if st.button("**New User**", type="secondary",use_container_width=True):
-                    st.session_state.login_attempt=0
-                    st.session_state.signin = True
-        else:
-            if st.button("**Log in**", type="primary",use_container_width=True):
-                if st.session_state.many_login_attempt==False:
-                    if username == st.session_state.id and password == st.session_state.pw:
-                        st.session_state.logged_in = True
-                    elif username == st.secrets.user_id_2 and password == st.secrets.user_pw_2:
-                        st.session_state.logged_in = True
-                    else:
-                        st.session_state.login_error = True
-                    if st.session_state.login_error==True:
-                        st.session_state.login_attempt+=1
-                        if st.session_state.login_attempt>=6:
-                            st.session_state.many_login_attempt = True
-            if st.button("**New User**", type="secondary",use_container_width=True):
-                    st.session_state.signin = True
-            if st.button("Find my ID", type="secondary",use_container_width=True):
-                    st.session_state.find_my_id = True
-            if st.button("Find my PW", type="secondary",use_container_width=True):
-                    st.session_state.find_my_pw = True
-        if st.session_state.get("logged_in", True):
-            st.success("Logged in successfully!",  icon="✅")
-            st.session_state.login_attempt=0
-            sleep(0.5)
-            st.switch_page("pages/english_chatbot.py")
-        if st.session_state.get('login_error', True):
-            if st.session_state.login_attempt<6:
-                st.error(f"Incorrect ID or password({st.session_state.login_attempt}/5)", icon="🚨")
-        if st.session_state.get("login_error", False):
-            pass
-        if st.session_state.get('signin', True):
-            st.success("Welcome to Neri!", icon="🧡")
-            st.session_state.many_login_attempt=False
-            st.session_state.login_attempt=0
-            sleep(0.5)
-            st.switch_page("pages/signin.py")
-        if st.session_state.get('many_login_attempt',True):
-            st.error("""
-                    You've entered your ID or password incorrectly more than 5 times.
-                    
-                    Please use 'Find my ID' or 'Find my PW' to correct your information.""", icon="🚨")
-            st.stop()
-        if st.session_state.get("signin", False):
-            pass
-        if st.session_state.get('find_my_id', True):
-            st.session_state.many_login_attempt=False
-            st.session_state.login_attempt=0
-            st.session_state.find_my_id = False
-            del st.session_state.id,st.session_state.pw
-            st.switch_page('pages/find_my_id.py')
-        if st.session_state.get('find_my_pw', True):
-            st.session_state.many_login_attempt=False
-            st.session_state.login_attempt=0
-            st.session_state.find_my_pw = False
-            del st.session_state.id,st.session_state.pw
-            st.switch_page('pages/find_my_pw.py')
+                        st.session_state.signin = True
+                if st.button("Find my ID", type="secondary",use_container_width=True):
+                        st.session_state.find_my_id = True
+                if st.button("Find my PW", type="secondary",use_container_width=True):
+                        st.session_state.find_my_pw = True
+            if st.session_state.get("logged_in", True):
+                st.success("Logged in successfully!",  icon="✅")
+                st.session_state.login_attempt=0
+                sleep(0.5)
+                st.switch_page("pages/english_chatbot.py")
+            if st.session_state.get('login_error', True):
+                if st.session_state.login_attempt<6:
+                    st.error(f"Incorrect ID or password({st.session_state.login_attempt}/5)", icon="🚨")
+            if st.session_state.get("login_error", False):
+                pass
+            if st.session_state.get('signin', True):
+                st.success("Welcome to Neri!", icon="🧡")
+                st.session_state.many_login_attempt=False
+                st.session_state.login_attempt=0
+                sleep(0.5)
+                st.switch_page("pages/signin.py")
+            if st.session_state.get('many_login_attempt',True):
+                st.error("""
+                        You've entered your ID or password incorrectly more than 5 times.
+                        
+                        Please use 'Find my ID' or 'Find my PW' to correct your information.""", icon="🚨")
+                st.stop()
+            if st.session_state.get("signin", False):
+                pass
+            if st.session_state.get('find_my_id', True):
+                st.session_state.many_login_attempt=False
+                st.session_state.login_attempt=0
+                st.session_state.find_my_id = False
+                del st.session_state.id,st.session_state.pw
+                st.switch_page('pages/find_my_id.py')
+            if st.session_state.get('find_my_pw', True):
+                st.session_state.many_login_attempt=False
+                st.session_state.login_attempt=0
+                st.session_state.find_my_pw = False
+                del st.session_state.id,st.session_state.pw
+                st.switch_page('pages/find_my_pw.py')
     
     if st.session_state.screen_setting=='full':
         st.markdown(
