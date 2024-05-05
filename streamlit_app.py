@@ -62,7 +62,6 @@ if 'messages' not in st.session_state:
                 st.image(["https://i.imgur.com/oUkIzkS.png"],
         use_column_width=True)
         with col2:
-            st.write('')
             st.image('https://imgur.com/CernNDq.png',use_column_width=True)
             st.markdown('<div style="text-align: right;"><p><b>로그인 해주세요</b></p></div>',unsafe_allow_html=True)        
             username = st.text_input("**아이디**") 
@@ -159,7 +158,6 @@ if 'messages' not in st.session_state:
         with col1:
             st.image(['https://imgur.com/j3MXz3h.png'],use_column_width=True)
         with col2:
-            st.write('')
             st.markdown('<div style="text-align: right;"><p><h6>Please login</h6></p></div>',unsafe_allow_html=True)
             
             username = st.text_input("**ID**")
