@@ -27,42 +27,44 @@ div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > s
 	font-family: 'Beeunhye';
     font-size: 2em;
     font-weight: bold;
-    letter-spacing:0.1em;
+    letter-spacing:0.05em;
 }
 
 /* 한영 토글 */
 div.st-bl.st-bm.st-bn.st-bo.st-bp.st-bq.st-br.st-bs.st-bt.st-bu.st-bv > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
-    letter-spacing:0.1em;
+    letter-spacing:0.05em;
 }
                   
 /* 로그인 해주세요 */
 div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > div > div > p > b {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
-    letter-spacing:0.1em;
+    letter-spacing:0.05em;
 }
                 
 /* 아이디_비밀번호 */
 div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > label > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
-    letter-spacing:0.1em;
+    letter-spacing:0.05em;
 }
 
-/* 버튼들 */                
+/* 로그인 새로 오신 분 */                
 div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
     color: #7F3300;
-    letter-spacing:0.1em;
+    letter-spacing:0.05em;
 }                
+                
+/* 아이디 비번 찾기 */
 div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
     color: #89482C;
-    letter-spacing:1em;
+    letter-spacing:0.05em;
 }
 
 /* pc-성공실패 메세지 */
@@ -71,7 +73,7 @@ div.st-emotion-cache-khxqah.e1f1d6gn3 > div > div > div > div > div > div > div 
     font-size: 1.75em;
     margin-top: -0.4em; 
     margin-left: 0.25em;
-    letter-spacing:0.1em;
+    letter-spacing:0.05em;
 }
 /* 태블릿-성공실패 메세지*/
 div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
@@ -79,7 +81,7 @@ div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div > div > div > div
     font-size: 1.75em;
     margin-top: -0.4em; 
     margin-left: 0.25em;
-    letter-spacing:0.1em;
+    letter-spacing:0.05em;
 }
 /* 태블릿-성공실패 메세지*/
 div.st-emotion-cache-xdw2mk.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
@@ -87,7 +89,7 @@ div.st-emotion-cache-xdw2mk.e1f1d6gn3 > div > div > div > div > div > div > div 
     font-size: 1.75em;
     margin-top: -0.4em; 
     margin-left: 0.25em; 
-    letter-spacing:0.1em;
+    letter-spacing:0.05em;
 }
 
                 
