@@ -114,7 +114,7 @@ if 'messages' not in st.session_state:
                     st.session_state.find_my_id = True
                 if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
                     st.session_state.find_my_pw = True
-        def home_logic():
+        def home_logic_korean():
             if st.session_state.get("logged_in", True):
                 st.success("로그인되었습니다!",  icon="✅")
                 st.session_state.login_attempt=0
@@ -156,15 +156,15 @@ if 'messages' not in st.session_state:
         if st.session_state.screen_setting=='pc':
             col1, col2, col3=st.columns([3.3,3.4,3.3])
             with col2:
-                home_logic()
+                home_logic_korean()
         if st.session_state.screen_setting=='tablet':
             col1, col2, col3=st.columns([1,8,1])
             with col2:
-                home_logic()
-        else:
+                home_logic_korean()
+        if st.session_state.screen_setting=='mobile':
             col1, col2, col3=st.columns([1,9,1])
             with col2:
-                home_logic()
+                home_logic_korean()
     if language_selection:
         st.session_state.korean_mode=0
         col1,col2=st.columns([7.75,2.25])
@@ -229,13 +229,7 @@ if 'messages' not in st.session_state:
                         st.session_state.find_my_id = True
                 if st.button("Find my PW", type="secondary",use_container_width=True):
                         st.session_state.find_my_pw = True
-        if st.session_state.screen_setting=='pc':
-            col1,col2,col3=st.columns([3.3,3.4,3.3])
-        if st.session_state.screen_setting=='tablet':
-            col1,col2,col3=st.columns([1,8,1])
-        else:
-            col1,col2,col3=st.columns([0.5,9,0.5]) 
-        with col2:
+        def home_logic_english():
             if st.session_state.get("logged_in", True): 
                 st.success("Logged in successfully!",  icon="✅")
                 st.session_state.login_attempt=0
@@ -272,6 +266,20 @@ if 'messages' not in st.session_state:
                 st.session_state.find_my_pw = False
                 del st.session_state.id,st.session_state.pw
                 st.switch_page('pages/find_my_pw.py')
+        if st.session_state.screen_setting=='pc':
+            col1, col2, col3=st.columns([3.3,3.4,3.3])
+            with col2:
+                home_logic_english()
+        if st.session_state.screen_setting=='tablet':
+            col1, col2, col3=st.columns([1,8,1])
+            with col2:
+                home_logic_english()
+        if st.session_state.screen_setting=='mobile':
+            col1, col2, col3=st.columns([1,9,1])
+            with col2:
+                home_logic_english()
+        with col2:
+            
     
     if st.session_state.screen_setting=='pc':
         st.markdown(
