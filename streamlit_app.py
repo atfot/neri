@@ -297,7 +297,10 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
                             st.session_state.login_attempt+=1
                             if st.session_state.login_attempt>=6:
                                 st.session_state.many_login_attempt = True
-                col1, col2, col3 = st.columns([3.3,3.4,3.3])
+                if st.button("**New User**", type="secondary",use_container_width=True):
+                    st.session_state.login_attempt=0
+                    st.session_state.signin = True
+                col1, col2 = st.columns([5,5])
                 with col1:
                     if st.button("Find my ID", type="secondary",use_container_width=True):
                         st.session_state.login_attempt=0
@@ -306,10 +309,6 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
                     if st.button("Find my PW", type="secondary",use_container_width=True):
                         st.session_state.login_attempt=0
                         st.session_state.find_my_pw = True
-                with col3:
-                    if st.button("**New User**", type="secondary",use_container_width=True):
-                        st.session_state.login_attempt=0
-                        st.session_state.signin = True
             else:
                 if st.button("**Log in**", type="primary",use_container_width=True):
                     if st.session_state.many_login_attempt==False:
