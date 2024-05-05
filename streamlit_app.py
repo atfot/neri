@@ -20,6 +20,7 @@ if 'messages' not in st.session_state:
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    letter-spacing:1em;
 }
 
 /* share 버튼 */
