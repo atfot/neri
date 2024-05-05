@@ -277,9 +277,7 @@ if 'messages' not in st.session_state:
         if st.session_state.screen_setting=='mobile':
             col1, col2, col3=st.columns([1,9,1])
             with col2:
-                home_logic_english()
-        with col2:
-            
+                home_logic_english()            
     
     if st.session_state.screen_setting=='pc':
         st.markdown(
