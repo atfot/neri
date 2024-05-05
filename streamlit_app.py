@@ -160,12 +160,6 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
                     st.session_state.login_attempt=0
                     st.session_state.find_my_pw = True
 
-                if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
-                        st.session_state.signin = True
-                if st.button("아이디 찾기", type="secondary",use_container_width=True):
-                    st.session_state.find_my_id = True
-                if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
-                    st.session_state.find_my_pw = True
 
             if st.session_state.get("logged_in", True):
                 st.success("로그인되었습니다!",  icon="✅")
