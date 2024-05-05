@@ -52,14 +52,12 @@ div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > label > d
 }
 
 /* 버튼들 */                
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > button > div > p {
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
     color: #7F3300;
     letter-spacing:0.1em;
 }                
-                
-/* 아이디 비번 찾기 새로 오신 분 */
 div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
