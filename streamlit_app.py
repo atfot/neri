@@ -1,7 +1,7 @@
 import streamlit as st
 from time import sleep
 from streamlit_js_eval import streamlit_js_eval
-import pyautogui
+from screeninfo import get_monitors
 
 if 'messages' not in st.session_state:
     if 'screen_setting' not in st.session_state:
@@ -26,7 +26,9 @@ if 'messages' not in st.session_state:
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
         st.write(x)
         st.session_state.screen_setting = 'compact' if x < 1100 else 'full'    
-    st.write(pyautogui.size())
+    for m in get_monitors():
+        st.write(str(m))
+
 
     if 'many_login_attempt' not in  st.session_state:
         st.session_state.many_login_attempt=False
