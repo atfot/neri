@@ -65,16 +65,15 @@ div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > butt
 #root > div:nth-child(1) > div.withScreencast > div > div > div > section > div.block-container.st-emotion-cache-1jicfl2.ea3mdgi5 > div > div > div > div:nth-child(6) > div.st-emotion-cache-khxqah.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
-    margin-top: 0.35em; 
-    margin-left: -0.35em; 
 }
+
 div.st-emotion-cache-xdw2mk.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
     margin-top: 0.35em; 
     margin-left: -0.35em; 
 }
-/* 성공 메세지 */
+/* 성공 메세지 *//*pc성공 메세지*/
 div.st-emotion-cache-khxqah.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
@@ -213,7 +212,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
                 st.success("네리에 오신 것을 환영합니다!", icon="🧡")
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
-                sleep(0.5)
+                sleep(30)
                 st.switch_page("pages/signin.py")
             if st.session_state.get('many_login_attempt',True):
                     st.error("""
