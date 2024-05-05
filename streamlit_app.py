@@ -64,7 +64,7 @@ div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > butt
 	font-family: 'Beeunhye';
     font-size: 1.75em;
     color: #89482C;
-    letter-spacing:0.04em;
+    letter-spacing:0.05em;
 }
 
 /* pc-성공실패 메세지 */
