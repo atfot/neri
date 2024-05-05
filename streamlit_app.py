@@ -79,7 +79,7 @@ div.st-emotion-cache-khxqah.e1f1d6gn3 > div > div > div > div > div > div > div 
 	font-family: 'Beeunhye';
     font-size: 1.75em;
     margin-top: -0.35em; 
-    margin-left: -0.35em; 
+
 }
                 
 /* Running... */
