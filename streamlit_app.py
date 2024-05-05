@@ -166,6 +166,7 @@ if 'messages' not in st.session_state:
                 st.image(["https://i.imgur.com/oUkIzkS.png"],
         use_column_width=True)
         with col2:
+            st.image('https://imgur.com/F2P7a3I.png',use_column_width=True)
             st.markdown('<div style="text-align: right;"><p><h6>Please login</h6></p></div>',unsafe_allow_html=True)
             
             username = st.text_input("**ID**")
