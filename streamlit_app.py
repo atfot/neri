@@ -9,7 +9,7 @@ if 'messages' not in st.session_state:
     st.set_page_config(
     page_title="Your AI Therapist, Neri",
     page_icon="🧊",
-    layout="centered",
+    layout="wide",
     menu_items=None
 )
     st.markdown("""
