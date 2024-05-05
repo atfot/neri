@@ -64,9 +64,9 @@ if 'messages' not in st.session_state:
         use_column_width=True)
         with col2:
             if st.session_state.screen_setting=='mobile':
-                st.image('https://imgur.com/CernNDq.png',use_column_width=True)
-            else:
                 pass
+            else:
+                st.image('https://imgur.com/CernNDq.png',use_column_width=True)
             st.markdown('<div style="text-align: right;"><p><b>로그인 해주세요</b></p></div>',unsafe_allow_html=True)        
             username = st.text_input("**아이디**") 
             password = st.text_input("**비밀번호**", type="password")
