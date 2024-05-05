@@ -130,6 +130,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
         use_column_width=True)
         with col2:
             st.write('')
+            st.image('https://imgur.com/TkSOXZv.png',use_column_width=True)
             st.markdown('<div style="text-align: right;"><p><b>로그인 해주세요</b></p></div>',unsafe_allow_html=True)        
             username = st.text_input("**아이디**") 
             password = st.text_input("**비밀번호**", type="password")
