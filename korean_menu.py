@@ -17,7 +17,7 @@ def get_current_page_name():
 def make_sidebar():
     with st.sidebar:
         st.markdown(st.secrets.app_design_css, unsafe_allow_html=True)
-        st.image('https://imgur.com/TkSOXZv.png',use_column_width=True)
+        st.image('https://imgur.com/CernNDq.png',use_column_width=True)
         st.write("")
         st.write("")
 
