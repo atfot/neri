@@ -63,7 +63,7 @@ div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > butt
 }
 
 /* 실패 메세지 */
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p {
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
 }
@@ -191,7 +191,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
                 st.success("네리에 오신 것을 환영합니다!", icon="🧡")
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
-                sleep(0.5)
+                sleep(30)
                 st.switch_page("pages/signin.py")
             if st.session_state.get('many_login_attempt',True):
                     st.error("""
