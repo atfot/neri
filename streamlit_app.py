@@ -60,7 +60,7 @@ if 'messages' not in st.session_state:
                 st.image(["https://imgur.com/qpWXxTw.png"],
         use_column_width=True)
             if st.session_state.screen_setting=='mobile':
-                st.image(["https://i.imgur.com/oUkIzkS.png"],
+                st.image(["https://imgur.com/jEgFNIB.png"],
         use_column_width=True)
         with col2:
             if st.session_state.screen_setting=='mobile':
@@ -179,10 +179,13 @@ if 'messages' not in st.session_state:
                 st.image(["https://imgur.com/eL5YmWj.png"],
         use_column_width=True)
             if st.session_state.screen_setting=='mobile':
-                st.image(["https://i.imgur.com/oUkIzkS.png"],
+                st.image(["https://imgur.com/9uck935.png"],
         use_column_width=True)
         with col2:
-            st.image('https://imgur.com/F2P7a3I.png',use_column_width=True)
+            if st.session_state.screen_setting=='mobile':
+                pass
+            else:
+                st.image('https://imgur.com/F2P7a3I.png',use_column_width=True)
             st.markdown('<div style="text-align: right;"><p><b>Please login</b></p></div>',unsafe_allow_html=True) 
             
             username = st.text_input("**ID**")
