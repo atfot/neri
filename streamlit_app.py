@@ -23,6 +23,7 @@ if 'messages' not in st.session_state:
         st.session_state.korean_mode = 1
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
+        st.write(x)
         if x >=1100:
             st.session_state.screen_setting='pc'
         if 480<=x<1100:
