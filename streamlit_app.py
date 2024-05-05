@@ -29,25 +29,20 @@ div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > s
 }
 
 /* 한영 토글 */
-div.st-bl.st-bm.st-bn.st-bo.st-bp.st-bq.st-br.st-bs.st-bt.st-bu.st-bv > div > div > p > strong {
-	font-family: 'Beeunhye';
-    font-size: 1.5em;
-    font-weight: bold;
-}
-                  
-/* 로그인 해주세요 */
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > div > p > b {
+div.st-bl.st-bm.st-bn.st-bo.st-bp.st-bq.st-br.st-bs.st-bt.st-bu.st-bv > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
 }
-#please-login > div > span {
+                  
+/* 로그인 해주세요 */
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > div > div > p > b {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
 }
 
                 
 /* 아이디_비밀번호 */
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > label > div > p {
+div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > label > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
@@ -102,7 +97,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
         st.write(x)
-        st.session_state.screen_setting = 'compact' if x < 1080 else 'full'
+        st.session_state.screen_setting = 'compact' if x < 1100 else 'full'
 
     if 'many_login_attempt' not in  st.session_state:
         st.session_state.many_login_attempt=False
