@@ -44,7 +44,8 @@ if 'messages' not in st.session_state:
     else:
         toggle_boolean=True
     language_selection=st.toggle('**한국어 버전 / English Version**', value=toggle_boolean)
-    if st.session_state.screen_setting=='full':
+    st.success('글씨글씨')
+    if st.session_state.screen_setting=='pc':
         st.subheader('')
     else:
         st.write('')
