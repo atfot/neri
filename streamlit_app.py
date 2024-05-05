@@ -118,7 +118,7 @@ if 'messages' not in st.session_state:
         if st.session_state.screen_setting=='tablet':
             col1,col2,col3=st.columns([1,8,1])
         else:
-            col1,col2,col3=st.columns([0,10,0])    
+            col1,col2,col3=st.columns([0.5,9,0.5])    
         with col2:
             if st.session_state.get("logged_in", True):
                 st.success("로그인되었습니다!",  icon="✅")
