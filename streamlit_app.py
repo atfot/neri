@@ -24,7 +24,7 @@ if 'messages' not in st.session_state:
 div.block-container.st-emotion-cache-1jicfl2.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
-    line-height: 1.5;    
+	margin-top: -0.35em; 
 }
 
 /* share 버튼 */
