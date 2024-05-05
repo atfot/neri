@@ -24,7 +24,12 @@ if 'messages' not in st.session_state:
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
         st.write(x)
-        st.session_state.screen_setting = 'compact' if x < 1100 else 'full'    
+        if x >=1100:
+            st.session_state.screen_setting='pc'
+        if x < 480:
+            st.session_state.screen_setting='mobile'
+        else:
+            st.session_state.screen_setting='tablet'
 
     if 'many_login_attempt' not in  st.session_state:
         st.session_state.many_login_attempt=False
@@ -48,15 +53,25 @@ if 'messages' not in st.session_state:
         st.session_state.korean_mode=1
         col1,col2=st.columns([7.75,2.25])
         with col1:
-            st.image(["https://i.imgur.com/oUkIzkS.png"],
+            if st.session_state.screen_setting=='pc':
+                st.image(["https://i.imgur.com/oUkIzkS.png"],
         use_column_width=True)
+                st.write('pc')
+            if st.session_state.screen_setting=='tablet':
+                st.image(["https://i.imgur.com/oUkIzkS.png"],
+        use_column_width=True)
+                st.write('tablet')
+            if st.session_state.screen_setting=='mobile':
+                st.image(["https://i.imgur.com/oUkIzkS.png"],
+        use_column_width=True)
+                st.write('mobile')
         with col2:
             st.write('')
             st.image('https://imgur.com/CernNDq.png',use_column_width=True)
             st.markdown('<div style="text-align: right;"><p><b>로그인 해주세요</b></p></div>',unsafe_allow_html=True)        
             username = st.text_input("**아이디**") 
             password = st.text_input("**비밀번호**", type="password")
-            if st.session_state.screen_setting=='full':
+            if st.session_state.screen_setting=='pc':
                 if st.button("**로그인**", type="primary",use_container_width=True):
                     if st.session_state.many_login_attempt==False:
                         if username == st.session_state.id and password == st.session_state.pw: 
@@ -153,7 +168,7 @@ if 'messages' not in st.session_state:
             
             username = st.text_input("**ID**")
             password = st.text_input("**Password**", type="password")
-            if st.session_state.screen_setting=='full':
+            if st.session_state.screen_setting=='pc':
                 if st.button("**Log in**", type="primary",use_container_width=True):
                     if st.session_state.many_login_attempt==False:
                         if username == st.session_state.id and password == st.session_state.pw:
