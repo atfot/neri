@@ -66,7 +66,7 @@ div.st-emotion-cache-khxqah.e1f1d6gn3 > div > div > div > div > div > div > div 
 	font-family: 'Beeunhye';
     font-size: 1.75em;
     margin-top: -0.4em; 
-    margin-left: 1.5em; 
+    margin-left: 0.25em; 
 }
 /* 태블릿-성공실패 메세지*/
 div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
