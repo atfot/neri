@@ -46,10 +46,6 @@ div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > label > d
 	font-family: 'Beeunhye';
     font-size: 2em;
 }
-                
-div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div:nth-child(5) > div > button {
-    color: black;
-}
 
 /* 버튼들 */                
 div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > button > div > p {
