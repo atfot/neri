@@ -28,7 +28,7 @@ if 'messages' not in st.session_state:
             st.session_state.screen_setting='pc'
         if x < 480:
             st.session_state.screen_setting='mobile'
-        else:
+        if 480<=x<1100:
             st.session_state.screen_setting='tablet'
 
     if 'many_login_attempt' not in  st.session_state:
