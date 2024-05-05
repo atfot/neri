@@ -13,7 +13,7 @@ if 'messages' not in st.session_state:
     menu_items=None
 )
     #st.secrets.home_css
-    st.markdown(, unsafe_allow_html=True)
+    st.markdown(st.secrets.home_css, unsafe_allow_html=True)
     st.session_state.logged_in = False
     st.session_state.signin = False
     st.session_state.login_error = False
