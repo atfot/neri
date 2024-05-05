@@ -249,7 +249,7 @@ if 'messages' not in st.session_state:
                 del st.session_state.id,st.session_state.pw
                 st.switch_page('pages/find_my_pw.py')
     
-    if st.session_state.screen_setting=='full':
+    if st.session_state.screen_setting=='pc':
         st.markdown(
             """
             <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #FDF6EC; color: #000000; padding: 1px; text-align: center;">
