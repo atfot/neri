@@ -137,7 +137,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
         col1,col2=st.columns([7.75,2.25])
         with col1:
             if st.session_state.screen_setting=='pc':
-                st.image(["https://imgur.com/M3tlHb2.png"],
+                st.image(["https://imgur.com/tQjc4hD.png"],
         use_column_width=True)
             if st.session_state.screen_setting=='tablet':
                 st.image(["https://imgur.com/qpWXxTw.png"],
