@@ -115,11 +115,18 @@ if 'messages' not in st.session_state:
                 if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
                     st.session_state.find_my_pw = True
         if st.session_state.screen_setting=='pc':
-            col1,col2,col3=st.columns([3.3,3.4,3.3])
+            col_val1=3.3
+            col_val2=3.4
+            col_val3=3.3
         if st.session_state.screen_setting=='tablet':
-            col1,col2,col3=st.columns([1,8,1])
+            col_val1=1
+            col_val2=8
+            col_val3=1
         else:
-            col1,col2,col3=st.columns([0.5,9,0.5])    
+            col_val1=0.5
+            col_val2=9
+            col_val3=0.5
+        col1,col2,col3=st.columns([col_val1,col_val2,col_val3])
         with col2:
             if st.session_state.get("logged_in", True):
                 st.success("로그인되었습니다!",  icon="✅")
