@@ -113,45 +113,46 @@ if 'messages' not in st.session_state:
                     st.session_state.find_my_id = True
                 if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
                     st.session_state.find_my_pw = True
+        col1,col2,col3=st.columns([3.3,3.4,3.3])
+        with col2:
+            if st.session_state.get("logged_in", True):
+                st.success("로그인되었습니다!",  icon="✅")
+                st.session_state.login_attempt=0
+                sleep(0.5)
+                st.switch_page("pages/korean_chatbot.py")
+            if st.session_state.get('login_error', True):
+                if st.session_state.login_attempt<6:
+                    st.error(f"아이디 또는 비밀번호를 확인해주세요({st.session_state.login_attempt}/5)", icon="🚨")
+            if st.session_state.get("login_error", False):
+                pass
+            if st.session_state.get('signin', True):
+                st.success("네리에 오신 것을 환영합니다!", icon="🧡")
+                st.session_state.many_login_attempt=False
+                st.session_state.login_attempt=0
+                sleep(30)
+                st.switch_page("pages/signin.py")
+            if st.session_state.get('many_login_attempt',True):
+                    st.error("""
+                            아이디 또는 패스워드를 5번 이상 틀리셨습니다.
+                            
+                            아이디 또는 비밀번호 찾기를 통해 정보를 수정해주세요.""", icon="🚨")
+                    st.stop()
+            if st.session_state.get("signin", False):
+                pass
+            
+            if st.session_state.get('find_my_id', True):
+                st.session_state.many_login_attempt=False
+                st.session_state.login_attempt=0
+                st.session_state.find_my_id = False
+                del st.session_state.id,st.session_state.pw
+                st.switch_page('pages/find_my_id.py')
 
-        if st.session_state.get("logged_in", True):
-            st.success("로그인되었습니다!",  icon="✅")
-            st.session_state.login_attempt=0
-            sleep(0.5)
-            st.switch_page("pages/korean_chatbot.py")
-        if st.session_state.get('login_error', True):
-            if st.session_state.login_attempt<6:
-                st.error(f"아이디 또는 비밀번호를 확인해주세요({st.session_state.login_attempt}/5)", icon="🚨")
-        if st.session_state.get("login_error", False):
-            pass
-        if st.session_state.get('signin', True):
-            st.success("네리에 오신 것을 환영합니다!", icon="🧡")
-            st.session_state.many_login_attempt=False
-            st.session_state.login_attempt=0
-            sleep(30)
-            st.switch_page("pages/signin.py")
-        if st.session_state.get('many_login_attempt',True):
-                st.error("""
-                        아이디 또는 패스워드를 5번 이상 틀리셨습니다.
-                        
-                        아이디 또는 비밀번호 찾기를 통해 정보를 수정해주세요.""", icon="🚨")
-                st.stop()
-        if st.session_state.get("signin", False):
-            pass
-        
-        if st.session_state.get('find_my_id', True):
-            st.session_state.many_login_attempt=False
-            st.session_state.login_attempt=0
-            st.session_state.find_my_id = False
-            del st.session_state.id,st.session_state.pw
-            st.switch_page('pages/find_my_id.py')
-
-        if st.session_state.get('find_my_pw', True):
-            st.session_state.many_login_attempt=False
-            st.session_state.login_attempt=0
-            st.session_state.find_my_pw = False
-            del st.session_state.id,st.session_state.pw
-            st.switch_page('pages/find_my_pw.py')
+            if st.session_state.get('find_my_pw', True):
+                st.session_state.many_login_attempt=False
+                st.session_state.login_attempt=0
+                st.session_state.find_my_pw = False
+                del st.session_state.id,st.session_state.pw
+                st.switch_page('pages/find_my_pw.py')
     if language_selection:
         st.session_state.korean_mode=0
         col1,col2=st.columns([7.75,2.25])
@@ -216,42 +217,44 @@ if 'messages' not in st.session_state:
                         st.session_state.find_my_id = True
                 if st.button("Find my PW", type="secondary",use_container_width=True):
                         st.session_state.find_my_pw = True
-        if st.session_state.get("logged_in", True):
-            st.success("Logged in successfully!",  icon="✅")
-            st.session_state.login_attempt=0
-            sleep(0.5)
-            st.switch_page("pages/english_chatbot.py")
-        if st.session_state.get('login_error', True):
-            if st.session_state.login_attempt<6:
-                st.error(f"Incorrect ID or password({st.session_state.login_attempt}/5)", icon="🚨")
-        if st.session_state.get("login_error", False):
-            pass
-        if st.session_state.get('signin', True):
-            st.success("Welcome to Neri!", icon="🧡")
-            st.session_state.many_login_attempt=False
-            st.session_state.login_attempt=0
-            sleep(0.5)
-            st.switch_page("pages/signin.py")
-        if st.session_state.get('many_login_attempt',True):
-            st.error("""
-                    You've entered your ID or password incorrectly more than 5 times.
-                    
-                    Please use 'Find my ID' or 'Find my PW' to correct your information.""", icon="🚨")
-            st.stop()
-        if st.session_state.get("signin", False):
-            pass
-        if st.session_state.get('find_my_id', True):
-            st.session_state.many_login_attempt=False
-            st.session_state.login_attempt=0
-            st.session_state.find_my_id = False
-            del st.session_state.id,st.session_state.pw
-            st.switch_page('pages/find_my_id.py')
-        if st.session_state.get('find_my_pw', True):
-            st.session_state.many_login_attempt=False
-            st.session_state.login_attempt=0
-            st.session_state.find_my_pw = False
-            del st.session_state.id,st.session_state.pw
-            st.switch_page('pages/find_my_pw.py')
+        col1,col2,col3=st.columns([3.3,3.4,3.3])
+        with col2:
+            if st.session_state.get("logged_in", True): 
+                st.success("Logged in successfully!",  icon="✅")
+                st.session_state.login_attempt=0
+                sleep(0.5)
+                st.switch_page("pages/english_chatbot.py")
+            if st.session_state.get('login_error', True):
+                if st.session_state.login_attempt<6:
+                    st.error(f"Incorrect ID or password({st.session_state.login_attempt}/5)", icon="🚨")
+            if st.session_state.get("login_error", False):
+                pass
+            if st.session_state.get('signin', True):
+                st.success("Welcome to Neri!", icon="🧡")
+                st.session_state.many_login_attempt=False
+                st.session_state.login_attempt=0
+                sleep(0.5)
+                st.switch_page("pages/signin.py")
+            if st.session_state.get('many_login_attempt',True):
+                st.error("""
+                        You've entered your ID or password incorrectly more than 5 times.
+                        
+                        Please use 'Find my ID' or 'Find my PW' to correct your information.""", icon="🚨")
+                st.stop()
+            if st.session_state.get("signin", False):
+                pass
+            if st.session_state.get('find_my_id', True):
+                st.session_state.many_login_attempt=False
+                st.session_state.login_attempt=0
+                st.session_state.find_my_id = False
+                del st.session_state.id,st.session_state.pw
+                st.switch_page('pages/find_my_id.py')
+            if st.session_state.get('find_my_pw', True):
+                st.session_state.many_login_attempt=False
+                st.session_state.login_attempt=0
+                st.session_state.find_my_pw = False
+                del st.session_state.id,st.session_state.pw
+                st.switch_page('pages/find_my_pw.py')
     
     if st.session_state.screen_setting=='pc':
         st.markdown(
