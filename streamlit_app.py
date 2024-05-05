@@ -63,7 +63,7 @@ if 'messages' not in st.session_state:
                 st.image(["https://i.imgur.com/oUkIzkS.png"],
         use_column_width=True)
         with col2:
-            if st.session_state.screen_setting=='tablet' or 'pc':
+            if st.session_state.screen_setting=='mobile':
                 st.image('https://imgur.com/CernNDq.png',use_column_width=True)
             else:
                 pass
