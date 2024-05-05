@@ -222,7 +222,12 @@ if 'messages' not in st.session_state:
                         st.session_state.find_my_id = True
                 if st.button("Find my PW", type="secondary",use_container_width=True):
                         st.session_state.find_my_pw = True
-        col1,col2,col3=st.columns([3.3,3.4,3.3])
+        if st.session_state.screen_setting=='pc':
+            col1,col2,col3=st.columns([3.3,3.4,3.3])
+        if st.session_state.screen_setting=='tablet':
+            col1,col2,col3=st.columns([1,8,1])
+        else:
+            col1,col2,col3=st.columns([0.5,9,0.5]) 
         with col2:
             if st.session_state.get("logged_in", True): 
                 st.success("Logged in successfully!",  icon="✅")
