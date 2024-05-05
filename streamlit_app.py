@@ -102,7 +102,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
 
     if (x := streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH', want_output=True)) is not None:
         st.write(x)
-        st.session_state.screen_setting = 'compact' if x < 704 else 'full'
+        st.session_state.screen_setting = 'compact' if x < 1080 else 'full'
 
     if 'many_login_attempt' not in  st.session_state:
         st.session_state.many_login_attempt=False
