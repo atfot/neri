@@ -60,7 +60,7 @@ if 'messages' not in st.session_state:
                 st.image(["https://imgur.com/qpWXxTw.png"],
         use_column_width=True)
             if st.session_state.screen_setting=='mobile':
-                st.image(["https://imgur.com/jEgFNIB.png"],
+                st.image(["https://imgur.com/H287o5n.png"],
         use_column_width=True)
         with col2:
             if st.session_state.screen_setting=='mobile':
@@ -179,7 +179,7 @@ if 'messages' not in st.session_state:
                 st.image(["https://imgur.com/eL5YmWj.png"],
         use_column_width=True)
             if st.session_state.screen_setting=='mobile':
-                st.image(["https://imgur.com/9uck935.png"],
+                st.image(["https://imgur.com/JDCESFv.png"],
         use_column_width=True)
         with col2:
             if st.session_state.screen_setting=='mobile':
