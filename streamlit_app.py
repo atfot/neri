@@ -131,7 +131,7 @@ if 'messages' not in st.session_state:
                 st.success("네리에 오신 것을 환영합니다!", icon="🧡")
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
-                sleep(30)
+                sleep(0.5)
                 st.switch_page("pages/signin.py")
             if st.session_state.get('many_login_attempt',True):
                     st.error("""
