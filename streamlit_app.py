@@ -55,7 +55,6 @@ div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > label > d
 div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
-    color: #7F3300;
     letter-spacing:0.1em;
 }                
                 
@@ -63,7 +62,6 @@ div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > button > 
 div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
-    color: #89482C;
     letter-spacing:0.1em;
 }
 
