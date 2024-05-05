@@ -53,7 +53,7 @@ if 'messages' not in st.session_state:
         col1,col2=st.columns([7.75,2.25])
         with col1:
             if st.session_state.screen_setting=='pc':
-                st.image(["https://imgur.com/UhmQ6pa.png"],
+                st.image(["https://imgur.com/M3tlHb2.png"],
         use_column_width=True)
             if st.session_state.screen_setting=='tablet':
                 st.image(["https://imgur.com/FIIBXpJ.png"],
@@ -157,7 +157,7 @@ if 'messages' not in st.session_state:
         col1,col2=st.columns([7.75,2.25])
         with col1:
             if st.session_state.screen_setting=='pc':
-                st.image(["https://imgur.com/4oLK3il.png"],
+                st.image(["https://imgur.com/O0VSThS.png"],
         use_column_width=True)
             if st.session_state.screen_setting=='tablet':
                 st.image(["https://imgur.com/LrTi64k.png"],
