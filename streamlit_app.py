@@ -62,12 +62,12 @@ div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > butt
 }
 
 /* 실패 메세지 */
-#root > div:nth-child(1) > div.withScreencast > div > div > div > section > div.block-container.st-emotion-cache-1jicfl2.ea3mdgi5 > div > div > div > div:nth-child(6) > div.st-emotion-cache-khxqah.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
+div.st-emotion-cache-khxqah.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
 }
 
-div.st-emotion-cache-xdw2mk.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
+div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
     margin-top: 0.35em; 
@@ -80,6 +80,7 @@ div.st-emotion-cache-khxqah.e1f1d6gn3 > div > div > div > div > div > div > div 
     margin-top: -0.35em; 
 
 }
+div.st-emotion-cache-khxqah.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p
                 
 /* Running... */
 div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > label {
