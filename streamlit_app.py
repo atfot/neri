@@ -21,11 +21,6 @@ if 'messages' not in st.session_state:
     font-weight: normal;
     font-style: normal;
 }
-div.block-container.st-emotion-cache-1jicfl2.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-    font-size: 1.75em;
-	margin-top: -0.35em; 
-}
 
 /* share 버튼 */
 div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > span {
