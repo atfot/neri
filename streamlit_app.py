@@ -133,47 +133,33 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
             st.markdown('<div style="text-align: right;"><p><b>로그인 해주세요</b></p></div>',unsafe_allow_html=True)        
             username = st.text_input("**아이디**") 
             password = st.text_input("**비밀번호**", type="password")
-            if st.session_state.screen_setting=='full':
-                if st.button("**로그인**", type="primary",use_container_width=True):
-                    if st.session_state.many_login_attempt==False:
-                        if username == st.session_state.id and password == st.session_state.pw: 
-                            st.session_state.logged_in = True
-                        elif username == st.secrets.user_id and password == st.secrets.user_pw:
-                            st.session_state.logged_in = True
-                        else:
-                            st.session_state.login_error = True
-                        if st.session_state.login_error==True:
-                            st.session_state.login_attempt+=1
-                            if st.session_state.login_attempt>=6:
-                                st.session_state.many_login_attempt = True
+
+            if st.button("**로그인**", type="primary",use_container_width=True):
+                if st.session_state.many_login_attempt==False:
+                    if username == st.session_state.id and password == st.session_state.pw: 
+                        st.session_state.logged_in = True
+                    elif username == st.secrets.user_id and password == st.secrets.user_pw:
+                        st.session_state.logged_in = True
                     else:
-                        pass
-                if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
-                    st.session_state.signin = True
-                col1, col2 = st.columns([5,5])
-                with col1:
-                    if st.button("아이디 찾기", type="secondary",use_container_width=True):
-                        st.session_state.login_attempt=0
-                        st.session_state.find_my_id = True
-                with col2:
-                    if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
-                        st.session_state.login_attempt=0
-                        st.session_state.find_my_pw = True
-            else:
-                if st.button("**로그인**", type="primary",use_container_width=True):
-                    if st.session_state.many_login_attempt==False:
-                        if username == st.session_state.id and password == st.session_state.pw:
-                            st.session_state.logged_in = True
-                        elif username == st.secrets.user_id and password == st.secrets.user_pw:
-                            st.session_state.logged_in = True
-                        else:
-                            st.session_state.login_error = True
-                        if st.session_state.login_error==True:
-                            st.session_state.login_attempt+=1
-                            if st.session_state.login_attempt>=6:
-                                st.session_state.many_login_attempt = True
-                    else:
-                        pass
+                        st.session_state.login_error = True
+                    if st.session_state.login_error==True:
+                        st.session_state.login_attempt+=1
+                        if st.session_state.login_attempt>=6:
+                            st.session_state.many_login_attempt = True
+                else:
+                    pass
+            if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
+                st.session_state.signin = True
+            col1, col2 = st.columns([5,5])
+            with col1:
+                if st.button("아이디 찾기", type="secondary",use_container_width=True):
+                    st.session_state.login_attempt=0
+                    st.session_state.find_my_id = True
+            with col2:
+                if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
+                    st.session_state.login_attempt=0
+                    st.session_state.find_my_pw = True
+
                 if st.button("**새로 오신 분**", type="secondary",use_container_width=True):
                         st.session_state.signin = True
                 if st.button("아이디 찾기", type="secondary",use_container_width=True):
