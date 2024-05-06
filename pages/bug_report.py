@@ -16,8 +16,8 @@ body = st.text_area('Body')
 if st.button("Send Email"):
     try:
         msg = MIMEText(body)
-        msg['From'] = 'chohk4198@gmail.com'
-        msg['To'] = st.secrets.admin_email
+        msg['From'] = st.secrets.admin_email
+        msg['To'] = 'chohk4198@gmail.com'
         msg['Subject'] = subject
 
         server = smtplib.SMTP('smtp.gmail.com', 587)
