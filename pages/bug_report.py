@@ -26,33 +26,38 @@ error_image=st.file_uploader('상세사진', accept_multiple_files=True)
 col1,col2=st.columns([8,2])
 with col2:
     if st.button("Send Email",use_container_width=True):
-        try:
-            email=EmailSender(host='smtp.gmail.com',port=587)
-            email.send(
-                subject=f'{error_subject}',
-                sender=f'{st.secrets.admin_email}',
-                receivers=[f'{st.secrets.bug_report_email}'],
-                html=f'''
+        if 'send_email' not in st.session_state:
+            st.session_state.send_email=True
+if st.session_state.send_email==True:
+    try:
+        email=EmailSender(host='smtp.gmail.com',port=587)
+        email.send(
+            subject=f'{error_subject}',
+            sender=f'{st.secrets.admin_email}',
+            receivers=[f'{st.secrets.bug_report_email}'],
+            html=f'''
 <p><b>{st.session_state.username}</b></p><br><br>
 {error_body}
 ''',
 body_images={
-    'my_image': f'{error_image}',
+'my_image': f'{error_image}',
 }
 )
 
 
-            #msg = MIMEText(body)
-            #msg['From'] = st.secrets.admin_email
-            #msg['To'] = st.secrets.bug_report_email
-            #msg['Subject'] = subject
+        #msg = MIMEText(body)
+        #msg['From'] = st.secrets.admin_email
+        #msg['To'] = st.secrets.bug_report_email
+        #msg['Subject'] = subject
 
-            #server = smtplib.SMTP('smtp.gmail.com', 587)
-            #server.starttls()
-            #server.login(st.secrets.admin_email, 'hzfemdpfnfczwixe')
-            #server.sendmail(st.secrets.admin_email, st.#secrets.bug_report_email, msg.as_string())
-            #server.quit()
+        #server = smtplib.SMTP('smtp.gmail.com', 587)
+        #server.starttls()
+        #server.login(st.secrets.admin_email, 'hzfemdpfnfczwixe')
+        #server.sendmail(st.secrets.admin_email, st.#secrets.bug_report_email, msg.as_string())
+        #server.quit()
 
-            st.success('Email sent successfully! 🚀')
-        except Exception as e:
-            st.error(f"Failed to send email: {e}")
+        st.success('Email sent successfully! 🚀')
+    except Exception as e:
+        st.error(f"Failed to send email: {e}")
+else:
+    pass
