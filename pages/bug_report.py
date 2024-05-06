@@ -1,6 +1,5 @@
 import streamlit as st
-import smtplib
-from email.mime.text import MIMEText
+from redmail import EmailSender
 from korean_menu import make_sidebar
 
 st.set_page_config(
@@ -20,24 +19,39 @@ st.write("""
 
 # Taking inputs
 
-subject = st.text_input('제목')
-body = st.text_area('내용')
+error_subject = st.text_input('제목')
+error_body = st.text_area('내용')
 error_image=st.file_uploader('상세사진', accept_multiple_files=True)
 
 col1,col2=st.columns([8,2])
 with col2:
     if st.button("Send Email",use_container_width=True):
         try:
-            msg = MIMEText(body)
-            msg['From'] = st.secrets.admin_email
-            msg['To'] = st.secrets.bug_report_email
-            msg['Subject'] = subject
+            email=EmailSender(host='smtp.gmail.com',port=587)
+            email.send(
+                subject=f'{error_subject}'
+                sender=f'{st.secrets.admin_email}'
+                receivers=[f'{st.sescrets.bug_report_email}']
+                html=f'''
+<p><b>{st.session_state.username}</b></p><br><br>
+{error_body}
+''',
+body_images={
+    'my_image': f'{error_emage}',
+}
+)
 
-            server = smtplib.SMTP('smtp.gmail.com', 587)
-            server.starttls()
-            server.login(st.secrets.admin_email, 'hzfemdpfnfczwixe')
-            server.sendmail(st.secrets.admin_email, st.secrets.bug_report_email, msg.as_string())
-            server.quit()
+
+            #msg = MIMEText(body)
+            #msg['From'] = st.secrets.admin_email
+            #msg['To'] = st.secrets.bug_report_email
+            #msg['Subject'] = subject
+
+            #server = smtplib.SMTP('smtp.gmail.com', 587)
+            #server.starttls()
+            #server.login(st.secrets.admin_email, 'hzfemdpfnfczwixe')
+            #server.sendmail(st.secrets.admin_email, st.#secrets.bug_report_email, msg.as_string())
+            #server.quit()
 
             st.success('Email sent successfully! 🚀')
         except Exception as e:
