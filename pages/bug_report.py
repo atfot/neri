@@ -1,5 +1,7 @@
 import streamlit as st
 from redmail import EmailSender
+import smtplib
+from email.mime.text import MIMEText
 from korean_menu import make_sidebar
 
 st.set_page_config(
@@ -22,10 +24,6 @@ st.write("""
 error_subject = st.text_input('제목')
 error_body = st.text_area('내용')
 error_image=st.file_uploader('상세사진', accept_multiple_files=True)
-for uploaded_file in error_image:
-    bytes_data = uploaded_file.read()
-    st.write("filename:", uploaded_file.name)
-
 
 col1,col2=st.columns([8,2])
 with col2:
@@ -34,25 +32,27 @@ with col2:
             st.session_state.send_email=True
 if st.session_state.send_email==True:
     try:
-        email=EmailSender(host='smtp.gmail.com',port=587)
-        email.send(
-            subject=f'{error_subject}',
-            sender=f'{st.secrets.admin_email}',
-            receivers=[f'{st.secrets.bug_report_email}'],
-            text=f'{error_body}'
-)
 
 
-        #msg = MIMEText(body)
-        #msg['From'] = st.secrets.admin_email
-        #msg['To'] = st.secrets.bug_report_email
-        #msg['Subject'] = subject
+        #email=EmailSender(host='smtp.gmail.com',port=587)
+        #email.send(
+            #subject=f'{error_subject}',
+            #sender=f'{st.secrets.admin_email}',
+            #receivers=[f'{st.secrets.bug_report_email}'],
+            #text=f'{error_body}'
+#)
 
-        #server = smtplib.SMTP('smtp.gmail.com', 587)
-        #server.starttls()
-        #server.login(st.secrets.admin_email, 'hzfemdpfnfczwixe')
-        #server.sendmail(st.secrets.admin_email, st.#secrets.bug_report_email, msg.as_string())
-        #server.quit()
+
+        msg = MIMEText(body)
+        msg['From'] = st.secrets.admin_email
+        msg['To'] = st.secrets.bug_report_email
+        msg['Subject'] = subject
+
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(st.secrets.admin_email, 'hzfemdpfnfczwixe')
+        server.sendmail(st.secrets.admin_email, st.secrets.bug_report_email, msg.as_string())
+        server.quit()
 
         st.success('Email sent successfully! 🚀')
     except Exception as e:
