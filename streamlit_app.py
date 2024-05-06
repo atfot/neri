@@ -242,14 +242,12 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 st.session_state.find_my_id = False
-                del st.session_state.id,st.session_state.pw
                 st.switch_page('pages/find_my_id.py')
 
             if st.session_state.get('find_my_pw', True):
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 st.session_state.find_my_pw = False
-                del st.session_state.id,st.session_state.pw
                 st.switch_page('pages/find_my_pw.py')
         if st.session_state.screen_setting=='pc':
             col1, col2, col3=st.columns([3.3,3.4,3.3])
@@ -358,13 +356,11 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 st.session_state.find_my_id = False
-                del st.session_state.id,st.session_state.pw
                 st.switch_page('pages/find_my_id.py')
             if st.session_state.get('find_my_pw', True):
                 st.session_state.many_login_attempt=False
                 st.session_state.login_attempt=0
                 st.session_state.find_my_pw = False
-                del st.session_state.id,st.session_state.pw
                 st.switch_page('pages/find_my_pw.py')
         if st.session_state.screen_setting=='pc':
             col1, col2, col3=st.columns([3.3,3.4,3.3])
