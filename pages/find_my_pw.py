@@ -111,6 +111,7 @@ if st.session_state.korean_mode==0:
     if 'username' not in st.session_state:
         st.session_state.username=st.secrets.user_name_2
 st.session_state.filled_input=0
+st.session_state.new_pw=''
 
 if 'korean_mode' not in st.session_state:
     st.switch_page('streamlit_app.py')
@@ -119,7 +120,7 @@ if 'korean_mode' not in st.session_state:
 if st.session_state.korean_mode==1:
     button=st.button("메인 화면으로")
     if button:
-        del st.session_state.filled_input
+        del st.session_state.filled_input,st.session_state.new_pw
         st.switch_page("streamlit_app.py")
     st.markdown('<center><h3>비밀번호 수정</h3></center>', unsafe_allow_html=True)
     nickname=st.text_input('유저 이름')
@@ -158,7 +159,7 @@ if st.session_state.korean_mode==1:
                     st.success('수정 내역이 저장되었습니다!')
                     st.markdown(f'<p><center><b>수정한 비밀번호 : {st.session_state.pw}</b></center><p>',unsafe_allow_html=True)
                     time.sleep(5)
-                    del st.session_state.filled_input
+                    del st.session_state.filled_input,st.session_state.new_pw
                     st.switch_page('streamlit_app.py')
                 else:
                     pass
@@ -166,7 +167,7 @@ if st.session_state.korean_mode==1:
 if st.session_state.korean_mode==0:
     button=st.button("Back to Main")
     if button:
-        del st.session_state.filled_input
+        del st.session_state.filled_input,st.session_state.new_pw
         st.switch_page("streamlit_app.py")
     st.markdown('<center><h3>Change your Password</h3></center>', unsafe_allow_html=True)
     nickname=st.text_input('Your username')
@@ -205,7 +206,7 @@ if st.session_state.korean_mode==0:
                     st.success('Your modifications have been saved!')
                     st.markdown(f'<p><center><b>Modified Password : {st.session_state.pw}</b></center><p>',unsafe_allow_html=True)
                     time.sleep(5)
-                    del st.session_state.filled_input,st.session_state.id,st.session_state.pw
+                    del st.session_state.filled_input,st.session_state.new_pw
                     st.switch_page('streamlit_app.py')
                 else:
                     pass
