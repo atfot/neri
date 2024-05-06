@@ -3,6 +3,7 @@ from redmail import gmail
 import smtplib
 from email.mime.text import MIMEText
 from korean_menu import make_sidebar
+from io import StringIO
 
 st.set_page_config(
     page_title="당신의 AI 심리상담사, 네리",
@@ -24,6 +25,24 @@ st.write("""
 error_subject = st.text_input('제목')
 error_body = st.text_area('내용')
 error_image=st.file_uploader('상세사진', accept_multiple_files=True)
+
+uploaded_file = st.file_uploader("Choose a file")
+if uploaded_file is not None:
+    # To read file as bytes:
+    bytes_data = uploaded_file.getvalue()
+    st.write(bytes_data)
+
+    # To convert to a string based IO:
+    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
+    st.write(stringio)
+
+    # To read file as string:
+    string_data = stringio.read()
+    st.write(string_data)
+
+    # Can be used wherever a "file-like" object is accepted:
+    dataframe = pd.read_csv(uploaded_file)
+    st.write(dataframe)
 
 col1,col2=st.columns([8,2])
 with col2:
