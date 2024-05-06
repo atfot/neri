@@ -56,7 +56,7 @@ div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > 
 }
    
 /* 이대로 저장할까요? */
-div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(2) > div > button > div > p {
+div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
     color: #89482C;
