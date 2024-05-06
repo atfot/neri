@@ -1,6 +1,7 @@
 import streamlit as st
 import smtplib
 from email.mime.text import MIMEText
+from korean_menu import make_sidebar
 
 st.title('Send Streamlit SMTP Email 💌 🚀')
 
