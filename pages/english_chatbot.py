@@ -1,6 +1,7 @@
 from openai import OpenAI
 import streamlit as st
 from english_menu import make_sidebar
+from streamlit import session_state as sss
 
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
@@ -10,39 +11,39 @@ st.set_page_config(
 )
 make_sidebar()
 
-if 'client' not in st.session_state:
-  st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
+if 'client' not in sss:
+  sss.client = OpenAI(api_key=st.secrets['api_key'])
 
-if 'username' not in st.session_state:
-   st.session_state.username=st.secrets.user_name_2
-   st.session_state.age=st.secrets.age_2
-   st.session_state.gender=st.secrets.user_gender_2
-   st.session_state.problem=st.secrets.problem_2
-   st.session_state.problem_explanation=st.secrets.problem_explanation_2
-   st.session_state.goal=st.secrets.goal_2
+if 'username' not in sss:
+   sss.username=st.secrets.user_name_2
+   sss.age=st.secrets.age_2
+   sss.gender=st.secrets.user_gender_2
+   sss.problem=st.secrets.problem_2
+   sss.problem_explanation=st.secrets.problem_explanation_2
+   sss.goal=st.secrets.goal_2
 
 # variables
-if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "Psychotherapist", "content": "What's bothering you?"}]
-    st.session_state['conversations']=[{"role": "Psychotherapist", "content": "What's bothering you?"}]   
-    st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
+if "messages" not in sss:
+    sss["messages"] = [{"role": "Psychotherapist", "content": "What's bothering you?"}]
+    sss['conversations']=[{"role": "Psychotherapist", "content": "What's bothering you?"}]   
+    sss['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
 
-if 'repeat' not in st.session_state:
-    st.session_state.repeat = False
+if 'repeat' not in sss:
+    sss.repeat = False
 
 # functions
 def reply_again_cb():
-    st.session_state.repeat = True
+    sss.repeat = True
 
-if st.session_state.repeat==True:
-    st.session_state.messages=st.session_state.messages[:-1]
-    st.session_state.conversations=st.session_state.conversations[:-1]
+if sss.repeat==True:
+    sss.messages=sss.messages[:-1]
+    sss.conversations=sss.conversations[:-1]
 
 def main():
 
     # Print msg history.
     last_user_message = None
-    for message in st.session_state.messages:
+    for message in sss.messages:
 
         # Print the user msg if it is not repeating successively.
         if (last_user_message is not None and
@@ -61,15 +62,15 @@ def main():
         if message['role'] == "Mental patient":
             last_user_message = message["content"]
 
-    if prompt := st.chat_input("Feel free to tell me all your problems.") or st.session_state.repeat:
+    if prompt := st.chat_input("Feel free to tell me all your problems.") or sss.repeat:
         def text_logic():
-            if st.session_state.repeat==True:
+            if sss.repeat==True:
                 pass
             else:
-                st.session_state.messages.append({"role": "Mental patient", "content": prompt})
-                st.session_state.conversations.append({"role": "Mental patient", "content": prompt})
-            if len(st.session_state.messages)%3==0:
-                summary = st.session_state.client.chat.completions.create(
+                sss.messages.append({"role": "Mental patient", "content": prompt})
+                sss.conversations.append({"role": "Mental patient", "content": prompt})
+            if len(sss.messages)%3==0:
+                summary = sss.client.chat.completions.create(
                 model="gpt-3.5-turbo-0125",
                 messages=[
                     {
@@ -81,7 +82,7 @@ def main():
                     "content": f"""                    
 Please briefly summarize the conversation below.
 
-{st.session_state.messages}"""
+{sss.messages}"""
                     }
                 ],
                 temperature=1,
@@ -90,8 +91,8 @@ Please briefly summarize the conversation below.
                 frequency_penalty=0,
                 presence_penalty=0
                 )
-                st.session_state['message_summary'] = summary.choices[0].message.content
-                st.session_state['conversations'] = st.session_state.messages[-3:]
+                sss['message_summary'] = summary.choices[0].message.content
+                sss['conversations'] = sss.messages[-3:]
             
             progress_text='thinking...'
             my_bar=st.progress(0,text=progress_text)
@@ -109,12 +110,12 @@ Please briefly summarize the conversation below.
 
                 # Character information
                 1. mentally ill person
-                - Name: {st.session_state.username}
-                - Age: {st.session_state.age}
-                - Gender: {st.session_state.gender}
-                - Problem : {st.session_state.problem}
-                - Problem Explanation: {st.session_state.problem_explanation}
-                - Goal : {st.session_state.goal}
+                - Name: {sss.username}
+                - Age: {sss.age}
+                - Gender: {sss.gender}
+                - Problem : {sss.problem}
+                - Problem Explanation: {sss.problem_explanation}
+                - Goal : {sss.goal}
 
                 2. psychological counselor
                 - Name : Neri
@@ -122,7 +123,7 @@ Please briefly summarize the conversation below.
                 - Gender: Male
                 - Country of Origin : South Korea
                 - City of residence : Seoul
-                - Characteristics : Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him/her, but also asks any questions if he wants to understand more about him/her
+                - Characteristics : Neri has information about {sss.username}, who is mentally ill, and engages in an extensive conversation with him/her, but also asks any questions if he wants to understand more about him/her
 
                 **REMEMBER**: 
                 '''
@@ -146,8 +147,8 @@ Please briefly summarize the conversation below.
                 Your goal is to help me, the playwright, write a script for a play. Let's go step-by-step:
 
                 - Read this step by step before filling out the form
-                **Summary of the conversation**: [{st.session_state.message_summary}]
-                **Latest Conversations**: [{st.session_state.conversations}]     
+                **Summary of the conversation**: [{sss.message_summary}]
+                **Latest Conversations**: [{sss.conversations}]     
                 
                 - This is the form      
                 '''
@@ -165,7 +166,7 @@ Please briefly summarize the conversation below.
 
             """
             
-            response = st.session_state.client.chat.completions.create(
+            response = sss.client.chat.completions.create(
             model="gpt-3.5-turbo-0125",
             messages=[
             {
@@ -185,7 +186,7 @@ Please briefly summarize the conversation below.
         )
             my_bar.progress(25,text=progress_text)
             msg = response.choices[0].message.content
-            sentence_selection = st.session_state.client.chat.completions.create(
+            sentence_selection = sss.client.chat.completions.create(
             model="gpt-3.5-turbo-0125",
             messages=[
             {
@@ -203,12 +204,12 @@ Please briefly summarize the conversation below.
 
                 # Character information
                 1. mentally ill person
-                - Name: {st.session_state.username}
-                - Age: {st.session_state.age}
-                - Gender: {st.session_state.gender}
-                - Problem : {st.session_state.problem}
-                - Problem Explanation: {st.session_state.problem_explanation}
-                - Goal : {st.session_state.goal}
+                - Name: {sss.username}
+                - Age: {sss.age}
+                - Gender: {sss.gender}
+                - Problem : {sss.problem}
+                - Problem Explanation: {sss.problem_explanation}
+                - Goal : {sss.goal}
 
                 2. psychological counselor
                 - Name : Neri
@@ -216,7 +217,7 @@ Please briefly summarize the conversation below.
                 - Gender: Male
                 - Country of Origin : South Korea
                 - City of residence : Seoul
-                - Characteristics : Neri has information about {st.session_state.username}, who is mentally ill, and engages in an extensive conversation with him/her, but also asks any questions if he wants to understand more about him/her
+                - Characteristics : Neri has information about {sss.username}, who is mentally ill, and engages in an extensive conversation with him/her, but also asks any questions if he wants to understand more about him/her
 
                 
                 **REMEMBER**:
@@ -238,9 +239,9 @@ Please briefly summarize the conversation below.
                 Read the summary, dialogue, and examples of the three answers and choose the best sentence from the three. Lets go step by step-
 
                 - Read these informations carefully before answering my question.
-                **Summary of the conversation**: [{st.session_state.message_summary}]
+                **Summary of the conversation**: [{sss.message_summary}]
                 
-                **Conversation content**: [{st.session_state.conversations}]
+                **Conversation content**: [{sss.conversations}]
 
                 **Three possible answers from a psychotherapist who wants to learn about his patient and heal his patient's mind**: 
                 "[{msg}]"
@@ -268,7 +269,7 @@ Please briefly summarize the conversation below.
         )
             my_bar.progress(50,text=progress_text)
             selected_msg = sentence_selection.choices[0].message.content.strip('"')
-            humanize_sentence = st.session_state.client.chat.completions.create(
+            humanize_sentence = sss.client.chat.completions.create(
             model="gpt-3.5-turbo-0125",
             messages=[
             {
@@ -329,36 +330,36 @@ Please briefly summarize the conversation below.
                 humanize_msg=humanize_msg.strip('"')
                 humanize_msg=humanize_msg.strip("'")
                 humanize_msg=humanize_msg.strip("'")
-            st.session_state.messages.append({"role": "Psychotherapist", "content": humanize_msg})
-            st.session_state.conversations.append({"role": "Psychotherapist", "content": humanize_msg})
+            sss.messages.append({"role": "Psychotherapist", "content": humanize_msg})
+            sss.conversations.append({"role": "Psychotherapist", "content": humanize_msg})
             my_bar.progress(100,text=progress_text)
             my_bar.empty()
 
         # Get the last user prompt in the msg history.
-        if st.session_state.repeat:
-            prompt = st.session_state.messages[-1]['content']
+        if sss.repeat:
+            prompt = sss.messages[-1]['content']
             text_logic()
             col1,col2=st.columns([9,1])
             with col1:
-                st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
-                #st.write(st.session_state.messages)
-                #st.write(st.session_state.conversations)
+                st.chat_message('assistant').write(sss.messages[-1]['content'])
+                #st.write(sss.messages)
+                #st.write(sss.conversations)
             with col2:
                 st.write('')
                 st.button('🔄', on_click=reply_again_cb)
-            st.session_state.repeat = False  # reset
-            #st.write(st.session_state.messages[:-1])                
+            sss.repeat = False  # reset
+            #st.write(sss.messages[:-1])                
         else:
             # Only print the user msg if repeat is false.
             st.chat_message('user').write(prompt)
             text_logic()
             col1,col2=st.columns([9,1])
             with col1:
-                st.chat_message('assistant').write(st.session_state.messages[-1]['content'])
+                st.chat_message('assistant').write(sss.messages[-1]['content'])
             with col2:
                 st.write('')
                 st.button('🔄', on_click=reply_again_cb)
-            #st.write(st.session_state.messages[:-1])
+            #st.write(sss.messages[:-1])
 
 
 if __name__ == '__main__':

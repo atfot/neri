@@ -3,6 +3,7 @@ from english_menu import make_sidebar
 from openai import OpenAI
 import pandas as pd
 import time
+from streamlit import session_state as sss
 
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
@@ -13,22 +14,22 @@ st.set_page_config(
 make_sidebar()
 
 def fix_info():
-  st.session_state.fix_info=True
+  sss.fix_info=True
 
-if 'client' not in st.session_state:
-  st.session_state.client = OpenAI(api_key=st.secrets['api_key'])
+if 'client' not in sss:
+  sss.client = OpenAI(api_key=st.secrets['api_key'])
 
-if 'username' not in st.session_state:
-   st.session_state.username=st.secrets.user_name_2
-   st.session_state.age=st.secrets.age_2
-   st.session_state.gender=st.secrets.user_gender_2
-   st.session_state.problem=st.secrets.problem_2
-   st.session_state.problem_explanation=st.secrets.problem_explanation_2
-   st.session_state.goal=st.secrets.goal_2
+if 'username' not in sss:
+   sss.username=st.secrets.user_name_2
+   sss.age=st.secrets.age_2
+   sss.gender=st.secrets.user_gender_2
+   sss.problem=st.secrets.problem_2
+   sss.problem_explanation=st.secrets.problem_explanation_2
+   sss.goal=st.secrets.goal_2
 
-if 'my_info' not in st.session_state:
+if 'my_info' not in sss:
   with st.spinner('# Now Loading...'):
-    problem_analysis = st.session_state.client.chat.completions.create(
+    problem_analysis = sss.client.chat.completions.create(
                 model="gpt-3.5-turbo-0125",
                 messages=[
                   {
@@ -47,25 +48,25 @@ if 'my_info' not in st.session_state:
                     From a professional psychotherapist's perspective, score the extent to which the client's problem is improved by the information given below and explain why.
 
                     # Informations you need to know
-                    - Client's Name : {st.session_state.username}
-                    - Age : {st.session_state.age}
-                    - Gender : {st.session_state.gender}
-                    - Problem : {st.session_state.problem}
-                    - Problem Explanation : {st.session_state.problem_explanation}
-                    - Goal : {st.session_state.goal}
+                    - Client's Name : {sss.username}
+                    - Age : {sss.age}
+                    - Gender : {sss.gender}
+                    - Problem : {sss.problem}
+                    - Problem Explanation : {sss.problem_explanation}
+                    - Goal : {sss.goal}
 
                     - Message summary : 
-                    {st.session_state.message_summary}
+                    {sss.message_summary}
 
                     - The latest conversations:
-                    {st.session_state.conversations}
+                    {sss.conversations}
                   
                     # Answer form
                     - You need to use the form below to answer my request using Korean language.
                     '''
                     Analysis : [Analyze the information I've given you by not using any bullet points.]
 
-                    Score : [Based on the analysis you did, please score how well the {st.session_state.username}'s problem was solved.]
+                    Score : [Based on the analysis you did, please score how well the {sss.username}'s problem was solved.]
 
                     Explanation : [Tell me how the score you gave me was based on your considerations.
                     *Scoring criteria*:
@@ -76,12 +77,12 @@ if 'my_info' not in st.session_state:
                     2 : The client is directly demonstrating a willingness to work toward a negative direction.
                     1 : The client has a serious mental illness or mental health issue and needs to see a real doctor or psychologist to address it.]
 
-                    Best thing to do : [Tell me what you think is the easiest thing for {st.session_state.username} to do in that situation, using a bullet point summary, as a professional psychologist.]
+                    Best thing to do : [Tell me what you think is the easiest thing for {sss.username} to do in that situation, using a bullet point summary, as a professional psychologist.]
                     '''
                     **Remember**:
                     1. Your score should be much lower than you think.
                     2. Don't use the word 'client'.
-                    3. If you need to use the word 'client', don't use that word and replace it into the client's name, such as {st.session_state.username}.
+                    3. If you need to use the word 'client', don't use that word and replace it into the client's name, such as {sss.username}.
                     4. You should never speak rudely.
         """
                   }
@@ -94,75 +95,75 @@ if 'my_info' not in st.session_state:
                 )    
     problem_analysis = problem_analysis.choices[0].message.content
     problem_analysis=problem_analysis.strip().strip("'''")
-    st.session_state.problem_analysis=problem_analysis
+    sss.problem_analysis=problem_analysis
     problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
-    st.session_state.client_analysis=problem_analysis[:problem_analysis.find('\n')].replace('. ','.\n\n')
+    sss.client_analysis=problem_analysis[:problem_analysis.find('\n')].replace('. ','.\n\n')
     problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
     problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
-    st.session_state.score=problem_analysis[:problem_analysis.find('\n')]
+    sss.score=problem_analysis[:problem_analysis.find('\n')]
     problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
     problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
-    st.session_state.score_explanation=problem_analysis[:problem_analysis.find('\n')].replace('. ','.\n\n')
+    sss.score_explanation=problem_analysis[:problem_analysis.find('\n')].replace('. ','.\n\n')
     problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
     problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
-    st.session_state.what_to_do=problem_analysis.split('\n')
-    st.session_state.my_info=True
-    st.session_state.fix_info=False
+    sss.what_to_do=problem_analysis.split('\n')
+    sss.my_info=True
+    sss.fix_info=False
 
 col1,col2,col3=st.columns([4,1,5])
 with col1:
-  if st.session_state.fix_info==False:
+  if sss.fix_info==False:
     st.write('')
     st.markdown('<h4>Your Profile</h4>',unsafe_allow_html=True)
     st.markdown(f'''
                 <p>
-                <b>1. Your Name : </b>{st.session_state.username}
+                <b>1. Your Name : </b>{sss.username}
 
-                <b>2. Age : </b>{st.session_state.age}
+                <b>2. Age : </b>{sss.age}
 
-                <b>3. Gender : </b>{st.session_state.gender}
+                <b>3. Gender : </b>{sss.gender}
 
                 <b>4. Problem : </b>
                 
-                {st.session_state.problem}
+                {sss.problem}
 
                 <b>5. Problem Explanation : </b>
                 
-                {st.session_state.problem_explanation}
+                {sss.problem_explanation}
 
                 <b>6. Goal : </b>
                 
-                {st.session_state.goal}
+                {sss.goal}
                 </p>
                 ''', unsafe_allow_html=True)   
     st.button('Fix my Info',use_container_width=True,on_click=fix_info)
-  if st.session_state.fix_info==True:
+  if sss.fix_info==True:
     st.title('Fix your Profile')      
     st.markdown(f'''
                 <p>
-                <b>1. Your Name : </b>{st.session_state.username}
+                <b>1. Your Name : </b>{sss.username}
 
-                <b>2. Age : </b>{st.session_state.age}
+                <b>2. Age : </b>{sss.age}
 
-                <b>3. Gender : </b>{st.session_state.gender}
+                <b>3. Gender : </b>{sss.gender}
 
-                <b>4. Problem : </b>{st.session_state.problem}
+                <b>4. Problem : </b>{sss.problem}
 
-                <b>5. Problem Explanation : </b>{st.session_state.problem_explanation}
+                <b>5. Problem Explanation : </b>{sss.problem_explanation}
 
-                <b>6. Goal : </b>{st.session_state.goal}
+                <b>6. Goal : </b>{sss.goal}
                 </p>
                 ''', unsafe_allow_html=True)   
 with col3:
-  if st.session_state.fix_info==False:
+  if sss.fix_info==False:
     month=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     month=month[time.localtime().tm_mon-1]
     st.markdown(f'<p><h4>Analysis results on {month} {time.localtime().tm_mday}, {time.localtime().tm_year}</h4></p>', unsafe_allow_html=True)
     st.markdown('<p><b>Problem Analysis :</b></p>', unsafe_allow_html=True)
-    st.write(f'{st.session_state.client_analysis}')
-    st.markdown(f'<p><b>Score : </b>{st.session_state.score}</p>', unsafe_allow_html=True)
+    st.write(f'{sss.client_analysis}')
+    st.markdown(f'<p><b>Score : </b>{sss.score}</p>', unsafe_allow_html=True)
     st.markdown('<p><b>Score Explanation :</b></p>', unsafe_allow_html=True)
-    st.write(f'{st.session_state.score_explanation}')
+    st.write(f'{sss.score_explanation}')
   else:
     with st.form('fix_user_info'):
       x=0
@@ -170,31 +171,31 @@ with col3:
       username = st.text_input('**Tell me the name you want to be called in here.**')
       if username:
           x+=1
-          st.session_state.username=username
+          sss.username=username
       problem = st.text_area("**What's your biggest problem right now?🤔**")
       if problem:
           x+=1
-          st.session_state.problem=problem
+          sss.problem=problem
       problem_explanation=st.text_area("**Please describe your issue in more detail. The more details you can provide, the better😊**")
       if problem_explanation:
           x+=1
-          st.session_state.problem_explanation=problem_explanation
+          sss.problem_explanation=problem_explanation
       goal=st.text_area("**Tell us what your end goal is!**")
       if goal:
           x+=1
-          st.session_state.goal=goal
+          sss.goal=goal
       if st.form_submit_button('**Submit**'):
         if x==4:
           st.write('**Your user profile is fixed👍**')
           time.sleep(2)
-          del st.session_state.my_info
+          del sss.my_info
           st.rerun()
         else:
           st.write('**Please fill every blanks🙃**')
-if st.session_state.fix_info==False:
+if sss.fix_info==False:
   st.title('')
   st.markdown('<p><h4>Actions that might help you :</h4></p>', unsafe_allow_html=True)
-  for i in st.session_state.what_to_do:
+  for i in sss.what_to_do:
     st.write(i)
   st.title('')
   st.markdown('<p><h3><center>Problem Resolution Graph</center></h3></p>', unsafe_allow_html=True)
@@ -203,7 +204,7 @@ if st.session_state.fix_info==False:
   else:
       z=f'{time.localtime().tm_mon}'
   y=f'{time.localtime().tm_year}/{z}/{time.localtime().tm_mday}'
-  df = pd.DataFrame({y: [st.session_state.score]})
+  df = pd.DataFrame({y: [sss.score]})
   x=6
   y='2025/12/03'
   df_1=pd.DataFrame({y: [x]})
@@ -212,6 +213,6 @@ if st.session_state.fix_info==False:
 else:
   pass
 
-  #st.write(st.session_state.problem_analysis)
-  #st.write(st.session_state.conversations)
-  #st.write(st.session_state.message_summary)
+  #st.write(sss.problem_analysis)
+  #st.write(sss.conversations)
+  #st.write(sss.message_summary)

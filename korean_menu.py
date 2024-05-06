@@ -2,6 +2,7 @@ import streamlit as st
 from time import sleep
 from streamlit.runtime.scriptrunner import get_script_run_ctx
 from streamlit.source_util import get_pages
+from streamlit import session_state as sss
 
 
 def get_current_page_name():
@@ -168,7 +169,7 @@ div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div 
         st.write("")
         st.write("")
 
-        if st.session_state.get("logged_in", True):
+        if sss.get("logged_in", True):
             st.page_link("pages/korean_chatbot.py", label="당신의 카운셀러", icon="🩹")
             st.page_link("pages/korean_analysis.py", label="내 정보", icon="ℹ️")
             st.page_link("pages/korean_instruction.py", label="사용법", icon="❓")
@@ -184,24 +185,24 @@ div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div 
 
 
 def logout():
-    st.session_state.logged_in = False
-    if "messages" in st.session_state:
-        del st.session_state["messages"]
-        del st.session_state['conversations']
-        del st.session_state['message_summary']
+    sss.logged_in = False
+    if "messages" in sss:
+        del sss["messages"]
+        del sss['conversations']
+        del sss['message_summary']
         try:
-            del st.session_state.username
+            del sss.username
         except:
             pass
         try:
-            del st.session_state.my_info
+            del sss.my_info
         except:
             pass
         try:
-            del st.session_state.many_login_attempt
+            del sss.many_login_attempt
         except:
             pass
-        del st.session_state.client
+        del sss.client
     st.info("다음에 또 뵈어요😊")
     sleep(0.5)
     st.switch_page("streamlit_app.py")
