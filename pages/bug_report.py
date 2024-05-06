@@ -24,7 +24,7 @@ st.write("""
 
 error_subject = st.text_input('제목')
 error_body = st.text_area('내용')
-error_image=st.file_uploader('상세사진')
+error_image=st.file_uploader('상세사진', accept_multiple_files=True)
 for uploaded_file in error_image:
     bytes_data = uploaded_file.read()
     subtype_name=uploaded_file[uploaded_file.find('.')+1:]
