@@ -47,20 +47,11 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
 }
 
 /* 메뉴 화면 */
-/* 타이틀 */
-div.st-emotion-cache-dvne4q.eczjsme4 > div > div > div > div > div > div > div > div > div > h1 {
-	font-family: 'Beeunhye';
-	font-size: 2.5em;
-    margin-top: -0.4em; 
-    margin-left: 0.25em; 
-    letter-spacing:0.075em;
-}
-   
 /* 메뉴 */
 span.st-emotion-cache-icvz16.e11k5jya0 > div > p {
 	font-family: 'Beeunhye';
-	font-size: 2em;
-    margin-top: -0.1em; 
+	font-size: 1.75em;
+    margin-top: -0.15em; 
     margin-left: 0.25em; 
     letter-spacing:0.075em;
 }       
