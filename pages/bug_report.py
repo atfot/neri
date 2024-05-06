@@ -10,10 +10,10 @@ st.set_page_config(
 )
 make_sidebar()
 
-st.title('Send Streamlit SMTP Email 💌 🚀')
+st.title('Bug report')
 
 st.markdown("""
-**Enter your email, subject, and email body then hit send to receive an email from `summittradingcard@gmail.com`!**
+**if there is anything wrong while using my app plz lemme know**
 """)
 
 # Taking inputs
@@ -25,7 +25,7 @@ if st.button("Send Email"):
     try:
         msg = MIMEText(body)
         msg['From'] = st.secrets.admin_email
-        msg['To'] = 'chohk4198@gmail.com'
+        msg['To'] = st.secrets.user_email
         msg['Subject'] = subject
 
         server = smtplib.SMTP('smtp.gmail.com', 587)
