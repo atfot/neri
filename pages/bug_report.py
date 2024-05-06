@@ -50,11 +50,9 @@ if st.session_state.send_email==True:
 <p>{error_body}</p>
 {{myimage}}
             ''',
-            body_images={'myimage':
-                         {
+            body_images={
             'myimage':f'{imgdata}',
             'subtype':f'{subtype_name}'
-            }
             }
 )
         #msg = MIMEText(error_body)
