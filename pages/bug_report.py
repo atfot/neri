@@ -36,7 +36,7 @@ with col2:
         st.session_state.send_email=True
 if st.session_state.send_email==True:
     try:
-        #base64_str = base64.b64encode(error_image.read())
+        base64_str = base64.b64encode(error_image.read())
         imgdata = base64.b64decode(error_image.read())
         subtype_name=error_image.name[error_image.name.find('.')+1:]      
         gmail.username=st.secrets.admin_email
@@ -51,7 +51,7 @@ if st.session_state.send_email==True:
 {{myimage}}
             ''',
             body_images={
-            'myimage':f'{error_image.read()}',
+            'myimage':f'{imgdata}',
             'subtype':f'{subtype_name}'
             }
 )
