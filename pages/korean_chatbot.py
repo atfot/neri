@@ -25,7 +25,9 @@ if 'username' not in st.session_state:
 # variables
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
+if 'conversations' not in st.session_state:
     st.session_state['conversations']=[{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
+if 'message_summary' not in st.session_state:
     st.session_state['message_summary'] = '아직은 요약된 내용이 없습니다.'
 
 if 'repeat' not in st.session_state:
