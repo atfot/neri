@@ -375,7 +375,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
             col1, col2, col3=st.columns([1,9,1])
             with col2:
                 home_logic_english()            
-    if 'id' in st.session_state:
+    if 'username' in st.session_state:
         st.write(st.session_state.id)
         st.write(st.session_state.pw)
         st.write(st.session_state.username)
