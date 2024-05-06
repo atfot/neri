@@ -131,6 +131,9 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
     if 'id' not in st.session_state:
         st.session_state.id = False
         st.session_state.pw = False
+    else:
+        st.write(st.session_state.id)
+        st.write(st.session_state.pw)
 
     toggle_boolean=''
     if st.session_state.korean_mode==1:
