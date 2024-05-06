@@ -37,7 +37,7 @@ with col2:
 if st.session_state.send_email==True:
     try:
         base64_str = base64.b64encode(error_image.read())
-        imgdata = base64.b64decode(error_image.read())
+        imgdata = base64.b64decode(base64_str)
         subtype_name=error_image.name[error_image.name.find('.')+1:]      
         gmail.username=st.secrets.admin_email
         gmail.password=st.secrets.admin_pw
