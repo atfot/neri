@@ -13,13 +13,13 @@ make_sidebar()
 st.subheader('사용하시다 불편하신 점이 계셨나요?')
 
 st.markdown("""
-**저희 제품을 사용하시면서 오류가 나거나 맘에 안드는 점이 있으시다면 꼭 알려주세요! 문제점을 고쳐나가도록 하겠습니다.**
+**저희 프로그램을 사용하시면서 오류가 나거나 맘에 안드는 점이 있으시다면 꼭 알려주세요! 문제점을 고쳐나가도록 하겠습니다.**
 """)
 
 # Taking inputs
 
-subject = st.text_input('Subject')
-body = st.text_area('Body')
+subject = st.text_input('제목')
+body = st.text_area('내용')
 
 if st.button("Send Email"):
     try:
