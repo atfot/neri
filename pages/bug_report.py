@@ -44,7 +44,7 @@ if st.session_state.send_email==True:
             base64_str = base64.b64encode(error_image.read())
             imgdata = base64.b64decode(base64_str)
             img_list['myimage'] = imgdata
-            subtype_name=uploaded_file[uploaded_file.find('.')+1:]
+            subtype_name=uploaded_file.name[uploaded_file.name.find('.')+1:]
             img_list['subtype'] = subtype_name            
         gmail.username=st.secrets.admin_email
         gmail.password=st.secrets.admin_pw
