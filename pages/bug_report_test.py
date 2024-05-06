@@ -28,6 +28,7 @@ st.write("""
 
 error_subject = st.text_input('제목')
 error_body = st.text_area('내용')
+error_image=st.file_uploader('상세사진')
 
 col1,col2=st.columns([8,2])
 with col2:
@@ -35,6 +36,9 @@ with col2:
         st.session_state.send_email=True
 if st.session_state.send_email==True:
     try:
+        base64_str = base64.b64encode(error_image.read())
+        imgdata = base64.b64decode(error_image.read())
+        subtype_name=error_image.name[error_image.name.find('.')+1:]      
         gmail.username=st.secrets.admin_email
         gmail.password=st.secrets.admin_pw
         gmail.send(
@@ -44,8 +48,26 @@ if st.session_state.send_email==True:
             html=f'''
 <h5>{st.session_state.username}</h5>
 <p>{error_body}</p>
-            '''
+{{myimage}}
+            ''',
+            body_images={'myimage':
+                         {
+            'myimage':f'{imgdata}',
+            'subtype':f'{subtype_name}'
+            }
+            }
 )
+        #msg = MIMEText(error_body)
+        #msg['From'] = st.secrets.admin_email
+        #msg['To'] = st.secrets.bug_report_email
+        #msg['Subject'] = error_subject
+
+        #server = smtplib.SMTP('smtp.gmail.com', 587)
+        #server.starttls()
+        #server.login(st.secrets.admin_email, 'hzfemdpfnfczwixe')
+        #server.sendmail(st.secrets.admin_email, st.secrets.bug_report_email, msg.as_string())
+        #server.quit()
+
         st.success('Email sent successfully! 🚀')
         del st.session_state.send_email
     except Exception as e:
