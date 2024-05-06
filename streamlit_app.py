@@ -153,7 +153,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
         with col1:
             if st.session_state.screen_setting=='pc':
                 st.title('')
-                st.image(["https://imgur.com/P60GlEG.png"],
+                st.image(["https://imgur.com/kyMZwcS.png"],
         use_column_width=True)
             if st.session_state.screen_setting=='tablet':
                 st.title('')
@@ -272,7 +272,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
         col1,col2=st.columns([7.75,2.25])
         with col1:
             if st.session_state.screen_setting=='pc':
-                st.image(["https://imgur.com/72xoZXc.png"],
+                st.image(["https://imgur.com/UzRAmqu.png"],
         use_column_width=True)
             if st.session_state.screen_setting=='tablet':
                 st.image(["https://imgur.com/chYXJ98.png"],
