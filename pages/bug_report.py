@@ -60,6 +60,7 @@ if st.session_state.send_email==True:
             ''',
             body_images={'myimage':img_list}
 )
+        del st.session_state.send_email
 
 
         #msg = MIMEText(error_body)
