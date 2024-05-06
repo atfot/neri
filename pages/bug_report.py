@@ -31,14 +31,17 @@ error_body = st.text_area('내용')
 error_image=st.file_uploader('상세사진')
 if error_image is not None:
     try:
-        st.write(erro_image.read())
+        st.write('first')
+        st.write(error_image.read())
+        st.divider()
     except:
         pass
     try:
+        st.write('second')
         base64_str = base64.b64encode(error_image.read())
         st.write(base64_str)
     except:
-        pas
+        pass
 
 col1,col2=st.columns([8,2])
 with col2:
