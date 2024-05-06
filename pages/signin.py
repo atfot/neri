@@ -32,6 +32,7 @@ else:
         st.session_state.goal=st.secrets.goal_2
 if 'id' in st.session_state:
     st.write(stst.id)
+    st.write(stst.pw)
 
 st.session_state.filled_input=0
 
