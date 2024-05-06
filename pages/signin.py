@@ -63,7 +63,7 @@ if sss.korean_mode==1:
             del sss.pw
         else:
             pass
-        if 'username' in ss:
+        if 'username' in sss:
             del sss.username
         else:
             pass
