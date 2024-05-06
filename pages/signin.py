@@ -1,5 +1,6 @@
 import streamlit as st
 import time
+from streamlit import session_state as stst
 
 st.set_page_config(
         page_title="Your AI Therapist, Neri",
@@ -30,7 +31,7 @@ else:
         st.session_state.problem_explanation=st.secrets.problem_explanation_2
         st.session_state.goal=st.secrets.goal_2
 if 'id' in st.session_state:
-    st.write(st.session_state.id)
+    st.write(stst.id)
 
 st.session_state.filled_input=0
 
