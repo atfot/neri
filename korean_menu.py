@@ -172,6 +172,7 @@ div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div 
         if sss.get("logged_in", True):
             st.page_link("pages/korean_chatbot.py", label="당신의 카운셀러", icon="🩹")
             st.page_link("pages/korean_analysis.py", label="내 정보", icon="ℹ️")
+            st.page_link("pages/bug_report.py", label="오류 제보", icon="⚠️")
             st.page_link("pages/korean_instruction.py", label="사용법", icon="❓")
             st.title('')
 
