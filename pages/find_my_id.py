@@ -95,29 +95,17 @@ div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div 
 st.write(st.session_state.korean_mode)
 
 if st.session_state.korean_mode==1:
-    if 'id' in st.session_state:
-        pass
     if 'id' not in st.session_state:
         st.session_state.id=st.secrets.user_id
-    if 'pw' in st.session_state:
-        pass
     if 'pw' not in st.session_state:
         st.session_state.pw=st.secrets.user_pw
-    if 'username' in st.session_state:
-        pass
     if 'username' not in st.session_state:
         st.session_state.username=st.secrets.user_name
 if st.session_state.korean_mode==0:
-    if 'id' in st.session_state:
-        pass
     if 'id' not in st.session_state:
         st.session_state.id=st.secrets.user_id
-    if 'pw' in st.session_state:
-        pass
     if 'pw' not in st.session_state:
         st.session_state.pw=st.secrets.user_pw
-    if 'username' in st.session_state:
-        pass
     if 'username' not in st.session_state:
         st.session_state.username=st.secrets.user_name_2
 
