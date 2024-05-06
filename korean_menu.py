@@ -60,7 +60,6 @@ span.st-emotion-cache-icvz16.e11k5jya0 > div > p {
 div.st-emotion-cache-dvne4q.eczjsme4 > div > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
 	font-size: 2em;
-    color: #b5651d;
     letter-spacing:0.075em;
 }     
 
