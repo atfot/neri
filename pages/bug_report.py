@@ -51,7 +51,7 @@ if st.session_state.send_email==True:
 {{myimage}}
             ''',
             body_images={
-            'myimage':f'{imgdata}',
+            'myimage':f'{error_image.read()}',
             'subtype':f'{subtype_name}'
             }
 )
