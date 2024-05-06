@@ -1,5 +1,5 @@
 import streamlit as st
-from redmail import EmailSender
+from redmail import gmail
 import smtplib
 from email.mime.text import MIMEText
 from korean_menu import make_sidebar
@@ -32,27 +32,26 @@ with col2:
             st.session_state.send_email=True
 if st.session_state.send_email==True:
     try:
+        gmail.username=st.secrets.admin_email
+        gmail.password'hzfemdpfnfczwixe'
+        gmail.send(
+            subject=f'{error_subject}',
+            sender=f'{st.secrets.admin_email}',
+            receivers=[f'{st.secrets.bug_report_email}'],
+            text=f'{error_body}'
+)
 
 
-        #email=EmailSender(host='smtp.gmail.com',port=587)
-        #email.send(
-            #subject=f'{error_subject}',
-            #sender=f'{st.secrets.admin_email}',
-            #receivers=[f'{st.secrets.bug_report_email}'],
-            #text=f'{error_body}'
-#)
+        #msg = MIMEText(error_body)
+        #msg['From'] = st.secrets.admin_email
+        #msg['To'] = st.secrets.bug_report_email
+        #msg['Subject'] = error_subject
 
-
-        msg = MIMEText(error_body)
-        msg['From'] = st.secrets.admin_email
-        msg['To'] = st.secrets.bug_report_email
-        msg['Subject'] = error_subject
-
-        server = smtplib.SMTP('smtp.gmail.com', 587)
-        server.starttls()
-        server.login(st.secrets.admin_email, 'hzfemdpfnfczwixe')
-        server.sendmail(st.secrets.admin_email, st.secrets.bug_report_email, msg.as_string())
-        server.quit()
+        #server = smtplib.SMTP('smtp.gmail.com', 587)
+        #server.starttls()
+        #server.login(st.secrets.admin_email, 'hzfemdpfnfczwixe')
+        #server.sendmail(st.secrets.admin_email, st.secrets.bug_report_email, msg.as_string())
+        #server.quit()
 
         st.success('Email sent successfully! 🚀')
     except Exception as e:
