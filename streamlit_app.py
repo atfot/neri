@@ -150,7 +150,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
                 st.image(["https://imgur.com/P60GlEG.png"],
         use_column_width=True)
             if st.session_state.screen_setting=='tablet':
-                st.image(["https://imgur.com/qpWXxTw.png"],
+                st.image(["https://imgur.com/dr9iqhS.png"],
         use_column_width=True)
             if st.session_state.screen_setting=='mobile':
                 st.image(["https://imgur.com/H287o5n.png"],
@@ -269,7 +269,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
                 st.image(["https://imgur.com/72xoZXc.png"],
         use_column_width=True)
             if st.session_state.screen_setting=='tablet':
-                st.image(["https://imgur.com/eL5YmWj.png"],
+                st.image(["https://imgur.com/chYXJ98.png"],
         use_column_width=True)
             if st.session_state.screen_setting=='mobile':
                 st.image(["https://imgur.com/JDCESFv.png"],
