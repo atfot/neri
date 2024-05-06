@@ -16,7 +16,143 @@ def get_current_page_name():
 
 def make_sidebar():
     with st.sidebar:
-        st.markdown(st.secrets.app_design_css, unsafe_allow_html=True)
+        #st.secrets.app_design_css
+        st.markdown("""
+<style>
+@font-face {
+    font-family: 'Beeunhye';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* share 버튼 */
+div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > span {
+	font-family: 'Beeunhye';
+	font-size: 2em;
+    font-weight: bold;
+}  
+/* running... */
+div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > label {
+	font-family: 'Beeunhye';
+	font-size: 1.5em;
+}
+
+/* stop */
+div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > button {
+	font-family: 'Beeunhye';
+	font-size: 1.5em;
+}
+
+/* 메뉴 화면 */
+/* 타이틀 */
+div.st-emotion-cache-dvne4q.eczjsme4 > div > div > div > div > div > div > div > div > div > h1 {
+	font-family: 'Beeunhye';
+	font-size: 2.5em;
+    margin-top: -0.4em; 
+    margin-left: 0.25em; 
+}
+   
+/* 메뉴 */
+span.st-emotion-cache-icvz16.e11k5jya0 > div > p {
+	font-family: 'Beeunhye';
+	font-size: 2em;
+    margin-top: -0.1em; 
+    margin-left: 0.25em; 
+}       
+
+/* 로그아웃 버튼 */
+div.st-emotion-cache-dvne4q.eczjsme4 > div > div > div > div > div > div > button > div > p {
+	font-family: 'Beeunhye';
+	font-size: 2em;
+    color: #b5651d;
+}     
+
+/* 로그아웃 메세지 */      
+div.st-emotion-cache-dvne4q.eczjsme4 > div > div > div > div > div > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.5em;
+}
+
+/* 챗봇 */  
+/* 챗봇 글씨체 */
+div.st-emotion-cache-in40sa.eeusbqq3 > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+	margin-top: -0.35em;
+}     
+div.st-emotion-cache-1ovfu5.eeusbqq3 > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+	margin-top: -0.35em;
+}     
+
+/* thinking... */
+div.st-emotion-cache-c6gdys.e18r7x300 > div > p {
+	font-family: 'Beeunhye';
+	font-size: 2em;
+}
+                    
+/* 내 정보 */
+/* 내 정보 내용 */
+div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > div > p{
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}
+            
+/* 내 정보_분석 결과_도움이 될만한 행동들_고민 해결도 그래프*/
+.st-emotion-cache-10trblm {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}
+
+            
+/* 분석결과 내용 */            
+div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}     
+
+/* 프로필 수정 버튼 */         
+div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > button > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}     
+
+/* 도움이 될만한 행동들 리스트 */      
+div.block-container.st-emotion-cache-1jicfl2.ea3mdgi5 > div > div > div > div > div > div > ul > li {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}        
+div.block-container.st-emotion-cache-1jicfl2.ea3mdgi5 > div > div > div > div > div > div > p {
+	font-family: 'Beeunhye';
+	font-size: 1.75em;
+}        
+
+/* 정보를 바꿔주세요 */
+div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div:nth-child(1) > div > div > p {
+font-family: 'Beeunhye';
+font-size: 2.25em;
+}
+
+/* 정보 수정칸 */
+div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > label > div > p {
+font-family: 'Beeunhye';
+font-size: 1.75em;
+}
+
+/* 저장 버튼 */
+div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > button > div > p {
+font-family: 'Beeunhye';
+font-size: 1.75em;
+}
+
+/* 저장완료 메세지 */
+div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
+font-family: 'Beeunhye';
+font-size: 1.75em;
+}
+</style>
+""", unsafe_allow_html=True)
         st.image('https://imgur.com/F2P7a3I.png',use_column_width=True)
         st.write("")
         st.write("")
