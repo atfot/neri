@@ -99,16 +99,22 @@ if 'id' not in st.session_state:
         st.session_state.id=st.secrets.user_id
     if st.session_state.korean_mode==0:
         st.session_state.id=st.secrets.user_id_2
+else:
+    pass
 if 'pw' not in st.session_state:
    if st.session_state.korean_mode==1:
     st.session_state.pw=st.secrets.user_pw
    if st.session_state.korean_mode==0:
        st.session_state.pw=st.secrets.user_pw_2
+else:
+    pass
 if 'username' not in st.session_state:
    if st.session_state.korean_mode==1:
     st.session_state.username=st.secrets.user_name
    if st.session_state.korean_mode==0:
        st.session_state.username=st.secrets.user_name_2
+else:
+    pass
 st.session_state.filled_input=0
 
 if 'korean_mode' not in st.session_state:
