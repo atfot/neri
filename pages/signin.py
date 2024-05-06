@@ -10,23 +10,25 @@ st.set_page_config(
 st.markdown(st.secrets.signin_idpw_css, unsafe_allow_html=True)
 
 if st.session_state.korean_mode==1:
-    st.session_state.id=st.secrets.user_id
-    st.session_state.pw=st.secrets.user_pw
-    st.session_state.username=st.secrets.user_name
-    st.session_state.age=st.secrets.age
-    st.session_state.gender=st.secrets.user_gender
-    st.session_state.problem=st.secrets.problem
-    st.session_state.problem_explanation=st.secrets.problem_explanation
-    st.session_state.goal=st.secrets.goal
+    if 'id' not in st.session_state:
+        st.session_state.id=st.secrets.user_id
+        st.session_state.pw=st.secrets.user_pw
+        st.session_state.username=st.secrets.user_name
+        st.session_state.age=st.secrets.age
+        st.session_state.gender=st.secrets.user_gender
+        st.session_state.problem=st.secrets.problem
+        st.session_state.problem_explanation=st.secrets.problem_explanation
+        st.session_state.goal=st.secrets.goal
 else:
-    st.session_state.id=st.secrets.user_id_2
-    st.session_state.pw=st.secrets.user_pw_2
-    st.session_state.username=st.secrets.user_name_2
-    st.session_state.age=st.secrets.age_2
-    st.session_state.gender=st.secrets.user_gender_2
-    st.session_state.problem=st.secrets.problem_2
-    st.session_state.problem_explanation=st.secrets.problem_explanation_2
-    st.session_state.goal=st.secrets.goal_2
+    if 'id' not in st.session_state:
+        st.session_state.id=st.secrets.user_id_2
+        st.session_state.pw=st.secrets.user_pw_2
+        st.session_state.username=st.secrets.user_name_2
+        st.session_state.age=st.secrets.age_2
+        st.session_state.gender=st.secrets.user_gender_2
+        st.session_state.problem=st.secrets.problem_2
+        st.session_state.problem_explanation=st.secrets.problem_explanation_2
+        st.session_state.goal=st.secrets.goal_2
 
 st.session_state.filled_input=0
 
