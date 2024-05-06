@@ -30,7 +30,6 @@ error_subject = st.text_input('제목')
 error_body = st.text_area('내용')
 error_image=st.file_uploader('상세사진')
 
-
 col1,col2=st.columns([8,2])
 with col2:
     if st.button("Send Email",use_container_width=True):
@@ -58,9 +57,6 @@ if st.session_state.send_email==True:
             }
             }
 )
-        del st.session_state.send_email
-
-
         #msg = MIMEText(error_body)
         #msg['From'] = st.secrets.admin_email
         #msg['To'] = st.secrets.bug_report_email
@@ -73,6 +69,7 @@ if st.session_state.send_email==True:
         #server.quit()
 
         st.success('Email sent successfully! 🚀')
+        del st.session_state.send_email
     except Exception as e:
         st.error(f"Failed to send email: {e}")
 else:
