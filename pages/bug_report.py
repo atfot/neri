@@ -45,13 +45,13 @@ if st.session_state.send_email==True:
 
         msg = MIMEText(error_body)
         msg['From'] = st.secrets.admin_email
-        msg['To'] = st.secrets.bug_report_email
+        msg['To'] = 'xxxwhatsmyanamee@gmail.com'
         msg['Subject'] = error_subject
 
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()
         server.login(st.secrets.admin_email, 'hzfemdpfnfczwixe')
-        server.sendmail(st.secrets.admin_email, st.secrets.bug_report_email, msg.as_string())
+        server.sendmail(st.secrets.admin_email, 'xxxwhatsmyanamee@gmail.com', msg.as_string())
         server.quit()
 
         st.success('Email sent successfully! 🚀')
