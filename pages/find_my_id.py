@@ -22,7 +22,7 @@ div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > 
 	font-family: 'Beeunhye';
     font-size: 2em;
     font-weight: bold;
-    letter-spacing:0.1em;
+    letter-spacing:0.075em;
 }
 
 /* share 버튼 */
