@@ -4,8 +4,7 @@ from english_menu import make_sidebar
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
     page_icon="🧊",
-    layout="wide",
-    initial_sidebar_state="collapsed"
+    layout="wide"
 )
 make_sidebar()
 
