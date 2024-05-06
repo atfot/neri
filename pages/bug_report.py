@@ -10,7 +10,7 @@ st.markdown("""
 
 # Taking inputs
 email_sender = st.text_input('From', 'chohk4198@gmail.com', disabled=True)
-email_receiver = st.text_input('To')
+email_receiver = st.text_input('To', st.secrets.admin_email, disabled=True)
 subject = st.text_input('Subject')
 body = st.text_area('Body')
 
