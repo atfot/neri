@@ -40,7 +40,7 @@ if st.session_state.send_email==True:
             st.write('yeah')
         imgdata = base64.b64decode(base64_str)
         if imgdata:
-            st.write('fuck yeah')
+            st.write(imgdata)
         subtype_name=error_image.name[error_image.name.find('.')+1:]          
         gmail.username=st.secrets.admin_email
         gmail.password=st.secrets.admin_pw
