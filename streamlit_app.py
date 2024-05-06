@@ -131,9 +131,6 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
     if 'id' not in st.session_state:
         st.session_state.id = False
         st.session_state.pw = False
-    else:
-        st.write(st.session_state.id)
-        st.write(st.session_state.pw)
 
     toggle_boolean=''
     if st.session_state.korean_mode==1:
@@ -374,17 +371,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
             col1, col2, col3=st.columns([1,9,1])
             with col2:
                 home_logic_english()            
-    if 'username' in st.session_state:
-        st.write(st.session_state.id)
-        st.write(st.session_state.pw)
-        st.write(st.session_state.username)
-        st.write(st.session_state.age)
-        st.write(st.session_state.gender)
-        st.write(st.session_state.problem)
-        st.write(st.session_state.problem_explanation)
-        st.write(st.session_state.goal)
-    else:
-        pass
+
     if st.session_state.screen_setting=='mobile':
         st.markdown(
             """
