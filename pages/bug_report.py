@@ -3,7 +3,7 @@ from redmail import gmail
 import smtplib
 from email.mime.text import MIMEText
 from korean_menu import make_sidebar
-from io import StringIO
+import base64
 
 st.set_page_config(
     page_title="당신의 AI 심리상담사, 네리",
@@ -24,7 +24,10 @@ st.write("""
 
 error_subject = st.text_input('제목')
 error_body = st.text_area('내용')
-error_image=st.file_uploader('상세사진', accept_multiple_files=True)
+error_image=st.file_uploader('상세사진')
+for uploaded_file in error_image:
+    subtype_name=uploaded_file[uploaded_file.find('.')+1:]
+    st.write(subtype_name)
 
 col1,col2=st.columns([8,2])
 with col2:
@@ -33,13 +36,28 @@ with col2:
             st.session_state.send_email=True
 if st.session_state.send_email==True:
     try:
+        img_list={
+            'myimage':[],
+            'subtype':[]
+            }
+        for uploaded_file in error_image:
+            base64_str = base64.b64encode(error_image.read())
+            imgdata = base64.b64decode(base64_str)
+            img_list['myimage'] = imgdata
+            subtype_name=uploaded_file[uploaded_file.find('.')+1:]
+            img_list['subtype'] = subtype_name            
         gmail.username=st.secrets.admin_email
-        gmail.password='hzfemdpfnfczwixe'
+        gmail.password=st.secrets.admin_pw
         gmail.send(
             subject=f'{error_subject}',
             sender=f'{st.secrets.admin_email}',
             receivers=[f'{st.secrets.bug_report_email}'],
-            text=f'{error_body}'
+            html=f'''
+<h5>{st.session_state.username}</h5>
+<p>{error_body}</p>
+{{myimage}}
+            ''',
+            body_images={'myimage':img_list}
 )
 
 
