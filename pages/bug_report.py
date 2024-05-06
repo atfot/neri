@@ -10,10 +10,10 @@ st.set_page_config(
 )
 make_sidebar()
 
-st.title('Bug report')
+st.title('사용하시다 불편하신 점이 계셨나요?')
 
 st.markdown("""
-**if there is anything wrong while using my app plz lemme know**
+**저희 제품을 사용하시면서 오류가 나거나 맘에 안드는 점이 있으시다면 꼭 알려주세요! 문제점을 고쳐나가도록 하겠습니다.**
 """)
 
 # Taking inputs
