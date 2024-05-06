@@ -29,6 +29,8 @@ st.write("""
 error_subject = st.text_input('제목')
 error_body = st.text_area('내용')
 error_image=st.file_uploader('상세사진')
+if error_image is not None:
+     st.write(error_image.read())
 
 col1,col2=st.columns([8,2])
 with col2:
