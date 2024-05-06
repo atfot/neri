@@ -9,7 +9,7 @@ st.set_page_config(
         menu_items=None
     )
 st.markdown(st.secrets.signin_idpw_css, unsafe_allow_html=True)
-
+st.write(sss.id)
 if sss.korean_mode==1:
     if 'id' not in sss:
         sss.id=st.secrets.user_id
