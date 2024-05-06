@@ -11,6 +11,8 @@ st.set_page_config(
 st.markdown(st.secrets.signin_idpw_css, unsafe_allow_html=True)
 
 if sss.korean_mode==1:
+    if 'id' in sss:
+        del sss.id, sss.pw, sss.username, sss.age, sss.gender, sss.problem, sss.problem_explanation, sss.goal
     if 'id' not in sss:
         sss.id=st.secrets.user_id
         sss.pw=st.secrets.user_pw
@@ -21,6 +23,8 @@ if sss.korean_mode==1:
         sss.problem_explanation=st.secrets.problem_explanation
         sss.goal=st.secrets.goal
 else:
+    if 'id' in sss:
+        del sss.id, sss.pw, sss.username, sss.age, sss.gender, sss.problem, sss.problem_explanation, sss.goal
     if 'id' not in sss:
         sss.id=st.secrets.user_id_2
         sss.pw=st.secrets.user_pw_2
@@ -30,9 +34,6 @@ else:
         sss.problem=st.secrets.problem_2
         sss.problem_explanation=st.secrets.problem_explanation_2
         sss.goal=st.secrets.goal_2
-if 'id' in sss:
-    st.write(sss.id)
-    st.write(sss.pw)
 
 sss.filled_input=0
 
