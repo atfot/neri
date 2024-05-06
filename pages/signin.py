@@ -11,11 +11,6 @@ st.set_page_config(
 st.markdown(st.secrets.signin_idpw_css, unsafe_allow_html=True)
 
 if sss.korean_mode==1:
-    if 'id' in sss:
-        if 'username' in sss:
-            del sss.id, sss.pw, sss.username, sss.age, sss.gender, sss.problem, sss.problem_explanation, sss.goal
-        else:
-            del sss.id, sss.pw
     if 'id' not in sss:
         sss.id=st.secrets.user_id
         sss.pw=st.secrets.user_pw
