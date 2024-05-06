@@ -6,8 +6,7 @@ from streamlit import session_state as sss
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
     page_icon="🧊",
-    layout="centered",
-    initial_sidebar_state="collapsed"
+    layout="centered"
 )
 make_sidebar()
 
