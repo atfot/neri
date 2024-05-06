@@ -29,19 +29,6 @@ st.write("""
 error_subject = st.text_input('제목')
 error_body = st.text_area('내용')
 error_image=st.file_uploader('상세사진')
-if error_image is not None:
-    try:
-        st.write('first')
-        st.write(error_image.read())
-        st.divider()
-    except:
-        pass
-    try:
-        st.write('second')
-        base64_str = base64.b64encode(error_image.read())
-        st.write(base64_str)
-    except:
-        pass
 
 col1,col2=st.columns([8,2])
 with col2:
@@ -49,8 +36,7 @@ with col2:
         st.session_state.send_email=True
 if st.session_state.send_email==True:
     try:
-        base64_str = base64.b64encode(error_image.read())
-        imgdata = base64.b64decode(base64_str)
+        imgdata = base64.b64decode(error_image.read())
         subtype_name=error_image.name[error_image.name.find('.')+1:]      
         gmail.username=st.secrets.admin_email
         gmail.password=st.secrets.admin_pw
