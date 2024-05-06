@@ -2,5 +2,4 @@ streamlit
 pandas
 openai
 streamlit_js_eval
-smtplib
 email
