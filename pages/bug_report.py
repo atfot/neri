@@ -9,19 +9,15 @@ st.markdown("""
 """)
 
 # Taking inputs
-email_sender = st.text_input('From', 'chohk4198@gmail.com', disabled=True)
-email_receiver = st.text_input('To', st.secrets.admin_email, disabled=True)
+
 subject = st.text_input('Subject')
 body = st.text_area('Body')
-
-# Hide the password input
-password = st.text_input('Password', type="password", disabled=True)  
 
 if st.button("Send Email"):
     try:
         msg = MIMEText(body)
-        msg['From'] = email_sender
-        msg['To'] = email_receiver
+        msg['From'] = 'chohk4198@gmail.com'
+        msg['To'] = st.secrets.admin_email
         msg['Subject'] = subject
 
         server = smtplib.SMTP('smtp.gmail.com', 587)
