@@ -41,6 +41,11 @@ div.st-ch.st-ci.st-cj.st-ae.st-af.st-ag.st-ck.st-ai.st-aj.st-cl.st-cm > div > di
     font-size: 1.75em;
     letter-spacing:0.1em;
 }
+div.st-d6.st-c1.st-bb.st-ax.st-ay.st-az.st-d7.st-b1.st-b2.st-d8.st-d9 > div > div > p {
+	font-family: 'Beeunhye';
+    font-size: 1.75em;
+    letter-spacing:0.1em;
+}
                   
 /* 로그인 해주세요 */
 div.st-emotion-cache-1bfnhmd.e1f1d6gn3 > div > div > div > div > div > div > div > p > b {
