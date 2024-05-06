@@ -93,7 +93,9 @@ div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div 
 </style>
 """, unsafe_allow_html=True)
 st.write(st.session_state.korean_mode)
-
+st.write(st.session_state.id)
+st.write(st.session_state.pw)
+st.write(st.session_state.username)
 if st.session_state.korean_mode==1:
     if 'id' not in st.session_state:
         st.session_state.id=st.secrets.user_id
