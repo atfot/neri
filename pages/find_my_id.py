@@ -22,7 +22,7 @@ div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > 
 	font-family: 'Beeunhye';
     font-size: 2em;
     font-weight: bold;
-
+    letter-spacing:0.1em;
 }
 
 /* share 버튼 */
@@ -30,12 +30,14 @@ div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > s
 	font-family: 'Beeunhye';
     font-size: 2em;
     font-weight: bold;
+    letter-spacing:0.1em;
 }
 
 /* 타이틀 */ 
 .st-emotion-cache-10trblm {
 	font-family: 'Beeunhye';
     font-size: 2.25em;
+    letter-spacing:0.1em;
 }      
 
 /* 모든 작성란 설명 */
@@ -43,12 +45,14 @@ div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > 
 	font-family: 'Beeunhye';
     font-size: 2em;
     font-weight: bold;
+    letter-spacing:0.1em;
 }
 
 /* 에러 메세지 */
 div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p  {
 	font-family: 'Beeunhye';
     font-size: 1.75em;
+    letter-spacing:0.1em;
 }
    
 /* 이대로 저장할까요? */
@@ -56,6 +60,7 @@ div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(2) > di
 	font-family: 'Beeunhye';
     font-size: 2em;
     color: #89482C;
+    letter-spacing:0.1em;
 }
 
 /* 성공 메세지 */
@@ -68,18 +73,21 @@ div.block-container.st-emotion-cache-z5fcl4.ea3mdgi5 > div > div > div > div > d
 	font-family: 'Beeunhye';
     font-size: 2em;
     font-weight: bold;
+    letter-spacing:0.1em;
 }
             
 /* 바뀐 아이디 */
 div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div:nth-child(4) > div > div > center > b {
 	font-family: 'Beeunhye';
     font-size: 2em;
+    letter-spacing:0.1em;
 }
 
 /* 회원가입 저장내역 */
 div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
     font-size: 2em;
+    letter-spacing:0.1em;
 }
 
 </style>
