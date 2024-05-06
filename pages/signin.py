@@ -47,6 +47,7 @@ if st.session_state.korean_mode==1:
         if id==st.session_state.id:
             st.error('해당 아이디가 이미 존재합니다.')
         else:
+            st.session_state.id=''
             st.session_state.id=id
             st.session_state.filled_input+=1
     password=st.text_input('사용하실 비밀번호를 적어주세요.',type='password')
@@ -54,6 +55,7 @@ if st.session_state.korean_mode==1:
         if password==st.session_state.pw:
             st.error('해당 비밀번호가 이미 존재합니다.')
         else:
+            st.session_state.pw=''
             st.session_state.pw=password
             st.session_state.filled_input+=1
     pw_check=st.text_input('다시 한번 사용하실 비밀번호를 적어주세요.',key='pw_check',type='password')
@@ -67,10 +69,12 @@ if st.session_state.korean_mode==1:
         if nickname==st.session_state.username:
             st.error('이미 사용중인 이름입니다.')
         else:
+            st.session_state.username=''
             st.session_state.username=nickname
             st.session_state.filled_input+=1
     gender=st.selectbox('성별이 어떻게 되시죠?',('남자','여자'),placeholder='남성/여성',key='gender_')
     if gender:
+        st.session_state.gender=''
         st.session_state.gender=gender
         st.session_state.filled_input+=1
     age = st.slider(
@@ -78,26 +82,32 @@ if st.session_state.korean_mode==1:
                 7,100,30,key='age_'
                 )
     if age:
+        st.session_state.age=''
         st.session_state.age=age
         st.session_state.filled_input+=1
     nationality = st.text_input('어느 나라 분이신가요?',key='nationality_')
     if nationality:
+        st.session_state.nationality=''
         st.session_state.nationality=nationality
         st.session_state.filled_input+=1
     city = st.text_input('어느 도시에 거주중이신가요?',key='city_')
     if city:
+        st.session_state.city=''
         st.session_state.city=city
         st.session_state.filled_input+=1
     problem = st.text_area("당신을 가장 크게 괴롭히는 것이 무엇인가요?🤔", key='problem_')
     if problem:
+        st.session_state.problem=''
         st.session_state.problem=problem
         st.session_state.filled_input+=1
     problem_explanation=st.text_area("문제점을 좀더 자세히 설명해주세요. 자세히 설명해주실수록 좋아요😊", key='problem_explanation_')
     if problem_explanation:
+        st.session_state.problem_explanation=''
         st.session_state.problem_explanation=problem_explanation
         st.session_state.filled_input+=1
     goal=st.text_area("최종 목표가 무엇인지 말해주세요!", key='goal_')
     if goal:
+        st.session_state.goal=''
         st.session_state.goal=goal
         st.session_state.filled_input+=1      
     col1,col2,col3=st.columns([1,8,1])
