@@ -375,17 +375,8 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
             col1, col2, col3=st.columns([1,9,1])
             with col2:
                 home_logic_english()            
-    
-    if st.session_state.screen_setting=='pc':
-        st.markdown(
-            """
-            <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #FDF6EC; color: #000000; padding: 1px; text-align: center;">
-                Developed By <a  href="https://drive.google.com/file/d/1l7duTvc4pWDJgZzY301wswYoIrfylC1G/view?usp=sharing" target="_blank">Hyun Kyu Cho</a> | Made with Streamlit | Powered By OpenAI
-            </div>
-            """,
-            unsafe_allow_html=True
-        ) 
-    else:
+
+    if st.session_state.screen_setting=='mobile':
         st.markdown(
             """
             <div style="position: fixed; bottom: 0; left: 2.5%; width: 50%; background-color: #FDF6EC; color: #000000; padding: 1px; text-align: left;">
@@ -396,4 +387,13 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
             """,
             unsafe_allow_html=True
         )
+    else:
+        st.markdown(
+            """
+            <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #FDF6EC; color: #000000; padding: 1px; text-align: center;">
+                Developed By <a  href="https://drive.google.com/file/d/1l7duTvc4pWDJgZzY301wswYoIrfylC1G/view?usp=sharing" target="_blank">Hyun Kyu Cho</a> | Made with Streamlit | Powered By OpenAI
+            </div>
+            """,
+            unsafe_allow_html=True
+        ) 
 
