@@ -24,7 +24,7 @@ subject = st.text_input('제목')
 body = st.text_area('내용')
 error_image=st.file_uploader('상세사진')
 
-if st.button("Send Email"):
+if st.button("Send Email",use_container_width=true):
     try:
         msg = MIMEText(body)
         msg['From'] = st.secrets.admin_email
