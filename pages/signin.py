@@ -277,7 +277,7 @@ if sss.korean_mode==0:
         else:
             pass
         if 'username' in sss:
-            del sss.Username
+            del sss.username
         else:
             pass
         if 'filled_input' in sss:
