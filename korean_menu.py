@@ -30,17 +30,20 @@ div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > s
 	font-family: 'Beeunhye';
 	font-size: 2em;
     font-weight: bold;
+    letter-spacing:0.075em;
 }  
 /* running... */
 div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > label {
 	font-family: 'Beeunhye';
 	font-size: 1.5em;
+    letter-spacing:0.075em;
 }
 
 /* stop */
 div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > button {
 	font-family: 'Beeunhye';
 	font-size: 1.5em;
+    letter-spacing:0.075em;
 }
 
 /* 메뉴 화면 */
@@ -50,6 +53,7 @@ div.st-emotion-cache-dvne4q.eczjsme4 > div > div > div > div > div > div > div >
 	font-size: 2.5em;
     margin-top: -0.4em; 
     margin-left: 0.25em; 
+    letter-spacing:0.075em;
 }
    
 /* 메뉴 */
@@ -58,6 +62,7 @@ span.st-emotion-cache-icvz16.e11k5jya0 > div > p {
 	font-size: 2em;
     margin-top: -0.1em; 
     margin-left: 0.25em; 
+    letter-spacing:0.075em;
 }       
 
 /* 로그아웃 버튼 */
@@ -65,12 +70,14 @@ div.st-emotion-cache-dvne4q.eczjsme4 > div > div > div > div > div > div > butto
 	font-family: 'Beeunhye';
 	font-size: 2em;
     color: #b5651d;
+    letter-spacing:0.075em;
 }     
 
 /* 로그아웃 메세지 */      
 div.st-emotion-cache-dvne4q.eczjsme4 > div > div > div > div > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.5em;
+    letter-spacing:0.075em;
 }
 
 /* 챗봇 */  
@@ -79,17 +86,20 @@ div.st-emotion-cache-in40sa.eeusbqq3 > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
 	margin-top: -0.35em;
+    letter-spacing:0.075em;
 }     
 div.st-emotion-cache-1ovfu5.eeusbqq3 > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
 	margin-top: -0.35em;
+    letter-spacing:0.075em;
 }     
 
 /* thinking... */
 div.st-emotion-cache-c6gdys.e18r7x300 > div > p {
 	font-family: 'Beeunhye';
 	font-size: 2em;
+    letter-spacing:0.075em;
 }
                     
 /* 내 정보 */
@@ -97,12 +107,14 @@ div.st-emotion-cache-c6gdys.e18r7x300 > div > p {
 div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > div > p{
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
+    letter-spacing:0.075em;
 }
             
 /* 내 정보_분석 결과_도움이 될만한 행동들_고민 해결도 그래프*/
 .st-emotion-cache-10trblm {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
+    letter-spacing:0.075em;
 }
 
             
@@ -110,46 +122,53 @@ div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > div > p{
 div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
+    letter-spacing:0.075em;
 }     
 
 /* 프로필 수정 버튼 */         
 div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
+    letter-spacing:0.075em;
 }     
 
 /* 도움이 될만한 행동들 리스트 */      
 div.block-container.st-emotion-cache-1jicfl2.ea3mdgi5 > div > div > div > div > div > div > ul > li {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
+    letter-spacing:0.075em;
 }        
 div.block-container.st-emotion-cache-1jicfl2.ea3mdgi5 > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
+    letter-spacing:0.075em;
 }        
 
 /* 정보를 바꿔주세요 */
 div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div:nth-child(1) > div > div > p {
-font-family: 'Beeunhye';
-font-size: 2.25em;
+    font-family: 'Beeunhye';
+    font-size: 2.25em;
+    letter-spacing:0.075em;
 }
 
 /* 정보 수정칸 */
 div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > label > div > p {
-font-family: 'Beeunhye';
-font-size: 1.75em;
+    font-family: 'Beeunhye';
+    font-size: 1.75em;
+    letter-spacing:0.075em;
 }
 
 /* 저장 버튼 */
 div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > button > div > p {
-font-family: 'Beeunhye';
-font-size: 1.75em;
+    font-family: 'Beeunhye';
+    font-size: 1.75em;
 }
 
 /* 저장완료 메세지 */
 div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
-font-family: 'Beeunhye';
-font-size: 1.75em;
+    font-family: 'Beeunhye';
+    font-size: 1.75em;
+    letter-spacing:0.075em;
 }
 </style>
 """
