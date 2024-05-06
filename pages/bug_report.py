@@ -11,6 +11,8 @@ st.set_page_config(
     layout="centered"
 )
 make_sidebar()
+if 'send_email' not in st.session_state:
+    st.session_state.send_email=False
 
 st.subheader('사용하시다 불편하신 점이 계셨나요?')
 
@@ -30,8 +32,7 @@ error_image=st.file_uploader('상세사진')
 col1,col2=st.columns([8,2])
 with col2:
     if st.button("Send Email",use_container_width=True):
-        if 'send_email' not in st.session_state:
-            st.session_state.send_email=True
+        st.session_state.send_email=True
 if st.session_state.send_email==True:
     try:
         base64_str = base64.b64encode(error_image.read())
