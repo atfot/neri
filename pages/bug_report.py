@@ -13,6 +13,8 @@ st.set_page_config(
 make_sidebar()
 if 'send_email' not in st.session_state:
     st.session_state.send_email=False
+if 'username' not in st.session_state:
+    st.session_state.username=st.secrets.user_name
 
 st.subheader('사용하시다 불편하신 점이 계셨나요?')
 
