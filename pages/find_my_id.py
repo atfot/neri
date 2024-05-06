@@ -96,17 +96,17 @@ div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div 
 if 'id' not in st.session_state:
     if st.session_state.korean_mode==1:
         st.session_state.id=st.secrets.user_id
-    else:
+    if st.session_state.korean_mode==0:
         st.session_state.id=st.secrets.user_id_2
 if 'pw' not in st.session_state:
    if st.session_state.korean_mode==1:
     st.session_state.pw=st.secrets.user_pw
-   else:
+   if st.session_state.korean_mode==0:
        st.session_state.pw=st.secrets.user_pw_2
 if 'username' not in st.session_state:
    if st.session_state.korean_mode==1:
     st.session_state.username=st.secrets.user_name
-   else:
+   if st.session_state.korean_mode==0:
        st.session_state.username=st.secrets.user_name_2
 st.session_state.filled_input=0
 
