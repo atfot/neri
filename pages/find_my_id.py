@@ -93,6 +93,7 @@ div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div 
 </style>
 """, unsafe_allow_html=True)
 st.write(st.session_state.korean_mode)
+st.write(st.session_state.pw)
 if 'id' not in st.session_state:
     if st.session_state.korean_mode==1:
         st.session_state.id=st.secrets.user_id
@@ -197,7 +198,7 @@ if st.session_state.korean_mode==0:
     col1,col2,col3=st.columns([1,8,1])
     with col2:
         st.title('')
-        if st.button('Save', type='primary',use_container_width=True):
+        if st.button('Do you want to save it as is?', type='primary',use_container_width=True):
                 if st.session_state.filled_input==4 or st.session_state.filled_input==8:
                     st.session_state.id=st.session_state.new_id
                     st.success('Your modifications have been saved!')

@@ -196,7 +196,7 @@ if st.session_state.korean_mode==0:
     col1,col2,col3=st.columns([1,8,1])
     with col2:
         st.title('')
-        if st.button('Save', type='primary',use_container_width=True):
+        if st.button('Do you want to save it as is?', type='primary',use_container_width=True):
                 if st.session_state.filled_input==4 or st.session_state.filled_input==8:
                     st.session_state.pw=st.session_state.new_pw
                     st.success('Your modifications have been saved!')
