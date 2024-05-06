@@ -40,13 +40,7 @@ if st.session_state.send_email==True:
             subject=f'{error_subject}',
             sender=f'{st.secrets.admin_email}',
             receivers=[f'{st.secrets.bug_report_email}'],
-            html=f'''
-<p><b>{st.session_state.username}</b></p><br><br>
-{error_body}
-''',
-body_images={
-'my_image': f'{error_image}',
-}
+            text=f'{error_body}'
 )
 
 
