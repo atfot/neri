@@ -9,8 +9,15 @@ st.set_page_config(
         menu_items=None
     )
 st.markdown(st.secrets.signin_idpw_css, unsafe_allow_html=True)
-st.write(sss.id)
 if sss.korean_mode==1:
+    if 'username' in sss:
+        del sss.id, sss.pw, sss.username, sss.age, sss.gender, sss.problem, sss.problem_explanation, sss.goal
+    else:
+        pass
+    if 'id' in sss:
+        del sss.id, sss.pw
+    else:
+        pass
     if 'id' not in sss:
         sss.id=st.secrets.user_id
         sss.pw=st.secrets.user_pw
