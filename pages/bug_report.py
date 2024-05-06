@@ -41,7 +41,7 @@ if st.session_state.send_email==True:
             'subtype':[]
             }
         for uploaded_file in error_image:
-            base64_str = base64.b64encode(error_image.read())
+            base64_str = base64.b64encode(uploaded_file.read())
             imgdata = base64.b64decode(base64_str)
             img_list['myimage'] = imgdata
             subtype_name=uploaded_file.name[uploaded_file.name.find('.')+1:]
