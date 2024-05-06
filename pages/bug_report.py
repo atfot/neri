@@ -29,9 +29,9 @@ with col2:
         try:
             email=EmailSender(host='smtp.gmail.com',port=587)
             email.send(
-                subject=f'{error_subject}'
-                sender=f'{st.secrets.admin_email}'
-                receivers=[f'{st.sescrets.bug_report_email}']
+                subject=f'{error_subject}',
+                sender=f'{st.secrets.admin_email}',
+                receivers=[f'{st.sescrets.bug_report_email}'],
                 html=f'''
 <p><b>{st.session_state.username}</b></p><br><br>
 {error_body}
