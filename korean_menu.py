@@ -50,7 +50,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
 /* 메뉴 */
 span.st-emotion-cache-icvz16.e11k5jya0 > div > p {
 	font-family: 'Beeunhye';
-	font-size: 2em;
+	font-size: 1.75em;
     margin-top: -0.1em; 
     margin-left: 0.25em; 
     letter-spacing:0.075em;
