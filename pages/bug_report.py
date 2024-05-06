@@ -33,7 +33,7 @@ with col2:
 if st.session_state.send_email==True:
     try:
         gmail.username=st.secrets.admin_email
-        gmail.password'hzfemdpfnfczwixe'
+        gmail.password='hzfemdpfnfczwixe'
         gmail.send(
             subject=f'{error_subject}',
             sender=f'{st.secrets.admin_email}',
