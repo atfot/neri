@@ -1,7 +1,5 @@
 import streamlit as st
 from redmail import gmail
-import smtplib
-from email.mime.text import MIMEText
 from korean_menu import make_sidebar
 import base64
 
@@ -28,7 +26,6 @@ st.write("""
 
 error_subject = st.text_input('제목')
 error_body = st.text_area('내용')
-error_image=st.file_uploader('상세사진')
 
 col1,col2=st.columns([8,2])
 with col2:
@@ -36,9 +33,6 @@ with col2:
         st.session_state.send_email=True
 if st.session_state.send_email==True:
     try:
-        base64_str = base64.b64encode(error_image.read())
-        imgdata = base64.b64decode(error_image.read())
-        subtype_name=error_image.name[error_image.name.find('.')+1:]      
         gmail.username=st.secrets.admin_email
         gmail.password=st.secrets.admin_pw
         gmail.send(
@@ -48,14 +42,7 @@ if st.session_state.send_email==True:
             html=f'''
 <h5>{st.session_state.username}</h5>
 <p>{error_body}</p>
-{{myimage}}
-            ''',
-            body_images={'myimage':
-                         {
-            'myimage':f'{imgdata}',
-            'subtype':f'{subtype_name}'
-            }
-            }
+            '''
 )
         #msg = MIMEText(error_body)
         #msg['From'] = st.secrets.admin_email
