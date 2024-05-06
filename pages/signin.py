@@ -64,7 +64,7 @@ if sss.korean_mode==1:
             del sss.username
         else:
             pass
-        if filled_input in sss:
+        if 'filled_input' in sss:
             del sss.filled_input
         else:
             pass
@@ -193,11 +193,11 @@ if sss.korean_mode==0:
             del sss.pw
         else:
             pass
-        if 'username' in ss:
+        if 'username' in sss:
             del sss.Username
         else:
             pass
-        if filled_input in sss:
+        if 'filled_input' in sss:
             del sss.filled_input
         else:
             pass
