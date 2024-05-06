@@ -37,7 +37,7 @@ with col2:
 {error_body}
 ''',
 body_images={
-    'my_image': f'{error_emage}',
+    'my_image': f'{error_image}',
 }
 )
 
