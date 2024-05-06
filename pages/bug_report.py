@@ -24,10 +24,8 @@ st.write("""
 
 error_subject = st.text_input('제목')
 error_body = st.text_area('내용')
-error_image=st.file_uploader('상세사진', accept_multiple_files=True)
-for uploaded_file in error_image:
-    subtype_name=uploaded_file.name[uploaded_file.name.find('.')+1:]
-    st.write(subtype_name)
+error_image=st.file_uploader('상세사진')
+
 
 col1,col2=st.columns([8,2])
 with col2:
@@ -36,16 +34,9 @@ with col2:
             st.session_state.send_email=True
 if st.session_state.send_email==True:
     try:
-        img_list={
-            'myimage':[],
-            'subtype':[]
-            }
-        for uploaded_file in error_image:
-            base64_str = base64.b64encode(uploaded_file.read())
-            imgdata = base64.b64decode(base64_str)
-            img_list['myimage'] = imgdata
-            subtype_name=uploaded_file.name[uploaded_file.name.find('.')+1:]
-            img_list['subtype'] = subtype_name            
+        base64_str = base64.b64encode(uploaded_file.read())
+        imgdata = base64.b64decode(base64_str)
+        subtype_name=uploaded_file.name[uploaded_file.name.find('.')+1:]          
         gmail.username=st.secrets.admin_email
         gmail.password=st.secrets.admin_pw
         gmail.send(
@@ -57,7 +48,10 @@ if st.session_state.send_email==True:
 <p>{error_body}</p>
 {{myimage}}
             ''',
-            body_images={'myimage':img_list}
+            body_images={'myimage':{
+            'myimage':f'{imgdata}',
+            'subtype':f'{subtype_name}'
+            }}
 )
         del st.session_state.send_email
 
