@@ -60,6 +60,10 @@ if sss.korean_mode==1:
             del sss.pw
         else:
             pass
+        if 'username' in ss:
+            del sss.Username
+        else:
+            pass
         del sss.filled_input
         st.switch_page("streamlit_app.py")
     st.markdown('<center><h3>회원가입 양식</h3></center>', unsafe_allow_html=True)
@@ -181,6 +185,10 @@ if sss.korean_mode==0:
             pass
         if 'pw' in sss:
             del sss.pw
+        else:
+            pass
+        if 'username' in ss:
+            del sss.Username
         else:
             pass
         del sss.filled_input
