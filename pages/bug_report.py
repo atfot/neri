@@ -24,19 +24,21 @@ subject = st.text_input('제목')
 body = st.text_area('내용')
 error_image=st.file_uploader('상세사진')
 
-if st.button("Send Email",use_container_width=True):
-    try:
-        msg = MIMEText(body)
-        msg['From'] = st.secrets.admin_email
-        msg['To'] = st.secrets.bug_report_email
-        msg['Subject'] = subject
+col1,col2=st.columns([8,2])
+with col2:
+    if st.button("Send Email",use_container_width=True):
+        try:
+            msg = MIMEText(body)
+            msg['From'] = st.secrets.admin_email
+            msg['To'] = st.secrets.bug_report_email
+            msg['Subject'] = subject
 
-        server = smtplib.SMTP('smtp.gmail.com', 587)
-        server.starttls()
-        server.login(st.secrets.admin_email, 'hzfemdpfnfczwixe')
-        server.sendmail(st.secrets.admin_email, st.secrets.bug_report_email, msg.as_string())
-        server.quit()
+            server = smtplib.SMTP('smtp.gmail.com', 587)
+            server.starttls()
+            server.login(st.secrets.admin_email, 'hzfemdpfnfczwixe')
+            server.sendmail(st.secrets.admin_email, st.secrets.bug_report_email, msg.as_string())
+            server.quit()
 
-        st.success('Email sent successfully! 🚀')
-    except Exception as e:
-        st.error(f"Failed to send email: {e}")
+            st.success('Email sent successfully! 🚀')
+        except Exception as e:
+            st.error(f"Failed to send email: {e}")
