@@ -45,6 +45,14 @@ if 'korean_mode' not in sss:
 if sss.korean_mode==1:
     button=st.button("메인 화면으로")
     if button:
+        if 'id' in sss:
+            del sss.id
+        else:
+            pass
+        if 'pw' in sss:
+            del sss.pw
+        else:
+            pass
         del sss.filled_input
         st.switch_page("streamlit_app.py")
     st.markdown('<center><h3>회원가입 양식</h3></center>', unsafe_allow_html=True)
@@ -160,6 +168,14 @@ if sss.korean_mode==1:
 if sss.korean_mode==0:
     button=st.button("Go to main")
     if button:
+        if 'id' in sss:
+            del sss.id
+        else:
+            pass
+        if 'pw' in sss:
+            del sss.pw
+        else:
+            pass
         del sss.filled_input
         st.switch_page("streamlit_app.py")
     st.markdown('<center><h3>Sign in Form</h3></center>', unsafe_allow_html=True)
