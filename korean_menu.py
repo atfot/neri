@@ -168,6 +168,12 @@ div.st-emotion-cache-1bzkvni.e1f1d6gn3 > div > div > div > div > div > button > 
     font-size: 1.75em;
     letter-spacing:0.075em;
 }
+/* 성공 실패 메세지 */
+div.st-emotion-cache-1bzkvni.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
+font-family: 'Beeunhye';
+font-size: 1.75em;
+letter-spacing:0.075em;
+}
                     
 /* 오류 보고 */
 /* 안내문*/
