@@ -173,6 +173,13 @@ div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div 
                     /* 작성란 */
                     div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > label > div > p {
     font-family: 'Beeunhye';
+    font-size: 2em;
+    letter-spacing:0.075em;
+}
+                    
+                    /* 성공 실패 메세지 */
+                    div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p {
+    font-family: 'Beeunhye';
     font-size: 1.75em;
     letter-spacing:0.075em;
 }
