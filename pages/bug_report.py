@@ -56,7 +56,7 @@ if st.session_state.send_email==True:
         
         # 이미지 파일 추가
         img = MIMEImage(error_image.read())
-        img.add_header('Content-Disposition', 'attachment', filename=image_name)
+        img.add_header('Content-Disposition', 'attachment', filename=error_image.name)
         msg.attach(img)
         
         # 받는 메일 유효성 검사 거친 후 메일 전송
@@ -64,8 +64,8 @@ if st.session_state.send_email==True:
         
         # smtp 서버 연결 해제
         smtp.quit()
-        st.success('Email sent successfully! 🚀')
         st.session_state.send_email=False
+        st.success('Email sent successfully! 🚀')
     except Exception as e:
         st.error(f"Failed to send email: {e}")
 else:
