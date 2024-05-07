@@ -27,8 +27,8 @@ st.write("""
 # Taking inputs
 
 error_subject = st.text_input('어떤 오류가 나셨나요?')
-error_body = st.text_area('해당 오류에 대한 자세한 설명을 해주세요!')
-error_images=st.file_uploader('실제로',accept_multiple_files=True)
+error_body = st.text_area('자세한 설명을 해주세요!')
+error_images=st.file_uploader('혹시 사진을 찍어두신게 있으시다면 보여주세요!', accept_multiple_files=True)
 
 col1,col2=st.columns([8,2])
 with col2:
@@ -69,7 +69,7 @@ if st.session_state.send_email==True:
         # smtp 서버 연결 해제
         smtp.quit()
         st.session_state.send_email=False
-        st.success('Email sent successfully! 🚀')
+        st.success('오류 보고가 전송되었습니다! 더 나은 서비스로 보답하겠습니다🥰')
     except Exception as e:
         st.error(f"Failed to send email: {e}")
 else:
