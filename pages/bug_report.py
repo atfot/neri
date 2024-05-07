@@ -1,9 +1,8 @@
 import streamlit as st
-from redmail import gmail
 import smtplib
-from email.mime.text import MIMEText
+from email.message import EmailMessage
+import imghdr
 from korean_menu import make_sidebar
-import base64
 
 st.set_page_config(
     page_title="당신의 AI 심리상담사, 네리",
@@ -36,37 +35,25 @@ with col2:
         st.session_state.send_email=True
 if st.session_state.send_email==True:
     try:
-        imgdata = base64.b64decode(error_image.read())
-        subtype_name=error_image.name[error_image.name.find('.')+1:]      
-        gmail.username=st.secrets.admin_email
-        gmail.password=st.secrets.admin_pw
-        gmail.send(
-            subject=f'{error_subject}',
-            sender=f'{st.secrets.admin_email}',
-            receivers=[f'{st.secrets.bug_report_email}'],
-            html=f'''
-<h5>{st.session_state.username}</h5>
-<p>{error_body}</p>
-{{myimage}}
-            ''',
-            body_images={
-            'myimage':f'{imgdata}',
-            'subtype':f'{subtype_name}'
-            }
-)
-        #msg = MIMEText(error_body)
-        #msg['From'] = st.secrets.admin_email
-        #msg['To'] = st.secrets.bug_report_email
-        #msg['Subject'] = error_subject
+        message = EmailMessage()
+        message.set_content(error_body)
 
-        #server = smtplib.SMTP('smtp.gmail.com', 587)
-        #server.starttls()
-        #server.login(st.secrets.admin_email, 'hzfemdpfnfczwixe')
-        #server.sendmail(st.secrets.admin_email, st.secrets.bug_report_email, msg.as_string())
-        #server.quit()
+        message["Subject"] = error_subject
+        message["From"] = st.secrets.admin_email
+        message["To"] = st.secrets.bug_report_email
+
+        if error_image is not None:
+            image_file = error_image.read()
+            image_type = imghdr.what('chatbot_pc_home_english_3',image_file)
+            message.add_attachment(image_file,maintype='image',subtype=image_type)
+
+        smtp = smtplib.SMTP_SSL(SMTP_SERVER,SMTP_PORT)
+        smtp.login(st.secrets.admin_email,st.secrets.admin_pw)
+        smtp.send_message(message)
+        smtp.quit()
 
         st.success('Email sent successfully! 🚀')
-        del st.session_state.send_email
+        st.session_state.send_email=False
     except Exception as e:
         st.error(f"Failed to send email: {e}")
 else:
