@@ -196,9 +196,11 @@ with col3:
           st.write('**빈칸을 전부 채워주세요🙃**')
 if sss.fix_info==False:
   st.title('')
-  st.markdown('<p><h4>도움이 될만한 행동들 : </h4></p>', unsafe_allow_html=True)
-  for i in sss.what_to_do:
-    st.markdown(f'<p>{i}</p>',unsafe_allow_html=True)
+  col1,col2=st.columns([4,6])
+  with col2:
+    st.markdown('<p><h4>도움이 될만한 행동들 : </h4></p>', unsafe_allow_html=True)
+    for i in sss.what_to_do:
+      st.markdown(f'<p>{i}</p>',unsafe_allow_html=True)
   st.title('')
   st.markdown('<p><h3><center>고민 해결도 그래프</center></h3></p>', unsafe_allow_html=True)
   if time.localtime().tm_mon<10:
