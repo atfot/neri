@@ -35,6 +35,9 @@ with col2:
         st.session_state.send_email=True
 if st.session_state.send_email==True:
     try:
+        SMTP_SERVER = "smtp.gmail.com"
+        SMTP_PORT = 465
+        
         message = EmailMessage()
         message.set_content(error_body)
 
