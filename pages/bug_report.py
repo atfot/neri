@@ -30,9 +30,9 @@ error_subject = st.text_input('어떤 오류가 나셨나요?')
 error_body = st.text_area('자세한 설명을 해주세요!')
 error_images=st.file_uploader('혹시 사진을 찍어두신게 있으시다면 보여주세요!', accept_multiple_files=True)
 
-col1,col2=st.columns([8,2])
+col1,col2=st.columns([9,1])
 with col2:
-    if st.button("Send Email",use_container_width=True):
+    if st.button("✉︎",use_container_width=True):
         st.session_state.send_email=True
 if st.session_state.send_email==True:
     try:
