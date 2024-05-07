@@ -124,7 +124,7 @@ div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > button > 
 }     
 
 /* 도움이 될만한 행동들 리스트 */      
- div.st-emotion-cache-1bcsrn5.e1f1d6gn3 > div > div > div > div > div > div > p {
+div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
     letter-spacing:0.075em;
