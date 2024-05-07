@@ -1,7 +1,8 @@
 import streamlit as st
-import smtplib
-from email.message import EmailMessage
-import imghdr
+import smtplib  
+from email.mime.multipart import MIMEMultipart  
+from email.mime.text import MIMEText  
+from email.mime.image import MIMEImage  
 from korean_menu import make_sidebar
 
 st.set_page_config(
@@ -35,26 +36,34 @@ with col2:
         st.session_state.send_email=True
 if st.session_state.send_email==True:
     try:
-        SMTP_SERVER = "smtp.gmail.com"
-        SMTP_PORT = 465
+        # smpt 서버와 연결
+        gmail_smtp = "smtp.gmail.com"  # gmail smtp 주소
+        gmail_port = 465  # gmail smtp 포트번호. 고정(변경 불가)
+        smtp = smtplib.SMTP_SSL(gmail_smtp, gmail_port)
         
-        message = EmailMessage()
-        message.set_content(error_body)
-
-        message["Subject"] = error_subject
-        message["From"] = st.secrets.admin_email
-        message["To"] = st.secrets.bug_report_email
-
-        if error_image is not None:
-            image_file = error_image.read()
-            image_type = imghdr.what('chatbot_pc_home_english_3',image_file)
-            message.add_attachment(image_file,maintype='image',subtype=image_type)
-
-        smtp = smtplib.SMTP_SSL(SMTP_SERVER,SMTP_PORT)
-        smtp.login(st.secrets.admin_email,st.secrets.admin_pw)
-        smtp.send_message(message)
+        # 로그인
+        smtp.login(st.secrets.admin_email, st.secrets.admin_pw)
+        
+        # 메일 기본 정보 설정
+        msg = MIMEMultipart()
+        msg["Subject"] = error_subject
+        msg["From"] = st.secrets.admin_email
+        msg["To"] = st.secrets.bug_report_email
+        
+        # 메일 본문 내용
+        content = MIMEText(error_body, "plain")
+        msg.attach(content)
+        
+        # 이미지 파일 추가
+        img = MIMEImage(error_image.read())
+        img.add_header('Content-Disposition', 'attachment', filename=image_name)
+        msg.attach(img)
+        
+        # 받는 메일 유효성 검사 거친 후 메일 전송
+        smtp.sendmail(st.secrets.admin_email, st.secrets.bug_report_email, msg.as_string())
+        
+        # smtp 서버 연결 해제
         smtp.quit()
-
         st.success('Email sent successfully! 🚀')
         st.session_state.send_email=False
     except Exception as e:
