@@ -32,7 +32,7 @@ error_images=st.file_uploader('혹시 사진을 찍어두신게 있으시다면 
 
 col1,col2=st.columns([9,1])
 with col2:
-    if st.button("✉️",use_container_width=True):
+    if st.button("전송",use_container_width=True):
         st.session_state.send_email=True
 if st.session_state.send_email==True:
     try:
