@@ -28,7 +28,7 @@ st.write("""
 
 error_subject = st.text_input('제목')
 error_body = st.text_area('내용')
-error_image=st.file_uploader('상세사진')
+error_images=st.file_uploader('상세사진',accept_multiple_files=True)
 
 col1,col2=st.columns([8,2])
 with col2:
@@ -55,9 +55,10 @@ if st.session_state.send_email==True:
         msg.attach(content)
         
         # 이미지 파일 추가
-        img = MIMEImage(error_image.read())
-        img.add_header('Content-Disposition', 'attachment', filename=error_image.name)
-        msg.attach(img)
+        for image in error_images:
+            img = MIMEImage(image.read())
+            img.add_header('Content-Disposition', 'attachment', filename=image.name)
+            msg.attach(img)
         
         # 받는 메일 유효성 검사 거친 후 메일 전송
         smtp.sendmail(st.secrets.admin_email, st.secrets.bug_report_email, msg.as_string())
