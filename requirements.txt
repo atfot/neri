@@ -4,4 +4,3 @@ openai
 streamlit_js_eval
 sendgrid
 Pillow
-redmail
