@@ -217,7 +217,7 @@ if sss.fix_info==False:
   col1,col2,col3=st.columns([3.5,3,3.5])
   with col2:
     if st.button('고객님의 정보를 이메일로 받아보시겠어요?',key='send_userinfo',use_container_width=True):
-      st.write('hi')
+      st.success('hi')
 else:
   pass
 
