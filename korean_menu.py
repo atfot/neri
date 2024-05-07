@@ -162,6 +162,13 @@ div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div 
     letter-spacing:0.075em;
 }
                     
+/* 이메일로 고객 정보 전송버튼 */
+div.st-emotion-cache-1bzkvni.e1f1d6gn3 > div > div > div > div > div > button > div > p {
+    font-family: 'Beeunhye';
+    font-size: 1.75em;
+    letter-spacing:0.075em;
+}
+                    
 /* 오류 보고 */
 /* 안내문*/
 div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > p {
