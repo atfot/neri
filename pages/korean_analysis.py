@@ -196,7 +196,7 @@ with col3:
           st.write('**빈칸을 전부 채워주세요🙃**')
 if sss.fix_info==False:
   st.title('')
-  col1,col2=st.columns([4,6])
+  col1,col2=st.columns([3,7])
   with col2:
     st.markdown('<p><h4>도움이 될만한 행동들 : </h4></p>', unsafe_allow_html=True)
     for i in sss.what_to_do:
