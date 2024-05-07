@@ -60,6 +60,8 @@ if st.session_state.send_email==True:
                 img = MIMEImage(image.read())
                 img.add_header('Content-Disposition', 'attachment', filename=image.name)
                 msg.attach(img)
+        else:
+            pass
         
         # 받는 메일 유효성 검사 거친 후 메일 전송
         smtp.sendmail(st.secrets.admin_email, st.secrets.bug_report_email, msg.as_string())
