@@ -212,6 +212,8 @@ if sss.fix_info==False:
   df_1=pd.DataFrame({y: [x]})
   df_2=pd.concat([df,df_1],axis=1).T
   st.line_chart(df_2)
+  if st.button('고객님의 정보를 이메일로 받아보시겠어요?',key='send_userinfo'):
+     st.write('hi')
 else:
   pass
 
