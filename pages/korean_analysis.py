@@ -229,52 +229,15 @@ if sss.fix_info==False:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neri의 상담분석</title>
-    <style>
-        /* CSS 스타일링 */
-        body {
-            font-size: 2em;
-            letter-spacing:0.075em;
-            background-color: #fff;
-            color: #000;
-            margin: 0;
-            padding: 1em;
-            justify-content: space-around;
-        }
-        .analysis{
-            width: 100%;
-            overflow: hidden;
-        }
-        .half {
-            width: 50%; /* 각 요소를 50%의 너비로 설정합니다. */
-            float: left; /* 요소를 옆으로 정렬합니다. */
-            padding:2em;
-            box-sizing: border-box; /* 너비에 padding과 border를 포함합니다. */
-        }
-        header{
-            width:100;
-            text-align: center;
-        }
-        .whattodo{
-            border-radius: 5px;
-            align-self: center;
-            width: 50%; /* 원하는 너비로 조정 */
-            margin: 0 auto; /* 가운데 정렬을 위한 margin 설정 */
-            border: 0.01em solid black; /* 테두리를 보기 위해 추가 */
-            padding: 2em; /* 내용과 테두리 사이 여백 */
-        }
-        .graph{
-            text-align: center;
-        }
-    </style>
 </head>
 """
       html_text_2=f"""
-<body>
-    <header>
+<body style="font-size: 2em; letter-spacing:0.075em; background-color: #fff; color: #000; margin: 0; padding: 1em justify-content: space-around;">
+    <header style="width:100; text-align: center;">
         <h1>{sss.username}님의 분석 결과</h1>
     </header>
-    <div class="analysis">
-      <div class="half">
+    <div class="analysis" style="width: 100%; overflow: hidden;">
+      <div class="half" style="width: 50%; float: left; padding:2em; box-sizing: border-box;">
           <h2>고객님의 정보</h2>
           <p><b>1. 고객님 성함 : </b>{sss.username}</p>
           <p><b>2. 연령 : </b>{sss.age}</p>
@@ -295,7 +258,7 @@ if sss.fix_info==False:
           <p>{sss.score_explanation}</p>
       </div>
   </div>
-  <div class="whattodo">
+  <div class="whattodo" style="border-radius: 5px; align-self: center; width: 50%; margin: 0 auto; border: 0.01em solid black; padding: 2em;">
       <p><b>도움이 될만한 행동들 : </b></p>
 """
       todolist_format="""
@@ -310,7 +273,7 @@ if sss.fix_info==False:
         html_text_3+=todolist_format.format(i)
       html_text_4="""
     </div>
-    <div class="graph">
+    <div class="graph" style="text-align: center;">
         <h2>그래프</h2>
     </div>
     <footer style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #Fff; color: #000000; padding: 1px; text-align: center;">
