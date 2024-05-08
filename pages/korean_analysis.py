@@ -222,7 +222,7 @@ if sss.fix_info==False:
   col1,col2,col3=st.columns([2,6,2])
   with col2:
     if st.button('고객님의 정보를 이메일로 받아보시겠어요?',key='send_userinfo',use_container_width=True):
-      html_text_1=f"""
+      html_text_1="""
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -274,34 +274,36 @@ if sss.fix_info==False:
         }
     </style>
 </head>
+"""
+      html_text_2=f"""
 <body>
     <header>
         <h1>{sss.username}님의 분석 결과</h1>
-    </header>"""
-      html_text_2=f"""<div class="analysis">
-        <div class="half">
-            <h2>고객님의 정보</h2>
-            <p><b>1. 고객님 성함 : </b>{sss.username}</p>
-            <p><b>2. 연령 : </b>{sss.age}</p>
-            <p><b>3. 성별 : </b>{sss.gender}</p>
-            <p><b>4. 고민 : </b>{sss.problem}</p>
-            <p><b>5. 고민 설명 : </b></p>
-            <p>{sss.problem_explanation}</p>
-            <p><b>6. 목표 : </b></p>
-            <p>{sss.goal}</p>
-        </div>
+    </header>
+    <div class="analysis">
+      <div class="half">
+          <h2>고객님의 정보</h2>
+          <p><b>1. 고객님 성함 : </b>{sss.username}</p>
+          <p><b>2. 연령 : </b>{sss.age}</p>
+          <p><b>3. 성별 : </b>{sss.gender}</p>
+          <p><b>4. 고민 : </b>{sss.problem}</p>
+          <p><b>5. 고민 설명 : </b></p>
+          <p>{sss.problem_explanation}</p>
+          <p><b>6. 목표 : </b></p>
+          <p>{sss.goal}</p>
+      </div>
 
-        <div class="half">
-            <h2>{sss.date}</h2>
-            <p><b>문제분석 : </b></p>
-            <p>{sss.client_analysis}</p>
-            <p><b>해결 진전도 : </b>{sss.score}</p>
-            <p><b>채점 기준 : </b></p>
-            <p>{sss.score_explanation}</p>
-        </div>
-    </div>
-    <div class="whattodo">
-        <p><b>도움이 될만한 행동들 : </b></p>
+      <div class="half">
+          <h2>{sss.date}</h2>
+          <p><b>문제분석 : </b></p>
+          <p>{sss.client_analysis}</p>
+          <p><b>해결 진전도 : </b>{sss.score}</p>
+          <p><b>채점 기준 : </b></p>
+          <p>{sss.score_explanation}</p>
+      </div>
+  </div>
+  <div class="whattodo">
+      <p><b>도움이 될만한 행동들 : </b></p>
 """
       todolist_format="""
         <ul>
