@@ -240,7 +240,7 @@ if sss.fix_info==False:
 <body style="margin: 0; padding: 20px 0 30px 0;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="800" style="border: 1px solid #cccccc;">
         <tr>
-            <td align="center">
+            <td align="center" style="padding: 20px 0 0 0;">
                 <h1>{sss.date}의 분석 결과</h1>
             </td>
         </tr>
