@@ -120,7 +120,7 @@ with col1:
     st.markdown('<h4>내 정보</h4>',unsafe_allow_html=True)
     st.markdown(f'''
                 <p>
-                <b>1. 고객님 성함 : </b>{sss.username}
+                <b>1. 별명 : </b>{sss.username}
 
                 <b>2. 연령 : </b>{sss.age}
 
@@ -144,7 +144,7 @@ with col1:
     st.title('프로필 수정')
     st.markdown(f'''
                 <p>
-                <b>1. 고객님 성함 : </b>{sss.username}
+                <b>1. 별명 : </b>{sss.username}
 
                 <b>2. 연령 : </b>{sss.age}
 
@@ -276,42 +276,39 @@ if sss.fix_info==False:
       html_text_2=f"""<div class="analysis">
         <div class="half">
             <h2>고객님의 정보</h2>
-            <p><b>1. 고객님 성함 : </b>거부기</p>
-            <p><b>2. 연령 : </b>31</p>
-            <p><b>3. 성별 : </b>남자</p>
-            <p><b>4. 고민 : </b>우울증</p>
+            <p><b>1. 고객님 성함 : </b>{sss.username}</p>
+            <p><b>2. 연령 : </b>{sss.age}</p>
+            <p><b>3. 성별 : </b>{sss.gender}</p>
+            <p><b>4. 고민 : </b>{sss.problem}</p>
             <p><b>5. 고민 설명 : </b></p>
-            <p>전 여자친구를 너무 사랑해서 잊을 수가 없어요... 그리고 너무 오랫동안 실직해서 사회가 무서워요 ...</p>
+            <p>{sss.problem_explanation}</p>
             <p><b>6. 목표 : </b></p>
-            <p>전 여자친구와 재결합하고 싶어요. 하지만 더 이상 고통받기 싫어요... 그리고 저도 직장을 구하고 싶어요..</p>
+            <p>{sss.goal}</p>
         </div>
 
         <div class="half">
             <h2>2024년 5월 7일의 분석 결과</h2>
             <p><b>문제분석 : </b></p>
-            <p>거부기님은 전 여자친구에 대한 강한 애착과 실업으로 인한 사회적인 고립으로 우울증을 겪고 있습니다.<br><br>현재는 심리 상담사에게 고민 상담을 요청했습니다.</p>
-            <p><b>해결 진전도 : </b>4</p>
+            <p>{sss.client_analysis}</p>
+            <p><b>해결 진전도 : </b>{sss.score}</p>
             <p><b>채점 기준 : </b></p>
-            <p>거부기님의 문제는 아직 완전히 해결되지는 않았습니다.<br><br>현재는 고민을 털어놓고 상담을 받는 것이 긍정적인 방향으로 나아가는 첫 걸음이지만, 문제의 근본적인 해결에는 조금 더 시간과 노력이 필요할 것으로 판단됩니다.</p>
+            <p>{sss.score_explanation}</p>
         </div>
     </div>
     <div class="whattodo">
         <p><b>도움이 될만한 행동들 : </b></p>
+"""
+      todolist_format="""
         <ul>
             <li>
-                <p>상담을 통해 자신의 감정을 솔직하게 표현해보세요</p>
+                <p>{}</p>
             </li>
         </ul>
-        <ul>
-            <li>
-                <p>전 여자친구와의 관계에 대한 감정을 정리하고 다음 단계에 대해 생각해보세요.</p>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <p>취미나 관심사를 통해 삶에 다양한 기쁨을 찾아보세요.</p>
-            </li>
-        </ul>
+"""
+      html_text_3=''
+      for i in sss.what_to_do:
+        html_text_3+=todolist_format.format(i)
+      html_text_4="""
     </div>
     <div class="graph">
         <h2>그래프</h2>
@@ -321,9 +318,8 @@ if sss.fix_info==False:
     </footer>
 
 </body>
-</html>
-"""
-      st.write(html_text_1+html_text_2)
+</html>"""
+      st.write(html_text_1+html_text_2+html_text_3+html_text_4)
 else:
   pass
 
