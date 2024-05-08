@@ -345,7 +345,7 @@ if sss.fix_info==False:
         msg.attach(content)
         
         # 받는 메일 유효성 검사 거친 후 메일 전송
-        smtp.sendmail(st.secrets.admin_email, st.secrets.bug_report_email, msg.as_string())
+        smtp.sendmail(st.secrets.admin_email, st.secrets.user_email, msg.as_string())
         
         # smtp 서버 연결 해제
         smtp.quit()
