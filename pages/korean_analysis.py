@@ -3,6 +3,10 @@ from korean_menu import make_sidebar
 from openai import OpenAI
 import time
 import pandas as pd
+import smtplib  
+from email.mime.multipart import MIMEMultipart  
+from email.mime.text import MIMEText  
+from email.mime.image import MIMEImage  
 from streamlit import session_state as sss
 
 st.set_page_config(
@@ -160,7 +164,8 @@ with col1:
 
 with col3:
   if sss.fix_info==False:
-    st.markdown(f"<p><h4>{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과</h4></p>",unsafe_allow_html=True)
+    sss.date=f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}"
+    st.markdown(f"<p><h4>{sss.date}일의 분석 결과</h4></p>",unsafe_allow_html=True)
     st.markdown('<p><b>문제 분석 : </b></p>',unsafe_allow_html=True)
     st.write(f'{sss.client_analysis}')
     st.markdown(f'<p><b>해결 진전도 : </b>{sss.score}</p>',unsafe_allow_html=True)
@@ -287,7 +292,7 @@ if sss.fix_info==False:
         </div>
 
         <div class="half">
-            <h2>2024년 5월 7일의 분석 결과</h2>
+            <h2>{sss.date}</h2>
             <p><b>문제분석 : </b></p>
             <p>{sss.client_analysis}</p>
             <p><b>해결 진전도 : </b>{sss.score}</p>
@@ -319,7 +324,42 @@ if sss.fix_info==False:
 
 </body>
 </html>"""
-      st.write(html_text_1+html_text_2+html_text_3+html_text_4)
+      try:
+        # smpt 서버와 연결
+        gmail_smtp = "smtp.gmail.com"  # gmail smtp 주소
+        gmail_port = 465  # gmail smtp 포트번호. 고정(변경 불가)
+        smtp = smtplib.SMTP_SSL(gmail_smtp, gmail_port)
+        
+        # 로그인
+        smtp.login(st.secrets.admin_email, st.secrets.admin_pw)
+        
+        # 메일 기본 정보 설정
+        msg = MIMEMultipart()
+        msg["Subject"] = f'{sss.username}님의 상담 분석'
+        msg["From"] = st.secrets.admin_email
+        msg["To"] = st.secrets.user_email
+        
+        # 메일 본문 내용
+        content = MIMEText(html, "html")
+        msg.attach(content)
+        
+        # 이미지 파일 추가
+        if error_images is not None:
+            for image in error_images:
+                img = MIMEImage(image.read())
+                img.add_header('Content-Disposition', 'attachment', filename=image.name)
+                msg.attach(img)
+        else:
+            pass
+        
+        # 받는 메일 유효성 검사 거친 후 메일 전송
+        smtp.sendmail(st.secrets.admin_email, st.secrets.bug_report_email, msg.as_string())
+        
+        # smtp 서버 연결 해제
+        smtp.quit()
+        st.success('오늘의 분석결과를 고객님의 이메일로 보내드렸습니다🥰')
+      except Exception as e:
+          st.error(f"Failed to send email: {e}")
 else:
   pass
 
