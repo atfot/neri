@@ -163,14 +163,14 @@ div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div 
 }
                     
 /* 이메일로 고객 정보 전송버튼 */
-div.st-emotion-cache-1bzkvni.e1f1d6gn3 > div > div > div > div > div > button > div > p {
+div.st-emotion-cache-fplge5.e1f1d6gn3 > div > div > div > div > div > button > div > p {
     font-family: 'Beeunhye';
     font-size: 1.75em;
     letter-spacing:0.075em;
 }
                     
 /* 성공 실패 메세지 */
-div.st-emotion-cache-1bzkvni.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
+div.st-emotion-cache-fplge5.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
 font-family: 'Beeunhye';
 font-size: 1.75em;
 letter-spacing:0.075em;
