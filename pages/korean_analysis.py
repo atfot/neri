@@ -232,39 +232,39 @@ if sss.fix_info==False:
 </head>
 """
       html_text_2=f"""
-<body style="font-size: 2em; letter-spacing:0.075em; background-color: #fff; color: #000; margin: 0; padding: 1em justify-content: space-around;">
+<body style="font-size: 2em; letter-spacing:0.075em; background-color: #fff; color: #000; margin: 0; padding: 1em; justify-content: space-around;">
     <header style="width:100; text-align: center;">
         <h1>{sss.username}님의 분석 결과</h1>
     </header>
     <div class="analysis" style="width: 100%; overflow: hidden;">
       <div class="half" style="width: 50%; float: left; padding:2em; box-sizing: border-box;">
           <h2>고객님의 정보</h2>
-          <p><b>1. 고객님 성함 : </b>{sss.username}</p>
-          <p><b>2. 연령 : </b>{sss.age}</p>
-          <p><b>3. 성별 : </b>{sss.gender}</p>
-          <p><b>4. 고민 : </b>{sss.problem}</p>
-          <p><b>5. 고민 설명 : </b></p>
-          <p>{sss.problem_explanation}</p>
-          <p><b>6. 목표 : </b></p>
-          <p>{sss.goal}</p>
+          <p><b>1. 고객님 성함 : </b>{sss.username}</p><br>
+          <p><b>2. 연령 : </b>{sss.age}</p><br>
+          <p><b>3. 성별 : </b>{sss.gender}</p><br>
+          <p><b>4. 고민 : </b>{sss.problem}</p><br>
+          <p><b>5. 고민 설명 : </b></p><br>
+          <p>{sss.problem_explanation}</p><br>
+          <p><b>6. 목표 : </b></p><br>
+          <p>{sss.goal}</p><br>
       </div>
 
       <div class="half">
           <h2>{sss.date}의 분석 결과</h2>
-          <p><b>문제분석 : </b></p>
-          <p>{sss.client_analysis}</p>
-          <p><b>해결 진전도 : </b>{sss.score}</p>
-          <p><b>채점 기준 : </b></p>
+          <p><b>문제분석 : </b></p><br>
+          <p>{sss.client_analysis}</p><br>
+          <p><b>해결 진전도 : </b>{sss.score}</p><br>
+          <p><b>채점 기준 : </b></p><br>
           <p>{sss.score_explanation}</p>
       </div>
   </div>
   <div class="whattodo" style="border-radius: 5px; align-self: center; width: 50%; margin: 0 auto; border: 0.01em solid black; padding: 2em;">
-      <p><b>도움이 될만한 행동들 : </b></p>
+      <p><h3>도움이 될만한 행동들 : </h3></p>
 """
       todolist_format="""
         <ul>
             <li>
-                <p>{}</p>
+                <p><b>{}</b></p>
             </li>
         </ul>
 """
