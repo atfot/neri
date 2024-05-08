@@ -222,7 +222,7 @@ if sss.fix_info==False:
   col1,col2,col3=st.columns([2,6,2])
   with col2:
     if st.button('고객님의 정보를 이메일로 받아보시겠어요?',key='send_userinfo',use_container_width=True):
-      html_text_1="""
+      html_text_1=f"""
 <!DOCTYPE html>
 <html lang="en">
 <head>
