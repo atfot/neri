@@ -3,7 +3,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart  
 from email.mime.text import MIMEText  
 from email.mime.image import MIMEImage  
-from korean_menu import make_sidebar
+from english_menu import make_sidebar
 
 st.set_page_config(
     page_title="당신의 AI 심리상담사, 네리",
