@@ -304,7 +304,7 @@ if sss.fix_info==False:
                         </td>
                     </tr>
                     <tr>
-                        <td style="color: #000000; font-family: Arial, sans-serif; font-size: 16px; line-height: 30px; border-radius: 5px; align-self: center; width: 100%; margin: 0 auto; border: 0.1px solid #cccccc; padding: 20px;">
+                        <td style="color: #000000; font-family: Arial, sans-serif; font-size: 16px; line-height: 30px; border-radius: 5px; align-self: center; width: 100%; margin: 0 auto; border: 0.1px solid #cccccc; padding: 20px; margin: 20px;">
                             <p><b>도움이 될만한 행동들 : </b></p>
 """
       todolist_format="""
