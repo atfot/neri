@@ -3,6 +3,10 @@ from english_menu import make_sidebar
 from openai import OpenAI
 import pandas as pd
 import time
+import smtplib  
+from email.mime.multipart import MIMEMultipart  
+from email.mime.text import MIMEText  
+from email.mime.image import MIMEImage  
 from streamlit import session_state as sss
 
 st.set_page_config(
