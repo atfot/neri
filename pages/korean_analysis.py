@@ -324,6 +324,7 @@ if sss.fix_info==False:
 
 </body>
 </html>"""
+      html=html_text_1+html_text_2+html_text_3+html_text_4
       try:
         # smpt 서버와 연결
         gmail_smtp = "smtp.gmail.com"  # gmail smtp 주소
