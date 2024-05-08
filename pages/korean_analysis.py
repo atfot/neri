@@ -244,22 +244,22 @@ if sss.fix_info==False:
     <div class="analysis" style="width: 100%; overflow: auto;">
       <div class="half" style="width: 50%; float: left; padding:2em; box-sizing: border-box;">
           <h2>고객님의 정보</h2>
-          <p><b>1. 고객님 성함 : </b>{sss.username}</p><br>
-          <p><b>2. 연령 : </b>{sss.age}</p><br>
-          <p><b>3. 성별 : </b>{sss.gender}</p><br>
-          <p><b>4. 고민 : </b>{html_problem}</p><br>
-          <p><b>5. 고민 설명 : </b></p><br>
-          <p>{html_problem_explanation}</p><br>
-          <p><b>6. 목표 : </b></p><br>
-          <p>{html_goal}</p><br>
+          <p><b>1. 고객님 성함 : </b>{sss.username}</p>
+          <p><b>2. 연령 : </b>{sss.age}</p>
+          <p><b>3. 성별 : </b>{sss.gender}</p>
+          <p><b>4. 고민 : </b>{html_problem}</p>
+          <p><b>5. 고민 설명 : </b></p>
+          <p>{html_problem_explanation}</p>
+          <p><b>6. 목표 : </b></p>
+          <p>{html_goal}</p>
       </div>
 
       <div class="half" style="width: 50%; float: left; padding:2em; box-sizing: border-box;">
           <h2>{sss.date}의 분석 결과</h2>
-          <p><b>문제분석 : </b></p><br>
-          <p>{html_client_analysis}</p><br>
-          <p><b>해결 진전도 : </b>{sss.score}</p><br>
-          <p><b>채점 기준 : </b></p><br>
+          <p><b>문제분석 : </b></p>
+          <p>{html_client_analysis}</p>
+          <p><b>해결 진전도 : </b>{sss.score}</p>
+          <p><b>채점 기준 : </b></p>
           <p>{html_score_explanation}</p>
       </div>
   </div>
