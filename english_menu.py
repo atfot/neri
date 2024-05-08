@@ -170,6 +170,7 @@ div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div 
         if sss.get("logged_in", True):
             st.page_link("pages/english_chatbot.py", label="My Councellor", icon="🩹")
             st.page_link("pages/english_analysis.py", label="My Info", icon="ℹ️")
+            st.page_link("pages/english_bug_report.py", label="Any Errors?", icon="⚠️")
             st.page_link("pages/english_instruction.py", label="How To Use", icon="❓")
             st.title('')
 

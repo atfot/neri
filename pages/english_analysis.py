@@ -113,10 +113,10 @@ col1,col2,col3=st.columns([4,1,5])
 with col1:
   if sss.fix_info==False:
     st.write('')
-    st.markdown('<h4>Your Profile</h4>',unsafe_allow_html=True)
+    st.markdown('<h4>My Profile</h4>',unsafe_allow_html=True)
     st.markdown(f'''
                 <p>
-                <b>1. Your Name : </b>{sss.username}
+                <b>1. Username : </b>{sss.username}
 
                 <b>2. Age : </b>{sss.age}
 
@@ -140,7 +140,7 @@ with col1:
     st.title('Fix your Profile')      
     st.markdown(f'''
                 <p>
-                <b>1. Your Name : </b>{sss.username}
+                <b>1. Username : </b>{sss.username}
 
                 <b>2. Age : </b>{sss.age}
 
@@ -157,7 +157,8 @@ with col3:
   if sss.fix_info==False:
     month=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     month=month[time.localtime().tm_mon-1]
-    st.markdown(f'<p><h4>Analysis results on {month} {time.localtime().tm_mday}, {time.localtime().tm_year}</h4></p>', unsafe_allow_html=True)
+    sss.date=f'{month} {time.localtime().tm_mday}, {time.localtime().tm_year}'
+    st.markdown(f'<p><h4>Analysis results on {sss.date}</h4></p>', unsafe_allow_html=True)
     st.markdown('<p><b>Problem Analysis :</b></p>', unsafe_allow_html=True)
     st.write(f'{sss.client_analysis}')
     st.markdown(f'<p><b>Score : </b>{sss.score}</p>', unsafe_allow_html=True)
@@ -208,9 +209,177 @@ if sss.fix_info==False:
   y='2025/12/03'
   df_1=pd.DataFrame({y: [x]})
   df_2=pd.concat([df,df_1],axis=1).T
-  st.line_chart(df_2)
+  st.line_chart(df_2)  
+  col1,col2,col3=st.columns([2,6,2])
+  with col2:
+    if st.button('Would you like to have your psychometric analysis emailed to you?',key='send_userinfo',use_container_width=True):
+      html_text_1="""
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Neri's consultation analytics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+"""
+      html_problem=sss.problem_explanation.replace('\n', '<br>')
+      html_problem_explanation=sss.problem_explanation.replace('\n', '<br>')
+      html_goal=sss.goal.replace('\n', '<br>')      
+      html_client_analysis=sss.client_analysis.replace('\n', '<br>')
+      html_score_explanation=sss.score_explanation.replace('\n', '<br>')
+      html_text_2=f"""
+<body style="margin: 0; padding: 20px 0 30px 0;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="800" style="border: 1px solid #cccccc;">
+        <tr>
+            <td align="center" style="padding: 20px 0 0 0;">
+                <h1>Analysis results on {sss.date}</h1>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px;">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="right" width="720" valign="top">
+                                        Powered by
+                                    </td>
+                                    <td align="right" width="140" valign="top">
+                                        <img src="https://imgur.com/H287o5n.png" alt="Logo" width="140" height="60" style="display: block;" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="color: #000000; font-family: Arial, sans-serif; font-size: 24px;">
+                            <b>This report was analyzed by Neri AI!</b>
+                        </td>
+                    </tr> 
+                    <tr style="color: #000000; font-family: Arial, sans-serif; font-size: 16px; line-height: 30px;"
+                    >
+                        <td style="padding: 20px 0 30px 0;">
+                            Neri is an artificial intelligence psychological counseling chatbot built using GPT 3.5 and 4.0 by OpenAI. This report is based on the user's interaction with Neri today. It is intended as a guide only and you should visit your local psychiatrist or psychologist for more information.
+                        </td>
+                    </tr>
+                    <tr style="color: #000000; font-family: Arial, sans-serif;"
+                    >
+                        <td>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr style="font-size: 16px; line-height: 50px;">
+                                    <td width="260" valign="top">
+                                        <h2>My Info</h2>
+                                        <p><b>1. Username : </b>{sss.username}</p>
+                                        <p><b>2. Age : </b>{sss.age}</p>
+                                        <p><b>3. Gender : </b>{sss.gender}</p>
+                                        <p><b>4. Problem : </b>{html_problem}</p>
+                                        <p><b>5. Problem Explanation : </b></p>
+                                        <p>{html_problem_explanation}</p>
+                                        <p><b>6. Goal : </b></p>
+                                        <p>{html_goal}</p>
+                                    </td>
+                                    <td style="font-size: 0; line-height: 0;" width="20">
+                                    &nbsp;
+                                    </td>
+                                    <td width="260" valign="top">
+                                        <h2>{sss.username}'s analytics results</h2>
+                                        <p><b>Problem analysis :</b></p>
+                                        <p>{html_client_analysis}</p>
+                                        <p><b>Score :</b>{sss.score}</p>
+                                        <p><b>Score Explanation : </b></p>
+                                        <p>{html_score_explanation}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="color: #000000; font-family: Arial, sans-serif; font-size: 16px; line-height: 30px;">
+                            <p><br></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="color: #000000; font-family: Arial, sans-serif; font-size: 16px; line-height: 50px; border-radius: 5px; align-self: center; width: 100%; margin: 0 auto; border: 0.1px solid #cccccc; padding: 20px;">
+                            <p><b>Actions that might help you : </b></p>
+"""
+      todolist_format="""
+        <ul>
+            <li>
+                <p><b>{}</b></p>
+            </li>
+        </ul>
+"""
+      html_text_3=''
+      for i in sss.what_to_do:
+        html_text_3+=todolist_format.format(i)
+      html_text_4="""
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="color: #000000; font-family: Arial, sans-serif; font-size: 16px; line-height: 30px;">
+                            <p><br></p>
+                        </td>
+                    </tr>
+                    <tr align="center" width="100%" style="color: #000000; font-family: Arial, sans-serif; font-size: 16px; line-height: 30px;">
+                        <td>
+                            <h2>Problem Resolution Graph</h2>
+                        </td>
+                    </tr>
+                    <tr align="center" width="100%">
+                        <td>
+                            <img src="https://imgur.com/MvfBBoV.png" width="720" height="280" style="display: block;" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 30px 30px 30px 30px; bottom: 0; left: 0; width: 100%; background-color: #FFFFFF; color: #000000; padding: 10px; text-align: center;">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td>
+                            Developed By <a href="https://drive.google.com/file/d/1l7duTvc4pWDJgZzY301wswYoIrfylC1G/view?usp=sharing" color="#000000" target="_blank"><font color="#000000">Hyun Kyu Cho</font></a> |  Made with Streamlit  |  Powered By OpenAI
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+       </table>
+   </body>
+</html>"""
+      html=html_text_1+html_text_2+html_text_3+html_text_4
+      try:
+        # smpt 서버와 연결
+        gmail_smtp = "smtp.gmail.com"  # gmail smtp 주소
+        gmail_port = 465  # gmail smtp 포트번호. 고정(변경 불가)
+        smtp = smtplib.SMTP_SSL(gmail_smtp, gmail_port)
+        
+        # 로그인
+        smtp.login(st.secrets.admin_email, st.secrets.admin_pw)
+        
+        # 메일 기본 정보 설정
+        msg = MIMEMultipart()
+        msg["Subject"] = f'{sss.date}, Psychological Analysis Results of {sss.username}'
+        msg["From"] = st.secrets.admin_email
+        msg["To"] = st.secrets.user_email
+        
+        # 메일 본문 내용
+        content = MIMEText(html, "html")
+        msg.attach(content)
+        
+        # 받는 메일 유효성 검사 거친 후 메일 전송
+        smtp.sendmail(st.secrets.admin_email, st.secrets.user_email, msg.as_string())
+        
+        # smtp 서버 연결 해제
+        smtp.quit()
+        st.success("I've sent today's analysis to your email🥰")
+      except Exception as e:
+          st.error(f"Failed to send email: {e}")
 else:
   pass
+
+
 
   #st.write(sss.problem_analysis)
   #st.write(sss.conversations)
