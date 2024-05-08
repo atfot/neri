@@ -237,7 +237,7 @@ if sss.fix_info==False:
       html_client_analysis=sss.client_analysis.replace('\n', '<br>')
       html_score_explanation=sss.score_explanation.replace('\n', '<br>')
       html_text_2=f"""
-<body style="font-size: 16pt; line-height: 1pt; letter-spacing:0.075em; background-color: #fff; color: #000; margin: 0; padding: 1em; justify-content: space-around;">
+<body style="font-size: 16pt; line-height: 0.01pt; letter-spacing:0.075em; background-color: #fff; color: #000; margin: 0; padding: 1em; justify-content: space-around;">
     <header style="width:100; text-align: center;">
         <h1>{sss.username}님의 분석 결과</h1>
     </header>
