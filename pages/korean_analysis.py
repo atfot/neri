@@ -228,17 +228,10 @@ if sss.fix_info==False:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>가로로 반으로 나눠진 텍스트</title>
+    <title>Neri의 상담분석</title>
     <style>
         /* CSS 스타일링 */
-        @font-face {
-    font-family: 'Beeunhye';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
         body {
-            font-family: 'Beeunhye';
             font-size: 2em;
             letter-spacing:0.075em;
             background-color: #fff;
@@ -338,7 +331,7 @@ if sss.fix_info==False:
         
         # 메일 기본 정보 설정
         msg = MIMEMultipart()
-        msg["Subject"] = f'{sss.date}일자 {sss.username}님의 상담 분석'
+        msg["Subject"] = f'{sss.date}자 {sss.username}님의 상담 분석'
         msg["From"] = st.secrets.admin_email
         msg["To"] = st.secrets.user_email
         
