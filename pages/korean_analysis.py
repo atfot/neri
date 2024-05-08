@@ -333,14 +333,14 @@ if sss.fix_info==False:
         msg = MIMEMultipart()
         msg["Subject"] = f'{sss.date}자 {sss.username}님의 상담 분석'
         msg["From"] = st.secrets.admin_email
-        msg["To"] = st.secrets.user_email
+        msg["To"] = 'hk4198@naver.com'
         
         # 메일 본문 내용
         content = MIMEText(html, "html")
         msg.attach(content)
         
         # 받는 메일 유효성 검사 거친 후 메일 전송
-        smtp.sendmail(st.secrets.admin_email, st.secrets.user_email, msg.as_string())
+        smtp.sendmail(st.secrets.admin_email, 'hk4198@naver.com', msg.as_string())
         
         # smtp 서버 연결 해제
         smtp.quit()
