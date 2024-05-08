@@ -344,7 +344,7 @@ if sss.fix_info==False:
             </td>
         </tr>
         <tr>
-            <td style="padding: 30px 30px 30px 30px; bottom: 0; left: 0; width: 100%; background-color: #FFFFFF; color: #000000; padding: 1px; text-align: center;">
+            <td style="padding: 30px 30px 30px 30px; bottom: 0; left: 0; width: 100%; background-color: #FFFFFF; color: #000000; padding: 10px; text-align: center;">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tr>
                         <td>
