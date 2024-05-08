@@ -217,7 +217,7 @@ if sss.fix_info==False:
   col1,col2,col3=st.columns([2,6,2])
   with col2:
     if st.button('고객님의 정보를 이메일로 받아보시겠어요?',key='send_userinfo',use_container_width=True):
-      html_text="""
+      html_text_1="""
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -272,8 +272,8 @@ if sss.fix_info==False:
 <body>
     <header>
         <h1>거부기님의 분석 결과</h1>
-    </header>
-    <div class="analysis">
+    </header>"""
+      html_text_2=f"""<div class="analysis">
         <div class="half">
             <h2>고객님의 정보</h2>
             <p><b>1. 고객님 성함 : </b>거부기</p>
@@ -323,9 +323,7 @@ if sss.fix_info==False:
 </body>
 </html>
 """
-      text_1='hi'
-      text_2='neri'
-      st.write(text_1+text_2)
+      st.write(html_text_1+html_text_2)
 else:
   pass
 
