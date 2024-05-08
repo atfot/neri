@@ -51,7 +51,8 @@ if st.session_state.send_email==True:
         msg["To"] = st.secrets.bug_report_email
         
         # 메일 본문 내용
-        content = MIMEText(error_body, "plain")
+        email_body=f'{st.session_state.username}'+'\n'+error_body
+        content = MIMEText(email_body, "plain")
         msg.attach(content)
         
         # 이미지 파일 추가
