@@ -276,7 +276,7 @@ if sss.fix_info==False:
                     >
                         <td>
                             <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr style="font-size: 16px; line-height: 30px;">
+                                <tr style="font-size: 16px; line-height: 50px;">
                                     <td width="260" valign="top">
                                         <h2>고객님의 정보</h2>
                                         <p><b>1. 고객님 성함 : </b>{sss.username}</p>
@@ -309,7 +309,7 @@ if sss.fix_info==False:
                         </td>
                     </tr>
                     <tr>
-                        <td style="color: #000000; font-family: Arial, sans-serif; font-size: 16px; line-height: 30px; border-radius: 5px; align-self: center; width: 100%; margin: 0 auto; border: 0.1px solid #cccccc; padding: 20px;">
+                        <td style="color: #000000; font-family: Arial, sans-serif; font-size: 16px; line-height: 50px; border-radius: 5px; align-self: center; width: 100%; margin: 0 auto; border: 0.1px solid #cccccc; padding: 20px;">
                             <p><b>도움이 될만한 행동들 : </b></p>
 """
       todolist_format="""
