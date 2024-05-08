@@ -161,6 +161,14 @@ div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div 
     font-size: 1.75em;
     letter-spacing:0.075em;
 }
+                    
+                    /* 오류 제보 */
+                    /* 기본 문구 */
+                    #root > div:nth-child(1) > div.withScreencast > div > div > div > section.main.st-emotion-cache-bm2z3a.ea3mdgi8 > div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > p {
+    font-family: 'Beeunhye';
+    font-size: 1.75em;
+    letter-spacing:0.075em;
+}
 </style>
 """, unsafe_allow_html=True)
         st.image('https://imgur.com/F2P7a3I.png',use_column_width=True)
