@@ -323,7 +323,9 @@ if sss.fix_info==False:
 </body>
 </html>
 """
-      st.write(html_text)
+      text_1='hi'
+      text_2='neri'
+      st.write(text_1+text_2)
 else:
   pass
 
