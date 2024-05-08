@@ -19,7 +19,7 @@ if 'username' not in st.session_state:
 st.subheader('Have you experienced any inconveniences while using it?')
 
 st.write("""
-**If you find any errors or don't like something about our program, please let us know!
+**If you find any errors or don't like something about our program, please let us know!**
             
 **I'll try to fix it🥰**
 """)
