@@ -231,11 +231,11 @@ if sss.fix_info==False:
     <title>Neri의 상담분석</title>
 </head>
 """
-      html_problem=sss.problem_explanation.replace('\n', <br>)
-      html_problem_explanation=sss.problem_explanation.replace('\n', <br>)
-      html_goal=sss.goal.replace('\n', <br>)      
-      html_client_analysis=sss.client_analysis.replace('\n', <br>)
-      html_score_explanation=sss.score_explanation.replace('\n', <br>)
+      html_problem=sss.problem_explanation.replace('\n', '<br>')
+      html_problem_explanation=sss.problem_explanation.replace('\n', '<br>')
+      html_goal=sss.goal.replace('\n', '<br>')      
+      html_client_analysis=sss.client_analysis.replace('\n', '<br>')
+      html_score_explanation=sss.score_explanation.replace('\n', '<br>')
       html_text_2=f"""
 <body style="font-size: 2em; letter-spacing:0.075em; background-color: #fff; color: #000; margin: 0; padding: 1em; justify-content: space-around;">
     <header style="width:100; text-align: center;">
