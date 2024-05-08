@@ -164,7 +164,7 @@ with col1:
 
 with col3:
   if sss.fix_info==False:
-    sss.date=f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}"
+    sss.date=f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일의 분석 결과"
     st.markdown(f"<p><h4>{sss.date}일의 분석 결과</h4></p>",unsafe_allow_html=True)
     st.markdown('<p><b>문제 분석 : </b></p>',unsafe_allow_html=True)
     st.write(f'{sss.client_analysis}')
@@ -276,7 +276,7 @@ if sss.fix_info==False:
 </head>
 <body>
     <header>
-        <h1>거부기님의 분석 결과</h1>
+        <h1>{sss.username}님의 분석 결과</h1>
     </header>"""
       html_text_2=f"""<div class="analysis">
         <div class="half">
