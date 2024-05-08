@@ -217,7 +217,113 @@ if sss.fix_info==False:
   col1,col2,col3=st.columns([2,6,2])
   with col2:
     if st.button('고객님의 정보를 이메일로 받아보시겠어요?',key='send_userinfo',use_container_width=True):
-      st.error('hi')
+      html_text="""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가로로 반으로 나눠진 텍스트</title>
+    <style>
+        /* CSS 스타일링 */
+        @font-face {
+    font-family: 'Beeunhye';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+        body {
+            font-family: 'Beeunhye';
+            font-size: 2em;
+            letter-spacing:0.075em;
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            padding: 1em;
+            justify-content: space-around;
+        }
+        .analysis{
+            width: 100%;
+            overflow: hidden;
+        }
+        .half {
+            width: 50%; /* 각 요소를 50%의 너비로 설정합니다. */
+            float: left; /* 요소를 옆으로 정렬합니다. */
+            padding:2em;
+            box-sizing: border-box; /* 너비에 padding과 border를 포함합니다. */
+        }
+        header{
+            width:100;
+            text-align: center;
+        }
+        .whattodo{
+            border-radius: 5px;
+            align-self: center;
+            width: 50%; /* 원하는 너비로 조정 */
+            margin: 0 auto; /* 가운데 정렬을 위한 margin 설정 */
+            border: 0.01em solid black; /* 테두리를 보기 위해 추가 */
+            padding: 2em; /* 내용과 테두리 사이 여백 */
+        }
+        .graph{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>거부기님의 분석 결과</h1>
+    </header>
+    <div class="analysis">
+        <div class="half">
+            <h2>고객님의 정보</h2>
+            <p><b>1. 고객님 성함 : </b>거부기</p>
+            <p><b>2. 연령 : </b>31</p>
+            <p><b>3. 성별 : </b>남자</p>
+            <p><b>4. 고민 : </b>우울증</p>
+            <p><b>5. 고민 설명 : </b></p>
+            <p>전 여자친구를 너무 사랑해서 잊을 수가 없어요... 그리고 너무 오랫동안 실직해서 사회가 무서워요 ...</p>
+            <p><b>6. 목표 : </b></p>
+            <p>전 여자친구와 재결합하고 싶어요. 하지만 더 이상 고통받기 싫어요... 그리고 저도 직장을 구하고 싶어요..</p>
+        </div>
+
+        <div class="half">
+            <h2>2024년 5월 7일의 분석 결과</h2>
+            <p><b>문제분석 : </b></p>
+            <p>거부기님은 전 여자친구에 대한 강한 애착과 실업으로 인한 사회적인 고립으로 우울증을 겪고 있습니다.<br><br>현재는 심리 상담사에게 고민 상담을 요청했습니다.</p>
+            <p><b>해결 진전도 : </b>4</p>
+            <p><b>채점 기준 : </b></p>
+            <p>거부기님의 문제는 아직 완전히 해결되지는 않았습니다.<br><br>현재는 고민을 털어놓고 상담을 받는 것이 긍정적인 방향으로 나아가는 첫 걸음이지만, 문제의 근본적인 해결에는 조금 더 시간과 노력이 필요할 것으로 판단됩니다.</p>
+        </div>
+    </div>
+    <div class="whattodo">
+        <p><b>도움이 될만한 행동들 : </b></p>
+        <ul>
+            <li>
+                <p>상담을 통해 자신의 감정을 솔직하게 표현해보세요</p>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <p>전 여자친구와의 관계에 대한 감정을 정리하고 다음 단계에 대해 생각해보세요.</p>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <p>취미나 관심사를 통해 삶에 다양한 기쁨을 찾아보세요.</p>
+            </li>
+        </ul>
+    </div>
+    <div class="graph">
+        <h2>그래프</h2>
+    </div>
+    <footer style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #Fff; color: #000000; padding: 1px; text-align: center;">
+        Developed By <a  href="https://drive.google.com/file/d/1l7duTvc4pWDJgZzY301wswYoIrfylC1G/view?usp=sharing" target="_blank">Hyun Kyu Cho</a>  |  Made with Streamlit  |  Powered By OpenAI
+    </footer>
+
+</body>
+</html>
+"""
+      st.write(html_text)
 else:
   pass
 
