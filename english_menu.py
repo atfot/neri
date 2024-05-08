@@ -170,8 +170,14 @@ div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > 
     letter-spacing:0.075em;
 }
                     
-                    /* 설명란 */
+/* 설명란 */
 div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > label > div > p {
+    font-family: 'Beeunhye';
+    font-size: 2em;
+    letter-spacing:0.075em;
+}
+/* 성공 실패 메세지 */
+div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p {
     font-family: 'Beeunhye';
     font-size: 2em;
     letter-spacing:0.075em;
