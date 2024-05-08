@@ -231,6 +231,11 @@ if sss.fix_info==False:
     <title>Neri의 상담분석</title>
 </head>
 """
+      html_problem=sss.problem_explanation.replace('\n', <br>)
+      html_problem_explanation=sss.problem_explanation.replace('\n', <br>)
+      html_goal=sss.goal.replace('\n', <br>)      
+      html_client_analysis=sss.client_analysis.replace('\n', <br>)
+      html_score_explanation=sss.score_explanation.replace('\n', <br>)
       html_text_2=f"""
 <body style="font-size: 2em; letter-spacing:0.075em; background-color: #fff; color: #000; margin: 0; padding: 1em; justify-content: space-around;">
     <header style="width:100; text-align: center;">
@@ -242,20 +247,20 @@ if sss.fix_info==False:
           <p><b>1. 고객님 성함 : </b>{sss.username}</p><br>
           <p><b>2. 연령 : </b>{sss.age}</p><br>
           <p><b>3. 성별 : </b>{sss.gender}</p><br>
-          <p><b>4. 고민 : </b>{sss.problem}</p><br>
+          <p><b>4. 고민 : </b>{html_problem}</p><br>
           <p><b>5. 고민 설명 : </b></p><br>
-          <p>{sss.problem_explanation}</p><br>
+          <p>{html_problem_explanation}</p><br>
           <p><b>6. 목표 : </b></p><br>
-          <p>{sss.goal}</p><br>
+          <p>{html_goal}</p><br>
       </div>
 
       <div class="half">
           <h2>{sss.date}의 분석 결과</h2>
           <p><b>문제분석 : </b></p><br>
-          <p>{sss.client_analysis}</p><br>
+          <p>{html_client_analysis}</p><br>
           <p><b>해결 진전도 : </b>{sss.score}</p><br>
           <p><b>채점 기준 : </b></p><br>
-          <p>{sss.score_explanation}</p>
+          <p>{html_score_explanation}</p>
       </div>
   </div>
   <div class="whattodo" style="border-radius: 5px; align-self: center; width: 50%; margin: 0 auto; border: 0.01em solid black; padding: 2em;">
