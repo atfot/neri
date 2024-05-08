@@ -272,11 +272,11 @@ if sss.fix_info==False:
                             네리는 OpenAI사의 GPT 3.5와 4.0을 사용해 제작된 인공지능 심리상담 챗봇입니다. 이 보고서는 금일 해당 사용자가 네리와 대화하며 도출된 분석결과입니다. 참고만 하시길 바라며 자세한건 가까운 정신과나 심리상담사를 직접 방문하셔서 도움을 받으세요.
                         </td>
                     </tr>
-                    <tr style="color: #000000; font-family: Arial, sans-serif; font-size: 16px; line-height: 30px;"
+                    <tr style="color: #000000; font-family: Arial, sans-serif;"
                     >
                         <td>
                             <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr>
+                                <tr style="font-size: 16px; line-height: 30px;">
                                     <td width="260" valign="top">
                                         <h2>고객님의 정보</h2>
                                         <p><b>1. 고객님 성함 : </b>{sss.username}</p>
