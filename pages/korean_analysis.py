@@ -232,7 +232,7 @@ if sss.fix_info==False:
 </head>
 """
       html_text_2=f"""
-<body style="@font-face {font-family: 'Beeunhye'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff'); font-weight: normal; font-style: normal;} font-size: 2em; letter-spacing:0.075em; background-color: #fff; color: #000; margin: 0; padding: 1em justify-content: space-around;">
+<body style="font-size: 2em; letter-spacing:0.075em; background-color: #fff; color: #000; margin: 0; padding: 1em justify-content: space-around;">
     <header style="width:100; text-align: center;">
         <h1>{sss.username}님의 분석 결과</h1>
     </header>
