@@ -344,15 +344,6 @@ if sss.fix_info==False:
         content = MIMEText(html, "html")
         msg.attach(content)
         
-        # 이미지 파일 추가
-        if error_images is not None:
-            for image in error_images:
-                img = MIMEImage(image.read())
-                img.add_header('Content-Disposition', 'attachment', filename=image.name)
-                msg.attach(img)
-        else:
-            pass
-        
         # 받는 메일 유효성 검사 거친 후 메일 전송
         smtp.sendmail(st.secrets.admin_email, st.secrets.bug_report_email, msg.as_string())
         
