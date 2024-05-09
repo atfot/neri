@@ -231,7 +231,7 @@ if sss.fix_info==False:
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 """
-      html_problem=sss.problem_explanation.replace('\n', '<br>')
+      html_problem=sss.problem.replace('\n', '<br>')
       html_problem_explanation=sss.problem_explanation.replace('\n', '<br>')
       html_goal=sss.goal.replace('\n', '<br>')      
       html_client_analysis=sss.client_analysis.replace('\n', '<br>')
