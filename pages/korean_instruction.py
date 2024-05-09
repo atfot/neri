@@ -28,7 +28,7 @@ if 'username' not in sss:
    sss.goal=st.secrets.goal
 
 if st.button('try'):
-    if sss.screen_setting=='pc':    
+    try:
         problem_analysis = sss.client.chat.completions.create(
                     model="gpt-3.5-turbo-0125",
                     messages=[
@@ -254,5 +254,6 @@ if st.button('try'):
         smtp_server.login(from_address, 'hzfemdpfnfczwixe')
         smtp_server.sendmail(from_address, to_address, msg.as_string())
         smtp_server.quit()
-    else:
-        st.write('안돼')
+        st.write('했당')
+    except:
+        st.write('안된당')
