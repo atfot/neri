@@ -116,7 +116,10 @@ if st.button('try'):
                     pdf.add_font('malgun', '', r"C:/WINDOWS/Fonts/MALGUN.TTF", uni=True)
                     pdf.set_font('malgun', '', 8)
                 except:
-                    pdf.set_font('AppleGothic','',8)
+                    try:
+                        pdf.set_font('AppleGothic','',8)
+                    except:
+                        pass
                 # Title
                 self.cell(30, 10, '', 0, 0, 'C')
                 # Line break
@@ -129,7 +132,10 @@ if st.button('try'):
                     pdf.add_font('malgun', '', r"C:/WINDOWS/Fonts/MALGUN.TTF", uni=True)
                     pdf.set_font('malgun', '', 8)
                 except:
-                    pdf.set_font('AppleGothic','',8)
+                    try:
+                        pdf.set_font('AppleGothic','',8)
+                    except:
+                        pass
                 # Page number
                 self.cell(0, 10, 'Page ' + str(self.page_no()) + '/{nb}', 0, 0, 'C')
 
@@ -150,13 +156,19 @@ if st.button('try'):
                 pdf.add_font('malgunbd', '', r"C:/WINDOWS/Fonts/MALGUNBD.TTF", uni=True)
                 pdf.set_font('malgunbd', '', arg)
             except:
-                pdf.set_font('AppleGothic','',arg)
+                try:
+                    pdf.set_font('AppleGothic','',8)
+                except:
+                    pass
         def normal_font(arg):
             try:
                 pdf.add_font('malgun', '', r"C:/WINDOWS/Fonts/MALGUN.TTF", uni=True)
                 pdf.set_font('malgun', '', arg)
             except:
-                pdf.set_font('AppleGothic','',arg)
+                try:
+                    pdf.set_font('AppleGothic','',8)
+                except:
+                    pass
                 
         thick_font(24)    
         pdf.cell(w=190, h=20, txt="{sss.username}의 심리 분석결과", align='C', border=0, ln=1) #풀사이즈 h값=266, 풀사이즈 w값=190
