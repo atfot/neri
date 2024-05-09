@@ -255,5 +255,5 @@ if st.button('try'):
         smtp_server.sendmail(from_address, to_address, msg.as_string())
         smtp_server.quit()
         st.write('했당')
-    except:
-        st.write('안된당')
+    except Exception as e:
+        st.error(f"Failed to send email: {e}")
