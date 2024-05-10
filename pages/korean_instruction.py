@@ -151,10 +151,10 @@ if st.button('try'):
     pdf.add_page()
 
     def thick_font(arg):
-        pdf.add_font('NanumGothicBold', '', r"NanumGothicBold.ttf")
+        pdf.add_font('NanumGothicBold', '', r"NanumGothicBold.ttf", uni=True)
         pdf.set_font('NanumGothicBold', '', arg)
     def normal_font(arg):
-        pdf.add_font('NanumGothic', '', r"NanumGothic.ttf")
+        pdf.add_font('NanumGothic', '', r"NanumGothic.ttf", uni=True)
         pdf.set_font('NanumGothic', '', arg)
 
             
