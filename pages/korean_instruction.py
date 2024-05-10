@@ -111,7 +111,7 @@ if st.button('try'):
 
     class PDF(FPDF):
         def header(self):
-            pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothic.ttf?token=GHSAT0AAAAAACNZYYOSAWB5MSINDGDAKYQOZR53L6Q', uni=True)
+            pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothic.ttf', uni=True)
             pdf.set_font('NanumGothic', '', 8)
             # Title
             self.cell(30, 10, '', 0, 0, 'C')
@@ -121,7 +121,7 @@ if st.button('try'):
         def footer(self):
             # Position at 1.5 cm from bottom
             self.set_y(-15)
-            pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothic.ttf?token=GHSAT0AAAAAACNZYYOSAWB5MSINDGDAKYQOZR53L6Q', uni=True)
+            pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothic.ttf', uni=True)
             pdf.set_font('NanumGothic', '', 8)
             # Page number
             self.cell(0, 10, 'Page ' + str(self.page_no()) + '/{nb}', 0, 0, 'C')
@@ -139,10 +139,10 @@ if st.button('try'):
     pdf.add_page()
 
     def thick_font(arg):
-        pdf.add_font('NanumGothicBold', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothicBold.ttf?token=GHSAT0AAAAAACNZYYOSBZYPHBKJDOHMDOA2ZR53M3A.ttf', uni=True)
+        pdf.add_font('NanumGothicBold', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothicBold.ttf', uni=True)
         pdf.set_font('NanumGothicBold', '', arg)
     def normal_font(arg):
-        pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothic.ttf?token=GHSAT0AAAAAACNZYYOSAWB5MSINDGDAKYQOZR53L6Q', uni=True)
+        pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothic.ttf', uni=True)
         pdf.set_font('NanumGothic', '', arg)
 
             
