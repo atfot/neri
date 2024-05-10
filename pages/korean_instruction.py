@@ -111,7 +111,7 @@ if st.button('try'):
 
     class PDF(FPDF):
         def header(self):
-            pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothic.ttf', uni=True)
+            pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothic.ttf?token=GHSAT0AAAAAACNZYYOSAWB5MSINDGDAKYQOZR53L6Q', uni=True)
             pdf.set_font('NanumGothic', '', 8)
             # Title
             self.cell(30, 10, '', 0, 0, 'C')
@@ -121,7 +121,7 @@ if st.button('try'):
         def footer(self):
             # Position at 1.5 cm from bottom
             self.set_y(-15)
-            pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothic.ttf', uni=True)
+            pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothic.ttf?token=GHSAT0AAAAAACNZYYOSAWB5MSINDGDAKYQOZR53L6Q', uni=True)
             pdf.set_font('NanumGothic', '', 8)
             # Page number
             self.cell(0, 10, 'Page ' + str(self.page_no()) + '/{nb}', 0, 0, 'C')
@@ -139,10 +139,10 @@ if st.button('try'):
     pdf.add_page()
 
     def thick_font(arg):
-        pdf.add_font('NanumGothicBold', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothicBold.ttf', uni=True)
+        pdf.add_font('NanumGothicBold', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothicBold.ttf?token=GHSAT0AAAAAACNZYYOSBZYPHBKJDOHMDOA2ZR53M3A.ttf', uni=True)
         pdf.set_font('NanumGothicBold', '', arg)
     def normal_font(arg):
-        pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothic.ttf', uni=True)
+        pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/main/NanumGothic.ttf?token=GHSAT0AAAAAACNZYYOSAWB5MSINDGDAKYQOZR53L6Q', uni=True)
         pdf.set_font('NanumGothic', '', arg)
 
             
@@ -154,7 +154,7 @@ if st.button('try'):
     pdf.text(x= 142, y= 55, txt= 'Analyzed by')
     # 로고
     # 로고는 깃허브에서 자주 나가리되니까 계속 새로 복붙해주면서 사용할 것 - 내 깃허브 레포 디렉토리에 있음
-    pdf.image("C:/Users/python.DESKTOP-6FHJ7FH/Desktop/chatbot_mobile_home_korean.png", x = 154, y = 48, w = 42, h = 18, type='PNG') 
+    pdf.image("https://imgur.com/H287o5n.png", x = 154, y = 48, w = 42, h = 18, type='PNG') 
 
     #2페이지
     thick_font(15)
