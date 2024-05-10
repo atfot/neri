@@ -111,14 +111,8 @@ if st.button('try'):
 
     class PDF(FPDF):
         def header(self):
-            try:
-                pdf.add_font('malgun', '', r"C:/WINDOWS/Fonts/MALGUN.TTF", uni=True)
-                pdf.set_font('malgun', '', 8)
-            except:
-                try:
-                    pdf.set_font('AppleGothic','',8)
-                except:
-                    pass
+            pdf.add_font('NanumGothic', '', r"NanumGothic.ttf", uni=True)
+            pdf.set_font('NanumGothic', '', 8)
             # Title
             self.cell(30, 10, '', 0, 0, 'C')
             # Line break
@@ -127,14 +121,8 @@ if st.button('try'):
         def footer(self):
             # Position at 1.5 cm from bottom
             self.set_y(-15)
-            try:
-                pdf.add_font('malgun', '', r"C:/WINDOWS/Fonts/MALGUN.TTF", uni=True)
-                pdf.set_font('malgun', '', 8)
-            except:
-                try:
-                    pdf.set_font('AppleGothic','',8)
-                except:
-                    pass
+            pdf.add_font('NanumGothic', '', r"NanumGothic.ttf", uni=True)
+            pdf.set_font('NanumGothic', '', 8)
             # Page number
             self.cell(0, 10, 'Page ' + str(self.page_no()) + '/{nb}', 0, 0, 'C')
 
