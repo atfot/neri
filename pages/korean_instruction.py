@@ -151,23 +151,12 @@ if st.button('try'):
     pdf.add_page()
 
     def thick_font(arg):
-        try:
-            pdf.add_font('malgunbd', '', r"C:/WINDOWS/Fonts/MALGUNBD.TTF", uni=True)
-            pdf.set_font('malgunbd', '', arg)
-        except:
-            try:
-                pdf.set_font('AppleGothic','',8)
-            except:
-                pass
+        pdf.add_font('NanumGothicBold', '', r"NanumGothicBold.ttf", uni=True)
+        pdf.set_font('NanumGothicBold', '', arg)
     def normal_font(arg):
-        try:
-            pdf.add_font('malgun', '', r"C:/WINDOWS/Fonts/MALGUN.TTF", uni=True)
-            pdf.set_font('malgun', '', arg)
-        except:
-            try:
-                pdf.set_font('AppleGothic','',8)
-            except:
-                pass
+        pdf.add_font('NanumGothic', '', r"NanumGothic.ttf", uni=True)
+        pdf.set_font('NanumGothic', '', arg)
+
             
     thick_font(24)    
     pdf.cell(w=190, h=20, txt="{sss.username}의 심리 분석결과", align='C', border=0, ln=1) #풀사이즈 h값=266, 풀사이즈 w값=190
@@ -188,29 +177,29 @@ if st.button('try'):
     thick_font(15)
     pdf.cell(w=0, h=20, txt="고객님의 정보", border=0, ln=1)
     thick_font(12)
-    pdf.cell(w=40, h=10, txt="1. 별명 : ", border=0, ln=0)
+    pdf.cell(w=30, h=10, txt="1. 별명 : ", border=0, ln=0)
     normal_font(12)
-    pdf.cell(w=40, h=10, txt=f"{sss.username}", border=0, ln=1)
+    pdf.cell(w=0, h=10, txt=f"{sss.username}", border=0, ln=1)
     thick_font(12)
-    pdf.cell(w=40, h=10, txt="2. 연령 : ", border=0, ln=0)
+    pdf.cell(w=30, h=10, txt="2. 연령 : ", border=0, ln=0)
     normal_font(12)
-    pdf.cell(w=40, h=10, txt=f"{sss.age}", border=0, ln=1)
+    pdf.cell(w=0, h=10, txt=f"{sss.age}", border=0, ln=1)
     thick_font(12)
-    pdf.cell(w=40, h=10, txt="3. 성별 : ", border=0, ln=0)
+    pdf.cell(w=30, h=10, txt="3. 성별 : ", border=0, ln=0)
     normal_font(12)
-    pdf.cell(w=40, h=10, txt=f"{sss.gender}", border=0, ln=1)
+    pdf.cell(w=0, h=10, txt=f"{sss.gender}", border=0, ln=1)
     thick_font(12)
-    pdf.cell(w=40, h=10, txt="4. 고민 : ", border=0, ln=1)
+    pdf.cell(w=30, h=10, txt="4. 고민 : ", border=0, ln=0)
     normal_font(12)
     pdf.multi_cell(w=0, h=10, txt=f"""{sss.problem}""", border=0, align = 'J', fill = False)
     thick_font(12)
-    pdf.cell(w=40, h=10, txt="5. 고민 설명 : ", border=0, ln=1)
+    pdf.cell(w=0, h=10, txt="5. 고민 설명 : ", border=0, ln=0)
     normal_font(12)
-    pdf.multi_cell(w=0, h=7.5, txt=f"""{sss.problem_explanation}""", border=0, align = 'J', fill = False)
+    pdf.multi_cell(w=0, h=10, txt=f"""{sss.problem_explanation}""", border=0, align = 'J', fill = False)
     thick_font(12)
-    pdf.cell(w=40, h=10, txt="5. 목표 : ", border=0, ln=1)
+    pdf.cell(w=30, h=10, txt="5. 목표 : ", border=0, ln=0)
     normal_font(12)
-    pdf.multi_cell(w=0, h=7.5, txt=f"""{sss.goal}""", border=0, align = 'J', fill = False)
+    pdf.multi_cell(w=0, h=10, txt=f"""{sss.goal}""", border=0, align = 'J', fill = False)
     ""
 
     sss.date=f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일"
@@ -218,30 +207,33 @@ if st.button('try'):
     thick_font(15)
     pdf.cell(w=0, h=20, txt=f"{sss.date}의 분석 결과", border=0, ln=1)
     thick_font(12)
-    pdf.cell(w=0, h=10, txt="문제 분석 :", border=0, ln=1)
+    pdf.cell(w=40, h=10, txt="문제 분석 :", border=0, ln=0)
     normal_font(12)
-    pdf.multi_cell(w=0, h=7.5, txt=f"""{sss.client_analysis}""", border=0, align = 'J', fill = False)
+    pdf.multi_cell(w=0, h=10, txt=f"""{sss.client_analysis}""", border=0, align = 'J', fill = False)
     thick_font(12)
     pdf.cell(w=40, h=10, txt="해결 진전도 :", border=0, ln=0)
     normal_font(12)
     pdf.cell(w=0, h=10, txt=f"{sss.score}", border=0, ln=1)
     thick_font(12)
-    pdf.cell(w=40, h=10, txt="채점기준 :", border=0, ln=1)
+    pdf.cell(w=40, h=10, txt="채점기준 :", border=0, ln=0)
     normal_font(12)
-    pdf.multi_cell(w=0, h=7.5, txt=f"""{sss.score_explanation}""", border=0, align = 'J', fill = False)
-    pdf.cell(w=(pw/10), h=10, txt="", border=0, ln=1)
+    pdf.multi_cell(w=0, h=10, txt=f"""{sss.score_explanation}""", border=0, align = 'J', fill = False)
+    pdf.cell(w=0, h=10, txt="", border=0, ln=1)
 
     thick_font(12)
-    pdf.cell(w=(pw/10), h=10, txt="", border=0, ln=0)
+    pdf.cell(w=0, h=10, txt="", border=0, ln=0)
     pdf.cell(w=0, h=10, txt="도움이 될만한 행동들 : ", border=0, ln=1)
     for i in sss.what_to_do:
-        pdf.cell(w=(pw/10), h=10, txt="", border=0, ln=0)
+        pdf.cell(w=0, h=10, txt="", border=0, ln=0)
         pdf.cell(w=0, h=10, txt=i, border=0, ln=1)
 
-    pdf.cell(w=(pw/10), h=10, txt="", border=0, ln=1)
+    pdf.cell(w=0, h=10, txt="", border=0, ln=1)
     thick_font(15)
     pdf.cell(w=0, h=10, txt="고민 해결도 그래프", align="C", border=0, ln=1)
-    pdf.cell(w=0,h=0,link=pdf.image("C:/Users/python.DESKTOP-6FHJ7FH/Desktop/chatbot_mobile_home_korean.png", w = 190, h = 70, type='PNG'), border=0, ln=1) # W값 중요하니까 절대 바꾸지 말것 - 190
+    pdf.cell(w=20, h=10, txt="", align="C", border=0, ln=0)
+    pdf.cell(w=0,h=0,link=pdf.image("https://imgur.com/H287o5n.png", w = 150, h = 70, type='PNG'), border=0, ln=1) # W값 중요하니까 절대 바꾸지 말것 - 190
+    pdf.cell(w=20, h=10, txt="", align="C", border=0, ln=0)
+
     pdf_bytes = pdf.output(dest='S').encode('latin1')
 
     # 이메일 보내기
