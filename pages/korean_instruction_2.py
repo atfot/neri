@@ -33,6 +33,7 @@ import streamlit as st
 import requests
 import tempfile
 from fpdf import FPDF
+from streamlit import session_state as sss
 
 if st.button('try_1'):
     def regular_font(arg):
