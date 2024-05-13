@@ -8,6 +8,8 @@ from email.mime.base import MIMEBase
 from email import encoders
 import time
 from streamlit import session_state as sss
+import requests
+import tempfile
 
 st.set_page_config(
     page_title="당신의 AI 심리상담사, 네리",
