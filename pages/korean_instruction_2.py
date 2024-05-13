@@ -111,15 +111,26 @@ with st.spinner('loading..'):
     problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
     sss.what_to_do=problem_analysis.split('\n')
 
-html_content = f"""
+html_content = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>심리분석결과</title>
-</head>
-<body style="margin: 0; padding: 20px 0 30px 0;">
+    <style>
+    @font-face {
+    font-family: 'Beeunhye';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+    body{
+       font-family: 'Beeunhye';
+    }
+    </style>
+</head>"""
+html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="800" style="border: 1px solid #cccccc;">
         <tr>
             <td align="center" style="padding: 20px 0 0 0;">
@@ -242,10 +253,10 @@ html_content = f"""
        </table>
    </body>
 </html>
-"""
-
+'''
 # Convert HTML to PDF
-pdf = pdfkit.from_string(html_content, False)
+html=html_content+html_content_1
+pdf = pdfkit.from_string(html, False)
 
 # Display PDF in Streamlit app
 st.download_button(
