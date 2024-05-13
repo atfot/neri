@@ -132,7 +132,10 @@ html_content = """
     font-weight: normal;
     font-style: normal;
 }
-    body{font-family: 'Beeunhye';}
+    body{font-family: 'Beeunhye'; letter-spacing:0.075px;}
+    h1{font-weight:bold;}
+    h2{font-weight:bold;}
+    b{font-weight:bold;}
     </style>
 </head>"""
 html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
