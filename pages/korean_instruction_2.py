@@ -10,6 +10,7 @@ import time
 from streamlit import session_state as sss
 import requests
 import tempfile
+from weasyprint import HTML
 
 st.set_page_config(
     page_title="당신의 AI 심리상담사, 네리",
