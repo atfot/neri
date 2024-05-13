@@ -259,11 +259,16 @@ html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
    </body>
 </html>
 '''
+html=html_content+html_content_1
+pdf = pdfkit.from_string(html, False)
+pdf_bytes = bytes(pdf)
+st.download_button(
+    label="Download PDF",
+    data=pdf,
+    file_name="analysis",
+    mime="application/pdf",
+)
 if st.button('send'):
-    html=html_content+html_content_1
-    pdf = pdfkit.from_string(html, False)
-    pdf_bytes = bytes(pdf)
-
     from_address = 'nerichatbot@gmail.com'
     to_address = 'nerierror@naver.com'
     subject = "PDF 파일 보내기"
