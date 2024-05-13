@@ -29,6 +29,87 @@ if 'username' not in sss:
    sss.goal=st.secrets.goal
 if 'date' not in sss:
     sss.date=f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일"
+with st.spinner('loading..'):
+    problem_analysis = sss.client.chat.completions.create(
+                model="gpt-3.5-turbo-0125",
+                messages=[
+                {
+                    "role": "system",
+                    "content": """Your role as a Korean professional psychotherapist is to score the extent to which the client's problem has improved given the information below and explain why.
+                    
+                    **Remember**:
+                    1. Use Korean Language to answer my question.
+                    2. Your score should be much lower than you think.
+                    3. You should never speak rudely.
+                    """
+                },
+                {
+                    "role": "user",
+                    "content": f"""
+                    # My Request:
+                    From a Korean professional psychotherapist's perspective, score the extent to which the client's problem is improved by the information given below and explain why.
+
+                    # Informations you need to know
+                    - Client's Name : {sss.username}
+                    - Age : {sss.age}
+                    - Gender : {sss.gender}
+                    - Problem : {sss.problem}
+                    - Problem Explanation : {sss.problem_explanation}
+                    - Goal : {sss.goal}
+
+                    - Message summary : 
+                    {sss.message_summary}
+
+                    - The latest conversations:
+                    {sss.conversations}
+                
+                    # Answer form
+                    - You need to use the form below to answer my request using Korean language.
+                    '''
+                    Analysis : [Analyze the information I've given you by not using any bullet points.]
+
+                    Score : [Based on the analysis you did, please score how well the {sss.username}'s problem was solved.]
+
+                    Explanation : [Tell me how the score you gave me was based on your considerations.
+                    *Scoring criteria*:
+                    10 : The person's psychosis has been cured, or the client is no longer suffering from the problem.
+                    9 : The person's mental illness is on the verge of being cured or the issue is on the verge of being completely resolved.
+                    6 ~ 8 : The client is directly demonstrating a willingness to work toward a positive direction.
+                    3 ~ 5 : The client is not directly demonstrating a willingness to move in a positive direction.
+                    2 : The client is directly demonstrating a willingness to work toward a negative direction.
+                    1 : The client has a serious mental illness or mental health issue and needs to see a real doctor or psychologist to address it.]
+
+                    Best thing to do : [Tell me what you think is the easiest thing for {sss.username} to do in that situation, using a bullet point summary, as a professional psychologist.]
+                    '''
+                    **Remember**:
+                    1. Use Korean Language to answer my question.
+                    2. Your score should be much lower than you think.
+                    3. Don't use the word '고객' or '클라이언트'.
+                    4. If you need to use the word '고객', don't use that word and replace it into the client's name with '님', such as {sss.username}님.
+                    5. You should never speak rudely.
+        """
+                }
+                ],
+                temperature=1,
+                max_tokens=1024,
+                top_p=1,
+                frequency_penalty=0,
+                presence_penalty=0
+                )    
+    problem_analysis = problem_analysis.choices[0].message.content
+    problem_analysis=problem_analysis.strip().strip("'''")
+    sss.problem_analysis=problem_analysis
+    problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
+    sss.client_analysis=problem_analysis[:problem_analysis.find('\n')].replace('. ','.\n\n')
+    problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
+    problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
+    sss.score=problem_analysis[:problem_analysis.find('\n')]
+    problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
+    problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
+    sss.score_explanation=problem_analysis[:problem_analysis.find('\n')].replace('. ','.\n\n')
+    problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
+    problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
+    sss.what_to_do=problem_analysis.split('\n')
 
 html_content = f"""
 <!DOCTYPE html>
@@ -83,11 +164,11 @@ html_content = f"""
                                         <p><b>1. 고객님 성함 : </b>{sss.username}</p>
                                         <p><b>2. 연령 : </b>{sss.age}</p>
                                         <p><b>3. 성별 : </b>{sss.gender}</p>
-                                        <p><b>4. 고민 : </b>{html_problem}</p>
+                                        <p><b>4. 고민 : </b>{sss_problem}</p>
                                         <p><b>5. 고민 설명 : </b></p>
-                                        <p>{html_problem_explanation}</p>
+                                        <p>{sss_problem_explanation}</p>
                                         <p><b>6. 목표 : </b></p>
-                                        <p>{html_goal}</p>
+                                        <p>{sss_goal}</p>
                                     </td>
                                     <td style="font-size: 0; line-height: 0;" width="20">
                                     &nbsp;
@@ -95,10 +176,10 @@ html_content = f"""
                                     <td width="260" valign="top">
                                         <h2>{sss.username}님의 분석 결과</h2>
                                         <p><b>문제분석 : </b></p>
-                                        <p>{html_client_analysis}</p>
+                                        <p>{sss_client_analysis}</p>
                                         <p><b>해결 진전도 : </b>{sss.score}</p>
                                         <p><b>채점 기준 : </b></p>
-                                        <p>{html_score_explanation}</p>
+                                        <p>{sss_score_explanation}</p>
                                     </td>
                                 </tr>
                             </table>
