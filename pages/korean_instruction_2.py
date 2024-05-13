@@ -19,7 +19,7 @@ make_sidebar()
 
 if 'client' not in sss:
   sss.client = OpenAI(api_key=st.secrets['api_key'])
-
+st.write(sss.username)
 if 'username' not in sss:
    sss.username=st.secrets.user_name
    sss.age=st.secrets.age
