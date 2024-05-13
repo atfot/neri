@@ -112,12 +112,11 @@ if st.button('try'):
     sss.what_to_do=problem_analysis.split('\n')
 
     def regular_font(arg):
-        pdf.add_font('malgun.ttf','','C:/WINDOWS/Fonts/MALGUN.TTF', uni=True)
+        pdf.add_font('malgun.ttf','','C:/Windows/Fonts/malgun.ttf', uni=True)
         pdf.set_font('malgun.ttf', '', arg)
     def thick_font(arg):
-        pdf.add_font('malgunbd.ttf','','C:/WINDOWS/Fonts/MALGUNBD.TTF', uni=True)
-        pdf.set_font('NotoSansKR-SemiBold.ttf', '', arg)
-        sss.thick_font_dir=True
+        pdf.add_font('malgunbd.ttf','','C:/Windows/Fonts/malgunbd.ttf', uni=True)
+        pdf.set_font('malgunbd.ttf', '', arg)
             
     class PDF(FPDF):
         def header(self):
