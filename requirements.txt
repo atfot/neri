@@ -3,3 +3,5 @@ pandas
 openai
 streamlit_js_eval
 fpdf2
+requests
+tempfile
