@@ -265,7 +265,7 @@ pdf_bytes = bytes(pdf)
 st.download_button(
     label="Download PDF",
     data=pdf,
-    file_name="analysis",
+    file_name="analysis.pdf",
     mime="application/pdf",
 )
 if st.button('send'):
