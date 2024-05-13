@@ -111,17 +111,34 @@ if st.button('try'):
     problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
     sss.what_to_do=problem_analysis.split('\n')
 
-    def download_font(font_url):
-        response = requests.get(font_url, stream=True)        
-        temp_file = tempfile.NamedTemporaryFile(delete=False)
-        with open(temp_file.name, 'wb') as f:
-            for chunk in response.iter_content(chunk_size=1024):
-                if chunk:
-                    f.write(chunk)
+    def regular_font(arg):
+        if 'regular_font_dir' not in sss:
+            response_regular = requests.get("https://github.com/atfot/neri/raw/main/korean_fonts/NotoSansKR-Regular.ttf", stream=True)        
+            sss.regular_font_dir = tempfile.NamedTemporaryFile(delete=False)
+            with open(sss.regular_font_dir.name, 'wb') as f:
+                for chunk in response_regular.iter_content(chunk_size=1024):
+                    if chunk:
+                        f.write(chunk)
+                pdf.add_font('NotoSansKR-Regular.ttf','',sss.regular_font_dir.name, uni=True)
+                pdf.set_font('NotoSansKR-Regular.ttf', '', arg)
+        else:
+            pdf.add_font('NotoSansKR-Regular.ttf','',sss.regular_font_dir.name, uni=True)
+    def thick_font(arg):
+        if 'thick_font_dir' not in sss:
+            response_thick = requests.get("https://github.com/atfot/neri/raw/main/korean_fonts/NotoSansKR-SemiBold.ttf", stream=True)        
+            sss.thick_font_dir = tempfile.NamedTemporaryFile(delete=False)
+            with open(sss.thick_font_dir.name, 'wb') as f:
+                for chunk in response_regular.iter_content(chunk_size=1024):
+                    if chunk:
+                        f.write(chunk)
+                pdf.add_font('NotoSansKR-SemiBold.ttf','',sss.thick_font_dir.name, uni=True)
+                pdf.set_font('NotoSansKR-SemiBold.ttf', '', arg)
+        else:
+            pdf.add_font('NotoSansKR-SemiBold.ttf','',sss.thick_font_dir.name, uni=True)
+            
     class PDF(FPDF):
         def header(self):
-            pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/blob/main/NanumGothic.ttf', uni=True)
-            pdf.set_font('NanumGothic', '', 8)
+            regular_font(8)
             # Title
             self.cell(30, 10, '', 0, 0, 'C')
             # Line break
@@ -130,8 +147,7 @@ if st.button('try'):
         def footer(self):
             # Position at 1.5 cm from bottom
             self.set_y(-15)
-            pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/blob/main/NanumGothic.ttf', uni=True)
-            pdf.set_font('NanumGothic', '', 8)
+            regular_font(8)
             # Page number
             self.cell(0, 10, 'Page ' + str(self.page_no()) + '/{nb}', 0, 0, 'C')
 
@@ -147,14 +163,6 @@ if st.button('try'):
     pdf.alias_nb_pages()
     pdf.add_page()
 
-    def thick_font(arg):
-        pdf.add_font('NanumGothicBold', '', 'https://raw.githubusercontent.com/atfot/neri/blob/main/NanumGothicBold.ttf', uni=True)
-        pdf.set_font('NanumGothicBold', '', arg)
-    def normal_font(arg):
-        pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/blob/main/NanumGothic.ttf', uni=True)
-        pdf.set_font('NanumGothic', '', arg)
-
-            
     thick_font(24)    
     pdf.cell(w=190, h=20, txt="{sss.username}의 심리 분석결과", align='C', border=0, ln=1) #풀사이즈 h값=266, 풀사이즈 w값=190
     pdf.cell(w=190, h=20, txt="", align='C', border=0, ln=1)
