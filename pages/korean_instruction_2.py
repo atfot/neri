@@ -112,6 +112,12 @@ if 'problem_analysis' not in sss:
         problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
         sss.what_to_do=problem_analysis.split('\n')
 
+html_problem=sss.problem.replace('\n','<br>')
+html_problem_explanation=sss.problem_explanation.replace('\n','<br>')
+html_goal=sss.goal.replace('\n','<br>')
+html_client_analysis=sss.client_analysis.replace('\n','<br>')
+html_score_explanation=sss.score_explanation.replace('\n','<br>')
+
 html_content = """
 <!DOCTYPE html>
 <html lang="en">
@@ -174,11 +180,11 @@ html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
                                         <p><b>1. 고객님 성함 : </b>{sss.username}</p>
                                         <p><b>2. 연령 : </b>{sss.age}</p>
                                         <p><b>3. 성별 : </b>{sss.gender}</p>
-                                        <p><b>4. 고민 : </b>{sss.problem.replace('\n','<br>')}</p>
+                                        <p><b>4. 고민 : </b>{html_problem}</p>
                                         <p><b>5. 고민 설명 : </b></p>
-                                        <p>{sss.problem_explanation.replace('\n','<br>')}</p>
+                                        <p>{html_problem_explanation}</p>
                                         <p><b>6. 목표 : </b></p>
-                                        <p>{sss.goal.replace('\n','<br>')}</p>
+                                        <p>{html_goal}</p>
                                     </td>
                                     <td style="font-size: 0; line-height: 0;" width="20">
                                     &nbsp;
@@ -186,10 +192,10 @@ html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
                                     <td width="260" valign="top">
                                         <h2>{sss.username}님의 분석 결과</h2>
                                         <p><b>문제분석 : </b></p>
-                                        <p>{sss.client_analysis.replace('\n','<br>')}</p>
+                                        <p>{html_client_analysis}</p>
                                         <p><b>해결 진전도 : </b>{sss.score}</p>
                                         <p><b>채점 기준 : </b></p>
-                                        <p>{sss.score_explanation.replace('\n','<br>')}</p>
+                                        <p>{html_score_explanation}</p>
                                     </td>
                                 </tr>
                             </table>
