@@ -3,3 +3,4 @@ pandas
 openai
 streamlit_js_eval
 fpdf2
+weasyprint
