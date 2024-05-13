@@ -29,68 +29,6 @@ if 'username' not in sss:
    sss.problem_explanation=st.secrets.problem_explanation
    sss.goal=st.secrets.goal
 
-import streamlit as st
-import requests
-import tempfile
-from fpdf import FPDF
-from streamlit import session_state as sss
-
-if st.button('try_1'):
-    def regular_font(arg):
-        if 'regular_font_dir' not in sss:
-            response_regular = requests.get("https://github.com/atfot/neri/raw/main/pdf_dir/NotoSansKR-Regular.ttf", stream=True)        
-            regular_font_dir = tempfile.NamedTemporaryFile(delete=False)
-            with open(regular_font_dir.name, 'wb') as f:
-                for chunk in response_regular.iter_content(chunk_size=1024):
-                    if chunk:
-                        f.write(chunk)
-                pdf.add_font('NotoSansKR-Regular.ttf','',regular_font_dir.name, uni=True)
-                pdf.set_font('NotoSansKR-Regular.ttf', '', arg)
-                sss.regular_font_dir=True
-        else:
-            pdf.add_font('NotoSansKR-Regular.ttf','',regular_font_dir.name, uni=True)
-            pdf.set_font('NotoSansKR-Regular.ttf', '', arg)
-    def thick_font(arg):
-        if 'thick_font_dir' not in sss:
-            response_thick = requests.get("https://github.com/atfot/neri/raw/main/pdf_dir/NotoSansKR-SemiBold.ttf", stream=True)        
-            thick_font_dir = tempfile.NamedTemporaryFile(delete=False)
-            with open(thick_font_dir.name, 'wb') as f:
-                for chunk in response_regular.iter_content(chunk_size=1024):
-                    if chunk:
-                        f.write(chunk)
-                pdf.add_font('NotoSansKR-SemiBold.ttf','',thick_font_dir.name, uni=True)
-                pdf.set_font('NotoSansKR-SemiBold.ttf', '', arg)
-                sss.thick_font_dir=True
-        else:
-            pdf.add_font('NotoSansKR-SemiBold.ttf','',thick_font_dir.name, uni=True)
-            pdf.set_font('NotoSansKR-SemiBold.ttf', '', arg)        
-    class PDF(FPDF):
-        def header(self):
-            regular_font(8)
-            # Title
-            self.cell(30, 10, '', 0, 0, 'C')
-            # Line break
-            self.ln(20)
-        # Page footer
-        def footer(self):
-            # Position at 1.5 cm from bottom
-            self.set_y(-15)
-            regular_font(8)
-            # Page number
-            self.cell(0, 10, 'Page ' + str(self.page_no()) + '/{nb}', 0, 0, 'C')
-
-    # Margin
-    m = 10 
-    # Page width: Width of A4 is 210mm
-    pw = 210 - 2*m
-    # Cell height
-    ch = 50
-
-    pdf = PDF()
-    pdf.alias_nb_pages()
-    pdf.add_page()
-    thick_font(15)
-
 if st.button('try'):
     problem_analysis = sss.client.chat.completions.create(
                 model="gpt-3.5-turbo-0125",
