@@ -29,87 +29,88 @@ if 'username' not in sss:
    sss.goal=st.secrets.goal
 if 'date' not in sss:
     sss.date=f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일"
-with st.spinner('loading..'):
-    problem_analysis = sss.client.chat.completions.create(
-                model="gpt-3.5-turbo-0125",
-                messages=[
-                {
-                    "role": "system",
-                    "content": """Your role as a Korean professional psychotherapist is to score the extent to which the client's problem has improved given the information below and explain why.
+if 'client_analysis' not in sss:
+    with st.spinner('loading..'):
+        problem_analysis = sss.client.chat.completions.create(
+                    model="gpt-3.5-turbo-0125",
+                    messages=[
+                    {
+                        "role": "system",
+                        "content": """Your role as a Korean professional psychotherapist is to score the extent to which the client's problem has improved given the information below and explain why.
+                        
+                        **Remember**:
+                        1. Use Korean Language to answer my question.
+                        2. Your score should be much lower than you think.
+                        3. You should never speak rudely.
+                        """
+                    },
+                    {
+                        "role": "user",
+                        "content": f"""
+                        # My Request:
+                        From a Korean professional psychotherapist's perspective, score the extent to which the client's problem is improved by the information given below and explain why.
+
+                        # Informations you need to know
+                        - Client's Name : {sss.username}
+                        - Age : {sss.age}
+                        - Gender : {sss.gender}
+                        - Problem : {sss.problem}
+                        - Problem Explanation : {sss.problem_explanation}
+                        - Goal : {sss.goal}
+
+                        - Message summary : 
+                        {sss.message_summary}
+
+                        - The latest conversations:
+                        {sss.conversations}
                     
-                    **Remember**:
-                    1. Use Korean Language to answer my question.
-                    2. Your score should be much lower than you think.
-                    3. You should never speak rudely.
-                    """
-                },
-                {
-                    "role": "user",
-                    "content": f"""
-                    # My Request:
-                    From a Korean professional psychotherapist's perspective, score the extent to which the client's problem is improved by the information given below and explain why.
+                        # Answer form
+                        - You need to use the form below to answer my request using Korean language.
+                        '''
+                        Analysis : [Analyze the information I've given you by not using any bullet points.]
 
-                    # Informations you need to know
-                    - Client's Name : {sss.username}
-                    - Age : {sss.age}
-                    - Gender : {sss.gender}
-                    - Problem : {sss.problem}
-                    - Problem Explanation : {sss.problem_explanation}
-                    - Goal : {sss.goal}
+                        Score : [Based on the analysis you did, please score how well the {sss.username}'s problem was solved.]
 
-                    - Message summary : 
-                    {sss.message_summary}
+                        Explanation : [Tell me how the score you gave me was based on your considerations.
+                        *Scoring criteria*:
+                        10 : The person's psychosis has been cured, or the client is no longer suffering from the problem.
+                        9 : The person's mental illness is on the verge of being cured or the issue is on the verge of being completely resolved.
+                        6 ~ 8 : The client is directly demonstrating a willingness to work toward a positive direction.
+                        3 ~ 5 : The client is not directly demonstrating a willingness to move in a positive direction.
+                        2 : The client is directly demonstrating a willingness to work toward a negative direction.
+                        1 : The client has a serious mental illness or mental health issue and needs to see a real doctor or psychologist to address it.]
 
-                    - The latest conversations:
-                    {sss.conversations}
-                
-                    # Answer form
-                    - You need to use the form below to answer my request using Korean language.
-                    '''
-                    Analysis : [Analyze the information I've given you by not using any bullet points.]
-
-                    Score : [Based on the analysis you did, please score how well the {sss.username}'s problem was solved.]
-
-                    Explanation : [Tell me how the score you gave me was based on your considerations.
-                    *Scoring criteria*:
-                    10 : The person's psychosis has been cured, or the client is no longer suffering from the problem.
-                    9 : The person's mental illness is on the verge of being cured or the issue is on the verge of being completely resolved.
-                    6 ~ 8 : The client is directly demonstrating a willingness to work toward a positive direction.
-                    3 ~ 5 : The client is not directly demonstrating a willingness to move in a positive direction.
-                    2 : The client is directly demonstrating a willingness to work toward a negative direction.
-                    1 : The client has a serious mental illness or mental health issue and needs to see a real doctor or psychologist to address it.]
-
-                    Best thing to do : [Tell me what you think is the easiest thing for {sss.username} to do in that situation, using a bullet point summary, as a professional psychologist.]
-                    '''
-                    **Remember**:
-                    1. Use Korean Language to answer my question.
-                    2. Your score should be much lower than you think.
-                    3. Don't use the word '고객' or '클라이언트'.
-                    4. If you need to use the word '고객', don't use that word and replace it into the client's name with '님', such as {sss.username}님.
-                    5. You should never speak rudely.
-        """
-                }
-                ],
-                temperature=1,
-                max_tokens=1024,
-                top_p=1,
-                frequency_penalty=0,
-                presence_penalty=0
-                )    
-    problem_analysis = problem_analysis.choices[0].message.content
-    problem_analysis=problem_analysis.strip().strip("'''")
-    sss.problem_analysis=problem_analysis
-    problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
-    sss.client_analysis=problem_analysis[:problem_analysis.find('\n')].replace('. ','.\n\n')
-    problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
-    problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
-    sss.score=problem_analysis[:problem_analysis.find('\n')]
-    problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
-    problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
-    sss.score_explanation=problem_analysis[:problem_analysis.find('\n')].replace('. ','.\n\n')
-    problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
-    problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
-    sss.what_to_do=problem_analysis.split('\n')
+                        Best thing to do : [Tell me what you think is the easiest thing for {sss.username} to do in that situation, using a bullet point summary, as a professional psychologist.]
+                        '''
+                        **Remember**:
+                        1. Use Korean Language to answer my question.
+                        2. Your score should be much lower than you think.
+                        3. Don't use the word '고객' or '클라이언트'.
+                        4. If you need to use the word '고객', don't use that word and replace it into the client's name with '님', such as {sss.username}님.
+                        5. You should never speak rudely.
+            """
+                    }
+                    ],
+                    temperature=1,
+                    max_tokens=1024,
+                    top_p=1,
+                    frequency_penalty=0,
+                    presence_penalty=0
+                    )    
+        problem_analysis = problem_analysis.choices[0].message.content
+        problem_analysis=problem_analysis.strip().strip("'''")
+        sss.problem_analysis=problem_analysis
+        problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
+        sss.client_analysis=problem_analysis[:problem_analysis.find('\n')].replace('. ','.\n\n')
+        problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
+        problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
+        sss.score=problem_analysis[:problem_analysis.find('\n')]
+        problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
+        problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
+        sss.score_explanation=problem_analysis[:problem_analysis.find('\n')].replace('. ','.\n\n')
+        problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
+        problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
+        sss.what_to_do=problem_analysis.split('\n')
 
 html_content = """
 <!DOCTYPE html>
@@ -125,15 +126,15 @@ html_content = """
     font-weight: normal;
     font-style: normal;
 }
-    body{
-       font-family: 'Beeunhye';
-    }
+    body{font-family: 'Beeunhye'; margin: 0; padding: 20px 0 30px 0;}
+    table{border: 1px solid #cccccc;}
+    td{padding: 20px 0 0 0;}
     </style>
 </head>"""
 html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
-    <table align="center" border="0" cellpadding="0" cellspacing="0" width="800" style="border: 1px solid #cccccc;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="800">
         <tr>
-            <td align="center" style="padding: 20px 0 0 0;">
+            <td align="center">
                 <h1>{sss.date}의 분석 결과</h1>
             </td>
         </tr>
@@ -155,11 +156,11 @@ html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
                         </td>
                     </tr>
                     <tr>
-                        <td style="color: #000000; font-family: Arial, sans-serif; font-size: 24px;">
+                        <td style="font-size: 24px;">
                             <b>인공지능 네리가 분석한 보고서입니다!</b>
                         </td>
                     </tr> 
-                    <tr style="color: #000000; font-family: Arial, sans-serif; font-size: 16px; line-height: 30px;"
+                    <tr style="font-size: 16px; line-height: 30px;"
                     >
                         <td style="padding: 20px 0 30px 0;">
                             네리는 OpenAI사의 GPT 3.5와 4.0을 사용해 제작된 인공지능 심리상담 챗봇입니다. 이 보고서는 금일 해당 사용자가 네리와 대화하며 도출된 분석결과입니다. 참고만 하시길 바라며 자세한건 가까운 정신과나 심리상담사를 직접 방문하셔서 도움을 받으세요.
