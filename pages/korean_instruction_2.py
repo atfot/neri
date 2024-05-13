@@ -251,7 +251,8 @@ html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
         </tr>
        </table>
    </body>
-</html>'''
+</html>
+'''
 if st.button('send'):
     html=html_content+html_content_1
     pdf = pdfkit.from_string(html, False)
