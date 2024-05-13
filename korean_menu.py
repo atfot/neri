@@ -208,7 +208,7 @@ letter-spacing:0.075em;
             st.page_link("pages/korean_chatbot.py", label="당신의 카운셀러", icon="🩹")
             st.page_link("pages/korean_analysis.py", label="내 정보", icon="ℹ️")
             st.page_link("pages/korean_bug_report.py", label="오류 제보", icon="⚠️")
-            st.page_link("pages/korean_instruction.py", label="사용법", icon="❓")
+            st.page_link("pages/korean_instruction_2.py", label="사용법", icon="❓")
             st.title('')
 
             if st.button("로그아웃",type='primary',use_container_width=True):
