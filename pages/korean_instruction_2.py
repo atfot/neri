@@ -114,27 +114,31 @@ if st.button('try'):
     def regular_font(arg):
         if 'regular_font_dir' not in sss:
             response_regular = requests.get("https://github.com/atfot/neri/raw/main/pdf_dir/NotoSansKR-Regular.ttf", stream=True)        
-            sss.regular_font_dir = tempfile.NamedTemporaryFile(delete=False)
-            with open(sss.regular_font_dir.name, 'wb') as f:
+            regular_font_dir = tempfile.NamedTemporaryFile(delete=False)
+            with open(regular_font_dir.name, 'wb') as f:
                 for chunk in response_regular.iter_content(chunk_size=1024):
                     if chunk:
                         f.write(chunk)
-                pdf.add_font('NotoSansKR-Regular.ttf','',sss.regular_font_dir.name, uni=True)
+                pdf.add_font('NotoSansKR-Regular.ttf','',regular_font_dir.name, uni=True)
                 pdf.set_font('NotoSansKR-Regular.ttf', '', arg)
+                sss.regular_font_dir=True
         else:
-            pdf.add_font('NotoSansKR-Regular.ttf','',sss.regular_font_dir.name, uni=True)
+            pdf.add_font('NotoSansKR-Regular.ttf','',regular_font_dir.name, uni=True)
+            pdf.set_font('NotoSansKR-Regular.ttf', '', arg)
     def thick_font(arg):
         if 'thick_font_dir' not in sss:
             response_thick = requests.get("https://github.com/atfot/neri/raw/main/pdf_dir/NotoSansKR-SemiBold.ttf", stream=True)        
-            sss.thick_font_dir = tempfile.NamedTemporaryFile(delete=False)
-            with open(sss.thick_font_dir.name, 'wb') as f:
+            thick_font_dir = tempfile.NamedTemporaryFile(delete=False)
+            with open(thick_font_dir.name, 'wb') as f:
                 for chunk in response_regular.iter_content(chunk_size=1024):
                     if chunk:
                         f.write(chunk)
-                pdf.add_font('NotoSansKR-SemiBold.ttf','',sss.thick_font_dir.name, uni=True)
+                pdf.add_font('NotoSansKR-SemiBold.ttf','',thick_font_dir.name, uni=True)
                 pdf.set_font('NotoSansKR-SemiBold.ttf', '', arg)
+                sss.thick_font_dir=True
         else:
-            pdf.add_font('NotoSansKR-SemiBold.ttf','',sss.thick_font_dir.name, uni=True)
+            pdf.add_font('NotoSansKR-SemiBold.ttf','',thick_font_dir.name, uni=True)
+            pdf.set_font('NotoSansKR-SemiBold.ttf', '', arg)
             
     class PDF(FPDF):
         def header(self):
