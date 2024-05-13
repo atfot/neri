@@ -176,7 +176,7 @@ html_content = f"""
                                     <td width="260" valign="top">
                                         <h2>{sss.username}님의 분석 결과</h2>
                                         <p><b>문제분석 : </b></p>
-                                        <p>{sss_client_analysis}</p>
+                                        <p>{sss.client_analysis}</p>
                                         <p><b>해결 진전도 : </b>{sss.score}</p>
                                         <p><b>채점 기준 : </b></p>
                                         <p>{sss.score_explanation}</p>
