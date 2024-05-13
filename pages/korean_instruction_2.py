@@ -174,11 +174,11 @@ html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
                                         <p><b>1. 고객님 성함 : </b>{sss.username}</p>
                                         <p><b>2. 연령 : </b>{sss.age}</p>
                                         <p><b>3. 성별 : </b>{sss.gender}</p>
-                                        <p><b>4. 고민 : </b>{sss.problem}</p>
+                                        <p><b>4. 고민 : </b>{sss.problem.replace('\n','<br>')}</p>
                                         <p><b>5. 고민 설명 : </b></p>
-                                        <p>{sss.problem_explanation}</p>
+                                        <p>{sss.problem_explanation.replace('\n','<br>')}</p>
                                         <p><b>6. 목표 : </b></p>
-                                        <p>{sss.goal}</p>
+                                        <p>{sss.goal.replace('\n','<br>')}</p>
                                     </td>
                                     <td style="font-size: 0; line-height: 0;" width="20">
                                     &nbsp;
@@ -186,10 +186,10 @@ html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
                                     <td width="260" valign="top">
                                         <h2>{sss.username}님의 분석 결과</h2>
                                         <p><b>문제분석 : </b></p>
-                                        <p>{sss.client_analysis}</p>
+                                        <p>{sss.client_analysis.replace('\n','<br>')}</p>
                                         <p><b>해결 진전도 : </b>{sss.score}</p>
                                         <p><b>채점 기준 : </b></p>
-                                        <p>{sss.score_explanation}</p>
+                                        <p>{sss.score_explanation.replace('\n','<br>')}</p>
                                     </td>
                                 </tr>
                             </table>
@@ -253,14 +253,29 @@ html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
    </body>
 </html>
 '''
-# Convert HTML to PDF
-html=html_content+html_content_1
-pdf = pdfkit.from_string(html, False)
+if st.button('send'):
+    html=html_content+html_content_1
+    pdf = pdfkit.from_string(html, False)
+    pdf_bytes = bytes(pdf)
 
-# Display PDF in Streamlit app
-st.download_button(
-    label="Download PDF",
-    data=pdf,
-    file_name="hello_world.pdf",
-    mime="application/pdf",
-)
+    from_address = 'nerichatbot@gmail.com'
+    to_address = 'nerierror@naver.com'
+    subject = "PDF 파일 보내기"
+    body = "PDF 파일을 첨부합니다."
+
+    msg = MIMEMultipart()
+    msg['From'] = from_address
+    msg['To'] = to_address
+    msg['Subject'] = subject
+
+    attachment = MIMEBase('application', 'pdf', filename='tuto1.pdf')
+    attachment.set_payload(pdf_bytes)
+    encoders.encode_base64(attachment)
+    attachment.add_header('Content-Disposition', 'attachment', filename='tuto1.pdf')
+    msg.attach(attachment)
+
+    smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    smtp_server.login(from_address, 'hzfemdpfnfczwixe')
+    smtp_server.sendmail(from_address, to_address, msg.as_string())
+    smtp_server.quit()
+    st.write('했당')
