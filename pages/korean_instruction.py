@@ -111,6 +111,13 @@ if st.button('try'):
     problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
     sss.what_to_do=problem_analysis.split('\n')
 
+    def download_font(font_url):
+        response = requests.get(font_url, stream=True)        
+        temp_file = tempfile.NamedTemporaryFile(delete=False)
+        with open(temp_file.name, 'wb') as f:
+            for chunk in response.iter_content(chunk_size=1024):
+                if chunk:
+                    f.write(chunk)
     class PDF(FPDF):
         def header(self):
             pdf.add_font('NanumGothic', '', 'https://raw.githubusercontent.com/atfot/neri/blob/main/NanumGothic.ttf', uni=True)
