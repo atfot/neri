@@ -129,13 +129,10 @@ html_content = """
     @font-face {
     font-family: 'Beeunhye';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 }
-    body{font-family: 'Beeunhye'; letter-spacing:0.075px;}
-    h1{font-weight:bold;}
-    h2{font-weight:bold;}
-    b{font-weight:bold;}
+    body{font-family: 'Beeunhye'; letter-spacing:1px;}
     </style>
 </head>"""
 html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
