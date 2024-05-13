@@ -27,6 +27,7 @@ if 'username' not in sss:
    sss.problem=st.secrets.problem
    sss.problem_explanation=st.secrets.problem_explanation
    sss.goal=st.secrets.goal
+   sss.date=f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일"
 
 html_content = f"""
 <!DOCTYPE html>
