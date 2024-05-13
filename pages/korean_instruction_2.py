@@ -113,7 +113,7 @@ if st.button('try'):
 
     def regular_font(arg):
         if 'regular_font_dir' not in sss:
-            response_regular = requests.get("https://github.com/atfot/neri/raw/main/korean_fonts/NotoSansKR-Regular.ttf", stream=True)        
+            response_regular = requests.get("https://github.com/atfot/neri/raw/main/pdf_dir/NotoSansKR-Regular.ttf", stream=True)        
             sss.regular_font_dir = tempfile.NamedTemporaryFile(delete=False)
             with open(sss.regular_font_dir.name, 'wb') as f:
                 for chunk in response_regular.iter_content(chunk_size=1024):
@@ -125,7 +125,7 @@ if st.button('try'):
             pdf.add_font('NotoSansKR-Regular.ttf','',sss.regular_font_dir.name, uni=True)
     def thick_font(arg):
         if 'thick_font_dir' not in sss:
-            response_thick = requests.get("https://github.com/atfot/neri/raw/main/korean_fonts/NotoSansKR-SemiBold.ttf", stream=True)        
+            response_thick = requests.get("https://github.com/atfot/neri/raw/main/pdf_dir/NotoSansKR-SemiBold.ttf", stream=True)        
             sss.thick_font_dir = tempfile.NamedTemporaryFile(delete=False)
             with open(sss.thick_font_dir.name, 'wb') as f:
                 for chunk in response_regular.iter_content(chunk_size=1024):
@@ -171,7 +171,7 @@ if st.button('try'):
     pdf.text(x= 142, y= 55, txt= 'Analyzed by')
     # 로고
     # 로고는 깃허브에서 자주 나가리되니까 계속 새로 복붙해주면서 사용할 것 - 내 깃허브 레포 디렉토리에 있음
-    pdf.image("https://imgur.com/H287o5n.png", x = 154, y = 48, w = 42, h = 18, type='PNG') 
+    pdf.image("https://raw.githubusercontent.com/atfot/neri/main/pdf_dir/chatbot_mobile_home_korean.png", x = 154, y = 48, w = 42, h = 18, type='PNG') 
 
     #2페이지
     thick_font(15)
@@ -236,7 +236,7 @@ if st.button('try'):
     thick_font(15)
     pdf.cell(w=0, h=10, txt="고민 해결도 그래프", align="C", border=0, ln=1)
     pdf.cell(w=20, h=10, txt="", align="C", border=0, ln=0)
-    pdf.cell(w=0,h=0,link=pdf.image("https://imgur.com/H287o5n.png", w = 150, h = 70, type='PNG'), border=0, ln=1) # W값 중요하니까 절대 바꾸지 말것 - 190
+    pdf.cell(w=0,h=0,link=pdf.image("https://raw.githubusercontent.com/atfot/neri/main/pdf_dir/chatbot_mobile_home_english.png", w = 150, h = 70, type='PNG'), border=0, ln=1) # W값 중요하니까 절대 바꾸지 말것 - 190
     pdf.cell(w=20, h=10, txt="", align="C", border=0, ln=0)
 
     pdf_bytes = pdf.output(dest='S').encode('latin1')
