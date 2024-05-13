@@ -29,6 +29,27 @@ if 'username' not in sss:
    sss.problem_explanation=st.secrets.problem_explanation
    sss.goal=st.secrets.goal
 
+import streamlit as st
+import requests
+import tempfile
+from fpdf import FPDF
+
+if st.button('try_1'):
+    def regular_font(arg):
+        if 'regular_font_dir' not in sss:
+            response_regular = requests.get("https://github.com/atfot/neri/raw/main/pdf_dir/NotoSansKR-Regular.ttf", stream=True)        
+            regular_font_dir = tempfile.NamedTemporaryFile(delete=False)
+            with open(regular_font_dir.name, 'wb') as f:
+                for chunk in response_regular.iter_content(chunk_size=1024):
+                    if chunk:
+                        f.write(chunk)
+                pdf.add_font('NotoSansKR-Regular.ttf','',regular_font_dir.name, uni=True)
+                pdf.set_font('NotoSansKR-Regular.ttf', '', arg)
+                sss.regular_font_dir=True
+        else:
+            pdf.add_font('NotoSansKR-Regular.ttf','',regular_font_dir.name, uni=True)
+            pdf.set_font('NotoSansKR-Regular.ttf', '', arg)
+
 if st.button('try'):
     problem_analysis = sss.client.chat.completions.create(
                 model="gpt-3.5-turbo-0125",
