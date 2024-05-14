@@ -245,6 +245,8 @@ letter-spacing:0.075em;
             st.title('')
             st.title('')
             st.title('')
+            st.title('')
+            st.title('')
             st.markdown("""
 Developed By <a  href="https://i.imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a><br>
 Made with Streamlit<br>
