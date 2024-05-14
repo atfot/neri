@@ -242,9 +242,9 @@ letter-spacing:0.075em;
                 logout()
 
             st.markdown("""
-- Developed By <a  href="https://i.imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a>
-- Made with Streamlit
-- Powered By OpenAI
+Developed By <a  href="https://i.imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a>
+Made with Streamlit
+Powered By OpenAI
 """,unsafe_allow_html=True)
 
         elif get_current_page_name() != "streamlit_app":
