@@ -106,11 +106,7 @@ font-family: 'Beeunhye';
 font-size: 2em;
 letter-spacing:0.075em;
 }
-                   div.stFileUploaderFileData.st-emotion-cache-1l4firl.e1b2p2ww7 > div {
-font-family: 'Beeunhye';
-font-size: 2em;
-letter-spacing:0.075em;
-}
+                    
                     
 /* 내 정보 */
 /* 내 프로필 */
