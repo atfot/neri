@@ -23,6 +23,7 @@ def send_analysis_via_email():
         month=month[time.localtime().tm_mon-1]
         sss.date=f'{month} {time.localtime().tm_mday}, {time.localtime().tm_year}'
     with st.spinner('loading..'):
+        time.sleep(30)
         if 'problem_analysis' not in sss:
             problem_analysis = sss.client.chat.completions.create(
                         model="gpt-3.5-turbo-0125",
@@ -335,5 +336,4 @@ Therefore, a **psychiatrist** or **psychotherapist** will be able to make a **mo
 """)
 
 if st.button('Would you like to receive your psychometric results in your email?',use_container_width=True):
-    time.sleep(30)
     send_analysis_via_email()
