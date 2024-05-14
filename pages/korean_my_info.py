@@ -1,5 +1,5 @@
 import streamlit as st
-from english_menu import make_sidebar
+from korean_menu import make_sidebar
 from openai import OpenAI
 import pandas as pd
 import time
@@ -35,40 +35,40 @@ def fix_info():
 col1,col2=st.columns([5,5])
 with col1:
     st.write('')
-    st.markdown('<h4>My Profile</h4>',unsafe_allow_html=True)
+    st.markdown('<h4>내 정보</h4>',unsafe_allow_html=True)
     st.markdown(f'''
                 <p>
-                <b>1. Username : </b>{sss.username}
+                <b>1. 닉네임 : </b>{sss.username}
 
-                <b>2. Age : </b>{sss.age}
+                <b>2. 나이 : </b>{sss.age}
 
-                <b>3. Gender : </b>{sss.gender}
+                <b>3. 성별 : </b>{sss.gender}
 
-                <b>4. Problem : </b>
+                <b>4. 문제점 : </b>
                 
                 {sss.problem}
 
-                <b>5. Problem Explanation : </b>
+                <b>5. 문제점 세부설명 : </b>
                 
                 {sss.problem_explanation}
 
-                <b>6. Goal : </b>
+                <b>6. 목표 : </b>
                 
                 {sss.goal}
                 </p>
                 ''', unsafe_allow_html=True)   
     if sss.fix_info==False:
-        st.button('Fix my Info',use_container_width=True,on_click=fix_info)  
+        st.button('내 정보 수정',use_container_width=True,on_click=fix_info)  
     else:
         pass
 with col2:  
     if sss.fix_info==True:      
-        st.write("**Now you can fix your info😊**")
+        st.write("**이제 정보를 고칠수 있습니다😊**")
 
-        user_email = st.text_input('**Write down the new email address you want to use.**', key='new_user_email',type='password')
+        user_email = st.text_input('**새로 사용하실 이메일 주소를 적어주세요.**', key='new_user_email',type='password')
         if user_email:
             if not re.match(r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$', user_email): 
-                st.error('Please give the correct email!')
+                st.error('정확한 이메일을 적어주세요!')
             else:
                 if user_email != sct.user_email and user_email !=sct.user_email_2 and sss.user_email:
                     sss.filled_input+=1
@@ -76,34 +76,34 @@ with col2:
                         sss.auth_email=user_email
                     #sss.user_email=user_email
                 elif user_email == sss.user_email:
-                    st.error("This email address is the same as the one you're using now.")
+                    st.error("해당 이메일 주소는 그동안 사용하셨던 이메일 주소와 동일합니다.")
                 else:
-                    st.error('This email address already exists.')
-        email_check = st.text_input('**Please write the same email as above again.**',key='email_check',type='password')
+                    st.error('해당 이메일 주소가 이미 사용중입니다.')
+        email_check = st.text_input('**다시 새로 사용하실 이메일을 적어주세요.**',key='email_check',type='password')
         if email_check:
             if email_check!=sss.auth_email:
-                st.error('That email is different from the one you just wrote down.')
+                st.error('해당 이메일 주소가 이전에 사용하셨던 이메일 주소와 동일합니다.')
             if email_check==sss.auth_email:
                 sss.filled_input+=1
-        username = st.text_input('**Tell me the name you want to be called in here.**',key='new_username')
+        username = st.text_input('**어떤 별명으로 불리고 싶으신지 적어주세요.**',key='new_username')
         if username:
             if username!=sct.user_name and username!=sct.user_name_2 and username!=sss.username:
                 sss.filled_input+=1
                 #sss.username=username
             elif username==sss.username:
-                st.error('This is the same username you were using before.')
+                st.error('해당 별명은 지금껏 사용하셨던 별명과 동일합니다.')
             else:
-                st.error('The username already exists.')
+                st.error('해당 별명이 이미 존재합니다.')
             
-        problem = st.text_area("**What's your biggest problem right now?🤔**",key='new_problem')
+        problem = st.text_area("**지금 가장 큰 문제는 무엇인가요?🤔**",key='new_problem')
         if problem:
             sss.filled_input+=1
             #sss.problem=problem
-        problem_explanation=st.text_area("**Please describe your issue in more detail. The more details you can provide, the better😊**",key='new_problem_explanation')
+        problem_explanation=st.text_area("**문제를 더 자세히 설명해 주세요. 자세하게 작성해주실수록 좋습니다😊**",key='new_problem_explanation')
         if problem_explanation:
             sss.filled_input+=13
             #sss.problem_explanation=problem_explanation
-        goal=st.text_area("**Tell us what your end goal is!**",key='new_goal')
+        goal=st.text_area("**최종 목표가 무엇인지 알려주세요!**",key='new_goal')
         if goal:
             sss.filled_input+=1
             #sss.goal=goal
@@ -112,7 +112,7 @@ with col2:
 if sss.fix_info==True:
     col1,col2,col3=st.columns([2.5,5,2.5])
     with col2:
-        if st.button('**Submit**',use_container_width=True):
+        if st.button('**수정**',use_container_width=True):
             if sss.filled_input==6:
                 sss.user_email=user_email
                 sss.username=username
@@ -120,10 +120,10 @@ if sss.fix_info==True:
                 sss.problem_explanation=problem_explanation
                 sss.goal=goal
                 del sss.fix_info, sss.filled_input, sss.fix_complete, sss.auth_email
-                st.success('**Your user profile is fixed👍**')
+                st.success('**사용자 프로필이 수정되었습니다👍**')
                 st.rerun()
             else:
-                st.error('**Please fill every blanks🙃**')
+                st.error('**빈칸을 모두 채워넣어주세요🙃**')
         
 else:
     pass
