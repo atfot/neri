@@ -22,6 +22,7 @@ if sss.id==False:
     sss.problem_explanation=sct.problem_explanation_2
     sss.goal=sct.goal_2
     sss.user_email=sct.user_email_2
+st.write(sss.user_email)
 
 if 'fix_info' not in sss:
     sss.fix_info=False
