@@ -107,26 +107,29 @@ with col2:
         if goal:
             sss.filled_input+=1
             #sss.goal=goal
-        col1,col2=st.columns([8,2])
-        with col2:
-            if st.button('**Submit**',use_container_width=True):
-                if sss.filled_input==6:
-                    sss.fix_complete=True
-            else:
-                sss.fix_unfinished==True
-        if sss.fix_complete==True:
-            sss.user_email=user_email
-            sss.username=username
-            sss.problem=problem
-            sss.problem_explanation=problem_explanation
-            sss.goal=goal
-            st.write('**Your user profile is fixed👍**')
-            time.sleep(2)
-            sss.my_info, sss.filled_input, sss.fix_complete=False
-            st.rerun()
-        if sss.fix_unfinished==True:
-            st.write('**Please fill every blanks🙃**')
-        else:
-            pass
     else:
         pass
+if sss.fix_info==True:
+    col1,col2=st.columns([8,2])
+    with col2:
+        if st.button('**Submit**',use_container_width=True):
+            if sss.filled_input==6:
+                sss.fix_complete=True
+        else:
+            sss.fix_unfinished==True
+    if sss.fix_complete==True:
+        sss.user_email=user_email
+        sss.username=username
+        sss.problem=problem
+        sss.problem_explanation=problem_explanation
+        sss.goal=goal
+        st.write('**Your user profile is fixed👍**')
+        time.sleep(2)
+        sss.my_info, sss.filled_input, sss.fix_complete=False
+        st.rerun()
+    if sss.fix_unfinished==True:
+        st.write('**Please fill every blanks🙃**')
+    else:
+        pass
+else:
+    pass
