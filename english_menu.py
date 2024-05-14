@@ -351,14 +351,9 @@ def send_analysis_via_email():
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Psychometric analysis results</title>
+            <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
             <style>
-            @font-face {
-            font-family: 'Beeunhye';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
-            font-weight: bold;
-            font-style: normal;
-        }
-            body{font-family: 'Beeunhye'; letter-spacing:2px;}
+            body{font-family: 'Noto Sans';}
             </style>
         </head>"""
         html_content_1=f'''<body style="margin: 0; padding: 50px 0 50px 0;">
