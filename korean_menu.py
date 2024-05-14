@@ -370,7 +370,7 @@ def send_analysis_via_email():
                     </td>
                 </tr>
                 <tr>
-                    <td bgcolor="#ffffff" style="padding: 30px 10px 30px 10px;">
+                    <td bgcolor="#ffffff" style="padding: 30px 20px 30px 20px;">
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td>
@@ -387,7 +387,7 @@ def send_analysis_via_email():
                                 </td>
                             </tr>
                             <tr>
-                                <td style="color: #000000; font-size: 36px;">
+                                <td style="color: #000000; font-size: 36px;padding: 10px 5px 10px 5px;">
                                     <b>인공지능 네리가 분석한 보고서입니다!</b>
                                 </td>
                             </tr> 
