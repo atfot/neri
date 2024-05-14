@@ -184,7 +184,7 @@ letter-spacing:0.075em;
             st.page_link("pages/english_chatbot.py", label="My Councellor", icon="🩹")
             st.page_link("pages/english_instruction.py", label="How To Use", icon="ℹ️")
             st.page_link("pages/english_bug_report.py", label="Any Errors?", icon="⚠️")
-            st.page_link("pages/english_analysis_2.py", label="My Analysis", icon="🔎")
+            st.page_link("pages/english_analysis.py", label="My Analysis", icon="🔎")
             st.title('')
             st.page_link("pages/english_about_me.py", label="About Me", icon="💭")
             st.title('')
