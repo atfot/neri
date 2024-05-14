@@ -199,25 +199,25 @@ letter-spacing:0.075em;
                     
 /* 심리분석 결과 */
 /* 리스트 */
-div.block-container.st-emotion-cache-1jicfl2.ea3mdgi5 > div > div > div > div > div > div > ol > li {
+div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > ol > li {
 font-family: 'Beeunhye';
 font-size: 1.75em;
 letter-spacing:0.075em;
 }
 /* 버튼 */
-div.st-emotion-cache-fplge5.e1f1d6gn3 > div > div > div > div > div > button > div > p {
+div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div > div > button > div > p {
 font-family: 'Beeunhye';
 font-size: 1.75em;
 letter-spacing:0.075em;
 }
 /* 전송중... */
-div.st-emotion-cache-fplge5.e1f1d6gn3 > div > div > div > div > div > div > div > p {
+div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div > div > div > div > p {
 font-family: 'Beeunhye';
 font-size: 1.75em;
 letter-spacing:0.075em;
 }
 /*성공 메세지 */
-div.st-emotion-cache-fplge5.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
+div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
 font-family: 'Beeunhye';
 font-size: 1.75em;
 letter-spacing:0.075em;
