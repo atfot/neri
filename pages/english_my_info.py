@@ -14,7 +14,7 @@ st.set_page_config(
 )
 make_sidebar()
 
-if 'id' not in sss:
+if sss.id!=False:
     sss.username=st.secrets.user_name_2
     sss.age=st.secrets.age_2
     sss.gender=st.secrets.user_gender_2
