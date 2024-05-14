@@ -15,6 +15,10 @@ st.set_page_config(
     page_icon="🧊",
     layout="centered"
 )
+try:
+    del sss.fix_info   
+except:
+    pass
 make_sidebar()
 
 def send_analysis_via_email():

@@ -7,5 +7,9 @@ st.set_page_config(
     page_icon="🧊",
     layout="wide"
 )
+try:
+    del sss.fix_info   
+except:
+    pass
 make_sidebar()
 st.write("hi")

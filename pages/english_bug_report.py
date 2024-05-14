@@ -10,6 +10,10 @@ st.set_page_config(
     page_icon="random",
     layout="centered"
 )
+try:
+    del sss.fix_info   
+except:
+    pass
 make_sidebar()
 if 'send_email' not in st.session_state:
     st.session_state.send_email=False
