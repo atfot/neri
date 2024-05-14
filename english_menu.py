@@ -240,6 +240,17 @@ letter-spacing:0.075em;
 
             if st.button("Logout",type='primary',use_container_width=True):
                 logout()
+                
+            st.markdown(
+                """
+                <div style="position: fixed; bottom: 0; left: 1%; width: 50%; color: #000000; padding: 1px; text-align: left;">
+                    Developed By <a  href="https://i.imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a><br>
+                    Made with Streamlit<br>
+                    Powered By OpenAI
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
 
         elif get_current_page_name() != "streamlit_app":
             # If anyone tries to access a secret page without being logged in,
