@@ -204,6 +204,12 @@ font-family: 'Beeunhye';
 font-size: 1.75em;
 letter-spacing:0.075em;
 }
+/* 버튼 */
+div.st-emotion-cache-fplge5.e1f1d6gn3 > div > div > div > div > div > button > div > p {
+font-family: 'Beeunhye';
+font-size: 1.75em;
+letter-spacing:0.075em;
+}
 
 </style>
 """
