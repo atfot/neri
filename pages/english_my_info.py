@@ -115,13 +115,11 @@ if sss.fix_info==True:
     col1,col2,col3=st.columns([3,4,3])
     with col2:
         if st.button('**Submit**',use_container_width=True):
-            st.error('asdf')
-            st.success('asdf')
             time.sleep(60)
             if sss.filled_input==6:
                 sss.fix_complete=True
-        else:
-            sss.fix_unfinished==True
+            else:
+                sss.fix_unfinished==True
     if sss.fix_complete==True:
         sss.user_email=user_email
         sss.username=username
@@ -129,10 +127,10 @@ if sss.fix_info==True:
         sss.problem_explanation=problem_explanation
         sss.goal=goal
         del sss.fix_info, sss.filled_input, sss.fix_complete, sss.auth_email, sss.fix_unfinished
-        st.write('**Your user profile is fixed👍**')
-        time.sleep(2)
+        st.success('**Your user profile is fixed👍**')
+        time.sleep(60)
         st.rerun()
     if sss.fix_unfinished==True:
-        st.write('**Please fill every blanks🙃**')
+        st.error('**Please fill every blanks🙃**')
 else:
     pass
