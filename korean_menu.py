@@ -497,10 +497,57 @@ def send_analysis_via_email():
         msg['To'] = to_address
         msg['Subject'] = subject
 
-        attachment = MIMEBase('application', 'pdf', filename='tuto1.pdf')
+        gratitude_email=f'''
+        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Email_Design</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="margin: 0; padding: 20px 20px 20px 20px;">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="800" style="border: 1px solid #FDF6EC;">
+            <tr>
+                <td bgcolor="#FDF6EC" style="padding: 0 0 10px 0;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td style="padding-left:10px;">
+                                <h3>{sss.username} 님께</h3>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td>
+                                <img src="https://pbs.twimg.com/profile_images/1688611811933982720/_tovpXIN_400x400.jpg" alt='welcome_message' width="100%" style="display: block;" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="padding-right:10px;">
+                                <h3>개발자 조현규 드림</h3>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td style="bottom: 0; left: 0; padding: 50px 0 0 0; width: 100%; background-color: #FDF6EC; color: #562400; text-align: center;">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td>
+                                            Developed By <a href="https://drive.google.com/file/d/1l7duTvc4pWDJgZzY301wswYoIrfylC1G/view?usp=sharing" style="color:#562400;" target="_blank"><font color="#562400">Hyun Kyu Cho</font></a> |  Made with Streamlit  |  Powered By OpenAI
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
+        '''
+        msg.attach(MIMEText(gratitude_email, 'html'))
+        attachment = MIMEBase('application', 'pdf', pdf_name=f'{sss.date}의 심리 검사결과.pdf')
         attachment.set_payload(pdf_bytes)
         encoders.encode_base64(attachment)
-        attachment.add_header('Content-Disposition', 'attachment', filename='tuto1.pdf')
+        attachment.add_header('Content-Disposition', 'attachment', filename=pdf_name)
         msg.attach(attachment)
 
         smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
