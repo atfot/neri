@@ -339,11 +339,11 @@ def send_analysis_via_email():
             problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
             sss.what_to_do=problem_analysis.split('\n')
 
-            html_problem=sss.problem.replace('\n','<br>')
-            html_problem_explanation=sss.problem_explanation.replace('\n','<br>')
-            html_goal=sss.goal.replace('\n','<br>')
-            html_client_analysis=sss.client_analysis.replace('\n','<br>')
-            html_score_explanation=sss.score_explanation.replace('\n','<br>')
+        html_problem=sss.problem.replace('\n','<br>')
+        html_problem_explanation=sss.problem_explanation.replace('\n','<br>')
+        html_goal=sss.goal.replace('\n','<br>')
+        html_client_analysis=sss.client_analysis.replace('\n','<br>')
+        html_score_explanation=sss.score_explanation.replace('\n','<br>')
         #인라인 css 태그 전부 style에 옮겨줄것
         html_content = """
         <!DOCTYPE html>
