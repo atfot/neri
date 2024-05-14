@@ -169,7 +169,7 @@ with col3:
         with st.form('fix_user_info'):
             x=0
             st.write("**Now you can fix your info😊**")
-            user_email = st.text_input('**Tell me the name you want to be called in here.**', key='new_user_email')
+            user_email = st.text_input('**Write down the new email address you want to use.**', key='new_user_email')
             def check_email(text):
                 pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$'
                 if re.match(pattern, text):
@@ -184,7 +184,7 @@ with col3:
                     sss.user_email=user_email
                 else:
                     pass
-            email_check = st.text_input('**Tell me the name you want to be called in here.**',key='email_check')
+            email_check = st.text_input('**Please write the same email as above again.**',key='email_check')
             if email_check:
                 if email_check!=sss.user_email:
                     st.error('That email is different from the one you just wrote down')
