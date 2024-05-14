@@ -196,6 +196,15 @@ font-family: 'Beeunhye';
 font-size: 1.75em;
 letter-spacing:0.075em;
 }
+                    
+/* 심리분석 결과 */
+/* 리스트 */
+div.block-container.st-emotion-cache-1jicfl2.ea3mdgi5 > div > div > div > div > div > div > ol > li {
+font-family: 'Beeunhye';
+font-size: 1.75em;
+letter-spacing:0.075em;
+}
+
 </style>
 """
 
