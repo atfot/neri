@@ -101,7 +101,7 @@ with col2:
             #sss.problem=problem
         problem_explanation=st.text_area("**Please describe your issue in more detail. The more details you can provide, the better😊**",key='new_problem_explanation')
         if problem_explanation:
-            sss.filled_input+=1
+            sss.filled_input+=13
             #sss.problem_explanation=problem_explanation
         goal=st.text_area("**Tell us what your end goal is!**",key='new_goal')
         if goal:
@@ -110,7 +110,7 @@ with col2:
     else:
         pass
 if sss.fix_info==True:
-    col1,col2,col3=st.columns([3,4,3])
+    col1,col2,col3=st.columns([2.5,5,2.5])
     with col2:
         if st.button('**Submit**',use_container_width=True):
             if sss.filled_input==6:
