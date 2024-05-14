@@ -241,7 +241,7 @@ letter-spacing:0.075em;
             if st.button("Logout",type='primary',use_container_width=True):
                 logout()
             if st.button("My Info",type='secondary',use_container_width=True):
-                st.write('hi')
+                st.switch_page("pages/english_analysis.py")
 
             st.markdown(
                 """
