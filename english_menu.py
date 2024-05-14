@@ -294,7 +294,11 @@ def logout():
         try:
             del sss.client
         except:
-            pass    
+            pass 
+        try:
+            del sss.fix_info   
+        except:
+            pass
     st.info("See ya next time😊")
     sleep(0.5)
     st.switch_page("streamlit_app.py")
