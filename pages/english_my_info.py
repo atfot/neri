@@ -14,6 +14,15 @@ st.set_page_config(
 )
 make_sidebar()
 
+if 'id' not in sss:
+   sss.username=st.secrets.user_name_2
+   sss.age=st.secrets.age_2
+   sss.gender=st.secrets.user_gender_2
+   sss.problem=st.secrets.problem_2
+   sss.problem_explanation=st.secrets.problem_explanation_2
+   sss.goal=st.secrets.goal_2
+   sss.user_email=st.secrets.user_email_2
+
 if 'fix_info' not in sss:
     sss.fix_info=False
 if 'fix_complete' not in sss:
