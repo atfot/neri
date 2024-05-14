@@ -74,6 +74,8 @@ with col2:
             else:
                 if user_email != sct.user_email and user_email !=sct.user_email_2 and sss.user_email:
                     sss.filled_input+=1
+                    if 'auth_email' not in sss:
+                        sss.auth_email=user_email
                     #sss.user_email=user_email
                 elif user_email == sss.user_email:
                     st.error("This email address is the same as the one you're using now.")
@@ -83,7 +85,7 @@ with col2:
         if email_check:
             if email_check!=sss.user_email:
                 st.error('That email is different from the one you just wrote down')
-            if email_check==sss.user_email:
+            if email_check==sss.auth_email:
                 sss.filled_input+=1
         username = st.text_input('**Tell me the name you want to be called in here.**',key='new_username')
         if username:
