@@ -18,31 +18,53 @@ def fix_info():
 
 col1,col2,col3=st.columns([4,1,5])
 with col1:
-  if sss.fix_info==False:
-    st.write('')
-    st.markdown('<h4>My Profile</h4>',unsafe_allow_html=True)
-    st.markdown(f'''
-                <p>
-                <b>1. Username : </b>{sss.username}
+    if sss.fix_info==False:
+        st.write('')
+        st.markdown('<h4>My Profile</h4>',unsafe_allow_html=True)
+        st.markdown(f'''
+                    <p>
+                    <b>1. Username : </b>{sss.username}
 
-                <b>2. Age : </b>{sss.age}
+                    <b>2. Age : </b>{sss.age}
 
-                <b>3. Gender : </b>{sss.gender}
+                    <b>3. Gender : </b>{sss.gender}
 
-                <b>4. Problem : </b>
-                
-                {sss.problem}
+                    <b>4. Problem : </b>
+                    
+                    {sss.problem}
 
-                <b>5. Problem Explanation : </b>
-                
-                {sss.problem_explanation}
+                    <b>5. Problem Explanation : </b>
+                    
+                    {sss.problem_explanation}
 
-                <b>6. Goal : </b>
-                
-                {sss.goal}
-                </p>
-                ''', unsafe_allow_html=True)   
-    st.button('Fix my Info',use_container_width=True,on_click=fix_info)  
+                    <b>6. Goal : </b>
+                    
+                    {sss.goal}
+                    </p>
+                    ''', unsafe_allow_html=True)   
+        st.button('Fix my Info',use_container_width=True,on_click=fix_info)  
+    else:
+        st.markdown(f'''
+            <p>
+            <b>1. Username : </b>{sss.username}
+
+            <b>2. Age : </b>{sss.age}
+
+            <b>3. Gender : </b>{sss.gender}
+
+            <b>4. Problem : </b>
+            
+            {sss.problem}
+
+            <b>5. Problem Explanation : </b>
+            
+            {sss.problem_explanation}
+
+            <b>6. Goal : </b>
+            
+            {sss.goal}
+            </p>
+            ''', unsafe_allow_html=True)   
 with col3:
     if sss.fix_info==False:
         st.empty()
