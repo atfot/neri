@@ -362,8 +362,8 @@ def send_analysis_via_email():
             body{font-family: 'Beeunhye'; letter-spacing:1px;}
             </style>
         </head>"""
-        html_content_1=f'''<body style="margin: 0; padding: 100px 0 30px 0;">
-            <table align="center" border="0" cellpadding="10" cellspacing="0" width="800" style="border: 1px solid #cccccc;">
+        html_content_1=f'''<body style="margin: 0; padding: 50px 0 50px 0;">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="1000" style="border: 1px solid #cccccc;">
                 <tr>
                     <td align="center" style="padding: 30px 0 0 0; font-size:40px;">
                         <b>{sss.date}의 분석 결과</b>
