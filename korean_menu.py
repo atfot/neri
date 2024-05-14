@@ -354,16 +354,14 @@ def send_analysis_via_email():
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>심리분석결과</title>
             <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-            .noto-sans-<uniquifier> {
-  font-family: "Noto Sans", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+.noto-sans-kr-<uniquifier> {
+  font-family: "Noto Sans KR", sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
 }
-            body{font-family: 'Noto Sans', sans-serif; }
+            body{font-family: 'Noto Sans KR', sans-serif; }
             </style>
         </head>"""
         html_content_1=f'''<body style="margin: 0; padding: 50px 0 50px 0;">
