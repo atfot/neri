@@ -13,15 +13,14 @@ make_sidebar()
 if 'client' not in sss:
   sss.client = OpenAI(api_key=st.secrets['api_key'])
 
-if sss.id!=False:
-    if 'username' not in sss:
-        sss.username=st.secrets.user_name
-        sss.age=st.secrets.age
-        sss.gender=st.secrets.user_gender
-        sss.problem=st.secrets.problem
-        sss.problem_explanation=st.secrets.problem_explanation
-        sss.goal=st.secrets.goal
-        sss.user_email=st.secrets.user_email
+if sss.id==False:
+    sss.username=st.secrets.user_name
+    sss.age=st.secrets.age
+    sss.gender=st.secrets.user_gender
+    sss.problem=st.secrets.problem
+    sss.problem_explanation=st.secrets.problem_explanation
+    sss.goal=st.secrets.goal
+    sss.user_email=st.secrets.user_email
 
 
 # variables
