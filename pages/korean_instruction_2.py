@@ -227,11 +227,11 @@ html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
                         </td>
                     </tr>
                     <tr>
-                        <td style="color: #000000; font-size: 16px; line-height: 30px;">
+                        <td style="color: #000000; font-size: 16px; line-height: 15px;">
                             <p><br></p>
                         </td>
                     </tr>
-                    <tr align="center" width="100%" style="color: #000000; font-size: 16px; line-height: 15px;">
+                    <tr align="center" width="100%" style="color: #000000; font-size: 16px; line-height: 30px;">
                         <td>
                             <h2>그래프</h2>
                         </td>
