@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 from streamlit import session_state as sss
+import re
 
 st.set_page_config(
         page_title="Your AI Therapist, Neri",
@@ -308,7 +309,7 @@ if sss.korean_mode==0:
             st.error('This password is different from the password you wrote earlier.')
         else:
             sss.filled_input+=1            
-    user_email = st.text_input('**Write down the new email address you want to use.**', key='new_user_email')
+    user_email = st.text_input('**Write down the email address you want to use.**', key='user_email_')
     def check_email(text):
         pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$'
         if re.match(pattern, text):
@@ -323,7 +324,7 @@ if sss.korean_mode==0:
             sss.user_email=user_email
         else:
             pass
-    email_check = st.text_input('**Please write the same email as above again.**',key='email_check')
+    email_check = st.text_input('**Please write the same email as above again.**',key='email_check_')
     if email_check:
         if email_check!=sss.user_email:
             st.error('That email is different from the one you just wrote down')
@@ -397,6 +398,8 @@ if sss.korean_mode==0:
         **ID**: {sss.id}
 
         **Password**: {sss.pw}
+
+        **Password**: {sss.user_email}
 
         **Username**: {sss.username}
 
