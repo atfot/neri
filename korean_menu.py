@@ -4,7 +4,6 @@ from streamlit.runtime.scriptrunner import get_script_run_ctx
 from streamlit.source_util import get_pages
 from streamlit import session_state as sss
 from openai import OpenAI
-from fpdf import FPDF
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
