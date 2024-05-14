@@ -388,10 +388,10 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
     if sss.screen_setting=='mobile':
         st.markdown(
             """
-            <div style="position: fixed; bottom: 0; left: 2.5%; width: 31.5%; background-color: #FDF6EC; color: #000000; padding: 1px; text-align: left;">
-                - Developed By <a  href="https://i.imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a><br>
-                - Made with Streamlit<br>
-                - Powered By OpenAI
+            <div style="bottom: 0; left: 0; width: 101%; background-color: #FDF6EC; color: #000000; text-align: left;">
+                Developed By <a  href="https://i.imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a><br>
+                Made with Streamlit<br>
+                Powered By OpenAI
             </div>
             """,
             unsafe_allow_html=True
