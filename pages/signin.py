@@ -311,7 +311,7 @@ if sss.korean_mode==0:
             sss.filled_input+=1            
     user_email = st.text_input('**Write down the email address you want to use.**', key='user_email_')
     if user_email:
-        if re.match(r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$', user_email): 
+        if not re.match(r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$', user_email): 
             st.error('Please give the correct email!')
         else:
             sss.filled_input+=1
@@ -320,7 +320,7 @@ if sss.korean_mode==0:
     if email_check:
         if email_check!=sss.user_email:
             st.error('That email is different from the one you just wrote down')
-        if email_check==sss.user_email:
+        else:
             sss.filled_input+=1
     nickname=st.text_input('Tell me the name you want to be called in here.',key='nickname')
     if nickname:
