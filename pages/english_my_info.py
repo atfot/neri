@@ -115,6 +115,9 @@ if sss.fix_info==True:
     col1,col2,col3=st.columns([3,4,3])
     with col2:
         if st.button('**Submit**',use_container_width=True):
+            st.error('asdf')
+            st.success('asdf')
+            time.sleep(60)
             if sss.filled_input==6:
                 sss.fix_complete=True
         else:
