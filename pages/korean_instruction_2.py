@@ -322,7 +322,9 @@ def send_analysis_via_email():
 
 st.subheader('Neri는 심리분석 결과를 모아서 고객님의 이메일로 발송해드리고 있어요!')
 st.write("""
-# Neri는 심리분석 결과를 모아서 고객님의 이메일로 발송해드리고 있어요!
+여러가지 이유가 있겠지만 이러한 이유들 때문이에요.
+         
+1. **정신과 의사선생님** 또는 **심리상담사**분께 보여드리기 좋은 방식이에요.
 """)
 if st.button('hi'):
     send_analysis_via_email()
