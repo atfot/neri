@@ -29,6 +29,7 @@ if 'fix_complete' not in sss:
     sss.fix_complete=False
 if 'fix_unfinished' not in sss:
     sss.fix_unfinished=False
+sss.filled_input=0
 
 def fix_info():
   sss.fix_info=True
@@ -64,7 +65,6 @@ with col1:
         pass
 with col2:  
     if sss.fix_info==True:      
-        sss.filled_input=0
         st.write("**Now you can fix your info😊**")
 
         user_email = st.text_input('**Write down the new email address you want to use.**', key='new_user_email',type='password')
