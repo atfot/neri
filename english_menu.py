@@ -263,7 +263,6 @@ letter-spacing:0.075em;
 def logout():
     sss.logged_in = False
     if "messages" in sss:
-        sss_list=[sss.messages, sss.conversations, sss.message_summary, sss.my_info, sss.many_login_attempt, sss.filled_input, sss.fix_complete, sss.client]
         try:
             del sss.messages
         except:
