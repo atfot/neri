@@ -169,7 +169,7 @@ with col3:
         with st.form('fix_user_info'):
             x=0
             st.write("**Now you can fix your info😊**")
-            user_email = st.text_input('**Tell me the name you want to be called in here.**', key='user_email')
+            user_email = st.text_input('**Tell me the name you want to be called in here.**', key='new_user_email')
             def check_email(text):
                 pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$'
                 if re.match(pattern, text):
@@ -190,7 +190,7 @@ with col3:
                     st.error('That email is different from the one you just wrote down')
                 if email_check==sss.user_email:
                     x+=1
-            username = st.text_input('**Tell me the name you want to be called in here.**',key='username')
+            username = st.text_input('**Tell me the name you want to be called in here.**',key='new_username')
             if username:
                 if username==st.secrets.user_name:
                     st.error('The username already exists.')
@@ -199,15 +199,15 @@ with col3:
                 if username!=st.secrets.user_name and username!=st.secrets.user_name_2:
                     x+=1
                     sss.username=username
-            problem = st.text_area("**What's your biggest problem right now?🤔**",key='problem')
+            problem = st.text_area("**What's your biggest problem right now?🤔**",key='new_problem')
             if problem:
                 x+=1
                 sss.problem=problem
-            problem_explanation=st.text_area("**Please describe your issue in more detail. The more details you can provide, the better😊**",key='problem_explanation')
+            problem_explanation=st.text_area("**Please describe your issue in more detail. The more details you can provide, the better😊**",key='new_problem_explanation')
             if problem_explanation:
                 x+=1
                 sss.problem_explanation=problem_explanation
-            goal=st.text_area("**Tell us what your end goal is!**",key='goal')
+            goal=st.text_area("**Tell us what your end goal is!**",key='new_goal')
             if goal:
                 x+=1
                 sss.goal=goal
