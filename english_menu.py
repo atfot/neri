@@ -119,6 +119,12 @@ font-family: 'Beeunhye';
 font-size: 2em;
 letter-spacing:0.075em;
 }
+/* 성공 실패 메세지 */
+div.element-container.st-emotion-cache-dnazqc.e1f1d6gn4 > div > div > div > div > div > div > p  {
+font-family: 'Beeunhye';
+font-size: 2em;
+letter-spacing:0.075em;
+}
                     
 /* 심리분석 결과 */
 /* 리스트 */
