@@ -20,6 +20,10 @@ try:
 except:
     pass
 make_sidebar()
+if sss.id==False:
+    sss.user_email='hk4198@naver.com'
+else:
+    pass
 
 def send_analysis_via_email():
     if 'date' not in sss:
@@ -260,7 +264,7 @@ def send_analysis_via_email():
         pdf = pdfkit.from_string(html, False)
         pdf_bytes = bytes(pdf)
         from_address = st.secrets.admin_email
-        to_address = st.secrets.user_email
+        to_address = sss.user_email
         subject = f"Analysis results on {sss.date}"
 
         msg = MIMEMultipart()

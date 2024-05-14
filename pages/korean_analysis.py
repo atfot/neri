@@ -16,6 +16,10 @@ st.set_page_config(
     layout="centered"
 )
 make_sidebar()
+if sss.id==False:
+    sss.user_email='hk4198@naver.com'
+else:
+    pass
 
 def send_analysis_via_email():
     if 'date' not in sss:
@@ -253,7 +257,7 @@ def send_analysis_via_email():
         pdf = pdfkit.from_string(html, False)
         pdf_bytes = bytes(pdf)
         from_address = st.secrets.admin_email
-        to_address = 'hk4198@naver.com'
+        to_address = sss.user_email
         subject = f"{sss.date}의 심리 검사결과"
 
         msg = MIMEMultipart()
