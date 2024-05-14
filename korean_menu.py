@@ -249,6 +249,10 @@ def logout():
             del sss.many_login_attempt
         except:
             pass
+        try:
+            del sss.problem_analysis
+        except:
+            pass
         del sss.client
     st.info("다음에 또 뵈어요😊")
     sleep(0.5)
