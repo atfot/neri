@@ -96,7 +96,7 @@ with col1:
             sss.goal=goal
         col1,col2=st.columns([8,2])
         with col2:
-            if st.button('**Submit**'):
+            if st.button('**Submit**',use_container_width=True):
                 if sss.filled_input==6:
                     fix_complete()
             else:
