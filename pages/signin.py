@@ -308,6 +308,27 @@ if sss.korean_mode==0:
             st.error('This password is different from the password you wrote earlier.')
         else:
             sss.filled_input+=1            
+    user_email = st.text_input('**Write down the new email address you want to use.**', key='new_user_email')
+    def check_email(text):
+        pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$'
+        if re.match(pattern, text):
+            st.error('Please give the correct email!')
+        else:
+            if 'auth_email' not in sss:
+                sss.auth_email=True
+    if user_email:
+        check_email(user_email)
+        if sss.auth_email==True:
+            sss.filled_input+=1
+            sss.user_email=user_email
+        else:
+            pass
+    email_check = st.text_input('**Please write the same email as above again.**',key='email_check')
+    if email_check:
+        if email_check!=sss.user_email:
+            st.error('That email is different from the one you just wrote down')
+        if email_check==sss.user_email:
+            sss.filled_input+=1
     nickname=st.text_input('Tell me the name you want to be called in here.',key='nickname')
     if nickname:
         if nickname==sss.username:
@@ -357,7 +378,7 @@ if sss.korean_mode==0:
     with col2:
         st.title('')
         if st.button('Do you want to save it as is?', type='primary',use_container_width=True):
-                if sss.filled_input==11:
+                if sss.filled_input==13:
                     st.success("""
 
         "Great! I saved everything just like this."        
