@@ -330,7 +330,6 @@ st.write("""
          
 따라서 **고객님에 대한 판단**은 **정신과 의사선생님** 혹은 **심리상담사님**께서 좀더 정확히 아실거에요.
 """)
-col1,col2,col3=st.columns([1,8,1])
-with col2:
-    if st.button('고객님의 이메일로 심리분석 결과를 받아보시겠어요?',use_container_width=True):
-        send_analysis_via_email()
+
+if st.button('고객님의 이메일로 심리분석 결과를 받아보시겠어요?',use_container_width=True):
+    send_analysis_via_email()

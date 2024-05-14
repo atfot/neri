@@ -333,7 +333,6 @@ st.write("""
          
 Therefore, a **psychiatrist** or **psychotherapist** will be able to make a **more accurate judgment** about you.
 """)
-col1,col2,col3=st.columns([1,8,1])
-with col2:
-    if st.button('Would you like to receive your psychometric results in your email?',use_container_width=True):
-        send_analysis_via_email()
+
+if st.button('Would you like to receive your psychometric results in your email?',use_container_width=True):
+    send_analysis_via_email()
