@@ -361,7 +361,7 @@ def send_analysis_via_email():
   font-variation-settings:
     "wdth" 100;
 }
-            body{font-family: 'Noto Sans', sans-serif; line-height: 1.5;}
+            body{font-family: 'Noto Sans', sans-serif; }
             </style>
         </head>"""
         html_content_1=f'''<body style="margin: 0; padding: 50px 0 50px 0;">
@@ -399,12 +399,12 @@ def send_analysis_via_email():
                                     Neri is an artificial intelligence psychological counseling chatbot built using GPT 3.5 and 4.0 by OpenAI. This report is based on the user's interaction with Neri today. It is intended as a guide only and you should visit your local psychiatrist or psychologist for more information.
                                 </td>
                             </tr>
-                            <tr style="color: #000000; font-size: 24px; line-height: 25px;"
+                            <tr style="color: #000000; font-size: 24px; line-height: 50px;"
                             >
                                 <td>
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                         <tr>
-                                            <td width="260" valign="top">
+                                            <td width="260" valign="top" >
                                                 <h2>Client's Info</h2>
                                                 <p><b>1. Username : </b>{sss.username}</p>
                                                 <p><b>2. Age : </b>{sss.age}</p>
@@ -436,7 +436,7 @@ def send_analysis_via_email():
                                 </td>
                             </tr>
                             <tr>
-                                <td style="color: #000000; font-size: 24px; line-height: 30px; border-radius: 5px; align-self: center; width: 100%; margin: 0 auto; border: 0.1px solid #cccccc; padding: 20px;">
+                                <td style="color: #000000; font-size: 24px; line-height: 50px; border-radius: 5px; align-self: center; width: 100%; margin: 0 auto; border: 0.1px solid #cccccc; padding: 20px;">
                                     <p><b>Actions that might help you : </b></p>'''
 
         todolist_format="""
