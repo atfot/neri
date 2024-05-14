@@ -91,10 +91,7 @@ div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div 
 
 </style>
 """, unsafe_allow_html=True)
-st.write(sss.korean_mode)
-st.write(sss.id)
-st.write(sss.pw)
-st.write(sss.username)
+
 if sss.korean_mode==1:
     if 'id' not in sss:
         sss.id=st.secrets.user_id
