@@ -208,22 +208,20 @@ html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
                     </tr>
                     <tr>
                         <td style="color: #000000; font-size: 24px; line-height: 30px; border-radius: 5px; align-self: center; width: 100%; margin: 0 auto; border: 0.1px solid #cccccc; padding: 20px;">
-                            <p><b>도움이 될만한 행동들 : </b></p>
-                            <ul>
-                                <li>
-                                    <p><b>상담을 통해 자신의 감정을 솔직하게 표현해보세요</b></p>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <p><b>전 여자친구와의 관계에 대한 감정을 정리하고 다음 단계에 대해 생각해보세요.</b></p>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <p><b>취미나 관심사를 통해 삶에 다양한 기쁨을 찾아보세요.</b></p>
-                                </li>
-                            </ul>
+                            <p><b>도움이 될만한 행동들 : </b></p>'''
+
+todolist_format="""
+<ul>
+    <li>
+        <p><b>{}</b></p>
+    </li>
+</ul>
+"""
+html_text_2=''
+for i in sss.what_to_do:
+    html_text_2+=todolist_format.format(i)
+
+html_text_3='''
                         </td>
                     </tr>
                     <tr>
@@ -259,7 +257,7 @@ html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
    </body>
 </html>
 '''
-html=html_content+html_content_1
+html=html_content+html_content_1+html_text_2+html_text_3
 pdf = pdfkit.from_string(html, False)
 pdf_bytes = bytes(pdf)
 st.download_button(
