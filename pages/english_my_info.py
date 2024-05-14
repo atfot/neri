@@ -115,7 +115,6 @@ if sss.fix_info==True:
     col1,col2,col3=st.columns([3,4,3])
     with col2:
         if st.button('**Submit**',use_container_width=True):
-            time.sleep(60)
             if sss.filled_input==6:
                 sss.fix_complete=True
             else:
@@ -128,7 +127,6 @@ if sss.fix_info==True:
         sss.goal=goal
         del sss.fix_info, sss.filled_input, sss.fix_complete, sss.auth_email, sss.fix_unfinished
         st.success('**Your user profile is fixed👍**')
-        time.sleep(60)
         st.rerun()
     if sss.fix_unfinished==True:
         st.error('**Please fill every blanks🙃**')
