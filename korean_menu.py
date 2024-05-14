@@ -362,7 +362,7 @@ def send_analysis_via_email():
             body{font-family: 'Beeunhye'; letter-spacing:1px;}
             </style>
         </head>"""
-        html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
+        html_content_1=f'''<body style="margin: 0; padding: 100px 0 30px 0;">
             <table align="center" border="0" cellpadding="10" cellspacing="0" width="800" style="border: 1px solid #cccccc;">
                 <tr>
                     <td align="center" style="padding: 30px 0 0 0; font-size:40px;">
@@ -370,7 +370,7 @@ def send_analysis_via_email():
                     </td>
                 </tr>
                 <tr>
-                    <td bgcolor="#ffffff" style="padding: 30px 20px 30px 20px;">
+                    <td bgcolor="#ffffff" style="padding: 30px 10px 30px 10px;">
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td>
@@ -387,7 +387,7 @@ def send_analysis_via_email():
                                 </td>
                             </tr>
                             <tr>
-                                <td style="color: #000000; font-size: 36px;padding: 10px 5px 10px 5px;">
+                                <td style="color: #000000; font-size: 36px;">
                                     <b>인공지능 네리가 분석한 보고서입니다!</b>
                                 </td>
                             </tr> 
