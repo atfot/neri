@@ -15,13 +15,13 @@ st.set_page_config(
 make_sidebar()
 
 if sss.id==False:
-    sss.username=sct.user_name_2
-    sss.age=sct.age_2
-    sss.gender=sct.user_gender_2
-    sss.problem=sct.problem_2
-    sss.problem_explanation=sct.problem_explanation_2
-    sss.goal=sct.goal_2
-    sss.user_email=sct.user_email_2
+    sss.username=sct.user_name
+    sss.age=sct.age
+    sss.gender=sct.user_gender
+    sss.problem=sct.problem
+    sss.problem_explanation=sct.problem_explanation
+    sss.goal=sct.goal
+    sss.user_email=sct.user_email
 
 if 'fix_info' not in sss:
     sss.fix_info=False
