@@ -170,14 +170,14 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
             else:
                 st.image('https://imgur.com/CernNDq.png',use_column_width=True)
             st.markdown('<div style="text-align: right;"><p><b>로그인 해주세요</b></p></div>',unsafe_allow_html=True)        
-            username = st.text_input("**아이디**") 
+            id = st.text_input("**아이디**") 
             password = st.text_input("**비밀번호**", type="password")
             if sss.screen_setting=='pc':
                 if st.button("**로그인**", type="primary",use_container_width=True):
                     if sss.many_login_attempt==False:
-                        if username == sss.id and password == sss.pw: 
+                        if id == sss.id and password == sss.pw: 
                             sss.logged_in = True
-                        elif username == st.secrets.user_id and password == st.secrets.user_pw:
+                        elif id == st.secrets.user_id and password == st.secrets.user_pw:
                             sss.logged_in = True
                         else:
                             sss.login_error = True
@@ -201,9 +201,9 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
             else:
                 if st.button("**로그인**", type="primary",use_container_width=True):
                     if sss.many_login_attempt==False:
-                        if username == sss.id and password == sss.pw:
+                        if id == sss.id and password == sss.pw:
                             sss.logged_in = True
-                        elif username == st.secrets.user_id and password == st.secrets.user_pw:
+                        elif id == st.secrets.user_id and password == st.secrets.user_pw:
                             sss.logged_in = True
                         else:
                             sss.login_error = True
@@ -291,14 +291,14 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
                 st.image('https://imgur.com/F2P7a3I.png',use_column_width=True)
             st.markdown('<div style="text-align: right;"><p><b>Please login</b></p></div>',unsafe_allow_html=True) 
             
-            username = st.text_input("**ID**")
+            id = st.text_input("**ID**")
             password = st.text_input("**Password**", type="password")
             if sss.screen_setting=='pc':
                 if st.button("**Log in**", type="primary",use_container_width=True):
                     if sss.many_login_attempt==False:
-                        if username == sss.id and password == sss.pw:
+                        if id == sss.id and password == sss.pw:
                             sss.logged_in = True
-                        elif username == st.secrets.user_id_2 and password == st.secrets.user_pw_2:
+                        elif id == st.secrets.user_id_2 and password == st.secrets.user_pw_2:
                             sss.logged_in = True
                         else:
                             sss.login_error = True
@@ -321,9 +321,9 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
             else:
                 if st.button("**Log in**", type="primary",use_container_width=True):
                     if sss.many_login_attempt==False:
-                        if username == sss.id and password == sss.pw:
+                        if id == sss.id and password == sss.pw:
                             sss.logged_in = True
-                        elif username == st.secrets.user_id_2 and password == st.secrets.user_pw_2:
+                        elif id == st.secrets.user_id_2 and password == st.secrets.user_pw_2:
                             sss.logged_in = True
                         else:
                             sss.login_error = True
