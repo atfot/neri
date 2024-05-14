@@ -364,7 +364,16 @@ Please briefly summarize the conversation below.
                 st.write('')
                 st.button('🔄', on_click=reply_again_cb)
             #st.write(sss.messages[:-1])
-
+st.markdown(
+"""
+<div style="position: fixed; bottom: 0; left: 1%; width: 31.5%; color: #000000; padding: 1px; text-align: left;">
+    Developed By <a  href="https://i.imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a><br>
+    Made with Streamlit<br>
+    Powered By OpenAI
+</div>
+""",
+unsafe_allow_html=True
+)
 
 if __name__ == '__main__':
     main()
