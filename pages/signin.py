@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 from streamlit import session_state as sss
+from streamlit import secrets as sct
 import re
 
 st.set_page_config(
@@ -93,45 +94,11 @@ div > div > div.st-emotion-cache-ocqkz7.e1f1d6gn5 > div > div > div > div > div 
 
 </style>
 """, unsafe_allow_html=True)
-if sss.korean_mode==1:
-    if 'username' in sss:
-        del sss.id, sss.pw, sss.username, sss.age, sss.gender, sss.problem, sss.problem_explanation, sss.goal
-    else:
-        pass
-    if 'id' in sss:
-        del sss.id, sss.pw
-    else:
-        pass
-    if 'id' not in sss:
-        sss.id=st.secrets.user_id
-        sss.pw=st.secrets.user_pw
-        sss.username=st.secrets.user_name
-        sss.age=st.secrets.age
-        sss.gender=st.secrets.user_gender
-        sss.problem=st.secrets.problem
-        sss.problem_explanation=st.secrets.problem_explanation
-        sss.goal=st.secrets.goal
-else:
-    if 'id' in sss:
-        if 'username' in sss:
-            del sss.id, sss.pw, sss.username, sss.age, sss.gender, sss.problem, sss.problem_explanation, sss.goal
-        else:
-            del sss.id, sss.pw
-    if 'id' not in sss:
-        sss.id=st.secrets.user_id_2
-        sss.pw=st.secrets.user_pw_2
-        sss.username=st.secrets.user_name_2
-        sss.age=st.secrets.age_2
-        sss.gender=st.secrets.user_gender_2
-        sss.problem=st.secrets.problem_2
-        sss.problem_explanation=st.secrets.problem_explanation_2
-        sss.goal=st.secrets.goal_2
 
 sss.filled_input=0
 
 if 'korean_mode' not in sss:
     st.switch_page('streamlit_app.py')
-
 
 if sss.korean_mode==1:
     button=st.button("메인 화면으로")
@@ -146,44 +113,66 @@ if sss.korean_mode==1:
             pass
         if 'username' in sss:
             del sss.username
+        if 'user_email' in sss:
+            del sss.user_email
         else:
             pass
         if 'filled_input' in sss:
             del sss.filled_input
         else:
             pass
+        if 'user_info' in sss:
+            del sss.user_info
+        else:
+            pass
         st.switch_page("streamlit_app.py")
     st.markdown('<center><h3>회원가입 양식</h3></center>', unsafe_allow_html=True)
     id=st.text_input('사용하실 아이디를 적어주세요.')
     if id:
-        if id==sss.id:
-            st.error('해당 아이디가 이미 존재합니다.')
-        else:
+        if id!=sct.user_id or id!=sct.user_id_2:
             sss.id=''
             sss.id=id
             sss.filled_input+=1
-    password=st.text_input('사용하실 비밀번호를 적어주세요.',type='password')
-    if password:
-        if password==sss.pw:
-            st.error('해당 비밀번호가 이미 존재합니다.')
         else:
+            st.error('해당 아이디가 이미 존재합니다.')
+    password=st.text_input('사용하실 비밀번호를 적어주세요.',type='password')    
+    if password:
+        if password!=sct.user_pw or password!=sct.user_pw_2:
             sss.pw=''
             sss.pw=password
             sss.filled_input+=1
+        else:
+            st.error('해당 비밀번호가 이미 존재합니다.')
     pw_check=st.text_input('다시 한번 사용하실 비밀번호를 적어주세요.',key='pw_check',type='password')
     if pw_check:
         if pw_check!=sss.pw:
             st.error('해당 비밀번호와 아까 작성하신 비밀번호가 서로 다릅니다.')
         else:
-            sss.filled_input+=1            
+            sss.filled_input+=1  
+    user_email = st.text_input('**사용하실 이메일 주소를 적어주세요.**', key='user_email_',type='password')  
+    if user_email:
+        if not re.match(r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$', user_email): 
+            st.error('정확한 이메일 양식을 적어주세요.')
+        else:
+            if user_email != sct.user_email or user_email !=sct.user_email_2:
+                sss.filled_input+=1
+                sss.user_email=user_email
+            else:
+                st.error('해당 이메일 주소는 이미 존재합니다.')
+    email_check = st.text_input('**위의 이메일 주소를 다시 적어주세요.**',key='email_check_',type='password')  
+    if email_check:
+        if email_check!=sss.user_email:
+            st.error('해당 이메일 주소는 위에 적으신 이메일 주소와 서로 다릅니다.')
+        else:
+            sss.filled_input+=1
     nickname=st.text_input('무슨 이름으로 불리고 싶으신가요?',key='nickname')
     if nickname:
-        if nickname==sss.username:
-            st.error('이미 사용중인 이름입니다.')
-        else:
+        if nickname!=sct.user_name or nickname!=sct.user_name_2:
             sss.username=''
             sss.username=nickname
             sss.filled_input+=1
+        else:
+            st.error('이미 사용중인 이름입니다.')
     gender=st.selectbox('성별이 어떻게 되시죠?',('남자','여자'),placeholder='남성/여성',key='gender_')
     if gender:
         sss.gender=''
@@ -226,7 +215,7 @@ if sss.korean_mode==1:
     with col2:
         st.title('')
         if st.button('이대로 저장할까요?', type='primary',use_container_width=True):
-                if sss.filled_input==11:
+                if sss.filled_input==13:
                     st.success("""
 
         "좋아요! 이 내용대로 전부 저장했어요."        
@@ -237,7 +226,7 @@ if sss.korean_mode==1:
                     if 'user_info' not in sss:
                         sss.user_info=True
                 else: 
-                    pass
+                    st.error('빈칸을 전부 채워주세요.')
     if 'user_info' in sss:
         col1,col2=st.columns([5,5])
         with col1:
@@ -245,6 +234,8 @@ if sss.korean_mode==1:
 **아이디**: {sss.id}
 
 **비밀번호**: {sss.pw}
+
+**이메일**: {sss.user_email}
 
 **유저 이름**: {sss.username}
 
@@ -279,47 +270,53 @@ if sss.korean_mode==0:
             pass
         if 'username' in sss:
             del sss.username
+        if 'user_email' in sss:
+            del sss.user_email
         else:
             pass
         if 'filled_input' in sss:
             del sss.filled_input
         else:
             pass
+        if 'user_info' in sss:
+            del sss.user_info
+        else:
+            pass
         st.switch_page("streamlit_app.py")
     st.markdown('<center><h3>Sign in Form</h3></center>', unsafe_allow_html=True)
     id=st.text_input('Your ID')
     if id:
-        if id==sss.id:
-            st.error('This ID already exists.')
-        else:
+        if id!=sct.user_id or id!=sct.user_id_2:
             sss.id=''
             sss.id=id
             sss.filled_input+=1
+        else:
+            st.error('This ID already exists.')
     password=st.text_input('Your Password',type='password')
     if password:
-        if password==sss.pw:
-            st.error('This password already exists.')
-        else:
+        if password!=sct.user_pw or password!=sct.user_pw_2:
             sss.pw=''
             sss.pw=password
             sss.filled_input+=1
+        else:
+            st.error('This password already exists.')
     pw_check=st.text_input('Retype the password you want to use.',key='pw_check',type='password')
     if pw_check:
         if pw_check!=sss.pw:
             st.error('This password is different from the password you wrote earlier.')
         else:
             sss.filled_input+=1            
-    user_email = st.text_input('**Write down the email address you want to use.**', key='user_email_')
+    user_email = st.text_input('**Write down the email address you want to use.**', key='user_email_',type='password')  
     if user_email:
         if not re.match(r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$', user_email): 
             st.error('Please give the correct email!')
         else:
-            if user_email == sss.user_email or user_email==sss.user_email_2:
-                st.error('This email address already exists.')
-            else:
+            if user_email != sct.user_email or user_email !=sct.user_email_2:
                 sss.filled_input+=1
                 sss.user_email=user_email
-    email_check = st.text_input('**Please write the same email as above again.**',key='email_check_')
+            else:
+                st.error('This email address already exists.')
+    email_check = st.text_input('**Please write the same email as above again.**',key='email_check_',type='password')  
     if email_check:
         if email_check!=sss.user_email:
             st.error('That email is different from the one you just wrote down')
@@ -327,12 +324,12 @@ if sss.korean_mode==0:
             sss.filled_input+=1
     nickname=st.text_input('Tell me the name you want to be called in here.',key='nickname')
     if nickname:
-        if nickname==sss.username:
-            st.error('The name is already in use.')
-        else:
+        if nickname!=sct.user_name or nickname!=sct.user_name_2:
             sss.username=''
             sss.username=nickname
             sss.filled_input+=1
+        else:
+            st.error('The name is already in use.')
     gender=st.selectbox('What is your gender?',('Male','Female'),placeholder='Gentleman/Lady',key='gender_')
     if gender:
         sss.gender=''
@@ -385,7 +382,7 @@ if sss.korean_mode==0:
                     if 'user_info' not in sss:
                         sss.user_info=True 
                 else: 
-                    pass
+                    st.error('Please fill every blanks.')
     if 'user_info' in sss:
         col1,col2=st.columns([5,5])
         with col1:
@@ -394,7 +391,7 @@ if sss.korean_mode==0:
 
         **Password**: {sss.pw}
 
-        **Password**: {sss.user_email}
+        **Email**: {sss.user_email}
 
         **Username**: {sss.username}
 
