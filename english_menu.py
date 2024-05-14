@@ -124,7 +124,7 @@ div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > button > 
 }     
 
 /* 도움이 될만한 행동들 리스트 */      
-div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div > div > div > p {
+div.block-container.st-emotion-cache-1jicfl2.ea3mdgi5 > div > div > div > div > div > div > ul > li {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
     letter-spacing:0.075em;
@@ -241,7 +241,7 @@ letter-spacing:0.075em;
             if st.button("Logout",type='primary',use_container_width=True):
                 logout()
             if st.button("My Info",type='secondary',use_container_width=True):
-                st.switch_page("pages/english_analysis.py")
+                st.switch_page("pages/english_my_info.py")
 
             st.markdown(
                 """
