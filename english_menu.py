@@ -358,7 +358,7 @@ def send_analysis_via_email():
             font-weight: bold;
             font-style: normal;
         }
-            body{font-family: 'Beeunhye'; letter-spacing:5px;}
+            body{font-family: 'Beeunhye'; letter-spacing:2px;}
             </style>
         </head>"""
         html_content_1=f'''<body style="margin: 0; padding: 50px 0 50px 0;">
