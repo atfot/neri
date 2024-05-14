@@ -388,7 +388,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
     if sss.screen_setting=='mobile':
         st.markdown(
             """
-            <div style="left: 0; width: 101%; color: #000000; text-align: left;">
+            <div style="left: 0; width: 50%; color: #000000; text-align: left;">
                 Developed By <a  href="https://i.imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a><br>
                 Made with Streamlit<br>
                 Powered By OpenAI
