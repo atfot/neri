@@ -8,7 +8,7 @@ st.set_page_config(
     layout="wide"
 )
 try:
-    del sss.fix_info   
+    del sss.fix_info, sss.auth_email
 except:
     pass
 make_sidebar()
