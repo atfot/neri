@@ -174,6 +174,8 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
                         if sss.id:
                             if id == sss.id and password == sss.pw: 
                                 sss.logged_in = True
+                            else:
+                                sss.login_error = True
                         elif id == st.secrets.user_id and password == st.secrets.user_pw:
                             sss.logged_in = True
                         else:
