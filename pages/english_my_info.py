@@ -129,7 +129,5 @@ if sss.fix_info==True:
         st.rerun()
     if sss.fix_unfinished==True:
         st.write('**Please fill every blanks🙃**')
-    else:
-        pass
 else:
     pass
