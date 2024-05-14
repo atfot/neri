@@ -475,7 +475,7 @@ def send_analysis_via_email():
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td>
-                                    Developed By <a href="https://drive.google.com/file/d/1l7duTvc4pWDJgZzY301wswYoIrfylC1G/view?usp=sharing" color="#000000" target="_blank"><font color="#000000">Hyun Kyu Cho</font></a> |  Made with Streamlit  |  Powered By OpenAI
+                                    Developed By <a href="https://imgur.com/JuFxv4h.png" color="#000000" target="_blank"><font color="#000000">Hyun Kyu Cho</font></a> |  Made with Streamlit  |  Powered By OpenAI
                                 </td>
                             </tr>
                         </table>
@@ -531,7 +531,7 @@ def send_analysis_via_email():
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                     <tr>
                                         <td>
-                                            Developed By <a href="https://drive.google.com/file/d/1l7duTvc4pWDJgZzY301wswYoIrfylC1G/view?usp=sharing" style="color:#562400;" target="_blank"><font color="#562400">Hyun Kyu Cho</font></a> |  Made with Streamlit  |  Powered By OpenAI
+                                            Developed By <a href="https://imgur.com/JuFxv4h.png" style="color:#562400;" target="_blank"><font color="#562400">Hyun Kyu Cho</font></a> |  Made with Streamlit  |  Powered By OpenAI
                                         </td>
                                     </tr>
                                 </table>
