@@ -386,8 +386,8 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
                 home_logic_english()            
 
     if sss.screen_setting=='mobile':
-        st.markdown(''' <p>
-                    Developed By <a  href="https://i.imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a>
+        st.markdown('''<p>
+                    Developed By <a  href="https://i.imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a><br>
                     Made with Streamlit<br>
                     Powered By OpenAI
                     </p>''',unsafe_allow_html=True)
