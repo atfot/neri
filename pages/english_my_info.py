@@ -110,7 +110,7 @@ with col2:
     else:
         pass
 if sss.fix_info==True:
-    col1,col2=st.columns([8,2])
+    col1,col2,col3=st.columns([3,4,3])
     with col2:
         if st.button('**Submit**',use_container_width=True):
             if sss.filled_input==6:
