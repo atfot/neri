@@ -352,7 +352,7 @@ def send_analysis_via_email():
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Psychometric analysis results</title>
             <style>
-            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
             .noto-sans-<uniquifier> {
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
