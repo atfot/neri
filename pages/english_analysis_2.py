@@ -324,7 +324,7 @@ def send_analysis_via_email():
         smtp_server.quit()
         st.success("I've compiled your Neri analysis and sent it to you via email😊")
 
-st.subheader('❗ Neri compiles the psychometric results and sends them to your email ❗')
+st.subheader('📌 Neri compiles the psychometric results and sends them to your email!')
 st.write("There are many reasons for this, but these are the main ones.")
 st.write('1. This is a great way to show your **psychiatrist** or **psychotherapist**.')
 st.write("2. It's a great way to **see all of your analytics at once**.")
