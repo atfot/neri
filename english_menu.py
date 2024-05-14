@@ -233,14 +233,16 @@ letter-spacing:0.075em;
 
         if sss.get("logged_in", True):
             st.page_link("pages/english_chatbot.py", label="My Councellor", icon="🩹")
-            st.page_link("pages/english_analysis.py", label="My Info", icon="ℹ️")
+            st.page_link("pages/english_analysis.py", label="How To Use", icon="ℹ️")
             st.page_link("pages/english_bug_report.py", label="Any Errors?", icon="⚠️")
-            st.page_link("pages/english_analysis_2.py", label="How To Use", icon="🔎")
+            st.page_link("pages/english_analysis_2.py", label="My Analysis", icon="🔎")
             st.title('')
 
             if st.button("Logout",type='primary',use_container_width=True):
                 logout()
-                
+            if st.button("My Info",type='secondary',use_container_width=True):
+                st.write('hi')
+
             st.markdown(
                 """
                 <div style="position: fixed; bottom: 0; left: 1%; width: 50%; color: #000000; padding: 1px; text-align: left;">

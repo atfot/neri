@@ -240,6 +240,8 @@ letter-spacing:0.075em;
 
             if st.button("로그아웃",type='primary',use_container_width=True):
                 logout()
+            if st.button("내 정보",type='secondary',use_container_width=True):
+                st.write('hi')
 
             st.markdown(
                 """
