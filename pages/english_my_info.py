@@ -23,7 +23,6 @@ if sss.id==False:
     sss.goal=sct.goal_2
     sss.user_email=sct.user_email_2
 
-
 if 'fix_info' not in sss:
     sss.fix_info=False
 if 'fix_complete' not in sss:
