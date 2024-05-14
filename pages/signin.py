@@ -314,8 +314,11 @@ if sss.korean_mode==0:
         if not re.match(r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$', user_email): 
             st.error('Please give the correct email!')
         else:
-            sss.filled_input+=1
-            sss.user_email=user_email
+            if user_email == sss.user_email or user_email==sss.user_email_2:
+                st.error('This email address already exists.')
+            else:
+                sss.filled_input+=1
+                sss.user_email=user_email
     email_check = st.text_input('**Please write the same email as above again.**',key='email_check_')
     if email_check:
         if email_check!=sss.user_email:
