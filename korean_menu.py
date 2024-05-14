@@ -182,9 +182,10 @@ letter-spacing:0.075em;
 
         if sss.get("logged_in", True):
             st.page_link("pages/korean_chatbot.py", label="당신의 카운셀러", icon="🩹")
-            st.page_link("pages/korean_analysis.py", label="사용법", icon="ℹ️")
+            st.page_link("pages/korean_instruction.py", label="사용법", icon="ℹ️")
             st.page_link("pages/korean_bug_report.py", label="오류 제보", icon="⚠️")
-            st.page_link("pages/korean_analysis_2.py", label="심리분석 결과", icon="🔎")
+            st.page_link("pages/korean_analysis.py", label="심리분석 결과", icon="🔎")
+            st.page_link("pages/korean_about_me.py", label="개발자의 말", icon="🔎")
             st.title('')
 
             if st.button("로그아웃",type='primary',use_container_width=True):

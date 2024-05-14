@@ -12,4 +12,4 @@ try:
 except:
     pass
 make_sidebar()
-st.write("hi")
+st.write("english instruction")
