@@ -195,7 +195,7 @@ letter-spacing:0.075em;
 
             st.markdown(
                 """
-                <div style="bottom: 0; left: 0; width: 110%; color: #000000; text-align: left;">
+                <div style="bottom: 0; left: 0; width: 101%; color: #000000; text-align: left;">
                     Developed By <a  href="https://i.imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a><br>
                     Made with Streamlit<br>
                     Powered By OpenAI
