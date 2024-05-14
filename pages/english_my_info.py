@@ -18,11 +18,11 @@ if 'fix_info' not in sss:
     sss.fix_info=False
 if 'fix_complete' not in sss:
     sss.fix_complete=False
+if 'fix_unfinished' not in sss:
+    sss.fix_unfinished=False
 
 def fix_info():
   sss.fix_info=True
-def fix_complete():
-    sss.fix_complete=True
 
 col1,col2=st.columns([9,1])
 with col1:
@@ -98,15 +98,15 @@ with col1:
         with col2:
             if st.button('**Submit**',use_container_width=True):
                 if sss.filled_input==6:
-                    fix_complete()
+                    sss.fix_complete=True
             else:
-                sss.fix_complete==False
+                sss.fix_unfinished==True
         if sss.fix_complete==True:
             st.write('**Your user profile is fixed👍**')
             time.sleep(2)
-            del sss.my_info, sss.filled_input
+            sss.my_info, sss.filled_input, sss.fix_complete=False
             st.rerun()
-        if sss.fix_complete==False:
+        if sss.fix_unfinished==True:
             st.write('**Please fill every blanks🙃**')
         else:
             pass

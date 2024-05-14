@@ -263,22 +263,12 @@ letter-spacing:0.075em;
 def logout():
     sss.logged_in = False
     if "messages" in sss:
-        del sss["messages"]
-        del sss['conversations']
-        del sss['message_summary']
-        try:
-            del sss.username
-        except:
-            pass
-        try:
-            del sss.my_info
-        except:
-            pass
-        try:
-            del sss.many_login_attempt
-        except:
-            pass
-        del sss.client
+        sss_list=[sss.messages, sss.conversations, sss.message_summary, sss.my_info, sss.many_login_attempt, sss.filled_input, sss.fix_complete, sss.client]
+        for i in sss_list:
+            try:
+                del i
+            except:
+                pass
     st.info("See ya next time😊")
     sleep(0.5)
     st.switch_page("streamlit_app.py")
