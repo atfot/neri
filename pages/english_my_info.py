@@ -9,7 +9,7 @@ import re
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
     page_icon="🧊",
-    layout="wide"
+    layout="centered"
 )
 make_sidebar()
 
