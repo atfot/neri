@@ -205,7 +205,7 @@ font-size: 1.75em;
 letter-spacing:0.075em;
 }
 /* 버튼 */
-div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div > div > button > div > p {
+div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > button > div > p {
 font-family: 'Beeunhye';
 font-size: 1.75em;
 letter-spacing:0.075em;

@@ -335,4 +335,5 @@ Therefore, a **psychiatrist** or **psychotherapist** will be able to make a **mo
 """)
 
 if st.button('Would you like to receive your psychometric results in your email?',use_container_width=True):
+    time.sleep(30)
     send_analysis_via_email()
