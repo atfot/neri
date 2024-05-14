@@ -133,6 +133,7 @@ html_content = """
     font-style: normal;
 }
     body{font-family: 'Beeunhye'; letter-spacing:1px;}
+    h1{font-weight:bold;}
     </style>
 </head>"""
 html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
