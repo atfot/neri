@@ -314,9 +314,6 @@ if sss.korean_mode==0:
         if re.match(r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$', user_email): 
             st.error('Please give the correct email!')
         else:
-            if 'auth_email' not in sss:
-                sss.auth_email=True
-        if sss.auth_email==True:
             sss.filled_input+=1
             sss.user_email=user_email
     email_check = st.text_input('**Please write the same email as above again.**',key='email_check_')
