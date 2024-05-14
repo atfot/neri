@@ -359,6 +359,8 @@ def send_analysis_via_email():
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
+  letter-spacing: 2px;
+  line-height: 10px;
   font-variation-settings:
     "wdth" 100;
 }
