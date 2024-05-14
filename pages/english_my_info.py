@@ -172,7 +172,7 @@ with col3:
             user_email = st.text_input('**Write down the new email address you want to use.**', key='new_user_email')
             def check_email(text):
                 pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$'
-                if re.match(pattern, text):
+                if not re.match(pattern, text):
                     st.error('Please give the correct email!')
                 else:
                     if 'auth_email' not in sss:
