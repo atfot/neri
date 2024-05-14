@@ -73,7 +73,7 @@ with col1:
             else:
                 if user_email != sct.user_email and user_email !=sct.user_email_2 and sss.user_email:
                     sss.filled_input+=1
-                    sss.user_email=user_email
+                    #sss.user_email=user_email
                 elif user_email == sss.user_email:
                     st.error("This email address is the same as the one you're using now.")
                 else:
@@ -88,7 +88,7 @@ with col1:
         if username:
             if username!=sct.user_name and username!=sct.user_name_2 and username!=sss.username:
                 sss.filled_input+=1
-                sss.username=username
+                #sss.username=username
             elif username==sss.username:
                 st.error('This is the same username you were using before.')
             else:
@@ -97,15 +97,15 @@ with col1:
         problem = st.text_area("**What's your biggest problem right now?🤔**",key='new_problem')
         if problem:
             sss.filled_input+=1
-            sss.problem=problem
+            #sss.problem=problem
         problem_explanation=st.text_area("**Please describe your issue in more detail. The more details you can provide, the better😊**",key='new_problem_explanation')
         if problem_explanation:
             sss.filled_input+=1
-            sss.problem_explanation=problem_explanation
+            #sss.problem_explanation=problem_explanation
         goal=st.text_area("**Tell us what your end goal is!**",key='new_goal')
         if goal:
             sss.filled_input+=1
-            sss.goal=goal
+            #sss.goal=goal
         col1,col2=st.columns([8,2])
         with col2:
             if st.button('**Submit**',use_container_width=True):
@@ -114,6 +114,11 @@ with col1:
             else:
                 sss.fix_unfinished==True
         if sss.fix_complete==True:
+            sss.user_email=user_email
+            sss.username=username
+            sss.problem=problem
+            sss.problem_explanation=problem_explanation
+            sss.goal=goal
             st.write('**Your user profile is fixed👍**')
             time.sleep(2)
             sss.my_info, sss.filled_input, sss.fix_complete=False
