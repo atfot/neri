@@ -27,8 +27,6 @@ if 'fix_info' not in sss:
     sss.fix_info=False
 if 'fix_complete' not in sss:
     sss.fix_complete=False
-if 'fix_unfinished' not in sss:
-    sss.fix_unfinished=False
 sss.filled_input=0
 
 def fix_info():
@@ -116,19 +114,16 @@ if sss.fix_info==True:
     with col2:
         if st.button('**Submit**',use_container_width=True):
             if sss.filled_input==6:
-                sss.fix_complete=True
+                sss.user_email=user_email
+                sss.username=username
+                sss.problem=problem
+                sss.problem_explanation=problem_explanation
+                sss.goal=goal
+                del sss.fix_info, sss.filled_input, sss.fix_complete, sss.auth_email
+                st.success('**Your user profile is fixed👍**')
+                st.rerun()
             else:
-                sss.fix_unfinished==True
-    if sss.fix_complete==True:
-        sss.user_email=user_email
-        sss.username=username
-        sss.problem=problem
-        sss.problem_explanation=problem_explanation
-        sss.goal=goal
-        del sss.fix_info, sss.filled_input, sss.fix_complete, sss.auth_email, sss.fix_unfinished
-        st.success('**Your user profile is fixed👍**')
-        st.rerun()
-    if sss.fix_unfinished==True:
-        st.error('**Please fill every blanks🙃**')
+                st.error('**Please fill every blanks🙃**')
+        
 else:
     pass
