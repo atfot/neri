@@ -138,6 +138,10 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
         sss.many_login_attempt=False
         sss.login_attempt=0
 
+    if 'id' not in sss:
+        sss.id = False
+        sss.pw = False
+
     toggle_boolean=''
     if sss.korean_mode==1:
         toggle_boolean=False
@@ -171,11 +175,8 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
             if sss.screen_setting=='pc':
                 if st.button("**로그인**", type="primary",use_container_width=True):
                     if sss.many_login_attempt==False:
-                        if sss.id:
-                            if id == sss.id and password == sss.pw: 
-                                sss.logged_in = True
-                            else:
-                                sss.login_error = True
+                        if id == sss.id and password == sss.pw: 
+                            sss.logged_in = True
                         elif id == st.secrets.user_id and password == st.secrets.user_pw:
                             sss.logged_in = True
                         else:
@@ -200,9 +201,8 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
             else:
                 if st.button("**로그인**", type="primary",use_container_width=True):
                     if sss.many_login_attempt==False:
-                        if sss.id:
-                            if id == sss.id and password == sss.pw:
-                                sss.logged_in = True
+                        if id == sss.id and password == sss.pw:
+                            sss.logged_in = True
                         elif id == st.secrets.user_id and password == st.secrets.user_pw:
                             sss.logged_in = True
                         else:
@@ -296,9 +296,8 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
             if sss.screen_setting=='pc':
                 if st.button("**Log in**", type="primary",use_container_width=True):
                     if sss.many_login_attempt==False:
-                        if sss.id:
-                            if id == sss.id and password == sss.pw:
-                                sss.logged_in = True
+                        if id == sss.id and password == sss.pw:
+                            sss.logged_in = True
                         elif id == st.secrets.user_id_2 and password == st.secrets.user_pw_2:
                             sss.logged_in = True
                         else:
@@ -322,9 +321,8 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
             else:
                 if st.button("**Log in**", type="primary",use_container_width=True):
                     if sss.many_login_attempt==False:
-                        if sss.id:
-                            if id == sss.id and password == sss.pw:
-                                sss.logged_in = True
+                        if id == sss.id and password == sss.pw:
+                            sss.logged_in = True
                         elif id == st.secrets.user_id_2 and password == st.secrets.user_pw_2:
                             sss.logged_in = True
                         else:
