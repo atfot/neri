@@ -17,35 +17,6 @@ st.set_page_config(
 )
 make_sidebar()
 
-st.write('hi')
-
-def logout():
-    sss.logged_in = False
-    if "messages" in sss:
-        del sss["messages"]
-        del sss['conversations']
-        del sss['message_summary']
-        try:
-            del sss.username
-        except:
-            pass
-        try:
-            del sss.my_info
-        except:
-            pass
-        try:
-            del sss.many_login_attempt
-        except:
-            pass
-        try:
-            del sss.problem_analysis
-        except:
-            pass
-        del sss.client
-    st.info("다음에 또 뵈어요😊")
-    sleep(0.5)
-    st.switch_page("streamlit_app.py")
-
 def send_analysis_via_email():
     if 'date' not in sss:
         sss.date=f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일"
