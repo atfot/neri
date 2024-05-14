@@ -17,7 +17,7 @@ make_sidebar()
 def fix_info():
   sss.fix_info=True
 
-col1,col2,col3=st.columns([4,1,5])
+col1,col2=st.columns([9,1])
 with col1:
     if sss.fix_info==False:
         st.write('')
@@ -44,32 +44,6 @@ with col1:
                     </p>
                     ''', unsafe_allow_html=True)   
         st.button('Fix my Info',use_container_width=True,on_click=fix_info)  
-    else:
-        st.markdown('<h4>My Profile</h4>',unsafe_allow_html=True)
-        st.markdown(f'''
-            <p>
-            <b>1. Username : </b>{sss.username}
-
-            <b>2. Age : </b>{sss.age}
-
-            <b>3. Gender : </b>{sss.gender}
-
-            <b>4. Problem : </b>
-            
-            {sss.problem}
-
-            <b>5. Problem Explanation : </b>
-            
-            {sss.problem_explanation}
-
-            <b>6. Goal : </b>
-            
-            {sss.goal}
-            </p>
-            ''', unsafe_allow_html=True)   
-with col3:
-    if sss.fix_info==False:
-        st.empty()
     else:
         with st.form('fix_user_info'):
             x=0
@@ -122,3 +96,5 @@ with col3:
                     st.rerun()
                 else:
                     st.write('**Please fill every blanks🙃**')
+with col2:
+    st.empty()
