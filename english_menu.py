@@ -3,6 +3,15 @@ from time import sleep
 from streamlit.runtime.scriptrunner import get_script_run_ctx
 from streamlit.source_util import get_pages
 from streamlit import session_state as sss
+from openai import OpenAI
+from fpdf import FPDF
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
+import time
+import pdfkit
 
 
 def get_current_page_name():
