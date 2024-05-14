@@ -94,18 +94,25 @@ div.st-emotion-cache-c6gdys.e18r7x300 > div > p {
 }
                     
 /* 내 정보 */
-                    /* 내 프로필 */
-                    .st-emotion-cache-10trblm {
-	font-family: 'Beeunhye';
-	font-size: 2em;
-    letter-spacing:0.075em;
+/* 내 프로필 */
+.st-emotion-cache-10trblm {
+font-family: 'Beeunhye';
+font-size: 2em;
+letter-spacing:0.075em;
 }
-                    /* 프로필 내역 */
+/* 프로필 내역 */
 div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-	font-size: 2em;
-    letter-spacing:0.075em;
+font-family: 'Beeunhye';
+font-size: 2em;
+letter-spacing:0.075em;
 }
+/* 수정란 */
+div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > label > div > p{
+font-family: 'Beeunhye';
+font-size: 2em;
+letter-spacing:0.075em;
+}
+
 /* 내 정보 수정 버튼 */
 div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > button > div > p {
 font-family: 'Beeunhye';
