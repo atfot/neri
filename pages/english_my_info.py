@@ -14,6 +14,11 @@ st.set_page_config(
 )
 make_sidebar()
 
+if 'fix_info' not in sss:
+    sss.fix_info=False
+if 'fix_complete' not in sss:
+    sss.fix_complete=False
+
 def fix_info():
   sss.fix_info=True
 def fix_complete():
