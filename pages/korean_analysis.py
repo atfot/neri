@@ -1,5 +1,5 @@
 import streamlit as st
-from english_menu import make_sidebar
+from korean_menu import make_sidebar
 from streamlit import session_state as sss
 
 st.set_page_config(
