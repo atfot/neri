@@ -353,7 +353,16 @@ def send_analysis_via_email():
             <title>Psychometric analysis results</title>
             <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
             <style>
-            body{font-family: 'Noto Sans'; line-height: 30px; letter-spacing: 10px";}
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+            .noto-sans-<uniquifier> {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+            body{font-family: 'Noto Sans';}
             </style>
         </head>"""
         html_content_1=f'''<body style="margin: 0; padding: 50px 0 50px 0;">
