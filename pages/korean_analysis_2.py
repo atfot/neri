@@ -20,7 +20,7 @@ make_sidebar()
 def send_analysis_via_email():
     if 'date' not in sss:
         sss.date=f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일"
-    with st.spinner('loading..'):
+    with st.spinner('전송중..'):
         if 'problem_analysis' not in sss:
             problem_analysis = sss.client.chat.completions.create(
                         model="gpt-3.5-turbo-0125",
