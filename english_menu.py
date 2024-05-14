@@ -361,7 +361,7 @@ def send_analysis_via_email():
   font-variation-settings:
     "wdth" 100;
 }
-            body{font-family: 'Noto Sans'; letter-spacing: 1.5px; line-height: 20px;}
+            body{font-family: 'Noto Sans'; line-height: 1.5;}
             </style>
         </head>"""
         html_content_1=f'''<body style="margin: 0; padding: 50px 0 50px 0;">
