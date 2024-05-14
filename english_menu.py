@@ -94,106 +94,10 @@ div.st-emotion-cache-c6gdys.e18r7x300 > div > p {
 }
                     
 /* 내 정보 */
-/* 내 정보 내용 */
-div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > div > p{
-	font-family: 'Beeunhye';
-	font-size: 1.75em;
-    letter-spacing:0.075em;
-}
-            
-/* 내 정보_분석 결과_도움이 될만한 행동들_고민 해결도 그래프*/
-.st-emotion-cache-10trblm {
-	font-family: 'Beeunhye';
-	font-size: 1.75em;
-    letter-spacing:0.075em;
-}
-
-            
-/* 분석결과 내용 */            
-div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-	font-size: 1.75em;
-    letter-spacing:0.075em;
-}     
-
-/* 프로필 수정 버튼 */         
-div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > button > div > p {
-	font-family: 'Beeunhye';
-	font-size: 1.75em;
-    letter-spacing:0.075em;
-}     
-
-/* 도움이 될만한 행동들 리스트 */      
-div.block-container.st-emotion-cache-1jicfl2.ea3mdgi5 > div > div > div > div > div > div > ul > li {
-	font-family: 'Beeunhye';
-	font-size: 1.75em;
-    letter-spacing:0.075em;
-}        
-div.block-container.st-emotion-cache-1jicfl2.ea3mdgi5 > div > div > div > div > div > div > p {
-	font-family: 'Beeunhye';
-	font-size: 1.75em;
-    letter-spacing:0.075em;
-}        
-
-/* 정보를 바꿔주세요 */
-div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div:nth-child(1) > div > div > p {
-    font-family: 'Beeunhye';
-    font-size: 2.25em;
-    letter-spacing:0.075em;
-}
-
-/* 정보 수정칸 */
-div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > label > div > p {
-    font-family: 'Beeunhye';
-    font-size: 1.75em;
-    letter-spacing:0.075em;
-}
-
-/* 저장 버튼 */
-div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > button > div > p {
-    font-family: 'Beeunhye';
-    font-size: 1.75em;
-}
-
-/* 저장완료 메세지 */
-div.st-emotion-cache-keje6w.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
-    font-family: 'Beeunhye';
-    font-size: 1.75em;
-    letter-spacing:0.075em;
-}
-                    
-/* 이메일로 고객 정보 전송버튼 */
-div.st-emotion-cache-1bzkvni.e1f1d6gn3 > div > div > div > div > div > button > div > p {
-    font-family: 'Beeunhye';
-    font-size: 1.75em;
-    letter-spacing:0.075em;
-}
-/* 성공 실패 메세지 */
-div.st-emotion-cache-1bzkvni.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
-font-family: 'Beeunhye';
-font-size: 1.75em;
-letter-spacing:0.075em;
-}
-                    
-/* 오류 보고 */
-/* 안내문*/
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > p {
-font-family: 'Beeunhye';
-font-size: 1.75em;
-letter-spacing:0.075em;
-}
-
-/* 작성란 */
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > label > div > p {
+/* 내 정보 수정 */
+div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > button > div > p {
 font-family: 'Beeunhye';
 font-size: 2em;
-letter-spacing:0.075em;
-}
-
-/* 성공 실패 메세지 */
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p {
-font-family: 'Beeunhye';
-font-size: 1.75em;
 letter-spacing:0.075em;
 }
                     
