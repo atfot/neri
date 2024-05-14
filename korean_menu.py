@@ -191,7 +191,7 @@ letter-spacing:0.075em;
 }
 
 /* 성공 실패 메세지 */
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p {
+div.st-emotion-cache-1yycg8b.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
 font-family: 'Beeunhye';
 font-size: 1.75em;
 letter-spacing:0.075em;
