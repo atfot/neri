@@ -397,13 +397,13 @@ def send_analysis_via_email():
                                     <b>인공지능 네리가 분석한 보고서입니다!</b>
                                 </td>
                             </tr> 
-                            <tr style="color: #000000; font-size: 24px; line-height: 30px;"
+                            <tr style="color: #000000; font-size: 24px; line-height: 40px;"
                             >
                                 <td style="padding: 20px 0 30px 0;">
                                     네리는 OpenAI사의 GPT 3.5와 4.0을 사용해 제작된 인공지능 심리상담 챗봇입니다. 이 보고서는 금일 해당 사용자가 네리와 대화하며 도출된 분석결과입니다. 참고만 하시길 바라며 자세한건 가까운 정신과나 심리상담사를 직접 방문하셔서 도움을 받으세요.
                                 </td>
                             </tr>
-                            <tr style="color: #000000; font-size: 24px; line-height: 25px;"
+                            <tr style="color: #000000; font-size: 24px; line-height: 40px;"
                             >
                                 <td>
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -440,7 +440,7 @@ def send_analysis_via_email():
                                 </td>
                             </tr>
                             <tr>
-                                <td style="color: #000000; font-size: 24px; line-height: 30px; border-radius: 5px; align-self: center; width: 100%; margin: 0 auto; border: 0.1px solid #cccccc; padding: 20px;">
+                                <td style="color: #000000; font-size: 24px; line-height: 40px; border-radius: 5px; align-self: center; width: 100%; margin: 0 auto; border: 0.1px solid #cccccc; padding: 20px;">
                                     <p><b>도움이 될만한 행동들 : </b></p>'''
 
         todolist_format="""
