@@ -460,12 +460,12 @@ def send_analysis_via_email():
                             </tr>
                             <tr align="center" width="100%" style="color: #000000; font-size: 24px; line-height: 15px;">
                                 <td>
-                                    <h1>Problem Resolution Graph</h1>
+                                    <h2>Problem Resolution Graph</h2>
                                 </td>
                             </tr>
                             <tr align="center" width="100%">
                                 <td>
-                                    <img src="https://imgur.com/MvfBBoV.png" width="360" height="140" style="display: block;" />
+                                    <img src="https://imgur.com/MvfBBoV.png" width="720" height="280" style="display: block;" />
                                 </td>
                             </tr>
                         </table>
