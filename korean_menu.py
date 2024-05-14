@@ -73,7 +73,7 @@ div.st-emotion-cache-dvne4q.eczjsme4 > div > div > div > div > div > div > div >
 
 /* 챗봇 */  
 /* 챗봇 글씨체 */
-div.st-emotion-cache-in40sa.eeusbqq3 > div > div > div > div > div > div > p {
+div.st-emotion-cache-1dp44rk.eeusbqq3 > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.75em;
 	margin-top: -0.35em;
