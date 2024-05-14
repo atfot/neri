@@ -23,6 +23,7 @@ if sss.id==False:
     sss.goal=sct.goal_2
     sss.user_email=sct.user_email_2
 st.write(sss.user_email)
+st.write(sct.user_email_2)
 
 if 'fix_info' not in sss:
     sss.fix_info=False
@@ -64,6 +65,7 @@ with col1:
     else:
         sss.filled_input=0
         st.write("**Now you can fix your info😊**")
+
         user_email = st.text_input('**Write down the new email address you want to use.**', key='new_user_email')
         if user_email:
             if not re.match(r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$', user_email): 
