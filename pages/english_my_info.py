@@ -224,16 +224,18 @@ if sss.fix_info==False:
     st.markdown('<p><h4>Actions that might help you :</h4></p>', unsafe_allow_html=True)
     for i in sss.what_to_do:
         st.write(i)
-st.title('')
-st.markdown('<p><h3><center>Problem Resolution Graph</center></h3></p>', unsafe_allow_html=True)
-if time.localtime().tm_mon<10:
-    z=f'0{time.localtime().tm_mon}'
-else:
-    z=f'{time.localtime().tm_mon}'
-y=f'{time.localtime().tm_year}/{z}/{time.localtime().tm_mday}'
-df = pd.DataFrame({y: [sss.score]})
-x=6
-y='2025/12/03'
-df_1=pd.DataFrame({y: [x]})
-df_2=pd.concat([df,df_1],axis=1).T
-st.line_chart(df_2)  
+    st.title('')
+    st.markdown('<p><h3><center>Problem Resolution Graph</center></h3></p>', unsafe_allow_html=True)
+    if time.localtime().tm_mon<10:
+        z=f'0{time.localtime().tm_mon}'
+    else:
+        z=f'{time.localtime().tm_mon}'
+    y=f'{time.localtime().tm_year}/{z}/{time.localtime().tm_mday}'
+    df = pd.DataFrame({y: [sss.score]})
+    x=6
+    y='2025/12/03'
+    df_1=pd.DataFrame({y: [x]})
+    df_2=pd.concat([df,df_1],axis=1).T
+    st.line_chart(df_2)
+if sss.fix_info==True:
+    pass  
