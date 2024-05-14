@@ -382,7 +382,7 @@ def send_analysis_via_email():
                                                 Powered by
                                             </td>
                                             <td align="right" width="140" valign="top">
-                                                <img src="https://imgur.com/H287o5n.png" alt="Logo" width="140" height="60" style="display: block;" />
+                                                <img src="https://imgur.com/JDCESFv.png" alt="Logo" width="140" height="60" style="display: block;" />
                                             </td>
                                         </tr>
                                     </table>
