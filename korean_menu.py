@@ -493,8 +493,7 @@ def send_analysis_via_email():
         pdf_bytes = bytes(pdf)
         from_address = st.secrets.admin_email
         to_address = st.secrets.user_email
-        subject = "PDF 파일 보내기"
-        body = "PDF 파일을 첨부합니다."
+        subject = f"{sss.date}의 심리 검사결과"
 
         msg = MIMEMultipart()
         msg['From'] = from_address
