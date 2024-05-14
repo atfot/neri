@@ -320,7 +320,7 @@ def send_analysis_via_email():
         smtp_server.quit()
         st.success("고객님의 심리 분석결과를 모아서 이메일로 보내드렸습니다😊")
 
-st.subheader('❗ Neri는 심리분석 결과를 모아서 고객님의 이메일로 발송해드리고 있어요❗')
+st.subheader('❗ Neri는 심리분석 결과를 모아서 고객님의 이메일로 발송해드리고 있어요 ❗')
 st.write("여러가지 이유가 있겠지만 이러한 이유들 때문이에요.")
 st.write('1. **정신과 의사선생님** 또는 **심리상담사님**께 보여드리기 좋은 방식이에요.')
 st.write('2. **그동안의 분석 결과를 한번에 확인하기** 좋은 방식이에요.')
@@ -330,7 +330,7 @@ st.write("""
          
 따라서 **고객님에 대한 판단**은 **정신과 의사선생님** 혹은 **심리상담사님**께서 좀더 정확히 아실거에요.
 """)
-col1,col2,col3=st.columns([2,6,2])
+col1,col2,col3=st.columns([1,8,1])
 with col2:
     if st.button('고객님의 이메일로 심리분석 결과를 받아보시겠어요?',use_container_width=True):
         send_analysis_via_email()
