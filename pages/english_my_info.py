@@ -64,7 +64,7 @@ with col1:
         sss.filled_input=0
         st.write("**Now you can fix your info😊**")
 
-        user_email = st.text_input('**Write down the new email address you want to use.**', key='new_user_email')
+        user_email = st.text_input('**Write down the new email address you want to use.**', key='new_user_email',type='password')
         if user_email:
             if not re.match(r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$', user_email): 
                 st.error('Please give the correct email!')
@@ -76,7 +76,7 @@ with col1:
                     st.error("This email address is the same as the one you're using now.")
                 else:
                     st.error('This email address already exists.')
-        email_check = st.text_input('**Please write the same email as above again.**',key='email_check')
+        email_check = st.text_input('**Please write the same email as above again.**',key='email_check',type='password')
         if email_check:
             if email_check!=sss.user_email:
                 st.error('That email is different from the one you just wrote down')
