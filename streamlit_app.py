@@ -198,6 +198,16 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
                     if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
                         sss.login_attempt=0
                         sss.find_my_pw = True
+                st.markdown(
+                    """
+                    <div style="left: 0; width: 101%; color: #000000; text-align: left;">
+                        Developed By <a  href="https://i.imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a><br>
+                        Made with Streamlit<br>
+                        Powered By OpenAI
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
             else:
                 if st.button("**로그인**", type="primary",use_container_width=True):
                     if sss.many_login_attempt==False:
@@ -219,6 +229,14 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
                     sss.find_my_id = True
                 if st.button("비밀번호 찾기", type="secondary",use_container_width=True):
                     sss.find_my_pw = True
+                st.markdown(
+                    """
+                    <div style="position: fixed; bottom: 0; left: 0; width: 100%; color: #000000; padding: 1px; text-align: center;">
+                        Developed By <a  href="https://imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a>  |  Made with Streamlit  |  Powered By OpenAI
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                ) 
         def home_logic_korean():
             if sss.get("logged_in", True):
                 st.success("로그인되었습니다!",  icon="✅")
@@ -385,24 +403,4 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
             with col2:
                 home_logic_english()            
 
-    if sss.screen_setting=='mobile':
-        st.markdown(
-            """
-            <div style="left: 0; width: 101%; color: #000000; text-align: left;">
-                Developed By <a  href="https://i.imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a><br>
-                Made with Streamlit<br>
-                Powered By OpenAI
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-    else:
-        st.markdown(
-            """
-            <div style="position: fixed; bottom: 0; left: 0; width: 100%; color: #000000; padding: 1px; text-align: center;">
-                Developed By <a  href="https://imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a>  |  Made with Streamlit  |  Powered By OpenAI
-            </div>
-            """,
-            unsafe_allow_html=True
-        ) 
 
