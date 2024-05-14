@@ -238,7 +238,7 @@ html_content_1=f'''<body style="margin: 0; padding: 20px 0 30px 0;">
                     </tr>
                     <tr align="center" width="100%">
                         <td>
-                            <img src="https://imgur.com/MvfBBoV.png" width="720" height="280" style="display: block;" />
+                            <img src="https://imgur.com/MvfBBoV.png" width="360" height="140" style="display: block;" />
                         </td>
                     </tr>
                 </table>
