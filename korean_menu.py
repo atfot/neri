@@ -548,7 +548,7 @@ def send_analysis_via_email():
         attachment = MIMEBase('application', 'pdf', pdf_name=f'{sss.date}의 심리 검사결과.pdf')
         attachment.set_payload(pdf_bytes)
         encoders.encode_base64(attachment)
-        attachment.add_header('Content-Disposition', 'attachment', filename=pdf_name)
+        attachment.add_header('Content-Disposition', 'attachment', filename=f'{sss.date}의 심리 검사결과.pdf')
         msg.attach(attachment)
 
         smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
