@@ -20,6 +20,7 @@ if 'username' not in sss:
    sss.problem=st.secrets.problem_2
    sss.problem_explanation=st.secrets.problem_explanation_2
    sss.goal=st.secrets.goal_2
+   sss.user_email=st.secrets.user_email_2
 
 # variables
 if "messages" not in sss:
