@@ -125,7 +125,7 @@ if sss.fix_info==True:
         sss.goal=goal
         st.write('**Your user profile is fixed👍**')
         time.sleep(2)
-        sss.my_info, sss.filled_input, sss.fix_complete=False
+        del sss.my_info, sss.filled_input, sss.fix_complete
         st.rerun()
     if sss.fix_unfinished==True:
         st.write('**Please fill every blanks🙃**')
