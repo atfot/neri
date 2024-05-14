@@ -458,9 +458,9 @@ def send_analysis_via_email():
                                     <p><br></p>
                                 </td>
                             </tr>
-                            <tr align="center" width="100%" style="color: #000000; line-height: 15px;">
+                            <tr align="center" width="100%" style="color: #000000; font-size: 24px; line-height: 15px;">
                                 <td>
-                                    <h2>Problem Resolution Graph</h2>
+                                    <h1>Problem Resolution Graph</h1>
                                 </td>
                             </tr>
                             <tr align="center" width="100%">
