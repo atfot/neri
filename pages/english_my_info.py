@@ -24,6 +24,8 @@ if sss.id==False:
     sss.user_email=sct.user_email_2
 st.write(sss.user_email)
 st.write(sct.user_email_2)
+st.write(sss.username)
+st.write(sct.user_name_2)
 
 if 'fix_info' not in sss:
     sss.fix_info=False
@@ -89,7 +91,7 @@ with col1:
             if username!=sct.user_name and username!=sct.user_name_2 and username!=sss.username:
                 sss.filled_input+=1
                 sss.username=username
-            if username==sss.username:
+            elif username==sss.username:
                 st.error('This is the same username you were using before.')
             else:
                 st.error('The username already exists.')
