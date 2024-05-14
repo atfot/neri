@@ -310,20 +310,15 @@ if sss.korean_mode==0:
         else:
             sss.filled_input+=1            
     user_email = st.text_input('**Write down the email address you want to use.**', key='user_email_')
-    def check_email(text):
-        pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$'
-        if re.match(pattern, text):
+    if user_email:
+        if re.match(r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$', user_email): 
             st.error('Please give the correct email!')
         else:
             if 'auth_email' not in sss:
                 sss.auth_email=True
-    if user_email:
-        check_email(user_email)
         if sss.auth_email==True:
             sss.filled_input+=1
             sss.user_email=user_email
-        else:
-            pass
     email_check = st.text_input('**Please write the same email as above again.**',key='email_check_')
     if email_check:
         if email_check!=sss.user_email:
