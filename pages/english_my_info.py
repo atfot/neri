@@ -74,7 +74,7 @@ with col1:
                 if user_email != sct.user_email and user_email !=sct.user_email_2 and sss.user_email:
                     sss.filled_input+=1
                     sss.user_email=user_email
-                if user_email == sss.user_email:
+                elif user_email == sss.user_email:
                     st.error("This email address is the same as the one you're using now.")
                 else:
                     st.error('This email address already exists.')
