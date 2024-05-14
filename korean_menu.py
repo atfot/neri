@@ -7,6 +7,7 @@ from openai import OpenAI
 from fpdf import FPDF
 import smtplib
 from email.mime.multipart import MIMEMultipart
+from email.mime.multitext import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 import time
