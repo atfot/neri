@@ -386,15 +386,9 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
                 home_logic_english()            
 
     if sss.screen_setting=='mobile':
-        st.markdown('''<p>
-                    Developed By <a  href="https://i.imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a><br>
-                    Made with Streamlit<br>
-                    Powered By OpenAI
-                    </p>''',unsafe_allow_html=True)
-        st.markdown('',unsafe_allow_html=True)
         st.markdown(
             """
-            <div style="bottom: 0; left: 0; width: 101%; background-color: #ffffff; color: #000000; text-align: left;">
+            <div style="bottom: 0; left: 0; width: 101%; color: #000000; text-align: left;">
                 Developed By <a  href="https://i.imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a><br>
                 Made with Streamlit<br>
                 Powered By OpenAI
@@ -405,7 +399,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > but
     else:
         st.markdown(
             """
-            <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #FDF6EC; color: #000000; padding: 1px; text-align: center;">
+            <div style="position: fixed; bottom: 0; left: 0; width: 100%; color: #000000; padding: 1px; text-align: center;">
                 Developed By <a  href="https://imgur.com/JuFxv4h.png" target="_blank">Hyun Kyu Cho</a>  |  Made with Streamlit  |  Powered By OpenAI
             </div>
             """,
