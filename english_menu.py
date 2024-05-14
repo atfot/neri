@@ -351,7 +351,6 @@ def send_analysis_via_email():
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Psychometric analysis results</title>
-            <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
             <style>
             @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
             .noto-sans-<uniquifier> {
@@ -359,8 +358,6 @@ def send_analysis_via_email():
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
-  letter-spacing: 2px;
-  line-height: 10px;
   font-variation-settings:
     "wdth" 100;
 }
