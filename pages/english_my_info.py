@@ -4,6 +4,7 @@ from openai import OpenAI
 import pandas as pd
 import time
 from streamlit import session_state as sss
+from streamlit import secrets as sct
 import re
 
 st.set_page_config(
@@ -74,20 +75,17 @@ with col3:
             x=0
             st.write("**Now you can fix your info😊**")
             user_email = st.text_input('**Write down the new email address you want to use.**', key='new_user_email')
-            def check_email(text):
-                pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$'
-                if not re.match(pattern, text):
+            if user_email:
+                if not re.match(r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$', user_email): 
                     st.error('Please give the correct email!')
                 else:
-                    if 'auth_email' not in sss:
-                        sss.auth_email=True
-            if user_email:
-                check_email(user_email)
-                if sss.auth_email==True:
-                    x+=1
-                    sss.user_email=user_email
-                else:
-                    pass
+                    if user_email != sct.user_email and user_email !=sct.user_email_2 and sss.user_email:
+                        x+=1
+                        sss.user_email=user_email
+                    if user_email == sss.user_email:
+                        st.error("This email address is the same as the one you're using now.")
+                    else:
+                        st.error('This email address already exists.')
             email_check = st.text_input('**Please write the same email as above again.**',key='email_check')
             if email_check:
                 if email_check!=sss.user_email:
@@ -96,13 +94,14 @@ with col3:
                     x+=1
             username = st.text_input('**Tell me the name you want to be called in here.**',key='new_username')
             if username:
-                if username==st.secrets.user_name:
-                    st.error('The username already exists.')
-                if username==st.secrets.user_name_2:
-                    st.error('This is the same username you were using before.')
-                if username!=st.secrets.user_name and username!=st.secrets.user_name_2:
+                if username!=sct.user_name and username!=sct.user_name_2 and username!=sss.username:
                     x+=1
                     sss.username=username
+                if username==sss.username:
+                    st.error('This is the same username you were using before.')
+                else:
+                    st.error('The username already exists.')
+                
             problem = st.text_area("**What's your biggest problem right now?🤔**",key='new_problem')
             if problem:
                 x+=1
