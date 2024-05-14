@@ -264,19 +264,18 @@ def send_analysis_via_email():
                         messages=[
                         {
                             "role": "system",
-                            "content": """Your role as a Korean professional psychotherapist is to score the extent to which the client's problem has improved given the information below and explain why.
+                            "content": """Your role as a professional psychotherapist is to score the extent to which the client's problem has improved given the information below and explain why.
                             
                             **Remember**:
-                            1. Use Korean Language to answer my question.
-                            2. Your score should be much lower than you think.
-                            3. You should never speak rudely.
+                            1. Your score should be much lower than you think.
+                            2. You should never speak rudely.
                             """
                         },
                         {
                             "role": "user",
                             "content": f"""
                             # My Request:
-                            From a Korean professional psychotherapist's perspective, score the extent to which the client's problem is improved by the information given below and explain why.
+                            From a professional psychotherapist's perspective, score the extent to which the client's problem is improved by the information given below and explain why.
 
                             # Informations you need to know
                             - Client's Name : {sss.username}
@@ -293,7 +292,7 @@ def send_analysis_via_email():
                             {sss.conversations}
                         
                             # Answer form
-                            - You need to use the form below to answer my request using Korean language.
+                            - You need to use the form below to answer my request.
                             '''
                             Analysis : [Analyze the information I've given you by not using any bullet points.]
 
@@ -311,11 +310,10 @@ def send_analysis_via_email():
                             Best thing to do : [Tell me what you think is the easiest thing for {sss.username} to do in that situation, using a bullet point summary, as a professional psychologist.]
                             '''
                             **Remember**:
-                            1. Use Korean Language to answer my question.
-                            2. Your score should be much lower than you think.
-                            3. Don't use the word '고객' or '클라이언트'.
-                            4. If you need to use the word '고객', don't use that word and replace it into the client's name with '님', such as {sss.username}님.
-                            5. You should never speak rudely.
+                            1. Your score should be much lower than you think.
+                            2. Don't use the word 'client'.
+                            3. If you need to use the word 'client', don't use that word and replace it into the client's name, such as {sss.username}.
+                            4. You should never speak rudely.
                 """
                         }
                         ],

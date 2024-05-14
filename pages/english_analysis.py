@@ -65,7 +65,7 @@ if 'my_info' not in sss:
                     {sss.conversations}
                   
                     # Answer form
-                    - You need to use the form below to answer my request using Korean language.
+                    - You need to use the form below to answer my request.
                     '''
                     Analysis : [Analyze the information I've given you by not using any bullet points.]
 
