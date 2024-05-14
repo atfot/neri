@@ -393,13 +393,13 @@ def send_analysis_via_email():
                                     <b>This report was analyzed by Neri AI!</b>
                                 </td>
                             </tr> 
-                            <tr style="color: #000000; font-size: 24px; line-height: 30px;"
+                            <tr style="color: #000000; font-size: 24px; line-height: 35px;"
                             >
                                 <td style="padding: 20px 0 30px 0;">
                                     Neri is an artificial intelligence psychological counseling chatbot built using GPT 3.5 and 4.0 by OpenAI. This report is based on the user's interaction with Neri today. It is intended as a guide only and you should visit your local psychiatrist or psychologist for more information.
                                 </td>
                             </tr>
-                            <tr style="color: #000000; font-size: 24px; line-height: 50px;"
+                            <tr style="color: #000000; font-size: 24px; line-height: 35px;"
                             >
                                 <td>
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
