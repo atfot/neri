@@ -83,7 +83,7 @@ with col2:
                     st.error('This email address already exists.')
         email_check = st.text_input('**Please write the same email as above again.**',key='email_check',type='password')
         if email_check:
-            if email_check!=sss.user_email:
+            if email_check!=sss.auth_email:
                 st.error('That email is different from the one you just wrote down')
             if email_check==sss.auth_email:
                 sss.filled_input+=1
