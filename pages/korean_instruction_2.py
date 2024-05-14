@@ -319,5 +319,8 @@ def send_analysis_via_email():
         smtp_server.sendmail(from_address, to_address, msg.as_string())
         smtp_server.quit()
         st.success("고객님의 심리 분석결과를 모아서 이메일로 보내드렸습니다😊")
+
+st.title('Neri AI의 심리분석 결과를 이메일로 보내드립니다')
+
 if st.button('hi'):
     send_analysis_via_email()
