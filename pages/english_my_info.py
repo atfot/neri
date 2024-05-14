@@ -4,6 +4,7 @@ from openai import OpenAI
 import pandas as pd
 import time
 from streamlit import session_state as sss
+import re
 
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
@@ -154,60 +155,85 @@ with col1:
                 </p>
                 ''', unsafe_allow_html=True)   
 with col3:
-  if sss.fix_info==False:
-    month=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    month=month[time.localtime().tm_mon-1]
-    sss.date=f'{month} {time.localtime().tm_mday}, {time.localtime().tm_year}'
-    st.markdown(f'<p><h4>Analysis results on {sss.date}</h4></p>', unsafe_allow_html=True)
-    st.markdown('<p><b>Problem Analysis :</b></p>', unsafe_allow_html=True)
-    st.write(f'{sss.client_analysis}')
-    st.markdown(f'<p><b>Score : </b>{sss.score}</p>', unsafe_allow_html=True)
-    st.markdown('<p><b>Score Explanation :</b></p>', unsafe_allow_html=True)
-    st.write(f'{sss.score_explanation}')
-  else:
-    with st.form('fix_user_info'):
-      x=0
-      st.write("**Now you can fix your info😊**")
-      username = st.text_input('**Tell me the name you want to be called in here.**')
-      if username:
-          x+=1
-          sss.username=username
-      problem = st.text_area("**What's your biggest problem right now?🤔**")
-      if problem:
-          x+=1
-          sss.problem=problem
-      problem_explanation=st.text_area("**Please describe your issue in more detail. The more details you can provide, the better😊**")
-      if problem_explanation:
-          x+=1
-          sss.problem_explanation=problem_explanation
-      goal=st.text_area("**Tell us what your end goal is!**")
-      if goal:
-          x+=1
-          sss.goal=goal
-      if st.form_submit_button('**Submit**'):
-        if x==4:
-          st.write('**Your user profile is fixed👍**')
-          time.sleep(2)
-          del sss.my_info
-          st.rerun()
-        else:
-          st.write('**Please fill every blanks🙃**')
+    if sss.fix_info==False:
+        month=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        month=month[time.localtime().tm_mon-1]
+        sss.date=f'{month} {time.localtime().tm_mday}, {time.localtime().tm_year}'
+        st.markdown(f'<p><h4>Analysis results on {sss.date}</h4></p>', unsafe_allow_html=True)
+        st.markdown('<p><b>Problem Analysis :</b></p>', unsafe_allow_html=True)
+        st.write(f'{sss.client_analysis}')
+        st.markdown(f'<p><b>Score : </b>{sss.score}</p>', unsafe_allow_html=True)
+        st.markdown('<p><b>Score Explanation :</b></p>', unsafe_allow_html=True)
+        st.write(f'{sss.score_explanation}')
+    else:
+        with st.form('fix_user_info'):
+            x=0
+            st.write("**Now you can fix your info😊**")
+            user_email = st.text_input('**Tell me the name you want to be called in here.**')
+            def check_email(text):
+                pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$'
+                if re.match(pattern, text):
+                    st.error('Please give the correct email!')
+                else:
+                    if 'auth_email' not in sss:
+                        sss.auth_email=True
+            if user_email:
+                check_email(user_email)
+                if sss.auth_email==True:
+                    x+=1
+                    sss.user_email=user_email
+                else:
+                    pass
+            email_check = st.text_input('**Tell me the name you want to be called in here.**')
+            if email_check:
+                if email_check!=sss.user_email:
+                    st.error('That email is different from the one you just wrote down')
+                if email_check==sss.user_email:
+                    x+=1
+            username = st.text_input('**Tell me the name you want to be called in here.**')
+            if username:
+                if username==st.secrets.user_name:
+                    st.error('The username already exists.')
+                if username==st.secrets.user_name_2:
+                    st.error('This is the same username you were using before.')
+                if username!=st.secrets.user_name and username!=st.secrets.user_name_2:
+                    x+=1
+                    sss.username=username
+            problem = st.text_area("**What's your biggest problem right now?🤔**")
+            if problem:
+                x+=1
+                sss.problem=problem
+            problem_explanation=st.text_area("**Please describe your issue in more detail. The more details you can provide, the better😊**")
+            if problem_explanation:
+                x+=1
+                sss.problem_explanation=problem_explanation
+            goal=st.text_area("**Tell us what your end goal is!**")
+            if goal:
+                x+=1
+                sss.goal=goal
+            if st.form_submit_button('**Submit**'):
+                if x==6:
+                    st.write('**Your user profile is fixed👍**')
+                    time.sleep(2)
+                    del sss.my_info
+                    st.rerun()
+                else:
+                    st.write('**Please fill every blanks🙃**')
 if sss.fix_info==False:
-  st.title('')
-  st.markdown('<p><h4>Actions that might help you :</h4></p>', unsafe_allow_html=True)
-  for i in sss.what_to_do:
-    st.write(i)
-  st.title('')
-  st.markdown('<p><h3><center>Problem Resolution Graph</center></h3></p>', unsafe_allow_html=True)
-  if time.localtime().tm_mon<10:
-      z=f'0{time.localtime().tm_mon}'
-  else:
-      z=f'{time.localtime().tm_mon}'
-  y=f'{time.localtime().tm_year}/{z}/{time.localtime().tm_mday}'
-  df = pd.DataFrame({y: [sss.score]})
-  x=6
-  y='2025/12/03'
-  df_1=pd.DataFrame({y: [x]})
-  df_2=pd.concat([df,df_1],axis=1).T
-  st.line_chart(df_2)  
- 
+    st.title('')
+    st.markdown('<p><h4>Actions that might help you :</h4></p>', unsafe_allow_html=True)
+    for i in sss.what_to_do:
+        st.write(i)
+st.title('')
+st.markdown('<p><h3><center>Problem Resolution Graph</center></h3></p>', unsafe_allow_html=True)
+if time.localtime().tm_mon<10:
+    z=f'0{time.localtime().tm_mon}'
+else:
+    z=f'{time.localtime().tm_mon}'
+y=f'{time.localtime().tm_year}/{z}/{time.localtime().tm_mday}'
+df = pd.DataFrame({y: [sss.score]})
+x=6
+y='2025/12/03'
+df_1=pd.DataFrame({y: [x]})
+df_2=pd.concat([df,df_1],axis=1).T
+st.line_chart(df_2)  
