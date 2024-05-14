@@ -360,6 +360,7 @@ def send_analysis_via_email():
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+     line-height: 1.5;
 }
             body{font-family: 'Noto Sans'; line-height: 1.5;}
             </style>
