@@ -361,11 +361,11 @@ def send_analysis_via_email():
   font-variation-settings:
     "wdth" 100;
 }
-            body{font-family: 'Noto Sans'; letter-spacing: 1.5px;}
+            body{font-family: 'Noto Sans'; letter-spacing: 1.5px; line-height: 20px;}
             </style>
         </head>"""
         html_content_1=f'''<body style="margin: 0; padding: 50px 0 50px 0;">
-            <table align="center" border="0" cellpadding="10" cellspacing="10" width="900" style="border: 1px solid #cccccc; line-height: 10px;">
+            <table align="center" border="0" cellpadding="10" cellspacing="10" width="900" style="border: 1px solid #cccccc;">
                 <tr>
                     <td align="center" style="padding: 30px 0 0 0; font-size:40px;">
                         <b>Analysis results on {sss.date}</b>
