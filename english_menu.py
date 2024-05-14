@@ -93,6 +93,26 @@ div.st-emotion-cache-c6gdys.e18r7x300 > div > p {
     letter-spacing:0.075em;
 }
                     
+/* 오류 제보 */
+/* 기본 메세지 */
+div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > p {
+font-family: 'Beeunhye';
+font-size: 1.75em;
+letter-spacing:0.075em;
+}
+/* 설명란 */                    
+div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > label > div > p {
+font-family: 'Beeunhye';
+font-size: 2em;
+letter-spacing:0.075em;
+}
+/* 성공 실패 메세지*/
+div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > div > div > div > div > p {
+font-family: 'Beeunhye';
+font-size: 2em;
+letter-spacing:0.075em;
+}
+                    
 /* 내 정보 */
 /* 내 프로필 */
 .st-emotion-cache-10trblm {
