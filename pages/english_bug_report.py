@@ -32,7 +32,7 @@ st.write("""
 
 error_subject = st.text_input('What error did you get?')
 error_body = st.text_area('Please provide a detailed explanation!')
-error_images=st.file_uploader('If you have any pictures, show them to us!', accept_multiple_files=True)
+error_images=st.file_uploader('If you have any pictures, show them to me!', accept_multiple_files=True)
 
 col1,col2=st.columns([9,1])
 with col2:
