@@ -73,7 +73,7 @@ def main():
     if prompt := st.chat_input('맘 편히 당신의 모든 고민을 말해주세요.') or sss.repeat:
         def text_logic():
             normal_korean = sss.client.chat.completions.create(
-          model="gpt-3.5-turbo-0125",
+          model="gpt-4o",
           messages=[
             {
               "role": "system",
@@ -118,7 +118,7 @@ def main():
                 sss.conversations.append({"role": "내담자", "content": normalized_prompt})
             if len(sss.messages)%3==0:
                 summary = sss.client.chat.completions.create(
-                model="gpt-3.5-turbo-0125",
+                model="gpt-4o",
                 messages=[
                     {
                     "role": "system",
@@ -213,7 +213,7 @@ def main():
             """
             sss.user_prompt_1=user_prompt_1
             response = sss.client.chat.completions.create(
-            model="gpt-3.5-turbo-0125",
+            model="gpt-4o",
             messages=[
             {
                 "role": "system",
@@ -234,7 +234,7 @@ def main():
             msg = response.choices[0].message.content
             sss.msg=msg
             sentence_selection = sss.client.chat.completions.create(
-            model="gpt-3.5-turbo-0125",
+            model="gpt-4o",
             messages=[
             {
                 "role": "system",
@@ -317,7 +317,7 @@ def main():
             my_bar.progress(50,text=progress_text)
             selected_msg = sentence_selection.choices[0].message.content.strip('"')
             humanize_sentence = sss.client.chat.completions.create(
-            model="gpt-3.5-turbo-0125",
+            model="gpt-4o",
             messages=[
             {
                 "role": "system",
