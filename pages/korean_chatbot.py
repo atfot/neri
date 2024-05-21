@@ -79,10 +79,12 @@ def main():
               "role": "system",
               "content": """Your role is to rephrase the Korean sentences into polite Korean sentences if there are any Korean grammar errors.
               
+              '''
               **Remember**:
               1. If there is anything in the paragraph that is not a normal Korean sentence, such as "ㅋ" or "ㅠ" or similar, please remove it.  
               2. If there is a sentence in the paragraph below that contains a typo, such as "있으뮤ㅠㅠㅠ", please correct the sentence in the same way as "있음".
               3. If the paragraph below contains any portmanteau words, don't rephrase it.
+              '''
               """
             },
             {
@@ -93,10 +95,12 @@ def main():
 
               {prompt}
 
+              '''
               **Remember**:
               1. If there is anything in the paragraph that is not a normal Korean sentence, such as "ㅋ" or "ㅠ" or similar, please remove it.  
               2. If there is a sentence in the paragraph below that contains a typo, such as "있으뮤ㅠㅠㅠ", please correct the sentence in the same way as "있음".
               3. If the paragraph below contains any portmanteau words, don't rephrase it.
+              '''
   """
             }
           ],
@@ -172,8 +176,8 @@ def main():
                 - City of residence : Seoul
                 - Characteristics : Neri has information about {sss.username}, who is mentally ill, and engages in an extensive conversation with him/her, but also asks any questions if he wants to understand more about him/her
 
-                **REMEMBER**: 
                 '''
+                **REMEMBER**: 
                 - Psychotherapist cannot speak information from mentally ill person and himself unless it's really necessary
                 - Keep in mind that the psychotherapist's response is part of the conversation and will be followed by the mentally ill person's response
                 - The psychotherapist's response should fit the tone and content of the conversation
@@ -203,11 +207,13 @@ def main():
                 '''
                 
                 **REMEMBER**: 
+                '''
                 - The grammar of the sentences should be perfect.
                 - Never use a tone that suggests you want to do something with the patient.
                 - If you get a short reply from the mental patient, ask him/her a related question.
                 - Never reuse any sentences that has a same context which have already been used within a conversation.
                 - If you get any questions from the mental patient, give him/her an answer.
+                '''
                 ```
 
             """
@@ -266,7 +272,7 @@ def main():
                 - City of residence : Seoul
                 - Characteristics : Neri has information about {sss.username}, who is mentally ill, and engages in an extensive conversation with him/her, but also asks any questions if he wants to understand more about him/her
 
-                
+                '''
                 **REMEMBER**:
                 1. After you pick the best response, then write it down exactly, without leaving out a single letter.
                 2. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
@@ -277,6 +283,7 @@ def main():
                 7. Never reuse any sentences that has a same context which have already been used within a conversation.
                 8. If you get any questions from the mental patient, give him/her an answer.
                 9. Never choose the sentence that contains 'How does it feel' or anything resembles that.
+                '''
                 """
             },
             {
@@ -295,6 +302,7 @@ def main():
 
                 - After reading the informations above, please **pick the best response from three possible answers** considering psychotherapist's intention. 
                 
+                '''
                 **REMEMBER**:
                 1. After you pick the best response, then write it down exactly, without leaving out a single letter.
                 2. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
@@ -305,6 +313,7 @@ def main():
                 7. Never reuse any sentences that has a same context which have already been used within a conversation.
                 8. If you get any questions from the mental patient, give him/her an answer.
                 9. Never choose the sentence that contains 'How does it feel' or anything resembles that.]
+                '''
         """
             }
             ],
@@ -323,12 +332,14 @@ def main():
                 "role": "system",
                 "content": f"""Your role is to check the korean grammar of the korean sentences and rephrase it if it has any wrong grammars, or if it is too rude.
                 
+                '''
                 **REMEMBER**:
                 1. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
                 2. Submit the original sentences that I gave you if there is no grammar problem.
                 3. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
                 4. Don't use any words or phrases other than the context.
                 5. If there is a "너(you)" in a given sentence, please replace it with "{sss.username}씨".
+                '''
                 """
             },
             {
@@ -339,12 +350,14 @@ def main():
 
                 [{selected_msg}]
                 
+                '''
                 **REMEMBER**:
                 1. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
                 2. Submit the original sentences that I gave you if there is no grammar problem.
                 3. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
                 4. Don't use any words or phrases other than the context.
                 5. If there is a "너(you)" in a given sentence, please replace it with "{sss.username}씨".
+                '''
         """
             }
             ],

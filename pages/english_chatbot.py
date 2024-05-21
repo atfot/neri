@@ -75,7 +75,7 @@ def main():
                 sss.conversations.append({"role": "Mental patient", "content": prompt})
             if len(sss.messages)%3==0:
                 summary = sss.client.chat.completions.create(
-                model="gpt-3.5-turbo-0125",
+                model="gpt-4o",
                 messages=[
                     {
                     "role": "system",
@@ -129,8 +129,8 @@ Please briefly summarize the conversation below.
                 - City of residence : Seoul
                 - Characteristics : Neri has information about {sss.username}, who is mentally ill, and engages in an extensive conversation with him/her, but also asks any questions if he wants to understand more about him/her
 
-                **REMEMBER**: 
                 '''
+                **REMEMBER**: 
                 - Psychotherapist cannot speak information from mentally ill person and himself unless it's really necessary.
                 - Keep in mind that the psychotherapist's response is part of the conversation and will be followed by the mentally ill person's response
                 - The psychotherapist's response should fit the tone and content of the conversation
@@ -160,18 +160,20 @@ Please briefly summarize the conversation below.
                 [Given the above summary and the conversation, what are 3 possible answers a psychotherapist might give here?]
                 '''
                 
+                '''
                 **REMEMBER**: 
                 - The grammar of the sentences should be perfect.
                 - Never use a tone that suggests you want to do something with the patient.
                 - If you get a short reply from the mental patient, ask him/her a related question.
                 - Never reuse any sentences that has a same context which have already been used within a conversation.
                 - If you get any questions from the mental patient, give him/her an answer.
+                '''
                 ```
 
             """
             
             response = sss.client.chat.completions.create(
-            model="gpt-3.5-turbo-0125",
+            model="gpt-4o",
             messages=[
             {
                 "role": "system",
@@ -191,7 +193,7 @@ Please briefly summarize the conversation below.
             my_bar.progress(25,text=progress_text)
             msg = response.choices[0].message.content
             sentence_selection = sss.client.chat.completions.create(
-            model="gpt-3.5-turbo-0125",
+            model="gpt-4o",
             messages=[
             {
                 "role": "system",
@@ -223,7 +225,7 @@ Please briefly summarize the conversation below.
                 - City of residence : Seoul
                 - Characteristics : Neri has information about {sss.username}, who is mentally ill, and engages in an extensive conversation with him/her, but also asks any questions if he wants to understand more about him/her
 
-                
+                '''
                 **REMEMBER**:
                 1. After you pick the best response, then write it down exactly, without leaving out a single letter.
                 2. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
@@ -234,6 +236,7 @@ Please briefly summarize the conversation below.
                 7. Never reuse any sentences that has a same context which have already been used within a conversation.
                 8. If you get any questions from the mental patient, give him/her an answer.
                 9. Never choose the sentence that contains 'How does it feel' or anything resembles that.
+                '''
                 """
             },
             {
@@ -252,6 +255,7 @@ Please briefly summarize the conversation below.
 
                 - After reading the informations above, please **pick the best response from three possible answers** considering psychotherapist's intention, and write it down exactly, without leaving out a single letter. 
                 
+                '''
                 **REMEMBER**:
                 1. After you pick the best response, then write it down exactly, without leaving out a single letter.
                 2. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
@@ -262,6 +266,7 @@ Please briefly summarize the conversation below.
                 7. Never reuse any sentences that has a same context which have already been used within a conversation.
                 8. If you get any questions from the mental patient, give him/her an answer.
                 9. Never choose the sentence that contains 'How does it feel' or anything resembles that.]
+                '''
         """
             }
             ],
@@ -274,13 +279,14 @@ Please briefly summarize the conversation below.
             my_bar.progress(50,text=progress_text)
             selected_msg = sentence_selection.choices[0].message.content.strip('"')
             humanize_sentence = sss.client.chat.completions.create(
-            model="gpt-3.5-turbo-0125",
+            model="gpt-4o",
             messages=[
             {
                 "role": "system",
                 "content": """
                 Your role is to rephrase the sentences I give you as if they were spoken by a real person in the middle of a conversation.
       
+                '''
                 **REMEMBER**:
                 1. After you pick the best response, then write it down exactly, without leaving out a single letter.
                 2. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
@@ -289,6 +295,7 @@ Please briefly summarize the conversation below.
                 5. Don't use any words or phrases other than the context.
                 6. Never reuse any sentences that has a same context which have already been used within a conversation.
                 7. Never choose the sentence that contains 'How does it feel' or anything resembles that.
+                '''
                 """
             },
             {
@@ -296,11 +303,13 @@ Please briefly summarize the conversation below.
                 "content": f"""
                 # My Request: Rephrase the sentences below.
       
+                '''
                 **REMEMBER**:
                 1. **There should be no "" marks in your answer, and no : or - marks to show the answer.**
                 2. Submit the original sentences that I gave you if there is no grammar problem.
                 3. Never attach embellishments or explanation to your answers. Submit only **context** as output. 
                 4. Don't use any words or phrases other than the context.
+                '''
 
                 '''
                 {selected_msg}
