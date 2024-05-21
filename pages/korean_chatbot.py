@@ -290,7 +290,7 @@ def main():
                 
                 **Conversation content**: [{sss.conversations}]
 
-                **Three possible answers from a korean psychotherapist who wants to know more about his patient and heal the patient's mind**: 
+                **Three possible answers from a korean psychotherapist who wants to heal the patient's mind**: 
                 "[{msg}]"
 
                 - After reading the informations above, please **pick the best response from three possible answers** considering psychotherapist's intention. 
