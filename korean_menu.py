@@ -217,10 +217,6 @@ def logout():
         del sss['conversations']
         del sss['message_summary']
         try:
-            del sss.username
-        except:
-            pass
-        try:
             del sss.my_info
         except:
             pass
