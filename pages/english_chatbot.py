@@ -250,7 +250,7 @@ Please briefly summarize the conversation below.
                 
                 **Conversation content**: [{sss.conversations}]
 
-                **Three possible answers from a psychotherapist who wants to learn about his patient and heal his patient's mind**: 
+                **Three possible answers from a psychotherapist who wants to heal his patient's mind**: 
                 "[{msg}]"
 
                 - After reading the informations above, please **pick the best response from three possible answers** considering psychotherapist's intention, and write it down exactly, without leaving out a single letter. 
