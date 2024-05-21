@@ -381,7 +381,7 @@ def main():
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(sss.messages[-1]['content'])
-                st.write(sss.user_prompt_1)
+                #st.write(sss.user_prompt_1)
                 #st.write(sss.messages)
                 #st.write(sss.conversations)
             with col2:
