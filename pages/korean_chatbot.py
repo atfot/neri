@@ -414,7 +414,7 @@ def main():
                 result = ""
                 # dialogue를 result로 변환
                 for entry in sss.messages:
-                    result += f'{entry["role"]} : {entry["content"]}\n'
+                    result += f'{entry["role"]} : {entry["content"]}\n\n'
                 # 마지막 줄바꿈 문자 제거
                 result = result.strip()
                 st.write(result)
