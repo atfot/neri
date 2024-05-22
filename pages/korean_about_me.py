@@ -4,6 +4,7 @@ from streamlit import session_state as sss
 from security import check
 import socket
 import urllib.request
+from requests import get
 
 st.set_page_config(
     page_title="당신의 AI 심리상담사, 네리",
@@ -33,3 +34,6 @@ def get_public_ip():
     return public_ip
 
 st.write("Public IP Address:", get_public_ip())
+
+ip = get('https://api.ipify.org').text
+st.write('My public IP address is: {}'.format(ip))
