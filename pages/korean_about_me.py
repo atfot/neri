@@ -3,6 +3,7 @@ from korean_menu import make_sidebar
 from streamlit import session_state as sss
 from security import check
 import socket
+import urllib.request
 
 st.set_page_config(
     page_title="당신의 AI 심리상담사, 네리",
@@ -25,3 +26,10 @@ st.write(f"Your local IP address is: {local_ip}")
 hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
 st.write(f"Your computer's IP address is: {ip_address}")
+
+def get_public_ip():
+    with urllib.request.urlopen('https://api.ipify.org') as response:
+        public_ip = response.read().decode('utf8')
+    return public_ip
+
+st.write("Public IP Address:", get_public_ip())
