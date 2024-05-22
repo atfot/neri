@@ -414,7 +414,7 @@ def main():
                 pattern = re.compile(r'"role":"(.*?)".*?"content":"(.*?)"', re.DOTALL)
                 matches = pattern.findall(str(sss.messages))
                 result = '\n'.join([f'{role} : {content}' for role, content in matches])
-                st.write(result)
+                st.write(type(str(sss.messages)))
                 #sss.conversations
             with col2:
                 st.write('')
