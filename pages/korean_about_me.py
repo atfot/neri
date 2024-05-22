@@ -22,3 +22,6 @@ s.connect(("8.8.8.8", 80))
 local_ip = s.getsockname()[0]
 s.close()
 st.write(f"Your local IP address is: {local_ip}")
+hostname = socket.gethostname()
+ip_address = socket.gethostbyname(hostname)
+st.write(f"Your computer's IP address is: {ip_address}")
