@@ -411,10 +411,13 @@ def main():
             with col1:
                 st.chat_message('assistant').write(sss.messages[-1]['content'])
                 #st.write(sss.messages)
-                pattern = re.compile(r'"role":"(.*?)".*?"content":"(.*?)"', re.DOTALL)
-                matches = pattern.findall(str(sss.messages))
-                result = '\n'.join([f'{role} : {content}' for role, content in matches])
-                st.write(type(str(sss.messages)))
+                result = ""
+                # dialogue를 result로 변환
+                for entry in sss.messages:
+                    result += f'{entry["role"]} : {entry["content"]}\n'
+                # 마지막 줄바꿈 문자 제거
+                result = result.strip()
+                st.write(result)
                 #sss.conversations
             with col2:
                 st.write('')
