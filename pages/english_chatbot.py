@@ -32,6 +32,15 @@ if "messages" not in sss:
     sss['conversations']=[{"role": "Psychotherapist", "content": "What's bothering you?"}]   
     sss['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
 
+def saved_dialogues():
+    if "message_for_summary" not in sss:
+        sss.message_for_summary = ""
+    result=""
+    for entry in sss.messages:
+        result += f'{entry["role"]} : {entry["content"]}\n\n'
+    result = result.strip()
+    sss.message_for_summary=result
+
 if 'repeat' not in sss:
     sss.repeat = False
 
@@ -74,6 +83,7 @@ def main():
                 sss.messages.append({"role": "Mental patient", "content": prompt})
                 sss.conversations.append({"role": "Mental patient", "content": prompt})
             if len(sss.messages)%3==0:
+                saved_dialogues()
                 summary = sss.client.chat.completions.create(
                 model="gpt-4o",
                 messages=[
@@ -86,7 +96,7 @@ def main():
                     "content": f"""                    
 Please briefly summarize the conversation below.
 
-{sss.messages}"""
+{sss.message_for_summary}"""
                     }
                 ],
                 temperature=1,
@@ -352,6 +362,7 @@ Please briefly summarize the conversation below.
         if sss.repeat:
             prompt = sss.messages[-1]['content']
             text_logic()
+            saved_dialogues()
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(sss.messages[-1]['content'])
@@ -366,6 +377,7 @@ Please briefly summarize the conversation below.
             # Only print the user msg if repeat is false.
             st.chat_message('user').write(prompt)
             text_logic()
+            saved_dialogues()
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(sss.messages[-1]['content'])

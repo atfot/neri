@@ -39,10 +39,8 @@ def saved_dialogues():
     if "message_for_summary" not in sss:
         sss.message_for_summary = ""
     result=""
-    # dialogue를 result로 변환
     for entry in sss.messages:
         result += f'{entry["role"]} : {entry["content"]}\n\n'
-    # 마지막 줄바꿈 문자 제거
     result = result.strip()
     sss.message_for_summary=result
 
