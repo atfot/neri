@@ -13,5 +13,5 @@ try:
 except:
     pass
 make_sidebar()
-check()
+check('hi')
 st.write("개발자의 말 부분임. 나중에 적을 것임")

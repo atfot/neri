@@ -5,4 +5,4 @@ import hashlib
 def check(arg):
     hash_object = hashlib.sha3_512(arg.encode())
     hex_dig = hash_object.hexdigest()
-    
+    st.write(hex_dig)
