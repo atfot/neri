@@ -423,8 +423,8 @@ def main():
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(sss.messages[-1]['content'])
-                st.write(sss.message_for_summary)
-                st.write(sss.message_summary)
+                #st.write(sss.message_for_summary)
+                #st.write(sss.message_summary)
                 #sss.conversations
             with col2:
                 st.write('')
