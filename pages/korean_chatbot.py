@@ -410,7 +410,7 @@ def main():
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(sss.messages[-1]['content'])
-                st.write(sss.messages)
+                #st.write(sss.messages)
                 pattern = re.compile(r'"role":"(.*?)".*?"content":"(.*?)"', re.DOTALL)
                 matches = pattern.findall(str(sss.messages))
                 result = '\n'.join([f'{role} : {content}' for role, content in matches])
