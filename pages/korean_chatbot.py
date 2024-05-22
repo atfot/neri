@@ -2,6 +2,7 @@ from openai import OpenAI
 import streamlit as st
 from korean_menu import make_sidebar
 from streamlit import session_state as sss
+import re
 
 st.set_page_config(
     page_title="당신의 AI 심리상담사, 네리",
@@ -410,6 +411,10 @@ def main():
             with col1:
                 st.chat_message('assistant').write(sss.messages[-1]['content'])
                 st.write(sss.messages)
+                pattern = re.compile(r'"role":"(.*?)".*?"content":"(.*?)"', re.DOTALL)
+                matches = pattern.findall(sss.messages)
+                result = '\n'.join([f'{role} : {content}' for role, content in matches])
+                st.write(result)
                 #sss.conversations
             with col2:
                 st.write('')
