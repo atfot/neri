@@ -35,6 +35,16 @@ if 'conversations' not in sss:
     sss['conversations']=[{"role": "심리상담사", "content": "무엇이 고민이신가요?"}]
 if 'message_summary' not in sss:
     sss['message_summary'] = '아직은 요약된 내용이 없습니다.'
+def saved_dialogues():
+    if "message_for_summary" not in sss:
+        sss.message_for_summary = ""
+    result=""
+    # dialogue를 result로 변환
+    for entry in sss.messages:
+        result += f'{entry["role"]} : {entry["content"]}\n\n'
+    # 마지막 줄바꿈 문자 제거
+    result = result.strip()
+    sss.message_for_summary=result
 
 if 'repeat' not in sss:
     sss.repeat = False
@@ -122,6 +132,7 @@ def main():
                 sss.messages.append({"role": "내담자", "content": prompt})
                 sss.conversations.append({"role": "내담자", "content": normalized_prompt})
             if len(sss.messages)%3==0:
+                saved_dialogues()
                 summary = sss.client.chat.completions.create(
                 model="gpt-4o",
                 messages=[
@@ -134,7 +145,7 @@ def main():
                     "content": f"""
 아래의 내용을 요약해주세요.
 
-{sss.messages}"""
+{sss.message_for_summary}"""
                     }
                 ],
                 temperature=1,
@@ -392,11 +403,12 @@ def main():
         if sss.repeat:
             prompt = sss.messages[-1]['content']
             text_logic()
+            saved_dialogues()
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(sss.messages[-1]['content'])
                 #st.write(sss.user_prompt_1)
-                st.write(sss.messages)
+                #st.write(sss.messages)
                 #st.write(sss.conversations)
             with col2:
                 st.write('')
@@ -407,17 +419,11 @@ def main():
             # Only print the user msg if repeat is false.
             st.chat_message('user').write(prompt)
             text_logic()
+            saved_dialogues()
             col1,col2=st.columns([9,1])
             with col1:
                 st.chat_message('assistant').write(sss.messages[-1]['content'])
                 #st.write(sss.messages)
-                result = ""
-                # dialogue를 result로 변환
-                for entry in sss.messages:
-                    result += f'{entry["role"]} : {entry["content"]}\n\n'
-                # 마지막 줄바꿈 문자 제거
-                result = result.strip()
-                st.write(result)
                 #sss.conversations
             with col2:
                 st.write('')
