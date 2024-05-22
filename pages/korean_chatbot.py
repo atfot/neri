@@ -412,7 +412,7 @@ def main():
                 st.chat_message('assistant').write(sss.messages[-1]['content'])
                 st.write(sss.messages)
                 pattern = re.compile(r'"role":"(.*?)".*?"content":"(.*?)"', re.DOTALL)
-                matches = pattern.findall(sss.messages)
+                matches = pattern.findall(str(sss.messages))
                 result = '\n'.join([f'{role} : {content}' for role, content in matches])
                 st.write(result)
                 #sss.conversations
