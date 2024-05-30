@@ -378,7 +378,7 @@ div.st-emotion-cache-15ecox0.ezrtsby0 > div > div > button > div > span {
 }
 
 /* 타이틀 */ 
-.st-emotion-cache-asc41u {
+div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > div > center > div {
 	font-family: 'Beeunhye';
     font-size: 2.25em;
     letter-spacing:0.075em;
