@@ -295,7 +295,7 @@ div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > s
 /* 타이틀 */ 
 h3 {
 	font-family: 'Beeunhye';
-    font-size: 3em;
+    font-size: 2em;
     letter-spacing:0.075em;
 }      
 
@@ -315,7 +315,11 @@ div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > 
 }
    
 /* 이대로 저장할까요? */
-
+div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div > div > button > div > p {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+    letter-spacing:0.075em;
+}
 
 /* 성공 메세지 */
 div.st-emotion-cache-1sdqqxz.e1f1d6gn3 > div > div > div > div > div > div > div > div > div > div > p {
