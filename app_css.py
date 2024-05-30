@@ -147,7 +147,7 @@ span.st-emotion-cache-rkv7nx.e11k5jya0 > div > p {
 }       
 
 /* 로그아웃 버튼 */
-div.st-emotion-cache-dvne4q.eczjsme4 > div > div > div > div > div > div > button > div > p {
+div.st-emotion-cache-qeahdt.eczjsme9 > div > div > div > div > div > div > button > div > p {
 	font-family: 'Beeunhye';
 	font-size: 2em;
     letter-spacing:0.075em;
