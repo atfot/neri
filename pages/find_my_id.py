@@ -76,7 +76,7 @@ if sss.korean_mode==1:
                     sss.id=sss.new_id
                     st.success('수정 내역이 저장되었습니다!')
                     st.markdown(f'<p><center><b>수정한 아이디 : {sss.id}</b></center><p>',unsafe_allow_html=True)
-                    time.sleep(60)
+                    time.sleep(5)
                     del sss.filled_input,sss.new_id
                     st.switch_page('streamlit_app.py')
                 else:
@@ -100,7 +100,7 @@ if sss.korean_mode==0:
             st.error("Doesn't match the password for an account with that username.")
         else:
             sss.filled_input+=1
-    new_id=st.text_input('New ID',key='new_id')
+    new_id=st.text_input('New ID',key='new_id_')
     if new_id:
         if new_id==sss.id:
             st.error('This is the same ID you originally used.')
