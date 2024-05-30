@@ -192,7 +192,7 @@ letter-spacing:0.075em;
 
 h3 {
 	font-family: 'Beeunhye';
-    font-size: 1.5em;
+    font-size: 3em;
     font-weight: bold;
     letter-spacing:0.075em;
 }
