@@ -11,12 +11,6 @@ def home_design():
 }
 
 /* share 버튼 */
-div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > span {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-    font-weight: bold;
-    letter-spacing:0.1em;
-}
 div.st-emotion-cache-15ecox0.ezrtsby0 > div > div > button > div > span {
 	font-family: 'Beeunhye';
     font-size: 2em;
