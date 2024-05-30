@@ -3,6 +3,7 @@ import time
 from streamlit import session_state as sss
 from streamlit import secrets as sct
 import re
+from app_css import signup_design
 
 st.set_page_config(
         page_title="Your AI Therapist, Neri",
@@ -11,6 +12,7 @@ st.set_page_config(
         menu_items=None
     )
 #st.secrets.signin_idpw_css
+signup_design()
 
 sss.filled_input=0
 
