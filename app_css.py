@@ -377,6 +377,22 @@ div.st-emotion-cache-15ecox0.ezrtsby0 > div > div > button > div > span {
     letter-spacing:0.075em;
 }
 
+/* running 버튼 */  
+div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > label {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing:0.075em;
+}
+                       
+/* stop 버튼 */     
+div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > button {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing:0.075em;
+}
+
 /* 타이틀 */ 
 h3 {
 	font-family: 'Beeunhye';
