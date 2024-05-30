@@ -154,7 +154,7 @@ div.st-emotion-cache-qeahdt.eczjsme9 > div > div > div > div > div > div > butto
 }     
 
 /* 로그아웃 메세지 */      
-div.st-emotion-cache-dvne4q.eczjsme4 > div > div > div > div > div > div > div > div > div > div > div > p {
+div.st-emotion-cache-qeahdt.eczjsme9 > div > div > div > div > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.5em;
     letter-spacing:0.075em;
