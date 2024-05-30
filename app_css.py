@@ -278,6 +278,7 @@ def find_my_idpw_design():
 
 /* 메인 화면으로 */
 
+
 /* share 버튼 */
 div.st-emotion-cache-15ecox0.ezrtsby0 > div > div > button > div > span {
 	font-family: 'Beeunhye';
