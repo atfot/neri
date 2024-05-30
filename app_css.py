@@ -277,12 +277,6 @@ def find_my_idpw_design():
 }
 
 /* 메인 화면으로 */
-div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > button > div > p {
-	font-family: 'Beeunhye';
-    font-size: 2em;
-    font-weight: bold;
-    letter-spacing:0.075em;
-}
 
 /* share 버튼 */
 div.st-emotion-cache-15ecox0.ezrtsby0 > div > div > button > div > span {
