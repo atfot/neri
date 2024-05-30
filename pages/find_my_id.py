@@ -53,7 +53,7 @@ if sss.korean_mode==1:
             st.error('사용하시던 패스워드가 아닙니다.')
         else:
             sss.filled_input+=1
-    new_id=st.text_input('새로 사용할 ID',key='new_id')
+    new_id=st.text_input('새로 사용할 ID',key='new_id_')
     if new_id:
         if new_id==sss.id:
             st.error('원래 사용하시던 아이디와 동일합니다.')
