@@ -29,6 +29,7 @@ if sss.korean_mode==0:
 
 sss.filled_input=0
 sss.new_id=''
+st.write(sss.id)
 
 if 'korean_mode' not in sss:
     st.switch_page('streamlit_app.py')
