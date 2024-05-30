@@ -2,7 +2,7 @@ import streamlit as st
 from time import sleep
 from streamlit_js_eval import streamlit_js_eval
 from streamlit import session_state as sss
-from app_design import home_design
+from app_css import home_design
 
 if 'messages' not in sss:
     if 'screen_setting' not in sss:
