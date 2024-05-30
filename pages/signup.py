@@ -13,6 +13,7 @@ st.set_page_config(
     )
 #st.secrets.signin_idpw_css
 signup_design()
+st.write(sct.user_name)
 
 sss.filled_input=0
 
