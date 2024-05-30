@@ -173,7 +173,7 @@ if sss.korean_mode==1:
 
             **목표**: {sss.goal}
 """)
-        time.sleep(60)
+        time.sleep(5)
         del sss.filled_input,sss.user_info
         st.switch_page('streamlit_app.py')
 

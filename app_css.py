@@ -13,7 +13,7 @@ def home_design():
 /* share 버튼 */
 div.st-emotion-cache-15ecox0.ezrtsby0 > div > div > button > div > span {
 	font-family: 'Beeunhye';
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
     letter-spacing:0.1em;
 }
@@ -118,7 +118,7 @@ def app_design():
 /* share 버튼 */
 div.st-emotion-cache-15ecox0.ezrtsby0 > div > div > button > div > span {
 	font-family: 'Beeunhye';
-	font-size: 2em;
+	font-size: 1.5em;
     font-weight: bold;
     letter-spacing:0.075em;
 }  
@@ -287,7 +287,7 @@ div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > 
 /* share 버튼 */
 div.st-emotion-cache-15ecox0.ezrtsby0 > div > div > button > div > span {
 	font-family: 'Beeunhye';
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
     letter-spacing:0.075em;
 }
@@ -372,7 +372,7 @@ div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > 
 /* share 버튼 */
 div.st-emotion-cache-15ecox0.ezrtsby0 > div > div > button > div > span {
 	font-family: 'Beeunhye';
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
     letter-spacing:0.075em;
 }
@@ -380,7 +380,7 @@ div.st-emotion-cache-15ecox0.ezrtsby0 > div > div > button > div > span {
 /* running 버튼 */  
 div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > label {
 	font-family: 'Beeunhye';
-    font-size: 2em;
+    font-size: 1.25em;
     font-weight: bold;
     letter-spacing:0.075em;
 }
@@ -388,7 +388,7 @@ div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > label {
 /* stop 버튼 */     
 div.st-emotion-cache-19or5k2.en6cib61.StatusWidget-enter-done > div > span > button {
 	font-family: 'Beeunhye';
-    font-size: 2em;
+    font-size: 1.25em;
     font-weight: bold;
     letter-spacing:0.075em;
 }
