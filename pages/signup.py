@@ -72,7 +72,7 @@ if sss.korean_mode==1:
             sss.filled_input+=1  
     user_email = st.text_input('**사용하실 이메일 주소를 적어주세요.**', key='user_email_',type='password')  
     if user_email:
-        if not re.match(r"[a-zA-Z0-9_+-]+@[a-zA-Z0-9]+\.[a-zA-Z]{3}", user_email): 
+        if not re.match(r"[a-zA-Z0-9_+]+@[a-zA-Z0-9]+\.[a-zA-Z]{3}", user_email): 
             st.error('정확한 이메일 양식을 적어주세요.')
         else:
             if user_email != sct.user_email or user_email !=sct.user_email_2:
