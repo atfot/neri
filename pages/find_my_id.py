@@ -29,7 +29,6 @@ if sss.korean_mode==0:
 
 sss.filled_input=0
 sss.new_id=''
-st.write(sss.id)
 
 if 'korean_mode' not in sss:
     st.switch_page('streamlit_app.py')
@@ -77,7 +76,7 @@ if sss.korean_mode==1:
                     sss.id=sss.new_id
                     st.success('수정 내역이 저장되었습니다!')
                     st.markdown(f'<p><center><b>수정한 아이디 : {sss.id}</b></center><p>',unsafe_allow_html=True)
-                    time.sleep(5)
+                    time.sleep(60)
                     del sss.filled_input,sss.new_id
                     st.switch_page('streamlit_app.py')
                 else:
