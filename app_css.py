@@ -189,6 +189,14 @@ font-family: 'Beeunhye';
 font-size: 1.75em;
 letter-spacing:0.075em;
 }
+
+h3 {
+	font-family: 'Beeunhye';
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing:0.075em;
+}
+                                              
 /* 설명란 */                    
 div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > div > label > div > p {
 font-family: 'Beeunhye';
