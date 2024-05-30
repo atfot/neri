@@ -32,6 +32,8 @@ if sss.korean_mode==1:
             pass
         if 'username' in sss:
             del sss.username
+        else:
+            pass
         if 'user_email' in sss:
             del sss.user_email
         else:
