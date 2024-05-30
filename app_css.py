@@ -285,7 +285,7 @@ div.block-container.st-emotion-cache-13ln4jf.ea3mdgi5 > div > div > div > div > 
 }
 
 /* share 버튼 */
-div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > span {
+div.st-emotion-cache-15ecox0.ezrtsby0 > div > div > button > div > span {
 	font-family: 'Beeunhye';
     font-size: 2em;
     font-weight: bold;
