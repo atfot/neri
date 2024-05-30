@@ -13,8 +13,6 @@ st.set_page_config(
     )
 #st.secrets.signin_idpw_css
 signup_design()
-st.write(sct.user_name)
-
 sss.filled_input=0
 
 if 'korean_mode' not in sss:
@@ -51,7 +49,7 @@ if sss.korean_mode==1:
     st.markdown('<center><h3>회원가입 양식</h3></center>', unsafe_allow_html=True)
     id=st.text_input('사용하실 아이디를 적어주세요.')
     if id:
-        if id!=sct.user_id or id!=sct.user_id_2:
+        if id!=sct.user_id and id!=sct.user_id_2:
             sss.id=''
             sss.id=id
             sss.filled_input+=1
@@ -59,7 +57,7 @@ if sss.korean_mode==1:
             st.error('해당 아이디가 이미 존재합니다.')
     password=st.text_input('사용하실 비밀번호를 적어주세요.',type='password')    
     if password:
-        if password!=sct.user_pw or password!=sct.user_pw_2:
+        if password!=sct.user_pw and password!=sct.user_pw_2:
             sss.pw=''
             sss.pw=password
             sss.filled_input+=1
@@ -89,7 +87,7 @@ if sss.korean_mode==1:
             sss.filled_input+=1
     nickname=st.text_input('무슨 이름으로 불리고 싶으신가요?',key='nickname')
     if nickname:
-        if nickname!=sct.user_name or nickname!=sct.user_name_2:
+        if nickname!=sct.user_name and nickname!=sct.user_name_2:
             sss.username=''
             sss.username=nickname
             sss.filled_input+=1
