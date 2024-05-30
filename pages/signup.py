@@ -206,7 +206,7 @@ if sss.korean_mode==0:
     st.markdown('<center><h3>Sign in Form</h3></center>', unsafe_allow_html=True)
     id=st.text_input('Your ID')
     if id:
-        if id!=sct.user_id or id!=sct.user_id_2:
+        if id!=sct.user_id and id!=sct.user_id_2:
             sss.id=''
             sss.id=id
             sss.filled_input+=1
@@ -214,7 +214,7 @@ if sss.korean_mode==0:
             st.error('This ID already exists.')
     password=st.text_input('Your Password',type='password')
     if password:
-        if password!=sct.user_pw or password!=sct.user_pw_2:
+        if password!=sct.user_pw and password!=sct.user_pw_2:
             sss.pw=''
             sss.pw=password
             sss.filled_input+=1
@@ -228,7 +228,7 @@ if sss.korean_mode==0:
             sss.filled_input+=1            
     user_email = st.text_input('**Write down the email address you want to use.**', key='user_email_',type='password')  
     if user_email:
-        if not re.match(r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]+$', user_email): 
+        if re.match(r"[a-zA-Z0-9_+]+@[a-zA-Z0-9]+\.[a-zA-Z]{3}", user_email): 
             st.error('Please give the correct email!')
         else:
             if user_email != sct.user_email or user_email !=sct.user_email_2:
