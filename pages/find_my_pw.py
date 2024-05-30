@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 from streamlit import session_state as sss
+from app_css import find_my_idpw_design
 
 st.set_page_config(
         page_title="Your AI Therapist, Neri",
@@ -9,6 +10,7 @@ st.set_page_config(
         menu_items=None
     )
 #st.secrets.signin_idpw_css
+find_my_idpw_design()
 st.markdown("""
 <style>
 @font-face {
