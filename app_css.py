@@ -116,7 +116,7 @@ def app_design():
     font-style: normal;
 }
 /* share 버튼 */
-div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > span {
+div.st-emotion-cache-15ecox0.ezrtsby0 > div > div > button > div > span {
 	font-family: 'Beeunhye';
 	font-size: 2em;
     font-weight: bold;
