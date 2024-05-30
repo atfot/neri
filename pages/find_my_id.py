@@ -39,7 +39,7 @@ if sss.korean_mode==1:
     if button:
         del sss.filled_input, sss.new_id
         st.switch_page("streamlit_app.py")
-    st.markdown('<center><h3>아이디 수정</h3></center>', unsafe_allow_html=True)
+    st.markdown('<center><h1>아이디 수정</h1></center>', unsafe_allow_html=True)
     nickname=st.text_input('유저 이름')
     if nickname:
         if nickname!=sss.username:
