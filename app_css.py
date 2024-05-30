@@ -295,7 +295,7 @@ div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > s
 /* 타이틀 */ 
 h3 {
 	font-family: 'Beeunhye';
-    font-size: 2em;
+    font-size: 3em;
     letter-spacing:0.075em;
 }      
 
