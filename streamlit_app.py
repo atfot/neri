@@ -134,7 +134,7 @@ if 'messages' not in sss:
                 sss.many_login_attempt=False
                 sss.login_attempt=0
                 sleep(0.5)
-                st.switch_page("pages/signin.py")
+                st.switch_page("pages/signup.py")
             if sss.get('many_login_attempt',True):
                     st.error("""
                             아이디 또는 패스워드를 5번 이상 틀리셨습니다.
@@ -252,7 +252,7 @@ if 'messages' not in sss:
                 sss.many_login_attempt=False
                 sss.login_attempt=0
                 sleep(0.5)
-                st.switch_page("pages/signin.py")
+                st.switch_page("pages/signup.py")
             if sss.get('many_login_attempt',True):
                 st.error("""
                         You've entered your ID or password incorrectly more than 5 times.
