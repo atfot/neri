@@ -17,6 +17,13 @@ div.st-emotion-cache-zq5wmm.ezrtsby0 > div > div:nth-child(1) > button > div > s
     font-weight: bold;
     letter-spacing:0.1em;
 }
+div.st-emotion-cache-15ecox0.ezrtsby0 > div > div > button > div > span {
+	font-family: 'Beeunhye';
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing:0.1em;
+}
+
 
 /* 한영 토글 */
 div.st-bl.st-bm.st-bn.st-bo.st-bp.st-bq.st-br.st-bs.st-bt.st-bu.st-bv > div > div > p {
