@@ -58,6 +58,7 @@ if sss.korean_mode==1:
         if new_id==sss.id:
             st.error('원래 사용하시던 아이디와 동일합니다.')
         else:
+            sss.new_id=new_id
             sss.filled_input+=1
     new_id_check=st.text_input('새로 사용하실 ID를 다시 한번 적어주세요',type='password',key='new_id_check')
     if new_id_check:
