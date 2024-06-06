@@ -46,8 +46,6 @@ def make_sidebar():
                 st.switch_page("pages/korean_my_info.py")
             if sss.success_fail_messages is not False:
                 sss.success_fail_messages
-                sleep(5)
-                st.empty()
 
             st.title('')
             st.markdown(
