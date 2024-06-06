@@ -10,7 +10,7 @@ if 'client' not in sss:
   sss.client = OpenAI(api_key=st.secrets['api_key'])
 
 if 'success_fail_messages' not in sss:
-    sss.success_fail_messages=False
+    sss.success_fail_messages=None
 
 def get_current_page_name():
     ctx = get_script_run_ctx()
@@ -44,8 +44,11 @@ def make_sidebar():
                 save_analysis_and_messages()
             if st.button("내 정보",type='secondary',use_container_width=True):
                 st.switch_page("pages/korean_my_info.py")
-            if sss.success_fail_messages is not False:
-                sss.success_fail_messages
+            if sss.success_fail_messages is not None:
+                placeholder = st.empty()
+                placeholder.success(sss.success_fail_messages)
+                sleep(5)
+                placeholder.empty()
 
             st.title('')
             st.markdown(
@@ -84,7 +87,7 @@ def logout():
         except:
             pass
         del sss.client
-    sss.success_fail_messages=st.info("다음에 또 뵈어요😊")
+    sss.success_fail_messages="다음에 또 뵈어요😊"
     sleep(0.5)
     st.switch_page("streamlit_app.py")
 
@@ -171,4 +174,4 @@ def save_analysis_and_messages():
             problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
             problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
             sss.what_to_do=problem_analysis.split('\n')
-            sss.success_fail_messages=st.success('대화 내역이 저장되었습니다!')
+            sss.success_fail_messages='대화 내역이 저장되었습니다!'
