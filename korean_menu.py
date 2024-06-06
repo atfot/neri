@@ -9,6 +9,9 @@ from app_css import app_design
 if 'client' not in sss:
   sss.client = OpenAI(api_key=st.secrets['api_key'])
 
+if 'success_fail_messages' not in sss:
+    sss.success_fail_messages=''
+
 def get_current_page_name():
     ctx = get_script_run_ctx()
     if ctx is None:
@@ -41,6 +44,10 @@ def make_sidebar():
                 save_analysis_and_messages()
             if st.button("내 정보",type='secondary',use_container_width=True):
                 st.switch_page("pages/korean_my_info.py")
+            if sss.success_fail_messages:
+                sss.success_fail_messages
+            else:
+                pass
 
             st.title('')
             st.markdown(
@@ -79,7 +86,7 @@ def logout():
         except:
             pass
         del sss.client
-    st.info("다음에 또 뵈어요😊")
+    sss.success_fail_messages=st.info("다음에 또 뵈어요😊")
     sleep(0.5)
     st.switch_page("streamlit_app.py")
 
@@ -165,5 +172,4 @@ def save_analysis_and_messages():
         problem_analysis=problem_analysis[problem_analysis.find('\n'):].strip()
         problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
         sss.what_to_do=problem_analysis.split('\n')
-
-        st.success('대화 내역이 저장되었습니다!')
+        sss.success_fail_messages=st.success('대화 내역이 저장되었습니다!')
