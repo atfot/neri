@@ -10,7 +10,7 @@ if 'client' not in sss:
   sss.client = OpenAI(api_key=st.secrets['api_key'])
 
 if 'success_fail_messages' not in sss:
-    sss.success_fail_messages=''
+    sss.success_fail_messages=False
 
 def get_current_page_name():
     ctx = get_script_run_ctx()
@@ -44,7 +44,7 @@ def make_sidebar():
                 save_analysis_and_messages()
             if st.button("내 정보",type='secondary',use_container_width=True):
                 st.switch_page("pages/korean_my_info.py")
-            if sss.success_fail_messages is not '':
+            if sss.success_fail_messages is not False:
                 sss.success_fail_messages
                 sleep(5)
                 st.empty()
