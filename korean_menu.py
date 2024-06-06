@@ -39,6 +39,7 @@ def make_sidebar():
             if st.button("내 정보",type='secondary',use_container_width=True):
                 st.switch_page("pages/korean_my_info.py")
 
+            st.title('')
             st.markdown(
                 """
                 <div style="left: 0; width: 101%; color: #000000; text-align: left;">
