@@ -38,7 +38,7 @@ def make_sidebar():
             if st.button("로그아웃",type='primary',use_container_width=True):
                 logout()
             if st.button("대화 저장",type='secondary',use_container_width=True):
-                st.switch_page("pages/korean_my_info.py")
+                save_analysis_and_messages()
             if st.button("내 정보",type='secondary',use_container_width=True):
                 st.switch_page("pages/korean_my_info.py")
 
