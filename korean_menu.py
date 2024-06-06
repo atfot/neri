@@ -44,7 +44,7 @@ def make_sidebar():
                 save_analysis_and_messages()
             if st.button("내 정보",type='secondary',use_container_width=True):
                 st.switch_page("pages/korean_my_info.py")
-            if sss.success_fail_messages:
+            if sss.success_fail_messages is not '':
                 sss.success_fail_messages
                 sleep(5)
                 st.empty()
