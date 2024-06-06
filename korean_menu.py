@@ -173,3 +173,5 @@ def save_analysis_and_messages():
         problem_analysis=problem_analysis[problem_analysis.find(':')+1:].strip()
         sss.what_to_do=problem_analysis.split('\n')
         sss.success_fail_messages=st.success('대화 내역이 저장되었습니다!')
+    if 'problem_analysis' in sss:
+        sss.success_fail_messages=st.success('오늘 대화내역을 이미 저장하셨어요😊')
