@@ -47,7 +47,7 @@ def make_sidebar():
 #            if sss.success_fail_messages is not None:
             if logout():
                 st.info("다음에 또 뵈어요😊")
-                sleep(0.5)
+                sleep(30)
                 st.switch_page("streamlit_app.py")
 #                placeholder = st.empty()
 #                placeholder.success(sss.success_fail_messages)
