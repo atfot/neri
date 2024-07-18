@@ -44,11 +44,11 @@ def make_sidebar():
                 save_analysis_and_messages()
             if st.button("내 정보",type='secondary',use_container_width=True):
                 st.switch_page("pages/korean_my_info.py")
-            if sss.success_fail_messages is not None:
-                if logout():
-                    st.info("다음에 또 뵈어요😊")
-                    sleep(30)
-                    st.switch_page("streamlit_app.py")
+#            if sss.success_fail_messages is not None:
+            if logout():
+                st.info("다음에 또 뵈어요😊")
+                sleep(0.5)
+                st.switch_page("streamlit_app.py")
 #                placeholder = st.empty()
 #                placeholder.success(sss.success_fail_messages)
 #                sleep(5)
