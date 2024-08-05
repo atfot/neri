@@ -31,24 +31,25 @@ def make_sidebar():
         st.write("")
 
         if sss.get("logged_in", True):
-            st.page_link("pages/korean_chatbot.py", label="당신의 카운셀러", icon="🩹")
+            st.page_link("pages/korean_chatbot.py", label="당신의 카운셀러", icon="🧡")
             st.page_link("pages/korean_instruction.py", label="사용법", icon="ℹ️")
             st.page_link("pages/korean_bug_report.py", label="오류 제보", icon="⚠️")
             st.page_link("pages/korean_analysis.py", label="심리분석 결과", icon="🔎")
-            st.page_link("pages/korean_about_me.py", label="개발자의 말", icon="💭")
+            st.page_link("pages/korean_my_info.py", label="내 정보", icon="⚙️")
+#            st.page_link("pages/korean_about_me.py", label="개발자의 말", icon="💭")
             st.title('')
 
             if st.button("로그아웃",type='primary',use_container_width=True):
                 logout()
-            if st.button("대화 저장",type='secondary',use_container_width=True):
-                save_analysis_and_messages()
-            if st.button("내 정보",type='secondary',use_container_width=True):
-                st.switch_page("pages/korean_my_info.py")
+#            if st.button("대화 저장",type='secondary',use_container_width=True):
+#                save_analysis_and_messages()
+#            if st.button("내 정보",type='secondary',use_container_width=True):
+#                st.switch_page("pages/korean_my_info.py")
 #            if sss.success_fail_messages is not None:
-            if sss.logged_in == False:
-                st.info("다음에 또 뵈어요😊")
-                sleep(30)
-                st.switch_page("streamlit_app.py")
+#            if sss.logged_in == False:
+#                st.info("다음에 또 뵈어요😊")
+#                sleep(30)
+#                st.switch_page("streamlit_app.py")
 #                placeholder = st.empty()
 #                placeholder.success(sss.success_fail_messages)
 #                sleep(5)
@@ -91,9 +92,9 @@ def logout():
 #        except:
 #            pass
         del sss.client
-#    st.info("다음에 또 뵈어요😊")
-#    sleep(0.5)
-#    st.switch_page("streamlit_app.py")
+    st.info("다음에 또 뵈어요😊")
+    sleep(0.5)
+    st.switch_page("streamlit_app.py")
 
 def save_analysis_and_messages():    
     with st.spinner('저장중...'):
