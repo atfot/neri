@@ -1,3 +1,16 @@
+import streamlit as st
+from korean_menu import make_sidebar
+from streamlit import session_state as sss
+from openai import OpenAI
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
+import time
+import pdfkit
+from send_email import send_analysis_via_email
+
 def send_analysis_via_email():
     if 'date' not in sss:
         sss.date=f"{time.localtime().tm_year}년 {time.localtime().tm_mon}월 {time.localtime().tm_mday}일"
