@@ -13,4 +13,5 @@ try:
 except:
     pass
 make_sidebar()
-st.write("korean instruction")
+st.write("이걸 왜 만들었는지 적을 것")
+st.write("어떻게 사용해야 하는지 적을 것")
