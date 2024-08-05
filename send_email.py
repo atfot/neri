@@ -9,7 +9,6 @@ from email.mime.base import MIMEBase
 from email import encoders
 import time
 import pdfkit
-from send_email import send_analysis_via_email
 
 def send_analysis_via_email():
     if 'date' not in sss:
