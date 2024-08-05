@@ -159,7 +159,7 @@ div.st-emotion-cache-1gwvy71.eczjsme12 > div > div > div > div > div > div > but
 }     
 
 /* 로그아웃 메세지 */      
-div.st-emotion-cache-qeahdt.eczjsme9 > div > div > div > div > div > div > div > div > div > div > div > p {
+div.st-emotion-cache-1gwvy71.eczjsme12 > div > div > div > div > div > div > div > div > div > div > div > p {
 	font-family: 'Beeunhye';
 	font-size: 1.5em;
     letter-spacing:0.075em;
