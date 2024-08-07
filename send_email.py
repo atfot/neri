@@ -216,7 +216,7 @@ def send_analysis_via_email():
                             </tr>
                             <tr align="center" width="100%" style="color: #000000; font-size: 24px; line-height: 15px;">
                                 <td>
-                                    <h2>고민 해결도 그래프</h2>
+                                    <h2>날짜별 점수 분석 그래프</h2>
                                 </td>
                             </tr>
                             <tr align="center" width="100%">
