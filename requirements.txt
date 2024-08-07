@@ -4,3 +4,4 @@ openai
 streamlit_js_eval
 pdfkit
 requests
+supabase
