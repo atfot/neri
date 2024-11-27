@@ -54,20 +54,20 @@ if 'messages' not in sss:
             if sss.screen_setting=='pc':
                 st.title('')
                 st.image(["https://imgur.com/jlw6yPL.png"],
-        use_column_width=True)
+        use_container_width=True)
             if sss.screen_setting=='tablet':
                 st.title('')
                 st.image(["https://imgur.com/TvUsmxY.png"],
-        use_column_width=True)
+        use_container_width=True)
             if sss.screen_setting=='mobile':
                 st.write('')
                 st.image(["https://imgur.com/BfcB03k.png"],
-        use_column_width=True)
+        use_container_width=True)
         with col2:
             if sss.screen_setting=='mobile':
                 pass
             else:
-                st.image('https://imgur.com/WJ25Zby.png',use_column_width=True)
+                st.image('https://imgur.com/WJ25Zby.png',use_container_width=True)
             st.markdown('<div style="text-align: right;"><p><b>로그인 해주세요</b></p></div>',unsafe_allow_html=True)        
             id = st.text_input("**아이디**") 
             password = st.text_input("**비밀번호**", type="password")
@@ -174,20 +174,20 @@ if 'messages' not in sss:
             if sss.screen_setting=='pc':
                 st.title('')
                 st.image(["https://imgur.com/orXLRE6.png"],
-        use_column_width=True)
+        use_container_width=True)
             if sss.screen_setting=='tablet':
                 st.title('')
                 st.image(["https://imgur.com/rpIrtUg.png"],
-        use_column_width=True)
+        use_container_width=True)
             if sss.screen_setting=='mobile':
                 st.write('')
                 st.image(["https://imgur.com/l4DhaIN.png"],
-        use_column_width=True)
+        use_container_width=True)
         with col2:
             if sss.screen_setting=='mobile':
                 pass
             else:
-                st.image('https://imgur.com/H5cxyX1.png',use_column_width=True)
+                st.image('https://imgur.com/H5cxyX1.png',use_container_width=True)
             st.markdown('<div style="text-align: right;"><p><b>Please login</b></p></div>',unsafe_allow_html=True) 
             
             id = st.text_input("**ID**")

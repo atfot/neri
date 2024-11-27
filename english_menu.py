@@ -176,7 +176,7 @@ letter-spacing:0.075em;
 """
 
 , unsafe_allow_html=True)
-        st.image('https://imgur.com/F2P7a3I.png',use_column_width=True)
+        st.image('https://imgur.com/F2P7a3I.png',use_container_width=True)
         st.write("")
         st.write("")
 
